@@ -1,0 +1,7 @@
+{
+  "dados": [
+      {"entrada": "carro azul", "target": "automóvel azul", "previsto": "veículo azul"},
+      {"entrada": "computador potente", "target": "PC rápido", "previsto": "notebook veloz"},
+      {"entrada": "banco de madeira", "target": "assento de madeira", "previsto": "cadeira de madeira"}
+  ]
+}

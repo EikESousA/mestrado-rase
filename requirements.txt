@@ -1,0 +1,7 @@
+fuzzywuzzy
+python-Levenshtein
+scikit-learn
+numpy
+sentence-transformers
+gensim
+POT
