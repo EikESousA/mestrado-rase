@@ -5,3 +5,4 @@ numpy
 sentence-transformers
 gensim
 POT
+tabulate
