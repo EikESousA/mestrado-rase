@@ -1,4 +1,5 @@
 env
+.venv
 
 /src/models/*
 !/src/models/.gitkeep

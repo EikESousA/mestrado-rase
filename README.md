@@ -33,6 +33,10 @@ Atualmente requer Python **3.11.9**.
 
 ### Requisitos
 
+É necessário instalar o **[ollama](https://ollama.com/download)**.
+
+E instalar na máquina o **[CUDA Toolkit 11.8](https://developer.nvidia.com/cuda-11-8-0-download-archive)**.
+
 Todos os requisitos dos módulos principais estão listados em **[requirements.txt](https://github.com/EikESousA/mestrado-rase/blob/main/requirements.txt)**.
 
 para instalar as depedências do projeto rode o comando dentro da pasta do projeto.
