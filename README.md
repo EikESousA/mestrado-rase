@@ -16,7 +16,9 @@
 
 ## Descrição
 
-Esse código foi implementado para o Mestrado do aluno Eike Natan Sousa Brito, no ano de 2024-2025. Tem o objetivo de ler normas de engenharia e transformar um código RASE no formato JSON.
+Este código foi desenvolvido como parte do Mestrado do aluno Eike Natan Sousa Brito, no Programa de Pós-Graduação em Ciência da Computação (PROCC) da Fundação Universidade Federal de Sergipe (UFS), durante o período de 2024-2025.
+
+O objetivo principal do projeto é a leitura e interpretação automatizada de normas de engenharia, convertendo um código RASE para o formato JSON. Para isso, utiliza-se o modelo LLaMA 3, explorando técnicas avançadas de Engenharia de Prompt, Fine-Tuning e Recuperação Aumentada por Geração (RAG). Esse processo visa aprimorar a compreensão e estruturação dos dados extraídos das normas, proporcionando maior precisão e eficiência na conversão para um formato estruturado e de fácil manipulação.
 
 ## Instalação
 
