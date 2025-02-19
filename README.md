@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/logo.png" alt="Logo da UFS" aling="center" width="70%"/>
+  <img src="docs/images/logo.png" alt="Logo da UFS" aling="center" width="30%"/>
 </p>
 
 <p align="center">
