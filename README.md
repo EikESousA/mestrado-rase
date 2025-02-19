@@ -1,6 +1,6 @@
 <p align="center">
   <img src="docs/images/ufs.png" alt="Logo da UFS" aling="center" width="10%"/>
-  <img src="docs/images/procc.png" alt="Logo da PROCC" aling="center" width="15%"/>
+  <img src="docs/images/procc.png" alt="Logo da PROCC" aling="center" width="17%"/>
 </p>
 
 <p align="center">
