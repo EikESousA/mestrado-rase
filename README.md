@@ -26,12 +26,11 @@ Deve funcionar conforme pretendido no **Windows**, **Linux** ou **macOS**.
 
 ### Interpretador Python
 
-Atualmente requer Python **3.10.16**.
+Atualmente requer Python **3.11.9**.
 
 ### Requisitos
 
 Todos os requisitos dos módulos principais estão listados em **[requirements.txt](https://github.com/EikESousA/mestrado-rase/blob/main/requirements.txt)**.
-
 
 para instalar as depedências do projeto rode o comando dentro da pasta do projeto.
 
@@ -47,16 +46,25 @@ Segue o exemplo como instalar e utilizar o virtualenv:
 
 Instale o virtualenv, crie seu ambiente e ative.
 
-
 ```
 pip install virtualenv
 
 ```
+
 ```
 virtualenv env
 ```
+
+Se for linux
+
 ```
 source env/bin/activate
+```
+
+Se for windows
+
+```
+.\env\Scripts\activate.bat
 ```
 
 ## Organização do Código
