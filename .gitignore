@@ -1,1 +1,4 @@
-/word_embeddings/*
+env
+
+/src/models/*
+!/src/models/.gitkeep

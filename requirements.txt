@@ -1,8 +1,15 @@
-fuzzywuzzy
-python-Levenshtein
-scikit-learn
+--extra-index-url https://download.pytorch.org/whl/cu118
 numpy
+torch
+torchvision
+torchaudio
+scikit-learn
 sentence-transformers
 gensim
 POT
 tabulate
+langchain
+langchain-ollama
+ollama
+fuzzywuzzy
+python-Levenshtein
