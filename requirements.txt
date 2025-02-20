@@ -1,5 +1,6 @@
 --extra-index-url https://download.pytorch.org/whl/cu118
 numpy
+pandas
 torch
 torchvision
 torchaudio
@@ -15,3 +16,4 @@ langchain_core
 ollama
 fuzzywuzzy
 python-Levenshtein
+ipywidgets
