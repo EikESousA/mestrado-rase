@@ -79,9 +79,11 @@ Se for windows
 O código é configurado em vários diretórios principais:
 
 - **[databases](https://github.com/EikESousA/mestrado-rase/blob/main/src/databases)**: contém as os dados que serão avaliados.
+- **[functions](https://github.com/EikESousA/mestrado-rase/blob/main/src/functions)**: contém as funções que irão rodar os modelos.
 - **[helpers](https://github.com/EikESousA/mestrado-rase/blob/main/src/helpers)**: contém alguns arquivos podem ser utilizados para ajudar no processo.
-- **[utils](https://github.com/EikESousA/mestrado-rase/blob/main/src/models)**: contém algumas funções que ajudam no processo.
+- **[metrics](https://github.com/EikESousA/mestrado-rase/blob/main/src/helpers)**: contém as funções que irão avaliar os modelos.
 - **[models](https://github.com/EikESousA/mestrado-rase/blob/main/src/utils)**: contém todos os arquivos dos modelos LLM e Word Embeddings;
+- **[utils](https://github.com/EikESousA/mestrado-rase/blob/main/src/models)**: contém algumas funções que ajudam no processo.
 
 ## Ajuda
 
