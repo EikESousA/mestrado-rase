@@ -2,12 +2,28 @@ from langchain_ollama import OllamaLLM
 from langchain_core.prompts import ChatPromptTemplate
 import json
 import re
+import time
+from typing import Dict, List, Any
+from langchain_core.runnables import RunnableSerializable
 
-def process_text(text: str) -> list:       
-    sentences = re.split(r'(?<!\d)(\.)\n|\n|(?<!\d)(\.)(?!\d)', text.strip())
+def process_text(text: str) -> List[str]:
+    """
+    Processa um texto, dividindo-o em sentenças menores.
+
+    - O texto é segmentado com base em pontuação e quebras de linha.
+    - Remove espaços extras e mantém a estrutura original das frases.
+    - Retorna uma lista de sentenças processadas.
+
+    Parâmetros:
+        - text (str): O texto de entrada a ser processado.
+
+    Retorna:
+        - list: Lista de sentenças processadas.
+    """
     
-    processed_sentences = []
-    temp_sentence = ""
+    sentences: List[str] = re.split(r'(?<!\d)(\.)\n|\n|(?<!\d)(\.)(?!\d)', text.strip())
+    processed_sentences: List[str] = []
+    temp_sentence: str = ""
     
     for part in sentences:
         if part is None:
@@ -21,7 +37,7 @@ def process_text(text: str) -> list:
         processed_sentences.append(temp_sentence.strip())
     
     return processed_sentences
-  
+
 def generate_n1(input_path: str, output_path: str, template: str, model: str) -> None:
     """
     Lê um arquivo JSON contendo textos e aplica a metodologia RASE N1, gerando um novo JSON com os textos transformados.
@@ -29,7 +45,7 @@ def generate_n1(input_path: str, output_path: str, template: str, model: str) ->
     - Para cada entrada no JSON, o campo "text" é processado e dividido em sentenças menores, mantendo aplicabilidade, 
       seleção, requisito e exceção.
     - O resultado processado é armazenado no campo "texts" da mesma entrada.
-    - O novo JSON é salvo no caminho especificado.
+    - O novo JSON é salvo no caminho especificado armazenando a quantidade, os dados e o tempo de processamento.
 
     Parâmetros:
         - input_path (str): Caminho do arquivo JSON de entrada contendo os textos a serem transformados.
@@ -44,30 +60,52 @@ def generate_n1(input_path: str, output_path: str, template: str, model: str) ->
         - None
 
     """
-
+    
+    data: Dict[str, Any] = {}
+    
     try:
         with open(input_path, "r", encoding="utf-8") as file:
             data = json.load(file)
-            
     except FileNotFoundError:
         print("Erro: Arquivo de entrada não encontrado.")
         return
-    
     except json.JSONDecodeError:
         print("Erro: Falha ao decodificar JSON de entrada.")
         return
-
-    llm = OllamaLLM(model=model)
-    prompt = ChatPromptTemplate.from_template(template)
-    chain = prompt | llm
-
-    for item in data["datas"]:
-        result = chain.invoke({"text": item["text"]})
-        item["texts"] = process_text(result)
-
+    
+    llm: OllamaLLM = OllamaLLM(model=model)
+    prompt: ChatPromptTemplate = ChatPromptTemplate.from_template(template)
+    chain: RunnableSerializable[Dict[str, str], str] = prompt | llm
+    
+    result_data: Dict[str, Any] = {"count": 0, "datas": [], "time": 0.0}
+    total_start_time: float = time.time()
+    
     with open(output_path, "w", encoding="utf-8") as file:
-        json.dump(data, file, ensure_ascii=False, indent=4)
+        json.dump(result_data, file, ensure_ascii=False, indent=4)
+    
+    for count, item in enumerate(data["datas"], start=1):
+        start_time: float = time.time()
+        result: str = chain.invoke({"text": item["text"]})
+        processed_result: List[str] = process_text(result)
+        end_time: float = time.time()
         
+        elapsed_time: float = end_time - start_time
+        result_entry: Dict[str, Any] = {"text": item["text"], "texts": processed_result, "time": elapsed_time}
+        
+        result_data["datas"].append(result_entry)
+        result_data["count"] = count
+        result_data["time"] = time.time() - total_start_time
+        
+        with open(output_path, "w", encoding="utf-8") as file:
+            json.dump(result_data, file, ensure_ascii=False, indent=4)
+        
+        print(f"Processando {count}: {item['text']}")
+        print(f"Retorno do modelo: {processed_result}")
+        print(f"Tempo gasto: {elapsed_time:.2f} segundos\n")
+    
+    print(f"Processamento concluído. Tempo total: {result_data['time']:.2f} segundos.")
+    print(f"Resultado salvo em {output_path}")
+
 template = """
 A metodologia **RASE N1** transforma textos em unidades menores, onde cada unidade contém **apenas uma única regra computável** com métricas claras.  
 
@@ -112,9 +150,9 @@ Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.
 """
 
 input_file: str = "../databases/data_n1.json"
-output_file: str = "../databases/generate_n1_llama.json"
-model_llama: str = "llama3.3"
-model_alpaca: str = "splitpierre/bode-alpaca-pt-br"
 
-generate_n1(input_file, output_file, template, model_llama)
-print(f"Processamento concluído. Resultado salvo em {output_file}")
+output_file_llama: str = "../databases/generate_n1_llama.json"
+model_llama: str = "llama3.3"
+
+
+generate_n1(input_file, output_file_llama, template, model_llama)
