@@ -28,10 +28,10 @@ A metodologia **RASE N2** transforma textos normativos em uma estrutura organiza
 ---
 
 ## **Regras obrigatórias**  
-✅ **O requisito deve vir SOMENTE do TEXTO N1.**  
-✅ **A aplicabilidade deve ser um objeto/área e não pode conter verbos.**  
-✅ **Se um elemento não existir, retornar `""` (string vazia), nunca "Nenhum selecionável" ou "None".**  
-✅ **Se um elemento estiver dentro do requisito, ele deve ser removido do requisito.**  
+**O requisito deve vir SOMENTE do TEXTO N1.**  
+**A aplicabilidade deve ser um objeto/área e não pode conter verbos.**  
+**Se um elemento não existir, retornar `""` (string vazia), nunca "Nenhum selecionável" ou "None".**  
+**Se um elemento estiver dentro do requisito, ele deve ser removido do requisito.**  
 
 ---
 
