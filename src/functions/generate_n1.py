@@ -3,8 +3,38 @@ from langchain_core.prompts import ChatPromptTemplate
 import json
 import re
 import time
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Literal, Tuple
 from langchain_core.runnables import RunnableSerializable
+
+Tipo = Literal["n1", "n2", "n3"]
+Modelo = Literal["llama", "alpaca", "mistral", "dolphin"]
+
+def generate_config(tipo: Tipo, modelo: Modelo) -> Tuple[str, str, str]:
+    input_file = f"../databases/data_{tipo}.json"
+
+    modelos = {
+        "llama": {
+            "output_file": f"../databases/generate_{tipo}_llama.json",
+            "model": "llama3.3:latest"
+        },
+        "alpaca": {
+            "output_file": f"../databases/generate_{tipo}_alpaca.json",
+            "model": "splitpierre/bode-alpaca-pt-br:latest"
+        },
+        "mistral": {
+            "output_file": f"../databases/generate_{tipo}_mistral.json",
+            "model": "cnmoro/mistral_7b_portuguese:q2_K"
+        },
+        "dolphin": {
+            "output_file": f"../databases/generate_{tipo}_dolphin.json",
+            "model": "cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4_k_m"
+        }
+    }
+
+    output_file = modelos[modelo]["output_file"]
+    model = modelos[modelo]["model"]
+
+    return input_file, output_file, model
 
 def process_text(text: str) -> List[str]:
     """
@@ -21,22 +51,11 @@ def process_text(text: str) -> List[str]:
         - list: Lista de sentenças processadas.
     """
     
-    sentences: List[str] = re.split(r'(?<!\d)(\.)\n|\n|(?<!\d)(\.)(?!\d)', text.strip())
-    processed_sentences: List[str] = []
-    temp_sentence: str = ""
+    text = re.sub(r'\s+', ' ', text.strip())
     
-    for part in sentences:
-        if part is None:
-            continue
-        temp_sentence += part.strip()
-        if part.strip() == ".":
-            processed_sentences.append(temp_sentence.strip())
-            temp_sentence = ""
-    
-    if temp_sentence:
-        processed_sentences.append(temp_sentence.strip())
-    
-    return processed_sentences
+    sentences = re.split(r'(?<!\b[A-Z])\.\s+(?![a-z])', text)
+
+    return [s.strip() + '.' if not s.strip().endswith('.') else s.strip() for s in sentences if s.strip()]
 
 def generate_n1(input_path: str, output_path: str, template: str, model: str) -> None:
     """
@@ -149,10 +168,6 @@ Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.
 #### **Resposta:**    
 """
 
-input_file: str = "../databases/data_n1.json"
+input_file, output_file, model = generate_config("n1", "llama")
 
-output_file_llama: str = "../databases/generate_n1_llama.json"
-model_llama: str = "llama3.3"
-
-
-generate_n1(input_file, output_file_llama, template, model_llama)
+generate_n1(input_file, output_file, template, model)

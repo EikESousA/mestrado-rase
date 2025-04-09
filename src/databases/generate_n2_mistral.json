@@ -1,0 +1,1914 @@
+{
+    "count": 159,
+    "datas": [
+        {
+            "transform": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis.",
+            "text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis. As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum. As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis. Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " \"As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis.\"",
+            "time": 0.6782701015472412
+        },
+        {
+            "transform": "As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum.",
+            "text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis. As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum. As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis. Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+            "result": {
+                "aplicabilidade": "\"necessitam ser acessíveis\" (em seus espaços de uso comum)",
+                "selecao": "\"\" (string vazia)",
+                "execao": "\"\" (string vazia)",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"necessitam ser acessíveis\" (em seus espaços de uso comum)\nSeleção: \"\" (string vazia)\nExceção: \"\" (string vazia)\nRequerimento: \"necessitam ser acessíveis\"",
+            "time": 0.4874868392944336
+        },
+        {
+            "transform": "As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis.",
+            "text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis. As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum. As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis. Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+            "result": {
+                "aplicabilidade": "\"unidades autônomas\"",
+                "selecao": "-",
+                "execao": "-",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"unidades autônomas\"\nSeleção: -\nExceção: -\nRequirement: \"devem estar conectados a rotas acesíveis\"",
+            "time": 0.34401941299438477
+        },
+        {
+            "transform": "Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+            "text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis. As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum. As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis. Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+            "result": {
+                "aplicabilidade": "\"Áreas de uso restrito\"",
+                "selecao": "",
+                "execao": "\"\"",
+                "requisito": ""
+            },
+            "full": " \"Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.\"\n\nAplicabilidade: \"Áreas de uso restrito\"\nSeção: \"\"\nExceção: \"\"\nRequisitos: \"não precisam atender às condições de acessibilidade da Norma\"",
+            "time": 0.9016549587249756
+        },
+        {
+            "transform": "Nas edificações e equipamentos urbanos, todas as entradas, bem como as rotas de interligação às funções do edifício, devem ser acessíveis.",
+            "text": "Nas edificações e equipamentos urbanos, todas as entradas, bem como as rotas de interligação às funções do edifício, devem ser acessíveis.",
+            "result": {
+                "aplicabilidade": "\"Nas edificações e equipamentos urbanos\", Seleção: \"\" (string vazia), Exceção: \"\" (string vazia), Requirement: \"todo as entradas, bem como as rotas de interligação para as funções do edifício, devem ser acessíveis\".",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Nas edificações e equipamentos urbanos\", Seleção: \"\" (string vazia), Exceção: \"\" (string vazia), Requirement: \"todo as entradas, bem como as rotas de interligação para as funções do edifício, devem ser acessíveis\".",
+            "time": 0.5802497863769531
+        },
+        {
+            "transform": "Os acessos devem ser vinculados através de rota acessível à circulação principal e às circulações de emergência.",
+            "text": "Os acessos devem ser vinculados através de rota acessível à circulação principal e às circulações de emergência. Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.",
+            "result": {
+                "aplicabilidade": "\"O acesso é apenas para a circulação principal e às circulações de emergência\".",
+                "selecao": "\"Acesso ao ciruitos de acessível\".",
+                "execao": "Não aplica.",
+                "requisito": "\"Links devem ser vinculados através da circulação principal e circundar as circulação de emergência\"."
+            },
+            "full": " Aplicabilidade: \"O acesso é apenas para a circulação principal e às circulações de emergência\".\nSeleção: \"Acesso ao ciruitos de acessível\".\nExceção: Não aplica.\nRequisito: \"Links devem ser vinculados através da circulação principal e circundar as circulação de emergência\".",
+            "time": 0.6330380439758301
+        },
+        {
+            "transform": "Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.",
+            "text": "Os acessos devem ser vinculados através de rota acessível à circulação principal e às circulações de emergência. Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - \"Os acessos devem permanecer livres de qualquer obstáculo de uma forma permanente.\"",
+            "time": 0.20876431465148926
+        },
+        {
+            "transform": "A instalação do dispositivo acessível para controle de acesso deve prever manobra de cadeira de rodas, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5.",
+            "text": "A instalação do dispositivo acessível para controle de acesso deve prever manobra de cadeira de rodas, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5, e os eventuais comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " \"A instalação do dispositivo acessível para controle de acesso deve prever manobra de cadeira de rodas, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5.\"\n\n**Aplicabilidade**: não-aplicável\n**Seleção**: A instalação do dispositivo acessível para controle de acesso\n**Exceção**: Não há exceções no texto\n**Requisito**: A instalação do dispositivo acessível para controle de acesso prevem manobra de cadeira rodada, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5.",
+            "time": 1.2321803569793701
+        },
+        {
+            "transform": "E os eventuais comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9.",
+            "text": "A instalação do dispositivo acessível para controle de acesso deve prever manobra de cadeira de rodas, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5, e os eventuais comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Seus eventuais comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9.",
+            "time": 0.2816603183746338
+        },
+        {
+            "transform": "Em edificações e equipamentos urbanos deve ser prevista a sinalização informativa e direcional da localização das entradas e saídas acessíveis, de acordo com o estabelecido na Seção 5.",
+            "text": "Deve ser prevista a sinalização informativa e direcional da localização das entradas e saídas acessíveis, de acordo com o estabelecido na Seção 5.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - Aplicabilidade: \"Em edifícios e equipamentos urbanos\" (sem)\n- Seleção: \"a localização das entradas acessíveis e saídas\"\n- Exceção: \"\" (em branco)\n- Requisito: \"deve ser previsto a sinalização informativa e direcional da localização das entradas acessíveis e saídas\"",
+            "time": 0.704608678817749
+        },
+        {
+            "transform": "A inclinação transversal de pisos internos não pode exceder 2%.",
+            "text": "A inclinação transversal da superfície deve ser de até 2 % para pisosinternos e de até 3 % para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5 %. Inclinações iguais ou superioresa 5 % são consideradas rampas e, portanto, devem atender a 6.6.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " \"A inclinação transversal de pisos internos não pode exceder 2%\".",
+            "time": 0.18380117416381836
+        },
+        {
+            "transform": "A inclinação transversal de pisos externos não pode exceder 3%.",
+            "text": "A inclinação transversal da superfície deve ser de até 2 % para pisosinternos e de até 3 % para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5 %. Inclinações iguais ou superioresa 5 % são consideradas rampas e, portanto, devem atender a 6.6.",
+            "result": {
+                "aplicabilidade": "\"A inclinação transversal de pisos externos não pode exceder 3%\".",
+                "selecao": "\"deve ser a inclinação transversal de pisos externos\".",
+                "execao": "\"não é aplicável\".",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A inclinação transversal de pisos externos não pode exceder 3%\".\nSeleção: \"deve ser a inclinação transversal de pisos externos\".\nExceção: \"não é aplicável\".\nRequirement: \"a inclinação transversal de pisos externos deve não exceder 3%\".",
+            "time": 0.639411211013794
+        },
+        {
+            "transform": "Pisos internos e externos devem ter inclinação longitudinal inferior a 5%.",
+            "text": "A inclinação transversal da superfície deve ser de até 2 % para pisosinternos e de até 3 % para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5 %. Inclinações iguais ou superioresa 5 % são consideradas rampas e, portanto, devem atender a 6.6.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há informação relevante nos parâmetros fornecidos.",
+            "time": 0.1415083408355713
+        },
+        {
+            "transform": "Inclinações iguais ou superiores a 5% são consideradas rampas e, portanto, devem atender a 6.6.",
+            "text": "A inclinação transversal da superfície deve ser de até 2 % para pisosinternos e de até 3 % para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5 %. Inclinações iguais ou superioresa 5 % são consideradas rampas e, portanto, devem atender a 6.6.",
+            "result": {
+                "aplicabilidade": "Todos os requisitos que se aplicam às inclinações iguais ou superiores a 5%. Seleção: Nenhum. Exceção: Nenhum. Requirement: Todas as inclinações iguais ou superiores a 5% devem atender a 6.6.",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: Todos os requisitos que se aplicam às inclinações iguais ou superiores a 5%. Seleção: Nenhum. Exceção: Nenhum. Requirement: Todas as inclinações iguais ou superiores a 5% devem atender a 6.6.",
+            "time": 0.5403687953948975
+        },
+        {
+            "transform": "Em reformas, pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, conforme Tabela 7, sem avançar nas áreas de circulação transversal, e protegido lateralmente com elemento construído ou vegetação.",
+            "text": "Em reformas, pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, conforme Tabela 7, sem avançar nas áreas de circulação transversal, e protegido lateralmente com elemento construído ou vegetação.",
+            "result": {
+                "aplicabilidade": "\"Em reformas, pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, conforme Tabela 7, sem avançar nas áreas de circulação transversal, e protegido lateralmente com elemento construído ou vegetação\".",
+                "selecao": "\"Pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, sem avançar nas áreas de circulação transversal e protegido lateralmente com elementos construídos ou vegetação\".",
+                "execao": "Vazio.",
+                "requisito": ""
+            },
+            "full": " \"Em reformas, pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, conforme Tabela 7, sem avançar nas áreas de circulação transversal, e protegido lateralmente com elemento construído ou vegetação\".\n\nAplicabilidade: \"Em reformas, pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, conforme Tabela 7, sem avançar nas áreas de circulação transversal, e protegido lateralmente com elemento construído ou vegetação\".\n\nSeleção: \"Pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, sem avançar nas áreas de circulação transversal e protegido lateralmente com elementos construídos ou vegetação\".\n\nExceção: Vazio.\n\nRequerimento: \"Pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, sem avançar nas áreas de circulação transversal e protegido lateralmente com elementos construídos ou vegetação\".",
+            "time": 2.1507935523986816
+        },
+        {
+            "transform": "As soleiras das portas ou vãos de passagem que apresentem desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nos itens 6.6.2.1 ou 6.6.2.7.",
+            "text": "As soleiras das portas ou vãos de passagem que apresentem desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.",
+            "result": {
+                "aplicabilidade": "\"As portas ou passageiras que apresentam desníveis de até no máximo um degrau\"",
+                "selecao": "\"desníveis de até no máximo um degrau\"",
+                "execao": "nenhuma (não é apresentado)",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"As portas ou passageiras que apresentam desníveis de até no máximo um degrau\"\nSeleção: \"desníveis de até no máximo um degrau\"\nExceção: nenhuma (não é apresentado)\nRequerimento: \"deve ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nos itens 6.6.2.1 ou 6.6.2.7\".",
+            "time": 1.0474026203155518
+        },
+        {
+            "transform": "Parte do desnível deve ser vencida com rampa, e o restante da extensão [degrau] pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.",
+            "text": "As soleiras das portas ou vãos de passagem que apresentem desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Nenhuma seleção.\nO texto fornecido é uma declaração complexa que inclui vários elementos obrigatórios, mas não tem um elemento de aplicabilidade ou seleção. Portanto, o elemento de aplicabilidade e a seleção são opcionais neste caso. O elemento de exceção é necessário para descrever uma situação específica em que a regra não se aplica.",
+            "time": 0.7126007080078125
+        },
+        {
+            "transform": "A superfície das tampas deve estar nivelada com o piso adjacente.",
+            "text": "A superfície das tampas deve estar nivelada com o piso adjacente, e eventuais frestas devem possuir dimensão máxima de 15 mm.",
+            "result": {
+                "aplicabilidade": "\"\"",
+                "selecao": "\"A superfície das tampas deve ser nivelada com o piso adjacente.\" (seleção)",
+                "execao": "\"\"",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"\"\nSeleção: \"A superfície das tampas deve ser nivelada com o piso adjacente.\" (seleção)\nExceção: \"\"\nRequirement: \"O solaço da tampa deve estar nivelado com o piso adjacente\".",
+            "time": 0.5038228034973145
+        },
+        {
+            "transform": "Eventuais frestas devem possuir dimensão máxima de 15 mm.",
+            "text": "A superfície das tampas deve estar nivelada com o piso adjacente, e eventuais frestas devem possuir dimensão máxima de 15 mm.",
+            "result": {
+                "aplicabilidade": "\"falta de teto\"",
+                "selecao": "\"limite de diâmetro máximo de 15mm\"",
+                "execao": "\"não aplica\" (em inglês)",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"falta de teto\"\nSeleção: \"limite de diâmetro máximo de 15mm\"\nExceção: \"não aplica\" (em inglês)\nRequerimento: \"dimensão máxima da fresta deve possuir um limite de 15 mm\"",
+            "time": 0.5654604434967041
+        },
+        {
+            "transform": "A sinalização visual e tátil no piso deve atender ao disposto em 5.4.6 e em normas específicas.",
+            "text": "A sinalização visual e tátil no piso indica situações de risco e direção. Deve atender ao disposto em 5.4.6 e em normas específicas.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não conterá um elemento na seleção, pois é uma subconjugação da aplicabilidade.",
+            "time": 0.21350359916687012
+        },
+        {
+            "transform": "Quando em ambientes fechados, as rotas de fuga devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.",
+            "text": "Quando em ambientes fechados, as rotas de fuga devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.",
+            "result": {
+                "aplicabilidade": "Não há.",
+                "selecao": "\"as rotas de fuga\" (só a seleção).",
+                "execao": "Não há.",
+                "requisito": ""
+            },
+            "full": " \"Quando em ambientes fechados, as rotas de fuga devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898\".\n\naplicabilidade: Não há.\nseleção: \"as rotas de fuga\" (só a seleção).\nexceção: Não há.\nrequisimento: \"devem ser sinalizadas conforme o disposto na Seção 5 e iluminados com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898\".",
+            "time": 1.1487092971801758
+        },
+        {
+            "transform": "Nas áreas de resgate, deve ser previsto no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência.",
+            "text": "Nas áreas de resgate, deve ser previsto no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência. Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R. pode ser compartilhado.",
+            "result": {
+                "aplicabilidade": "\"Nas áreas de resgate\"",
+                "selecao": "\"deve ser prevido no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência\".",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Nas áreas de resgate, deve ser previsto no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência\".\n\nAplicabilidade: \"Nas áreas de resgate\"\nSeleção: \"deve ser prevido no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência\".",
+            "time": 1.0424909591674805
+        },
+        {
+            "transform": "Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R. pode ser compartilhado.",
+            "text": "Nas áreas de resgate, deve ser previsto no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência. Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R. pode ser compartilhado.",
+            "result": {
+                "aplicabilidade": "Se a antecâmara das escadas e as elevações de emergência forem compartilhadas, o quantitativo de M.R pode ser compartilhado.",
+                "selecao": "Nenhuma.",
+                "execao": "Nenhuma.",
+                "requisito": "Se a antecâmara das escadas e as elevações de emergência forem comuns, o quantitativo de M.R pode ser compartilhado."
+            },
+            "full": " Aplicabilidade: Se a antecâmara das escadas e as elevações de emergência forem compartilhadas, o quantitativo de M.R pode ser compartilhado.\nSeleção: Nenhuma.\nExceção: Nenhuma.\nRequisito: Se a antecâmara das escadas e as elevações de emergência forem comuns, o quantitativo de M.R pode ser compartilhado.",
+            "time": 0.752368688583374
+        },
+        {
+            "transform": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação.",
+            "text": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação, ou a cada 30 m, para piso de 3 % a 5 % de inclinação. Recomenda-se a instalação de bancos com encosto e braços. Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6. Estas áreas devem estar dimensionadas para permitir também a manobra de cadeiras de rodas.",
+            "result": {
+                "aplicabilidade": "\"Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação\".",
+                "selecao": "\"A área de descanso, fora da faixa de circulação, para piso com até 3 % de inclinação\".",
+                "execao": "Não se aplicabilidade.",
+                "requisito": "\"Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 metros, para piso com até 3% de inclinação\"."
+            },
+            "full": " Aplicabilidade: \"Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação\".\n\nSeleção: \"A área de descanso, fora da faixa de circulação, para piso com até 3 % de inclinação\".\n\nExceção: Não se aplicabilidade.\n\nRequisito: \"Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 metros, para piso com até 3% de inclinação\".",
+            "time": 1.029709815979004
+        },
+        {
+            "transform": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 30 m, para piso de 3 % a 5 % de inclinação.",
+            "text": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação, ou a cada 30 m, para piso de 3 % a 5 % de inclinação. Recomenda-se a instalação de bancos com encosto e braços. Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6. Estas áreas devem estar dimensionadas para permitir também a manobra de cadeiras de rodas.",
+            "result": {
+                "aplicabilidade": "\"para piso de 3% a 5% de inclinação\" (string vazia)",
+                "selecao": "\"em uma área de descanso, fora da faixa de circulação\" (string vazia)",
+                "execao": "\"não aplicabilidade e seleção\"",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"para piso de 3% a 5% de inclinação\" (string vazia)\nSeleção: \"em uma área de descanso, fora da faixa de circulação\" (string vazia)\nExceção: \"não aplicabilidade e seleção\"\nRequirement: \"Recomenda-se prever uma área de descanso, fora da faixa de circulação, cada 30 metros, para piso de 3% a 5%, que é feito fora da faixa de circulação\"",
+            "time": 0.9029972553253174
+        },
+        {
+            "transform": "Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6.",
+            "text": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação, ou a cada 30 m, para piso de 3 % a 5 % de inclinação. Recomenda-se a instalação de bancos com encosto e braços. Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6. Estas áreas devem estar dimensionadas para permitir também a manobra de cadeiras de rodas.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - Não há elementos obrigatórios no texto, pois a regra é especificada usando \"para atender\" e \"descrito\".",
+            "time": 0.2665543556213379
+        },
+        {
+            "transform": "As áreas de descanso devem estar dimensionadas para permitir a manobra de cadeiras de rodas.",
+            "text": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação, ou a cada 30 m, para piso de 3 % a 5 % de inclinação. Recomenda-se a instalação de bancos com encosto e braços. Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6. Estas áreas devem estar dimensionadas para permitir também a manobra de cadeiras de rodas.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Com base nas regras fornecidas, o elemento \"áreas de descanso\" é aplicabilidade, o \"dimensionado para permitir a manobra de cadeiras de rodas\" é a seleção, não há exceções, e a ação ou condição principal é \"as áreas de descanso devem ser dimensionadas\".",
+            "time": 0.5939416885375977
+        },
+        {
+            "transform": "Nas áreas de descanso recomenda-se a instalação de bancos com encosto e braços.",
+            "text": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação, ou a cada 30 m, para piso de 3 % a 5 % de inclinação. Recomenda-se a instalação de bancos com encosto e braços. Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6. Estas áreas devem estar dimensionadas para permitir também a manobra de cadeiras de rodas.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O texto está no formato RASE N2. Os elementos foram extraídos apenas do Texto N1, e cada parte aparece apenas uma vez na ordem Aplicabilidade > Seleção > Exceção > Requisito.\n\n- Aplicabilidade: \"Nas áreas de descanso recomenda-se a instalação de bancos com encosto e braças\". (string vazia)\n- Seleção: Não se aplica.\n- Exceção: Não se aplica.\n- Requisito: \"recomendado\" que não está na seleção e expressa uma ação clara, começa com um verbo.",
+            "time": 1.0893170833587646
+        },
+        {
+            "transform": "As rampas devem ter inclinações entre 5% (1:20) e 8,33% (1:12) e devem atender os desníveis máximos por segmento e número de segmentos deste item, exceto rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).",
+            "text": "As rampas devem ter inclinação de acordo com os limites estabelecidos na Tabela 6. Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso. Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "\"As ramps\"",
+                "execao": "\"exceto rampas citadas em 10.4 (pateias e palco), 10.12 (bays) e 10.14 (bays)\"",
+                "requisito": "\"A rampa deve ter inclinações entre 5% (1:20) e 8,33% (1:12) e deve atender os desníveis máximos por segmento e número de segmentos deste item, exceto rampas citadas em 10.4 (pateias e palcos), 10.12 (bays) e 10.14 (praias).\""
+            },
+            "full": " Aplicabilidade:\n    aplicabilidade:\n        Seleção: \"A rampa deve ter inclinações entre 5% (1:20) e 8,33% (1:12) e deve atender os desníveis máximos por segmento e número de segmentos deste item, exceto rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (bays).\"\n\nSeleção: \"As ramps\"\nExceção: \"exceto rampas citadas em 10.4 (pateias e palco), 10.12 (bays) e 10.14 (bays)\"\nRequisito: \"A rampa deve ter inclinações entre 5% (1:20) e 8,33% (1:12) e deve atender os desníveis máximos por segmento e número de segmentos deste item, exceto rampas citadas em 10.4 (pateias e palcos), 10.12 (bays) e 10.14 (praias).\"",
+            "time": 1.9637494087219238
+        },
+        {
+            "transform": "Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso.",
+            "text": "As rampas devem ter inclinação de acordo com os limites estabelecidos na Tabela 6. Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso. Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).",
+            "result": {
+                "aplicabilidade": "\"Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso\".",
+                "selecao": "\"Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso\".",
+                "execao": "Não existem exceções na regra \"Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso\".",
+                "requisito": "\"Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso\"."
+            },
+            "full": " Aplicabilidade: \"Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso\".\nSeleção: \"Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso\".\nExceção: Não existem exceções na regra \"Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso\".\nRequisito: \"Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso\".",
+            "time": 1.7268354892730713
+        },
+        {
+            "transform": "Rampas com declividade igual a 5% (1:20) devem ter desnível máximo de 1,50 m por segmento, sem limite de número de segmentos.",
+            "text": "As rampas devem ter inclinação de acordo com os limites estabelecidos na Tabela 6. Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso. Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).",
+            "result": {
+                "aplicabilidade": "\"Rampas com declividade igual a 5% (1:20) devem ter desnívo máximo de 1,50 m por segmento, sem limite de número de segmentos.\"",
+                "selecao": "\"Rampas com declividade igual a 5%\".",
+                "execao": "nenhum.",
+                "requisito": "\"Devem ter desnívo máximo de 1,50 m por segmento, sem limite de número de segmentos.\""
+            },
+            "full": " Aplicabilidade: \"Rampas com declividade igual a 5% (1:20) devem ter desnívo máximo de 1,50 m por segmento, sem limite de número de segmentos.\"\nSeleção: \"Rampas com declividade igual a 5%\".\nExceção: nenhum.\nRequisito: \"Devem ter desnívo máximo de 1,50 m por segmento, sem limite de número de segmentos.\"",
+            "time": 0.8494913578033447
+        },
+        {
+            "transform": "Rampas com declividade maior do que 5% (1:20) e até 6,25% (1:16) devem ter desnível máximo de 1,00 m por segmento, sem limite de número de segmentos.",
+            "text": "As rampas devem ter inclinação de acordo com os limites estabelecidos na Tabela 6. Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso. Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O texto N1 fornece uma regra para rampas com declividade maior do que 5% (1:20) e até 6,25% (1:16). A declividade deve ter um desnívo máximo de 1,00 m por segmento sem limite de número de segmentos.",
+            "time": 0.560845136642456
+        },
+        {
+            "transform": "Rampas com declividade maior do que 6,25% (1:16) e até 8,33% (1:12) devem ter desnível máximo de 0,80 m por segmento, com no máximo 15 segmentos e ter áreas de descanso nos patamares a cada 50,00 m de percurso horizontal.",
+            "text": "As rampas devem ter inclinação de acordo com os limites estabelecidos na Tabela 6. Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso. Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).",
+            "result": {
+                "aplicabilidade": "\"Rampas com declividade maior do que 6,25% (1:16) e até 8,33% (1:12) devem ter desnível máximo de 0,80 m por segmento.\"",
+                "selecao": "\"desnível máximo é de 0,80 metros por segmento.\"",
+                "execao": "\"\"",
+                "requisito": "\"O rampa deve ter uma área de descanso a cada 50,00 metros de percurso horizontal\"."
+            },
+            "full": " Aplicabilidade: \"Rampas com declividade maior do que 6,25% (1:16) e até 8,33% (1:12) devem ter desnível máximo de 0,80 m por segmento.\"\nSeleção: \"desnível máximo é de 0,80 metros por segmento.\"\nExceção: \"\"\nRequisito: \"O rampa deve ter uma área de descanso a cada 50,00 metros de percurso horizontal\".",
+            "time": 0.9208791255950928
+        },
+        {
+            "transform": "Para rampas em curva, a inclinação máxima admissível é de 8,33 % (1:12) e o raio mínimo de 3,00 m, medido no perímetro interno à curva.",
+            "text": "Para rampas em curva, a inclinação máxima admissível é de 8,33 % (1:12) e o raio mínimo de 3,00 m, medido no perímetro interno à curva, conforme Figura 71.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não é possível extrair \"raion minimo de 3.0 m\" como seleção, pois não é um subconjunto da aplicabilidade.",
+            "time": 0.29869627952575684
+        },
+        {
+            "transform": "A dimensão longitudinal mínima do patamar é de 1,20 m, e recomendável 1,50 m.",
+            "text": "Para rampas em curva, a inclinação máxima admissível é de 8,33 % (1:12) e o raio mínimo de 3,00 m, medido no perímetro interno à curva, conforme Figura 71.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há aplicabilidade.\nNão há seleção.\nA exceção não está presente.\nRequirement: \"recomendar\".",
+            "time": 0.26657557487487793
+        },
+        {
+            "transform": "A largura para as rampas em rotas acessíveis deve ser no mínimo 1,20 m, e recomendável 1,50m.",
+            "text": "A largura livre mínima recomendável para as rampas em rotas acessíveis é de 1,50 m, sendo o mínimo admissível de 1,20 m.",
+            "result": {
+                "aplicabilidade": "\"A largura para as rampas em rotas acessíveis deve ser no mínimo 1,20 m, e recomendável 1,50m.\"",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A largura para as rampas em rotas acessíveis deve ser no mínimo 1,20 m, e recomendável 1,50m.\"\nO objetivo: \"The width for access ramps should be at least 1.20 meters and recommended to be 1.50 meters.\"",
+            "time": 0.5789861679077148
+        },
+        {
+            "transform": "Quando não houver paredes laterais, as rampas devem incorporar elementos de segurança, como guarda-corpo e corrimãos, guias de balizamento com altura mínima de 0,05 m, instalados ou construídos nos limites da largura da rampa, conforme Figura 72.",
+            "text": "Quando não houver paredes laterais, as rampas devem incorporar elementos de segurança, como guarda-corpo e corrimãos, guias de balizamento com altura mínima de 0,05 m, instalados ou construídos nos limites da largura da rampa, conforme Figura 72.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O texto não contém elementos de aplicabilidade, seleção ou exceção. Além disso, o requisito é: \"Quando não houver paredes laterais, as rampas devem incorporar elementos de segurança, como guarda-corpo e corrimãos, guias de balizamento com altura mínima de 0,05 metros, instalados ou construídos nos limites da largura da rampa\".",
+            "time": 0.7859673500061035
+        },
+        {
+            "transform": "A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5cm.",
+            "text": "A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm. Deve atender às especificações da Figura 72 e ser garantida em rampas e em escadas.",
+            "result": {
+                "aplicabilidade": "\"A guia pode ser feita de alvenaria ou outro material alternativo, com altura mínima de 5cm\".",
+                "selecao": "\"\" (string vazia).",
+                "execao": "\"\" (string vazia).",
+                "requisito": "\"a guia deve ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5cm\"."
+            },
+            "full": " Aplicabilidade: \"A guia pode ser feita de alvenaria ou outro material alternativo, com altura mínima de 5cm\".\nSeleção: \"\" (string vazia).\nExceção: \"\" (string vazia).\nRequisito: \"a guia deve ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5cm\".",
+            "time": 0.7079339027404785
+        },
+        {
+            "transform": "Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
+            "text": "Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Nenhuma informação no texto encontra-se apresentando.",
+            "time": 0.15161561965942383
+        },
+        {
+            "transform": "Nas escadas fixas e degraus em rotas acessíveis, não podem ser utilizados espelhos vazados.",
+            "text": "Nas rotas acessíveis não podem ser utilizados degraus e escadas fixas com espelhos vazados. Quando houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há seleção ou exceção neste texto.",
+            "time": 0.12433075904846191
+        },
+        {
+            "transform": "Se houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo.",
+            "text": "Nas rotas acessíveis não podem ser utilizados degraus e escadas fixas com espelhos vazados. Quando houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "Não há necessidades de exceção.",
+                "requisito": ""
+            },
+            "full": " Uma aplicabilidade: Se houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo.\nUma seleção: Não há necessidades de especificação.\nExceção: Não há necessidades de exceção.\nRequerimento: Se houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo.",
+            "time": 0.9062409400939941
+        },
+        {
+            "transform": "a) a equação (piso + 2*espelho) deve ser maior ou igual a 0,63 m e menor ou igual a 0,65 m.",
+            "text": "As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados. Para o dimensionamento, devem ser atendidas as seguintes condições: a) 0,63 m ≤ p + 2e ≤ 0,65 m, b) pisos (p): 0,28 m ≤ p ≤ 0,32 m e c) espelhos (e): 0,16 m ≤ e ≤ 0,18 m;",
+            "result": {
+                "aplicabilidade": "\"a equação (piso + 2*espelho) deve ser maior ou igual a 0,63 m e menor ou igual a 0,65 m\".",
+                "selecao": "\"a equação (piso + 2*espelho)\".",
+                "execao": "Em branco.",
+                "requisito": "\"a equação (piso + 2*espelho) deve ser maior ou igual a 0,63 m e menor ou igual a 0,65 m\"."
+            },
+            "full": " Aplicabilidade: \"a equação (piso + 2*espelho) deve ser maior ou igual a 0,63 m e menor ou igual a 0,65 m\".\nSeleção: \"a equação (piso + 2*espelho)\".\nExceção: Em branco.\nRequisito: \"a equação (piso + 2*espelho) deve ser maior ou igual a 0,63 m e menor ou igual a 0,65 m\".",
+            "time": 0.8961162567138672
+        },
+        {
+            "transform": "b) a profundidade do piso deve ser maior ou igual a 0,28 m e menor ou igual a 0,32 m.",
+            "text": "As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados. Para o dimensionamento, devem ser atendidas as seguintes condições: a) 0,63 m ≤ p + 2e ≤ 0,65 m, b) pisos (p): 0,28 m ≤ p ≤ 0,32 m e c) espelhos (e): 0,16 m ≤ e ≤ 0,18 m;",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Sinto esto, o texto fornecido não é estruturado no formato \"regra-valor\" comum para as pessoas. Para converte-lo em este formato, podemos usar a metodologia RASE N2. Veja como o texto pode ser processado usando este formato:\n\n---\n\n### **Aplicabilidade**\n- **Onde ou quando a regra se aplica.**\n- Extraído do texto 1, antes de outros elementos.\n- Não tem verbos, ações ou condições.\n\n### **Seleção**\n- **Parte mais específica da aplicabilidade.**\n- Extraído após a remoção da aplicabilidade do texto 1.\n- Não tem verbos, ações ou condições.\n\n### **Exceção**\n- **Casos que não devem seguir a regra.**\n- Extraído após a remoção da seleção do texto 1.\n- Se um elemento é uma exceção, ele não pode estar em outro campo.\n\n### **Requisito**\n- **O que deve ser feito (ação ou condição).**\n- Extraído após a remoção da aplicabilidade, seleção e exceção do texto 1.\n- Não tem informações da aplicabilidade, seleção ou exceção.\n- O requisito deve começar com um verbo e expressar uma ação clara.\n\n---\n\n### **Regras obrigatórias**\nO texto não está estruturado no formato \"regra-valor\" comum, então não é possível processá-lo usando as regras obrigatórias da metodologia RASE N2. O texto fornecido precisa ser estruturado no formato \"regra-valor\" comum antes de ser processado.",
+            "time": 3.15069842338562
+        },
+        {
+            "transform": "c) a altura do espelho deve ser maior ou igual a 0,16 m e menou ou igual a 0,18 m.",
+            "text": "As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados. Para o dimensionamento, devem ser atendidas as seguintes condições: a) 0,63 m ≤ p + 2e ≤ 0,65 m, b) pisos (p): 0,28 m ≤ p ≤ 0,32 m e c) espelhos (e): 0,16 m ≤ e ≤ 0,18 m;",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " requisitada: \"deve ser maior ou igual a 0.16 m e menou ou igual a 0,18 m\".",
+            "time": 0.26715755462646484
+        },
+        {
+            "transform": "Em construções novas, o primeiro e o último degraus de um lance de escada devem distar no mínimo 0,30 m da área de circulação adjacente.",
+            "text": "Em construções novas, o primeiro e o último degraus de um lance deescada devem distar no mínimo 0,30 m da área de circulação adjacente e devem estar sinalizados de acordo com o disposto na Seção 5.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O texto não tem aplicabilidade e seleção. Não é claro qual é o requisito da regra, pois o primeiro-fio de escada não começa com um verbo que expressa uma ação clara.",
+            "time": 0.4056212902069092
+        },
+        {
+            "transform": "Devem estar sinalizados de acordo com o disposto na Seção 5.",
+            "text": "Em construções novas, o primeiro e o último degraus de um lance deescada devem distar no mínimo 0,30 m da área de circulação adjacente e devem estar sinalizados de acordo com o disposto na Seção 5.",
+            "result": {
+                "aplicabilidade": "\"Devem estender-se com base na Seção 5\".",
+                "selecao": "\"\".",
+                "execao": "\"\".",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Devem estender-se com base na Seção 5\".\nSeleção: \"\".\nExceção: \"\".\nRequerimento: \"Devem ser sinalizados de acordo com o disposto na Seção 5\".",
+            "time": 0.46376800537109375
+        },
+        {
+            "transform": "Escadas com lances curvos ou mistos devem atender à ABNT NBR 9077.",
+            "text": "Escadas com lances curvos ou mistos devem atender à ABNT NBR 9077, porém é necessário que, à distância de 0,55 m da borda interna da escada, correspondente à linha imaginária sobre a qual sobe ou desce uma pessoa que segura o corrimão, os pisos e espelhos sejam dimensionados conforme 6.8.2 e Figura 75.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não encontramos aplicabilidade, seleção ou exceção no texto. O requisimento é \"Escadas com lances curvos ou deslocados devem atender à ABNT NBR 9077\".",
+            "time": 0.39119815826416016
+        },
+        {
+            "transform": "É necessário que, à distância de 0,55 m da borda interna da escada, os pisos e espelhos sejam dimensionados conforme 6.8.2.",
+            "text": "Escadas com lances curvos ou mistos devem atender à ABNT NBR 9077, porém é necessário que, à distância de 0,55 m da borda interna da escada, correspondente à linha imaginária sobre a qual sobe ou desce uma pessoa que segura o corrimão, os pisos e espelhos sejam dimensionados conforme 6.8.2 e Figura 75.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Com base nos requisitos fornecidos, o elemento mais específico da aplicabilidade seria \"à distância de 0,55 m da borda interna da escada\", porque é uma parte mais específica da aplicabilidade.",
+            "time": 0.4401700496673584
+        },
+        {
+            "transform": "Entre os lances da escada devem ser previstos patamares com dimensão longitudinal mínima de 1,20 m.",
+            "text": "Entre os lances da escada devem ser previstos patamares com dimensão longitudinal mínima de 1,20 m. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da escada. Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
+            "result": {
+                "aplicabilidade": "\"Entre as luzes da escada\" (",
+                "selecao": "\"dimensão longitudinal mínima de 1,20 metros\".",
+                "execao": "\"não se aplica\".",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Entre as luzes da escada\" (\nSeleção: \"dimensão longitudinal mínima de 1,20 metros\".\nExceção: \"não se aplica\".\nRequirement: \"Para ser previsto que os passos da escala têm uma dimensão longitudinal mínima de 1,20 metros\".",
+            "time": 0.634943962097168
+        },
+        {
+            "transform": "Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da escada.",
+            "text": "Entre os lances da escada devem ser previstos patamares com dimensão longitudinal mínima de 1,20 m. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da escada. Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "\"os patamares situados em mudanças de direção\".",
+                "execao": "nenhuma.",
+                "requisito": ""
+            },
+            "full": " Aplicação: \"Os patamares situados em mudanças de direção\".\nSeleção: \"os patamares situados em mudanças de direção\".\nExceção: nenhuma.\nRequerimento: \"os patamares situados em mudanças de direção\" (obviamente, não há informações adicionais).",
+            "time": 0.580437183380127
+        },
+        {
+            "transform": "Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
+            "text": "Entre os lances da escada devem ser previstos patamares com dimensão longitudinal mínima de 1,20 m. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da escada. Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "\"Quando houver porta nos patamares\", Seleção: \"Quando houver porta nos patamares\", Exceção: \"\", Requisito: \"Sua área de varredura não pode interferir na dimensão mínima do patamar\".",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " A aplicabilidade: \"Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar\". \nSeleção: \"Quando houver porta nos patamares\", Seleção: \"Quando houver porta nos patamares\", Exceção: \"\", Requisito: \"Sua área de varredura não pode interferir na dimensão mínima do patamar\".",
+            "time": 0.7487316131591797
+        },
+        {
+            "transform": "Os corrimãos podem ser acoplados aos guarda-corpos.",
+            "text": "Os corrimãos podem ser acoplados aos guarda-corpos e devem ser construídos com materiais rígidos. Devem ser firmemente fixados às paredes ou às barras de suporte, garantindo condições seguras de utilização. Devem ser sinalizados conforme a Seção 5.",
+            "result": {
+                "aplicabilidade": "\"Os corrimãos podem ser anexados aos guarda-corpos\".",
+                "selecao": "\"\" (string vazia).",
+                "execao": "\"\" (string vazia).",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Os corrimãos podem ser anexados aos guarda-corpos\".\nSeleção: \"\" (string vazia).\nExceção: \"\" (string vazia).\nRequerimento: \"Os corrimãos podem ser acoplados aos guarda-corpos\".",
+            "time": 0.5265493392944336
+        },
+        {
+            "transform": "Os corrimãos devem ser construídos com materiais rígidos.",
+            "text": "Os corrimãos podem ser acoplados aos guarda-corpos e devem ser construídos com materiais rígidos. Devem ser firmemente fixados às paredes ou às barras de suporte, garantindo condições seguras de utilização. Devem ser sinalizados conforme a Seção 5.",
+            "result": {
+                "aplicabilidade": "Os corrimãos têm que ser construídos com materiais rígidos.",
+                "selecao": "-",
+                "execao": "-",
+                "requisito": "Ocorrem os corrimãos devem ser construídos com materiais rigidos."
+            },
+            "full": " Aplicabilidade: Os corrimãos têm que ser construídos com materiais rígidos.\nSeleção: -\nExceção: -\nRequisito: Ocorrem os corrimãos devem ser construídos com materiais rigidos.",
+            "time": 0.46503305435180664
+        },
+        {
+            "transform": "Os corrimãos devem ser sinalizados conforme a Seção 5.",
+            "text": "Os corrimãos podem ser acoplados aos guarda-corpos e devem ser construídos com materiais rígidos. Devem ser firmemente fixados às paredes ou às barras de suporte, garantindo condições seguras de utilização. Devem ser sinalizados conforme a Seção 5.",
+            "result": {
+                "aplicabilidade": "\"os curimãos\"",
+                "selecao": "\"Seção 5\"",
+                "execao": "\"\" (string vazia)",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"os curimãos\"\nSeleção: \"Seção 5\"\nExceção: \"\" (string vazia)\nRequerimento: \"Os curimãos devem ser sinalizados conforme a Seção 5.\"",
+            "time": 0.44509053230285645
+        },
+        {
+            "transform": "Os corrimãos devem ser instalados em ambos os lados de rampas, a 0,92 m e a 0,70 m do piso, medidos da face superior até a superfície do piso da rampa e do patamar.",
+            "text": "Os corrimãos devem ser instalados em rampas e escadas, em ambos os lados, a 0,92 m e a 0,70 m do piso, medidos da face superior até o ponto central do piso do degrau (no caso de escadas) ou do patamar (no caso de rampas), conforme Figura 76. Quando se tratar de degrau isolado, basta uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso.",
+            "result": {
+                "aplicabilidade": "Ondo ou quando a regra se aplica. Seleção: Parte mais específica da aplicabilidade. Exceção: Não há exceção nesta regra. Requerimento: Os corrimãos devem ser instalados em ambos os lados de rampas, medidas do piso, a 0,92 m e a 0,70 m, medidos da face superior até a superfície do patamar da rampa.",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " \"Os corrimãos devem ser instalados em ambos os lados de rampas, a 0,92 m e a 0,70 m do piso, medidos da face superior até a superfície do piso da rampa e do patamar.\"\n\nAplicabilidade: Ondo ou quando a regra se aplica. Seleção: Parte mais específica da aplicabilidade. Exceção: Não há exceção nesta regra. Requerimento: Os corrimãos devem ser instalados em ambos os lados de rampas, medidas do piso, a 0,92 m e a 0,70 m, medidos da face superior até a superfície do patamar da rampa.",
+            "time": 1.2534339427947998
+        },
+        {
+            "transform": "Os corrimãos devem ser instalados em ambos os lados de escadas, a 0,92 m e a 0,70 m do piso, medidos da face superior até o ponto central do piso do degrau.",
+            "text": "Os corrimãos devem ser instalados em rampas e escadas, em ambos os lados, a 0,92 m e a 0,70 m do piso, medidos da face superior até o ponto central do piso do degrau (no caso de escadas) ou do patamar (no caso de rampas), conforme Figura 76. Quando se tratar de degrau isolado, basta uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso.",
+            "result": {
+                "aplicabilidade": "O sistema de lancheteiramento precisa ser instalado em ambos os lados da escada, medida do piso, a partir da face superior.",
+                "selecao": "-",
+                "execao": "-",
+                "requisito": "Deve-se instalar os corrimãos em ambos os lados da escada, medidas do piso, desde a face superior."
+            },
+            "full": " Aplicabilidade: O sistema de lancheteiramento precisa ser instalado em ambos os lados da escada, medida do piso, a partir da face superior.\nSeleção: -\nExceção: -\nRequisito: Deve-se instalar os corrimãos em ambos os lados da escada, medidas do piso, desde a face superior.",
+            "time": 0.6448345184326172
+        },
+        {
+            "transform": "Quando se tratar de degrau isolado, basta uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso.",
+            "text": "Os corrimãos devem ser instalados em rampas e escadas, em ambos os lados, a 0,92 m e a 0,70 m do piso, medidos da face superior até o ponto central do piso do degrau (no caso de escadas) ou do patamar (no caso de rampas), conforme Figura 76. Quando se tratar de degrau isolado, basta uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso.",
+            "result": {
+                "aplicabilidade": "\"Quando se trata um degrau isolado\"",
+                "selecao": "\"basta uma barra de apoio horizontal ou vertical, com seu eixo posicionado a 0,75 m de altura do piso\".",
+                "execao": "Não se aplica.",
+                "requisito": "\"basta uma barra de apoio horizontal ou vertical\""
+            },
+            "full": " Existem várias partes do texto que podem ser extraídas com base nas regras. Aqui está a saída para cada regra:\n\nAplicabilidade: \"Quando se trata um degrau isolado\"\nSeleção: \"basta uma barra de apoio horizontal ou vertical, com seu eixo posicionado a 0,75 m de altura do piso\".\nExceção: Não se aplica.\nRequisito: \"basta uma barra de apoio horizontal ou vertical\"",
+            "time": 0.8893229961395264
+        },
+        {
+            "transform": "As extremidades dos corrimãos devem ter acabamento recurvado, ser fixadas ou justapostas à parede ou piso, ou ainda ter desenho contínuo, sem protuberâncias.",
+            "text": "As extremidades dos corrimãos devem ter acabamento recurvado, ser fixadas ou justapostas à parede ou piso, ou ainda ter desenho contínuo, sem protuberâncias, conforme Figura 76.",
+            "result": {
+                "aplicabilidade": "\"extremidades dos corrimãos\" (string vazia)",
+                "selecao": "\"extremidades de\" (string vazia)",
+                "execao": "\"sem protuberâncias\" (string vazia)",
+                "requisito": "\"ter desembezzed, fixar ou justapostar à parede ou piso, ou ter o desenho contínuo\""
+            },
+            "full": " Aplicabilidade: \"extremidades dos corrimãos\" (string vazia)\nSeleção: \"extremidades de\" (string vazia)\nExceção: \"sem protuberâncias\" (string vazia)\nRequisito: \"ter desembezzed, fixar ou justapostar à parede ou piso, ou ter o desenho contínuo\"",
+            "time": 0.6600813865661621
+        },
+        {
+            "transform": "Em escadas ou rampas com largura igual ou superior a 2,40 m, é necessária a instalação de no mínimo um corrimão intermediário, garantindo faixa livre de circulação com largura mínima de 1,20 m.",
+            "text": "Quando se tratar de escadas ou rampas com largura igual ou superior a 2,40 m, é necessária a instalação de no mínimo um corrimão intermediário, garantindo faixa de circulação com largura mínima de 1,20 m, conforme Figura 77.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": "- É necessário instalar no mínimo um corrimão intermediário, garantindo faixa livre de circulação com largura mínima de 1,20 metros."
+            },
+            "full": " Nenhuma aplicabilidade, seleção ou exceção é extraída do texto N1. Portanto, todos os elementos são vazios. \n\nRequisito:\n- É necessário instalar no mínimo um corrimão intermediário, garantindo faixa livre de circulação com largura mínima de 1,20 metros.",
+            "time": 0.6332714557647705
+        },
+        {
+            "transform": "Em escadas e degraus é permitida a instalação de apenas um corrimão duplo e com duas alturas, a 0,92 m e a 0,70 m do piso, respeitando a largura mínima de 1,20 m, em ambos os lados.",
+            "text": "Em escadas e degraus é permitida a instalação de apenas um corrimão duplo e com duas alturas, a 0,92 m e a 0,70 m do piso, respeitando a largura mínima de 1,20 m, em ambos os lados, conforme Figura 78.",
+            "result": {
+                "aplicabilidade": "\"Em escadas e degraus é permitido a instalação apenas um corrimão duplo e com duas alturas, a 0,92 m e a 0,70m do piso, respeitando a largura mínima de 1,20m em ambos os lados\".",
+                "selecao": "",
+                "execao": "\"Nenhum\" (em inglês)",
+                "requisito": "Não há necessidade clara."
+            },
+            "full": " Aplicabilidade: \"Em escadas e degraus é permitido a instalação apenas um corrimão duplo e com duas alturas, a 0,92 m e a 0,70m do piso, respeitando a largura mínima de 1,20m em ambos os lados\".\nEscolha: \"\"\nExceção: \"Nenhum\" (em inglês)\nRequisito: Não há necessidade clara.",
+            "time": 0.8059749603271484
+        },
+        {
+            "transform": "Os guarda-corpos devem atender às ABNT NBR 9077 e ABNT 14718.",
+            "text": "Os guarda-corpos devem atender às ABNT NBR 9077 e ABNT 14718.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O texto N1 não tem elementos de aplicabilidade, seleção, exceção e requisito.",
+            "time": 0.20621061325073242
+        },
+        {
+            "transform": "Para transposição de obstáculos, objetos e elementos com no máximo 0,40 m de extensão, a largura mínima do corredor deve ser de 0,80 m.",
+            "text": "Para transposição de obstáculos, objetos e elementos com no máximo 0,40 m de extensão, a largura mínima do corredor deve ser de 0,80 m, conforme 4.3.2. Acima de 0,40 m de extensão, a largura mínima deve ser de 0,90 m.",
+            "result": {
+                "aplicabilidade": "Para transposição de obstáculos, objetos e elementos com no máximo 0,40m de extensão.",
+                "selecao": "",
+                "execao": "-",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: Para transposição de obstáculos, objetos e elementos com no máximo 0,40m de extensão.\nSeletar: -\nExceção: -\nRequerimento: O largura mínimo do corredor deve ser de 0,80 m.",
+            "time": 0.5250468254089355
+        },
+        {
+            "transform": "Para transposição de obstáculos, objetos e elementos com extensão acima de 0,40 m, a largura mínima do corredor deve ser de 0,90 m.",
+            "text": "Para transposição de obstáculos, objetos e elementos com no máximo 0,40 m de extensão, a largura mínima do corredor deve ser de 0,80 m, conforme 4.3.2. Acima de 0,40 m de extensão, a largura mínima deve ser de 0,90 m.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "\"\"",
+                "requisito": ""
+            },
+            "full": " Applicability: \"Para transposição de obstáculos, objetos e elementos com extensão acima de 0,40m\" (string vazia)\nSelection: \"objetos e elementos com extensão acima de 0,40 m\"\nExceção: \"\"\nRequirement: \"a largura do corredor deve ser de 0,90 m\"",
+            "time": 0.6513628959655762
+        },
+        {
+            "transform": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta.",
+            "text": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta, e quando abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta, conforme a Figura 81. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10",
+            "result": {
+                "aplicabilidade": "o deslocamento frontal quando as portas abrirem no sentido do usuário.",
+                "selecao": "deslocamento frontal.",
+                "execao": "Não se aplica.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: o deslocamento frontal quando as portas abrirem no sentido do usuário.\nSeleção: deslocamento frontal.\nExceção: Não se aplica.\nRequerimento: Existir um espaço livre de 0,30 m entre a parede e a porta.",
+            "time": 0.5513074398040771
+        },
+        {
+            "transform": "No deslocamento frontal, quando as portas abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta.",
+            "text": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta, e quando abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta, conforme a Figura 81. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há seleção.",
+            "time": 0.07163381576538086
+        },
+        {
+            "transform": "Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+            "text": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta, e quando abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta, conforme a Figura 81. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há aplicabilidade, seleção ou exceção. \n\nRequerimento: Na impraticabilidade da existência de espaços livres, deve-se garantir equipamento de abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+            "time": 0.6605665683746338
+        },
+        {
+            "transform": "As portas, quando abertas, devem ter um vão livre, de no mínimo 0,80 m de largura e 2,10 m de altura.",
+            "text": "As portas, quando abertas, devem ter um vão livre, de no mínimo 0,80 m de largura e 2,10 m de altura. Em portas de duas ou mais folhas, pelo menos uma delas deve ter o vão livre de 0,80 m.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": "\"Livre espaço das portas quando abertas\" \"Para ser livre o espaço entre as portas quando eles são fechados\""
+            },
+            "full": " \"As portas quando abertas devem ter um vão livre, de no máximo 0,80 m de largura e 2,10 m de altura.\"\n\naplicabilidade:\nseleção:\nexceta:\nrequisito:\n\"Livre espaço das portas quando abertas\"\n\"Para ser livre o espaço entre as portas quando eles são fechados\"",
+            "time": 0.7143459320068359
+        },
+        {
+            "transform": "Em portas de duas ou mais folhas, pelo menos uma delas deve ter o vão livre de 0,80 m.",
+            "text": "As portas, quando abertas, devem ter um vão livre, de no mínimo 0,80 m de largura e 2,10 m de altura. Em portas de duas ou mais folhas, pelo menos uma delas deve ter o vão livre de 0,80 m.",
+            "result": {
+                "aplicabilidade": "Nenhuma.",
+                "selecao": "",
+                "execao": "Nenhuma.",
+                "requisito": "Em portas de dois ou mais folhas, pelo menos uma deles deve ter o vão livre de 0,80m."
+            },
+            "full": " Aplicabilidade: Nenhuma.\n\nSeção: Em portas de duas ou mais folhas, pelo menos uma deles deve ter o vão livre de 0,80 m.\n\nExceção: Nenhuma.\n\nRequisito: Em portas de dois ou mais folhas, pelo menos uma deles deve ter o vão livre de 0,80m.",
+            "time": 0.66194748878479
+        },
+        {
+            "transform": "O mecanismo de acionamento das portas deve requerer força humana direta igual ou inferior a 36 N.",
+            "text": "O mecanismo de acionamento das portas deve requerer força humana direta igual ou inferior a 36 N.",
+            "result": {
+                "aplicabilidade": "- Forçar as portas deve exigir força humana direta igual ou inferior a 36 N.",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade:\n- Seção:\n- Exceção:\n- Requisitos:\n    - Forçar as portas deve exigir força humana direta igual ou inferior a 36 N.",
+            "time": 0.38413190841674805
+        },
+        {
+            "transform": "As portas de sanitários e vestiários devem ter, no lado oposto ao lado da abertura da porta, um puxador horizontal associado à maçaneta.",
+            "text": "As portas de sanitários e vestiários devem ter, no lado oposto ao lado da abertura da porta, um puxador horizontal, conforme a Figura 84, associado à maçaneta. Deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm, instalado a 0,90 m do piso. O dispositivo de travamento deve observar o descrito em 4.6.8. Recomenda-se que estas portas ou batentes tenham cor contrastante com a da parede e do piso de forma a facilitar sua localização.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "Não aplicá-lo.",
+                "requisito": ""
+            },
+            "full": " Aparececimento: Não aplicável.\nSeletar:\nExceção: Não aplicá-lo.\nRequerimento: As portas de sanitários e vestiários devem ter, no lado oposto ao lado da abertura da porta, um puxador horizontal associado à maçaneta.",
+            "time": 0.5799589157104492
+        },
+        {
+            "transform": "O puxador horizontal deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm, instalado a 0,90 m do piso.",
+            "text": "As portas de sanitários e vestiários devem ter, no lado oposto ao lado da abertura da porta, um puxador horizontal, conforme a Figura 84, associado à maçaneta. Deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm, instalado a 0,90 m do piso. O dispositivo de travamento deve observar o descrito em 4.6.8. Recomenda-se que estas portas ou batentes tenham cor contrastante com a da parede e do piso de forma a facilitar sua localização.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Como o modelo de linguagem AI, posso sugerir os valores para cada elemento com base na entrada dada. \n\n- Aplicabilidade: \"O puxador horizontal deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm\".\n- Seleção: \"Comprimento mínimo de 0,40 metros\".\n- Exceção: \"Nenhum\".\n- Requisite: \"Puxador horizontal (puxar)\".",
+            "time": 1.1324245929718018
+        },
+        {
+            "transform": "O dispositivo de travamento deve observar o descrito em 4.6.8.",
+            "text": "As portas de sanitários e vestiários devem ter, no lado oposto ao lado da abertura da porta, um puxador horizontal, conforme a Figura 84, associado à maçaneta. Deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm, instalado a 0,90 m do piso. O dispositivo de travamento deve observar o descrito em 4.6.8. Recomenda-se que estas portas ou batentes tenham cor contrastante com a da parede e do piso de forma a facilitar sua localização.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - Aplicabilidade: O dispositivo de travamento (opcional)\n- Seleção: o descrito em 4.6.8.\n- Exceção: Nenhuma\n- Requisite: Observe o descrito em 4.6.8.",
+            "time": 0.4626784324645996
+        },
+        {
+            "transform": "Recomenda-se que as portas ou batentes de sanitários e vestiários tenham cor contrastante com a da parede e do piso.",
+            "text": "As portas de sanitários e vestiários devem ter, no lado oposto ao lado da abertura da porta, um puxador horizontal, conforme a Figura 84, associado à maçaneta. Deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm, instalado a 0,90 m do piso. O dispositivo de travamento deve observar o descrito em 4.6.8. Recomenda-se que estas portas ou batentes tenham cor contrastante com a da parede e do piso de forma a facilitar sua localização.",
+            "result": {
+                "aplicabilidade": "Portas ou batentes de sanitários e vestiários.",
+                "selecao": "nenhum.",
+                "execao": "Não aplicável.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: Portas ou batentes de sanitários e vestiários.\nSeleção: nenhum.\nExceção: Não aplicável.\nRequisição: Recomenda-se que as portas ou batentes de sanitárias e vestiários tenham cor contrastante com da parede e do piso.",
+            "time": 0.5945782661437988
+        },
+        {
+            "transform": "Quando as portas forem providas de dispositivos de acionamento pelo usuário, estes devem estar instalados fora da área de abertura da folha da porta e à altura de alcance entre 0,80 m e 1,00 m.",
+            "text": "Quando as portas forem providas de dispositivos de acionamento pelo usuário, estes devem estar instalados fora da área de abertura da folha da porta e à altura de alcance entre 0,80 m e 1,00 m.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": "- \"estes devem ser instalados fora da área de abertura da porta e à altura entre 0,80 m e 1,00 m\"."
+            },
+            "full": " requisito:\n    - \"estes devem ser instalados fora da área de abertura da porta e à altura entre 0,80 m e 1,00 m\".",
+            "time": 0.3683772087097168
+        },
+        {
+            "transform": "Em portas de correr, recomenda-se a instalação de trilhos na sua parte superior.",
+            "text": "Em portas de correr, recomenda-se a instalação de trilhos na sua parte superior. Os trilhos ou as guias inferiores devem estar nivelados com a superfície do piso, e eventuais frestas resultantes da guia inferior devem ter largura de no máximo 15 mm.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "Não se aplicam trilhos em portas.",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicação: Em portas de correr.\nSeleção: Não se aplicam trilhos em portas.",
+            "time": 0.22797513008117676
+        },
+        {
+            "transform": "Os trilhos ou as guias inferiores, se houver, devem estar nivelados com a superfície do piso.",
+            "text": "Em portas de correr, recomenda-se a instalação de trilhos na sua parte superior. Os trilhos ou as guias inferiores devem estar nivelados com a superfície do piso, e eventuais frestas resultantes da guia inferior devem ter largura de no máximo 15 mm.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O texto não tem informação relevante que possa ser extraído usando o formato RASE N2.",
+            "time": 0.20648407936096191
+        },
+        {
+            "transform": "As frestas resultantes da guia inferior devem ter largura de no máximo 15 mm.",
+            "text": "Em portas de correr, recomenda-se a instalação de trilhos na sua parte superior. Os trilhos ou as guias inferiores devem estar nivelados com a superfície do piso, e eventuais frestas resultantes da guia inferior devem ter largura de no máximo 15 mm.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " As frestas resultantes da guia inferior devem ter uma largura de até 15 mm.",
+            "time": 0.19229888916015625
+        },
+        {
+            "transform": "A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo, e na circulação dos pedestres.",
+            "text": "A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo, e na circulação dos pedestres.",
+            "result": {
+                "aplicabilidade": "\"A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo, e na circulação dos pedestres\".",
+                "selecao": "Não aplicável.",
+                "execao": "Não aplicável.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo, e na circulação dos pedestres\".\nSeleção: Não aplicável.\nExceção: Não aplicável.\nRequirement: \"A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo, e na circulação dos pedestres\".",
+            "time": 0.91941237449646
+        },
+        {
+            "transform": "A superfície de varredura do portão não pode invadir a faixa livre de circulação de pedestre.",
+            "text": "A superfície de varredura do portão não pode invadir a faixa livre de circulação de pedestre e deve contar com sistema de sinalização conforme 5.6.4.2.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Como o texto N1 não contém qualquer elemento da lista que você forneceu, o código do programa deve retornar \"\".",
+            "time": 0.27331042289733887
+        },
+        {
+            "transform": "A superfície de varredura do portão deve contar com sistema de sinalização conforme 5.6.4.2.",
+            "text": "A superfície de varredura do portão não pode invadir a faixa livre de circulação de pedestre e deve contar com sistema de sinalização conforme 5.6.4.2.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - Aplicabilidade: \"A superfície de varredura do portão\"\n- Seleção: \"\" (string vazia)\n- Exceção: \"\" (string vazia)\n- Requisito: \"deve contar com sistema de sinalização conforme 5.6.4.2\"",
+            "time": 0.5370118618011475
+        },
+        {
+            "transform": "A largura para as rampas em rotas acessíveis deve ser no mínimo 1,20 m, e recomendável 1,50 m.",
+            "text": "A largura livre mínima recomendável para as rampas em rotas acessíveis é de 1,50 m, sendo o mínimo admissível de 1,20 m.",
+            "result": {
+                "aplicabilidade": "\"A largura para as rampas em rotas acessíveis deve ser no mínimo 1,20 m.\" (em inglês)",
+                "selecao": "\"A largura para as rampas em rotas acessíveis\"",
+                "execao": "\"\"",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A largura para as rampas em rotas acessíveis deve ser no mínimo 1,20 m.\" (em inglês)\nSeleção: \"A largura para as rampas em rotas acessíveis\"\nExceção: \"\"\nRequerimento: \"deve ser no mínimo 1,20 m, e recomendável 1,50 m.\"",
+            "time": 0.7259306907653809
+        },
+        {
+            "transform": "A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm.",
+            "text": "A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm. Deve atender às especificações da Figura 72 e ser garantida em rampas e em escadas.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Com base na metodologia RASE N2, o texto fornecido tem o elemento aplicabilidade: \"A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm\".\n\nO Texto N1 tem a seguinte estrutura:\n\n1. Aplica-se (Obrigatório): \"A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm\".\n2. Seleção (Opcional): Não está presente neste texto.\n3. Exceção (Opcional): Não está presente neste texto.\n4. Requisito (Obrigatório): \"A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm\".",
+            "time": 1.5699164867401123
+        },
+        {
+            "transform": "A circulação vertical acessível deve atender no mínimo duas formas de deslocamento: escadas, rampas ou equipamentos eletromecânicos.",
+            "text": "A circulação vertical pode ser realizada por escadas, rampas ou equipamentos eletromecânicos e é considerada acessível quando atender no mínimo a duas formas de deslocamento vertical.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - aplicabilidade: \"A circulação vertical deve atender às duas formas de deslocamento\".\n- seleção: \"A circulação vertical deve atender às duas formas de deslocamento\".\n- Exceção: \"\" (string vazia).\n- Requisito: \"deve atender aos dois métodos de locomoção\".",
+            "time": 0.6240043640136719
+        },
+        {
+            "transform": "Desníveis superiores a 20 mm, devem ser considerados como degraus, conforme 6.7.",
+            "text": "Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O elemento de texto não é suficientemente claro para garantir a sua aplicabilidade.",
+            "time": 0.19561457633972168
+        },
+        {
+            "transform": "As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico.",
+            "text": "As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico. As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - Requisite: \"As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico\".",
+            "time": 0.3820044994354248
+        },
+        {
+            "transform": "As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.",
+            "text": "As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico. As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.",
+            "result": {
+                "aplicabilidade": "\"As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes\"",
+                "selecao": "\"\" (string vazia)",
+                "execao": "\"\" (string vazia)",
+                "requisito": ""
+            },
+            "full": " aplicabilidade: \"As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes\"\nseleção: \"\" (string vazia)\nexceção: \"\" (string vazia)\nrequisão: \"dotar com barra antipânico conforme ABNT NBR 11785\"",
+            "time": 0.6618900299072266
+        },
+        {
+            "transform": "As escadas devem ter no mínimo um patamar a cada 3,20 m de desnível.",
+            "text": "As escadas devem ter no mínimo um patamar a cada 3,20 m de desnível e sempre que houver mudança de direção.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Os elementos do texto são extraídos apenas do Texto N1.\nCada parte do texto aparece apenas uma vez, na ordem Aplicabilidade > Seleção > Exceção > Requisitando.\nSe um elemento não existir, retorna vazio.\nO requisito deve ser a ação ou condição principal e nunca pode estar no seleto.\nA seleção deve ser um subconjunto da aplicabilidade e não deve conter ações.\nO requer deve começar com um verbo e expressa uma ação clara.",
+            "time": 0.9533965587615967
+        },
+        {
+            "transform": "As escadas devem ter no mínimo um patamar sempre que houver mudança de direção.",
+            "text": "As escadas devem ter no mínimo um patamar a cada 3,20 m de desnível e sempre que houver mudança de direção.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "As estradas devem ter no mínimo um patamar sempre que houver mudança de direção.",
+                "execao": "Nenhuma.",
+                "requisito": "As estradas devem ter no mínimo um patamar sempre que houver mudança de direção."
+            },
+            "full": " Applicabilidade: As estradas devem ter no mínimo um patamar sempre que houver mudança de direção.\nSeleção: As estradas devem ter no mínimo um patamar sempre que houver mudança de direção.\nExceção: Nenhuma.\nRequisito: As estradas devem ter no mínimo um patamar sempre que houver mudança de direção.",
+            "time": 0.6969592571258545
+        },
+        {
+            "transform": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas.",
+            "text": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas, e devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a  vazão, conforme Figura 76.",
+            "result": {
+                "aplicabilidade": "\"Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas\".",
+                "selecao": "Não há.",
+                "execao": "Não há.",
+                "requisito": "Não há."
+            },
+            "full": " Aplicabilidade: \"Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas\".\nSeleção: Não há.\nExceção: Não há.\nRequisito: Não há.",
+            "time": 0.460477352142334
+        },
+        {
+            "transform": "Os corrimãos laterais devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a vazão.",
+            "text": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas, e devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a  vazão, conforme Figura 76.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Apesar do seu pedido, não é possível extrair o elemento selecionado do texto dado sem aplicabilidade e exceção. O elemento de aplicabilidade no texto está ausente, pois nenhuma referência específica é dada para quando ou onde a regra se aplica. Além disso, não é possível extrair o elemento de execução sem as informações da seleção e do elemento de exceção.",
+            "time": 0.7694504261016846
+        },
+        {
+            "transform": "Em edificações e equipamentos urbanos existentes, onde a adequação dos corredores seja impraticável, devem ser implantados bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°), sendo no mínimo um bolsão a cada 15,00 m.",
+            "text": "Em edificações e equipamentos urbanos existentes, onde a adequação dos corredores seja impraticável, devem ser implantados bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°), sendo no mínimo um bolsão a cada 15,00 m. Neste caso, a largura mínima de corredor deve ser de 0,90 m.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "Em edificadores que são impraticáveis para instalar corredores.",
+                "execao": "Nenhuma exceção nesta regra.",
+                "requisito": ""
+            },
+            "full": " Aplicação: Em edificações e equipamentos urbanos existentes.\nSeleção: Em edificadores que são impraticáveis para instalar corredores.\nExceção: Nenhuma exceção nesta regra.\nRequerimento: Os bolsões de retorno com dimensões que permitem a manobra completa de uma cadeira de rodas (180°), sendo no mínimo um bolsão por cada 15,000 metros.",
+            "time": 0.8264636993408203
+        },
+        {
+            "transform": "Neste caso, a largura mínima de corredor deve ser de 0,90 m.",
+            "text": "Em edificações e equipamentos urbanos existentes, onde a adequação dos corredores seja impraticável, devem ser implantados bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°), sendo no mínimo um bolsão a cada 15,00 m. Neste caso, a largura mínima de corredor deve ser de 0,90 m.",
+            "result": {
+                "aplicabilidade": "\"Neste casos, a largura mínima do condutor deve ser de 0,90 m.\"",
+                "selecao": "\"Neste casos, a largura mínima do condutor\"",
+                "execao": "Não há exceções.",
+                "requisito": "\"Neste casos, a largua de corredor deve ter um mínimo de 0,90 metros.\""
+            },
+            "full": " Aplicabilidade: \"Neste casos, a largura mínima do condutor deve ser de 0,90 m.\"\nSeleção: \"Neste casos, a largura mínima do condutor\"\nExceção: Não há exceções.\nRequisito: \"Neste casos, a largua de corredor deve ter um mínimo de 0,90 metros.\"",
+            "time": 0.6856374740600586
+        },
+        {
+            "transform": "Toda rota acessível deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00 m do chão.",
+            "text": "Toda rota acessível deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00m do chão. São aceitos níveis inferiores de iluminância para ambientes específicos, como cinemas, teatros ou outros, conforme normas técnicas específicas.",
+            "result": {
+                "aplicabilidade": "\"Toda a rota deve ser provida de iluminação natural ou artificial, com nível mínimo de iluminância de 150 lux medidos a 1,00 metros do chão\". - \"A rua acessível\" (em inglês)",
+                "selecao": "",
+                "execao": "Nenhura (obrigação) \"Deve ser fornecido com iluminação natural ou artificial, com nível mínimo de iluminância de 150 lux medidos a 1,00 metros do chão\".",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade:\n\"Toda a rota deve ser provida de iluminação natural ou artificial, com nível mínimo de iluminância de 150 lux medidos a 1,00 metros do chão\".\nSeleta:\n- \"A rua acessível\" (em inglês)\nExceção:\nNenhura (obrigação)\nExigência:\n\"Deve ser fornecido com iluminação natural ou artificial, com nível mínimo de iluminância de 150 lux medidos a 1,00 metros do chão\".",
+            "time": 1.0531456470489502
+        },
+        {
+            "transform": "São aceitos níveis inferiores de iluminância para ambientes específicos, como cinemas, teatros ou outros, conforme normas técnicas específicas.",
+            "text": "Toda rota acessível deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00m do chão. São aceitos níveis inferiores de iluminância para ambientes específicos, como cinemas, teatros ou outros, conforme normas técnicas específicas.",
+            "result": {
+                "aplicabilidade": "\"para ambientes específicos, como cinemas, teatros ou outros\"",
+                "selecao": "\"não especificado\"",
+                "execao": "\"não especificado\"",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"para ambientes específicos, como cinemas, teatros ou outros\"\nSeleção: \"não especificado\"\nExceção: \"não especificado\"\nRequisitos: \"não especificado\"",
+            "time": 0.46007323265075684
+        },
+        {
+            "transform": "Nestes casos a distância entre cada entrada acessível e as demais não pode ser superior a 50 m.",
+            "text": "Na adaptação de edificações e equipamentos urbanos existentes, todas as entradas devem ser acessíveis e, caso não seja possível, desde que comprovado tecnicamente, deve ser adaptado o maior número de acessos. Nestes casos a distância entre cada entrada acessível e as demais não pode ser superior a 50 m. A entrada predial principal, ou a entrada de acesso do maior número de pessoas, tem a obrigatoriedade de atender a todas as condiçõesde acessibilidade.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Como o texto N1 tem vários elementos, nós os processaremos um de cada vez. Você está preparado para isso?",
+            "time": 0.25597214698791504
+        },
+        {
+            "transform": "A entrada predial principal, ou a entrada de acesso do maior número de pessoas, tem a obrigatoriedade de atender a todas as condições de acessibilidade.",
+            "text": "Na adaptação de edificações e equipamentos urbanos existentes, todas as entradas devem ser acessíveis e, caso não seja possível, desde que comprovado tecnicamente, deve ser adaptado o maior número de acessos. Nestes casos a distância entre cada entrada acessível e as demais não pode ser superior a 50 m. A entrada predial principal, ou a entrada de acesso do maior número de pessoas, tem a obrigatoriedade de atender a todas as condiçõesde acessibilidade.",
+            "result": {
+                "aplicabilidade": "\"A entrada predial principal, ou a entrada de acesso do maior número de pessoas\"",
+                "selecao": "\"ou\"",
+                "execao": "Não aplica-se",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A entrada predial principal, ou a entrada de acesso do maior número de pessoas\"\nSeleção: \"ou\"\nExceção: Não aplica-se\nRequerimento: \"tem a obrigatoriedade de atender a todas as condições de acessibilidade\"",
+            "time": 0.5488581657409668
+        },
+        {
+            "transform": "O percurso entre o estacionamento de veículos e os acessos deve compor uma rota acessível.",
+            "text": "O percurso entre o estacionamento de veículos e os acessos deve compor uma rota acessível.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " \"O percurso entre o estacionamento de veículos e os acessos deve compor uma rota acessível\".",
+            "time": 0.23847460746765137
+        },
+        {
+            "transform": "Quando for instalada, deve ser prevista, junto a esta, outra entrada que garanta condições de acessibilidade.",
+            "text": "Quando existir porta giratória, deve ser prevista, junto a esta, outraentrada que garanta condições de acessibilidade. Portas giratórias devem ser evitadas, mas quando forem instaladas, as dimensões entre as pás devem ser compatíveis com as medidas necessárias para o deslocamento de uma pessoa em cadeira de rodas e devem ainda ser dotadas de sistema de segurança para rebatimento das pásem caso de sinistro.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há nenhuma seleção ou exceção. A aplicabilidade e o requisito são os dois elementos que podem ser extraídos do texto N1.",
+            "time": 0.3188135623931885
+        },
+        {
+            "transform": "Quando for instalada, as dimensões entre as pás devem ser compatíveis com as medidas de um M.R. e devem ainda ser dotadas de sistema de segurança para rebatimento das pás em caso de sinistro.",
+            "text": "Quando existir porta giratória, deve ser prevista, junto a esta, outraentrada que garanta condições de acessibilidade. Portas giratórias devem ser evitadas, mas quando forem instaladas, as dimensões entre as pás devem ser compatíveis com as medidas necessárias para o deslocamento de uma pessoa em cadeira de rodas e devem ainda ser dotadas de sistema de segurança para rebatimento das pásem caso de sinistro.",
+            "result": {
+                "aplicabilidade": "Quando é instalada, as dimensões entre as pás devem ser compatíveis com as medidas de um M.R..",
+                "selecao": "",
+                "execao": "Não-selecionado (vazio).",
+                "requisito": ""
+            },
+            "full": " Existem quatro regras que podem ser aplicadas ao texto dado. Primeiro, o requer-se deve começar com um verbo e expressar uma ação clara. Segundo, a seleção deve ser um subconjunto da aplicabilidade e não pode conter verbos ou condições. Terceira, o requisito deve ser a ação ou condição principal e nunca pode ser colocado na seleção. Finalmente, cada parte do texto deve aparecer apenas uma vez, na ordem Aplicabilidade > Seleção > Exceção > Requisito.\n\nCom base nessas regras, o texto dado pode ser processado da seguinte forma:\nAplicabilidade: Quando é instalada, as dimensões entre as pás devem ser compatíveis com as medidas de um M.R..\nSeletivo: Seletivo: Não-selecionado (vazio).\nExceção: Não-selecionado (vazio).\nRequerimento: As dimensões entre as pás devem ser compatíveis com as medidas de um M.R..",
+            "time": 1.8844025135040283
+        },
+        {
+            "transform": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %).",
+            "text": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68. Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - Aplicabilidade: \"Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %).\"\n- Seleção: \"Desníveis superiores a 5 mm até 20 mm\".\n- Exceção: \"\"\n- Requisito: \"Deve possuir inclinação máxima de 1:2 (50 %).\".",
+            "time": 0.7123260498046875
+        },
+        {
+            "transform": "Desníveis superiores a 20 mm, devem ser considerados como degraus, conforme 6.7.",
+            "text": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68. Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " \"Desníveis superiores a 20 mm são considerados como degraus e devem ser classificados conforme 6.7\".",
+            "time": 0.2545762062072754
+        },
+        {
+            "transform": "Nas áreas de circulação, quando o desnível for lateral, observar o descrito em 4.3.7.",
+            "text": "Nas áreas de circulação, quando o desnível for lateral, observar o descrito em 4.3.7.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Nenúncia (opcional):\nNenhuma aplicação, seleção ou exceção encontrada nesta parte do texto.\nRequerimento: \"Observar o descrito em 4.3.7\"",
+            "time": 0.3725419044494629
+        },
+        {
+            "transform": "Em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação.",
+            "text": "Em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação. Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm, devem ser instalados perpendicularmente ao fluxo principal ou ter vãos de formato quadriculado/circular, quando houver fluxos em mais de um sentido de circulação.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": "\"em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação\"."
+            },
+            "full": " Requisito: \"em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação\".",
+            "time": 0.29952383041381836
+        },
+        {
+            "transform": "Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm, devem ser instalados perpendicularmente ao fluxo principal.",
+            "text": "Em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação. Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm, devem ser instalados perpendicularmente ao fluxo principal ou ter vãos de formato quadriculado/circular, quando houver fluxos em mais de um sentido de circulação.",
+            "result": {
+                "aplicabilidade": "Não.",
+                "selecao": "",
+                "execao": "- Não.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: Não.\nSeletar: \"Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm\".\nExceção: - Não.\nRequirement: \"os vãos devem ter dimensão máxima de 15 mm\".\n\nO texto fornecido é uma regra para os tamanhos máximos das correntes, que se aplicam apenas quando não é possível tecnicamente. O requisito especifica que os vãos devem ter um tamanho máximo de 15 milímetros e devem ser instalados perpendicularmente ao fluxo principal.",
+            "time": 1.148339033126831
+        },
+        {
+            "transform": "Formato quadriculado/circular, quando houver fluxos em mais de um sentido de circulação.",
+            "text": "Em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação. Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm, devem ser instalados perpendicularmente ao fluxo principal ou ter vãos de formato quadriculado/circular, quando houver fluxos em mais de um sentido de circulação.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "\"\" (string vazia)",
+                "execao": "\"\" (string vazia)",
+                "requisito": ""
+            },
+            "full": " Aplicação: \"Formato circular\"\nSeleção: \"\" (string vazia)\nExceção: \"\" (string vazia)\nRequerimento: \"having multiple currents in more than one direction of circulation\".",
+            "time": 0.37075042724609375
+        },
+        {
+            "transform": "Quando existentes, devem ser firmemente fixados ao piso, embutidos ou sobrepostos e nivelados de maneira que eventual desnível não exceda 5 mm.",
+            "text": "Quando existentes, devem ser firmemente fixados ao piso, embutidos ou sobrepostos e nivelados de maneira que eventual desnível não exceda 5 mm.",
+            "result": {
+                "aplicabilidade": "\"Quando existentes, devem ser firmemente fixados ao piso, embutidos ou sobrepostos e nivelados de maneira que eventual desnível não exceda 5 mm.\"",
+                "selecao": "\"\"",
+                "execao": "\"\"",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Quando existentes, devem ser firmemente fixados ao piso, embutidos ou sobrepostos e nivelados de maneira que eventual desnível não exceda 5 mm.\"\nSeleção: \"\"\nExceção: \"\"\nRequisão: \"firmezmente fixado ao piso, embutido ou sobreposto e nivelado de tal forma que o nível resultante não excede 5mm\".",
+            "time": 0.7565691471099854
+        },
+        {
+            "transform": "Quando as rotas de fuga incorporarem escadas de emergência ou elevadores de emergência, devem ser previstas áreas de resgate (6.4.5) com espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas (5.5.2.2), dimensionadas de acordo com o M.R.",
+            "text": "Quando as rotas de fuga incorporarem escadas de emergência ou elevadores de emergência, devem ser previstas áreas de resgate (6.4.5) com espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas (5.5.2.2), dimensionadas de acordo com o M.R.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Seletar um lugar de fuga que incorpora escadas de emergência ou elevadores de emergência e deve ser previsto por áreas de resgate (6.4.5) com espaço reservado e demarcada para o posicionamento de pessoas em cadeiras de rodas (5.5.2.2), dimensionadas de acordo com o M.R.\nRequerá-lo para fornecer:\n\"Fornecer área de resgate (6.4.5) que é dimensionada de acordo com a M.R., com espaço reservado e demarcado para a colocação de pessoas em cadeiras de rodadas (5.5.2.2), em áreas de fuga que incorporam escala de emergência ou elevadores de emergência.\"",
+            "time": 1.2999835014343262
+        },
+        {
+            "transform": "A área de resgate deve estar localizada fora do fluxo principal de circulação.",
+            "text": "A área de resgate deve: a) estar localizada fora do fluxo principal de circulação; b) garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; c) ser ventilada; d) ser provida de dispositivo de emergência ou intercomunicador; e) deve ter o M.R. sinalizado conforme 5.5.2.2.",
+            "result": {
+                "aplicabilidade": "\"A área de resgate deve estar localizada fora do fluxo principal de circulação\".",
+                "selecao": "\"Esta área de resgate deve estar localizada fora do fluxo principal de circulação\".",
+                "execao": "Nenhuma.",
+                "requisito": "\"A área de resgate deve estar localizado fora do fluxo principal de circulação\"."
+            },
+            "full": " Aplicabilidade: \"A área de resgate deve estar localizada fora do fluxo principal de circulação\".\nSeleção: \"Esta área de resgate deve estar localizada fora do fluxo principal de circulação\".\nExceção: Nenhuma.\nRequisito: \"A área de resgate deve estar localizado fora do fluxo principal de circulação\".",
+            "time": 0.6051304340362549
+        },
+        {
+            "transform": "A área de resgate deve garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3.",
+            "text": "A área de resgate deve: a) estar localizada fora do fluxo principal de circulação; b) garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; c) ser ventilada; d) ser provida de dispositivo de emergência ou intercomunicador; e) deve ter o M.R. sinalizado conforme 5.5.2.2.",
+            "result": {
+                "aplicabilidade": "\"A área de resgate deve garantir área mínima de circulação e manobra para rotação de 180°.\" (em inglês)",
+                "selecao": "\"\" (string vazia)",
+                "execao": "\"\" (string vazia)",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A área de resgate deve garantir área mínima de circulação e manobra para rotação de 180°.\" (em inglês)\nSeleção: \"\" (string vazia)\nExceção: \"\" (string vazia)\nRequerimento: \"A área de resgate deve garantir a área mínima de circulação e manobra para rotação de 180°.\"",
+            "time": 0.7344136238098145
+        },
+        {
+            "transform": "A área de resgate, quando localizada em nichos, deve respeitar os parâmetros mínimos definidos em 4.3.6.",
+            "text": "A área de resgate deve: a) estar localizada fora do fluxo principal de circulação; b) garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; c) ser ventilada; d) ser provida de dispositivo de emergência ou intercomunicador; e) deve ter o M.R. sinalizado conforme 5.5.2.2.",
+            "result": {
+                "aplicabilidade": "A área de escuta, quando localizada em nichos, deve respeitar os parâmetros mínimos definidos em 4.3.6.",
+                "selecao": "-",
+                "execao": "-",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: A área de escuta, quando localizada em nichos, deve respeitar os parâmetros mínimos definidos em 4.3.6.\nSeleção: -\nExceção: -\nRequerimento: \"A área de resgate, quando localizado em nichos, deve respeitar os parâmetros mínimos definidos em 4.3.6\".",
+            "time": 0.6700983047485352
+        },
+        {
+            "transform": "A área de resgate deve ser ventilada.",
+            "text": "A área de resgate deve: a) estar localizada fora do fluxo principal de circulação; b) garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; c) ser ventilada; d) ser provida de dispositivo de emergência ou intercomunicador; e) deve ter o M.R. sinalizado conforme 5.5.2.2.",
+            "result": {
+                "aplicabilidade": "\"A área de resgate\", Seleção: \"\", Exceção: \"\", Requirement: \"deve ser ventilado\".",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A área de resgate\", Seleção: \"\", Exceção: \"\", Requirement: \"deve ser ventilado\".",
+            "time": 0.2424931526184082
+        },
+        {
+            "transform": "A área de resgate deve ser provida de dispositivo de emergência ou intercomunicador.",
+            "text": "A área de resgate deve: a) estar localizada fora do fluxo principal de circulação; b) garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; c) ser ventilada; d) ser provida de dispositivo de emergência ou intercomunicador; e) deve ter o M.R. sinalizado conforme 5.5.2.2.",
+            "result": {
+                "aplicabilidade": "\"Area of rescue\" (String vazia) Seleção: \"\" (string vazia) Exceção: \"\" (string vazia) Requisitos: \"Provision of emergency or intercomunicador should be provided\".",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Area of rescue\" (String vazia) Seleção: \"\" (string vazia) Exceção: \"\" (string vazia) Requisitos: \"Provision of emergency or intercomunicador should be provided\".",
+            "time": 0.39530038833618164
+        },
+        {
+            "transform": "A área de resgate deve ter o M.R. sinalizado conforme 5.5.2.2.",
+            "text": "A área de resgate deve: a) estar localizada fora do fluxo principal de circulação; b) garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; c) ser ventilada; d) ser provida de dispositivo de emergência ou intercomunicador; e) deve ter o M.R. sinalizado conforme 5.5.2.2.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O requisito: \"A área de resgate deve ser sinalizada conforme 5.5.2.2\".",
+            "time": 0.21531128883361816
+        },
+        {
+            "transform": "Superfícies de piso com declividade igual ou superior a 5% são consideradas rampas, e devem atender às condições de 6.3.",
+            "text": "São consideradas rampas as superfícies de piso com declividade igual ou superior a 5 %. Os pisos das rampas devem atender às condiçõesde 6.3.",
+            "result": {
+                "aplicabilidade": "O piso superfície tem uma inclinação igual ou superior a 5%. Seleção: Superfícies de piso. Exceção: Não há exceção neste texto. Requisitos: O piso superfício deve atender às condições de 6.3.",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: O piso superfície tem uma inclinação igual ou superior a 5%. Seleção: Superfícies de piso. Exceção: Não há exceção neste texto. Requisitos: O piso superfício deve atender às condições de 6.3.",
+            "time": 0.5477340221405029
+        },
+        {
+            "transform": "Em reformas, quando esgotadas as possibilidades de soluções que atendam integralmente ao item 6.6.2.1, podem ser utilizadas inclinações superiores a 8,33% (1:12) e até 12,5% (1:8), em segmentos retos, e devem atender os desníveis máximos por segmento e número de segmentos deste item.",
+            "text": "Em reformas, quando esgotadas as possibilidades de soluções que atendam integralmente à Tabela 6, podem ser utilizadas inclinações superiores a 8,33 % (1:12) até 12,5 % (1:8), conforme Tabela 7.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Sinto que o texto não tem aplicabilidade, seleção ou exceção. Portanto, as respostas para cada campo são vazias (ou \"\").",
+            "time": 0.2988431453704834
+        },
+        {
+            "transform": "Rampas com declividade maior do que 8,33% (1:12) e até 10% (1:10) devem ter desnível máximo de 0,20 m por segmento, com no máximo 4 segmentos.",
+            "text": "Em reformas, quando esgotadas as possibilidades de soluções que atendam integralmente à Tabela 6, podem ser utilizadas inclinações superiores a 8,33 % (1:12) até 12,5 % (1:8), conforme Tabela 7.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " O texto N1 não tem aplicabilidade, seleção ou exceção. O requer que os canals com inclinações mais de 8,33% (1:12) e até 10% (1:10) devem ter declives máximos de 0,20 m por segmento, com no máximo 4 segmentos.",
+            "time": 0.6059384346008301
+        },
+        {
+            "transform": "Rampas com declividade maior do que 10% (1:10) e até 12,5% (1:8) devem ter desnível máximo de 0,075 m por segmento, com no máximo 1 segmento.",
+            "text": "Em reformas, quando esgotadas as possibilidades de soluções que atendam integralmente à Tabela 6, podem ser utilizadas inclinações superiores a 8,33 % (1:12) até 12,5 % (1:8), conforme Tabela 7.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Com base nas regras e condições fornecidas, nenhum elemento no texto atende às condições estabelecidas. Portanto, retornar um valor vazio para cada campo é apropriado.",
+            "time": 0.3890049457550049
+        },
+        {
+            "transform": "A inclinação transversal de rampas internas não pode exceder 2%.",
+            "text": "A inclinação transversal não pode exceder 2 % em rampas internas e 3 % em rampas externas.",
+            "result": {
+                "aplicabilidade": "\"Rampas internas\", Seleção: None, Exceção: Nenhuma, Requisite: O ângulo transversal de rampas interiores não deve exceder 2%.",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Rampas internas\", Seleção: None, Exceção: Nenhuma, Requisite: O ângulo transversal de rampas interiores não deve exceder 2%.",
+            "time": 0.3648252487182617
+        },
+        {
+            "transform": "A inclinação transversal de rampas externas não pode exceder 3%.",
+            "text": "A inclinação transversal não pode exceder 2 % em rampas internas e 3 % em rampas externas.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há elementos.",
+            "time": 0.06402039527893066
+        },
+        {
+            "transform": "Toda rampa deve possuir corrimão de duas alturas em cada lado.",
+            "text": "Toda rampa deve possuir corrimão de duas alturas em cada lado, conforme demonstrado na Figura 72.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicação: Toda rampa deve possuir corrimão de duas alturas. Seleção: Em cada lado. Exceção: Nenhuma. Requirement: Deve possuir corrimãos de duas alturas em cada lado.",
+            "time": 0.4152560234069824
+        },
+        {
+            "transform": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto quando a largura da rampa for inferior a 1,20 m (casos previstos em 6.6.2.7).",
+            "text": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Exemplo do texto N1: \"A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto quando a largura da rampa for inferior a 1,20 m (casos previstos em 6.6.2.7).\"\n\n---\n\n### **Regras opcionais**\n\nOpcional - Aplicabilidade:\n- Extraído SOMENTE do TEXTO N1.\n- Pode ser colocado antes ou depois do requisito.\n- Se não houver aplicabilidade, retorna um string vazio.\n\nOpcional - Seleção:\n- Extraído SOMENTE do TEXTO N1.\n- Pode ser colocado após o elemento Aplicabilidade.\n- Se não houver seleção, retorna uma string vazia.\n- Deve ser um subconjunto da aplicabilidade sem repetir o requisito.\n- Não pode conter verbos, ações ou condições.\n\nOpcional - Exceção:\n- Extraído SOMENTE do TEXTO N1.\n- Pode ser colocado após o elemento Seleção.\n- Se um elemento é uma exceção, não deve estar em outro campo.\n- Se não houver exceção, retorna uma string vazia.\n\nOpcional - Exigência:\n- Extraído SOMENTE do TEXTO N1.\n- Pode ser colocado após o elemento Seleção.\n- Precisa começar com um verbo e expressar uma ação clara ou condição.\n- Se não houver requisito, retorna uma string vazia.\n- Não deve conter qualquer informação da aplicabilidade, seleção ou exceção.\n\n### Regras Obligatorias:\n\nOs elementos devem ser extraídos apenas do TEXTO N1.\nCada parte do texto deve aparecer apenas uma vez, na ordem Aplicabilidade > Seleção > Exceção > Requisimento.\nSe um elemento não existir, retorna a string vazia.\nO requisito deve ser a ação ou condição principal e nunca pode ser colocado na seleção.\nA seleção deve ser um subconjunto da aplicabilidade e não pode conter ações.\nO requer deve começar com um verbo e expressar uma ação clara.",
+            "time": 4.094075441360474
+        },
+        {
+            "transform": "Devem ser previstos patamares no início e término das rampas.",
+            "text": "Os patamares no início e no término das rampas devem ter dimensãolongitudinal mínima de 1,20 m. Entre os segmentos de rampa devem ser previstos patamares intermediários com dimensão longitudinal mínima de 1,20 m, conforme Figura 73. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da rampa.",
+            "result": {
+                "aplicabilidade": "Devem ser travessas no início e término das rampas.",
+                "selecao": "Inicialmente e finalmente.",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: Devem ser travessas no início e término das rampas.\nSeleção: Inicialmente e finalmente.\nA exceção: Nenhuma.\nRequerimento: Devem ser previstos.",
+            "time": 0.42229437828063965
+        },
+        {
+            "transform": "Devem ser previstos patamares intermediários (entre segmentos) nas rampas.",
+            "text": "Os patamares no início e no término das rampas devem ter dimensãolongitudinal mínima de 1,20 m. Entre os segmentos de rampa devem ser previstos patamares intermediários com dimensão longitudinal mínima de 1,20 m, conforme Figura 73. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da rampa.",
+            "result": {
+                "aplicabilidade": "- Devem ser previstos patamares intermediários (entre segmentos) nas rampas.",
+                "selecao": "N/A - aplicabilidade é o elemento mais específico da aplicabilidade e não requer um subconjunto.",
+                "execao": "N/A - Aplicabilidade é obrigatória, então não há exceções.",
+                "requisito": "- Devem ser previstos patamares intermediários (entre segmentos) nas rampas."
+            },
+            "full": " Aplicabilidade: \n- Devem ser previstos patamares intermediários (entre segmentos) nas rampas.\nSeleção: N/A - aplicabilidade é o elemento mais específico da aplicabilidade e não requer um subconjunto.\nExceção: N/A - Aplicabilidade é obrigatória, então não há exceções.\nRequisito: \n- Devem ser previstos patamares intermediários (entre segmentos) nas rampas.",
+            "time": 0.8514413833618164
+        },
+        {
+            "transform": "Devem ser previstos patamares quando houver mudança de direção nas rampas.",
+            "text": "Os patamares no início e no término das rampas devem ter dimensãolongitudinal mínima de 1,20 m. Entre os segmentos de rampa devem ser previstos patamares intermediários com dimensão longitudinal mínima de 1,20 m, conforme Figura 73. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da rampa.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade:\nSeleção:\nExceção:\nRequisão:",
+            "time": 0.16367626190185547
+        },
+        {
+            "transform": "Os patamares de início, término e intermediários devem ter dimensão longitudinal mínima de 1,20 m.",
+            "text": "Os patamares no início e no término das rampas devem ter dimensãolongitudinal mínima de 1,20 m. Entre os segmentos de rampa devem ser previstos patamares intermediários com dimensão longitudinal mínima de 1,20 m, conforme Figura 73. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da rampa.",
+            "result": {
+                "aplicabilidade": "\"início\", \"término\" e \"intermediate\" são todas as aplicações para esta regra.",
+                "selecao": "\"dimension longitudinal mínima\" é a seleção.",
+                "execao": "",
+                "requisito": "\"deve ter dimensão longitudinal mínimo de 1,20 m.\" é o requisito."
+            },
+            "full": " Uma vez que o texto N1 está fornecido, podemos processá-lo para extrair as partes da regra. As partições da Regra N2 exigem que a regra seja transformada em uma estrutura organizada que inclua aplicabilidade, seleção, exceção e requisito. A partir do texto N1 fornecido, podemos extrair as partes necessárias do texto N1:\n\naplicabilidade: \"início\", \"término\" e \"intermediate\" são todas as aplicações para esta regra.\nseleção: \"dimension longitudinal mínima\" é a seleção.\nexecação: Não há exceções neste texto.\nrequisito: \"deve ter dimensão longitudinal mínimo de 1,20 m.\" é o requisito.\n\nCom base nessas partes extradas, podemos ver que cada peça do texto deve aparecer apenas uma vez na ordem Aplicabilidade > Seleção > Exceção > Requisito. Neste caso, a regra tem várias aplicações e uma seleção. A exceção não é necessária neste caso. E o requisimento exige que a dimensão longitudinal mínima seja de pelo menos 1,20m.",
+            "time": 2.083303213119507
+        },
+        {
+            "transform": "Os patamares situados em mudança de direção devem ter dimensões iguais à largura da rampa.",
+            "text": "Os patamares no início e no término das rampas devem ter dimensãolongitudinal mínima de 1,20 m. Entre os segmentos de rampa devem ser previstos patamares intermediários com dimensão longitudinal mínima de 1,20 m, conforme Figura 73. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da rampa.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da rampa.",
+            "time": 0.23069500923156738
+        },
+        {
+            "transform": "A inclinação transversal de patamares em rampas internas não pode exceder 2%.",
+            "text": "A inclinação transversal dos patamares não pode exceder 2 % em rampas internas e 3 % em rampas externas.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " - requisitos: \"A inclinação transversal de patamares em rampas internas não pode exceder 2%\".",
+            "time": 0.23594903945922852
+        },
+        {
+            "transform": "A inclinação transversal de patamares em rampas externas não pode exceder 3%.",
+            "text": "A inclinação transversal dos patamares não pode exceder 2 % em rampas internas e 3 % em rampas externas.",
+            "result": {
+                "aplicabilidade": "\"A inclinação transversal de patamares em rampas externas não pode exceder 3%\".",
+                "selecao": "Não aplicável.",
+                "execao": "Não aplicável.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A inclinação transversal de patamares em rampas externas não pode exceder 3%\".\nSeleção: Não aplicável.\nExceção: Não aplicável.\nRequerimento: O desvio horizontal da rampa externa não pode exceder 3%.",
+            "time": 0.5406570434570312
+        },
+        {
+            "transform": "Uma sequência de três degraus ou mais deve ser tratada como escada.",
+            "text": "Uma sequência de três degraus ou mais é considerada escada.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " \"Um caminho pode ser tratado como escalada\".\n    - aplicabilidade: Não se aplicam certas estruturas de três etapas ou mais.\n    - seleção: As aplicações do caminho são aplicadas a um acidente.\n    - exceção: Não precisa ser aplicada ao caminho.\n    - requisito: Uma sequência de três degraus ou mais deve ser tratada como escalada.",
+            "time": 0.7736344337463379
+        },
+        {
+            "transform": "A largura das escadas deve ser estabelecida de acordo com o fluxo de pessoas, conforme ABNT NBR 9077.",
+            "text": "A largura das escadas deve ser estabelecida de acordo com o fluxo depessoas, conforme ABNT NBR 9077. A largura mínima para escadas em rotas acessíveis é de 1,20 m, e deve dispor de guia de balizamento conforme 6.6.3.",
+            "result": {
+                "aplicabilidade": "A largura das escadas devem ser estabelecidas com base no fluxo de pessoas.",
+                "selecao": "Nenhuma seleção.",
+                "execao": "Não há exceções.",
+                "requisito": "A largura das escadas devem ser estabelecidas com base no fluxo de pessoas, conforme o NBR 9077."
+            },
+            "full": " Seletar a largura das escadas devem ser estabelecidas com base no fluxo de pessoas, conforme o NBR 9077.\nAplicabilidade: A largura das escadas devem ser estabelecidas com base no fluxo de pessoas.\nSeleção: Nenhuma seleção.\nExceção: Não há exceções.\nRequisito: A largura das escadas devem ser estabelecidas com base no fluxo de pessoas, conforme o NBR 9077.",
+            "time": 0.8921501636505127
+        },
+        {
+            "transform": "A largura mínima para escadas em rotas acessíveis é de 1,20 m.",
+            "text": "A largura das escadas deve ser estabelecida de acordo com o fluxo depessoas, conforme ABNT NBR 9077. A largura mínima para escadas em rotas acessíveis é de 1,20 m, e deve dispor de guia de balizamento conforme 6.6.3.",
+            "result": {
+                "aplicabilidade": "\"A largura mínima para escadas em rotas acessíveis é de 1,20 metros\"",
+                "selecao": "-",
+                "execao": "-",
+                "requisito": "A aplicabilidade não se refere a uma excepção."
+            },
+            "full": " aplicabilidade: \"A largura mínima para escadas em rotas acessíveis é de 1,20 metros\"\nseleção: -\nexceção: -\nrequisito: A aplicabilidade não se refere a uma excepção.\n\nEste código verificará se a regra se aplica e, em seguida, a remover a necessidade de verbo e condição da regra, que é obrigatória para o requisito.",
+            "time": 0.8010921478271484
+        },
+        {
+            "transform": "Deve dispor de guia de balizamento conforme 6.6.3.",
+            "text": "A largura das escadas deve ser estabelecida de acordo com o fluxo depessoas, conforme ABNT NBR 9077. A largura mínima para escadas em rotas acessíveis é de 1,20 m, e deve dispor de guia de balizamento conforme 6.6.3.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há aplicabilidade, seleção, exceção ou requisão no texto N1.",
+            "time": 0.18628668785095215
+        },
+        {
+            "transform": "A inclinação transversal dos degraus em escadas internas não pode exceder 1%.",
+            "text": "A inclinação transversal dos degraus não pode exceder 1 % em escadas internas e 2 % em escadas externas.",
+            "result": {
+                "aplicabilidade": "\"A inclinação transversal dos degraus em escadas internas não pode exceder 1%\".",
+                "selecao": "",
+                "execao": "-.",
+                "requisito": "\"Exigir que a inclinação transversal dos degraus internos não exceda 1%\"."
+            },
+            "full": " Aplicabilidade: \"A inclinação transversal dos degraus em escadas internas não pode exceder 1%\".\nSelecção: \"Não\".\nExceção: -.\nRequisito: \"Exigir que a inclinação transversal dos degraus internos não exceda 1%\".",
+            "time": 0.5471835136413574
+        },
+        {
+            "transform": "A inclinação transversal dos degraus em escadas externas não pode exceder 2%.",
+            "text": "A inclinação transversal dos degraus não pode exceder 1 % em escadas internas e 2 % em escadas externas.",
+            "result": {
+                "aplicabilidade": "\"A inclinação transversal dos degraus em escadas externas não deve exceder 2%.\" (subtraindo a aplicabilidade)",
+                "selecao": "Não aplicável.",
+                "execao": "Não aplicável.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A inclinação transversal dos degraus em escadas externas não deve exceder 2%.\" (subtraindo a aplicabilidade)\nSeleção: Não aplicável.\nExceção: Não aplicável.\nRequisimento: O requer que a inclinação transversal nos degraus externos não excede 2%.",
+            "time": 0.651038408279419
+        },
+        {
+            "transform": "A inclinação transversal de patamares em escadas internas não pode exceder 1%.",
+            "text": "A inclinação transversal dos patamares não pode exceder 1 % em escadas internas e 2 % em escadas externas.",
+            "result": {
+                "aplicabilidade": "\"A inclinação transversal de patamares em escadas internas não pode exceder 1%\".",
+                "selecao": "\"internos\".",
+                "execao": "\"exceder 1%\".",
+                "requisito": "\"exceder 1%\"."
+            },
+            "full": " Aplicabilidade: \"A inclinação transversal de patamares em escadas internas não pode exceder 1%\".\nSeleção: \"internos\".\nExceção: \"exceder 1%\".\nRequisito: \"exceder 1%\".",
+            "time": 0.4653189182281494
+        },
+        {
+            "transform": "A inclinação transversal de patamares em escadas externas não pode exceder 2%.",
+            "text": "A inclinação transversal dos patamares não pode exceder 1 % em escadas internas e 2 % em escadas externas.",
+            "result": {
+                "aplicabilidade": "\"A inclinação transversal de patamares em escadas externas não pode exceder 2%\". Seleção: \"em escala exterior\", Exceção: nenhuma, Requisite: \"A inclinação transversal de quaisquer caminhos em escala exterior não deve exceder 2%\".",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"A inclinação transversal de patamares em escadas externas não pode exceder 2%\". Seleção: \"em escala exterior\", Exceção: nenhuma, Requisite: \"A inclinação transversal de quaisquer caminhos em escala exterior não deve exceder 2%\".",
+            "time": 0.5655918121337891
+        },
+        {
+            "transform": "O dimensionamento dos corrimãos deve atender ao descrito em 4.6.5.",
+            "text": "O dimensionamento dos corrimãos deve atender ao descrito em 4.6.5.",
+            "result": {
+                "aplicabilidade": "A aplicabilidade é \"O dimensionamento dos corrimãos deve atender ao descrito em 4.6.5\".",
+                "selecao": "Não se aplica.",
+                "execao": "Não se aplica.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade:\nAplicabilidade: A aplicabilidade é \"O dimensionamento dos corrimãos deve atender ao descrito em 4.6.5\".\nSeleção: Não se aplica.\nExceção: Não se aplica.\nRequerimento: \"O dimensionamento dos corrimãos\" é o requisito.",
+            "time": 0.5805377960205078
+        },
+        {
+            "transform": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas.",
+            "text": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas, e devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a vazão, conforme Figura 76.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não há seleção nesta aplicabilidade. Se uma aplicabilidade, a seleção é um subconjunto da aplicabilidade sem repetir o requisito.",
+            "time": 0.3050656318664551
+        },
+        {
+            "transform": "Os corrimãos laterais devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a vazão.",
+            "text": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas, e devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a vazão, conforme Figura 76.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Obrigado:\n    Seleção:\nExecução:\nRequirement:",
+            "time": 0.16606354713439941
+        },
+        {
+            "transform": "Em edificações existentes, onde for impraticável promover o prolongamento do corrimão no sentido do caminhamento, este pode ser feito ao longo da área de circulação ou fixado na parede adjacente.",
+            "text": "Em edificações existentes, onde for impraticável promover o prolongamento do corrimão no sentido do caminhamento, este pode ser feito ao longo da área de circulação ou fixado na parede adjacente.",
+            "result": {
+                "aplicabilidade": "\"Em edificações existentes\"",
+                "selecao": "\"Onde for impraticável promover o prolongamento do caminhamento, este pode ser feito ao longo da área de circulação ou fixado na parede adjacente\".",
+                "execao": "\"\"",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Em edificações existentes\"\nSeleção: \"Onde for impraticável promover o prolongamento do caminhamento, este pode ser feito ao longo da área de circulação ou fixado na parede adjacente\".\nExceção: \"\"\nRequisite: \"Porque é impracticável promover o prolongamento do corrimão no sentido da paisagem\"",
+            "time": 0.6884772777557373
+        },
+        {
+            "transform": "Os corrimãos intermediários devem ser interrompidos quando o comprimento do patamar for superior a 1,40 m, garantindo o espaçamento mínimo de 0,80 m entre o término de um segmento e o início do seguinte.",
+            "text": "Os corrimãos intermediários somente devem ser interrompidos quando o comprimento do patamar for superior a 1,40 m, garantindo o espaçamento mínimo de 0,80 m entre o término de um segmento e o início do seguinte, conforme Figura 77.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Como você deseja que eu proceder neste texto?",
+            "time": 0.1355886459350586
+        },
+        {
+            "transform": "Quando não houver paredes laterais, as rampas ou escadas devem incorporar elementos de segurança como guia de balizamento e guarda-corpo, e devem respeitar os demais itens de segurança desta Norma, tais como dimensionamento, corrimãos e sinalização.",
+            "text": "Quando não houver paredes laterais, as rampas ou escadas devem incorporar elementos de segurança como guia de balizamento e guarda-corpo, e devem respeitar os demais itens de segurança desta Norma, tais como dimensionamento, corrimãos e sinalização.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Se não houver seleção ou exceção, retornar \"\".\n\nNão há requisito.",
+            "time": 0.20705080032348633
+        },
+        {
+            "transform": "Em espaços com portas em sequência, deve ser garantido um espaço mínimo equivalente a um círculo de 1,50 m de diâmetro, livre de quaisquer obstáculos, inclusive da área de varredura das portas simultaneamente.",
+            "text": "Para a utilização das portas em sequência, é necessário um espaço de transposição com um círculo de 1,50 m de diâmetro, somado às dimensões da largura das portas (y), exemplificado na Figura 80, além dos 0,60 m ao lado da maçaneta de cada porta, para permitir a aproximação de uma pessoa em cadeira de rodas.",
+            "result": {
+                "aplicabilidade": "- \"em espaços com portas em sequência\" (string vazia)",
+                "selecao": "- \"livre de quaisquer obstáculos, inclusive da área de varredura das portas simultaneamente\" (string vazia)",
+                "execao": "Não se aplica.",
+                "requisito": "- \"garantir um espaço mínimo equivalente a um círculo de 1,50 metros de diâmetro\""
+            },
+            "full": " Aplicabilidade: \n- \"em espaços com portas em sequência\" (string vazia)\n\nSeleção: \n- \"livre de quaisquer obstáculos, inclusive da área de varredura das portas simultaneamente\" (string vazia)\n\nExceção: Não se aplica.\n\nRequisito:\n- \"garantir um espaço mínimo equivalente a um círculo de 1,50 metros de diâmetro\"",
+            "time": 0.8394339084625244
+        },
+        {
+            "transform": "Em espaços com portas em sequência, deve ser garantido um espaço mínimo de 0,60m ao lado da maçaneta de cada porta.",
+            "text": "Para a utilização das portas em sequência, é necessário um espaço de transposição com um círculo de 1,50 m de diâmetro, somado às dimensões da largura das portas (y), exemplificado na Figura 80, além dos 0,60 m ao lado da maçaneta de cada porta, para permitir a aproximação de uma pessoa em cadeira de rodas.",
+            "result": {
+                "aplicabilidade": "\"Em espaços com portas em sequência\"",
+                "selecao": "\"deve ser garantido um espaço mínimo de 0,60m ao lado da maçaneta de cada porta\"",
+                "execao": "\"\"",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Em espaços com portas em sequência\"\nSeleção: \"deve ser garantido um espaço mínimo de 0,60m ao lado da maçaneta de cada porta\"\nExceção: \"\"\nRequisão: \"garantir um espaço mínimo de 0,60m\"",
+            "time": 0.5972104072570801
+        },
+        {
+            "transform": "No deslocamento lateral, no lado da circulação oposto à abertura da porta, deve ser garantido 0,60 m de espaço livre de cada um dos lados da porta, e largura mínima de circulação de 1,20 m.",
+            "text": "No deslocamento lateral, deve ser garantido 0,60 m de espaço livre de cada um dos lados, conforme Figura 82. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "\"e largura mínima de circulação de 1,20 m\".",
+                "requisito": ""
+            },
+            "full": " Não existem elementos aplicabilidade ou seleção neste texto.\n\nExceção: \"e largura mínima de circulação de 1,20 m\".\n\nRequirement: \"No deslocamento lateral, no lado da circulação oposto à abertura da porta, deve ser garantido 0,60 m de espaço livre de cada um dos lados da porta.\"",
+            "time": 0.6940083503723145
+        },
+        {
+            "transform": "No deslocamento lateral, no lado da circulação em que a porta abre, deve ser garantido 0,90 m de espaço livre do lado contíguo à maçaneta, e largura mínima da circulação de 1,50 m.",
+            "text": "No deslocamento lateral, deve ser garantido 0,60 m de espaço livre de cada um dos lados, conforme Figura 82. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+            "result": {
+                "aplicabilidade": "\"No deslocamento lateral\"",
+                "selecao": "\"no lado da circulação em que a porta abre\"",
+                "execao": "\"\" (string vazia)",
+                "requisito": "\"deve ser garantido 0,90m de espaço livre do lado contíguo à maçaneta, e largura mínima da circulação de 1,50m\"."
+            },
+            "full": " Aplicabilidade: \"No deslocamento lateral, no lado da circulação em que a porta abre, deve ser garantido 0,90 m de espaço livre do lado contíguo à maçaneta, e largura mínima da circulação de 1,50 m.\"\nAplicabilidade: \"No deslocamento lateral\"\nSeleção: \"no lado da circulação em que a porta abre\"\nExceção: \"\" (string vazia)\nRequisito: \"deve ser garantido 0,90m de espaço livre do lado contíguo à maçaneta, e largura mínima da circulação de 1,50m\".",
+            "time": 1.1779067516326904
+        },
+        {
+            "transform": "Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+            "text": "No deslocamento lateral, deve ser garantido 0,60 m de espaço livre de cada um dos lados, conforme Figura 82. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+            "result": {
+                "aplicabilidade": "a existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor.",
+                "selecao": "as portas.",
+                "execao": "-.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: a existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor.\nSeleção: as portas.\nExceção: -.\nRequerimento: a existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor.",
+            "time": 0.8066873550415039
+        },
+        {
+            "transform": "As portas instaladas em locais de prática esportiva, quando abertas, devem ter um vão livre, de no mínimo 1,00 m de largura e 2,10 m de altura.",
+            "text": "Quando instaladas em locais de prática esportiva, as portas devem ter vão livre mínimo de 1,00 m.",
+            "result": {
+                "aplicabilidade": "\"Portas instaladas em locais de prática esportiva, quando abertas\"",
+                "selecao": "\"deve ter um vão livre, de no mínimo 1,00 m de largura e 2,10 m de altura\"",
+                "execao": "- (não há)",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Portas instaladas em locais de prática esportiva, quando abertas\"\nSeleção: \"deve ter um vão livre, de no mínimo 1,00 m de largura e 2,10 m de altura\"\nExceção: - (não há)\nRequerimento: - (não há)",
+            "time": 0.6150450706481934
+        },
+        {
+            "transform": "As maçanetas das portas devem ser do tipo alavanca, instaladas a uma altura entre 0,80 m e 1,10 m.",
+            "text": "As maçanetas das portas devem ser do tipo alavanca, instaladas a uma altura entre 0,80 m e 1,10 m.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Não está em formato Markdown. Por favor, forneça as informações que você deseja processar no Markdown e eu vou fazer o restoante.",
+            "time": 0.29999756813049316
+        },
+        {
+            "transform": "As portas do tipo vaivém devem ter visor com largura mínima de 0,20 m, tendo sua face inferior situada entre 0,40 m e 0,90 m do piso, e a face superior no mínimo a 1,50 m do piso.",
+            "text": "As portas do tipo vaivém devem ter visor com largura mínima de 0,20 m, tendo sua face inferior situada entre 0,40 m e 0,90 m do piso, e a face superior no mínimo a 1,50 m do piso. O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta, conforme Figura 85.",
+            "result": {
+                "aplicabilidade": "As portas devem ter visor com largura mínima de 0,20 m, tendo sua face inferior situada entre 0,40 m e 0,90 m do piso, e a face superior no mínimo a 1,50 m do piso.",
+                "selecao": "As portas devem ter visor com largura mínima de 0,20 m.",
+                "execao": "Não se aplica a seleção.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: As portas devem ter visor com largura mínima de 0,20 m, tendo sua face inferior situada entre 0,40 m e 0,90 m do piso, e a face superior no mínimo a 1,50 m do piso.\nSeleção: As portas devem ter visor com largura mínima de 0,20 m.\nExceção: Não se aplica a seleção.\nRequerimento: As portas devem ter um comprimento não maior de 1,50 m.",
+            "time": 0.957226037979126
+        },
+        {
+            "transform": "O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta.",
+            "text": "As portas do tipo vaivém devem ter visor com largura mínima de 0,20 m, tendo sua face inferior situada entre 0,40 m e 0,90 m do piso, e a face superior no mínimo a 1,50 m do piso. O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta, conforme Figura 85.",
+            "result": {
+                "aplicabilidade": "\"O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto\".",
+                "selecao": "\"O visor deve ser colocado no mínimo\".",
+                "execao": "Não aplicável.",
+                "requisito": "\"O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta\"."
+            },
+            "full": " Aplicabilidade: \"O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto\".\nSeleção: \"O visor deve ser colocado no mínimo\".\nExceção: Não aplicável.\nRequisito: \"O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta\".",
+            "time": 0.7632081508636475
+        },
+        {
+            "transform": "Quando as portas forem acionadas por sensores ópticos, estes devem estar ajustados para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas.",
+            "text": "Quando as portas forem acionadas por sensores ópticos, estes devem estar ajustados para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas. Deve também ser previsto dispositivo de segurança que impeça o fechamento da porta sobre a pessoa.",
+            "result": {
+                "aplicabilidade": "\"Quando as portas forem acionadas por sensores ópticos\".",
+                "selecao": "Não aplicá-lo.",
+                "execao": "Não aplicá-lo.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Quando as portas forem acionadas por sensores ópticos\".\nSeleção: Não aplicá-lo.\nExceção: Não aplicá-lo.\nRequer: \"devem estar ajustados para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas\".",
+            "time": 0.6373105049133301
+        },
+        {
+            "transform": "Quando as portas forem acionadas por sensores ópticos, deve ser previsto dispositivo de segurança que impeça o fechamento da porta sobre a pessoa.",
+            "text": "Quando as portas forem acionadas por sensores ópticos, estes devem estar ajustados para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas. Deve também ser previsto dispositivo de segurança que impeça o fechamento da porta sobre a pessoa.",
+            "result": {
+                "aplicabilidade": "\"Quando as portas forem acionadas por sensores ópticos\".",
+                "selecao": "\"Quando as portas forem acionadas por sensores ópticos\".",
+                "execao": "Não se aplica.",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"Quando as portas forem acionadas por sensores ópticos\".\nSeleção: \"Quando as portas forem acionadas por sensores ópticos\".\nExceção: Não se aplica.\nRequisimento: \"deve ser previsto que o dispositivo de segurança impeça o fechamento da porta sobre a pessoa\".",
+            "time": 0.6445267200469971
+        },
+        {
+            "transform": "a) a sinalização deve ser em faixa contínua ou elementos gráficos, com no mínimo 50 mm de espessura, instalada a uma altura entre 0,90 m e 1,00 m em relação ao piso acabado.",
+            "text": "Características da sinalização visual nas portas e paredes de vidro: a) a sinalização deve ser contínua, composta por uma faixa com no mínimo 50 mm de espessura, instalada a uma altura entre 0,90 m e 1,00 m em relação ao piso acabado. Esta faixa pode ser substituída por uma composta por elementos gráficos instalados de forma contínua, cobrindo no mínimo a superfície entre 0,90 m e 1,00 m em relação ao piso; b) nas portas das paredes envidraçadas que façam parte de rotas acessíveis, deve haver faixa de sinalização visual emoldurando-as, com dimensão mínima de 50 mm de largura, conforme Figura 86, ou outra forma de evidenciar o local de passagem; c) recomenda-se que a faixa tenha duas cores com o mínimo de 30 pontos de contraste de LRV entre elas; d) recomenda-se a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado, conforme Figura 86.",
+            "result": {
+                "aplicabilidade": "\"a sinalização deve ser instalada\". Seleção: \"a faixa contínua ou elementos gráficos, com no mínimo 50 mm de espessura\". Exceção: \" \". Requisito: \"instalado a uma altura entre 0,90m e 1,00m em relação ao piso acabado\".",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Aplicabilidade: \"a sinalização deve ser instalada\". Seleção: \"a faixa contínua ou elementos gráficos, com no mínimo 50 mm de espessura\". Exceção: \" \". Requisito: \"instalado a uma altura entre 0,90m e 1,00m em relação ao piso acabado\".",
+            "time": 0.6515200138092041
+        },
+        {
+            "transform": "b) nas portas das paredes envidraçadas que façam parte de rotas acessíveis, deve haver faixa de sinalização visual emoldurando-as, com dimensão mínima de 50 mm de largura.",
+            "text": "Características da sinalização visual nas portas e paredes de vidro: a) a sinalização deve ser contínua, composta por uma faixa com no mínimo 50 mm de espessura, instalada a uma altura entre 0,90 m e 1,00 m em relação ao piso acabado. Esta faixa pode ser substituída por uma composta por elementos gráficos instalados de forma contínua, cobrindo no mínimo a superfície entre 0,90 m e 1,00 m em relação ao piso; b) nas portas das paredes envidraçadas que façam parte de rotas acessíveis, deve haver faixa de sinalização visual emoldurando-as, com dimensão mínima de 50 mm de largura, conforme Figura 86, ou outra forma de evidenciar o local de passagem; c) recomenda-se que a faixa tenha duas cores com o mínimo de 30 pontos de contraste de LRV entre elas; d) recomenda-se a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado, conforme Figura 86.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Como um modelo de linguagem AI, não tenho a capacidade de processar dados como você. No entanto, posso fornecer-lhe algumas informações gerais sobre o texto que você forneceu.\n\nO texto N1 é uma frase que contém um requisito para sinalização visual nas portas de paredes envidraçadas. Este requisito implica que as luzes devem ser sinalizadas por 50 mm largura mínima. Além disso, o texto implica que essas luzes devem fazer parte de rotas acessíveis e devem ser montados nas portas.\n\nSe você tiver algum dado específico que você precisa processar, por favor, avise-me.",
+            "time": 1.3097755908966064
+        },
+        {
+            "transform": "c) recomenda-se que a faixa tenha duas cores com o mínimo de 30 pontos de contraste de LRV entre elas;",
+            "text": "Características da sinalização visual nas portas e paredes de vidro: a) a sinalização deve ser contínua, composta por uma faixa com no mínimo 50 mm de espessura, instalada a uma altura entre 0,90 m e 1,00 m em relação ao piso acabado. Esta faixa pode ser substituída por uma composta por elementos gráficos instalados de forma contínua, cobrindo no mínimo a superfície entre 0,90 m e 1,00 m em relação ao piso; b) nas portas das paredes envidraçadas que façam parte de rotas acessíveis, deve haver faixa de sinalização visual emoldurando-as, com dimensão mínima de 50 mm de largura, conforme Figura 86, ou outra forma de evidenciar o local de passagem; c) recomenda-se que a faixa tenha duas cores com o mínimo de 30 pontos de contraste de LRV entre elas; d) recomenda-se a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado, conforme Figura 86.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "\"\" (string vazia)",
+                "execao": "\"\" (string vazia)",
+                "requisito": ""
+            },
+            "full": " Aplicação: \"recomenda-se que a faixa tenha dois tons com o mínimo de 30 pontos de contraste de LRV entre eles.\"\nSeleção: \"\" (string vazia)\nExceção: \"\" (string vazia)\nRequerimento: \"recomenda-se que a faixa tenha dois tons com o mínimo de 30 pontos de contraste de LRV entre eles.\"",
+            "time": 0.7263655662536621
+        },
+        {
+            "transform": "d) recomenda-se a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado.",
+            "text": "Características da sinalização visual nas portas e paredes de vidro: a) a sinalização deve ser contínua, composta por uma faixa com no mínimo 50 mm de espessura, instalada a uma altura entre 0,90 m e 1,00 m em relação ao piso acabado. Esta faixa pode ser substituída por uma composta por elementos gráficos instalados de forma contínua, cobrindo no mínimo a superfície entre 0,90 m e 1,00 m em relação ao piso; b) nas portas das paredes envidraçadas que façam parte de rotas acessíveis, deve haver faixa de sinalização visual emoldurando-as, com dimensão mínima de 50 mm de largura, conforme Figura 86, ou outra forma de evidenciar o local de passagem; c) recomenda-se que a faixa tenha duas cores com o mínimo de 30 pontos de contraste de LRV entre elas; d) recomenda-se a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado, conforme Figura 86.",
+            "result": {
+                "aplicabilidade": "\"d) recomenda-se\"",
+                "selecao": "\"\" (string vazia)",
+                "execao": "\"\" (string vazia)",
+                "requisito": "\"recomenda a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado.\""
+            },
+            "full": " \"d) recomenda a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado.\"\n\naplicabilidade: \"d) recomenda-se\"\nseleção: \"\" (string vazia)\nexceção: \"\" (string vazia)\nrequisito: \"recomenda a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado.\"",
+            "time": 1.417954921722412
+        },
+        {
+            "transform": "As vagas para estacionamento de veículos que conduzam ou sejam conduzidos por idosos devem ser posicionadas próximas das entradas, garantindo o menor percurso de deslocamento.",
+            "text": "As vagas para estacionamento para idosos devem ser posicionadas próximas das entradas, garantindo o menor percurso de deslocamento.",
+            "result": {
+                "aplicabilidade": "\"As vagas para estacionamento de veículos que conduzam ou são dirigidos por idosos\".",
+                "selecao": "\"que conduz ou são dirigidas por idosos\".",
+                "execao": "(Não se aplicable).",
+                "requisito": "\"sejam posicionadas próximas das entradas, garantindo o menor percurso de deslocamento\"."
+            },
+            "full": " Aplicabilidade: \"As vagas para estacionamento de veículos que conduzam ou são dirigidos por idosos\".\nSeleção: \"que conduz ou são dirigidas por idosos\".\nExceção: (Não se aplicable).\nRequisito: \"sejam posicionadas próximas das entradas, garantindo o menor percurso de deslocamento\".",
+            "time": 0.6581723690032959
+        },
+        {
+            "transform": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %).",
+            "text": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68.",
+            "result": {
+                "aplicabilidade": "",
+                "selecao": "",
+                "execao": "",
+                "requisito": ""
+            },
+            "full": " Após analisar o texto dado, eu identifico os elementos aplicáveis, seleções e exceções e o requerimento principal. Aqui está como cada parte é extraída do texto N1:\n\n- Aplicabilidade: Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %).\n- Seleção: Desníveis superiores a 5 mm até 20 mm.\n- Exceção: Não existem excepções neste texto.\n- Requerimento principal: Desníveis superiores a 5mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %).",
+            "time": 1.219871997833252
+        }
+    ],
+    "time": 107.5358190536499
+}

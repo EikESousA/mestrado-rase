@@ -1,5 +1,760 @@
 {
-    "count": 0,
-    "datas": [],
-    "time": 0.0
+    "count": 80,
+    "datas": [
+        {
+            "text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis. As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum. As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis. Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+            "texts": [
+                "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis.",
+                "As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum.",
+                "As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis.",
+                "Áreas de uso restrito, conforme definido em 3.1.38, não necessitam atender às condições de acessibilidade desta Norma.",
+                "Exemplos de áreas de uso restrito que não precisam atender às condições de acessibilidade incluem casas de máquinas, barriletes e passagens de uso técnico."
+            ],
+            "time": 257.6317057609558
+        },
+        {
+            "text": "Nas edificações e equipamentos urbanos, todas as entradas, bem como as rotas de interligação às funções do edifício, devem ser acessíveis.",
+            "texts": [
+                "Todas as entradas das edificações e equipamentos urbanos devem ser acessíveis.",
+                "As rotas de interligação às funções do edifício devem ser acessíveis."
+            ],
+            "time": 60.478620767593384
+        },
+        {
+            "text": "Os acessos devem ser vinculados através de rota acessível à circulação principal e às circulações de emergência. Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.",
+            "texts": [
+                "Os acessos devem ser vinculados através de rota acessível à circulação principal.",
+                "Os acessos devem ser vinculados através de rota acessível às circulações de emergência.",
+                "Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente."
+            ],
+            "time": 58.25235056877136
+        },
+        {
+            "text": "A instalação do dispositivo acessível para controle de acesso deve prever manobra de cadeira de rodas, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5, e os eventuais comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9.",
+            "texts": [
+                "A instalação do dispositivo acessível para controle de acesso deve prever manobra de cadeira de rodas.",
+                "Os dispositivos de controle de acesso devem seguir as especificações de 4.3.2, 4.3.4 e 4.3.5.Os comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9.A instalação do dispositivo acessível deve considerar as necessidades de todos os usuários, incluindo aqueles com mobilidade reduzida."
+            ],
+            "time": 99.62959694862366
+        },
+        {
+            "text": "Deve ser prevista a sinalização informativa e direcional da localização das entradas e saídas acessíveis, de acordo com o estabelecido na Seção 5.",
+            "texts": [
+                "A sinalização informativa deve ser prevista para indicar a localização das entradas acessíveis.",
+                "A sinalização direcional deve ser prevista para indicar a localização das saídas acessíveis.",
+                "A sinalização da localização das entradas e saídas acessíveis deve seguir o estabelecido na Seção 5."
+            ],
+            "time": 65.61379265785217
+        },
+        {
+            "text": "A inclinação transversal da superfície deve ser de até 2 % para pisosinternos e de até 3 % para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5 %. Inclinações iguais ou superioresa 5 % são consideradas rampas e, portanto, devem atender a 6.6.",
+            "texts": [
+                "Pisos internos devem ter inclinação transversal de no máximo 2%.",
+                "Pisos externos devem ter inclinação transversal de no máximo 3%.",
+                "A inclinação longitudinal da superfície deve ser inferior a 5%.",
+                "Inclinações iguais ou superiores a 5% são consideradas rampas e devem atender à norma 6.6."
+            ],
+            "time": 74.04128694534302
+        },
+        {
+            "text": "Em reformas, pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, conforme Tabela 7, sem avançar nas áreas de circulação transversal, e protegido lateralmente com elemento construído ou vegetação.",
+            "texts": [
+                "Em reformas, o desnível máximo permitido é de 75 mm.",
+                "O desnível deve ser tratado com uma inclinação máxima de 12,5 %.",
+                "A inclinação máxima deve seguir conforme especificado na Tabela 7.O avanço nas áreas de circulação transversal não é permitido.",
+                "O desnível deve ser protegido lateralmente com um elemento construído.",
+                "O desnível também pode ser protegido lateralmente com vegetação."
+            ],
+            "time": 89.08364248275757
+        },
+        {
+            "text": "As soleiras das portas ou vãos de passagem que apresentem desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.",
+            "texts": [
+                "Soleiras das portas ou vãos de passagem com desníveis de até um degrau devem ter parte da extensão substituída por rampa.",
+                "A largura mínima da rampa deve ser de 0,90 m.",
+                "A inclinação da rampa deve estar em função do desnível apresentado.",
+                "A rampa deve atender aos parâmetros estabelecidos nas Tabelas 6 ou 7.Parte do desnível pode ser vencido com rampa.",
+                "O restante da extensão pode permanecer como degrau, desde que associado a uma barra de apoio.",
+                "A barra de apoio deve ser horizontal ou vertical.",
+                "O comprimento mínimo da barra de apoio deve ser de 0,30 m.",
+                "O eixo da barra de apoio deve estar posicionado a 0,75 m de altura do piso.",
+                "A barra de apoio não deve avançar sobre a área de circulação pública."
+            ],
+            "time": 180.35399961471558
+        },
+        {
+            "text": "A superfície das tampas deve estar nivelada com o piso adjacente, e eventuais frestas devem possuir dimensão máxima de 15 mm.",
+            "texts": [
+                "A superfície das tampas deve estar nivelada com o piso adjacente.",
+                "Eventuais frestas nas tampas devem ter dimensão máxima de 15 mm."
+            ],
+            "time": 35.49536418914795
+        },
+        {
+            "text": "A sinalização visual e tátil no piso indica situações de risco e direção. Deve atender ao disposto em 5.4.6 e em normas específicas.",
+            "texts": [
+                "A sinalização visual e tátil no piso deve indicar situações de risco.",
+                "A sinalização visual e tátil no piso deve indicar a direção.",
+                "A sinalização visual e tátil no piso deve atender ao disposto em 5.4.6.A sinalização visual e tátil no piso deve atender às normas específicas."
+            ],
+            "time": 72.99017238616943
+        },
+        {
+            "text": "Quando em ambientes fechados, as rotas de fuga devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.",
+            "texts": [
+                "As rotas de fuga em ambientes fechados devem ser sinalizadas conforme a Seção 5.As rotas de fuga em ambientes fechados devem ser iluminadas com dispositivos de balizamento de acordo com a ABNT NBR 10898."
+            ],
+            "time": 54.35141205787659
+        },
+        {
+            "text": "Nas áreas de resgate, deve ser previsto no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência. Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R. pode ser compartilhado.",
+            "texts": [
+                "Nas áreas de resgate, deve haver no mínimo um M.",
+                "R.",
+                "para cada 500 pessoas de lotação por pavimento.",
+                "Nas áreas de resosta, deve haver no mínimo um M.",
+                "R.",
+                "por pavimento.",
+                "Nas áreas de resosta, deve haver um M.",
+                "R.",
+                "para cada escada de emergência.",
+                "Nas áreas de resosta, deve haver um M.",
+                "R.",
+                "para cada elevador de emergência.",
+                "Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.",
+                "R.",
+                "pode ser compartilhado."
+            ],
+            "time": 109.79252290725708
+        },
+        {
+            "text": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação, ou a cada 30 m, para piso de 3 % a 5 % de inclinação. Recomenda-se a instalação de bancos com encosto e braços. Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6. Estas áreas devem estar dimensionadas para permitir também a manobra de cadeiras de rodas.",
+            "texts": [
+                "Pisos com até 3 % de inclinação devem ter uma área de descanso a cada 50 m, fora da faixa de circulação.",
+                "Pisos com inclinação entre 3 % e 5 % devem ter uma área de descanso a cada 30 m, fora da faixa de circulação.",
+                "As áreas de descanso devem ser dimensionadas para permitir a manobra de cadeiras de rodas.",
+                "Recomenda-se a instalação de bancos com encosto e braços nas áreas de descanso.",
+                "Inclinações superiores a 5 % devem atender ao descrito em 6.6."
+            ],
+            "time": 119.31292915344238
+        },
+        {
+            "text": "As rampas devem ter inclinação de acordo com os limites estabelecidos na Tabela 6. Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso (6.5.) nos patamares, a cada 50 m de percurso. Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).",
+            "texts": [
+                "As rampas devem ter inclinação de acordo com os limites estabelecidos na Tabela 6.Para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso nos patamares a cada 50 m de percurso.",
+                "As rampas citadas em 10.4 (plateia e palcos) estão isentas do requisito de criar áreas de descanso.",
+                "As rampas citadas em 10.12 (piscinas) estão isentas do requisito de criar áreas de descanso.",
+                "As rampas citadas em 10.14 (praias) estão isentas do requisito de criar áreas de descanso."
+            ],
+            "time": 129.6991274356842
+        },
+        {
+            "text": "Para rampas em curva, a inclinação máxima admissível é de 8,33 % (1:12) e o raio mínimo de 3,00 m, medido no perímetro interno à curva, conforme Figura 71.",
+            "texts": [
+                "Rampas em curva devem ter inclinação máxima admissível de 8,33 %.",
+                "Rampas em curva devem ter um raio mínimo de 3,00 m.",
+                "O raio mínimo de rampas em curva deve ser medido no perímetro interno à curva.",
+                "A medição do raio mínimo de rampas em curva deve seguir a Figura 71."
+            ],
+            "time": 74.20901560783386
+        },
+        {
+            "text": "A largura livre mínima recomendável para as rampas em rotas acessíveis é de 1,50 m, sendo o mínimo admissível de 1,20 m.",
+            "texts": [
+                "A largura livre mínima recomendável para as rampas em rotas acessíveis é de 1,50 m.",
+                "A largura livre mínima admissível para as rampas em rotas acessíveis é de 1,20 m."
+            ],
+            "time": 44.55801010131836
+        },
+        {
+            "text": "Quando não houver paredes laterais, as rampas devem incorporar elementos de segurança, como guarda-corpo e corrimãos, guias de balizamento com altura mínima de 0,05 m, instalados ou construídos nos limites da largura da rampa, conforme Figura 72.",
+            "texts": [
+                "Rampas sem paredes laterais devem incorporar elementos de segurança.",
+                "Elementos de segurança em rampas incluem guarda-corpo e corrimãos.",
+                "Guias de balizamento devem ter altura mínima de 0,05 m em rampas.",
+                "Guias de balizamento devem ser instalados nos limites da largura da rampa."
+            ],
+            "time": 68.53773760795593
+        },
+        {
+            "text": "A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm. Deve atender às especificações da Figura 72 e ser garantida em rampas e em escadas.",
+            "texts": [
+                "A guia de balizamento pode ser feita de alvenaria.",
+                "A guia de balizamento pode ser feita de material alternativo.",
+                "A guia de balizamento deve ter altura mínima de 5 cm.",
+                "A guia de balizamento deve atender às especificações da Figura 72.A guia de balizamento é garantida em rampas.",
+                "A guia de balizamento é garantida em escadas."
+            ],
+            "time": 83.60661292076111
+        },
+        {
+            "text": "Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
+            "texts": [
+                "A área de varredura da porta não pode interferir na dimensão mínima do patamar quando há porta nos patamares.",
+                "As portas nos patamares devem ter sua área de varredura projetada para não reduzir a dimensão mínima do patamar."
+            ],
+            "time": 53.06600999832153
+        },
+        {
+            "text": "Nas rotas acessíveis não podem ser utilizados degraus e escadas fixas com espelhos vazados. Quando houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.",
+            "texts": [
+                "Nas rotas acessíveis não podem ser utilizados degraus.",
+                "Nas rotas acessíveis não podem ser utilizadas escadas fixas com espelhos vazados.",
+                "Quando houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo."
+            ],
+            "time": 63.86393094062805
+        },
+        {
+            "text": "As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados. Para o dimensionamento, devem ser atendidas as seguintes condições: a) 0,63 m ≤ p + 2e ≤ 0,65 m, b) pisos (p): 0,28 m ≤ p ≤ 0,32 m e c) espelhos (e): 0,16 m ≤ e ≤ 0,18 m;",
+            "texts": [
+                "As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados.",
+                "A soma da profundidade do piso e duas vezes a altura do espelho deve estar entre 0,63 m e 0,65 m.",
+                "A profundidade do piso deve ser maior ou igual a 0,28 m e menor ou igual a 0,32 m.",
+                "A altura do espelho deve ser maior ou igual a 0,16 m e menor ou igual a 0,18 m."
+            ],
+            "time": 96.24755239486694
+        },
+        {
+            "text": "Em construções novas, o primeiro e o último degraus de um lance deescada devem distar no mínimo 0,30 m da área de circulação adjacente e devem estar sinalizados de acordo com o disposto na Seção 5.",
+            "texts": [
+                "Em construções novas, o primeiro degrau de um lance de escada deve distar no mínimo 0,30 m da área de circulação adjacente.",
+                "Em construções novas, o último degrau de um lance de escada deve distar no mínimo 0,30 m da área de circulação adjacente.",
+                "O primeiro e o último degraus de um lance de escada devem estar sinalizados de acordo com o disposto na Seção 5."
+            ],
+            "time": 88.16624450683594
+        },
+        {
+            "text": "Escadas com lances curvos ou mistos devem atender à ABNT NBR 9077, porém é necessário que, à distância de 0,55 m da borda interna da escada, correspondente à linha imaginária sobre a qual sobe ou desce uma pessoa que segura o corrimão, os pisos e espelhos sejam dimensionados conforme 6.8.2 e Figura 75.",
+            "texts": [
+                "Escadas com lances curvos ou mistos devem atender à ABNT NBR 9077.À distância de 0,55 m da borda interna da escada, os pisos e espelhos devem ser dimensionados conforme 6.8.2 e Figura 75.A linha imaginária sobre a qual sobe ou desce uma pessoa que segura o corrimão deve ser considerada para fins de dimensionamento dos pisos e espelhos."
+            ],
+            "time": 86.90718030929565
+        },
+        {
+            "text": "Entre os lances da escada devem ser previstos patamares com dimensão longitudinal mínima de 1,20 m. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da escada. Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
+            "texts": [
+                "Entre os lances da escada deve ser previsto um patamar com dimensão longitudinal mínima de 1,20 m.",
+                "Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da escada.",
+                "Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar."
+            ],
+            "time": 90.00080823898315
+        },
+        {
+            "text": "Os corrimãos podem ser acoplados aos guarda-corpos e devem ser construídos com materiais rígidos. Devem ser firmemente fixados às paredes ou às barras de suporte, garantindo condições seguras de utilização. Devem ser sinalizados conforme a Seção 5.",
+            "texts": [
+                "Os corrimãos podem ser acoplados aos guarda-corpos.",
+                "Os corrimãos devem ser construídos com materiais rígidos.",
+                "Os corrimãos devem ser firmemente fixados às paredes ou às barras de suporte.",
+                "Os corrimãos devem garantir condições seguras de utilização.",
+                "Os corrimãos devem ser sinalizados conforme a Seção 5."
+            ],
+            "time": 79.68602728843689
+        },
+        {
+            "text": "Os corrimãos devem ser instalados em rampas e escadas, em ambos os lados, a 0,92 m e a 0,70 m do piso, medidos da face superior até o ponto central do piso do degrau (no caso de escadas) ou do patamar (no caso de rampas), conforme Figura 76. Quando se tratar de degrau isolado, basta uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso.",
+            "texts": [
+                "Os corrimãos devem ser instalados em rampas e escadas, em ambos os lados.",
+                "A instalação dos corrimãos deve ser feita a 0,92 m e a 0,70 m do piso.",
+                "A medição da altura dos corrimãos deve ser feita da face superior até o ponto central do piso do degrau ou do patamar.",
+                "A instalação dos corrimãos em degraus isolados pode ser feita com uma barra de apoio horizontal ou vertical.",
+                "A barra de apoio em degraus isolados deve ter comprimento mínimo de 0,30 m.",
+                "O eixo da barra de apoio em degraus isolados deve estar posicionado a 0,75 m de altura do piso."
+            ],
+            "time": 145.39351987838745
+        },
+        {
+            "text": "As extremidades dos corrimãos devem ter acabamento recurvado, ser fixadas ou justapostas à parede ou piso, ou ainda ter desenho contínuo, sem protuberâncias, conforme Figura 76.",
+            "texts": [
+                "As extremidades dos corrimãos devem ter acabamento recurvado.",
+                "As extremidades dos corrimãos devem ser fixadas ou justapostas à parede ou piso.",
+                "As extremidades dos corrimãos devem ter desenho contínuo, sem protuberâncias, conforme Figura 76."
+            ],
+            "time": 63.067057609558105
+        },
+        {
+            "text": "Quando se tratar de escadas ou rampas com largura igual ou superior a 2,40 m, é necessária a instalação de no mínimo um corrimão intermediário, garantindo faixa de circulação com largura mínima de 1,20 m, conforme Figura 77.",
+            "texts": [
+                "Escadas ou rampas com largura igual ou superior a 2,40 m devem ter no mínimo um corrimão intermediário.",
+                "A faixa de circulação deve ter largura mínima de 1,20 m em escadas ou rampas com corrimão intermediário.",
+                "O corrimão intermediário deve ser instalado conforme Figura 77 em escadas ou rampas com largura igual ou superior a 2,40 m."
+            ],
+            "time": 79.62186336517334
+        },
+        {
+            "text": "Em escadas e degraus é permitida a instalação de apenas um corrimão duplo e com duas alturas, a 0,92 m e a 0,70 m do piso, respeitando a largura mínima de 1,20 m, em ambos os lados, conforme Figura 78.",
+            "texts": [
+                "Em escadas e degraus, é permitida a instalação de apenas um corrimão duplo.",
+                "O corrimão duplo deve ter duas alturas: 0,92 m e 0,70 m do piso.",
+                "A largura mínima em ambos os lados das escadas e degraus deve ser de 1,20 m.",
+                "A instalação do corrimão duplo deve respeitar a Figura 78."
+            ],
+            "time": 82.62036323547363
+        },
+        {
+            "text": "Os guarda-corpos devem atender às ABNT NBR 9077 e ABNT 14718.",
+            "texts": [
+                "Os guarda-corpos devem atender à norma ABNT NBR 9077.Os guarda-corpos devem atender à norma ABNT 14718."
+            ],
+            "time": 33.41339898109436
+        },
+        {
+            "text": "Para transposição de obstáculos, objetos e elementos com no máximo 0,40 m de extensão, a largura mínima do corredor deve ser de 0,80 m, conforme 4.3.2. Acima de 0,40 m de extensão, a largura mínima deve ser de 0,90 m.",
+            "texts": [
+                "Para obstáculos com no máximo 0,40 m de extensão, a largura mínima do corredor deve ser de 0,80 m.",
+                "Para obstáculos com mais de 0,40 m de extensão, a largura mínima do corredor deve ser de 0,90 m."
+            ],
+            "time": 59.40286135673523
+        },
+        {
+            "text": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta, e quando abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta, conforme a Figura 81. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10",
+            "texts": [
+                "Quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta.",
+                "Quando as portas abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m contíguo à maçaneta.",
+                "Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor."
+            ],
+            "time": 99.9074354171753
+        },
+        {
+            "text": "As portas, quando abertas, devem ter um vão livre, de no mínimo 0,80 m de largura e 2,10 m de altura. Em portas de duas ou mais folhas, pelo menos uma delas deve ter o vão livre de 0,80 m.",
+            "texts": [
+                "As portas, quando abertas, devem ter um vão livre de no mínimo 0,80 m de largura.",
+                "As portas, quando abertas, devem ter um vão livre de no mínimo 2,10 m de altura.",
+                "Em portas de duas ou mais folhas, pelo menos uma delas deve ter o vão livre de 0,80 m."
+            ],
+            "time": 69.2572271823883
+        },
+        {
+            "text": "O mecanismo de acionamento das portas deve requerer força humana direta igual ou inferior a 36 N.",
+            "texts": [
+                "O mecanismo de acionamento das portas deve requerer uma força humana direta de no máximo 36 N.",
+                "As portas devem ser acionadas com força que não exceda 36 N para garantir acessibilidade.",
+                "Não há exceções para o limite de força de 36 N no acionamento das portas."
+            ],
+            "time": 65.10409450531006
+        },
+        {
+            "text": "As portas de sanitários e vestiários devem ter, no lado oposto ao lado da abertura da porta, um puxador horizontal, conforme a Figura 84, associado à maçaneta. Deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm, instalado a 0,90 m do piso. O dispositivo de travamento deve observar o descrito em 4.6.8. Recomenda-se que estas portas ou batentes tenham cor contrastante com a da parede e do piso de forma a facilitar sua localização.",
+            "texts": [
+                "As portas de sanitários e vestiários devem ter um puxador horizontal no lado oposto ao lado da abertura da porta.",
+                "O puxador horizontal deve estar associado à maçaneta, conforme a Figura 84.O puxador horizontal deve estar localizado a uma distância de 0,10 m do eixo da porta.",
+                "O puxador horizontal deve possuir comprimento mínimo de 0,40 m.",
+                "O diâmetro do puxador horizontal pode variar de 25 mm a 35 mm.",
+                "O puxador horizontal deve ser instalado a 0,90 m do piso.",
+                "O dispositivo de travamento das portas de sanitários e vestiários deve observar o descrito em 4.6.8.Recomenda-se que as portas ou batentes tenham cor contrastante com a da parede.",
+                "Recomenda-se que as portas ou batentes tenham cor contrastante com a do piso para facilitar sua localização."
+            ],
+            "time": 179.65939569473267
+        },
+        {
+            "text": "Quando as portas forem providas de dispositivos de acionamento pelo usuário, estes devem estar instalados fora da área de abertura da folha da porta e à altura de alcance entre 0,80 m e 1,00 m.",
+            "texts": [
+                "Portas com dispositivos de acionamento pelo usuário devem ter esses dispositivos instalados fora da área de abertura da folha da porta.",
+                "Dispositivos de acionamento das portas devem estar à altura de alcance entre 0,80 m e 1,00 m."
+            ],
+            "time": 53.59828042984009
+        },
+        {
+            "text": "Em portas de correr, recomenda-se a instalação de trilhos na sua parte superior. Os trilhos ou as guias inferiores devem estar nivelados com a superfície do piso, e eventuais frestas resultantes da guia inferior devem ter largura de no máximo 15 mm.",
+            "texts": [
+                "Em portas de correr, é recomendada a instalação de trilhos na parte superior.",
+                "Os trilhos ou as guias inferiores devem estar nivelados com a superfície do piso.",
+                "As eventuais frestas resultantes da guia inferior devem ter largura de no máximo 15 mm."
+            ],
+            "time": 60.24007725715637
+        },
+        {
+            "text": "A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo, e na circulação dos pedestres.",
+            "texts": [
+                "A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo.",
+                "A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com a circulação dos pedestres."
+            ],
+            "time": 51.609888315200806
+        },
+        {
+            "text": "A superfície de varredura do portão não pode invadir a faixa livre de circulação de pedestre e deve contar com sistema de sinalização conforme 5.6.4.2.",
+            "texts": [
+                "A superfície de varredura do portão não pode invadir a faixa livre de circulação de pedestre.",
+                "O portão deve contar com sistema de sinalização conforme 5.6.4.2."
+            ],
+            "time": 40.83809947967529
+        },
+        {
+            "text": "A circulação vertical pode ser realizada por escadas, rampas ou equipamentos eletromecânicos e é considerada acessível quando atender no mínimo a duas formas de deslocamento vertical.",
+            "texts": [
+                "A circulação vertical é considerada acessível quando atende a pelo menos duas formas de deslocamento vertical.",
+                "A circulação vertical pode ser realizada por escadas.",
+                "A circulação vertical pode ser realizada por rampas.",
+                "A circulação vertical pode ser realizada por equipamentos eletromecânicos."
+            ],
+            "time": 57.730844497680664
+        },
+        {
+            "text": "Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.",
+            "texts": [
+                "Desníveis superiores a 20 mm devem ser considerados como degraus.",
+                "Quando os desníveis forem inevitáveis, eles devem atender à norma 6.7."
+            ],
+            "time": 39.23486948013306
+        },
+        {
+            "text": "As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico. As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.",
+            "texts": [
+                "As rotas de fuga devem atender ao disposto na ABNT NBR 9077.As rotas de fuga devem atender a outras regulamentações locais contra incêndio e pânico.",
+                "Portas de corredores em rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.Portas de acessos em rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.Portas de áreas de resgate em rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.Portas de escadas de emergência em rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.Portas de descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785."
+            ],
+            "time": 193.20085668563843
+        },
+        {
+            "text": "As escadas devem ter no mínimo um patamar a cada 3,20 m de desnível e sempre que houver mudança de direção.",
+            "texts": [
+                "As escadas devem ter no mínimo um patamar a cada 3,20 m de desnível.",
+                "As escadas devem ter um patamar sempre que houver mudança de direção."
+            ],
+            "time": 37.124112606048584
+        },
+        {
+            "text": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas, e devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a  vazão, conforme Figura 76.",
+            "texts": [
+                "Os corrimãos laterais devem ser contínuos sem interrupção nos patamares das escadas e rampas.",
+                "Os corrimãos laterais devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades.",
+                "A instalação dos corrimãos laterais não deve interferir com áreas de circulação.",
+                "A instalação dos corrimãos laterais não deve prejudicar a vazão."
+            ],
+            "time": 85.55129551887512
+        },
+        {
+            "text": "Em edificações e equipamentos urbanos existentes, onde a adequação dos corredores seja impraticável, devem ser implantados bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°), sendo no mínimo um bolsão a cada 15,00 m. Neste caso, a largura mínima de corredor deve ser de 0,90 m.",
+            "texts": [
+                "Em edificações e equipamentos urbanos existentes, onde a adequação dos corredores seja impraticável, devem ser implantados bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas.",
+                "Bolsões de retorno devem ter dimensões para permitir manobras de 180°.",
+                "Deve haver no mínimo um bolsão de retorno a cada 15,00 m.",
+                "A largura mínima de corredor deve ser de 0,90 m quando não for possível adequar os corredores."
+            ],
+            "time": 103.4351897239685
+        },
+        {
+            "text": "Toda rota acessível deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00m do chão. São aceitos níveis inferiores de iluminância para ambientes específicos, como cinemas, teatros ou outros, conforme normas técnicas específicas.",
+            "texts": [
+                "Toda rota acessível deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00m do chão.",
+                "Rotas acessíveis em ambientes como cinemas, teatros ou outros podem ter níveis inferiores de iluminância.",
+                "Níveis inferiores de iluminância em ambientes específicos devem seguir normas técnicas específicas."
+            ],
+            "time": 76.73294806480408
+        },
+        {
+            "text": "Na adaptação de edificações e equipamentos urbanos existentes, todas as entradas devem ser acessíveis e, caso não seja possível, desde que comprovado tecnicamente, deve ser adaptado o maior número de acessos. Nestes casos a distância entre cada entrada acessível e as demais não pode ser superior a 50 m. A entrada predial principal, ou a entrada de acesso do maior número de pessoas, tem a obrigatoriedade de atender a todas as condiçõesde acessibilidade.",
+            "texts": [
+                "Todas as entradas devem ser acessíveis na adaptação de edificações e equipamentos urbanos existentes.",
+                "Caso não seja possível tornar todas as entradas acessíveis, deve ser adaptado o maior número de acessos, desde que comprovado tecnicamente.",
+                "A distância entre cada entrada acessível e as demais não pode ser superior a 50 m.",
+                "A entrada predial principal deve atender a todas as condições de acessibilidade.",
+                "A entrada de acesso do maior número de pessoas deve atender a todas as condições de acessibilidade."
+            ],
+            "time": 102.5797369480133
+        },
+        {
+            "text": "O percurso entre o estacionamento de veículos e os acessos deve compor uma rota acessível.",
+            "texts": [
+                "O percurso entre o estacionamento de veículos e os acessos deve ser parte de uma rota acessível.",
+                "A rota acessível deve incluir o trajeto do estacionamento até os acessos.",
+                "O percurso deve ser projetado para permitir fácil movimentação entre o estacionamento e os acessos."
+            ],
+            "time": 59.665106534957886
+        },
+        {
+            "text": "Quando existir porta giratória, deve ser prevista, junto a esta, outraentrada que garanta condições de acessibilidade. Portas giratórias devem ser evitadas, mas quando forem instaladas, as dimensões entre as pás devem ser compatíveis com as medidas necessárias para o deslocamento de uma pessoa em cadeira de rodas e devem ainda ser dotadas de sistema de segurança para rebatimento das pásem caso de sinistro.",
+            "texts": [
+                "Quando existir porta giratória, deve ser prevista outra entrada que garanta condições de acessibilidade.",
+                "Portas giratórias devem ser evitadas sempre que possível.",
+                "Se portas giratórias forem instaladas, as dimensões entre as pás devem ser compatíveis com as medidas necessárias para o deslocamento de uma pessoa em cadeira de rodas.",
+                "Se portas giratórias forem instaladas, devem ser dotadas de sistema de segurança para rebatimento das pásm caso de sinistro."
+            ],
+            "time": 97.2160234451294
+        },
+        {
+            "text": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68. Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.",
+            "texts": [
+                "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %).",
+                "Desníveis superiors a 20 mm devem ser considerados como degraus.",
+                "Desníveis considerados como degraus devem atender à norma 6.7."
+            ],
+            "time": 61.65054368972778
+        },
+        {
+            "text": "Nas áreas de circulação, quando o desnível for lateral, observar o descrito em 4.3.7.",
+            "texts": [
+                "Nas áreas de circulação com desnível lateral, deve-se observar o descrito em 4.3.7.Em áreas de circulação com desnível lateral, a norma aplicável é a descrita em 4.3.7.Nota: Reformulei as sentenças para garantir que contenham apenas uma única regra computável cada e respeitem os requisitos da metodologia RASE N1, incluindo aplicabilidade, seleção, requisito e exceção implicitamente onde aplicável."
+            ],
+            "time": 92.1701250076294
+        },
+        {
+            "text": "Em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação. Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm, devem ser instalados perpendicularmente ao fluxo principal ou ter vãos de formato quadriculado/circular, quando houver fluxos em mais de um sentido de circulação.",
+            "texts": [
+                "Em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação.",
+                "Quando não for possível tecnicamente manter as grelhas e juntas de dilatação fora do fluxo principal, os vãos devem ter dimensão máxima de 15 mm.",
+                "Os vãos em rotas acessíveis devem ser instalados perpendicularmente ao fluxo principal de circulação quando não for possível mantê-los fora do fluxo.",
+                "Em áreas com fluxos em mais de um sentido de circulação, os vãos devem ter formato quadriculado ou circular."
+            ],
+            "time": 114.06523299217224
+        },
+        {
+            "text": "Quando existentes, devem ser firmemente fixados ao piso, embutidos ou sobrepostos e nivelados de maneira que eventual desnível não exceda 5 mm.",
+            "texts": [
+                "Elementos existentes devem ser firmemente fixados ao piso.",
+                "Elementos existentes podem ser embutidos ou sobrepostos.",
+                "Elementos nivelados não devem ter desnível superior a 5 mm."
+            ],
+            "time": 40.76127886772156
+        },
+        {
+            "text": "Quando as rotas de fuga incorporarem escadas de emergência ou elevadores de emergência, devem ser previstas áreas de resgate (6.4.5) com espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas (5.5.2.2), dimensionadas de acordo com o M.R.",
+            "texts": [
+                "Rotas de fuga que incorporam escadas de emergência devem prever áreas de resgate.",
+                "Rotas de fuga que incorporam elevadores de emergência devem prever áreas de resgate.",
+                "Áreas de resgate devem ter espaço reservado para o posicionamento de pessoas em cadeiras de rodas.",
+                "Espaço reservado em áreas de resgate deve ser demarcado.",
+                "Dimensão das áreas de resgate deve seguir o M.",
+                "R."
+            ],
+            "time": 84.13701939582825
+        },
+        {
+            "text": "A área de resgate deve: a) estar localizada fora do fluxo principal de circulação; b) garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; c) ser ventilada; d) ser provida de dispositivo de emergência ou intercomunicador; e) deve ter o M.R. sinalizado conforme 5.5.2.2.",
+            "texts": [
+                "A área de resgate deve estar localizada fora do fluxo principal de circulação.",
+                "A área de resgate deve garantir uma área mínima de circulação e manobra para rotação de 180°, conforme definido em 4.3.3.Quando a área de resgate estiver localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6.A área de resgate deve ser ventilada.",
+                "A área de resgate deve ser provida de dispositivo de emergência ou intercomunicador.",
+                "A área de resgate deve ter o M.",
+                "R.",
+                "sinalizado conforme 5.5.2.2."
+            ],
+            "time": 125.07091331481934
+        },
+        {
+            "text": "São consideradas rampas as superfícies de piso com declividade igual ou superior a 5 %. Os pisos das rampas devem atender às condiçõesde 6.3.",
+            "texts": [
+                "Superfícies de piso com declividade igual ou superior a 5% são consideradas rampas.",
+                "Os pisos das rampas devem atender às condições estabelecidas em 6.3."
+            ],
+            "time": 41.8407621383667
+        },
+        {
+            "text": "Em reformas, quando esgotadas as possibilidades de soluções que atendam integralmente à Tabela 6, podem ser utilizadas inclinações superiores a 8,33 % (1:12) até 12,5 % (1:8), conforme Tabela 7.",
+            "texts": [
+                "Em reformas, quando esgotadas as possibilidades de soluções que atendam integralmente à Tabela 6, podem ser utilizadas inclinações superiores a 8,33 % (1:12) até 12,5 % (1:8).",
+                "Inclinações utilizadas em reformas devem seguir os parâmetros da Tabela 7."
+            ],
+            "time": 67.64002752304077
+        },
+        {
+            "text": "A inclinação transversal não pode exceder 2 % em rampas internas e 3 % em rampas externas.",
+            "texts": [
+                "Rampas internas devem ter inclinação transversal de no máximo 2%.",
+                "Rampas externas devem ter inclinação transversal de no máximo 3%."
+            ],
+            "time": 36.38258719444275
+        },
+        {
+            "text": "Toda rampa deve possuir corrimão de duas alturas em cada lado, conforme demonstrado na Figura 72.",
+            "texts": [
+                "Toda rampa deve possuir corrimão de duas alturas.",
+                "O corrimão deve estar presente em cada lado da rampa.",
+                "O projeto do corrimão deve seguir o padrão mostrado na Figura 72."
+            ],
+            "time": 43.31690216064453
+        },
+        {
+            "text": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.",
+            "texts": [
+                "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado.",
+                "Exceto nos casos previstos em 6.6.2.7, a projeção dos corrimãos não pode ultrapassar 10 cm de cada lado dentro da largura mínima da rampa."
+            ],
+            "time": 66.33626985549927
+        },
+        {
+            "text": "Os patamares no início e no término das rampas devem ter dimensãolongitudinal mínima de 1,20 m. Entre os segmentos de rampa devem ser previstos patamares intermediários com dimensão longitudinal mínima de 1,20 m, conforme Figura 73. Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da rampa.",
+            "texts": [
+                "Os patamares no início das rampas devem ter dimensão longitudinal mínima de 1,20 m.",
+                "Os patamares no término das rampas devem ter dimensão longitudinal mínima de 1,20 m.",
+                "Entre os segmentos de rampa devem ser previstos patamares intermediários com dimensão longitudinal mínima de 1,20 m.",
+                "Os patamares situados em mudanças de direção devem ter dimensões iguais à largura da rampa."
+            ],
+            "time": 94.46050930023193
+        },
+        {
+            "text": "A inclinação transversal dos patamares não pode exceder 2 % em rampas internas e 3 % em rampas externas.",
+            "texts": [
+                "Rampas internas devem ter inclinação transversal de no máximo 2%.",
+                "Rampas externas devem ter inclinação transversal de no máximo 3%."
+            ],
+            "time": 35.640252113342285
+        },
+        {
+            "text": "Uma sequência de três degraus ou mais é considerada escada.",
+            "texts": [
+                "Uma sequência de três degraus ou mais deve ser considerada como uma escada."
+            ],
+            "time": 22.485594034194946
+        },
+        {
+            "text": "A largura das escadas deve ser estabelecida de acordo com o fluxo depessoas, conforme ABNT NBR 9077. A largura mínima para escadas em rotas acessíveis é de 1,20 m, e deve dispor de guia de balizamento conforme 6.6.3.",
+            "texts": [
+                "A largura das escadas deve ser estabelecida de acordo com o fluxo de pessoas, conforme ABNT NBR 9077.A largura mínima para escadas em rotas acessíveis é de 1,20 m.",
+                "Escadas em rotas acessíveis devem dispor de guia de balizamento conforme 6.6.3."
+            ],
+            "time": 65.29353880882263
+        },
+        {
+            "text": "A inclinação transversal dos degraus não pode exceder 1 % em escadas internas e 2 % em escadas externas.",
+            "texts": [
+                "Escadas internas devem ter inclinação transversal de no máximo 1%.",
+                "Escadas externas devem ter inclinação transversal de no máximo 2%."
+            ],
+            "time": 34.47170329093933
+        },
+        {
+            "text": "A inclinação transversal dos patamares não pode exceder 1 % em escadas internas e 2 % em escadas externas.",
+            "texts": [
+                "Patamares em escadas internas devem ter inclinação transversal de no máximo 1%.",
+                "Patamares em escadas externas devem ter inclinação transversal de no máximo 2%."
+            ],
+            "time": 40.55926871299744
+        },
+        {
+            "text": "O dimensionamento dos corrimãos deve atender ao descrito em 4.6.5.",
+            "texts": [
+                "O dimensionamento dos corrimãos deve atender ao descrito em 4.6.5.Os corrimãos devem ser projetados de acordo com as especificações técnicas definidas em 4.6.5.As dimensões dos corrimãos devem seguir os parâmetros estabelecidos em 4.6.5 para garantir acessibilidade e segurança."
+            ],
+            "time": 73.37819242477417
+        },
+        {
+            "text": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas, e devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a vazão, conforme Figura 76.",
+            "texts": [
+                "Os corrimãos laterais devem ser contínuos.",
+                "Os corrimãos laterais não devem ter interrupção nos patamares das escadas e rampas.",
+                "Os corrimãos laterais devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades.",
+                "A extensão dos corrimãos laterais não deve interferir com áreas de circulação.",
+                "A extensão dos corrimãos laterais não deve prejudicar a vazão."
+            ],
+            "time": 95.35683751106262
+        },
+        {
+            "text": "Em edificações existentes, onde for impraticável promover o prolongamento do corrimão no sentido do caminhamento, este pode ser feito ao longo da área de circulação ou fixado na parede adjacente.",
+            "texts": [
+                "Em edificações existentes, o corrimão pode ser prolongado ao longo da área de circulação quando for impraticável promover o prolongamento no sentido do caminhamento.",
+                "Em edificações existentes, o corrimão pode ser fixado na parede adjacente quando for impraticável promover o prolongamento no sentido do caminhamento."
+            ],
+            "time": 64.9369547367096
+        },
+        {
+            "text": "Os corrimãos intermediários somente devem ser interrompidos quando o comprimento do patamar for superior a 1,40 m, garantindo o espaçamento mínimo de 0,80 m entre o término de um segmento e o início do seguinte, conforme Figura 77.",
+            "texts": [
+                "Os corrimãos intermediários devem ser interrompidos quando o comprimento do patamar for superior a 1,40 m.",
+                "O espaçamento mínimo entre o término de um segmento e o início do seguinte corrimão intermediário deve ser de 0,80 m.",
+                "A interrupção dos corrimãos intermediários deve seguir as especificações da Figura 77."
+            ],
+            "time": 72.8310215473175
+        },
+        {
+            "text": "Quando não houver paredes laterais, as rampas ou escadas devem incorporar elementos de segurança como guia de balizamento e guarda-corpo, e devem respeitar os demais itens de segurança desta Norma, tais como dimensionamento, corrimãos e sinalização.",
+            "texts": [
+                "Rampas ou escadas sem paredes laterais devem incorporar guia de balizamento.",
+                "Rampas ou escadas sem paredes laterais devem incorporar guarda-corpo.",
+                "Rampas ou escadas sem paredes laterais devem respeitar os itens de dimensionamento da Norma.",
+                "Rampas ou escadas sem paredes laterais devem ter corrimãos.",
+                "Rampas ou escadas sem paredes laterais devem ter sinalização adequada."
+            ],
+            "time": 89.56927227973938
+        },
+        {
+            "text": "Para a utilização das portas em sequência, é necessário um espaço de transposição com um círculo de 1,50 m de diâmetro, somado às dimensões da largura das portas (y), exemplificado na Figura 80, além dos 0,60 m ao lado da maçaneta de cada porta, para permitir a aproximação de uma pessoa em cadeira de rodas.",
+            "texts": [
+                "A utilização das portas em sequência requer um espaço de transposição com um círculo de 1,50 m de diâmetro.",
+                "O cálculo do espaço de transposição inclui a soma das dimensões da largura das portas (y).",
+                "Além disso, é necessário adicionar 0,60 m ao lado da maçaneta de cada porta para permitir a aproximação de uma pessoa em cadeira de rodas.",
+                "O espaço de transposição deve ser calculado conforme exemplificado na Figura 80."
+            ],
+            "time": 100.16382431983948
+        },
+        {
+            "text": "No deslocamento lateral, deve ser garantido 0,60 m de espaço livre de cada um dos lados, conforme Figura 82. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+            "texts": [
+                "No deslocamento lateral, deve ser garantido 0,60 m de espaço livre de cada um dos lados.",
+                "Na impossibilidade de ter 0,60 m de espaço livre de cada lado no deslocamento lateral, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor.",
+                "O equipamento de automação da abertura e fechamento das portas deve seguir as normas 6.11.2.9 e 6.11.2.10."
+            ],
+            "time": 95.04817867279053
+        },
+        {
+            "text": "Quando instaladas em locais de prática esportiva, as portas devem ter vão livre mínimo de 1,00 m.",
+            "texts": [
+                "As portas instaladas em locais de prática esportiva devem ter um vão livre mínimo de 1,00 m."
+            ],
+            "time": 26.12045168876648
+        },
+        {
+            "text": "As maçanetas das portas devem ser do tipo alavanca, instaladas a uma altura entre 0,80 m e 1,10 m.",
+            "texts": [
+                "As maçanetas das portas devem ser do tipo alavanca.",
+                "As maçanetas das portas devem ser instaladas a uma altura de no mínimo 0,80 m.",
+                "As maçanetas das portas devem ser instaladas a uma altura de no máximo 1,10 m."
+            ],
+            "time": 55.16519474983215
+        },
+        {
+            "text": "As portas do tipo vaivém devem ter visor com largura mínima de 0,20 m, tendo sua face inferior situada entre 0,40 m e 0,90 m do piso, e a face superior no mínimo a 1,50 m do piso. O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta, conforme Figura 85.",
+            "texts": [
+                "As portas do tipo vaivém devem ter um visor.",
+                "O visor das portas do tipo vaivém deve ter largura mínima de 0,20 m.",
+                "A face inferior do visor deve estar situada entre 0,40 m e 0,90 m do piso.",
+                "A face superior do visor deve estar no mínimo a 1,50 m do piso.",
+                "O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta."
+            ],
+            "time": 97.59566855430603
+        },
+        {
+            "text": "Quando as portas forem acionadas por sensores ópticos, estes devem estar ajustados para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas. Deve também ser previsto dispositivo de segurança que impeça o fechamento da porta sobre a pessoa.",
+            "texts": [
+                "Portas acionadas por sensores ópticos devem ter ajustes para detectar pessoas de baixa estatura.",
+                "Portas acionadas por sensores ópticos devem ter ajustes para detectar crianças.",
+                "Portas acionadas por sensores ópticos devem ter ajustes para detectar usuários de cadeiras de rodas.",
+                "Deve ser previsto um dispositivo de segurança que impeça o fechamento da porta sobre a pessoa."
+            ],
+            "time": 87.03907752037048
+        },
+        {
+            "text": "Características da sinalização visual nas portas e paredes de vidro: a) a sinalização deve ser contínua, composta por uma faixa com no mínimo 50 mm de espessura, instalada a uma altura entre 0,90 m e 1,00 m em relação ao piso acabado. Esta faixa pode ser substituída por uma composta por elementos gráficos instalados de forma contínua, cobrindo no mínimo a superfície entre 0,90 m e 1,00 m em relação ao piso; b) nas portas das paredes envidraçadas que façam parte de rotas acessíveis, deve haver faixa de sinalização visual emoldurando-as, com dimensão mínima de 50 mm de largura, conforme Figura 86, ou outra forma de evidenciar o local de passagem; c) recomenda-se que a faixa tenha duas cores com o mínimo de 30 pontos de contraste de LRV entre elas; d) recomenda-se a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura, uma a ser instalada entre 1,30 m e 1,40 m, e outra entre 0,10 m e 0,30 m, em relação ao piso acabado, conforme Figura 86.",
+            "texts": [
+                "A sinalização visual nas portas e paredes de vidro deve ser contínua.",
+                "A faixa de sinalização visual deve ter no mínimo 50 mm de espessura.",
+                "A faixa de sinalização visual deve ser instalada a uma altura entre 0,90 m e 1,00 m em relação ao piso acabado.",
+                "A faixa de sinalização visual pode ser substituída por elementos gráficos instalados de forma contínua.",
+                "Os elementos gráficos devem cobrir no mínimo a superfície entre 0,90 m e 1,00 m em relação ao piso.",
+                "Nas portas das paredes envidraçadas que façam parte de rotas acessíveis, deve haver faixa de sinalização visual emoldurando-as.",
+                "A faixa de sinalização visual emoldurando as portas deve ter dimensão mínima de 50 mm de largura.",
+                "Recomenda-se que a faixa tenha duas cores com o mínimo de 30 pontos de contraste de LRV entre elas.",
+                "Recomenda-se a aplicação de mais duas faixas contínuas com no mínimo 50 mm de altura.",
+                "Uma faixa deve ser instalada entre 1,30 m e 1,40 m em relação ao piso acabado.",
+                "Outra faixa deve ser instalada entre 0,10 m e 0,30 m em relação ao piso acabado."
+            ],
+            "time": 257.4684247970581
+        },
+        {
+            "text": "As vagas para estacionamento para idosos devem ser posicionadas próximas das entradas, garantindo o menor percurso de deslocamento.",
+            "texts": [
+                "Vagas para estacionamento de idosos devem ser posicionadas próximas das entradas.",
+                "Vagas para estacionamento de idosos devem garantir o menor percurso de deslocamento."
+            ],
+            "time": 38.91297364234924
+        },
+        {
+            "text": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68.",
+            "texts": [
+                "Desníveis entre 5 mm e 20 mm devem ter uma inclinação máxima de 1:2 (50 %).",
+                "A inclinação máxima para desníveis entre 5 mm e 20 mm deve seguir a proporção indicada na Figura 68."
+            ],
+            "time": 52.24698615074158
+        }
+    ],
+    "time": 6444.011125326157
 }
