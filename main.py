@@ -56,7 +56,7 @@ def main():
         os.environ["GENERATE_DEBUG"] = "1"
 
     from generates.menu_generate import show_generated_data
-    from menu_validate import show_validated_data
+    from validates.menu_validate import show_validated_data
     from utils.screen_utils import (
         clear_screen,
         menu_bar_line,

@@ -6,7 +6,7 @@ import threading
 import time
 import unicodedata
 from pathlib import Path
-from typing import Any, Dict, List, Literal, Tuple
+from typing import Any, Callable, Dict, List, Literal, Tuple
 
 Tipo = Literal["n1", "n2", "n3"]
 Modelo = Literal["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
@@ -160,7 +160,7 @@ def run_generator(n_key: str, models: List[str]) -> None:
             unload_model(model_id)
 
 
-def reset_model(model_id: str, log: callable | None = None) -> None:
+def reset_model(model_id: str, log: Callable[[str], None] | None = None) -> None:
     try:
         subprocess.run(["ollama", "stop", model_id], check=False)
     except (subprocess.SubprocessError, FileNotFoundError):
@@ -173,7 +173,7 @@ def invoke_with_timeout(
     payload: Dict[str, str],
     timeout: float,
     heartbeat_interval: float,
-    log: callable | None = None,
+    log: Callable[[str], None] | None = None,
 ) -> tuple[str | None, bool]:
     result_holder: Dict[str, str] = {}
     error_holder: Dict[str, Exception] = {}
