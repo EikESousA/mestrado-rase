@@ -7,12 +7,12 @@ import gensim.downloader as api
 from fuzzywuzzy import fuzz
 from sentence_transformers import SentenceTransformer
 
-from validates.build_pairs import build_pairs
-from validates.compute_sbert_scores import compute_sbert_scores
-from validates.compute_tfidf_scores import compute_tfidf_scores
-from validates.compute_wmd_scores import compute_wmd_scores
-from validates.load_nilc_model import load_nilc_model
-from validates.normalize_wmd import normalize_wmd
+from utils.validates.build_pairs import build_pairs
+from utils.validates.compute_sbert_scores import compute_sbert_scores
+from utils.validates.compute_tfidf_scores import compute_tfidf_scores
+from utils.validates.compute_wmd_scores import compute_wmd_scores
+from utils.validates.load_nilc_model import load_nilc_model
+from utils.validates.normalize_wmd import normalize_wmd
 
 
 def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
