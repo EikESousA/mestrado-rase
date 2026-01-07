@@ -1,22 +1,38 @@
+import os
+
+from menu_generate import show_generated_data
+from menu_validate import show_validated_data
+
+
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
+
+
 def main():
     while True:
+        clear_screen()
         print("1 - Gerar dados")
         print("2 - Validar Dados")
+        print()
         print("0 - Sair")
         print()
+        print("Escolha uma opcao: ", end="")
 
         choice = input().strip()
 
         if choice == "1":
-            print("Dados Gerados")
+            clear_screen()
+            show_generated_data()
             print()
         elif choice == "2":
-            print("Dados validados")
+            clear_screen()
+            show_validated_data()
             print()
         elif choice == "0":
             print("Encerre")
             break
         else:
+            clear_screen()
             print("Digite uma das opcoes")
             print()
 
