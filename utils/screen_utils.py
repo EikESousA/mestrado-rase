@@ -44,11 +44,11 @@ def read_single_key() -> str:
         termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
 
 
-def menu_bar_line(width: int) -> str:
-    if width < 2:
+def menu_bar_line() -> str:
+    if MENU_WIDTH < 2:
         raise ValueError("width must be >= 2")
     gray = _ANSI_COLORS["gray"]
-    return f"{gray}|{'-' * (width - 2)}|{_ANSI_RESET}"
+    return f"{gray}|{'-' * (MENU_WIDTH - 2)}|{_ANSI_RESET}"
 
 
 def _colorize(text: str, color: str) -> str:
@@ -62,13 +62,12 @@ def _colorize(text: str, color: str) -> str:
 
 def menu_text_line(
     text: str,
-    width: int,
     align_left: bool = True,
     color: str | None = None,
 ) -> str:
-    if width < 4:
+    if MENU_WIDTH < 4:
         raise ValueError("width must be >= 4")
-    content_width = width - 4
+    content_width = MENU_WIDTH - 4
     trimmed = text[:content_width]
     if align_left:
         content = trimmed.ljust(content_width)
@@ -82,12 +81,11 @@ def menu_text_line(
 
 def menu_prompt(
     text: str,
-    width: int,
     color: str | None = None,
     end: str | None = None,
     flush: bool | None = None,
 ) -> None:
-    line = menu_text_line(text, width, align_left=True, color=color)
+    line = menu_text_line(text, align_left=True, color=color)
     kwargs = {}
     if end is not None:
         kwargs["end"] = end
@@ -96,10 +94,10 @@ def menu_prompt(
     print(line, **kwargs)
 
 
-def show_debug_banner(width: int = MENU_WIDTH) -> None:
+def show_debug_banner() -> None:
     env_debug = os.getenv("GENERATE_DEBUG", "").strip().lower()
     if env_debug not in {"1", "true", "yes", "on"}:
         return
-    print(menu_bar_line(width))
-    print(menu_text_line("MODO DEBUG", width, align_left=False, color="red"))
-    print(menu_bar_line(width))
+    print(menu_bar_line())
+    print(menu_text_line("MODO DEBUG", align_left=False, color="red"))
+    print(menu_bar_line())

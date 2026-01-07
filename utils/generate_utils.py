@@ -1,8 +1,10 @@
+import re
 import shutil
 import subprocess
 import sys
+import unicodedata
 from pathlib import Path
-from typing import List, Literal, Tuple
+from typing import Any, Dict, List, Literal, Tuple
 
 Tipo = Literal["n1", "n2", "n3"]
 Modelo = Literal["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
@@ -154,3 +156,92 @@ def run_generator(n_key: str, models: List[str]) -> None:
         )
         if model_id:
             unload_model(model_id)
+
+
+def empty_properties_n3() -> Dict[str, str]:
+    return {
+        "type": "",
+        "object": "",
+        "property": "",
+        "comparation": "",
+        "target": "",
+        "unit": "",
+    }
+
+
+def normalize_field_name(field: str) -> str:
+    field = unicodedata.normalize("NFKD", field).encode("ASCII", "ignore").decode("ASCII")
+    field = field.lower()
+
+    if field == "selecao":
+        return "selecao"
+    if field in {"execao", "excecao", "execcao"}:
+        return "execao"
+    if field == "aplicabilidade":
+        return "aplicabilidade"
+    if field == "requisito":
+        return "requisito"
+    return field
+
+
+def clean_n2_output(text: str) -> str:
+    cleaned = text.strip()
+    cleaned = cleaned.replace("```", "")
+    cleaned = re.sub(r"(?i)^(resposta|saida)\s*:\s*", "", cleaned)
+    return cleaned.strip()
+
+
+def process_n2_text(text: str) -> Dict[str, str]:
+    campos = ["aplicabilidade", "selecao", "execao", "requisito"]
+    resultado = {campo: "" for campo in campos}
+
+    cleaned = clean_n2_output(text)
+    padrao_campo = re.compile(r"^(.+?):\s*(.*)$", re.IGNORECASE)
+    padrao_checagem = re.compile(rf"^({'|'.join(campos)}):$", re.IGNORECASE)
+
+    campo_atual = None
+    for linha in cleaned.splitlines():
+        linha = linha.strip()
+        if not linha:
+            continue
+
+        match = padrao_campo.match(linha)
+        if match:
+            raw_field = match.group(1).strip()
+            campo = normalize_field_name(raw_field)
+            valor = match.group(2).strip()
+
+            if campo not in resultado:
+                continue
+
+            if padrao_checagem.match(valor.lower()):
+                valor = ""
+
+            resultado[campo] = valor
+            campo_atual = campo if valor == "" else None
+        elif campo_atual:
+            if not padrao_campo.match(linha):
+                resultado[campo_atual] += " " + linha.strip()
+
+    return {k: v.strip() for k, v in resultado.items()}
+
+
+def build_operators_n2(result: Dict[str, str]) -> Dict[str, Any]:
+    return {
+        "requeriments": {
+            "text_n2": result.get("requisito", ""),
+            "properties_n3": empty_properties_n3(),
+        },
+        "aplicability": {
+            "text_n2": result.get("aplicabilidade", ""),
+            "properties_n3": empty_properties_n3(),
+        },
+        "selection": {
+            "text_n2": result.get("selecao", ""),
+            "properties_n3": empty_properties_n3(),
+        },
+        "exception": {
+            "text_n2": result.get("execao", ""),
+            "properties_n3": empty_properties_n3(),
+        },
+    }

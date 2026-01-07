@@ -1,8 +1,18 @@
 import argparse
 from pathlib import Path
 
-from utils.generate_n2_utils import generate_n2
-from utils.generate_utils import generate_config
+from utils.generate_n1_n2_utils import generate_n1_n2
+
+MODEL_CONFIG = {
+    "llama": "llama3.3:latest",
+    "alpaca": "splitpierre/bode-alpaca-pt-br:13b-Q4_0",
+    "mistral": "cnmoro/mistral_7b_portuguese:q4_K_M",
+    "dolphin": "cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4_k_m",
+    "gemma": "brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16",
+    "qwen": "cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4_k_m",
+}
+
+
 
 
 template = """
@@ -47,7 +57,7 @@ requisito:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Gerar operadores RASE N2.")
+    parser = argparse.ArgumentParser(description="Gerar operadores N2 a partir do N1.")
     parser.add_argument(
         "--model",
         choices=["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"],
@@ -59,14 +69,21 @@ def main() -> None:
     parser.add_argument("--log", dest="log_path", default=None)
     args = parser.parse_args()
 
-    input_path, output_path, model_id = generate_config("n2", args.model)
+    if args.model not in MODEL_CONFIG:
+        print("Modelo invalido.")
+        return
+
+    input_path = f"predicts/generate_n1_{args.model}.json"
+    output_path = f"predicts/generate_n1_n2_{args.model}.json"
+    model_id = MODEL_CONFIG[args.model]
+
     if args.input_path:
         input_path = args.input_path
     if args.output_path:
         output_path = args.output_path
 
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-    generate_n2(
+    generate_n1_n2(
         input_path=input_path,
         output_path=output_path,
         template=template,

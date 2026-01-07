@@ -59,7 +59,6 @@ def main():
     from menu_validate import show_validated_data
     from utils.screen_utils import (
         clear_screen,
-        MENU_WIDTH,
         menu_bar_line,
         menu_prompt,
         menu_text_line,
@@ -70,19 +69,19 @@ def main():
     try:
         while True:
             clear_screen()
-            show_debug_banner(MENU_WIDTH)
-            print(menu_bar_line(MENU_WIDTH))
-            print(menu_text_line("Universidade Federal de Sergipe", MENU_WIDTH, align_left=False, color="yellow"))
-            print(menu_bar_line(MENU_WIDTH))
-            print(menu_text_line("Eike Natan Sousa Brito", MENU_WIDTH, align_left=False, color="yellow"))
-            print(menu_bar_line(MENU_WIDTH))
-            print(menu_text_line("1 - Gerar dados", MENU_WIDTH, align_left=True))
-            print(menu_text_line("2 - Validar Dados", MENU_WIDTH, align_left=True))
-            print(menu_bar_line(MENU_WIDTH))
-            print(menu_text_line("0 - Sair", MENU_WIDTH, align_left=True, color="red"))
-            print(menu_bar_line(MENU_WIDTH))
-            menu_prompt("Escolha uma opcao: ", MENU_WIDTH, color="green")
-            print(menu_bar_line(MENU_WIDTH))
+            show_debug_banner()
+            print(menu_bar_line())
+            print(menu_text_line("Universidade Federal de Sergipe", align_left=False, color="yellow"))
+            print(menu_bar_line())
+            print(menu_text_line("Eike Natan Sousa Brito", align_left=False, color="yellow"))
+            print(menu_bar_line())
+            print(menu_text_line("1 - Gerar dados", align_left=True))
+            print(menu_text_line("2 - Validar Dados", align_left=True))
+            print(menu_bar_line())
+            print(menu_text_line("0 - Sair", align_left=True, color="red"))
+            print(menu_bar_line())
+            menu_prompt("Escolha uma opcao: ", color="green")
+            print(menu_bar_line())
 
             choice = read_single_key().strip()
             print()
@@ -97,18 +96,18 @@ def main():
                 print()
             elif choice == "0":
                 clear_screen()
-                print(menu_bar_line(MENU_WIDTH))
-                print(menu_text_line("Programa encerrado", MENU_WIDTH, align_left=False, color="red"))
-                print(menu_bar_line(MENU_WIDTH))
+                print(menu_bar_line())
+                print(menu_text_line("Programa encerrado", align_left=False, color="red"))
+                print(menu_bar_line())
                 break
             else:
                 clear_screen()
                 print("Digite uma das opcoes")
                 print()
     except KeyboardInterrupt:
-        print(menu_bar_line(MENU_WIDTH))
-        print(menu_text_line("Programa encerrado", MENU_WIDTH, align_left=False, color="red"))
-        print(menu_bar_line(MENU_WIDTH))
+        print(menu_bar_line())
+        print(menu_text_line("Programa encerrado", align_left=False, color="red"))
+        print(menu_bar_line())
 
 
 if __name__ == "__main__":

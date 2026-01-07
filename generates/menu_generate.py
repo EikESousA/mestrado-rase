@@ -1,7 +1,6 @@
 from utils.generate_utils import run_generator, wait_to_return
 from utils.screen_utils import (
     clear_screen,
-    MENU_WIDTH,
     menu_bar_line,
     menu_prompt,
     menu_text_line,
@@ -14,6 +13,9 @@ def show_generated_data():
         ("1", "n1", False),
         ("2", "n2", True),
         ("3", "n3", False),
+        ("4", "n1_n2", False),
+        ("5", "n2_n3", False),
+        ("6", "n1_n2_n3", False),
     ]
     options_model = [
         ("a", "alpaca", True),
@@ -25,27 +27,30 @@ def show_generated_data():
     ]
 
     while True:
-        show_debug_banner(MENU_WIDTH)
-        print(menu_bar_line(MENU_WIDTH))
-        print(menu_text_line("GERAR DADOS", MENU_WIDTH, align_left=False))
-        print(menu_bar_line(MENU_WIDTH))
-        print(menu_text_line(f"1 - [{'x' if options_n[0][2] else ' '}] {options_n[0][1]}", MENU_WIDTH))
-        print(menu_text_line(f"2 - [{'x' if options_n[1][2] else ' '}] {options_n[1][1]}", MENU_WIDTH))
-        print(menu_text_line(f"3 - [{'x' if options_n[2][2] else ' '}] {options_n[2][1]}", MENU_WIDTH))
-        print(menu_bar_line(MENU_WIDTH))
-        print(menu_text_line(f"a - [{'x' if options_model[0][2] else ' '}] {options_model[0][1]}", MENU_WIDTH))
-        print(menu_text_line(f"b - [{'x' if options_model[1][2] else ' '}] {options_model[1][1]}", MENU_WIDTH))
-        print(menu_text_line(f"c - [{'x' if options_model[2][2] else ' '}] {options_model[2][1]}", MENU_WIDTH))
-        print(menu_text_line(f"d - [{'x' if options_model[3][2] else ' '}] {options_model[3][1]}", MENU_WIDTH))
-        print(menu_text_line(f"e - [{'x' if options_model[4][2] else ' '}] {options_model[4][1]}", MENU_WIDTH))
-        print(menu_text_line(f"f - [{'x' if options_model[5][2] else ' '}] {options_model[5][1]}", MENU_WIDTH))
-        print(menu_bar_line(MENU_WIDTH))
-        print(menu_text_line("Enter - Processar", MENU_WIDTH))
-        print(menu_bar_line(MENU_WIDTH))
-        print(menu_text_line("0 - Voltar", MENU_WIDTH, color="red"))
-        print(menu_bar_line(MENU_WIDTH))
-        menu_prompt("Escolha uma opcao: ", MENU_WIDTH, color="green")
-        print(menu_bar_line(MENU_WIDTH))
+        show_debug_banner()
+        print(menu_bar_line())
+        print(menu_text_line("GERAR DADOS", align_left=False))
+        print(menu_bar_line())
+        print(menu_text_line(f"1 - [{'x' if options_n[0][2] else ' '}] {options_n[0][1]}"))
+        print(menu_text_line(f"2 - [{'x' if options_n[1][2] else ' '}] {options_n[1][1]}"))
+        print(menu_text_line(f"3 - [{'x' if options_n[2][2] else ' '}] {options_n[2][1]}"))
+        print(menu_text_line(f"4 - [{'x' if options_n[3][2] else ' '}] {options_n[3][1]}"))
+        print(menu_text_line(f"5 - [{'x' if options_n[4][2] else ' '}] {options_n[4][1]}"))
+        print(menu_text_line(f"6 - [{'x' if options_n[5][2] else ' '}] {options_n[5][1]}"))
+        print(menu_bar_line())
+        print(menu_text_line(f"a - [{'x' if options_model[0][2] else ' '}] {options_model[0][1]}"))
+        print(menu_text_line(f"b - [{'x' if options_model[1][2] else ' '}] {options_model[1][1]}"))
+        print(menu_text_line(f"c - [{'x' if options_model[2][2] else ' '}] {options_model[2][1]}"))
+        print(menu_text_line(f"d - [{'x' if options_model[3][2] else ' '}] {options_model[3][1]}"))
+        print(menu_text_line(f"e - [{'x' if options_model[4][2] else ' '}] {options_model[4][1]}"))
+        print(menu_text_line(f"f - [{'x' if options_model[5][2] else ' '}] {options_model[5][1]}"))
+        print(menu_bar_line())
+        print(menu_text_line("Enter - Processar"))
+        print(menu_bar_line())
+        print(menu_text_line("0 - Voltar", color="red"))
+        print(menu_bar_line())
+        menu_prompt("Escolha uma opcao: ", color="green")
+        print(menu_bar_line())
 
         choice = read_single_key().strip()
         print()
@@ -62,6 +67,15 @@ def show_generated_data():
         elif choice == "3":
             clear_screen()
             options_n[2] = (options_n[2][0], options_n[2][1], not options_n[2][2])
+        elif choice == "4":
+            clear_screen()
+            options_n[3] = (options_n[3][0], options_n[3][1], not options_n[3][2])
+        elif choice == "5":
+            clear_screen()
+            options_n[4] = (options_n[4][0], options_n[4][1], not options_n[4][2])
+        elif choice == "6":
+            clear_screen()
+            options_n[5] = (options_n[5][0], options_n[5][1], not options_n[5][2])
         elif choice == "a":
             clear_screen()
             options_model[0] = (options_model[0][0], options_model[0][1], not options_model[0][2])
@@ -98,7 +112,7 @@ def generate_data(ns, models):
     active_models = [model_key for _, model_key, active in models if active]
 
     if not active_ns:
-        print("Selecione o 1, 2 ou 3 para gerar os dados.")
+        print("Selecione o 1, 2, 3, 4, 5 ou 6 para gerar os dados.")
         print()
         input("Digite qualquer tecla para voltar ao menu.")
         return
