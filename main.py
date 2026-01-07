@@ -1,6 +1,6 @@
 import os
 
-from menu_generate import show_generated_data
+from generates.menu_generate import show_generated_data
 from menu_validate import show_validated_data
 
 
@@ -29,7 +29,7 @@ def main():
             show_validated_data()
             print()
         elif choice == "0":
-            print("Encerre")
+            print("Programa encerrado.")
             break
         else:
             clear_screen()
