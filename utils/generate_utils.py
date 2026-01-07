@@ -2,6 +2,8 @@ import re
 import shutil
 import subprocess
 import sys
+import threading
+import time
 import unicodedata
 from pathlib import Path
 from typing import Any, Dict, List, Literal, Tuple
@@ -156,6 +158,51 @@ def run_generator(n_key: str, models: List[str]) -> None:
         )
         if model_id:
             unload_model(model_id)
+
+
+def reset_model(model_id: str, log: callable | None = None) -> None:
+    try:
+        subprocess.run(["ollama", "stop", model_id], check=False)
+    except (subprocess.SubprocessError, FileNotFoundError):
+        if log is not None:
+            log("Erro ao descarregar o modelo.")
+
+
+def invoke_with_timeout(
+    chain: Any,
+    payload: Dict[str, str],
+    timeout: float,
+    heartbeat_interval: float,
+    log: callable | None = None,
+) -> tuple[str | None, bool]:
+    result_holder: Dict[str, str] = {}
+    error_holder: Dict[str, Exception] = {}
+
+    def _run() -> None:
+        try:
+            result_holder["result"] = chain.invoke(payload)
+        except Exception as exc:
+            error_holder["error"] = exc
+
+    thread = threading.Thread(target=_run, daemon=True)
+    thread.start()
+    start = time.time()
+    next_heartbeat = start + heartbeat_interval
+    while thread.is_alive():
+        now = time.time()
+        if now >= start + timeout:
+            return None, True
+        if heartbeat_interval > 0 and now >= next_heartbeat and log is not None:
+            log(
+                "Ainda aguardando resposta do modelo "
+                f"({int(now - start)}s)..."
+            )
+            next_heartbeat = now + heartbeat_interval
+        time.sleep(0.2)
+
+    if "error" in error_holder:
+        raise error_holder["error"]
+    return result_holder.get("result"), False
 
 
 def empty_properties_n3() -> Dict[str, str]:

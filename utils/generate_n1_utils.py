@@ -1,7 +1,5 @@
 import json
 import re
-import subprocess
-import threading
 import time
 from typing import Any, Dict, List
 
@@ -9,6 +7,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSerializable
 from langchain_ollama import OllamaLLM
 
+from utils.generate_utils import invoke_with_timeout, reset_model
 from utils.log_utils import init_log
 
 def empty_operators() -> Dict[str, str]:
@@ -77,42 +76,6 @@ def generate_n1(
     data: Dict[str, Any] = {}
     log, close_log = init_log(output_path, log_path)
 
-    def reset_model() -> None:
-        try:
-            subprocess.run(["ollama", "stop", model], check=False)
-        except (subprocess.SubprocessError, FileNotFoundError):
-            log("Erro ao descarregar o modelo.")
-
-    def invoke_with_timeout(text: str, timeout: float) -> tuple[str | None, bool]:
-        result_holder: Dict[str, str] = {}
-        error_holder: Dict[str, Exception] = {}
-
-        def _run() -> None:
-            try:
-                result_holder["result"] = chain.invoke({"text": text})
-            except Exception as exc:
-                error_holder["error"] = exc
-
-        thread = threading.Thread(target=_run, daemon=True)
-        thread.start()
-        start = time.time()
-        next_heartbeat = start + heartbeat_interval
-        while thread.is_alive():
-            now = time.time()
-            if now >= start + timeout:
-                return None, True
-            if heartbeat_interval > 0 and now >= next_heartbeat:
-                log(
-                    "Ainda aguardando resposta do modelo "
-                    f"({int(now - start)}s)..."
-                )
-                next_heartbeat = now + heartbeat_interval
-            time.sleep(0.2)
-
-        if "error" in error_holder:
-            raise error_holder["error"]
-        return result_holder.get("result"), False
-
     try:
         with open(input_path, "r", encoding="utf-8") as file:
             data = json.load(file)
@@ -157,7 +120,13 @@ def generate_n1(
             for attempt in range(1, max_retries + 1):
                 log(f"Chamando modelo (tentativa {attempt})")
                 try:
-                    result, timed_out = invoke_with_timeout(item["text"], call_timeout)
+                    result, timed_out = invoke_with_timeout(
+                        chain,
+                        {"text": item["text"]},
+                        call_timeout,
+                        heartbeat_interval,
+                        log,
+                    )
                     if timed_out:
                         msg = (
                             "Timeout na chamada do modelo "
@@ -165,7 +134,7 @@ def generate_n1(
                         )
                         print(msg)
                         log(msg)
-                        reset_model()
+                        reset_model(model, log)
                         continue
                     if result is None:
                         raise RuntimeError("Resposta vazia do modelo.")

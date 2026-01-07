@@ -1,7 +1,7 @@
 import argparse
 from pathlib import Path
 
-from utils.generate_n1_n2_utils import generate_n1_n2
+from utils.generate_n2_utils import generate_n2
 
 MODEL_CONFIG = {
     "llama": "llama3.3:latest",
@@ -83,7 +83,7 @@ def main() -> None:
         output_path = args.output_path
 
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-    generate_n1_n2(
+    generate_n2(
         input_path=input_path,
         output_path=output_path,
         template=template,
