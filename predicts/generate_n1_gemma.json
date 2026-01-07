@@ -215,7 +215,7 @@
           }
         },
         {
-          "text_n1": "Este desnível é tratado com inclinação máxima de 12,5 %.",
+          "text_n1": "Este desnível pode ser tratado com inclinação de no máximo 12,5 %.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -224,7 +224,7 @@
           }
         },
         {
-          "text_n1": "A Tabela 7 especifica este tratamento.",
+          "text_n1": "A Tabela 7 fornece informações sobre este tratamento.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -242,7 +242,7 @@
           }
         },
         {
-          "text_n1": "A área é protegida lateralmente com elemento construído ou vegetação.",
+          "text_n1": "A proteção lateral deve ser feita com elemento construído ou vegetação.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -256,7 +256,7 @@
       "text": "As soleiras das portas ou vãos de passagem que apresentem desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.",
       "texts_n1": [
         {
-          "text_n1": "As soleiras das portas ou vãos de passagem devem ter desníveis de no máximo um degrau.",
+          "text_n1": "As soleiras das portas ou vãos de passagem devem ter parte substituída por rampa.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -265,16 +265,7 @@
           }
         },
         {
-          "text_n1": "Parte da extensão da soleira deve ser substituída por rampa.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "A rampa deve ter largura mínima de 0,90 metros.",
+          "text_n1": "A rampa deve ter largura mínima de 0,90 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -292,7 +283,7 @@
           }
         },
         {
-          "text_n1": "A rampa deve atender aos parâmetros das Tabelas 6 ou 7.",
+          "text_n1": "O desnível deve atender aos parâmetros das Tabelas 6 ou 7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -301,7 +292,16 @@
           }
         },
         {
-          "text_n1": "O restante da extensão da soleira pode permanecer como degrau.",
+          "text_n1": "Parte do desnível deve ser vencida com rampa.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "O restante da extensão pode permanecer como degrau.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -319,7 +319,7 @@
           }
         },
         {
-          "text_n1": "O comprimento da barra de apoio deve ser de no mínimo 0,30 metros.",
+          "text_n1": "A barra de apoio deve ter comprimento mínimo de 0,30 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -328,7 +328,7 @@
           }
         },
         {
-          "text_n1": "O eixo da barra de apoio deve ser posicionado a 0,75 metros de altura do piso.",
+          "text_n1": "O eixo da barra de apoio deve ser posicionado a 0,75 m de altura do piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -474,7 +474,7 @@
           }
         },
         {
-          "text_n1": "Há também a necessidade de um M.R. para cada escada e elevador de emergência.",
+          "text_n1": "Há também a necessidade de pelo menos um M.R. para cada escada e elevador de emergência.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -483,7 +483,7 @@
           }
         },
         {
-          "text_n1": "Se a antecâmara das escadas e dos elevadores de emergência for comum, os M.R. podem ser compartilhados.",
+          "text_n1": "Se a antecâmara das escadas e dos elevadores de emergência for comum, o número de M.R. pode ser compartilhado.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -542,7 +542,7 @@
           }
         },
         {
-          "text_n1": "As áreas devem ser dimensionadas para a manobra de cadeiras de rodas.",
+          "text_n1": "As áreas devem ser dimensionadas para cadeiras de rodas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -574,7 +574,7 @@
           }
         },
         {
-          "text_n1": "Estas áreas de descanso são aplicáveis a patamares.",
+          "text_n1": "Estas áreas de descanso são aplicáveis em patamares.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -715,7 +715,7 @@
           }
         },
         {
-          "text_n1": "A Figura 72 ilustra os elementos de segurança da rampa.",
+          "text_n1": "A Figura 72 ilustra os elementos de segurança.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -802,7 +802,7 @@
       "text": "Nas rotas acessíveis não podem ser utilizados degraus e escadas fixas com espelhos vazados. Quando houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.",
       "texts_n1": [
         {
-          "text_n1": "Não podem ser utilizados degraus e escadas fixas com espelhos vazados nas rotas acessíveis.",
+          "text_n1": "Nas rotas acessíveis não podem ser utilizados degraus e escadas fixas com espelhos vazados.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -811,16 +811,7 @@
           }
         },
         {
-          "text_n1": "Bocel ou espelho inclinado pode projetar a aresta no máximo 1,5 cm sobre o piso abaixo.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Essa projeção é mostrada na Figura 74.",
+          "text_n1": "Quando houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -916,7 +907,16 @@
           }
         },
         {
-          "text_n1": "Essa distância corresponde à linha imaginária sobre a qual uma pessoa segura o corrimão.",
+          "text_n1": "Essa medida se aplica à linha imaginária sobre a qual uma pessoa se move com o corrimão.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "A Figura 75 ilustra esses dimensionamentos.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1266,7 +1266,7 @@
       "text": "Para transposição de obstáculos, objetos e elementos com no máximo 0,40 m de extensão, a largura mínima do corredor deve ser de 0,80 m, conforme 4.3.2. Acima de 0,40 m de extensão, a largura mínima deve ser de 0,90 m.",
       "texts_n1": [
         {
-          "text_n1": "Para transposição de obstáculos, objetos e elementos com no máximo 0,40 m de extensão, a largura mínima do corredor é de 0,80 m.",
+          "text_n1": "A transposição de obstáculos requer objetos e elementos com no máximo 0,40 m de extensão.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1275,7 +1275,16 @@
           }
         },
         {
-          "text_n1": "Acima de 0,40 m de extensão, a largura mínima do corredor é de 0,90 m.",
+          "text_n1": "A largura mínima do corredor deve ser de 0,80 m para esses objetos.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "Objetos com mais de 0,40 m de extensão precisam de uma largura mínima de 0,90 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1307,7 +1316,7 @@
           }
         },
         {
-          "text_n1": "Se os espaços livres especificados não puderem ser alcançados, é necessário utilizar equipamento de automação para abertura e fechamento das portas.",
+          "text_n1": "Se os espaços livres especificados não puderem ser alcançados, deve-se instalar equipamento de automação para abertura e fechamento das portas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1457,7 +1466,7 @@
           }
         },
         {
-          "text_n1": "O contraste facilita a localização das portas ou batentes.",
+          "text_n1": "A cor contrastante facilita a localização das portas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2041,7 +2050,7 @@
       "text": "Nas áreas de circulação, quando o desnível for lateral, observar o descrito em 4.3.7.",
       "texts_n1": [
         {
-          "text_n1": "Nas áreas de circulação, quando o desnível for lateral, observar o descrito em 4.3.7.",
+          "text_n1": "Nas áreas de circulação, o desnível lateral deve ser observado conforme 4.3.7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2278,7 +2287,7 @@
       "text": "Em reformas, quando esgotadas as possibilidades de soluções que atendam integralmente à Tabela 6, podem ser utilizadas inclinações superiores a 8,33 % (1:12) até 12,5 % (1:8), conforme Tabela 7.",
       "texts_n1": [
         {
-          "text_n1": "Em reformas, se as soluções da Tabela 6 não forem suficientes, inclinações acima de 8,33% (1:12) ou até 12,5% (1:8) podem ser usadas, conforme a Tabela 7.",
+          "text_n1": "Em reformas, se as soluções da Tabela 6 não forem suficientes, podem ser usadas inclinações de até 8,33% (1:12) ou 12,5% (1:8), conforme a Tabela 7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2338,7 +2347,7 @@
       "text": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.",
       "texts_n1": [
         {
-          "text_n1": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado.",
+          "text_n1": "A projeção dos corrimãos pode incidir até 10 cm de cada lado da rampa.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2347,7 +2356,7 @@
           }
         },
         {
-          "text_n1": "Exceção se aplica nos casos previstos em 6.6.2.7.",
+          "text_n1": "Essa projeção não se aplica nos casos especificados em 6.6.2.7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2722,7 +2731,7 @@
           }
         },
         {
-          "text_n1": "O espaço de transposição possui um círculo de 1,50 m de diâmetro.",
+          "text_n1": "O espaço de transposição tem um círculo de 1,50 m de diâmetro.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2740,7 +2749,7 @@
           }
         },
         {
-          "text_n1": "A Figura 80 ilustra este exemplo.",
+          "text_n1": "A Figura 80 exemplifica este detalhamento.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2749,7 +2758,7 @@
           }
         },
         {
-          "text_n1": "Há 0,60 m ao lado de cada maçaneta da porta.",
+          "text_n1": "Há 0,60 m ao lado da maçaneta de cada porta.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2772,7 +2781,7 @@
       "text": "No deslocamento lateral, deve ser garantido 0,60 m de espaço livre de cada um dos lados, conforme Figura 82. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
       "texts_n1": [
         {
-          "text_n1": "O deslocamento lateral deve garantir 0,60 m de espaço livre de cada lado, conforme a Figura 82.",
+          "text_n1": "O deslocamento lateral deve garantir 0,60 m de espaço livre de cada lado.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2781,7 +2790,7 @@
           }
         },
         {
-          "text_n1": "Na ausência de espaço livre, deve-se instalar equipamento de automação para abertura e fechamento de portas.",
+          "text_n1": "A Figura 82 ilustra este requisito de espaço livre.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2790,7 +2799,16 @@
           }
         },
         {
-          "text_n1": "A automação pode ser acionada por botoeira ou sensor.",
+          "text_n1": "Na ausência de espaço livre, o equipamento de automação é necessário.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "A automação deve ser implementada através de botoeira ou sensor.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -3106,5 +3124,5 @@
       ]
     }
   ],
-  "time": 150.1247136592865
+  "time": 133.0435163974762
 }

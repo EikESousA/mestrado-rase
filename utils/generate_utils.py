@@ -111,6 +111,13 @@ def ensure_model_installed(model: str, model_id: str) -> bool:
     return True
 
 
+def unload_model(model_id: str) -> None:
+    try:
+        subprocess.run(["ollama", "stop", model_id], check=False)
+    except (subprocess.SubprocessError, FileNotFoundError):
+        print("Erro: falha ao descarregar o modelo.")
+
+
 def run_generator(n_key: str, models: List[str]) -> None:
     if not check_ollama_installed():
         return
@@ -145,3 +152,5 @@ def run_generator(n_key: str, models: List[str]) -> None:
             [sys.executable, str(script_path), "--model", model],
             check=False,
         )
+        if model_id:
+            unload_model(model_id)

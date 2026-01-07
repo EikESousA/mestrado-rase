@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import subprocess
 import threading
 import time
 from pathlib import Path
@@ -24,10 +25,10 @@ def generate_n1(
     output_path: str,
     template: str,
     model: str,
-    max_retries: int = 2,
+    max_retries: int = 3,
     log_path: str | None = None,
-    call_timeout: float = 180.0,
-    heartbeat_interval: float = 30.0,
+    call_timeout: float = 600.0,
+    heartbeat_interval: float = 60.0,
 ) -> None:
     data: Dict[str, Any] = {}
     log_file = None
@@ -49,7 +50,13 @@ def generate_n1(
         log_file.write(line + "\n")
         log_file.flush()
 
-    def invoke_with_timeout(text: str) -> tuple[str | None, bool]:
+    def reset_model() -> None:
+        try:
+            subprocess.run(["ollama", "stop", model], check=False)
+        except (subprocess.SubprocessError, FileNotFoundError):
+            log("Erro ao descarregar o modelo.")
+
+    def invoke_with_timeout(text: str, timeout: float) -> tuple[str | None, bool]:
         result_holder: Dict[str, str] = {}
         error_holder: Dict[str, Exception] = {}
 
@@ -65,7 +72,7 @@ def generate_n1(
         next_heartbeat = start + heartbeat_interval
         while thread.is_alive():
             now = time.time()
-            if now >= start + call_timeout:
+            if now >= start + timeout:
                 return None, True
             if heartbeat_interval > 0 and now >= next_heartbeat:
                 log(
@@ -126,7 +133,7 @@ def generate_n1(
             for attempt in range(1, max_retries + 1):
                 log(f"Chamando modelo (tentativa {attempt})")
                 try:
-                    result, timed_out = invoke_with_timeout(item["text"])
+                    result, timed_out = invoke_with_timeout(item["text"], call_timeout)
                     if timed_out:
                         msg = (
                             "Timeout na chamada do modelo "
@@ -134,6 +141,7 @@ def generate_n1(
                         )
                         print(msg)
                         log(msg)
+                        reset_model()
                         continue
                     if result is None:
                         raise RuntimeError("Resposta vazia do modelo.")
@@ -151,6 +159,13 @@ def generate_n1(
             end_time: float = time.time()
 
             elapsed_time: float = end_time - start_time
+            if not processed_result:
+                msg = (
+                    "Falha ao processar texto "
+                    f"apos {max_retries} tentativas. Seguindo."
+                )
+                print(msg)
+                log(msg)
             texts_n1 = [
                 {"text_n1": sentence, "operators_n2": empty_operators()}
                 for sentence in processed_result

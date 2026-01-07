@@ -38,7 +38,7 @@ def show_generated_data():
         print(menu_text_line(f"e - [{'x' if options_model[4][2] else ' '}] {options_model[4][1]}", MENU_WIDTH))
         print(menu_text_line(f"f - [{'x' if options_model[5][2] else ' '}] {options_model[5][1]}", MENU_WIDTH))
         print(menu_bar_line(MENU_WIDTH))
-        print(menu_text_line("9 - Processar", MENU_WIDTH))
+        print(menu_text_line("Enter - Processar", MENU_WIDTH))
         print(menu_bar_line(MENU_WIDTH))
         print(menu_text_line("0 - Voltar", MENU_WIDTH, color="red"))
         print(menu_bar_line(MENU_WIDTH))
@@ -81,7 +81,7 @@ def show_generated_data():
         elif choice == "g":
             clear_screen()
             options_model[6] = (options_model[6][0], options_model[6][1], not options_model[6][2])
-        elif choice == "9":
+        elif choice == "":
             clear_screen()
             generate_data(options_n, options_model)
             clear_screen()

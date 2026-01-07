@@ -35,6 +35,8 @@ def read_single_key() -> str:
     try:
         tty.setraw(fd)
         key = sys.stdin.read(1)
+        if key in {"\x0d", "\x0a"}:
+            return "\n"
         if key == "\x03":
             raise KeyboardInterrupt
         return key
