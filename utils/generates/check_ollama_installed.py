@@ -5,7 +5,8 @@ from utils.generates.install_ollama_linux import install_ollama_linux
 
 
 def check_ollama_installed() -> bool:
-    if shutil.which("ollama"):
+    ollama_path: str | None = shutil.which("ollama")
+    if ollama_path:
         return True
 
     if sys.platform.startswith("linux"):

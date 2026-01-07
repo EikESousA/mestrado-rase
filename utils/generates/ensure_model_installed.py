@@ -3,7 +3,7 @@ import subprocess
 
 def ensure_model_installed(model: str, model_id: str) -> bool:
     try:
-        result = subprocess.run(
+        result: subprocess.CompletedProcess[str] = subprocess.run(
             ["ollama", "list"],
             check=True,
             capture_output=True,
@@ -17,7 +17,7 @@ def ensure_model_installed(model: str, model_id: str) -> bool:
         return True
 
     print(f"Modelo {model} nao encontrado. Instalando {model_id}...")
-    pull = subprocess.run(["ollama", "pull", model_id], check=False)
+    pull: subprocess.CompletedProcess[str] = subprocess.run(["ollama", "pull", model_id], check=False)
     if pull.returncode != 0:
         print(f"Erro ao instalar o modelo {model_id}.")
         return False

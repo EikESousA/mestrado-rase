@@ -1,9 +1,10 @@
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Callable, Dict, List
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -21,45 +22,7 @@ from utils.n2.build_operators import build_operators
 from utils.n2.process_text import process_text
 
 
-template = """
-Extrator RASE N2.
-Use APENAS o Texto N1 para extrair os elementos. O Texto completo e apenas referencia.
-
-Regras (ordem fixa):
-1) aplicabilidade (opcional): onde/quando se aplica, sem verbos.
-2) selecao (opcional): subconjunto da aplicabilidade, sem verbos.
-3) execao (opcional): casos que NAO seguem a regra.
-4) requisito (obrigatorio): acao/condicao principal, comeca com verbo.
-
-Regras de saida:
-- Retorne exatamente 4 linhas no formato abaixo.
-- Cada campo deve aparecer no maximo uma vez.
-- Se nao existir, use "" (string vazia).
-- Nao adicione explicacoes, listas ou texto extra.
-
-Exemplo (formato):
-Texto completo:
-"As areas ... Norma."
-Texto N1:
-"As areas de qualquer espaco ou edificacao de uso publico ou coletivo devem ser servidas de uma ou mais rotas acessiveis."
-Resposta (4 linhas):
-aplicabilidade: As areas de qualquer espaco ou edificacao
-selecao: uso publico ou coletivo
-execao: ""
-requisito: devem ser servidas de uma ou mais rotas acessiveis
-
-Agora processe:
-Texto completo:
-"{text}"
-Texto N1:
-"{text_n1}"
-
-Resposta (4 linhas):
-aplicabilidade:
-selecao:
-execao:
-requisito:
-"""
+PROMPT_PATH: Path = Path("prompts") / "n2.txt"
 
 
 def generate_n2(
@@ -79,9 +42,12 @@ def generate_n2(
         parser.add_argument("--input", dest="input_path", default=None)
         parser.add_argument("--output", dest="output_path", default=None)
         parser.add_argument("--log", dest="log_path", default=None)
-        args = parser.parse_args()
+        args: argparse.Namespace = parser.parse_args()
 
         input_path, output_path, model_id = generate_config("n2", args.model)
+        input_path: str = str(input_path)
+        output_path: str = str(output_path)
+        model_id: str = str(model_id)
         if args.input_path:
             input_path = args.input_path
         if args.output_path:
@@ -92,8 +58,16 @@ def generate_n2(
         print("Erro: parametros obrigatorios nao encontrados.")
         return
 
+    try:
+        template: str = PROMPT_PATH.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        print("Erro: prompt n2 nao encontrado em prompts/n2.txt.")
+        return
+
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     data: Dict[str, Any] = {}
+    log: Callable[[str], None]
+    close_log: Callable[[], None]
     log, close_log = init_log(output_path, log_path)
 
     try:
@@ -147,6 +121,8 @@ def generate_n2(
                         f"(texto {count}, sentenca {n1_index}, tentativa {attempt})"
                     )
                     try:
+                        result: str | None
+                        timed_out: bool
                         result, timed_out = invoke_with_timeout(
                             chain,
                             {"text": item["text"], "text_n1": text_n1},
@@ -181,6 +157,10 @@ def generate_n2(
                         continue
 
                     log(f"Saida do modelo:\n{result}")
+                    env_debug = os.getenv("GENERATE_DEBUG", "").strip().lower()
+                    if env_debug in {"1", "true", "yes", "on"}:
+                        print("Saida do modelo:")
+                        print(result)
                     processed_result = process_text(result)
                     break
 

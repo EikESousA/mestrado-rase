@@ -1,9 +1,10 @@
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Callable, Dict, List
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -21,27 +22,7 @@ from utils.n1.empty_operators import empty_operators
 from utils.n1.process_text import process_text
 
 
-template = """
-Voce e um reescritor. Transforme o texto em sentencas RASE N1.
-
-Regras:
-1) Quebre em sentencas curtas e diretas.
-2) Cada sentenca deve ter uma unica regra computavel.
-3) Nao invente elementos (aplicabilidade, selecao, requisito, excecao). Preserve apenas o que existir.
-4) Nao adicione explicacoes, titulos, bullets, numeracao ou o texto original.
-5) Saida: apenas as sentencas, uma por linha, terminadas com ponto final.
-
-Exemplo:
-Entrada:
-A inclinacao transversal da superficie deve ser de ate 2 % para pisos internos e de ate 3 % para pisos externos.
-Saida:
-Pisos internos devem ter inclinacao transversal de no maximo 2%.
-Pisos externos devem ter inclinacao transversal de no maximo 3%.
-
-TEXTO_INICIO
-{text}
-TEXTO_FIM
-"""
+PROMPT_PATH: Path = Path("prompts") / "n1.txt"
 
 
 def generate_n1() -> None:
@@ -55,9 +36,12 @@ def generate_n1() -> None:
     parser.add_argument("--input", dest="input_path", default=None)
     parser.add_argument("--output", dest="output_path", default=None)
     parser.add_argument("--log", dest="log_path", default=None)
-    args = parser.parse_args()
+    args: argparse.Namespace = parser.parse_args()
 
     input_path, output_path, model_id = generate_config("n1", args.model)
+    input_path: str = str(input_path)
+    output_path: str = str(output_path)
+    model_id: str = str(model_id)
     if args.input_path:
         input_path = args.input_path
     if args.output_path:
@@ -65,6 +49,8 @@ def generate_n1() -> None:
 
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     data: Dict[str, Any] = {}
+    log: Callable[[str], None]
+    close_log: Callable[[], None]
     log, close_log = init_log(output_path, args.log_path)
 
     try:
@@ -75,6 +61,12 @@ def generate_n1() -> None:
         return
     except json.JSONDecodeError:
         print("Erro: Falha ao decodificar JSON de entrada.")
+        return
+
+    try:
+        template: str = PROMPT_PATH.read_text(encoding="utf-8")
+    except FileNotFoundError:
+        print("Erro: prompt n1 nao encontrado em prompts/n1.txt.")
         return
 
     llm: OllamaLLM = OllamaLLM(
@@ -110,6 +102,8 @@ def generate_n1() -> None:
             for attempt in range(1, 4):
                 log(f"Chamando modelo (tentativa {attempt})")
                 try:
+                    result: str | None
+                    timed_out: bool
                     result, timed_out = invoke_with_timeout(
                         chain,
                         {"text": item["text"]},
@@ -135,6 +129,10 @@ def generate_n1() -> None:
                         time.sleep(1)
                     continue
                 log(f"Saida do modelo:\n{result}")
+                env_debug = os.getenv("GENERATE_DEBUG", "").strip().lower()
+                if env_debug in {"1", "true", "yes", "on"}:
+                    print("Saida do modelo:")
+                    print(result)
                 processed_result = process_text(result)
                 if processed_result:
                     break
@@ -150,7 +148,7 @@ def generate_n1() -> None:
                 )
                 print(msg)
                 log(msg)
-            texts_n1 = [
+            texts_n1: List[Dict[str, Any]] = [
                 {"text_n1": sentence, "operators_n2": empty_operators()}
                 for sentence in processed_result
             ]

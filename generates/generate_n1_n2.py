@@ -1,6 +1,7 @@
 import argparse
 import sys
 from pathlib import Path
+from typing import Dict
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(PROJECT_ROOT) not in sys.path:
@@ -8,7 +9,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from generates.generate_n2 import generate_n2
 
-MODEL_CONFIG = {
+MODEL_CONFIG: Dict[str, str] = {
     "llama": "llama3.3:latest",
     "alpaca": "splitpierre/bode-alpaca-pt-br:13b-Q4_0",
     "mistral": "cnmoro/mistral_7b_portuguese:q4_K_M",
@@ -17,7 +18,7 @@ MODEL_CONFIG = {
     "qwen": "cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4_k_m",
 }
 
-template = """
+template: str = """
 Extrator RASE N2.
 Use APENAS o Texto N1 para extrair os elementos. O Texto completo e apenas referencia.
 
@@ -69,15 +70,15 @@ def generate_n1_n2() -> None:
     parser.add_argument("--input", dest="input_path", default=None)
     parser.add_argument("--output", dest="output_path", default=None)
     parser.add_argument("--log", dest="log_path", default=None)
-    args = parser.parse_args()
+    args: argparse.Namespace = parser.parse_args()
 
     if args.model not in MODEL_CONFIG:
         print("Modelo invalido.")
         return
 
-    input_path = f"predicts/generate_n1_{args.model}.json"
-    output_path = f"predicts/generate_n1_n2_{args.model}.json"
-    model_id = MODEL_CONFIG[args.model]
+    input_path: str = f"predicts/generate_n1_{args.model}.json"
+    output_path: str = f"predicts/generate_n1_n2_{args.model}.json"
+    model_id: str = MODEL_CONFIG[args.model]
 
     if args.input_path:
         input_path = args.input_path

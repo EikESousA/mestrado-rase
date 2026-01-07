@@ -12,13 +12,13 @@ def run_generator(n_key: str, models: List[str]) -> None:
     if not check_ollama_installed():
         return
 
-    script_path = Path(__file__).resolve().parents[2] / "generates" / f"generate_{n_key}.py"
+    script_path: Path = Path(__file__).resolve().parents[2] / "generates" / f"generate_{n_key}.py"
     if not script_path.exists():
         print(f"N{n_key[1:]} nao esta disponivel neste menu.")
         return
 
     for model in models:
-        model_id = None
+        model_id: str | None = None
         if model == "llama":
             model_id = "llama3.3:latest"
         elif model == "alpaca":

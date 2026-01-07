@@ -1,3 +1,5 @@
+from typing import List, Tuple
+
 from validates.validate_n1 import validate_n1
 from utils.screens.clear_screen import clear_screen
 from utils.screens.menu_bar_line import menu_bar_line
@@ -9,7 +11,7 @@ from utils.screens.wait_to_return import wait_to_return
 
 
 def menu_validate() -> None:
-    options_n = [
+    options_n: List[Tuple[str, str, bool]] = [
         ("1", "n1", False),
         ("2", "n2", True),
         ("3", "n3", False),
@@ -37,7 +39,7 @@ def menu_validate() -> None:
         menu_prompt("Escolha uma opcao: ", color="green")
         print(menu_bar_line())
 
-        choice = read_single_key().strip()
+        choice: str = read_single_key().strip()
         print()
 
         if choice == "0":
@@ -63,7 +65,7 @@ def menu_validate() -> None:
             options_n[5] = (options_n[5][0], options_n[5][1], not options_n[5][2])
         elif choice == "":
             clear_screen()
-            active_ns = [n_key for _, n_key, active in options_n if active]
+            active_ns: List[str] = [n_key for _, n_key, active in options_n if active]
             if not active_ns:
                 print("Selecione o 1, 2, 3, 4, 5 ou 6 para validar os dados.")
                 print()

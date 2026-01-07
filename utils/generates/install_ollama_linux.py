@@ -3,7 +3,7 @@ import subprocess
 
 
 def install_ollama_linux() -> bool:
-    installer = None
+    installer: str | None = None
     if shutil.which("curl"):
         installer = "curl -fsSL https://ollama.com/install.sh | sh"
     elif shutil.which("wget"):
@@ -14,5 +14,5 @@ def install_ollama_linux() -> bool:
         return False
 
     print("Instalando o Ollama...")
-    result = subprocess.run(installer, shell=True, check=False)
+    result: subprocess.CompletedProcess[str] = subprocess.run(installer, shell=True, check=False)
     return result.returncode == 0

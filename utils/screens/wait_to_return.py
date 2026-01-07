@@ -6,4 +6,4 @@ def wait_to_return() -> None:
     print(menu_bar_line())
     print(menu_text_line("Digite qualquer tecla para voltar ao menu."))
     print(menu_bar_line())
-    input()
+    _input_value: str = input()

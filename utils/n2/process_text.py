@@ -7,13 +7,13 @@ from utils.n2.normalize_field_name import normalize_field_name
 
 def process_text(text: str) -> Dict[str, str]:
     campos = ["aplicabilidade", "selecao", "execao", "requisito"]
-    resultado = {campo: "" for campo in campos}
+    resultado: Dict[str, str] = {campo: "" for campo in campos}
 
-    cleaned = clean_output(text)
+    cleaned: str = clean_output(text)
     padrao_campo = re.compile(r"^(.+?):\s*(.*)$", re.IGNORECASE)
     padrao_checagem = re.compile(rf"^({'|'.join(campos)}):$", re.IGNORECASE)
 
-    campo_atual = None
+    campo_atual: str | None = None
     for linha in cleaned.splitlines():
         linha = linha.strip()
         if not linha:

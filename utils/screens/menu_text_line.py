@@ -9,16 +9,17 @@ def menu_text_line(
     align_left: bool = True,
     color: str | None = None,
 ) -> str:
-    width = get_menu_width()
+    width: int = get_menu_width()
     if width < 4:
         raise ValueError("width must be >= 4")
-    content_width = width - 4
-    trimmed = text[:content_width]
+    content_width: int = width - 4
+    trimmed: str = text[:content_width]
+    content: str
     if align_left:
         content = trimmed.ljust(content_width)
     else:
-        left_pad = (content_width - len(trimmed)) // 2
+        left_pad: int = (content_width - len(trimmed)) // 2
         content = (" " * left_pad + trimmed).ljust(content_width)
     gray = get_ansi_colors()["gray"]
-    colored_content = colorize(content, color)
+    colored_content: str = colorize(content, color)
     return f"{gray}|{get_ansi_reset()} {colored_content} {gray}|{get_ansi_reset()}"

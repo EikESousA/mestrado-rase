@@ -5,6 +5,7 @@ from typing import Any, Dict, List
 
 import gensim.downloader as api
 from fuzzywuzzy import fuzz
+from gensim.models import KeyedVectors
 from sentence_transformers import SentenceTransformer
 
 from utils.validates.build_pairs import build_pairs
@@ -17,37 +18,38 @@ from utils.validates.normalize_wmd import normalize_wmd
 
 def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     with open(dataset_path, "r", encoding="utf-8") as file:
-        dataset = json.load(file)
+        dataset: Dict[str, Any] = json.load(file)
 
     metrics: Dict[str, Any] = {"models": {}}
 
-    sbert_model = SentenceTransformer("tgsc/sentence-transformer-ult5-pt-small")
+    sbert_model: SentenceTransformer = SentenceTransformer("tgsc/sentence-transformer-ult5-pt-small")
 
-    word_vectors_ft = None
+    word_vectors_ft: KeyedVectors | None = None
     try:
         word_vectors_ft = api.load("fasttext-wiki-news-subwords-300")
     except Exception as exc:
         print(f"Falha ao carregar WMD_FT: {exc}")
 
-    word_vectors_nilc = load_nilc_model()
+    word_vectors_nilc: KeyedVectors | None = load_nilc_model()
     if word_vectors_nilc is None:
         print("Modelo NILC nao encontrado em models/cbow_s300.txt ou src/models/cbow_s300.txt.")
 
-    for model in ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]:
+    models: List[str] = ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
+    for model in models:
         input_path = Path(predicts_dir) / f"generate_n1_{model}.json"
         if not input_path.exists():
             continue
 
         with open(input_path, "r", encoding="utf-8") as file:
-            predictions = json.load(file)
+            predictions: Dict[str, Any] = json.load(file)
 
-        pairs = build_pairs(dataset, predictions)
-        targets = [p["target"] for p in pairs]
-        predicted = [p["predicted"] for p in pairs]
+        pairs: List[Dict[str, Any]] = build_pairs(dataset, predictions)
+        targets: List[str] = [p["target"] for p in pairs]
+        predicted: List[str] = [p["predicted"] for p in pairs]
 
-        fuzzy_scores = [fuzz.partial_ratio(t, p) / 100.0 for t, p in zip(targets, predicted)]
-        tfidf_scores = compute_tfidf_scores(targets, predicted)
-        sbert_scores = compute_sbert_scores(sbert_model, targets, predicted)
+        fuzzy_scores: List[float] = [fuzz.partial_ratio(t, p) / 100.0 for t, p in zip(targets, predicted)]
+        tfidf_scores: List[float] = compute_tfidf_scores(targets, predicted)
+        sbert_scores: List[float] = compute_sbert_scores(sbert_model, targets, predicted)
 
         wmd_ft_scores: List[float] | None = None
         if word_vectors_ft is not None:
@@ -84,6 +86,6 @@ if __name__ == "__main__":
     parser.add_argument("--dataset", default="dataset.json")
     parser.add_argument("--predicts", default="predicts")
     parser.add_argument("--output", default="metrics/validate_n1.json")
-    args = parser.parse_args()
+    args: argparse.Namespace = parser.parse_args()
 
     validate_n1(args.dataset, args.predicts, args.output)

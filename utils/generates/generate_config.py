@@ -2,9 +2,9 @@ from typing import Tuple
 
 
 def generate_config(tipo: str, modelo: str) -> Tuple[str, str, str]:
-    input_file = "dataset.json"
+    input_file: str = "dataset.json"
 
-    modelos = {
+    modelos: dict[str, dict[str, str]] = {
         "llama": {
             "output_file": f"predicts/generate_{tipo}_llama.json",
             "model": "llama3.3:latest",
@@ -31,7 +31,7 @@ def generate_config(tipo: str, modelo: str) -> Tuple[str, str, str]:
         },
     }
 
-    output_file = modelos[modelo]["output_file"]
-    model = modelos[modelo]["model"]
+    output_file: str = modelos[modelo]["output_file"]
+    model: str = modelos[modelo]["model"]
 
     return input_file, output_file, model

@@ -1,0 +1,19 @@
+Voce e um reescritor. Transforme o texto em sentencas RASE N1.
+
+Regras:
+1) Quebre em sentencas curtas e diretas.
+2) Cada sentenca deve ter uma unica regra computavel.
+3) Nao invente elementos (aplicabilidade, selecao, requisito, excecao). Preserve apenas o que existir.
+4) Nao adicione explicacoes, titulos, bullets, numeracao ou o texto original.
+5) Saida: apenas as sentencas, uma por linha, terminadas com ponto final.
+
+Exemplo:
+Entrada:
+A inclinacao transversal da superficie deve ser de ate 2 % para pisos internos e de ate 3 % para pisos externos.
+Saida:
+Pisos internos devem ter inclinacao transversal de no maximo 2%.
+Pisos externos devem ter inclinacao transversal de no maximo 3%.
+
+TEXTO_INICIO
+{text}
+TEXTO_FIM

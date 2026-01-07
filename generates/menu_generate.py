@@ -1,3 +1,5 @@
+from typing import List, Tuple
+
 from utils.generates.run_generator import run_generator
 from utils.screens.clear_screen import clear_screen
 from utils.screens.menu_bar_line import menu_bar_line
@@ -9,7 +11,7 @@ from utils.screens.wait_to_return import wait_to_return
 
 
 def menu_generate() -> None:
-    options_n = [
+    options_n: List[Tuple[str, str, bool]] = [
         ("1", "n1", False),
         ("2", "n2", True),
         ("3", "n3", False),
@@ -17,7 +19,7 @@ def menu_generate() -> None:
         ("5", "n2_n3", False),
         ("6", "n1_n2_n3", False),
     ]
-    options_model = [
+    options_model: List[Tuple[str, str, bool]] = [
         ("a", "alpaca", True),
         ("b", "dolphin", False),
         ("c", "llama", False),
@@ -52,7 +54,7 @@ def menu_generate() -> None:
         menu_prompt("Escolha uma opcao: ", color="green")
         print(menu_bar_line())
 
-        choice = read_single_key().strip()
+        choice: str = read_single_key().strip()
         print()
 
         if choice == "0":
@@ -96,8 +98,8 @@ def menu_generate() -> None:
             options_model[5] = (options_model[5][0], options_model[5][1], not options_model[5][2])
         elif choice == "":
             clear_screen()
-            active_ns = [n_key for _, n_key, active in options_n if active]
-            active_models = [model_key for _, model_key, active in options_model if active]
+            active_ns: List[str] = [n_key for _, n_key, active in options_n if active]
+            active_models: List[str] = [model_key for _, model_key, active in options_model if active]
 
             if not active_ns:
                 print("Selecione o 1, 2, 3, 4, 5 ou 6 para gerar os dados.")

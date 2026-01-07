@@ -1,4 +1,7 @@
-def get_ansi_colors() -> dict:
+from typing import Dict
+
+
+def get_ansi_colors() -> Dict[str, str]:
     return {
         "white": "\x1b[37m",
         "red": "\x1b[31m",

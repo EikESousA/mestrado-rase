@@ -6,6 +6,6 @@ from utils.n1.split_sentences import split_sentences
 
 
 def process_text(text: str) -> List[str]:
-    cleaned = clean_output(text)
+    cleaned: str = clean_output(text)
     cleaned = re.sub(r"\s+", " ", cleaned)
     return split_sentences(cleaned)

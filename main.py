@@ -19,7 +19,7 @@ def main() -> None:
         action="store_true",
         help="Habilita log detalhado nas geracoes.",
     )
-    args = parser.parse_args()
+    args: argparse.Namespace = parser.parse_args()
 
     if args.debug:
         os.environ["GENERATE_DEBUG"] = "1"
@@ -41,7 +41,7 @@ def main() -> None:
             menu_prompt("Escolha uma opcao: ", color="green")
             print(menu_bar_line())
 
-            choice = read_single_key().strip()
+            choice: str = read_single_key().strip()
             print()
 
             if choice == "1":

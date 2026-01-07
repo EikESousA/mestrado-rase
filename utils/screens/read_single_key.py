@@ -10,16 +10,16 @@ def read_single_key() -> str:
     if os.name == "nt":
         import msvcrt
 
-        key = msvcrt.getch().decode(errors="ignore")
+        key: str = msvcrt.getch().decode(errors="ignore")
         if key == "\x03":
             raise KeyboardInterrupt
         return key
 
-    fd = sys.stdin.fileno()
-    old_settings = termios.tcgetattr(fd)
+    fd: int = sys.stdin.fileno()
+    old_settings: list = termios.tcgetattr(fd)
     try:
         tty.setraw(fd)
-        key = sys.stdin.read(1)
+        key: str = sys.stdin.read(1)
         if key in {"\x0d", "\x0a"}:
             return "\n"
         if key == "\x03":

@@ -8,7 +8,7 @@ def menu_prompt(
     flush: bool | None = None,
 ) -> None:
     line = menu_text_line(text, align_left=True, color=color)
-    kwargs = {}
+    kwargs: dict[str, object] = {}
     if end is not None:
         kwargs["end"] = end
     if flush is not None:

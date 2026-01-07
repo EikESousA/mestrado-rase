@@ -19,10 +19,10 @@ def invoke_with_timeout(
         except Exception as exc:
             error_holder["error"] = exc
 
-    thread = threading.Thread(target=_run, daemon=True)
+    thread: threading.Thread = threading.Thread(target=_run, daemon=True)
     thread.start()
-    start = time.time()
-    next_heartbeat = start + heartbeat_interval
+    start: float = time.time()
+    next_heartbeat: float = start + heartbeat_interval
     while thread.is_alive():
         now = time.time()
         if now >= start + timeout:

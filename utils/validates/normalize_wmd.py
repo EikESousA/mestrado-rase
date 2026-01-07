@@ -4,7 +4,7 @@ from typing import List
 def normalize_wmd(scores: List[float]) -> List[float]:
     if not scores:
         return []
-    finite_scores = [s for s in scores if s != float("inf")]
+    finite_scores: List[float] = [s for s in scores if s != float("inf")]
     if not finite_scores:
         return [0.0 for _ in scores]
     min_score = min(finite_scores)

@@ -1,17 +1,17 @@
 import os
 import time
 from pathlib import Path
-from typing import Callable, Tuple
+from typing import Callable, IO, Tuple
 
 
 def init_log(output_path: str, log_path: str | None = None) -> Tuple[Callable[[str], None], Callable[[], None]]:
-    log_file = None
-    log_enabled = False
+    log_file: IO[str] | None = None
+    log_enabled: bool = False
 
     if log_path is None:
-        env_value = os.getenv("GENERATE_DEBUG", "").strip().lower()
+        env_value: str = os.getenv("GENERATE_DEBUG", "").strip().lower()
         if env_value in {"1", "true", "yes", "on"}:
-            output_name = Path(output_path).name
+            output_name: str = Path(output_path).name
             log_path = str(Path("logs") / f"{output_name}.log")
 
     if log_path is not None:
