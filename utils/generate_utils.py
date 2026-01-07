@@ -5,7 +5,7 @@ from pathlib import Path
 from typing import List, Literal, Tuple
 
 Tipo = Literal["n1", "n2", "n3"]
-Modelo = Literal["llama", "alpaca", "mistral", "dolphin"]
+Modelo = Literal["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
 
 
 def generate_config(tipo: Tipo, modelo: Modelo) -> Tuple[str, str, str]:
@@ -18,15 +18,23 @@ def generate_config(tipo: Tipo, modelo: Modelo) -> Tuple[str, str, str]:
         },
         "alpaca": {
             "output_file": f"predicts/generate_{tipo}_alpaca.json",
-            "model": "splitpierre/bode-alpaca-pt-br:latest",
+            "model": "splitpierre/bode-alpaca-pt-br:13b-Q4_0",
         },
         "mistral": {
             "output_file": f"predicts/generate_{tipo}_mistral.json",
-            "model": "cnmoro/mistral_7b_portuguese:q2_K",
+            "model": "cnmoro/mistral_7b_portuguese:q4_K_M",
         },
         "dolphin": {
             "output_file": f"predicts/generate_{tipo}_dolphin.json",
             "model": "cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4_k_m",
+        },
+        "gemma": {
+            "output_file": f"predicts/generate_{tipo}_gemma.json",
+            "model": "brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16",
+        },
+        "qwen": {
+            "output_file": f"predicts/generate_{tipo}_qwen.json",
+            "model": "cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4_k_m",
         },
     }
 
@@ -117,11 +125,16 @@ def run_generator(n_key: str, models: List[str]) -> None:
         if model == "llama":
             model_id = "llama3.3:latest"
         elif model == "alpaca":
-            model_id = "splitpierre/bode-alpaca-pt-br:latest"
+            model_id = "splitpierre/bode-alpaca-pt-br:13b-Q4_0"
         elif model == "mistral":
-            model_id = "cnmoro/mistral_7b_portuguese:q2_K"
+            model_id = "cnmoro/mistral_7b_portuguese:q4_K_M"
         elif model == "dolphin":
             model_id = "cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4_k_m"
+        elif model == "gemma":
+            model_id = "brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16"
+        elif model == "qwen":
+            model_id = "cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4_k_m"
+
 
         if model_id and not ensure_model_installed(model, model_id):
             return

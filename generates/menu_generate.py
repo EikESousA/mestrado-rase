@@ -1,62 +1,87 @@
-from utils.generate_utils import get_active_names, run_generator, wait_to_return
-from utils.screen import clear_screen
+from utils.generate_utils import run_generator, wait_to_return
+from utils.screen_utils import (
+    clear_screen,
+    MENU_WIDTH,
+    menu_bar_line,
+    menu_prompt,
+    menu_text_line,
+    read_single_key,
+)
 
 def show_generated_data():
     options_n = [
-        ("n1", True),
-        ("n2", False),
-        ("n3", False),
+        ("1", "n1", True),
+        ("2", "n2", False),
+        ("3", "n3", False),
     ]
     options_model = [
-        ("alpaca", False),
-        ("dolphin", False),
-        ("llama", False),
-        ("mistral", True),
+        ("a", "alpaca", False),
+        ("b", "dolphin", False),
+        ("c", "llama", True),
+        ("d", "mistral", False),
+        ("e", "gemma", False),
+        ("f", "qwen", False),
     ]
 
     while True:
-        print("1 - [{}] {}".format("x" if options_n[0][1] else " ", options_n[0][0]))
-        print("2 - [{}] {}".format("x" if options_n[1][1] else " ", options_n[1][0]))
-        print("3 - [{}] {}".format("x" if options_n[2][1] else " ", options_n[2][0]))
-        print()
-        print("4 - [{}] {}".format("x" if options_model[0][1] else " ", options_model[0][0]))
-        print("5 - [{}] {}".format("x" if options_model[1][1] else " ", options_model[1][0]))
-        print("6 - [{}] {}".format("x" if options_model[2][1] else " ", options_model[2][0]))
-        print("7 - [{}] {}".format("x" if options_model[3][1] else " ", options_model[3][0]))
-        print()
-        print("8 - Processar")
-        print()
-        print("0 - Voltar")
-        print()
-        print("Escolha uma opcao: ", end="")
+        print(menu_bar_line(MENU_WIDTH))
+        print(menu_text_line("GERAR DADOS", MENU_WIDTH, align_left=False))
+        print(menu_bar_line(MENU_WIDTH))
+        print(menu_text_line(f"1 - [{'x' if options_n[0][2] else ' '}] {options_n[0][1]}", MENU_WIDTH))
+        print(menu_text_line(f"2 - [{'x' if options_n[1][2] else ' '}] {options_n[1][1]}", MENU_WIDTH))
+        print(menu_text_line(f"3 - [{'x' if options_n[2][2] else ' '}] {options_n[2][1]}", MENU_WIDTH))
+        print(menu_bar_line(MENU_WIDTH))
+        print(menu_text_line(f"a - [{'x' if options_model[0][2] else ' '}] {options_model[0][1]}", MENU_WIDTH))
+        print(menu_text_line(f"b - [{'x' if options_model[1][2] else ' '}] {options_model[1][1]}", MENU_WIDTH))
+        print(menu_text_line(f"c - [{'x' if options_model[2][2] else ' '}] {options_model[2][1]}", MENU_WIDTH))
+        print(menu_text_line(f"d - [{'x' if options_model[3][2] else ' '}] {options_model[3][1]}", MENU_WIDTH))
+        print(menu_text_line(f"e - [{'x' if options_model[4][2] else ' '}] {options_model[4][1]}", MENU_WIDTH))
+        print(menu_text_line(f"f - [{'x' if options_model[5][2] else ' '}] {options_model[5][1]}", MENU_WIDTH))
+        print(menu_bar_line(MENU_WIDTH))
+        print(menu_text_line("9 - Processar", MENU_WIDTH))
+        print(menu_bar_line(MENU_WIDTH))
+        print(menu_text_line("0 - Voltar", MENU_WIDTH, color="red"))
+        print(menu_bar_line(MENU_WIDTH))
+        menu_prompt("Escolha uma opcao: ", MENU_WIDTH, color="green")
+        print(menu_bar_line(MENU_WIDTH))
 
-        choice = input().strip()
+        choice = read_single_key().strip()
+        print()
 
         if choice == "0":
             clear_screen()
             break
         elif choice == "1":
             clear_screen()
-            options_n[0] = (options_n[0][0], not options_n[0][1])
+            options_n[0] = (options_n[0][0], options_n[0][1], not options_n[0][2])
         elif choice == "2":
             clear_screen()
-            options_n[1] = (options_n[1][0], not options_n[1][1])
+            options_n[1] = (options_n[1][0], options_n[1][1], not options_n[1][2])
         elif choice == "3":
             clear_screen()
-            options_n[2] = (options_n[2][0], not options_n[2][1])
-        elif choice == "4":
+            options_n[2] = (options_n[2][0], options_n[2][1], not options_n[2][2])
+        elif choice == "a":
             clear_screen()
-            options_model[0] = (options_model[0][0], not options_model[0][1])
-        elif choice == "5":
+            options_model[0] = (options_model[0][0], options_model[0][1], not options_model[0][2])
+        elif choice == "b":
             clear_screen()
-            options_model[1] = (options_model[1][0], not options_model[1][1])
-        elif choice == "6":
+            options_model[1] = (options_model[1][0], options_model[1][1], not options_model[1][2])
+        elif choice == "c":
             clear_screen()
-            options_model[2] = (options_model[2][0], not options_model[2][1])
-        elif choice == "7":
+            options_model[2] = (options_model[2][0], options_model[2][1], not options_model[2][2])
+        elif choice == "d":
             clear_screen()
-            options_model[3] = (options_model[3][0], not options_model[3][1])
-        elif choice == "8":
+            options_model[3] = (options_model[3][0], options_model[3][1], not options_model[3][2])
+        elif choice == "e":
+            clear_screen()
+            options_model[4] = (options_model[4][0], options_model[4][1], not options_model[4][2])
+        elif choice == "f":
+            clear_screen()
+            options_model[5] = (options_model[5][0], options_model[5][1], not options_model[5][2])
+        elif choice == "g":
+            clear_screen()
+            options_model[6] = (options_model[6][0], options_model[6][1], not options_model[6][2])
+        elif choice == "9":
             clear_screen()
             generate_data(options_n, options_model)
             clear_screen()
@@ -67,11 +92,11 @@ def show_generated_data():
             print()
 
 def generate_data(ns, models):
-    active_ns = get_active_names(ns)
-    active_models = get_active_names(models)
+    active_ns = [n_key for _, n_key, active in ns if active]
+    active_models = [model_key for _, model_key, active in models if active]
 
     if not active_ns:
-        print("Selecione o N1, N2 ou N3 para gerar os dados.")
+        print("Selecione o 1, 2 ou 3 para gerar os dados.")
         print()
         input("Digite qualquer tecla para voltar ao menu.")
         return
