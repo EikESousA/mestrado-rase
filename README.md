@@ -33,8 +33,10 @@ Atualmente requer Python **3.11.9**.
 
 - `main.py`: menu principal para gerar e validar dados.
 - `generates/menu_generate.py`: menu de selecao de N e modelos.
+- `validates/menu_validate.py`: menu de selecao de validacoes.
 - `dataset.json`: entrada de textos.
 - `predicts/`: saida gerada.
+- `metrics/`: saida das validacoes.
 
 ## Requisitos
 
@@ -78,6 +80,10 @@ Exemplos:
 - `predicts/generate_n1_llama.json`
 
 Cada arquivo contem um JSON com `counts`, `time` e `datas` (com o texto original e os textos gerados). Se nenhum N ou modelo for selecionado, o menu informa o que falta.
+
+## Validacoes
+
+Os arquivos de validacao ficam em `metrics/` (ex: `metrics/validate_n1.json`).
 
 ## Ajuda
 

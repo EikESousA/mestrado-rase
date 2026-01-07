@@ -1,1 +1,0 @@
-"""Utilitarios do projeto."""

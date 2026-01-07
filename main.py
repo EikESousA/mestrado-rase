@@ -1,49 +1,18 @@
 import argparse
-import hashlib
 import os
-import subprocess
-import sys
-from pathlib import Path
+
+from generates.menu_generate import menu_generate
+from utils.app._bootstrap_venv import _bootstrap_venv
+from utils.screens.clear_screen import clear_screen
+from utils.screens.menu_bar_line import menu_bar_line
+from utils.screens.menu_prompt import menu_prompt
+from utils.screens.menu_text_line import menu_text_line
+from utils.screens.read_single_key import read_single_key
+from utils.screens.show_debug_banner import show_debug_banner
+from validates.menu_validate import menu_validate
 
 
-def _in_venv() -> bool:
-    return sys.prefix != sys.base_prefix
-
-
-def _requirements_hash(req_path: Path) -> str:
-    return hashlib.sha256(req_path.read_bytes()).hexdigest()
-
-
-def _ensure_venv() -> Path:
-    root = Path(__file__).resolve().parent
-    venv_dir = root / ".venv"
-    python_bin = venv_dir / "bin" / "python"
-    req_file = root / "requirements.txt"
-    stamp_file = venv_dir / ".requirements.sha256"
-
-    if not venv_dir.exists():
-        subprocess.check_call([sys.executable, "-m", "venv", str(venv_dir)])
-
-    if req_file.exists():
-        current_hash = _requirements_hash(req_file)
-        previous_hash = stamp_file.read_text().strip() if stamp_file.exists() else ""
-        if current_hash != previous_hash:
-            subprocess.check_call(
-                [str(python_bin), "-m", "pip", "install", "-r", str(req_file)]
-            )
-            stamp_file.write_text(current_hash + "\n")
-
-    return python_bin
-
-
-def _bootstrap_venv() -> None:
-    if _in_venv():
-        return
-    python_bin = _ensure_venv()
-    os.execv(str(python_bin), [str(python_bin)] + sys.argv)
-
-
-def main():
+def main() -> None:
     parser = argparse.ArgumentParser(description="Menu de geracao e validacao.")
     parser.add_argument(
         "--debug",
@@ -54,17 +23,6 @@ def main():
 
     if args.debug:
         os.environ["GENERATE_DEBUG"] = "1"
-
-    from generates.menu_generate import show_generated_data
-    from validates.menu_validate import show_validated_data
-    from utils.screen_utils import (
-        clear_screen,
-        menu_bar_line,
-        menu_prompt,
-        menu_text_line,
-        read_single_key,
-        show_debug_banner,
-    )
 
     try:
         while True:
@@ -88,11 +46,11 @@ def main():
 
             if choice == "1":
                 clear_screen()
-                show_generated_data()
+                menu_generate()
                 print()
             elif choice == "2":
                 clear_screen()
-                show_validated_data()
+                menu_validate()
                 print()
             elif choice == "0":
                 clear_screen()

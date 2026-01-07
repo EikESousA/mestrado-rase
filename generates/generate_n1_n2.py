@@ -1,7 +1,12 @@
 import argparse
+import sys
 from pathlib import Path
 
-from utils.generate_n2_utils import generate_n2
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from generates.generate_n2 import generate_n2
 
 MODEL_CONFIG = {
     "llama": "llama3.3:latest",
@@ -11,9 +16,6 @@ MODEL_CONFIG = {
     "gemma": "brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16",
     "qwen": "cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4_k_m",
 }
-
-
-
 
 template = """
 Extrator RASE N2.
@@ -56,7 +58,7 @@ requisito:
 """
 
 
-def main() -> None:
+def generate_n1_n2() -> None:
     parser = argparse.ArgumentParser(description="Gerar operadores N2 a partir do N1.")
     parser.add_argument(
         "--model",
@@ -86,11 +88,10 @@ def main() -> None:
     generate_n2(
         input_path=input_path,
         output_path=output_path,
-        template=template,
-        model=model_id,
+        model_id=model_id,
         log_path=args.log_path,
     )
 
 
 if __name__ == "__main__":
-    main()
+    generate_n1_n2()

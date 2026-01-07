@@ -1,15 +1,14 @@
 from validates.validate_n1 import validate_n1
-from utils.screen_utils import (
-    clear_screen,
-    menu_bar_line,
-    menu_prompt,
-    menu_text_line,
-    read_single_key,
-    show_debug_banner,
-)
+from utils.screens.clear_screen import clear_screen
+from utils.screens.menu_bar_line import menu_bar_line
+from utils.screens.menu_prompt import menu_prompt
+from utils.screens.menu_text_line import menu_text_line
+from utils.screens.read_single_key import read_single_key
+from utils.screens.show_debug_banner import show_debug_banner
+from utils.screens.wait_to_return import wait_to_return
 
 
-def show_validated_data() -> None:
+def menu_validate() -> None:
     options_n = [
         ("1", "n1", False),
         ("2", "n2", True),
@@ -64,30 +63,23 @@ def show_validated_data() -> None:
             options_n[5] = (options_n[5][0], options_n[5][1], not options_n[5][2])
         elif choice == "":
             clear_screen()
-            validate_data(options_n)
+            active_ns = [n_key for _, n_key, active in options_n if active]
+            if not active_ns:
+                print("Selecione o 1, 2, 3, 4, 5 ou 6 para validar os dados.")
+                print()
+                input("Digite qualquer tecla para voltar ao menu.")
+                continue
+            if "n1" in active_ns:
+                validate_n1("dataset.json", "predicts", "metrics/validate_n1.json")
+                wait_to_return()
+                clear_screen()
+                print()
+                continue
+            print("Validacao ainda nao implementada.")
+            wait_to_return()
             clear_screen()
             print()
         else:
             clear_screen()
             print("Digite uma das opcoes")
             print()
-
-
-def validate_data(ns) -> None:
-    active_ns = [n_key for _, n_key, active in ns if active]
-
-    if not active_ns:
-        print("Selecione o 1, 2, 3, 4, 5 ou 6 para validar os dados.")
-        print()
-        input("Digite qualquer tecla para voltar ao menu.")
-        return
-
-    if "n1" in active_ns:
-        validate_n1("dataset.json", "predicts", "metrics/validate_n1.json")
-        print()
-        input("Digite qualquer tecla para voltar ao menu.")
-        return
-
-    print("Validacao ainda nao implementada.")
-    print()
-    input("Digite qualquer tecla para voltar ao menu.")

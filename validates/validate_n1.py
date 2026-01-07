@@ -1,106 +1,18 @@
 import argparse
 import json
 from pathlib import Path
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List
 
-from fuzzywuzzy import fuzz
-from gensim.models import KeyedVectors
 import gensim.downloader as api
-from sentence_transformers import SentenceTransformer, util
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+from fuzzywuzzy import fuzz
+from sentence_transformers import SentenceTransformer
 
-
-MODELS = ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
-
-
-def build_pairs(
-    dataset: Dict[str, Any],
-    predictions: Dict[str, Any],
-) -> List[Dict[str, Any]]:
-    pairs: List[Dict[str, Any]] = []
-    dataset_items = dataset.get("datas", [])
-    predicted_items = predictions.get("datas", [])
-
-    for text_index, item in enumerate(dataset_items):
-        predicted_item = predicted_items[text_index] if text_index < len(predicted_items) else {}
-        predicted_texts = predicted_item.get("texts_n1", [])
-        for sentence_index, target in enumerate(item.get("texts_n1", [])):
-            predicted_text = ""
-            if sentence_index < len(predicted_texts):
-                predicted_text = predicted_texts[sentence_index].get("text_n1", "")
-            pairs.append(
-                {
-                    "text_index": text_index,
-                    "sentence_index": sentence_index,
-                    "text": item.get("text", ""),
-                    "target": target.get("text_n1", ""),
-                    "predicted": predicted_text,
-                }
-            )
-    return pairs
-
-
-def normalize_wmd(scores: List[float]) -> List[float]:
-    if not scores:
-        return []
-    finite_scores = [s for s in scores if s != float("inf")]
-    if not finite_scores:
-        return [0.0 for _ in scores]
-    min_score = min(finite_scores)
-    max_score = max(finite_scores)
-    if max_score == min_score:
-        return [1.0 if s != float("inf") else 0.0 for s in scores]
-    normalized: List[float] = []
-    for s in scores:
-        if s == float("inf"):
-            normalized.append(0.0)
-        else:
-            normalized.append(1 - ((s - min_score) / (max_score - min_score)))
-    return normalized
-
-
-def compute_tfidf_scores(targets: List[str], predictions: List[str]) -> List[float]:
-    if not targets:
-        return []
-    vectorizer = TfidfVectorizer()
-    tfidf_matrix = vectorizer.fit_transform(targets + predictions)
-    scores: List[float] = []
-    for i in range(len(targets)):
-        scores.append(cosine_similarity(tfidf_matrix[i], tfidf_matrix[i + len(targets)])[0][0])
-    return scores
-
-
-def compute_sbert_scores(model: SentenceTransformer, targets: List[str], predictions: List[str]) -> List[float]:
-    if not targets:
-        return []
-    target_embeddings = model.encode(targets, convert_to_tensor=True)
-    predicted_embeddings = model.encode(predictions, convert_to_tensor=True)
-    scores: List[float] = []
-    for i in range(len(targets)):
-        scores.append(util.pytorch_cos_sim(target_embeddings[i], predicted_embeddings[i]).item())
-    return scores
-
-
-def compute_wmd_scores(word_vectors: KeyedVectors, targets: List[str], predictions: List[str]) -> List[float]:
-    scores: List[float] = []
-    for target, predicted in zip(targets, predictions):
-        target_tokens = target.lower().split()
-        predicted_tokens = predicted.lower().split()
-        scores.append(word_vectors.wmdistance(target_tokens, predicted_tokens))
-    return scores
-
-
-def load_nilc_model() -> KeyedVectors | None:
-    candidates = [Path("models") / "cbow_s300.txt", Path("src") / "models" / "cbow_s300.txt"]
-    for candidate in candidates:
-        if candidate.exists():
-            return KeyedVectors.load_word2vec_format(
-                str(candidate),
-                encoding="utf-8",
-                unicode_errors="ignore",
-            )
-    return None
+from validates.build_pairs import build_pairs
+from validates.compute_sbert_scores import compute_sbert_scores
+from validates.compute_tfidf_scores import compute_tfidf_scores
+from validates.compute_wmd_scores import compute_wmd_scores
+from validates.load_nilc_model import load_nilc_model
+from validates.normalize_wmd import normalize_wmd
 
 
 def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
@@ -121,7 +33,7 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     if word_vectors_nilc is None:
         print("Modelo NILC nao encontrado em models/cbow_s300.txt ou src/models/cbow_s300.txt.")
 
-    for model in MODELS:
+    for model in ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]:
         input_path = Path(predicts_dir) / f"generate_n1_{model}.json"
         if not input_path.exists():
             continue
@@ -167,7 +79,7 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     print(f"Resultado salvo em {output_path}")
 
 
-def main() -> None:
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Validar N1 usando similaridades.")
     parser.add_argument("--dataset", default="dataset.json")
     parser.add_argument("--predicts", default="predicts")
@@ -175,7 +87,3 @@ def main() -> None:
     args = parser.parse_args()
 
     validate_n1(args.dataset, args.predicts, args.output)
-
-
-if __name__ == "__main__":
-    main()

@@ -1,14 +1,14 @@
-from utils.generate_utils import run_generator, wait_to_return
-from utils.screen_utils import (
-    clear_screen,
-    menu_bar_line,
-    menu_prompt,
-    menu_text_line,
-    read_single_key,
-    show_debug_banner,
-)
+from utils.generates.run_generator import run_generator
+from utils.screens.clear_screen import clear_screen
+from utils.screens.menu_bar_line import menu_bar_line
+from utils.screens.menu_prompt import menu_prompt
+from utils.screens.menu_text_line import menu_text_line
+from utils.screens.read_single_key import read_single_key
+from utils.screens.show_debug_banner import show_debug_banner
+from utils.screens.wait_to_return import wait_to_return
 
-def show_generated_data():
+
+def menu_generate() -> None:
     options_n = [
         ("1", "n1", False),
         ("2", "n2", True),
@@ -94,36 +94,30 @@ def show_generated_data():
         elif choice == "f":
             clear_screen()
             options_model[5] = (options_model[5][0], options_model[5][1], not options_model[5][2])
-        elif choice == "g":
-            clear_screen()
-            options_model[6] = (options_model[6][0], options_model[6][1], not options_model[6][2])
         elif choice == "":
             clear_screen()
-            generate_data(options_n, options_model)
+            active_ns = [n_key for _, n_key, active in options_n if active]
+            active_models = [model_key for _, model_key, active in options_model if active]
+
+            if not active_ns:
+                print("Selecione o 1, 2, 3, 4, 5 ou 6 para gerar os dados.")
+                print()
+                input("Digite qualquer tecla para voltar ao menu.")
+                continue
+
+            if not active_models:
+                print("Selecione um modelo para gerar os dados.")
+                print()
+                input("Digite qualquer tecla para voltar ao menu.")
+                continue
+
+            for n_key in active_ns:
+                run_generator(n_key, active_models)
+
+            wait_to_return()
             clear_screen()
             print()
         else:
             clear_screen()
             print("Digite uma das opcoes")
             print()
-
-def generate_data(ns, models):
-    active_ns = [n_key for _, n_key, active in ns if active]
-    active_models = [model_key for _, model_key, active in models if active]
-
-    if not active_ns:
-        print("Selecione o 1, 2, 3, 4, 5 ou 6 para gerar os dados.")
-        print()
-        input("Digite qualquer tecla para voltar ao menu.")
-        return
-
-    if not active_models:
-        print("Selecione um modelo para gerar os dados.")
-        print()
-        input("Digite qualquer tecla para voltar ao menu.")
-        return
-
-    for n_key in active_ns:
-        run_generator(n_key, active_models)
-
-    wait_to_return()
