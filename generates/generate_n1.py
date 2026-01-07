@@ -151,6 +151,7 @@ def generate_n1(
                     if attempt < max_retries:
                         time.sleep(1)
                     continue
+                log(f"Saida do modelo:\n{result}")
                 processed_result = process_text(result)
                 if processed_result:
                     break

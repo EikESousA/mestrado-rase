@@ -64,11 +64,13 @@ def main():
         menu_prompt,
         menu_text_line,
         read_single_key,
+        show_debug_banner,
     )
 
     try:
         while True:
             clear_screen()
+            show_debug_banner(MENU_WIDTH)
             print(menu_bar_line(MENU_WIDTH))
             print(menu_text_line("Universidade Federal de Sergipe", MENU_WIDTH, align_left=False, color="yellow"))
             print(menu_bar_line(MENU_WIDTH))
@@ -104,7 +106,6 @@ def main():
                 print("Digite uma das opcoes")
                 print()
     except KeyboardInterrupt:
-        clear_screen()
         print(menu_bar_line(MENU_WIDTH))
         print(menu_text_line("Programa encerrado", MENU_WIDTH, align_left=False, color="red"))
         print(menu_bar_line(MENU_WIDTH))

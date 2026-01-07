@@ -6,24 +6,26 @@ from utils.screen_utils import (
     menu_prompt,
     menu_text_line,
     read_single_key,
+    show_debug_banner,
 )
 
 def show_generated_data():
     options_n = [
-        ("1", "n1", True),
-        ("2", "n2", False),
+        ("1", "n1", False),
+        ("2", "n2", True),
         ("3", "n3", False),
     ]
     options_model = [
-        ("a", "alpaca", False),
+        ("a", "alpaca", True),
         ("b", "dolphin", False),
-        ("c", "llama", True),
+        ("c", "llama", False),
         ("d", "mistral", False),
         ("e", "gemma", False),
         ("f", "qwen", False),
     ]
 
     while True:
+        show_debug_banner(MENU_WIDTH)
         print(menu_bar_line(MENU_WIDTH))
         print(menu_text_line("GERAR DADOS", MENU_WIDTH, align_left=False))
         print(menu_bar_line(MENU_WIDTH))

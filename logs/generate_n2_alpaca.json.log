@@ -1,0 +1,76 @@
+[2026-01-07 18:14:05] Inicio geracao N2. Modelo=splitpierre/bode-alpaca-pt-br:13b-Q4_0 Entrada=dataset.json Saida=predicts/generate_n2_alpaca.json
+[2026-01-07 18:14:05] Total de textos: 79
+[2026-01-07 18:14:05] Iniciando Texto 1: As áreas de qualquer espaço ou edificaçã...
+[2026-01-07 18:14:05] Chamando modelo (texto 1, sentenca 1, tentativa 1)
+[2026-01-07 18:14:08] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis.
+selecao: Áreas de uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas de uma ou mais rotas acessíveis.
+[2026-01-07 18:14:08] Chamando modelo (texto 1, sentenca 2, tentativa 1)
+[2026-01-07 18:14:09] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+[2026-01-07 18:14:09] Chamando modelo (texto 1, sentenca 3, tentativa 1)
+[2026-01-07 18:14:10] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+[2026-01-07 18:14:10] Chamando modelo (texto 1, sentenca 4, tentativa 1)
+[2026-01-07 18:14:12] Saida do modelo:
+aplicabilidade: Áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas por uma ou mais rotas acessíveis
+
+Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.
+[2026-01-07 18:14:12] Texto 1 concluido (6.61s)
+[2026-01-07 18:14:12] Iniciando Texto 2: Nas edificações e equipamentos urbanos,...
+[2026-01-07 18:14:12] Chamando modelo (texto 2, sentenca 1, tentativa 1)
+[2026-01-07 18:14:13] Saida do modelo:
+aplicabilidade: As entradas e rotas de interligação das funções do edifício devem ser acessíveis.
+selecao: Todas as entradas e rotas de interligação às funções do edifício devem ser acessíveis.
+execao: ""
+requisito: As entradas e rotas de interligação das funções do edifício devem ser acessíveis.
+[2026-01-07 18:14:13] Texto 2 concluido (1.40s)
+[2026-01-07 18:14:13] Iniciando Texto 3: Os acessos devem ser vinculados através...
+[2026-01-07 18:14:13] Chamando modelo (texto 3, sentenca 1, tentativa 1)
+[2026-01-07 18:14:14] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-01-07 18:14:14] Chamando modelo (texto 3, sentenca 2, tentativa 1)
+[2026-01-07 18:14:15] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-01-07 18:14:15] Texto 3 concluido (2.40s)
+[2026-01-07 18:14:15] Iniciando Texto 4: A instalação do dispositivo acessível pa...
+[2026-01-07 18:14:15] Chamando modelo (texto 4, sentenca 1, tentativa 1)
+[2026-01-07 18:14:17] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-01-07 18:14:17] Chamando modelo (texto 4, sentenca 2, tentativa 1)
+[2026-01-07 18:14:18] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-01-07 18:14:18] Texto 4 concluido (2.40s)
+[2026-01-07 18:14:18] Iniciando Texto 5: Deve ser prevista a sinalização informat...
+[2026-01-07 18:14:18] Chamando modelo (texto 5, sentenca 1, tentativa 1)
+[2026-01-07 18:14:19] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edifício
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas por uma ou mais rotas acessíveis
+[2026-01-07 18:14:19] Texto 5 concluido (0.80s)
+[2026-01-07 18:14:19] Iniciando Texto 6: A inclinação transversal da superfície d...
+[2026-01-07 18:14:19] Chamando modelo (texto 6, sentenca 1, tentativa 1)

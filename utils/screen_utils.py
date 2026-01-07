@@ -94,3 +94,12 @@ def menu_prompt(
     if flush is not None:
         kwargs["flush"] = flush
     print(line, **kwargs)
+
+
+def show_debug_banner(width: int = MENU_WIDTH) -> None:
+    env_debug = os.getenv("GENERATE_DEBUG", "").strip().lower()
+    if env_debug not in {"1", "true", "yes", "on"}:
+        return
+    print(menu_bar_line(width))
+    print(menu_text_line("MODO DEBUG", width, align_left=False, color="red"))
+    print(menu_bar_line(width))
