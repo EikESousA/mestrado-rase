@@ -1,6 +1,7 @@
 from typing import List, Tuple
 
 from validates.validate_n1 import validate_n1
+from validates.validate_n2 import validate_n2
 from utils.screens.clear_screen import clear_screen
 from utils.screens.menu_bar_line import menu_bar_line
 from utils.screens.menu_prompt import menu_prompt
@@ -71,13 +72,15 @@ def menu_validate() -> None:
                 print()
                 input("Digite qualquer tecla para voltar ao menu.")
                 continue
+            ran_any = False
             if "n1" in active_ns:
                 validate_n1("dataset.json", "predicts", "metrics/validate_n1.json")
-                wait_to_return()
-                clear_screen()
-                print()
-                continue
-            print("Validacao ainda nao implementada.")
+                ran_any = True
+            if "n2" in active_ns:
+                validate_n2("dataset.json", "predicts", "metrics/validate_n2.json")
+                ran_any = True
+            if not ran_any:
+                print("Validacao ainda nao implementada.")
             wait_to_return()
             clear_screen()
             print()

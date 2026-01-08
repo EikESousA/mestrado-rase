@@ -21,5 +21,6 @@ def compute_wmd_scores(
         if not math.isfinite(distance):
             scores.append(None)
             continue
-        scores.append(distance)
+        similarity = 1.0 / (1.0 + distance)
+        scores.append(similarity)
     return scores

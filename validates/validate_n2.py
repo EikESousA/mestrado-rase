@@ -11,7 +11,6 @@ from fuzzywuzzy import fuzz
 from gensim.models import KeyedVectors
 from sentence_transformers import SentenceTransformer
 
-from utils.validates.build_pairs import build_pairs
 from utils.validates.compute_multilingual_scores import compute_multilingual_scores
 from utils.validates.compute_sbert_scores import compute_sbert_scores
 from utils.validates.compute_tfidf_scores import compute_tfidf_scores
@@ -19,10 +18,52 @@ from utils.validates.compute_wmd_scores import compute_wmd_scores
 from utils.validates.load_nilc_model import load_nilc_model
 
 
-def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
+def build_pairs_n2(
+    dataset: Dict[str, Any],
+    predictions: Dict[str, Any],
+) -> List[Dict[str, Any]]:
+    pairs: List[Dict[str, Any]] = []
+    dataset_items: List[Dict[str, Any]] = dataset.get("datas", [])
+    predicted_items: List[Dict[str, Any]] = predictions.get("datas", [])
+
+    for text_index, item in enumerate(dataset_items):
+        predicted_item: Dict[str, Any] = (
+            predicted_items[text_index] if text_index < len(predicted_items) else {}
+        )
+        predicted_texts: List[Dict[str, Any]] = predicted_item.get("texts_n1", [])
+        for sentence_index, target_n1 in enumerate(item.get("texts_n1", [])):
+            target_ops: Dict[str, Any] = target_n1.get("operators_n2", {}) or {}
+            predicted_ops: Dict[str, Any] = {}
+            if sentence_index < len(predicted_texts):
+                predicted_ops = predicted_texts[sentence_index].get("operators_n2", {}) or {}
+
+            for operator_name, operator_data in target_ops.items():
+                target_text = ""
+                if isinstance(operator_data, dict):
+                    target_text = operator_data.get("text_n2", "")
+                predicted_text = ""
+                predicted_data = predicted_ops.get(operator_name, {})
+                if isinstance(predicted_data, dict):
+                    predicted_text = predicted_data.get("text_n2", "")
+
+                pairs.append(
+                    {
+                        "text_index": text_index,
+                        "sentence_index": sentence_index,
+                        "operator": operator_name,
+                        "text": item.get("text", ""),
+                        "text_n1": target_n1.get("text_n1", ""),
+                        "target": target_text,
+                        "predicted": predicted_text,
+                    }
+                )
+    return pairs
+
+
+def validate_n2(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     env_debug: str = os.getenv("GENERATE_DEBUG", "").strip().lower()
     debug_enabled: bool = env_debug in {"1", "true", "yes", "on"}
-    print("Validacao N1 iniciada.", flush=True)
+    print("Validacao N2 iniciada.", flush=True)
 
     with open(dataset_path, "r", encoding="utf-8") as file:
         dataset: Dict[str, Any] = json.load(file)
@@ -41,7 +82,7 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     model_data: Dict[str, Dict[str, Any]] = {}
 
     for model in models:
-        input_path = Path(predicts_dir) / f"generate_n1_{model}.json"
+        input_path = Path(predicts_dir) / f"generate_n2_{model}.json"
 
         if not input_path.exists():
             if debug_enabled:
@@ -52,9 +93,10 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
         with open(input_path, "r", encoding="utf-8") as file:
             predictions: Dict[str, Any] = json.load(file)
 
-        pairs: List[Dict[str, Any]] = build_pairs(dataset, predictions)
+        pairs: List[Dict[str, Any]] = build_pairs_n2(dataset, predictions)
         if debug_enabled:
             print(f"Pares gerados ({model}): {len(pairs)}", flush=True)
+
         targets: List[str] = [p["target"] for p in pairs]
         predicted: List[str] = [p["predicted"] for p in pairs]
 
@@ -203,14 +245,14 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
 
     print(f"Resultado salvo em {output_path}", flush=True)
     if debug_enabled:
-        print("Validacao N1 finalizada.", flush=True)
+        print("Validacao N2 finalizada.", flush=True)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Validar N1 usando similaridades.")
+    parser = argparse.ArgumentParser(description="Validar N2 usando similaridades.")
     parser.add_argument("--dataset", default="dataset.json")
     parser.add_argument("--predicts", default="predicts")
-    parser.add_argument("--output", default="metrics/validate_n1.json")
+    parser.add_argument("--output", default="metrics/validate_n2.json")
     args: argparse.Namespace = parser.parse_args()
 
-    validate_n1(args.dataset, args.predicts, args.output)
+    validate_n2(args.dataset, args.predicts, args.output)

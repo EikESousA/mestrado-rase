@@ -1,14 +1,15 @@
 # Repository Guidelines
 
 ## Project Structure & Module Organization
-- `src/` holds the main codebase.
-  - `src/functions/` contains generation scripts (e.g., `generate_n1.py`, `generate_n2.py`).
-  - `src/databases/` stores input/output JSON datasets.
-  - `src/metrics/` contains evaluation examples and notebooks.
-  - `src/utils/` and `src/helpers/` provide supporting scripts and reference files.
-  - `src/models/` is reserved for model artifacts (tracked via `.gitkeep`).
-- `src/train/` includes LoRA training utilities with its own `README.md`.
-- `docs/` stores images and badges; `article/` holds the thesis document.
+- `main.py` provides the interactive menu for generation and validation.
+- `generates/` contains generation scripts (`generate_n1.py`, `generate_n2.py`) and the menu.
+- `validates/` contains validation scripts (`validate_n1.py`) and the menu.
+- `utils/` houses shared helpers (generation, validation, logging, screen UI).
+- `prompts/` stores prompt templates for N1/N2.
+- `dataset.json` is the input text dataset.
+- `predicts/` stores generated outputs.
+- `metrics/` stores validation outputs.
+- `docs/` stores images and badges.
 
 ## Build, Test, and Development Commands
 Install dependencies (Python 3.11.9 recommended):
@@ -21,17 +22,12 @@ pip install -r src/train/requirements.txt
 ```
 Run generation scripts:
 ```bash
-python src/functions/generate_n1.py
-python src/functions/generate_n2.py
+python generates/generate_n1.py
+python generates/generate_n2.py
 ```
-Train LoRA models (see `src/train/README.md` for model options):
+Run N1 validation:
 ```bash
-python src/train/download_and_convert.py
-python src/train/train_lora.py mistral
-```
-Run inference checks:
-```bash
-python src/train/test_infer.py mistral
+python validates/validate_n1.py
 ```
 
 ## Coding Style & Naming Conventions
@@ -40,8 +36,7 @@ python src/train/test_infer.py mistral
 - No formatter or linter is configured; avoid large style-only diffs.
 
 ## Testing Guidelines
-- No automated test runner is set up. Validate changes by running the relevant scripts and checking generated JSON in `src/databases/` or outputs in `src/metrics/`.
-- Notebooks in `src/utils/` are used for exploratory checks; keep outputs trimmed before committing.
+- No automated test runner is set up. Validate changes by running the relevant scripts and checking generated JSON in `predicts/` or outputs in `metrics/`.
 
 ## Commit & Pull Request Guidelines
 - Commit messages in history are short, title-style summaries (e.g., `Generate N1`, `Readme`, `Models`). Keep them concise and task-focused.
