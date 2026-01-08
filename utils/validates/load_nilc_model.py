@@ -1,21 +1,7 @@
-import os
-from pathlib import Path
-
 from gensim.models import KeyedVectors
 
 
 def load_nilc_model() -> KeyedVectors | None:
-    candidates: list[Path] = [
-        Path("models") / "cbow_s300.txt",
-        Path("src") / "models" / "cbow_s300.txt",
-    ]
-    for candidate in candidates:
-        if candidate.exists():
-            return KeyedVectors.load_word2vec_format(
-                str(candidate),
-                encoding="utf-8",
-                unicode_errors="ignore",
-            )
     try:
         from huggingface_hub import hf_hub_download
         from safetensors.numpy import load_file
@@ -49,4 +35,3 @@ def load_nilc_model() -> KeyedVectors | None:
     except Exception as exc:
         print(f"Falha ao baixar NILC: {exc}")
         return None
-    return None

@@ -11,6 +11,7 @@ from gensim.models import KeyedVectors
 from sentence_transformers import SentenceTransformer
 
 from utils.validates.build_pairs import build_pairs
+from utils.validates.compute_multilingual_scores import compute_multilingual_scores
 from utils.validates.compute_sbert_scores import compute_sbert_scores
 from utils.validates.compute_tfidf_scores import compute_tfidf_scores
 from utils.validates.compute_wmd_scores import compute_wmd_scores
@@ -20,8 +21,8 @@ from utils.validates.load_nilc_model import load_nilc_model
 def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     env_debug: str = os.getenv("GENERATE_DEBUG", "").strip().lower()
     debug_enabled: bool = env_debug in {"1", "true", "yes", "on"}
-    if debug_enabled:
-        print("Validacao N1 iniciada.")
+    print("Validacao N1 iniciada.", flush=True)
+
     with open(dataset_path, "r", encoding="utf-8") as file:
         dataset: Dict[str, Any] = json.load(file)
 
@@ -30,6 +31,13 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     if debug_enabled:
         print("Carregando modelo SBERT...")
     sbert_model: SentenceTransformer = SentenceTransformer("tgsc/sentence-transformer-ult5-pt-small")
+
+    if debug_enabled:
+        print("Carregando modelo MULTILINGUAL...")
+
+    multilingual_model: SentenceTransformer = SentenceTransformer(
+        "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+    )
 
     word_vectors_ft: KeyedVectors | None = None
     try:
@@ -46,33 +54,50 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     models: List[str] = ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
     for model in models:
         input_path = Path(predicts_dir) / f"generate_n1_{model}.json"
+
         if not input_path.exists():
             if debug_enabled:
-                print(f"Pulando {model}: arquivo nao encontrado.")
+                print(f"Pulando {model}: arquivo nao encontrado.", flush=True)
             continue
 
-        if debug_enabled:
-            print(f"Processando modelo {model}...")
+        print(f"Validando modelo {model}...", flush=True)
+
         with open(input_path, "r", encoding="utf-8") as file:
             predictions: Dict[str, Any] = json.load(file)
 
         pairs: List[Dict[str, Any]] = build_pairs(dataset, predictions)
+
         if debug_enabled:
-            print(f"Pares gerados: {len(pairs)}")
+            print(f"Pares gerados: {len(pairs)}", flush=True)
         targets: List[str] = [p["target"] for p in pairs]
         predicted: List[str] = [p["predicted"] for p in pairs]
 
         fuzzy_scores: List[float] = [fuzz.partial_ratio(t, p) / 100.0 for t, p in zip(targets, predicted)]
+        print(f"Modelo {model}: FuzzyWuzzy validado.", flush=True)
         tfidf_scores: List[float] = compute_tfidf_scores(targets, predicted)
+        print(f"Modelo {model}: TF-IDF validado.", flush=True)
         sbert_scores: List[float] = compute_sbert_scores(sbert_model, targets, predicted)
+        print(f"Modelo {model}: SBERT validado.", flush=True)
+        multilingual_scores: List[float] = compute_multilingual_scores(
+            multilingual_model,
+            targets,
+            predicted,
+        )
+        print(f"Modelo {model}: MULTILINGUAL validado.", flush=True)
 
-        wmd_ft_scores: List[float] | None = None
+        wmd_ft_scores: List[float | None] | None = None
         if word_vectors_ft is not None:
             wmd_ft_scores = compute_wmd_scores(word_vectors_ft, targets, predicted)
+            print(f"Modelo {model}: WMD_FT validado.", flush=True)
+        else:
+            print(f"Modelo {model}: WMD_FT indisponivel.", flush=True)
 
-        wmd_nilc_scores: List[float] | None = None
+        wmd_nilc_scores: List[float | None] | None = None
         if word_vectors_nilc is not None:
             wmd_nilc_scores = compute_wmd_scores(word_vectors_nilc, targets, predicted)
+            print(f"Modelo {model}: WMD_NILC validado.", flush=True)
+        else:
+            print(f"Modelo {model}: WMD_NILC indisponivel.", flush=True)
 
         items: List[Dict[str, Any]] = []
         for i, pair in enumerate(pairs):
@@ -82,13 +107,14 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
                     "fuzzywuzzy": fuzzy_scores[i] if i < len(fuzzy_scores) else None,
                     "tfidf": tfidf_scores[i] if i < len(tfidf_scores) else None,
                     "sbert": sbert_scores[i] if i < len(sbert_scores) else None,
+                    "multilingual": multilingual_scores[i] if i < len(multilingual_scores) else None,
                     "wmd_ft": wmd_ft_scores[i] if wmd_ft_scores is not None else None,
                     "wmd_nilc": wmd_nilc_scores[i] if wmd_nilc_scores is not None else None,
                 }
             )
 
         averages: Dict[str, float | None] = {}
-        for metric_name in ["fuzzywuzzy", "tfidf", "sbert", "wmd_ft", "wmd_nilc"]:
+        for metric_name in ["fuzzywuzzy", "tfidf", "sbert", "multilingual", "wmd_ft", "wmd_nilc"]:
             values = [
                 item[metric_name]
                 for item in items
@@ -102,15 +128,15 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
         }
         metrics["averages"][model] = averages
         if debug_enabled:
-            print(f"Modelo {model} concluido.")
+            print(f"Modelo {model} concluido.", flush=True)
 
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as file:
         json.dump(metrics, file, ensure_ascii=False, indent=2)
 
-    print(f"Resultado salvo em {output_path}")
+    print(f"Resultado salvo em {output_path}", flush=True)
     if debug_enabled:
-        print("Validacao N1 finalizada.")
+        print("Validacao N1 finalizada.", flush=True)
 
 
 if __name__ == "__main__":
