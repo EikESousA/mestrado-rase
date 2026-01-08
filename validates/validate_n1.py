@@ -1,5 +1,7 @@
 import argparse
 import json
+import math
+import os
 from pathlib import Path
 from typing import Any, Dict, List
 
@@ -13,19 +15,26 @@ from utils.validates.compute_sbert_scores import compute_sbert_scores
 from utils.validates.compute_tfidf_scores import compute_tfidf_scores
 from utils.validates.compute_wmd_scores import compute_wmd_scores
 from utils.validates.load_nilc_model import load_nilc_model
-from utils.validates.normalize_wmd import normalize_wmd
 
 
 def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
+    env_debug: str = os.getenv("GENERATE_DEBUG", "").strip().lower()
+    debug_enabled: bool = env_debug in {"1", "true", "yes", "on"}
+    if debug_enabled:
+        print("Validacao N1 iniciada.")
     with open(dataset_path, "r", encoding="utf-8") as file:
         dataset: Dict[str, Any] = json.load(file)
 
-    metrics: Dict[str, Any] = {"models": {}}
+    metrics: Dict[str, Any] = {"models": {}, "averages": {}}
 
+    if debug_enabled:
+        print("Carregando modelo SBERT...")
     sbert_model: SentenceTransformer = SentenceTransformer("tgsc/sentence-transformer-ult5-pt-small")
 
     word_vectors_ft: KeyedVectors | None = None
     try:
+        if debug_enabled:
+            print("Carregando modelo WMD_FT...")
         word_vectors_ft = api.load("fasttext-wiki-news-subwords-300")
     except Exception as exc:
         print(f"Falha ao carregar WMD_FT: {exc}")
@@ -38,12 +47,18 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
     for model in models:
         input_path = Path(predicts_dir) / f"generate_n1_{model}.json"
         if not input_path.exists():
+            if debug_enabled:
+                print(f"Pulando {model}: arquivo nao encontrado.")
             continue
 
+        if debug_enabled:
+            print(f"Processando modelo {model}...")
         with open(input_path, "r", encoding="utf-8") as file:
             predictions: Dict[str, Any] = json.load(file)
 
         pairs: List[Dict[str, Any]] = build_pairs(dataset, predictions)
+        if debug_enabled:
+            print(f"Pares gerados: {len(pairs)}")
         targets: List[str] = [p["target"] for p in pairs]
         predicted: List[str] = [p["predicted"] for p in pairs]
 
@@ -53,11 +68,11 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
 
         wmd_ft_scores: List[float] | None = None
         if word_vectors_ft is not None:
-            wmd_ft_scores = normalize_wmd(compute_wmd_scores(word_vectors_ft, targets, predicted))
+            wmd_ft_scores = compute_wmd_scores(word_vectors_ft, targets, predicted)
 
         wmd_nilc_scores: List[float] | None = None
         if word_vectors_nilc is not None:
-            wmd_nilc_scores = normalize_wmd(compute_wmd_scores(word_vectors_nilc, targets, predicted))
+            wmd_nilc_scores = compute_wmd_scores(word_vectors_nilc, targets, predicted)
 
         items: List[Dict[str, Any]] = []
         for i, pair in enumerate(pairs):
@@ -72,13 +87,30 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
                 }
             )
 
-        metrics["models"][model] = {"counts": len(items), "items": items}
+        averages: Dict[str, float | None] = {}
+        for metric_name in ["fuzzywuzzy", "tfidf", "sbert", "wmd_ft", "wmd_nilc"]:
+            values = [
+                item[metric_name]
+                for item in items
+                if item[metric_name] is not None and math.isfinite(item[metric_name])
+            ]
+            averages[metric_name] = sum(values) / len(values) if values else None
+
+        metrics["models"][model] = {
+            "counts": len(items),
+            "items": items,
+        }
+        metrics["averages"][model] = averages
+        if debug_enabled:
+            print(f"Modelo {model} concluido.")
 
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as file:
         json.dump(metrics, file, ensure_ascii=False, indent=2)
 
     print(f"Resultado salvo em {output_path}")
+    if debug_enabled:
+        print("Validacao N1 finalizada.")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,10 @@
 fuzzywuzzy
 gensim
+huggingface-hub
 langchain-ollama
 langchain-core
 ollama
 python-Levenshtein
+safetensors
 scikit-learn
 sentence-transformers

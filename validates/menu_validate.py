@@ -12,8 +12,8 @@ from utils.screens.wait_to_return import wait_to_return
 
 def menu_validate() -> None:
     options_n: List[Tuple[str, str, bool]] = [
-        ("1", "n1", False),
-        ("2", "n2", True),
+        ("1", "n1", True),
+        ("2", "n2", False),
         ("3", "n3", False),
         ("4", "n1_n2", False),
         ("5", "n2_n3", False),
