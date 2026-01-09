@@ -45,9 +45,9 @@ def generate_n2(
         args: argparse.Namespace = parser.parse_args()
 
         input_path, output_path, model_id = generate_config("n2", args.model)
-        input_path: str = str(input_path)
-        output_path: str = str(output_path)
-        model_id: str = str(model_id)
+        input_path = str(input_path)
+        output_path = str(output_path)
+        model_id = str(model_id)
         if args.input_path:
             input_path = args.input_path
         if args.output_path:

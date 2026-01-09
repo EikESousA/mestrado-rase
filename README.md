@@ -66,9 +66,9 @@ ollama serve
 python3 main.py
 ```
 
-No menu, escolha "Gerar dados" e selecione o N (n1/n2/n3) e o modelo. O sistema usara `dataset.json` como entrada.
+No menu, escolha "Gerar dados" e selecione o N (n1/n2/n3/n2_n3/n1_n2_n3) e o modelo. O sistema usara `dataset.json` como entrada.
 
-## Funcionalidades (N1/N2)
+## Funcionalidades (N1/N2/N3)
 
 ### Geracao N1
 
@@ -77,9 +77,51 @@ No menu, escolha "Gerar dados" e selecione o N (n1/n2/n3) e o modelo. O sistema 
 - `texts_n1`: lista com `text_n1` e `operators_n2` vazio (estrutura base para N2).
 - Metadados: `counts` e `time`.
 
+Comando:
+
+```bash
+python generates/generate_n1.py --model mistral
+```
+
 ### Geracao N2
 
 `generates/generate_n2.py` preenche os operadores N2 a partir das sentencas N1. Ele espera um arquivo com `texts_n1` (normalmente a saida do N1) e usa o prompt `prompts/n2.txt`.
+
+Comando:
+
+```bash
+python generates/generate_n2.py --model mistral
+```
+
+### Geracao N3
+
+`generates/generate_n3.py` preenche `properties_n3` para cada operador N2. Usa prompts especificos por operador em `prompts/n3_*.txt`.
+
+Comando:
+
+```bash
+python generates/generate_n3.py --model mistral
+```
+
+### Geracao N2+N3
+
+`generates/generate_n2_n3.py` aplica o N3 sobre um arquivo N2 (ex: `predicts/generate_n2_<modelo>.json`) e grava em `predicts/generate_n2_n3_<modelo>.json`.
+
+Comando:
+
+```bash
+python generates/generate_n2_n3.py --model mistral
+```
+
+### Geracao N1+N2+N3
+
+`generates/generate_n1_n2_n3.py` aplica o N3 sobre um arquivo N1+N2 (ex: `predicts/generate_n1_n2_<modelo>.json`) e grava em `predicts/generate_n1_n2_n3_<modelo>.json`.
+
+Comando:
+
+```bash
+python generates/generate_n1_n2_n3.py --model mistral
+```
 
 ### Validacao N1
 
@@ -91,6 +133,36 @@ No menu, escolha "Gerar dados" e selecione o N (n1/n2/n3) e o modelo. O sistema 
 - SentenceTransformer multilingual
 - WMD (FastText e NILC, quando disponiveis)
 
+### Validacao N2/N3
+
+`validates/validate_n2.py` valida os operadores N2 (campos `text_n2`). `validates/validate_n3.py` valida as propriedades N3.
+
+Comandos:
+
+```bash
+python validates/validate_n2.py
+python validates/validate_n3.py
+```
+
+### Validacao N2+N3 e N1+N2+N3
+
+`validates/validate_n2_n3.py` e `validates/validate_n1_n2_n3.py` geram metricas combinadas para pipelines completos.
+
+Comandos:
+
+```bash
+python validates/validate_n2_n3.py
+python validates/validate_n1_n2_n3.py
+```
+
+### Teste rapido (pipeline N1 -> N2 -> N3)
+
+`test.py` executa uma amostra com o primeiro item do `dataset.json`, gerando N1, N2 e N3 e validando cada etapa. O resultado final fica em `predicts/generate_test.py`.
+
+```bash
+python test.py
+```
+
 ## Saidas
 
 Os arquivos gerados ficam em `predicts/` no formato:
@@ -101,6 +173,9 @@ Exemplos:
 
 - `predicts/generate_n1_mistral.json`
 - `predicts/generate_n1_llama.json`
+- `predicts/generate_n3_mistral.json`
+- `predicts/generate_n2_n3_mistral.json`
+- `predicts/generate_n1_n2_n3_mistral.json`
 
 Cada arquivo contem um JSON com `counts`, `time` e `datas`.
 
@@ -118,9 +193,11 @@ Para N2, cada item em `datas` contem:
 - `text`: texto original do dataset.
 - `texts_n1`: lista de sentencas N1 com `operators_n2` preenchido. Cada operador possui `text_n2` (frase/trecho gerado) e `properties_n3` (estrutura de N3).
 
+Para N3 (e combinacoes), cada item em `datas` contem o mesmo formato de N2, com `properties_n3` preenchido.
+
 ## Validacoes
 
-Os arquivos de validacao ficam em `metrics/` (ex: `metrics/validate_n1.json` e `metrics/validate_n2.json`).
+Os arquivos de validacao ficam em `metrics/` (ex: `metrics/validate_n1.json`, `metrics/validate_n2.json`, `metrics/validate_n3.json`).
 
 Cada arquivo de validacao possui:
 
