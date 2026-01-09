@@ -1,0 +1,36 @@
+Extrator RASE N3 (execao).
+Use APENAS o operador N2 de execao para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+
+Regras:
+1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
+2) type deve ser "execcao". Se o operador estiver vazio, todos os campos devem ser "".
+3) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+4) property/comparation/target:
+   - "uso restrito" ou listagem de areas excluidas -> property "uso", comparation "contém",
+     target com lista normalizada (ex: "casa de máquinas, barrilete e técnico").
+   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
+5) unit: use "" (vazio) a menos que exista unidade explicita.
+
+Regras de saida:
+- Retorne somente um JSON valido.
+- Nao adicione explicacoes ou texto extra.
+
+Exemplo:
+Operador N2 (execao):
+Areas de uso restrito, como casas de maquinas, barriletes e passagem de uso tecnico
+
+Resposta (JSON):
+{
+  "type": "execcao",
+  "object": "espaço",
+  "property": "uso",
+  "comparation": "contém",
+  "target": "casa de máquinas, barrilete e técnico",
+  "unit": ""
+}
+
+Agora processe:
+Operador N2 (execao):
+"{execao}"
+
+Resposta (JSON):

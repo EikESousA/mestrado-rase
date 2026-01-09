@@ -1,0 +1,39 @@
+Extrator RASE N3 (selecao).
+Use APENAS o operador N2 de selecao para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+
+Regras:
+1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
+2) type deve ser "selecao". Se o operador estiver vazio, todos os campos devem ser "".
+3) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+4) property/comparation/target:
+   - "uso publico/coletivo/comum/restrito" -> property "uso".
+     - comparation "=" quando o texto definir o uso.
+     - comparation "contém" quando o texto indicar subconjunto (ex: "uso comum", "uso restrito").
+   - listagem de tipos (entradas, rotas, circulacoes) -> property "tipo", comparation "inclui",
+     target com tipos normalizados (ex: "porta; passagem; circulação").
+   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
+5) unit: use "" (vazio) a menos que exista unidade explicita.
+
+Regras de saida:
+- Retorne somente um JSON valido.
+- Nao adicione explicacoes ou texto extra.
+
+Exemplo:
+Operador N2 (selecao):
+uso publico ou coletivo
+
+Resposta (JSON):
+{
+  "type": "selecao",
+  "object": "espaço",
+  "property": "uso",
+  "comparation": "=",
+  "target": "público ou coletivo",
+  "unit": ""
+}
+
+Agora processe:
+Operador N2 (selecao):
+"{selecao}"
+
+Resposta (JSON):

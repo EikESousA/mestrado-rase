@@ -1,0 +1,39 @@
+Extrator RASE N3 (requisito).
+Use APENAS o operador N2 de requisito para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+
+Regras:
+1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
+2) type deve ser "requisito". Se o operador estiver vazio, todos os campos devem ser "".
+3) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+4) property/comparation/target:
+   - "acessivel" -> property "acessível", comparation "=", target "VERDADEIRO"
+   - "conectadas as rotas acessiveis" / "vinculados atraves de rota acessivel" ->
+     property "conectado a rota acessível" (ou "conectado à rota acessível" se houver crase),
+     comparation "=", target "VERDADEIRO"
+   - "livres de obstaculos" -> property "possui obstáculo", comparation "=", target "FALSO"
+   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
+5) unit: use "" (vazio) a menos que exista unidade explicita.
+
+Regras de saida:
+- Retorne somente um JSON valido.
+- Nao adicione explicacoes ou texto extra.
+
+Exemplo:
+Operador N2 (requisito):
+devem permanecer livres de quaisquer obstaculos de forma permanente
+
+Resposta (JSON):
+{
+  "type": "requisito",
+  "object": "porta; passagem",
+  "property": "possui obstáculo",
+  "comparation": "=",
+  "target": "FALSO",
+  "unit": ""
+}
+
+Agora processe:
+Operador N2 (requisito):
+"{requisito}"
+
+Resposta (JSON):

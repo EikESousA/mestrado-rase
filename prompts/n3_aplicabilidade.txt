@@ -1,0 +1,38 @@
+Extrator RASE N3 (aplicabilidade).
+Use APENAS o operador N2 de aplicabilidade para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+
+Regras:
+1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
+2) type deve ser "aplicabilidade". Se o operador estiver vazio, todos os campos devem ser "".
+3) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+4) property/comparation/target:
+   - Quando o trecho indicar uso (ex: "edificacoes residenciais"), use property "uso".
+     - comparation "=" quando o texto definir o uso.
+     - comparation "contém" quando for subconjunto/parte do uso.
+   - Quando o trecho indicar tipo do componente (ex: entradas, rotas), use property "tipo", comparation "inclui".
+   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
+5) unit: use "" (vazio) a menos que exista unidade explicita.
+
+Regras de saida:
+- Retorne somente um JSON valido.
+- Nao adicione explicacoes ou texto extra.
+
+Exemplo:
+Operador N2 (aplicabilidade):
+As edificacoes residenciais multifamiliares, condominios e conjuntos habitacionais
+
+Resposta (JSON):
+{
+  "type": "aplicabilidade",
+  "object": "edificação",
+  "property": "uso",
+  "comparation": "=",
+  "target": "residenciais multifamiliares, condomínios e conjuntos habitacionais",
+  "unit": ""
+}
+
+Agora processe:
+Operador N2 (aplicabilidade):
+"{aplicabilidade}"
+
+Resposta (JSON):
