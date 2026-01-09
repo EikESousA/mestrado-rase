@@ -4,15 +4,18 @@ Use APENAS o operador N2 de selecao para gerar as propriedades N3. O texto compl
 Regras:
 1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
 2) type deve ser "selecao". Se o operador estiver vazio, todos os campos devem ser "".
-3) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
-4) property/comparation/target:
+3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
+4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+5) property/comparation/target:
    - "uso publico/coletivo/comum/restrito" -> property "uso".
      - comparation "=" quando o texto definir o uso.
      - comparation "contém" quando o texto indicar subconjunto (ex: "uso comum", "uso restrito").
    - listagem de tipos (entradas, rotas, circulacoes) -> property "tipo", comparation "inclui",
      target com tipos normalizados (ex: "porta; passagem; circulação").
+   - Quando a selecao for apenas um qualificador (ex: "internos", "externos", "eventuais"),
+     deixe todos os campos vazios.
    - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
-5) unit: use "" (vazio) a menos que exista unidade explicita.
+6) unit: use "" (vazio) a menos que exista unidade explicita.
 
 Regras de saida:
 - Retorne somente um JSON valido.
@@ -32,7 +35,25 @@ Resposta (JSON):
   "unit": ""
 }
 
+Exemplo:
+Operador N2 (selecao):
+todas as entradas, bem como as rotas de interligacao as funcoes do edificio
+
+Resposta (JSON):
+{
+  "type": "selecao",
+  "object": "componente; espaço",
+  "property": "tipo",
+  "comparation": "inclui",
+  "target": "porta; passagem; circulação",
+  "unit": ""
+}
+
 Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
 Operador N2 (selecao):
 "{selecao}"
 

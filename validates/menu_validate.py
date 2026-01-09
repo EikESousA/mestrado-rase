@@ -2,7 +2,10 @@ from typing import List, Tuple
 
 from validates.validate_n1 import validate_n1
 from validates.validate_n2 import validate_n2
+from validates.validate_n3 import validate_n3
 from validates.validate_n1_n2 import validate_n1_n2
+from validates.validate_n2_n3 import validate_n2_n3
+from validates.validate_n1_n2_n3 import validate_n1_n2_n3
 from utils.screens.clear_screen import clear_screen
 from utils.screens.menu_bar_line import menu_bar_line
 from utils.screens.menu_prompt import menu_prompt
@@ -81,11 +84,38 @@ def menu_validate() -> None:
                     "metrics/validate_n1_n2.json",
                 )
                 ran_any = True
-            if "n1" in active_ns and "n1_n2" not in active_ns:
+            if "n2_n3" in active_ns and "n1_n2_n3" not in active_ns:
+                validate_n2_n3(
+                    "dataset.json",
+                    "predicts",
+                    "metrics/validate_n2_n3.json",
+                )
+                ran_any = True
+            if "n1_n2_n3" in active_ns:
+                validate_n1_n2_n3(
+                    "dataset.json",
+                    "predicts",
+                    "metrics/validate_n1_n2_n3.json",
+                )
+                ran_any = True
+            if "n1" in active_ns and "n1_n2" not in active_ns and "n1_n2_n3" not in active_ns:
                 validate_n1("dataset.json", "predicts", "metrics/validate_n1.json")
                 ran_any = True
-            if "n2" in active_ns and "n1_n2" not in active_ns:
+            if (
+                "n2" in active_ns
+                and "n1_n2" not in active_ns
+                and "n2_n3" not in active_ns
+                and "n1_n2_n3" not in active_ns
+            ):
                 validate_n2("dataset.json", "predicts", "metrics/validate_n2.json")
+                ran_any = True
+            if (
+                "n3" in active_ns
+                and "n1_n2" not in active_ns
+                and "n2_n3" not in active_ns
+                and "n1_n2_n3" not in active_ns
+            ):
+                validate_n3("dataset.json", "predicts", "metrics/validate_n3.json")
                 ran_any = True
             if not ran_any:
                 print("Validacao ainda nao implementada.")

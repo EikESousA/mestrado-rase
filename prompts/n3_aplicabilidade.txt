@@ -4,14 +4,19 @@ Use APENAS o operador N2 de aplicabilidade para gerar as propriedades N3. O text
 Regras:
 1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
 2) type deve ser "aplicabilidade". Se o operador estiver vazio, todos os campos devem ser "".
-3) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
-4) property/comparation/target:
+3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
+4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+5) property/comparation/target:
    - Quando o trecho indicar uso (ex: "edificacoes residenciais"), use property "uso".
      - comparation "=" quando o texto definir o uso.
      - comparation "contém" quando for subconjunto/parte do uso.
+   - Quando o trecho indicar "acessos", use object "componente", property "tipo",
+     comparation "inclui", target "porta; passagem".
+   - Quando o trecho indicar "edificacoes e equipamentos urbanos", use
+     object "edificação; equipamento urbano" e target "obra nova".
    - Quando o trecho indicar tipo do componente (ex: entradas, rotas), use property "tipo", comparation "inclui".
    - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
-5) unit: use "" (vazio) a menos que exista unidade explicita.
+6) unit: use "" (vazio) a menos que exista unidade explicita.
 
 Regras de saida:
 - Retorne somente um JSON valido.
@@ -31,7 +36,53 @@ Resposta (JSON):
   "unit": ""
 }
 
+Exemplo:
+Operador N2 (aplicabilidade):
+Os acessos
+
+Resposta (JSON):
+{
+  "type": "aplicabilidade",
+  "object": "componente",
+  "property": "tipo",
+  "comparation": "inclui",
+  "target": "porta; passagem",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (aplicabilidade):
+edificacoes e equipamentos urbanos
+
+Resposta (JSON):
+{
+  "type": "aplicabilidade",
+  "object": "edificação; equipamento urbano",
+  "property": "",
+  "comparation": "",
+  "target": "obra nova",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (aplicabilidade):
+As unidades autonomas acessiveis
+
+Resposta (JSON):
+{
+  "type": "aplicabilidade",
+  "object": "espaço",
+  "property": "uso",
+  "comparation": "contém",
+  "target": "comum",
+  "unit": ""
+}
+
 Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
 Operador N2 (aplicabilidade):
 "{aplicabilidade}"
 

@@ -4,15 +4,17 @@ Use APENAS o operador N2 de requisito para gerar as propriedades N3. O texto com
 Regras:
 1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
 2) type deve ser "requisito". Se o operador estiver vazio, todos os campos devem ser "".
-3) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
-4) property/comparation/target:
+3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
+4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+5) property/comparation/target:
    - "acessivel" -> property "acessível", comparation "=", target "VERDADEIRO"
    - "conectadas as rotas acessiveis" / "vinculados atraves de rota acessivel" ->
      property "conectado a rota acessível" (ou "conectado à rota acessível" se houver crase),
      comparation "=", target "VERDADEIRO"
    - "livres de obstaculos" -> property "possui obstáculo", comparation "=", target "FALSO"
+   - "devem ser servidas de rota(s) acessiveis" -> property "uso", comparation "=", target "VERDADEIRO"
    - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
-5) unit: use "" (vazio) a menos que exista unidade explicita.
+6) unit: use "" (vazio) a menos que exista unidade explicita.
 
 Regras de saida:
 - Retorne somente um JSON valido.
@@ -32,7 +34,39 @@ Resposta (JSON):
   "unit": ""
 }
 
+Exemplo:
+Operador N2 (requisito):
+devem ser acessiveis
+
+Resposta (JSON):
+{
+  "type": "requisito",
+  "object": "porta; espaço",
+  "property": "acessível",
+  "comparation": "=",
+  "target": "VERDADEIRO",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (requisito):
+devem ser servidas de uma ou mais rotas acessiveis
+
+Resposta (JSON):
+{
+  "type": "requisito",
+  "object": "espaço ou edificação",
+  "property": "uso",
+  "comparation": "=",
+  "target": "VERDADEIRO",
+  "unit": ""
+}
+
 Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
 Operador N2 (requisito):
 "{requisito}"
 
