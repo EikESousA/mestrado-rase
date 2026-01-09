@@ -2,8 +2,8 @@
 
 ## Project Structure & Module Organization
 - `main.py` provides the interactive menu for generation and validation.
-- `generates/` contains generation scripts (`generate_n1.py`, `generate_n2.py`, `generate_n3.py`, `generate_n2_n3.py`, `generate_n1_n2_n3.py`) and the menu.
-- `validates/` contains validation scripts (`validate_n1.py`, `validate_n2.py`, `validate_n3.py`, `validate_n2_n3.py`, `validate_n1_n2_n3.py`) and the menu.
+- `generates/` contains generation scripts (`generate_n1.py`, `generate_n2.py`, `generate_n3.py`, `generate_n1n2.py`, `generate_n1n2n3.py`) and the menu.
+- `validates/` contains validation scripts (`validate_n1.py`, `validate_n2.py`, `validate_n3.py`, `validate_n1n2.py`, `validate_n1n2n3.py`) and the menu.
 - `utils/` houses shared helpers (generation, validation, logging, screen UI).
 - `prompts/` stores prompt templates for N1/N2/N3.
 - `dataset.json` is the input text dataset.
@@ -26,16 +26,14 @@ Run generation scripts:
 python generates/generate_n1.py --model mistral
 python generates/generate_n2.py --model mistral
 python generates/generate_n3.py --model mistral
-python generates/generate_n2_n3.py --model mistral
-python generates/generate_n1_n2_n3.py --model mistral
+python generates/generate_n1n2n3.py --model mistral
 ```
 Run validation scripts:
 ```bash
 python validates/validate_n1.py
 python validates/validate_n2.py
 python validates/validate_n3.py
-python validates/validate_n2_n3.py
-python validates/validate_n1_n2_n3.py
+python validates/validate_n1n2n3.py
 ```
 Run a small pipeline sample:
 ```bash

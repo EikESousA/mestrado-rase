@@ -3,9 +3,8 @@ from typing import List, Tuple
 from validates.validate_n1 import validate_n1
 from validates.validate_n2 import validate_n2
 from validates.validate_n3 import validate_n3
-from validates.validate_n1_n2 import validate_n1_n2
-from validates.validate_n2_n3 import validate_n2_n3
-from validates.validate_n1_n2_n3 import validate_n1_n2_n3
+from validates.validate_n1n2 import validate_n1n2
+from validates.validate_n1n2n3 import validate_n1n2n3
 from utils.screens.clear_screen import clear_screen
 from utils.screens.menu_bar_line import menu_bar_line
 from utils.screens.menu_prompt import menu_prompt
@@ -20,9 +19,8 @@ def menu_validate() -> None:
         ("1", "n1", True),
         ("2", "n2", False),
         ("3", "n3", False),
-        ("4", "n1_n2", False),
-        ("5", "n2_n3", False),
-        ("6", "n1_n2_n3", False),
+        ("4", "n1n2", False),
+        ("5", "n1n2n3", False),
     ]
 
     while True:
@@ -35,7 +33,6 @@ def menu_validate() -> None:
         print(menu_text_line(f"3 - [{'x' if options_n[2][2] else ' '}] {options_n[2][1]}"))
         print(menu_text_line(f"4 - [{'x' if options_n[3][2] else ' '}] {options_n[3][1]}"))
         print(menu_text_line(f"5 - [{'x' if options_n[4][2] else ' '}] {options_n[4][1]}"))
-        print(menu_text_line(f"6 - [{'x' if options_n[5][2] else ' '}] {options_n[5][1]}"))
         print(menu_bar_line())
         print(menu_text_line("Enter - Processar"))
         print(menu_bar_line())
@@ -65,55 +62,43 @@ def menu_validate() -> None:
         elif choice == "5":
             clear_screen()
             options_n[4] = (options_n[4][0], options_n[4][1], not options_n[4][2])
-        elif choice == "6":
-            clear_screen()
-            options_n[5] = (options_n[5][0], options_n[5][1], not options_n[5][2])
         elif choice == "":
             clear_screen()
             active_ns: List[str] = [n_key for _, n_key, active in options_n if active]
             if not active_ns:
-                print("Selecione o 1, 2, 3, 4, 5 ou 6 para validar os dados.")
+                print("Selecione o 1, 2, 3, 4 ou 5 para validar os dados.")
                 print()
                 input("Digite qualquer tecla para voltar ao menu.")
                 continue
             ran_any = False
-            if "n1_n2" in active_ns:
-                validate_n1_n2(
+            if "n1n2" in active_ns:
+                validate_n1n2(
                     "dataset.json",
                     "predicts",
-                    "metrics/validate_n1_n2.json",
+                    "metrics/validate_n1n2.json",
                 )
                 ran_any = True
-            if "n2_n3" in active_ns and "n1_n2_n3" not in active_ns:
-                validate_n2_n3(
+            if "n1n2n3" in active_ns:
+                validate_n1n2n3(
                     "dataset.json",
                     "predicts",
-                    "metrics/validate_n2_n3.json",
+                    "metrics/validate_n1n2n3.json",
                 )
                 ran_any = True
-            if "n1_n2_n3" in active_ns:
-                validate_n1_n2_n3(
-                    "dataset.json",
-                    "predicts",
-                    "metrics/validate_n1_n2_n3.json",
-                )
-                ran_any = True
-            if "n1" in active_ns and "n1_n2" not in active_ns and "n1_n2_n3" not in active_ns:
+            if "n1" in active_ns and "n1n2" not in active_ns and "n1n2n3" not in active_ns:
                 validate_n1("dataset.json", "predicts", "metrics/validate_n1.json")
                 ran_any = True
             if (
                 "n2" in active_ns
-                and "n1_n2" not in active_ns
-                and "n2_n3" not in active_ns
-                and "n1_n2_n3" not in active_ns
+                and "n1n2" not in active_ns
+                and "n1n2n3" not in active_ns
             ):
                 validate_n2("dataset.json", "predicts", "metrics/validate_n2.json")
                 ran_any = True
             if (
                 "n3" in active_ns
-                and "n1_n2" not in active_ns
-                and "n2_n3" not in active_ns
-                and "n1_n2_n3" not in active_ns
+                and "n1n2" not in active_ns
+                and "n1n2n3" not in active_ns
             ):
                 validate_n3("dataset.json", "predicts", "metrics/validate_n3.json")
                 ran_any = True

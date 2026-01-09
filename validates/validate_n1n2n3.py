@@ -47,7 +47,7 @@ def _load_predictions(
     model: str,
     debug_enabled: bool,
 ) -> Dict[str, Any] | None:
-    input_path = Path(predicts_dir) / f"generate_n1_n2_n3_{model}.json"
+    input_path = Path(predicts_dir) / f"generate_n1n2n3_{model}.json"
     if not input_path.exists():
         if debug_enabled:
             print(f"Pulando {model}: arquivo nao encontrado.", flush=True)
@@ -294,7 +294,7 @@ def _write_metrics(output_path: str | None, metrics: Dict[str, Any]) -> None:
         json.dump(metrics, file, ensure_ascii=False, indent=2)
 
 
-def validate_n1_n2_n3(
+def validate_n1n2n3(
     dataset_path: str,
     predicts_dir: str,
     output_path: str,
@@ -345,7 +345,7 @@ def validate_n1_n2_n3(
         "n1": n1_metrics,
         "n2": n2_metrics,
         "n3": n3_metrics,
-        "n1_n2_n3": {
+        "n1n2n3": {
             "models": combined_models,
             "averages": combined_averages,
         },
@@ -363,13 +363,13 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Validar N1, N2 e N3 usando similaridades.")
     parser.add_argument("--dataset", default="dataset.json")
     parser.add_argument("--predicts", default="predicts")
-    parser.add_argument("--output", default="metrics/validate_n1_n2_n3.json")
+    parser.add_argument("--output", default="metrics/validate_n1n2n3.json")
     parser.add_argument("--output-n1", default="metrics/validate_n1.json")
     parser.add_argument("--output-n2", default="metrics/validate_n2.json")
     parser.add_argument("--output-n3", default="metrics/validate_n3.json")
     args: argparse.Namespace = parser.parse_args()
 
-    validate_n1_n2_n3(
+    validate_n1n2n3(
         args.dataset,
         args.predicts,
         args.output,

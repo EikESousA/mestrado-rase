@@ -11,13 +11,13 @@ from fuzzywuzzy import fuzz
 from gensim.models import KeyedVectors
 from sentence_transformers import SentenceTransformer
 
+from utils.validates.build_pairs import build_pairs
 from utils.validates.compute_multilingual_scores import compute_multilingual_scores
 from utils.validates.compute_sbert_scores import compute_sbert_scores
 from utils.validates.compute_tfidf_scores import compute_tfidf_scores
 from utils.validates.compute_wmd_scores import compute_wmd_scores
 from utils.validates.load_nilc_model import load_nilc_model
 from validates.validate_n2 import build_pairs_n2
-from validates.validate_n3 import build_pairs_n3
 
 
 MODEL_NAMES: List[str] = ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
@@ -46,13 +46,38 @@ def _load_predictions(
     model: str,
     debug_enabled: bool,
 ) -> Dict[str, Any] | None:
-    input_path = Path(predicts_dir) / f"generate_n2_n3_{model}.json"
+    input_path = Path(predicts_dir) / f"generate_n1n2_{model}.json"
     if not input_path.exists():
         if debug_enabled:
             print(f"Pulando {model}: arquivo nao encontrado.", flush=True)
         return None
     with open(input_path, "r", encoding="utf-8") as file:
         return json.load(file)
+
+
+def _prepare_model_data_n1(
+    dataset: Dict[str, Any],
+    predicts_dir: str,
+    debug_enabled: bool,
+) -> Dict[str, Dict[str, Any]]:
+    model_data: Dict[str, Dict[str, Any]] = {}
+    for model in MODEL_NAMES:
+        predictions = _load_predictions(predicts_dir, model, debug_enabled)
+        if predictions is None:
+            continue
+        print(f"Carregando modelo {model} (N1)...", flush=True)
+        pairs = build_pairs(dataset, predictions)
+        if debug_enabled:
+            print(f"Pares N1 gerados ({model}): {len(pairs)}", flush=True)
+        targets = [p["target"] for p in pairs]
+        predicted = [p["predicted"] for p in pairs]
+        model_data[model] = {
+            "pairs": pairs,
+            "targets": targets,
+            "predicted": predicted,
+            "scores": {name: [] for name in METRIC_NAMES},
+        }
+    return model_data
 
 
 def _prepare_model_data_n2(
@@ -69,31 +94,6 @@ def _prepare_model_data_n2(
         pairs = build_pairs_n2(dataset, predictions)
         if debug_enabled:
             print(f"Pares N2 gerados ({model}): {len(pairs)}", flush=True)
-        targets = [p["target"] for p in pairs]
-        predicted = [p["predicted"] for p in pairs]
-        model_data[model] = {
-            "pairs": pairs,
-            "targets": targets,
-            "predicted": predicted,
-            "scores": {name: [] for name in METRIC_NAMES},
-        }
-    return model_data
-
-
-def _prepare_model_data_n3(
-    dataset: Dict[str, Any],
-    predicts_dir: str,
-    debug_enabled: bool,
-) -> Dict[str, Dict[str, Any]]:
-    model_data: Dict[str, Dict[str, Any]] = {}
-    for model in MODEL_NAMES:
-        predictions = _load_predictions(predicts_dir, model, debug_enabled)
-        if predictions is None:
-            continue
-        print(f"Carregando modelo {model} (N3)...", flush=True)
-        pairs = build_pairs_n3(dataset, predictions)
-        if debug_enabled:
-            print(f"Pares N3 gerados ({model}): {len(pairs)}", flush=True)
         targets = [p["target"] for p in pairs]
         predicted = [p["predicted"] for p in pairs]
         model_data[model] = {
@@ -268,36 +268,36 @@ def _write_metrics(output_path: str | None, metrics: Dict[str, Any]) -> None:
         json.dump(metrics, file, ensure_ascii=False, indent=2)
 
 
-def validate_n2_n3(
+def validate_n1n2(
     dataset_path: str,
     predicts_dir: str,
     output_path: str,
+    output_n1: str | None = None,
     output_n2: str | None = None,
-    output_n3: str | None = None,
 ) -> None:
     env_debug: str = os.getenv("GENERATE_DEBUG", "").strip().lower()
     debug_enabled: bool = env_debug in {"1", "true", "yes", "on"}
-    print("Validacao N2+N3 iniciada.", flush=True)
+    print("Validacao N1+N2 iniciada.", flush=True)
 
     with open(dataset_path, "r", encoding="utf-8") as file:
         dataset: Dict[str, Any] = json.load(file)
 
+    n1_model_data = _prepare_model_data_n1(dataset, predicts_dir, debug_enabled)
     n2_model_data = _prepare_model_data_n2(dataset, predicts_dir, debug_enabled)
-    n3_model_data = _prepare_model_data_n3(dataset, predicts_dir, debug_enabled)
-    _compute_scores([n2_model_data, n3_model_data], debug_enabled)
+    _compute_scores([n1_model_data, n2_model_data], debug_enabled)
 
+    n1_metrics = _build_metrics(n1_model_data)
     n2_metrics = _build_metrics(n2_model_data)
-    n3_metrics = _build_metrics(n3_model_data)
 
     combined_models: Dict[str, Any] = {}
     combined_averages: Dict[str, Any] = {}
+    n1_models: Dict[str, Any] = n1_metrics.get("models", {})
     n2_models: Dict[str, Any] = n2_metrics.get("models", {})
-    n3_models: Dict[str, Any] = n3_metrics.get("models", {})
 
-    for model in sorted(set(n2_models.keys()) | set(n3_models.keys())):
+    for model in sorted(set(n1_models.keys()) | set(n2_models.keys())):
+        n1_items = n1_models.get(model, {}).get("items", [])
         n2_items = n2_models.get(model, {}).get("items", [])
-        n3_items = n3_models.get(model, {}).get("items", [])
-        merged_items = n2_items + n3_items
+        merged_items = n1_items + n2_items
 
         averages: Dict[str, float | None] = {}
         for metric_name in METRIC_NAMES:
@@ -311,34 +311,34 @@ def validate_n2_n3(
         combined_averages[model] = averages
 
     combined: Dict[str, Any] = {
+        "n1": n1_metrics,
         "n2": n2_metrics,
-        "n3": n3_metrics,
-        "n2_n3": {
+        "n1n2": {
             "models": combined_models,
             "averages": combined_averages,
         },
     }
 
+    _write_metrics(output_n1, n1_metrics)
     _write_metrics(output_n2, n2_metrics)
-    _write_metrics(output_n3, n3_metrics)
     _write_metrics(output_path, combined)
 
     print(f"Resultado salvo em {output_path}", flush=True)
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Validar N2 e N3 usando similaridades.")
+    parser = argparse.ArgumentParser(description="Validar N1 e N2 usando similaridades.")
     parser.add_argument("--dataset", default="dataset.json")
     parser.add_argument("--predicts", default="predicts")
-    parser.add_argument("--output", default="metrics/validate_n2_n3.json")
+    parser.add_argument("--output", default="metrics/validate_n1n2.json")
+    parser.add_argument("--output-n1", default="metrics/validate_n1.json")
     parser.add_argument("--output-n2", default="metrics/validate_n2.json")
-    parser.add_argument("--output-n3", default="metrics/validate_n3.json")
     args: argparse.Namespace = parser.parse_args()
 
-    validate_n2_n3(
+    validate_n1n2(
         args.dataset,
         args.predicts,
         args.output,
+        output_n1=args.output_n1,
         output_n2=args.output_n2,
-        output_n3=args.output_n3,
     )

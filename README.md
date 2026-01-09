@@ -66,7 +66,7 @@ ollama serve
 python3 main.py
 ```
 
-No menu, escolha "Gerar dados" e selecione o N (n1/n2/n3/n2_n3/n1_n2_n3) e o modelo. O sistema usara `dataset.json` como entrada.
+No menu, escolha "Gerar dados" e selecione o N (n1/n2/n3/n1n2/n1n2n3) e o modelo. O sistema usara `dataset.json` como entrada.
 
 ## Funcionalidades (N1/N2/N3)
 
@@ -103,24 +103,14 @@ Comando:
 python generates/generate_n3.py --model mistral
 ```
 
-### Geracao N2+N3
-
-`generates/generate_n2_n3.py` aplica o N3 sobre um arquivo N2 (ex: `predicts/generate_n2_<modelo>.json`) e grava em `predicts/generate_n2_n3_<modelo>.json`.
-
-Comando:
-
-```bash
-python generates/generate_n2_n3.py --model mistral
-```
-
 ### Geracao N1+N2+N3
 
-`generates/generate_n1_n2_n3.py` aplica o N3 sobre um arquivo N1+N2 (ex: `predicts/generate_n1_n2_<modelo>.json`) e grava em `predicts/generate_n1_n2_n3_<modelo>.json`.
+`generates/generate_n1n2n3.py` aplica o N3 sobre um arquivo N1+N2 (ex: `predicts/generate_n1n2_<modelo>.json`) e grava em `predicts/generate_n1n2n3_<modelo>.json`.
 
 Comando:
 
 ```bash
-python generates/generate_n1_n2_n3.py --model mistral
+python generates/generate_n1n2n3.py --model mistral
 ```
 
 ### Validacao N1
@@ -144,15 +134,14 @@ python validates/validate_n2.py
 python validates/validate_n3.py
 ```
 
-### Validacao N2+N3 e N1+N2+N3
+### Validacao N1+N2+N3
 
-`validates/validate_n2_n3.py` e `validates/validate_n1_n2_n3.py` geram metricas combinadas para pipelines completos.
+`validates/validate_n1n2n3.py` gera metricas combinadas para pipelines completos.
 
 Comandos:
 
 ```bash
-python validates/validate_n2_n3.py
-python validates/validate_n1_n2_n3.py
+python validates/validate_n1n2n3.py
 ```
 
 ### Teste rapido (pipeline N1 -> N2 -> N3)
@@ -174,8 +163,8 @@ Exemplos:
 - `predicts/generate_n1_mistral.json`
 - `predicts/generate_n1_llama.json`
 - `predicts/generate_n3_mistral.json`
-- `predicts/generate_n2_n3_mistral.json`
-- `predicts/generate_n1_n2_n3_mistral.json`
+- `predicts/generate_n1n2_mistral.json`
+- `predicts/generate_n1n2n3_mistral.json`
 
 Cada arquivo contem um JSON com `counts`, `time` e `datas`.
 
