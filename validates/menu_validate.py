@@ -28,6 +28,12 @@ def menu_validate() -> None:
         print(menu_bar_line())
         print(menu_text_line("VALIDAR DADOS", align_left=False))
         print(menu_bar_line())
+        print(
+            menu_text_line(
+                "Metricas: fuzzywuzzy, tfidf, sbert, bertimbau, multilingual, wmd_ft, wmd_nilc"
+            )
+        )
+        print(menu_bar_line())
         print(menu_text_line(f"1 - [{'x' if options_n[0][2] else ' '}] {options_n[0][1]}"))
         print(menu_text_line(f"2 - [{'x' if options_n[1][2] else ' '}] {options_n[1][1]}"))
         print(menu_text_line(f"3 - [{'x' if options_n[2][2] else ' '}] {options_n[2][1]}"))

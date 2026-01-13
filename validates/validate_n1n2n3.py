@@ -26,6 +26,7 @@ METRIC_NAMES: List[str] = [
     "fuzzywuzzy",
     "tfidf",
     "sbert",
+    "bertimbau",
     "multilingual",
     "wmd_ft",
     "wmd_nilc",
@@ -167,6 +168,24 @@ def _compute_scores(
             del sbert_model
             gc.collect()
             continue
+        if metric_name == "bertimbau":
+            if debug_enabled:
+                print("Carregando modelo BERTimbau...", flush=True)
+            bertimbau_model: SentenceTransformer = SentenceTransformer(
+                "rufimelo/Legal-BERTimbau-sts-large-ma-v3"
+            )
+            for dataset in datasets:
+                for model, data in dataset.items():
+                    scores = compute_sbert_scores(
+                        bertimbau_model,
+                        data["targets"],
+                        data["predicted"],
+                    )
+                    data["scores"][metric_name] = scores
+                    print(f"Modelo {model}: BERTimbau validado.", flush=True)
+            del bertimbau_model
+            gc.collect()
+            continue
         if metric_name == "multilingual":
             if debug_enabled:
                 print("Carregando modelo MULTILINGUAL...", flush=True)
@@ -256,6 +275,9 @@ def _build_metrics(model_data: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
                     else None,
                     "sbert": data["scores"]["sbert"][i]
                     if i < len(data["scores"]["sbert"])
+                    else None,
+                    "bertimbau": data["scores"]["bertimbau"][i]
+                    if i < len(data["scores"]["bertimbau"])
                     else None,
                     "multilingual": data["scores"]["multilingual"][i]
                     if i < len(data["scores"]["multilingual"])

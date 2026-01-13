@@ -94,6 +94,7 @@ def validate_n3(dataset_path: str, predicts_dir: str, output_path: str) -> None:
         "fuzzywuzzy",
         "tfidf",
         "sbert",
+        "bertimbau",
         "multilingual",
         "wmd_ft",
         "wmd_nilc",
@@ -153,6 +154,23 @@ def validate_n3(dataset_path: str, predicts_dir: str, output_path: str) -> None:
                 data["scores"][metric_name] = scores
                 print(f"Modelo {model}: SBERT validado.", flush=True)
             del sbert_model
+            gc.collect()
+            continue
+        if metric_name == "bertimbau":
+            if debug_enabled:
+                print("Carregando modelo BERTimbau...", flush=True)
+            bertimbau_model: SentenceTransformer = SentenceTransformer(
+                "rufimelo/Legal-BERTimbau-sts-large-ma-v3"
+            )
+            for model, data in model_data.items():
+                scores = compute_sbert_scores(
+                    bertimbau_model,
+                    data["targets"],
+                    data["predicted"],
+                )
+                data["scores"][metric_name] = scores
+                print(f"Modelo {model}: BERTimbau validado.", flush=True)
+            del bertimbau_model
             gc.collect()
             continue
         if metric_name == "multilingual":
@@ -228,6 +246,9 @@ def validate_n3(dataset_path: str, predicts_dir: str, output_path: str) -> None:
                     else None,
                     "sbert": data["scores"]["sbert"][i]
                     if i < len(data["scores"]["sbert"])
+                    else None,
+                    "bertimbau": data["scores"]["bertimbau"][i]
+                    if i < len(data["scores"]["bertimbau"])
                     else None,
                     "multilingual": data["scores"]["multilingual"][i]
                     if i < len(data["scores"]["multilingual"])
