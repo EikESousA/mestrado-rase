@@ -1,0 +1,521 @@
+{
+  "counts": 5,
+  "datas": [
+    {
+      "text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis. As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum. As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis. Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+      "texts_n1": [
+        {
+          "text_n1": "Áreas de espaço público ou coletivo devem ter uma ou mais rotas acessíveis.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "áreas de espaço público ou coletivo",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "áreas de espaço público ou coletivo",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "rotas acessíveis",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "espaço",
+                "property": "rotas acessíveis",
+                "comparation": "=",
+                "target": "rotas acessíveis",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "devem ter uma ou mais rotas acessíveis",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "espaco",
+                "property": "acessivel",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Edificações residenciais multifamiliares, condomínios e conjuntos habitacionais devem ser acessíveis em suas áreas de uso comum.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "edificações residenciais multifamiliares, condomínios e conjuntos habitacionais",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "edificacao",
+                "property": "uso",
+                "comparation": "=",
+                "target": "residenciais multifamiliares; condominios; conjuntos habitacionais",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "áreas de uso comum",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "espaco",
+                "property": "tipo de area",
+                "comparation": "=",
+                "target": "uso comum",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "devem ser acessíveis",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "espaco",
+                "property": "acessivel",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Unidades autônomas acessíveis devem estar conectadas às rotas acessíveis.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não precisam atender às condições de acessibilidade desta Norma.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "Nas edificações e equipamentos urbanos, todas as entradas, bem como as rotas de interligação às funções do edifício, devem ser acessíveis.",
+      "texts_n1": [
+        {
+          "text_n1": "As entradas em edificações e equipamentos urbanos devem ser acessíveis.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "edificações e equipamentos urbanos",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "edificacao; equipamento urbano",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "entradas",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "edificação ou equipamento urbano",
+                "property": "entradas",
+                "comparation": "=",
+                "target": "acessíveis",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "devem ser acessíveis",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "espaco",
+                "property": "acessivel",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "As rotas de interligação às funções do edifício também devem ser acessíveis.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "Os acessos devem ser vinculados através de rota acessível à circulação principal e às circulações de emergência. Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.",
+      "texts_n1": [
+        {
+          "text_n1": "Acessos devem estar vinculados através de rota acessível à principal circulação e às circulações de emergência.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "A instalação do dispositivo acessível para controle de acesso deve prever manobra de cadeira de rodas, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5, e os eventuais comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9.",
+      "texts_n1": [
+        {
+          "text_n1": "A instalação do dispositivo acessível para controle de acesso deve prever manobra de cadeira de rodas, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5, e os eventuais comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "dispositivo acessível",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "dispositivo",
+                "property": "acessível",
+                "comparation": "=",
+                "target": "controle de acesso; manobra de cadeira de rodas; comandos acionáveis por usuários; posicionamento à altura indicado em 4.6.9",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "para controle de acesso",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "dispositivo acessível",
+                "property": "manobra de cadeira de rodas",
+                "comparation": "=",
+                "target": "4.3.2, 4.3.4 e 4.3.5",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "prever manobra de cadeira de rodas, conforme o disposto em 4.3.2, 4.3.4 e 4.3.5, e os eventuais comandos acionáveis por usuários devem estar posicionados à altura indicada em 4.6.9",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "dispositivo acessível para controle de acesso",
+                "property": "manobra de cadeira de rodas",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "Deve ser prevista a sinalização informativa e direcional da localização das entradas e saídas acessíveis, de acordo com o estabelecido na Seção 5.",
+      "texts_n1": [
+        {
+          "text_n1": "Sinalização informativa e direcional da localização das entradas e saídas acessíveis deve ser prevista de acordo com a Seção 5.",
+          "operators_n2": {
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "de acordo com",
+              "properties_n3": {
+                "type": "execcao",
+                "object": "localização",
+                "property": "sinalização informativa e direcional",
+                "comparation": "prevista de acordo com",
+                "target": "Seção 5",
+                "unit": ""
+              }
+            },
+            "requeriments": {
+              "text_n2": "a sinalização informativa e direcional da localização das entradas e saídas acessíveis",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "espaco",
+                "property": "acessivel",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "time": 11.233355522155762
+}

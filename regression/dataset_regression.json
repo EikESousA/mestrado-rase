@@ -1,0 +1,1486 @@
+{
+  "counts": 12,
+  "datas": [
+    {
+      "text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis. As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum. As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis. Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+      "texts_n1": [
+        {
+          "text_n1": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem ser servidas de uma ou mais rotas acessíveis",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "espaço ou edificação",
+                "property": "uso",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "As áreas de qualquer espaço ou edificação",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "espaço",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "uso público ou coletivo",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "espaço",
+                "property": "uso",
+                "comparation": "=",
+                "target": "público ou coletivo",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais necessitam ser acessíveis em suas áreas de uso comum.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "necessitam ser acessíveis",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "espaço",
+                "property": "acessível",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "As edificações residenciais multifamiliares, condomínios e conjuntos habitacionais",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "edificação",
+                "property": "uso",
+                "comparation": "=",
+                "target": "residenciais multifamiliares, condomínios e conjuntos habitacionais",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "áreas de uso comum",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "espaço",
+                "property": "uso",
+                "comparation": "contém",
+                "target": "comum",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "As unidades autônomas acessíveis devem estar conectadas às rotas acessíveis.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem estar conectadas às rotas acessíveis",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "espaço",
+                "property": "conectado a rota acessível",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "As unidades autônomas acessíveis",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "espaço",
+                "property": "uso",
+                "comparation": "contém",
+                "target": "comum",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares, não necessitam atender às condições de acessibilidade desta Norma.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "não necessitam atender às condições de acessibilidade desta Norma",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "espaço",
+                "property": "uso",
+                "comparation": "contém",
+                "target": "restrito",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "Áreas de uso restrito, conforme definido em 3.1.38, como casas de máquinas, barriletes, passagem de uso técnico e outros com funções similares",
+              "properties_n3": {
+                "type": "execcao",
+                "object": "espaço",
+                "property": "uso",
+                "comparation": "contém",
+                "target": "casa de máquinas, barrilete e técnico",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "Os acessos devem ser vinculados através de rota acessível à circulação principal e às circulações de emergência. Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.",
+      "texts_n1": [
+        {
+          "text_n1": "Os acessos devem ser vinculados através de rota acessível à circulação principal e às circulações de emergência.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem ser vinculados através de rota acessível à circulação principal e às circulações de emergência",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "porta; passagem",
+                "property": "conectado à rota acessível",
+                "comparation": "=",
+                "target": "VERDADEIRO",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "Os acessos",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "componente",
+                "property": "tipo",
+                "comparation": "inclui",
+                "target": "porta; passagem",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Os acessos devem permanecer livres de quaisquer obstáculos de forma permanente.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem permanecer livres de quaisquer obstáculos de forma permanente",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "porta; passagem",
+                "property": "possui obstáculo",
+                "comparation": "=",
+                "target": "FALSO",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "Os acessos",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "componente",
+                "property": "tipo",
+                "comparation": "inclui",
+                "target": "porta; passagem",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "A inclinação transversal da superfície deve ser de até 2 % para pisosinternos e de até 3 % para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5 %. Inclinações iguais ou superioresa 5 % são consideradas rampas e, portanto, devem atender a 6.6.",
+      "texts_n1": [
+        {
+          "text_n1": "A inclinação transversal de pisos internos não pode exceder 2%.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "A inclinação transversal não pode exceder 2%",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "pisos",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "internos",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "A inclinação transversal de pisos externos não pode exceder 3%.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "A inclinação transversal não pode exceder 3%",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "pisos",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "externos",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Pisos internos e externos devem ter inclinação longitudinal inferior a 5%.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem ter inclinação longitudinal inferior a 5%",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "Pisos",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Inclinações iguais ou superiores a 5% são consideradas rampas e, portanto, devem atender a 6.6.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem atender a 6.6",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "Inclinações iguais ou superiores a 5% são consideradas rampas",
+              "properties_n3": {
+                "type": "execcao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "A superfície das tampas deve estar nivelada com o piso adjacente, e eventuais frestas devem possuir dimensão máxima de 15 mm.",
+      "texts_n1": [
+        {
+          "text_n1": "A superfície das tampas deve estar nivelada com o piso adjacente.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve estar nivelada com o piso adjacente",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "A superfície das tampas",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Eventuais frestas devem possuir dimensão máxima de 15 mm.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem possuir dimensão máxima de 15 mm",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "frestas",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "Quando em ambientes fechados, as rotas de fuga devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.",
+      "texts_n1": [
+        {
+          "text_n1": "Quando em ambientes fechados, as rotas de fuga devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "as rotas de fuga",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "Quando em ambientes fechados",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "A largura livre mínima recomendável para as rampas em rotas acessíveis é de 1,50 m, sendo o mínimo admissível de 1,20 m.",
+      "texts_n1": [
+        {
+          "text_n1": "A largura para as rampas em rotas acessíveis deve ser no mínimo 1,20 m, e recomendável 1,50 m.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "A largura deve ser no mínimo 1,20 m, e recomendável 1,50 m",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "rampas",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "em rotas acessíveis",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados. Para o dimensionamento, devem ser atendidas as seguintes condições: a) 0,63 m ≤ p + 2e ≤ 0,65 m, b) pisos (p): 0,28 m ≤ p ≤ 0,32 m e c) espelhos (e): 0,16 m ≤ e ≤ 0,18 m;",
+      "texts_n1": [
+        {
+          "text_n1": "a) a equação (piso + 2*espelho) deve ser maior ou igual a 0,63 m e menor ou igual a 0,65 m.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve ser maior ou igual a 0,63 m e menor ou igual a 0,65 m",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "equação (piso + 2*espelho)",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "b) a profundidade do piso deve ser maior ou igual a 0,28 m e menor ou igual a 0,32 m.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve ser maior ou igual a 0,28 m e menor ou igual a 0,32 m",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "profundidade do piso",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "c) a altura do espelho deve ser maior ou igual a 0,16 m e menou ou igual a 0,18 m.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve ser maior ou igual a 0,16 m e menou ou igual a 0,18 m",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "altura do espelho",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta, e quando abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta, conforme a Figura 81. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10",
+      "texts_n1": [
+        {
+          "text_n1": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve existir um espaço livre de 0,30 m entre a parede e a porta",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "deslocamento frontal",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "quando as portas abrirem no sentido do deslocamento do usuário",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "No deslocamento frontal, quando as portas abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve existir um espaço livre de 0,60 m, contíguo à maçaneta",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "deslocamento frontal",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "quando as portas abrirem no sentido oposto ao deslocamento do usuário",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "Na impraticabilidade da existência destes espaços livres",
+              "properties_n3": {
+                "type": "execcao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico. As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.",
+      "texts_n1": [
+        {
+          "text_n1": "As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "As rotas de fuga",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem ser dotadas de barras antipânico, conforme ABNT NBR 11785",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "As portas",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "Em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação. Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm, devem ser instalados perpendicularmente ao fluxo principal ou ter vãos de formato quadriculado/circular, quando houver fluxos em mais de um sentido de circulação.",
+      "texts_n1": [
+        {
+          "text_n1": "Em rotas acessíveis, as grelhas e juntas de dilatação devem estar fora do fluxo principal de circulação.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem estar fora do fluxo principal de circulação",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "as grelhas e juntas de dilatação",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "Em rotas acessíveis",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm, devem ser instalados perpendicularmente ao fluxo principal.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "devem ter dimensão máxima de 15 mm, devem ser instalados perpendicularmente ao fluxo principal",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "os vãos",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "Quando não possível tecnicamente",
+              "properties_n3": {
+                "type": "execcao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Formato quadriculado/circular, quando houver fluxos em mais de um sentido de circulação.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "Formato quadriculado/circular",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "quando houver fluxos em mais de um sentido de circulação",
+              "properties_n3": {
+                "type": "execcao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "A inclinação transversal dos patamares não pode exceder 2 % em rampas internas e 3 % em rampas externas.",
+      "texts_n1": [
+        {
+          "text_n1": "A inclinação transversal de patamares em rampas internas não pode exceder 2%.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "A inclinação transversal não pode exceder 2%",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "patamares",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "rampas internas",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "A inclinação transversal de patamares em rampas externas não pode exceder 3%.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "A inclinação transversal não pode exceder 3%",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "patamares",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "rampas externas",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "text": "Para a utilização das portas em sequência, é necessário um espaço de transposição com um círculo de 1,50 m de diâmetro, somado às dimensões da largura das portas (y), exemplificado na Figura 80, além dos 0,60 m ao lado da maçaneta de cada porta, para permitir a aproximação de uma pessoa em cadeira de rodas.",
+      "texts_n1": [
+        {
+          "text_n1": "Em espaços com portas em sequência, deve ser garantido um espaço mínimo equivalente a um círculo de 1,50 m de diâmetro, livre de quaisquer obstáculos, inclusive da área de varredura das portas simultaneamente.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve ser garantido um espaço mínimo equivalente a um círculo de 1,50 m de diâmetro, livre de quaisquer obstáculos, inclusive da área de varredura das portas simultaneamente",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "espaços",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "com portas em sequência",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        },
+        {
+          "text_n1": "Em espaços com portas em sequência, deve ser garantido um espaço mínimo de 0,60m ao lado da maçaneta de cada porta.",
+          "operators_n2": {
+            "requeriments": {
+              "text_n2": "deve ser garantido um espaço mínimo de 0,60m ao lado da maçaneta de cada porta",
+              "properties_n3": {
+                "type": "requisito",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "aplicability": {
+              "text_n2": "espaços",
+              "properties_n3": {
+                "type": "aplicabilidade",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "selection": {
+              "text_n2": "com portas em sequência",
+              "properties_n3": {
+                "type": "selecao",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            },
+            "exception": {
+              "text_n2": "",
+              "properties_n3": {
+                "type": "",
+                "object": "",
+                "property": "",
+                "comparation": "",
+                "target": "",
+                "unit": ""
+              }
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

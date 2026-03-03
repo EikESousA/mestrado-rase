@@ -13,7 +13,7 @@ def ensure_model_installed(model: str, model_id: str) -> bool:
         print("Erro: falha ao executar o Ollama.")
         return False
 
-    if model_id in result.stdout:
+    if model_id.lower() in result.stdout.lower():
         return True
 
     print(f"Modelo {model} nao encontrado. Instalando {model_id}...")

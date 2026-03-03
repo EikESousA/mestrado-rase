@@ -1,49 +1,46 @@
 Extrator RASE N3 (execao).
-Use APENAS o operador N2 de execao para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+Use APENAS o operador N2 de execao para gerar properties_n3.
+Texto completo e Texto N1 sao apenas referencia de desambiguacao.
+
+Formato obrigatorio de saida:
+- Retorne SOMENTE um JSON valido com as chaves:
+  type, object, property, comparation, target, unit
+- Nao retorne markdown nem texto extra.
 
 Regras:
-1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
-2) type deve ser "execcao". Se o operador estiver vazio, todos os campos devem ser "".
-3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
-4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
-5) property/comparation/target:
-   - "uso restrito" ou listagem de areas excluidas -> property "uso", comparation "contém",
-     target com lista normalizada (ex: "casa de máquinas, barrilete e técnico").
-   - Quando for apenas condicao/tempo ("em reformas", "se ..."), deixe todos os campos vazios.
-   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
-6) unit: use "" (vazio) a menos que exista unidade explicita.
+1) Se o operador N2 estiver vazio, retorne todos os campos vazios.
+2) Se o operador N2 NAO estiver vazio:
+   - type deve ser "execcao".
+   - quando for apenas condicao curta (ex.: "em reformas", "se ..."), mantenha type preenchido
+     e deixe os demais campos vazios se nao houver atributo claro.
+3) Quando houver informacao clara de uso/tipo excluido, preencha property/comparation/target.
+4) unit so deve ser preenchido quando houver unidade explicita.
 
-Regras de saida:
-- Retorne somente um JSON valido.
-- Nao adicione explicacoes ou texto extra.
-
-Exemplo:
+Exemplo 1:
 Operador N2 (execao):
-Areas de uso restrito, como casas de maquinas, barriletes e passagem de uso tecnico
-
-Resposta (JSON):
-{
+"Areas de uso restrito, como casas de maquinas e barriletes"
+Resposta:
+{{
   "type": "execcao",
-  "object": "espaço",
+  "object": "espaco",
   "property": "uso",
   "comparation": "contém",
-  "target": "casa de máquinas, barrilete e técnico",
+  "target": "restrito",
   "unit": ""
-}
+}}
 
-Exemplo:
+Exemplo 2:
 Operador N2 (execao):
-Em reformas
-
-Resposta (JSON):
-{
-  "type": "",
+"Em reformas"
+Resposta:
+{{
+  "type": "execcao",
   "object": "",
   "property": "",
   "comparation": "",
   "target": "",
   "unit": ""
-}
+}}
 
 Agora processe:
 Texto completo:
@@ -53,4 +50,4 @@ Texto N1:
 Operador N2 (execao):
 "{execao}"
 
-Resposta (JSON):
+Resposta JSON:

@@ -1,6 +1,7 @@
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -14,15 +15,30 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSerializable
 from langchain_ollama import OllamaLLM
 
+from utils.generates.build_ollama_llm_kwargs import build_ollama_llm_kwargs
 from utils.generates.generate_config import generate_config
 from utils.generates.invoke_with_timeout import invoke_with_timeout
+from utils.generates.model_registry import MODEL_NAMES
+from utils.generates.model_runtime_error import (
+    build_fatal_model_runtime_message,
+    is_fatal_model_runtime_error,
+)
 from utils.generates.reset_model import reset_model
+from utils.generates.resolve_display_input_path import resolve_display_input_path
+from utils.logs.generation_output import (
+    print_generation_aborted,
+    print_generation_end,
+    print_generation_start,
+    print_text_progress,
+)
 from utils.logs.init_log import init_log
+from utils.n1.normalize_sentence import normalize_sentence
+from utils.n2.build_context import build_context
 from utils.n2.build_operators import build_operators
+from utils.n2.constants import PROMPT_PATH
+from utils.n2.is_valid_json_object import is_valid_json_object
 from utils.n2.process_text import process_text
-
-
-PROMPT_PATH: Path = Path("prompts") / "n2.txt"
+from utils.n2.validate_n2_result import validate_n2_result
 
 
 def generate_n2(
@@ -30,33 +46,77 @@ def generate_n2(
     output_path: str | None = None,
     model_id: str | None = None,
     log_path: str | None = None,
+    temperature: float | None = None,
+    top_p: float | None = None,
+    top_k: int | None = None,
+    repeat_penalty: float | None = None,
+    seed: int | None = None,
+    num_ctx: int | None = None,
+    num_predict: int | None = None,
+    strict_json: bool = False,
+    use_json_format: bool = True,
+    stage_label: str = "N2",
+    model_name: str | None = None,
 ) -> None:
+    def is_invalid_n1_sentence(value: str) -> bool:
+        return not value or not re.search(r"[A-Za-zÀ-ÿ]", value)
+
     if input_path is None or output_path is None or model_id is None:
         parser = argparse.ArgumentParser(description="Gerar operadores RASE N2.")
         parser.add_argument(
             "--model",
-            choices=["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"],
+            choices=MODEL_NAMES,
             default="mistral",
             help="Modelo base para geracao.",
         )
         parser.add_argument("--input", dest="input_path", default=None)
         parser.add_argument("--output", dest="output_path", default=None)
         parser.add_argument("--log", dest="log_path", default=None)
+        parser.add_argument("--temperature", type=float, default=0.1)
+        parser.add_argument("--top-p", dest="top_p", type=float, default=0.9)
+        parser.add_argument("--top-k", dest="top_k", type=int, default=40)
+        parser.add_argument("--repeat-penalty", dest="repeat_penalty", type=float, default=1.1)
+        parser.add_argument("--seed", type=int, default=42)
+        parser.add_argument("--num-ctx", dest="num_ctx", type=int, default=None)
+        parser.add_argument("--num-predict", dest="num_predict", type=int, default=None)
+        parser.add_argument("--strict-json", action="store_true")
+        parser.add_argument("--no-json-format", action="store_true")
         args: argparse.Namespace = parser.parse_args()
 
         input_path, output_path, model_id = generate_config("n2", args.model)
         input_path = str(input_path)
         output_path = str(output_path)
         model_id = str(model_id)
-        if args.input_path:
-            input_path = args.input_path
         if args.output_path:
             output_path = args.output_path
         log_path = args.log_path
+        temperature = args.temperature
+        top_p = args.top_p
+        top_k = args.top_k
+        repeat_penalty = args.repeat_penalty
+        seed = args.seed
+        num_ctx = args.num_ctx
+        num_predict = args.num_predict
+        strict_json = args.strict_json
+        use_json_format = not args.no_json_format
+        model_name = args.model
 
     if input_path is None or output_path is None or model_id is None:
         print("Erro: parametros obrigatorios nao encontrados.")
         return
+    if model_name is None:
+        model_name = model_id
+
+    if temperature is None:
+        temperature = 0.1
+    if top_p is None:
+        top_p = 0.9
+    if top_k is None:
+        top_k = 40
+    if repeat_penalty is None:
+        repeat_penalty = 1.1
+    if seed is None:
+        seed = 42
 
     try:
         template: str = PROMPT_PATH.read_text(encoding="utf-8")
@@ -80,44 +140,69 @@ def generate_n2(
         print("Erro: Falha ao decodificar JSON de entrada.")
         return
 
-    llm: OllamaLLM = OllamaLLM(
+    llm_kwargs: Dict[str, Any] = build_ollama_llm_kwargs(
         model=model_id,
-        temperature=0.1,
-        top_p=0.9,
-        repeat_penalty=1.1,
-        client_kwargs={"timeout": 600},
+        temperature=temperature,
+        top_p=top_p,
+        top_k=top_k,
+        repeat_penalty=repeat_penalty,
+        seed=seed,
+        num_ctx=num_ctx,
+        num_predict=num_predict,
+        use_json_format=use_json_format,
     )
+
+    llm: OllamaLLM = OllamaLLM(**llm_kwargs)
     prompt: ChatPromptTemplate = ChatPromptTemplate.from_template(template)
     chain: RunnableSerializable[Dict[str, str], str] = prompt | llm
 
     result_data: Dict[str, Any] = {"counts": 0, "datas": [], "time": 0.0}
     total_start_time: float = time.time()
+    aborted = False
 
     with open(output_path, "w", encoding="utf-8") as file:
         json.dump(result_data, file, ensure_ascii=False, indent=2)
 
-    log(
-        "Inicio geracao N2. "
-        f"Modelo={model_id} Entrada={input_path} Saida={output_path}"
-    )
-    log(f"Total de textos: {len(data.get('datas', []))}")
+    print_generation_start(stage_label, model_name, resolve_display_input_path(input_path), log)
 
     try:
-        for count, item in enumerate(data["datas"], start=1):
-            raw_text = item["text"].replace("\n", " ").strip()
-            preview = raw_text[:40].rstrip()
-            suffix = "..." if len(raw_text) > 40 else ""
+        for text_index, item in enumerate(data["datas"]):
+            count = text_index + 1
             start_time: float = time.time()
 
-            log(f"Iniciando Texto {count}: {preview}{suffix}")
+            text_context = build_context(text_index)
+            log(f"{text_context} Iniciando Texto {count}")
             texts_n1: List[Dict[str, Any]] = []
-            for n1_index, n1_item in enumerate(item.get("texts_n1", []), start=1):
-                text_n1 = n1_item.get("text_n1", "")
+            abort_model = False
+            text_has_failure = False
+            for sentence_index, n1_item in enumerate(item.get("texts_n1", [])):
+                n1_index = sentence_index + 1
+                text_n1 = normalize_sentence(str(n1_item.get("text_n1", "")))
                 processed_result: Dict[str, str] = {}
+                valid_result = False
+                context = build_context(text_index, sentence_index)
+
+                if is_invalid_n1_sentence(text_n1):
+                    msg = (
+                        "Sentenca N1 invalida ou vazia; "
+                        "mantendo operadores vazios."
+                    )
+                    print(
+                        f"{msg} (texto {count}, sentenca {n1_index})."
+                    )
+                    log(f"{context} {msg}")
+                    text_has_failure = True
+                    texts_n1.append(
+                        {
+                            "text_n1": "",
+                            "operators_n2": build_operators({}),
+                        }
+                    )
+                    continue
 
                 for attempt in range(1, 4):
                     log(
-                        "Chamando modelo "
+                        f"{context} Chamando modelo "
                         f"(texto {count}, sentenca {n1_index}, tentativa {attempt})"
                     )
                     try:
@@ -136,7 +221,7 @@ def generate_n2(
                                 f"apos {int(600.0)}s."
                             )
                             print(msg)
-                            log(msg)
+                            log(f"{context} {msg}")
                             reset_model(model_id, log)
                             continue
                         if result is None:
@@ -148,29 +233,54 @@ def generate_n2(
                             f"tentativa {attempt}): {exc}"
                         )
                         log(
-                            "Erro na chamada do modelo "
+                            f"{context} Erro na chamada do modelo "
                             f"(texto {count}, sentenca {n1_index}, "
                             f"tentativa {attempt}): {exc}"
                         )
+                        if is_fatal_model_runtime_error(exc):
+                            msg = build_fatal_model_runtime_message(model_id, exc)
+                            print(msg)
+                            log(f"{context} {msg}")
+                            abort_model = True
+                            break
                         if attempt < 3:
                             time.sleep(1)
                         continue
 
-                    log(f"Saida do modelo:\n{result}")
+                    log(f"{context} Saida do modelo:\n{result}")
                     env_debug = os.getenv("GENERATE_DEBUG", "").strip().lower()
                     if env_debug in {"1", "true", "yes", "on"}:
                         print("Saida do modelo:")
                         print(result)
+
+                    if strict_json and not is_valid_json_object(result):
+                        log(
+                            f"{context} Saida invalida para strict-json "
+                            f"(texto {count}, sentenca {n1_index}, tentativa {attempt})"
+                        )
+                        continue
+
                     processed_result = process_text(result)
+                    valid_result, reason = validate_n2_result(processed_result)
+                    if valid_result:
+                        break
+                    log(
+                        f"{context} Saida invalida para N2 "
+                        f"(texto {count}, sentenca {n1_index}, tentativa {attempt}): {reason}"
+                    )
+
+                if abort_model:
+                    aborted = True
                     break
 
-                if not processed_result:
-                    msg = (
-                        "Falha ao processar texto "
+                if not valid_result:
+                    log(
+                        f"{context} Falha ao processar texto "
                         f"(texto {count}, sentenca {n1_index})."
                     )
-                    print(msg)
-                    log(msg)
+                    text_has_failure = True
+                    processed_result = {}
+
                 operators_n2 = build_operators(processed_result)
                 texts_n1.append(
                     {
@@ -178,6 +288,10 @@ def generate_n2(
                         "operators_n2": operators_n2,
                     }
                 )
+
+            if abort_model:
+                result_data["time"] = time.time() - total_start_time
+                break
 
             end_time: float = time.time()
             elapsed_time: float = end_time - start_time
@@ -194,15 +308,19 @@ def generate_n2(
             with open(output_path, "w", encoding="utf-8") as file:
                 json.dump(result_data, file, ensure_ascii=False, indent=2)
 
-            print(f"Texto {count} ({elapsed_time:.2f}s): {preview}{suffix}")
-            log(f"Texto {count} concluido ({elapsed_time:.2f}s)")
+            if text_has_failure:
+                print_text_progress(count, elapsed_time, item["text"], log, "[X]")
+            else:
+                print_text_progress(count, elapsed_time, item["text"], log, "[V]")
+            log(f"{text_context} Texto {count} concluido ({elapsed_time:.2f}s)")
+        result_data["time"] = time.time() - total_start_time
+        if aborted:
+            print_generation_aborted(result_data["time"], output_path, log)
+            return
+
+        print_generation_end(result_data["time"], output_path, log)
     finally:
         close_log()
-
-    print(f"Processamento concluido. Tempo total: {result_data['time']:.2f} segundos.")
-    print(f"Resultado salvo em {output_path}")
-    log(f"Processamento concluido. Tempo total: {result_data['time']:.2f} segundos.")
-    log(f"Resultado salvo em {output_path}")
 
 
 if __name__ == "__main__":

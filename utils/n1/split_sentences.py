@@ -1,24 +1,35 @@
 import re
 from typing import List
 
+from utils.n1.normalize_sentence import normalize_sentence
+
+
+SENTENCE_SPLIT_PATTERN = re.compile(r"(?<!\d)\.\s+(?=[A-ZÀ-Ý\"'])")
+
+
+def _prepare_text(text: str) -> str:
+    normalized = text.replace("\r\n", "\n").replace("\r", "\n")
+    return re.sub(
+        r"(?<=[.!?])\s+(?=\d+[\).]\s+[A-ZÀ-Ý])",
+        "\n",
+        normalized,
+    )
+
 
 def split_sentences(text: str) -> List[str]:
-    lines: List[str] = [line.strip() for line in text.splitlines() if line.strip()]
+    prepared = _prepare_text(text)
+    lines: List[str] = [line.strip() for line in prepared.splitlines() if line.strip()]
     if not lines:
-        lines = [text.strip()]
+        lines = [prepared.strip()]
 
     sentences: List[str] = []
     for line in lines:
-        line = re.sub(r"^\s*[-*]\s+", "", line)
-        line = re.sub(r"^\s*\d+[\).\s-]+\s*", "", line)
-        if not line:
-            continue
-        parts: List[str] = re.split(r"(?<!\b[A-Z])\.\s+(?![a-z])", line)
+        parts: List[str] = SENTENCE_SPLIT_PATTERN.split(line)
         for part in parts:
-            part = part.strip()
+            part = normalize_sentence(part)
             if not part:
                 continue
-            if not part.endswith("."):
+            if not re.search(r"[.!?]$", part):
                 part += "."
             sentences.append(part)
 

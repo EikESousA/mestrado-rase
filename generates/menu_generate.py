@@ -1,5 +1,6 @@
 from typing import List, Tuple
 
+from utils.generates.model_registry import MODEL_NAMES
 from utils.generates.run_generator import run_generator
 from utils.screens.clear_screen import clear_screen
 from utils.screens.menu_bar_line import menu_bar_line
@@ -18,14 +19,22 @@ def menu_generate() -> None:
         ("4", "n1n2", False),
         ("5", "n1n2n3", False),
     ]
-    options_model: List[Tuple[str, str, bool]] = [
-        ("a", "alpaca", True),
-        ("b", "dolphin", False),
-        ("c", "llama", False),
-        ("d", "mistral", False),
-        ("e", "gemma", False),
-        ("f", "qwen", False),
+    model_keys = ["a", "b", "c", "d", "e", "f", "g", "h"]
+    model_order = [
+        "alpaca",
+        "dolphin",
+        "llama3.1",
+        "llama3.3",
+        "llama4",
+        "mistral",
+        "gemma",
+        "qwen",
     ]
+    options_model: List[Tuple[str, str, bool]] = [
+        (key, model_name, model_name == "alpaca")
+        for key, model_name in zip(model_keys, [name for name in model_order if name in MODEL_NAMES])
+    ]
+    option_test: Tuple[str, str, bool] = ("t", "teste (5 primeiros dados, sufixo _test)", False)
 
     while True:
         show_debug_banner()
@@ -38,12 +47,10 @@ def menu_generate() -> None:
         print(menu_text_line(f"4 - [{'x' if options_n[3][2] else ' '}] {options_n[3][1]}"))
         print(menu_text_line(f"5 - [{'x' if options_n[4][2] else ' '}] {options_n[4][1]}"))
         print(menu_bar_line())
-        print(menu_text_line(f"a - [{'x' if options_model[0][2] else ' '}] {options_model[0][1]}"))
-        print(menu_text_line(f"b - [{'x' if options_model[1][2] else ' '}] {options_model[1][1]}"))
-        print(menu_text_line(f"c - [{'x' if options_model[2][2] else ' '}] {options_model[2][1]}"))
-        print(menu_text_line(f"d - [{'x' if options_model[3][2] else ' '}] {options_model[3][1]}"))
-        print(menu_text_line(f"e - [{'x' if options_model[4][2] else ' '}] {options_model[4][1]}"))
-        print(menu_text_line(f"f - [{'x' if options_model[5][2] else ' '}] {options_model[5][1]}"))
+        for key, model_name, active in options_model:
+            print(menu_text_line(f"{key} - [{'x' if active else ' '}] {model_name}"))
+        print(menu_bar_line())
+        print(menu_text_line(f"t - [{'x' if option_test[2] else ' '}] {option_test[1]}"))
         print(menu_bar_line())
         print(menu_text_line("Enter - Processar"))
         print(menu_bar_line())
@@ -73,28 +80,20 @@ def menu_generate() -> None:
         elif choice == "5":
             clear_screen()
             options_n[4] = (options_n[4][0], options_n[4][1], not options_n[4][2])
-        elif choice == "a":
+        elif choice in {key for key, _, _ in options_model}:
             clear_screen()
-            options_model[0] = (options_model[0][0], options_model[0][1], not options_model[0][2])
-        elif choice == "b":
+            options_model = [
+                (key, model_name, not active) if key == choice else (key, model_name, active)
+                for key, model_name, active in options_model
+            ]
+        elif choice == "t":
             clear_screen()
-            options_model[1] = (options_model[1][0], options_model[1][1], not options_model[1][2])
-        elif choice == "c":
-            clear_screen()
-            options_model[2] = (options_model[2][0], options_model[2][1], not options_model[2][2])
-        elif choice == "d":
-            clear_screen()
-            options_model[3] = (options_model[3][0], options_model[3][1], not options_model[3][2])
-        elif choice == "e":
-            clear_screen()
-            options_model[4] = (options_model[4][0], options_model[4][1], not options_model[4][2])
-        elif choice == "f":
-            clear_screen()
-            options_model[5] = (options_model[5][0], options_model[5][1], not options_model[5][2])
+            option_test = (option_test[0], option_test[1], not option_test[2])
         elif choice == "":
             clear_screen()
             active_ns: List[str] = [n_key for _, n_key, active in options_n if active]
             active_models: List[str] = [model_key for _, model_key, active in options_model if active]
+            test_mode: bool = option_test[2]
 
             if not active_ns:
                 print("Selecione o 1, 2, 3, 4 ou 5 para gerar os dados.")
@@ -109,7 +108,7 @@ def menu_generate() -> None:
                 continue
 
             for n_key in active_ns:
-                run_generator(n_key, active_models)
+                run_generator(n_key, active_models, test_mode=test_mode)
 
             wait_to_return()
             clear_screen()

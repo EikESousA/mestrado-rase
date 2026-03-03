@@ -1,66 +1,49 @@
 Extrator RASE N3 (requisito).
-Use APENAS o operador N2 de requisito para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+Use APENAS o operador N2 de requisito para gerar properties_n3.
+Texto completo e Texto N1 sao apenas referencia de desambiguacao.
+
+Formato obrigatorio de saida:
+- Retorne SOMENTE um JSON valido com as chaves:
+  type, object, property, comparation, target, unit
+- Nao retorne markdown nem texto extra.
 
 Regras:
-1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
-2) type deve ser "requisito". Se o operador estiver vazio, todos os campos devem ser "".
-3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
-4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
-5) property/comparation/target:
-   - "acessivel" -> property "acessível", comparation "=", target "VERDADEIRO"
-   - "conectadas as rotas acessiveis" / "vinculados atraves de rota acessivel" ->
-     property "conectado a rota acessível" (ou "conectado à rota acessível" se houver crase),
-     comparation "=", target "VERDADEIRO"
-   - "livres de obstaculos" -> property "possui obstáculo", comparation "=", target "FALSO"
-   - "devem ser servidas de rota(s) acessiveis" -> property "uso", comparation "=", target "VERDADEIRO"
-   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
-6) unit: use "" (vazio) a menos que exista unidade explicita.
+1) Se o operador N2 estiver vazio, retorne todos os campos vazios.
+2) Se o operador N2 NAO estiver vazio, type deve ser "requisito".
+3) Mapeamentos prioritarios:
+   - "acessivel/acessiveis" -> property "acessível", comparation "=", target "VERDADEIRO"
+   - "conectado/vinculado ... rota acessivel" ->
+     property "conectado a rota acessível", comparation "=", target "VERDADEIRO"
+   - "livre de obstaculos" -> property "possui obstáculo", comparation "=", target "FALSO"
+   - "servida por rota acessivel" -> property "uso", comparation "=", target "VERDADEIRO"
+4) Se nao houver propriedade clara, mantenha type e deixe os demais vazios.
+5) unit so deve ser preenchido quando houver unidade explicita.
 
-Regras de saida:
-- Retorne somente um JSON valido.
-- Nao adicione explicacoes ou texto extra.
-
-Exemplo:
+Exemplo 1:
 Operador N2 (requisito):
-devem permanecer livres de quaisquer obstaculos de forma permanente
-
-Resposta (JSON):
-{
+"devem permanecer livres de quaisquer obstaculos de forma permanente"
+Resposta:
+{{
   "type": "requisito",
   "object": "porta; passagem",
   "property": "possui obstáculo",
   "comparation": "=",
   "target": "FALSO",
   "unit": ""
-}
+}}
 
-Exemplo:
+Exemplo 2:
 Operador N2 (requisito):
-devem ser acessiveis
-
-Resposta (JSON):
-{
+"devem ser acessiveis"
+Resposta:
+{{
   "type": "requisito",
-  "object": "porta; espaço",
+  "object": "espaco",
   "property": "acessível",
   "comparation": "=",
   "target": "VERDADEIRO",
   "unit": ""
-}
-
-Exemplo:
-Operador N2 (requisito):
-devem ser servidas de uma ou mais rotas acessiveis
-
-Resposta (JSON):
-{
-  "type": "requisito",
-  "object": "espaço ou edificação",
-  "property": "uso",
-  "comparation": "=",
-  "target": "VERDADEIRO",
-  "unit": ""
-}
+}}
 
 Agora processe:
 Texto completo:
@@ -70,4 +53,4 @@ Texto N1:
 Operador N2 (requisito):
 "{requisito}"
 
-Resposta (JSON):
+Resposta JSON:

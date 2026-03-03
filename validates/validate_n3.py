@@ -3,22 +3,32 @@ import gc
 import json
 import math
 import os
+import sys
 from pathlib import Path
 from typing import Any, Dict, List
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import gensim.downloader as api
 from fuzzywuzzy import fuzz
 from gensim.models import KeyedVectors
 from sentence_transformers import SentenceTransformer
 
+from utils.generates.model_registry import MODEL_NAMES
 from utils.validates.compute_multilingual_scores import compute_multilingual_scores
+from utils.validates.compute_exact_match_scores import compute_exact_match_scores
 from utils.validates.compute_sbert_scores import compute_sbert_scores
 from utils.validates.compute_tfidf_scores import compute_tfidf_scores
 from utils.validates.compute_wmd_scores import compute_wmd_scores
 from utils.validates.load_nilc_model import load_nilc_model
+from utils.validates.match_sentences import align_sentence_indices
+from utils.validates.operator_presence_report import compute_operator_report_n3
 
 
 FIELDS: List[str] = ["type", "object", "property", "comparation", "target", "unit"]
+OPERATOR_ORDER: List[str] = ["aplicability", "selection", "exception", "requeriments"]
 
 
 def _properties_to_string(properties: Dict[str, Any] | None) -> str:
@@ -47,14 +57,31 @@ def build_pairs_n3(
         predicted_item: Dict[str, Any] = (
             predicted_items[text_index] if text_index < len(predicted_items) else {}
         )
+        target_texts: List[Dict[str, Any]] = item.get("texts_n1", [])
         predicted_texts: List[Dict[str, Any]] = predicted_item.get("texts_n1", [])
-        for sentence_index, target_n1 in enumerate(item.get("texts_n1", [])):
-            target_ops: Dict[str, Any] = target_n1.get("operators_n2", {}) or {}
-            predicted_ops: Dict[str, Any] = {}
-            if sentence_index < len(predicted_texts):
-                predicted_ops = predicted_texts[sentence_index].get("operators_n2", {}) or {}
+        target_sentences = [target.get("text_n1", "") for target in target_texts]
+        predicted_sentences = [pred.get("text_n1", "") for pred in predicted_texts]
 
-            for operator_name, operator_data in target_ops.items():
+        for target_index, predicted_index, alignment_score in align_sentence_indices(
+            target_sentences,
+            predicted_sentences,
+        ):
+            target_n1: Dict[str, Any] = (
+                target_texts[target_index]
+                if target_index is not None and target_index < len(target_texts)
+                else {}
+            )
+            predicted_n1: Dict[str, Any] = (
+                predicted_texts[predicted_index]
+                if predicted_index is not None and predicted_index < len(predicted_texts)
+                else {}
+            )
+
+            target_ops: Dict[str, Any] = target_n1.get("operators_n2", {}) or {}
+            predicted_ops: Dict[str, Any] = predicted_n1.get("operators_n2", {}) or {}
+
+            for operator_name in OPERATOR_ORDER:
+                operator_data = target_ops.get(operator_name, {})
                 target_props: Dict[str, Any] = {}
                 predicted_props: Dict[str, Any] = {}
                 if isinstance(operator_data, dict):
@@ -66,10 +93,15 @@ def build_pairs_n3(
                 pairs.append(
                     {
                         "text_index": text_index,
-                        "sentence_index": sentence_index,
+                        "sentence_index": target_index if target_index is not None else -1,
+                        "predicted_sentence_index": predicted_index if predicted_index is not None else -1,
+                        "alignment_score": alignment_score,
                         "operator": operator_name,
                         "text": item.get("text", ""),
-                        "text_n1": target_n1.get("text_n1", ""),
+                        "text_n1": target_n1.get("text_n1", "") if isinstance(target_n1, dict) else "",
+                        "predicted_text_n1": predicted_n1.get("text_n1", "")
+                        if isinstance(predicted_n1, dict)
+                        else "",
                         "target_properties": target_props,
                         "predicted_properties": predicted_props,
                         "target": _properties_to_string(target_props),
@@ -89,8 +121,9 @@ def validate_n3(dataset_path: str, predicts_dir: str, output_path: str) -> None:
 
     metrics: Dict[str, Any] = {"models": {}, "averages": {}}
 
-    models: List[str] = ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
+    models: List[str] = MODEL_NAMES.copy()
     metric_names: List[str] = [
+        "exact_match",
         "fuzzywuzzy",
         "tfidf",
         "sbert",
@@ -128,6 +161,12 @@ def validate_n3(dataset_path: str, predicts_dir: str, output_path: str) -> None:
         }
 
     for metric_name in metric_names:
+        if metric_name == "exact_match":
+            for model, data in model_data.items():
+                scores = compute_exact_match_scores(data["targets"], data["predicted"])
+                data["scores"][metric_name] = scores
+                print(f"Modelo {model}: Exact Match validado.", flush=True)
+            continue
         if metric_name == "fuzzywuzzy":
             for model, data in model_data.items():
                 scores = [
@@ -238,6 +277,9 @@ def validate_n3(dataset_path: str, predicts_dir: str, output_path: str) -> None:
             items.append(
                 {
                     **pair,
+                    "exact_match": data["scores"]["exact_match"][i]
+                    if i < len(data["scores"]["exact_match"])
+                    else None,
                     "fuzzywuzzy": data["scores"]["fuzzywuzzy"][i]
                     if i < len(data["scores"]["fuzzywuzzy"])
                     else None,
@@ -276,6 +318,8 @@ def validate_n3(dataset_path: str, predicts_dir: str, output_path: str) -> None:
             "items": items,
         }
         metrics["averages"][model] = averages
+        metrics.setdefault("operator_presence_report", {})
+        metrics["operator_presence_report"][model] = compute_operator_report_n3(pairs)
         if debug_enabled:
             print(f"Modelo {model} concluido.", flush=True)
 

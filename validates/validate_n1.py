@@ -3,15 +3,22 @@ import gc
 import json
 import math
 import os
+import sys
 from pathlib import Path
 from typing import Any, Dict, List
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import gensim.downloader as api
 from fuzzywuzzy import fuzz
 from gensim.models import KeyedVectors
 from sentence_transformers import SentenceTransformer
 
+from utils.generates.model_registry import MODEL_NAMES
 from utils.validates.build_pairs import build_pairs
+from utils.validates.compute_exact_match_scores import compute_exact_match_scores
 from utils.validates.compute_multilingual_scores import compute_multilingual_scores
 from utils.validates.compute_sbert_scores import compute_sbert_scores
 from utils.validates.compute_tfidf_scores import compute_tfidf_scores
@@ -29,8 +36,9 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
 
     metrics: Dict[str, Any] = {"models": {}, "averages": {}}
 
-    models: List[str] = ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
+    models: List[str] = MODEL_NAMES.copy()
     metric_names: List[str] = [
+        "exact_match",
         "fuzzywuzzy",
         "tfidf",
         "sbert",
@@ -67,6 +75,12 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
         }
 
     for metric_name in metric_names:
+        if metric_name == "exact_match":
+            for model, data in model_data.items():
+                scores = compute_exact_match_scores(data["targets"], data["predicted"])
+                data["scores"][metric_name] = scores
+                print(f"Modelo {model}: Exact Match validado.", flush=True)
+            continue
         if metric_name == "fuzzywuzzy":
             for model, data in model_data.items():
                 scores = [
@@ -177,6 +191,9 @@ def validate_n1(dataset_path: str, predicts_dir: str, output_path: str) -> None:
             items.append(
                 {
                     **pair,
+                    "exact_match": data["scores"]["exact_match"][i]
+                    if i < len(data["scores"]["exact_match"])
+                    else None,
                     "fuzzywuzzy": data["scores"]["fuzzywuzzy"][i]
                     if i < len(data["scores"]["fuzzywuzzy"])
                     else None,

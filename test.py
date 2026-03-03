@@ -26,7 +26,7 @@ def main() -> None:
     first_item = dataset.get("datas", [])[0]
     sample_data = {"counts": 1, "datas": [first_item]}
 
-    model = "llama"
+    model = "llama3.1"
     predicts_target = Path("predicts")
     predicts_target.mkdir(parents=True, exist_ok=True)
     output_path = predicts_target / "generate_test.py"

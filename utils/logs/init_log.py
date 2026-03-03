@@ -1,5 +1,4 @@
 import os
-import time
 from pathlib import Path
 from typing import Callable, IO, Tuple
 
@@ -7,10 +6,11 @@ from typing import Callable, IO, Tuple
 def init_log(output_path: str, log_path: str | None = None) -> Tuple[Callable[[str], None], Callable[[], None]]:
     log_file: IO[str] | None = None
     log_enabled: bool = False
+    env_value: str = os.getenv("GENERATE_DEBUG", "").strip().lower()
+    debug_enabled: bool = env_value in {"1", "true", "yes", "on"}
 
     if log_path is None:
-        env_value: str = os.getenv("GENERATE_DEBUG", "").strip().lower()
-        if env_value in {"1", "true", "yes", "on"}:
+        if debug_enabled:
             output_name: str = Path(output_path).name
             log_path = str(Path("logs") / f"{output_name}.log")
 
@@ -22,10 +22,9 @@ def init_log(output_path: str, log_path: str | None = None) -> Tuple[Callable[[s
     def log(message: str) -> None:
         if not log_enabled or log_file is None:
             return
-        timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
-        line = f"[{timestamp}] {message}"
-        print(line)
-        log_file.write(line + "\n")
+        if not debug_enabled and message.startswith("["):
+            return
+        log_file.write(message + "\n")
         log_file.flush()
 
     def close() -> None:

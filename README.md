@@ -35,6 +35,7 @@ Atualmente requer Python **3.11.9**.
 - `generates/menu_generate.py`: menu de selecao de N e modelos.
 - `validates/menu_validate.py`: menu de selecao de validacoes.
 - `dataset.json`: entrada de textos.
+- `regression/`: conjunto fixo de regressao (`cases.json`, `dataset_regression.json`, `run_regression.py`).
 - `predicts/`: saida gerada.
 - `metrics/`: saida das validacoes.
 
@@ -43,6 +44,18 @@ Atualmente requer Python **3.11.9**.
 - Python 3.11+.
 - Ollama instalado e em execucao (`ollama serve`).
 - Modelos serao baixados automaticamente pelo menu (quando necessario).
+- O alias `llama3.1` do projeto usa `llama3.1:8b` por padrao para evitar que `:latest`
+  resolva para variantes 70B pesadas demais para maquinas com 16 GB de VRAM. Para
+  sobrescrever isso, defina `RASE_OLLAMA_MODEL_LLAMA3_1`.
+- O alias `llama3.3` do projeto usa `llama3.3:70b-instruct-q2_K` por padrao, que e a
+  variante oficial mais leve publicada no Ollama para esse modelo. Para sobrescrever isso,
+  defina `RASE_OLLAMA_MODEL_LLAMA3_3`.
+- O alias `llama4` do projeto usa `llama4:scout` por padrao. Em 3 de marco de 2026,
+  essa e a menor variante oficial publicada na biblioteca do Ollama para Llama 4
+  (67 GB na pagina de tags). Para sobrescrever isso, defina
+  `RASE_OLLAMA_MODEL_LLAMA4`.
+- Se um modelo especifico falhar no backend CUDA do Ollama, voce pode apontar os
+  scripts para outra instancia definindo `RASE_OLLAMA_HOST`.
 
 ## Instalacao
 
@@ -68,6 +81,11 @@ python3 main.py
 
 No menu, escolha "Gerar dados" e selecione o N (n1/n2/n3/n1n2/n1n2n3) e o modelo. O sistema usara `dataset.json` como entrada.
 
+Modo Teste no menu:
+
+- Em `Gerar dados`, marque `t - teste` para gerar somente os 5 primeiros itens e salvar com sufixo `_test`.
+- Em `Validar dados`, marque `t - teste` para validar usando os arquivos `*_test` e salvar metricas com sufixo `_test`.
+
 ## Funcionalidades (N1/N2/N3)
 
 ### Geracao N1
@@ -77,15 +95,72 @@ No menu, escolha "Gerar dados" e selecione o N (n1/n2/n3/n1n2/n1n2n3) e o modelo
 - `texts_n1`: lista com `text_n1` e `operators_n2` vazio (estrutura base para N2).
 - Metadados: `counts` e `time`.
 
+Como a geracao N1 e feita:
+
+1. Le o `dataset.json` (ou `--input`).
+2. Monta cadeia `prompt -> OllamaLLM`.
+3. Executa ate 3 tentativas por texto (com timeout e log).
+4. Limpa a saida e separa em sentencas via `utils/n1/process_text.py`.
+5. Salva incrementalmente no JSON de saida para evitar perda em execucoes longas.
+
+Opcoes de inferencia:
+
+- `--temperature`, `--top-p`, `--top-k`, `--repeat-penalty`, `--seed`, `--num-ctx`, `--num-predict`.
+
 Comando:
 
 ```bash
 python generates/generate_n1.py --model mistral
 ```
 
+Se quiser trocar o modelo real por tras de um alias sem editar codigo:
+
+```bash
+RASE_OLLAMA_MODEL_LLAMA3_1=llama3.1:8b python generates/generate_n1.py --model llama3.1
+```
+
+Para sobrescrever manualmente o alias `llama4` no projeto:
+
+```bash
+RASE_OLLAMA_MODEL_LLAMA4=<repo-ou-tag-do-ollama> python generates/generate_n1.py --model llama4
+```
+
+Workaround para `dolphin` quando o Ollama cair com `SIGSEGV` no backend CUDA:
+
+1. Em um terminal, suba uma instancia local CPU-only:
+
+```bash
+./scripts/run_ollama_cpu_fallback.sh
+```
+
+2. Em outro terminal, aponte os scripts para essa instancia:
+
+```bash
+RASE_OLLAMA_HOST=http://127.0.0.1:11435 .venv/bin/python generates/generate_n1.py --model dolphin
+```
+
+O script de fallback reutiliza os modelos ja instalados em `/usr/share/ollama/.ollama/models`
+e desativa CUDA/Flash Attention apenas para essa instancia local.
+
+No menu, o modelo `qwen` usa automaticamente esse fallback CPU-only quando nenhum
+`RASE_OLLAMA_HOST` estiver definido, porque a combinacao atual de Ollama + backend GPU
+esta derrubando o runner desse GGUF. Para desativar esse comportamento automatico,
+defina `RASE_DISABLE_AUTO_CPU_FALLBACK=1`.
+
 ### Geracao N2
 
 `generates/generate_n2.py` preenche os operadores N2 a partir das sentencas N1. Ele espera um arquivo com `texts_n1` (normalmente a saida do N1) e usa o prompt `prompts/n2.txt`.
+
+Como a geracao N2 e feita:
+
+1. Para cada `text_n1`, chama o modelo com contexto (`text` + `text_n1`).
+2. A saida e parseada por `utils/n2/process_text.py`:
+   - aceita JSON (preferencial),
+   - aceita formato legado em linhas (`aplicabilidade: ...`).
+3. A resposta passa por validacao minima (requisito obrigatorio, campos sem lixo estrutural).
+4. Se falhar, repete ate 3 tentativas.
+5. Converte para `operators_n2` com os 4 campos padrao (`aplicability`, `selection`, `exception`, `requeriments`).
+6. Logs incluem rastreio estavel por `text_index` e `sentence_index`.
 
 Comando:
 
@@ -93,9 +168,28 @@ Comando:
 python generates/generate_n2.py --model mistral
 ```
 
+Opcoes uteis (N2/N3):
+
+- `--strict-json`: rejeita respostas fora de JSON valido e tenta novamente.
+- `--no-json-format`: desativa forcar `format=json` no Ollama.
+- `--temperature`, `--top-p`, `--top-k`, `--repeat-penalty`, `--seed`, `--num-ctx`, `--num-predict`.
+
 ### Geracao N3
 
 `generates/generate_n3.py` preenche `properties_n3` para cada operador N2. Usa prompts especificos por operador em `prompts/n3_*.txt`.
+
+Como a geracao N3 e feita:
+
+1. Percorre cada operador N2 nao vazio.
+2. Tenta fallback deterministico (`utils/n3/fallback_properties.py`) para casos frequentes.
+3. Se nao houver fallback aplicavel, chama o modelo (ate 3 tentativas).
+4. Parseia JSON com `utils/n3/parse_properties.py`.
+5. Valida e normaliza semantica com `utils/n3/validate_properties.py`:
+   - normaliza `type`,
+   - valida consistencia (`comparation` exige `property` e `target`),
+   - padroniza alvos booleanos (`VERDADEIRO`/`FALSO`).
+6. Em falha, mantem estrutura vazia do operador.
+7. Logs incluem rastreio estavel por `text_index`, `sentence_index` e `operator`.
 
 Comando:
 
@@ -117,15 +211,34 @@ python generates/generate_n1n2n3.py --model mistral
 
 `validates/validate_n1.py` compara as sentencas N1 geradas com o `dataset.json` e grava metricas em `metrics/validate_n1.json`. Sao usadas:
 
+- Exact Match (normalizado)
 - FuzzyWuzzy (similaridade parcial)
 - TF-IDF
 - SBERT (pt)
+- BERTimbau (STS juridico pt-br)
 - SentenceTransformer multilingual
 - WMD (FastText e NILC, quando disponiveis)
+
+Como a validacao N1 e feita:
+
+1. Alinha sentencas reais e geradas por similaridade (nao por indice fixo).
+2. Mantem sentencas sem par correspondente para penalizar excesso/falta de segmentacao.
+3. Calcula metricas por par e medias por modelo.
 
 ### Validacao N2/N3
 
 `validates/validate_n2.py` valida os operadores N2 (campos `text_n2`). `validates/validate_n3.py` valida as propriedades N3.
+
+Como a validacao N2/N3 e feita:
+
+1. Reaproveita alinhamento de sentencas N1 por similaridade.
+2. Com sentencas alinhadas, compara operador a operador (`aplicability`, `selection`, `exception`, `requeriments`).
+3. N3 transforma `properties_n3` em string canonica (`type|object|property|...`) antes de medir similaridade.
+4. Calcula metricas por par e medias por modelo.
+5. Calcula tambem `operator_presence_report` por operador (N2/N3) com:
+   - `tp`, `fp`, `fn`, `tn`
+   - `precision`, `recall`, `f1`
+   - `macro_avg` e `micro_avg`
 
 Comandos:
 
@@ -134,9 +247,38 @@ python validates/validate_n2.py
 python validates/validate_n3.py
 ```
 
+### Regressao fixa de prompts (12 textos)
+
+Para reduzir regressao apos mudancas de prompt, o projeto inclui um subconjunto fixo com 12 textos em `regression/dataset_regression.json`.
+
+Comando recomendado:
+
+```bash
+python regression/run_regression.py --models llama3.1
+```
+
+Esse runner:
+
+1. Gera N1, N2 e N3 para o subconjunto fixo em `predicts/regression/`.
+2. Gera aliases de pipeline (`generate_n1n2_*` e `generate_n1n2n3_*`) para validacoes combinadas.
+3. Executa validacoes N1, N2, N3, N1N2 e N1N2N3 em `metrics/regression/`.
+
+Opcoes uteis:
+
+- `--models llama3.1,mistral` ou `--models all`
+- `--refresh-dataset` (recria `dataset_regression.json` usando `cases.json` + `dataset.json`)
+- `--skip-generate` / `--skip-validate`
+- `--no-strict-json` (desativa `--strict-json` no N2/N3)
+
 ### Validacao N1+N2+N3
 
 `validates/validate_n1n2n3.py` gera metricas combinadas para pipelines completos.
+
+Como o consolidado e calculado:
+
+1. Executa os blocos de validacao N1, N2 e N3.
+2. Junta os itens por modelo.
+3. Recalcula medias finais por metrica no conjunto agregado.
 
 Comandos:
 
@@ -196,15 +338,27 @@ Cada arquivo de validacao possui:
 Em `models.<modelo>.items`, cada item inclui:
 
 - Indices (`text_index`, `sentence_index`) e, no N2, o `operator`.
+- Indices de alinhamento (`predicted_sentence_index`) e `alignment_score`.
 - `text`: texto original completo.
 - `text_n1`: sentenca N1 correspondente (no N2).
 - `target`: texto de referencia do dataset.
 - `predicted`: texto gerado pelo modelo.
-- `fuzzywuzzy`, `tfidf`, `sbert`, `multilingual`, `wmd_ft`, `wmd_nilc`: scores por par (0 a 1 quando aplicavel).
+- `exact_match`, `fuzzywuzzy`, `tfidf`, `sbert`, `multilingual`, `wmd_ft`, `wmd_nilc`: scores por par (0 a 1 quando aplicavel).
+
+Nos arquivos de N2/N3 ha tambem:
+
+- `operator_presence_report.<modelo>.by_operator.<operador>` com `tp`, `fp`, `fn`, `tn`, `precision`, `recall`, `f1`.
+- `operator_presence_report.<modelo>.macro_avg` e `micro_avg`.
+
+Pareamento de sentencas:
+
+- O pareamento N1/N2/N3 usa alinhamento 1-para-1 por similaridade de sentenca, nao apenas indice fixo.
+- Sentencas extras geradas e sentencas reais sem correspondente sao mantidas como pares (com um lado vazio), para penalizar o score final.
 
 Interpretacao dos scores:
 
 - `fuzzywuzzy`: similaridade parcial por caracteres.
+- `exact_match`: igualdade exata apos normalizacao basica (lowercase e espacos).
 - `tfidf`: similaridade cosseno em TF-IDF.
 - `sbert`: similaridade semantica com SBERT pt.
 - `multilingual`: similaridade semantica multilingue.
@@ -212,6 +366,11 @@ Interpretacao dos scores:
 - `wmd_nilc`: similaridade derivada do Word Mover's Distance com NILC (quando disponivel).
 
 Os valores em `averages` sao medias simples de cada metrica, ignorando valores ausentes. Quanto mais proximo de 1, maior a similaridade entre `target` e `predicted` em todas as metricas, incluindo WMD (que ja e normalizado).
+
+Observacao importante:
+
+- `exact_match` e util para medir aderencia estrita de forma conservadora.
+- metricas semanticas (`sbert`, `bertimbau`, `multilingual`) capturam equivalencia de sentido mesmo com reescrita lexical.
 
 ## Ajuda
 

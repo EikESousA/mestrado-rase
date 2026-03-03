@@ -3,25 +3,33 @@ import gc
 import json
 import math
 import os
+import sys
 from pathlib import Path
 from typing import Any, Dict, List
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import gensim.downloader as api
 from fuzzywuzzy import fuzz
 from gensim.models import KeyedVectors
 from sentence_transformers import SentenceTransformer
 
+from utils.generates.model_registry import MODEL_NAMES
 from utils.validates.build_pairs import build_pairs
+from utils.validates.compute_exact_match_scores import compute_exact_match_scores
 from utils.validates.compute_multilingual_scores import compute_multilingual_scores
 from utils.validates.compute_sbert_scores import compute_sbert_scores
 from utils.validates.compute_tfidf_scores import compute_tfidf_scores
 from utils.validates.compute_wmd_scores import compute_wmd_scores
 from utils.validates.load_nilc_model import load_nilc_model
+from utils.validates.operator_presence_report import compute_operator_report_n2
 from validates.validate_n2 import build_pairs_n2
 
 
-MODEL_NAMES: List[str] = ["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"]
 METRIC_NAMES: List[str] = [
+    "exact_match",
     "fuzzywuzzy",
     "tfidf",
     "sbert",
@@ -111,6 +119,13 @@ def _compute_scores(
     debug_enabled: bool,
 ) -> None:
     for metric_name in METRIC_NAMES:
+        if metric_name == "exact_match":
+            for dataset in datasets:
+                for model, data in dataset.items():
+                    scores = compute_exact_match_scores(data["targets"], data["predicted"])
+                    data["scores"][metric_name] = scores
+                    print(f"Modelo {model}: Exact Match validado.", flush=True)
+            continue
         if metric_name == "fuzzywuzzy":
             for dataset in datasets:
                 for model, data in dataset.items():
@@ -241,6 +256,9 @@ def _build_metrics(model_data: Dict[str, Dict[str, Any]]) -> Dict[str, Any]:
             items.append(
                 {
                     **pair,
+                    "exact_match": data["scores"]["exact_match"][i]
+                    if i < len(data["scores"]["exact_match"])
+                    else None,
                     "fuzzywuzzy": data["scores"]["fuzzywuzzy"][i]
                     if i < len(data["scores"]["fuzzywuzzy"])
                     else None,
@@ -310,6 +328,10 @@ def validate_n1n2(
 
     n1_metrics = _build_metrics(n1_model_data)
     n2_metrics = _build_metrics(n2_model_data)
+    n2_metrics["operator_presence_report"] = {
+        model: compute_operator_report_n2(data["pairs"])
+        for model, data in n2_model_data.items()
+    }
 
     combined_models: Dict[str, Any] = {}
     combined_averages: Dict[str, Any] = {}
