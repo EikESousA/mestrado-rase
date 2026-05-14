@@ -1,0 +1,92 @@
+\chapter{Introdução}
+
+A área de execução de projetos e fiscalização de obras sustenta-se cada vez mais por meio de tecnologias e metodologias que asseguram uma melhor aplicação dos recursos. Com a evolução tecnológica, tornou-se possível corrigir deficiências do setor e atender às exigências do mercado. Nesse contexto, muitas empresas de engenharia estão migrando de padrões bidimensionais (2D) para tridimensionais (3D). Essa transição introduz o conceito de \textit{Building Information Modeling} (BIM), uma metodologia inovadora para os setores de Arquitetura, Engenharia e Construção (AEC) \cite{eastman2011}.
+
+O BIM (\textit{Building Information Modeling}) é um processo que abrange o planejamento e a execução de construções à luz de modelos tridimensionais detalhados. A metodologia pode ser classificada em diversas dimensões, de 3D a 7D, cada uma representando um aspecto específico da utilização do BIM: produção do modelo ou projetos (3D); planejamento de tempo (4D); gestão de custos (5D); sustentabilidade do edifício (6D); e gerenciamento, manutenção e operação pós-construção (7D) \cite{eastman2011}. É importante ressaltar que o BIM não é um software, mas sim um conceito fundamentado em sistemas informatizados como o CAD. Alguns dos softwares que implementam o conceito BIM são o Revit®, da Autodesk®, e o ArchiCAD®, da Graphisoft®.
+
+O BIM permite criar modelos virtuais detalhados, facilitando a visualização e a detecção de interferências antes da construção física. As principais aplicações do BIM incluem análise de projetos, orçamento e planejamento, coordenação modular, gestão do ciclo de vida, visualização arquitetônica, entre outros \cite{fgv2023}. 
+
+Com a adoção do BIM, a quantidade de dados gerados por projetos cresce significativamente, atraindo o interesse de cientistas de dados. Esses profissionais trabalham com grandes volumes de informações, coletando, analisando e interpretando dados para gerar lucros para as organizações \cite{davenport2012}. Uma das áreas mais promissoras para cientistas de dados é o Aprendizado de Máquina (AM).
+
+O Aprendizado de Máquina, uma subárea da Inteligência Artificial (IA), explora a criação de algoritmos capazes de compreender dados de forma autônoma \cite{tan2006}. Por meio do AM, é possível extrair e reconhecer padrões em grandes volumes de dados, construindo modelos que executam tarefas complexas, fazem previsões e reagem de maneira inteligente a diferentes situações.
+
+No campo da Engenharia Civil, a IA tem transformado processos tradicionais em abordagens automatizadas, promovendo maior eficiência, precisão e sustentabilidade. Algoritmos de aprendizado de máquina, redes neurais e aprendizado profundo permitem que sistemas revisem e otimizem projetos desde a fase de planejamento até a execução de grandes obras \cite{fuchs2024}.
+
+O trabalho de Liu investigou o uso de Aprendizado de Máquina para melhorar o processo de montagem na construção por meio de regras de design. O autor concluiu que a combinação de BIM, AM e regras de design pode otimizar o processo de montagem, resultando em projetos mais eficientes e econômicos \cite{liu2022}. O autor Alawadhi treinou Redes Neurais Artificiais com dados BIM com o objetivo de reconhecer objetos de construção em fotos e concluiu que as imagens geradas por computador dos modelos BIM podem resultar em segmentação semântica eficaz em fotos reais de edifícios, indicando a viabilidade de usar dados sintéticos para treinar IA em problemas arquitetônicos do mundo real \cite{alawadhi2023}. O cientista Saka realizou um treinamento com dados BIM para prever a circularidade de resíduos de demolição de construção. A partir de 2.280 projetos de demolição, foi possível desenvolver um sistema capaz de prever as quantidades de materiais recicláveis e destinar os resíduos para aterros de demolição, facilitando um melhor planejamento e gestão nessa área \cite{saka2024}.
+
+No entanto, o BIM não oferece uma solução direta para a gestão de normas regulatórias voltadas para o setor AEC, uma vez que essas normas são reguladas por região. Cada região possui suas próprias regras, muitas das quais são interpretativas, dificultando a automação desse processo \cite{vargas2023}.
+
+O Processamento de Linguagem Natural (PLN) possibilita que modelos de AM reconheçam padrões e processem informações, gerando resultados como sistemas de tradução, conversas e respostas automatizadas. Uma subárea emergente do PLN é a IA Generativa (IAG), cujos modelos são capazes de criar novos dados com base em seus \textit{datasets} de treinamento. Esses modelos são amplamente usados na geração de textos, imagens e áudios. Exemplos de modelos generativos incluem o ChatGPT, da OpenAI \cite{openai2024}, e o Llama 3, da Meta \cite{llama3}. Esses algoritmos são projetados para produzir respostas contextualmente sensíveis em linguagem humana e são classificados como LLMs \cite{inan2023}.
+
+Os Modelos de Linguagem de Grande Escala (LLMs) são sistemas de inteligência artificial projetados para compreender e gerar linguagem humana de forma avançada. Esses modelos são treinados em vastas quantidades de dados textuais, permitindo-lhes capturar nuances linguísticas e contextuais. Arquiteturas como os transformadores são comumente utilizadas nesses modelos devido à sua eficácia em processar sequências de texto \cite{zhao2023}.
+
+Tecnologias relacionadas à LLMs têm transformado o acesso ao conhecimento e a interação com o mundo. Técnicas como \textit{Fine-Tuning} (FT) \cite{guo2019}, \textit{Transfer Learning} (TL) \cite{guo2019} e \textit{Retrieval-Augmented Generation} (RAG) \cite{gao2023} permitem incorporar novas funcionalidades a esses modelos, ampliando suas aplicações.
+
+No setor de Arquitetura, Engenharia e Construção (AEC), os Modelos de Linguagem de Grande Escala (LLMs) podem auxiliar na interpretação de normas regulatórias e na conversão dessas informações em formatos processáveis por máquinas \cite{du2024}. Contudo, há lacunas na literatura quanto à integração da LLMs com tecnologias emergentes na indústria AEC. Uma dessas lacunas está na interpretação de leis, códigos e padrões regulatórios em níveis nacionais e internacionais, que historicamente apresentam desafios para a IA devido à complexidade semântica desses documentos \cite{fuchs2024}.
+
+Para abordar esse problema, Hjelseth desenvolveu a metodologia RASE, que transforma normas regulatórias em dados computáveis \cite{hjelseth2011}. Os dados computáveis na metodologia RASE são informações extraídas de normas regulatórias e estruturadas em quatro atributos: \textbf{R}equisito, que define o que deve ser atendido; \textbf{A}plicabilidade, que indica onde a regra se aplica; \textbf{S}eleção, que apresenta opções para cumpri-la; e \textbf{E}xceção, que especifica casos em que a regra não se aplica. Essa organização permite que softwares BIM interpretem e verifiquem automaticamente a conformidade de projetos, facilitando ajustes e validações com maior eficiência e precisão \cite{hjelseth2011}.
+
+Com a transformação das normas regulatórias para o formato RASE, torna-se possível desenvolver um software integrado ao Revit, capaz de validar cada elemento do projeto de acordo com as normas apresentadas \cite{santos2021}. Contudo, a transformação das normas para o formato RASE é atualmente realizada de forma manual, exigindo que cada regra seja analisada e convertida individualmente. Além disso, dependendo do projeto BIM, pode haver centenas ou até milhares de elementos, o que gera um alto custo de tempo para realizar todo o processo de conversão e validação dos dados.
+
+
+\section{Objetivos}
+
+Esta pesquisa propõe o desenvolvimento de um modelo de linguagem LLM baseado no Llama 3 para interpretar normas regulatórias da AEC e convertê-las em dados estruturados no formato RASE. Três modelos serão desenvolvidos: \textbf{R1} para extração e separação de regras regulatórias, \textbf{R2} para organização dessas regras nos quatro atributos RASE (Requisito, Aplicabilidade, Seleção, e Exceção) e \textbf{R3} para converter as regras em dados diretamente aplicáveis em softwares BIM, como o Revit.
+
+Quatro abordagens de treinamento serão avaliadas: Engenharia de Prompt (\textbf{EP}), Engenharia de Prompt com Fine-Tuning (\textbf{EPFT}), Engenharia de Prompt com RAG (\textbf{EPRAG}), e Engenharia de Prompt com Fine-Tuning e RAG (\textbf{EPFTRAG}). A eficácia será medida em termos de precisão, eficiência e generalização na interpretação e aplicação das normas.
+
+Os modelos treinados serão aplicados em projetos no Revit, com objetos destacados em cores específicas para indicar conformidade: verde para elementos conformes, vermelho para não conformes e azul para itens não identificados ou irrelevantes.
+
+% \begin{figure}[htb]
+%     \centering
+%     \caption{Pipeline da pesquisa.}
+%     \begin{center}
+%         \includegraphics[scale=0.45]
+%         {Imagens/1.1.1-metodologia.png}
+%     \end{center}
+%     \label{img:1.1.1}
+%     Fonte: Própria (2024).
+% \end{figure}
+
+
+% Esta pesquisa propõe o desenvolvimento de um LLM baseado no modelo Llama 3, que é open-source e amplamente utilizado em pesquisas. O objetivo é criar um conjunto de modelos capazes de interpretar regras e padrões regulatórios da AEC, e converter essas informações para a metodologia RASE. Em seguida, os dados transformado serão inseridos no software Revit e será implementado um código de validação de elementos de projetos a partir das normas, o código irá verificar cada um dos elementos acentuando aqueles que estão corretamente e incorretamente a partir das normas.
+
+% Para o treinamento do modelo será utilizados base de dados que convertem normas regulatórias em código RASE, como demonstrado pelo autor Eduardo \cite{eduardo2020}. Porém, para chegar no resultado esperado será necessário realizar 3 tarefas distintas, e por isso, será utilizado 3 modelos com treinamentos diferentes. Para o processo de converter normas regulatórias em dados estruturados RASE, será realizado 3 processos:
+
+% \begin{itemize}
+%     \item \textbf{Modelo R1 - Extração de Normas e Separação de Regras}: Esse modelo deve ser capaz de identificar e extrair as normas presentes em documentos regulatórios da AEC e dividi-los em regras individuais.
+%     \item \textbf{Modelo R2 - Organização das Regras em Operadores RASE}: Classificar as regras extraídas de acordo com os quatro atributos do modelo RASE: Requisito, Aplicabilidade, Seleção e Exceção.
+%     \item \textbf{Modelo R3 - Conversão dos Operadores em Atributos RASE Aplicáveis}: Converter os operadores identificados na etapa anterior em atributos RASE aplicáveis, ou seja, regras que podem ser implementadas diretamente em softwares de modelagem BIM.
+% \end{itemize}
+
+% Para o treinamento de cada modelo (R1, R2 e R3) quatro abordagens serão avaliadas para otimizar a eficiência na interpretação e conversão das normas AEC em dados computáveis. Todas as abordagens utilizarão de engenharia de prompt e será utilizado 3 tipos de técnicas diferente (\textit{Prompt Few-Shot}, \textit{Prompt Chain-of-Thought}, \textit{Prompt Direct}) e será avaliado qual obteve melhor resultado. As Abordagens de treinamento são:
+
+% \begin{itemize}
+%     \item \textbf{Abordagem EP}: Engenharia de Prompt.    
+%     \item \textbf{Abordagem EPFT}: Engenharia de Prompt + Fine-Tunning.    
+%     \item \textbf{Abordagem EPRAG}: Engenharia de Prompt + RAG.    
+%     \item \textbf{Abordagem EPFTRAG}: Engenharia de Prompt + Fine-Tunning + RAG.    
+% \end{itemize}
+
+% Cada abordagem será testada e avaliada com base nos seguintes critérios:
+
+% \begin{itemize}
+%     \item \textbf{Precisão}: Precisão na interpretação das normas regulatórias.
+%     \item \textbf{Eficiência}: Eficiência na conversão de regras em dados estruturados (RASE).
+%     \item \textbf{Generalização}: Capacidade de generalização para diferentes conjuntos de dados de normas.
+% \end{itemize}
+
+% Após o treinamento e avaliação das abordagens, a melhor de cada uma dos modelos será aplicada em um projeto exemplo no software Revit como mostra a Figura \ref{img:1.1.1}. O sistema irá identificar e marcar os objetos do projeto com diferentes cores:
+
+% \begin{itemize}
+%     \item \textbf{Verde}: Indica conformidade com as normas regulatórias.
+%     \item \textbf{Vermelho}: Indica normas irregulares ou não conformes.
+%     \item \textbf{Azul}: Indica itens que não foram identificados ou que não se aplicam às regras.
+% \end{itemize}
+
+
+\section{Organização da Proposta}
+
+Os capítulos seguintes estruturam esta pesquisa de forma detalhada e consistente. O segundo aborda os fundamentos teóricos e trabalhos relacionados, explorando conceitos como BIM, Inteligência Artificial, Processamento de Linguagem Natural, Aprendizado de Máquina, Redes Neurais (incluindo LSTM, BiLSTM e Transformers) , LLM e técnicas específicas e por fim, o método RASE.
+
+O terceiro capítulo é dedicado à proposta a ser utilizada, detalhando os passos e estratégias empregados para alcançar os objetivos gerais e específicos da pesquisa, além de apresentar o cronograma de execução da proposta.

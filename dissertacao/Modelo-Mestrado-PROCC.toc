@@ -1,0 +1,25 @@
+\changetocdepth {4}
+\babel@toc {brazil}{}\relax 
+\babel@toc {brazil}{}\relax 
+\contentsline {chapter}{\chapternumberline {1}Introdução}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Objetivos}{11}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Organização da Proposta}{12}{section.1.2}%
+\contentsline {chapter}{\chapternumberline {2}Fundamentação Teórica}{13}{chapter.2}%
+\contentsline {section}{\numberline {2.1}BIM}{13}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Aprendizado de Máquina}{15}{section.2.2}%
+\contentsline {section}{\numberline {2.3}PLN}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Redes Neurais Artificiais}{21}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Memória Longa de Curto Prazo}{29}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Transformers}{30}{section.2.6}%
+\contentsline {section}{\numberline {2.7}LLM}{36}{section.2.7}%
+\contentsline {section}{\numberline {2.8}RASE}{41}{section.2.8}%
+\contentsline {section}{\numberline {2.9}Trabalhos Relacionados}{44}{section.2.9}%
+\contentsline {subsection}{\numberline {2.9.1}Análise dos Trabalhos Relacionados}{45}{subsection.2.9.1}%
+\contentsline {chapter}{\chapternumberline {3}Proposta}{47}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Materiais e Métodos}{47}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Desenvolvimento Inicial}{53}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Desafios Futuros}{54}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Fases da projeto e cronograma}{55}{section.3.4}%
+\vspace {\cftbeforepartskip }
+\contentsline {chapter}{Refer\^encias}{58}{chapter*.11}%
+\vspace {\cftbeforepartskip }

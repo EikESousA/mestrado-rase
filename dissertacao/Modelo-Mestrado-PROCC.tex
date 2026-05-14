@@ -1,0 +1,83 @@
+\documentclass[english, 
+               brazil, 
+               msc] %Opções bsc (TCC) e msc (Mestrado)
+               {dcomp-abntex2}
+
+
+\usepackage{lipsum} %Retirar para a versão final do documento
+
+\usepackage[linesnumbered]{algorithm2e}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+
+
+\lstdefinelanguage{json}{
+  basicstyle=\ttfamily\small,
+  stringstyle=\color{red},          % Cor das strings
+  keywordstyle=\color{cyan},        % Cor das palavras-chave (true, false, null)
+  showstringspaces=false,           % Não mostrar espaços nas strings
+  breaklines=true,                  % Quebrar linhas automaticamente
+  frame=single,                     % Adicionar uma moldura ao redor
+  backgroundcolor=\color{gray!10},  % Cor de fundo
+  morekeywords={true, false, null}  % Definir as palavras-chave do JSON
+}
+
+\makeindex
+
+\begin{document}
+
+\selectlanguage{brazil}
+
+\frenchspacing 
+
+\pretextual
+
+\titulo{Análise de  LLMs baseados LLaMA 3 para a Verificação Automática de Normas de Arquitetura, Engenharia e Construção} 
+\autor{Eike Natan Sousa Brito}
+\orientador{Andre Britto de Carvalho}
+\coorientador{}
+\curso{Ciência da Computação}
+
+\inserirInformacoesPDF
+
+\imprimircapa
+\imprimirfolhaderosto*
+
+
+%\include{Pre_Textual/Dedicatoria}
+%\include{Pre_Textual/Agradecimentos}
+%\include{Pre_Textual/Epigrafe}
+\include{Pre_Textual/Resumo}
+\include{Pre_Textual/Abstract}
+
+
+\mostrarlistadeILUSTRACOES
+% \mostrarlistadeQUADROS
+% \mostrarlistadeTABELAS
+% \mostrarlistadeCODIGOS
+% \mostrarlistadeALGORITMOS
+ 
+\include{Pre_Textual/Abreviaturas}
+\include{Pre_Textual/Simbolos}
+    
+\mostrarSUMARIO
+
+\textual
+\include{Conteudo/01_Introducao}
+% \include{Conteudo/02_Trabalhos_Relacionados}
+\include{Conteudo/03_Fundamentacao_Teorica}
+\include{Conteudo/04_Metodo}
+% \include{Conteudo/05_Conclusao}
+
+\phantompart
+\bibliography{Bibliografia}
+
+\postextual
+
+%\renewcommand{\chapnumfont}{\chaptitlefont}
+%\renewcommand{\afterchapternum}{}
+% \include{Pos_Textual/Apendices}
+% \include{Pos_Textual/Anexos}
+
+\end{document}
