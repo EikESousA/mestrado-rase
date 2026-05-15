@@ -1,4 +1,13 @@
 {
+  "meta": {
+    "model_id": "brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16",
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "repeat_penalty": 1.1,
+    "seed": 42,
+    "prompt_sha256": "de98d4b3b73631dca28f9251dc039836cc34413c224c91c85ec7ed75f5548def",
+    "code_git_sha": "d5fd10f9975c2b08d2537035d2d724f8c60365e3"
+  },
   "counts": 79,
   "datas": [
     {
@@ -256,7 +265,7 @@
       "text": "As soleiras das portas ou vãos de passagem que apresentem desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.",
       "texts_n1": [
         {
-          "text_n1": "As soleiras das portas ou vãos de passagem devem ter parte substituída por rampa.",
+          "text_n1": "As soleiras das portas ou vãos de passagem devem ter desníveis de no máximo um degrau.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -265,7 +274,16 @@
           }
         },
         {
-          "text_n1": "A rampa deve ter largura mínima de 0,90 m.",
+          "text_n1": "Parte da extensão da soleira deve ser substituída por rampa.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "A rampa deve ter largura mínima de 0,90 metros.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -283,7 +301,7 @@
           }
         },
         {
-          "text_n1": "O desnível deve atender aos parâmetros das Tabelas 6 ou 7.",
+          "text_n1": "A rampa deve atender aos parâmetros das Tabelas 6 ou 7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -292,16 +310,7 @@
           }
         },
         {
-          "text_n1": "Parte do desnível deve ser vencida com rampa.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "O restante da extensão pode permanecer como degrau.",
+          "text_n1": "O restante da extensão da soleira pode permanecer como degrau.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -319,7 +328,7 @@
           }
         },
         {
-          "text_n1": "A barra de apoio deve ter comprimento mínimo de 0,30 m.",
+          "text_n1": "O comprimento da barra de apoio deve ser de no mínimo 0,30 metros.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -328,7 +337,7 @@
           }
         },
         {
-          "text_n1": "O eixo da barra de apoio deve ser posicionado a 0,75 m de altura do piso.",
+          "text_n1": "O eixo da barra de apoio deve ser posicionado a 0,75 metros de altura do piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -456,7 +465,7 @@
       "text": "Nas áreas de resgate, deve ser previsto no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência. Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R. pode ser compartilhado.",
       "texts_n1": [
         {
-          "text_n1": "Nas áreas de resgate, deve haver pelo menos um M.R. a cada 500 pessoas de lotação.",
+          "text_n1": "Nas áreas de resgate, deve haver pelo menos um M.R.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -465,7 +474,7 @@
           }
         },
         {
-          "text_n1": "Essa exigência se aplica a cada pavimento.",
+          "text_n1": "a cada 500 pessoas de lotação em cada pavimento.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -474,7 +483,7 @@
           }
         },
         {
-          "text_n1": "Há também a necessidade de pelo menos um M.R. para cada escada e elevador de emergência.",
+          "text_n1": "O quantitativo de M.R.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -483,7 +492,7 @@
           }
         },
         {
-          "text_n1": "Se a antecâmara das escadas e dos elevadores de emergência for comum, o número de M.R. pode ser compartilhado.",
+          "text_n1": "pode ser compartilhado se a antecâmara das escadas e dos elevadores de emergência forem comuns.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -497,7 +506,7 @@
       "text": "Recomenda-se prever uma área de descanso, fora da faixa de circulação, a cada 50 m, para piso com até 3 % de inclinação, ou a cada 30 m, para piso de 3 % a 5 % de inclinação. Recomenda-se a instalação de bancos com encosto e braços. Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6. Estas áreas devem estar dimensionadas para permitir também a manobra de cadeiras de rodas.",
       "texts_n1": [
         {
-          "text_n1": "É recomendável prever uma área de descanso fora da faixa de circulação.",
+          "text_n1": "É necessário prever uma área de descanso fora da faixa de circulação.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -506,7 +515,7 @@
           }
         },
         {
-          "text_n1": "Essa área deve ser a cada 50 metros para pisos com até 3% de inclinação.",
+          "text_n1": "A área de descanso deve ser a cada 50 metros para piso com até 3% de inclinação.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -515,7 +524,7 @@
           }
         },
         {
-          "text_n1": "Para pisos de 3% a 5% de inclinação, a área deve ser a cada 30 metros.",
+          "text_n1": "A área de descanso deve ser a cada 30 metros para piso de 3% a 5% de inclinação.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -542,7 +551,7 @@
           }
         },
         {
-          "text_n1": "As áreas devem ser dimensionadas para cadeiras de rodas.",
+          "text_n1": "As áreas devem ser dimensionadas para manobra de cadeiras de rodas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -566,15 +575,6 @@
         },
         {
           "text_n1": "A inclinação entre 6,25 % e 8,33 % requer áreas de descanso a cada 50 m.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Estas áreas de descanso são aplicáveis em patamares.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -715,7 +715,7 @@
           }
         },
         {
-          "text_n1": "A Figura 72 ilustra os elementos de segurança.",
+          "text_n1": "Consulte a Figura 72 para os guias de balizamento.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -843,16 +843,7 @@
           }
         },
         {
-          "text_n1": "Pisos (p) devem ter dimensões entre 0,28 m e 0,32 m.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Espelhos (e) devem ter dimensões entre 0,16 m e 0,18 m.",
+          "text_n1": "Pisos (p) devem ter dimensões entre 0,28 m e 0,32 m. Espelhos (e) devem ter dimensões entre 0,16 m e 0,18 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -898,25 +889,7 @@
           }
         },
         {
-          "text_n1": "É necessário que, a 0,55 m da borda interna da escada, os pisos e espelhos sejam dimensionados.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Essa medida se aplica à linha imaginária sobre a qual uma pessoa se move com o corrimão.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "A Figura 75 ilustra esses dimensionamentos.",
+          "text_n1": "É necessário que, a 0,55 m da borda interna da escada, os pisos e espelhos sejam dimensionados conforme 6.8.2 e Figura 75.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1161,7 +1134,7 @@
           }
         },
         {
-          "text_n1": "Consulte a Figura 76 para mais detalhes.",
+          "text_n1": "Consulte a Figura 76 para detalhes sobre o acabamento.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1284,7 +1257,7 @@
           }
         },
         {
-          "text_n1": "Objetos com mais de 0,40 m de extensão precisam de uma largura mínima de 0,90 m.",
+          "text_n1": "Objetos com extensão superior a 0,40 m necessitam de uma largura mínima de 0,90 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1298,7 +1271,7 @@
       "text": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta, e quando abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta, conforme a Figura 81. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10",
       "texts_n1": [
         {
-          "text_n1": "O deslocamento frontal exige um espaço livre de 0,30 m entre a parede e a porta quando as portas se abrem no sentido do deslocamento do usuário.",
+          "text_n1": "O deslocamento frontal exige um espaço livre de 0,30 m entre a parede e a porta quando as portas abrem no sentido do deslocamento do usuário.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1307,7 +1280,7 @@
           }
         },
         {
-          "text_n1": "Quando as portas se abrem no sentido oposto ao deslocamento do usuário, deve haver um espaço livre de 0,60 m, contíguo à maçaneta.",
+          "text_n1": "Quando as portas abrem no sentido oposto ao deslocamento do usuário, deve haver um espaço livre de 0,60 m, contíguo à maçaneta.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1316,7 +1289,7 @@
           }
         },
         {
-          "text_n1": "Se os espaços livres especificados não puderem ser alcançados, deve-se instalar equipamento de automação para abertura e fechamento das portas.",
+          "text_n1": "Se os espaços livres não puderem ser alcançados, deve-se instalar equipamento de automação para abrir e fechar as portas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1325,7 +1298,7 @@
           }
         },
         {
-          "text_n1": "Essa automação pode ser acionada por uma botoeira ou sensor, conforme as normas 6.11.2.9 e 6.11.2.10.",
+          "text_n1": "Essa automação pode ser acionada por uma botão ou sensor, conforme especificado nas normas 6.11.2.9 e 6.11.2.10.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1385,7 +1358,7 @@
       "text": "As portas de sanitários e vestiários devem ter, no lado oposto ao lado da abertura da porta, um puxador horizontal, conforme a Figura 84, associado à maçaneta. Deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm, instalado a 0,90 m do piso. O dispositivo de travamento deve observar o descrito em 4.6.8. Recomenda-se que estas portas ou batentes tenham cor contrastante com a da parede e do piso de forma a facilitar sua localização.",
       "texts_n1": [
         {
-          "text_n1": "As portas de sanitários e vestiários devem ter puxador horizontal.",
+          "text_n1": "As portas de sanitários e vestiários devem ter um puxador horizontal.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1394,7 +1367,7 @@
           }
         },
         {
-          "text_n1": "O puxador está localizado no lado oposto à abertura da porta.",
+          "text_n1": "Este puxador está localizado no lado oposto à abertura da porta.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1403,7 +1376,7 @@
           }
         },
         {
-          "text_n1": "O puxador é associado à maçaneta.",
+          "text_n1": "Ele é associado à maçaneta, conforme a Figura 84.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1412,7 +1385,7 @@
           }
         },
         {
-          "text_n1": "A distância do puxador ao eixo da porta é de 0,10 m.",
+          "text_n1": "O puxador deve estar a 0,10 m do eixo da porta (dobradiça).",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1421,7 +1394,7 @@
           }
         },
         {
-          "text_n1": "O comprimento do puxador é mínimo de 0,40 m.",
+          "text_n1": "Seu comprimento mínimo é de 0,40 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1430,7 +1403,7 @@
           }
         },
         {
-          "text_n1": "O diâmetro do puxador varia de 35 mm a 25 mm.",
+          "text_n1": "O diâmetro do puxador varia entre 35 mm e 25 mm.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1439,7 +1412,7 @@
           }
         },
         {
-          "text_n1": "O puxador é instalado a 0,90 m do piso.",
+          "text_n1": "O dispositivo de travamento deve seguir as especificações em 4.6.8.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1448,7 +1421,7 @@
           }
         },
         {
-          "text_n1": "O dispositivo de travamento segue a norma 4.6.8.",
+          "text_n1": "As portas ou batentes devem ter uma cor contrastante.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1457,16 +1430,7 @@
           }
         },
         {
-          "text_n1": "As portas ou batentes devem ter cor contrastante.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "A cor contrastante facilita a localização das portas.",
+          "text_n1": "Essa cor deve facilitar a localização na parede e no piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1576,16 +1540,7 @@
           }
         },
         {
-          "text_n1": "O portão deve contar com sistema de sinalização.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "O sistema de sinalização deve estar conforme 5.6.4.2.",
+          "text_n1": "O portão deve contar com sistema de sinalização conforme 5.6.4.2.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1781,16 +1736,7 @@
           }
         },
         {
-          "text_n1": "Não deve prejudicar a vazão.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Consulte a Figura 76.",
+          "text_n1": "Não deve prejudicar a vazão, conforme a Figura 76.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2050,7 +1996,7 @@
       "text": "Nas áreas de circulação, quando o desnível for lateral, observar o descrito em 4.3.7.",
       "texts_n1": [
         {
-          "text_n1": "Nas áreas de circulação, o desnível lateral deve ser observado conforme 4.3.7.",
+          "text_n1": "Nas áreas de circulação, quando o desnível for lateral, observar o descrito em 4.3.7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2250,7 +2196,16 @@
           }
         },
         {
-          "text_n1": "O M.R. deve ser sinalizado conforme 5.5.2.2.",
+          "text_n1": "O M.R.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "deve ser sinalizado conforme 5.5.2.2.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2347,7 +2302,7 @@
       "text": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.",
       "texts_n1": [
         {
-          "text_n1": "A projeção dos corrimãos pode incidir até 10 cm de cada lado da rampa.",
+          "text_n1": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2356,7 +2311,7 @@
           }
         },
         {
-          "text_n1": "Essa projeção não se aplica nos casos especificados em 6.6.2.7.",
+          "text_n1": "Exceção se aplica nos casos previstos em 6.6.2.7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2379,7 +2334,7 @@
           }
         },
         {
-          "text_n1": "Entre os segmentos de rampa devem existir patamares intermediários com pelo menos 1,20 m de comprimento.",
+          "text_n1": "Entre os segmentos de rampa, devem existir patamares intermediários com pelo menos 1,20 m de comprimento.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2526,7 +2481,7 @@
       "text": "O dimensionamento dos corrimãos deve atender ao descrito em 4.6.5.",
       "texts_n1": [
         {
-          "text_n1": "O dimensionamento dos corrimãos deve atender ao descrito em 4.6.5.",
+          "text_n1": "O dimensionamento dos corrimãos deve seguir as especificações em 4.6.5.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2640,16 +2595,7 @@
           }
         },
         {
-          "text_n1": "O espaçamento mínimo entre os segmentos é de 0,80 m.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Consulte a Figura 77 para detalhes.",
+          "text_n1": "O espaçamento mínimo entre os segmentos é de 0,80 m. Consulte a Figura 77 para detalhes.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2672,16 +2618,7 @@
           }
         },
         {
-          "text_n1": "Esses elementos incluem guia de balizamento.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Além disso, é necessário um guarda-corpo.",
+          "text_n1": "Esses elementos incluem guia de balizamento e guarda-corpo.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2699,7 +2636,7 @@
           }
         },
         {
-          "text_n1": "O dimensionamento, os corrimãos e a sinalização também são importantes.",
+          "text_n1": "O dimensionamento, os corrimãos e a sinalização são requisitos importantes.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2731,7 +2668,7 @@
           }
         },
         {
-          "text_n1": "O espaço de transposição tem um círculo de 1,50 m de diâmetro.",
+          "text_n1": "O espaço de transposição possui um círculo de 1,50 m de diâmetro.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2740,7 +2677,7 @@
           }
         },
         {
-          "text_n1": "Este espaço é somado à largura das portas (y).",
+          "text_n1": "Este espaço deve ser somado à largura das portas (y).",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2749,7 +2686,7 @@
           }
         },
         {
-          "text_n1": "A Figura 80 exemplifica este detalhamento.",
+          "text_n1": "A Figura 80 ilustra este exemplo.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2758,7 +2695,7 @@
           }
         },
         {
-          "text_n1": "Há 0,60 m ao lado da maçaneta de cada porta.",
+          "text_n1": "Há 0,60 m ao lado de cada maçaneta da porta.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2781,7 +2718,7 @@
       "text": "No deslocamento lateral, deve ser garantido 0,60 m de espaço livre de cada um dos lados, conforme Figura 82. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
       "texts_n1": [
         {
-          "text_n1": "O deslocamento lateral deve garantir 0,60 m de espaço livre de cada lado.",
+          "text_n1": "O deslocamento lateral deve garantir 0,60 m de espaço livre de cada lado, conforme a Figura 82.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2790,7 +2727,7 @@
           }
         },
         {
-          "text_n1": "A Figura 82 ilustra este requisito de espaço livre.",
+          "text_n1": "Na ausência de espaço livre, deve-se instalar equipamento de automação para abertura e fechamento de portas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2799,7 +2736,7 @@
           }
         },
         {
-          "text_n1": "Na ausência de espaço livre, o equipamento de automação é necessário.",
+          "text_n1": "A automação pode ser acionada por botoeira ou sensor.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2808,16 +2745,7 @@
           }
         },
         {
-          "text_n1": "A automação deve ser implementada através de botoeira ou sensor.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "A automação deve seguir as normas 6.11.2.9 e 6.11.2.10.",
+          "text_n1": "Essa automação deve seguir as normas 6.11.2.9 e 6.11.2.10.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2854,7 +2782,7 @@
           }
         },
         {
-          "text_n1": "As maçanetas das portas são instaladas a uma altura entre 0,80 m e 1,10 m.",
+          "text_n1": "As maçanetas das portas devem ser instaladas a uma altura entre 0,80 m e 1,10 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2877,7 +2805,7 @@
           }
         },
         {
-          "text_n1": "A face inferior do visor deve estar situada entre 0,40 m e 0,90 m do piso.",
+          "text_n1": "A face inferior do visor deve ser situada entre 0,40 m e 0,90 m do piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2886,7 +2814,7 @@
           }
         },
         {
-          "text_n1": "A face superior do visor deve estar no mínimo a 1,50 m do piso.",
+          "text_n1": "A face superior do visor deve ser no mínimo a 1,50 m do piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2963,7 +2891,7 @@
           }
         },
         {
-          "text_n1": "Este dispositivo deve impedir o fechamento da porta sobre a pessoa.",
+          "text_n1": "Este dispositivo deve impedir o fechamento da porta sobre uma pessoa.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2986,7 +2914,16 @@
           }
         },
         {
-          "text_n1": "A sinalização pode ser uma faixa com no mínimo 50 mm de espessura.",
+          "text_n1": "A sinalização deve ter uma faixa com no mínimo 50 mm de espessura.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "A faixa deve ser instalada entre 0,90 m e 1,00 m do piso acabado.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -3004,7 +2941,7 @@
           }
         },
         {
-          "text_n1": "A faixa deve ser instalada entre 0,90 m e 1,00 m do piso.",
+          "text_n1": "As elementos gráficos devem cobrir a superfície entre 0,90 m e 1,00 m do piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -3049,7 +2986,7 @@
           }
         },
         {
-          "text_n1": "A primeira faixa deve ser instalada entre 1,30 m e 1,40 m.",
+          "text_n1": "A primeira faixa deve ser instalada entre 1,30 m e 1,40 m do piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -3058,7 +2995,7 @@
           }
         },
         {
-          "text_n1": "A segunda faixa deve ser instalada entre 0,10 m e 0,30 m.",
+          "text_n1": "A segunda faixa deve ser instalada entre 0,10 m e 0,30 m do piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -3067,7 +3004,7 @@
           }
         },
         {
-          "text_n1": "Ambas as faixas devem ser medidas em relação ao piso acabado.",
+          "text_n1": "As faixas devem seguir a Figura 86.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -3111,18 +3048,9 @@
             "selection": "",
             "exception": ""
           }
-        },
-        {
-          "text_n1": "A inclinação é especificada na Figura 68.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
         }
       ]
     }
   ],
-  "time": 133.0435163974762
+  "time": 970.1514885425568
 }

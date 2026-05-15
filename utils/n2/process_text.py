@@ -35,6 +35,10 @@ def process_text(text: str) -> Dict[str, str]:
             campo_atual = campo if valor == "" else None
         elif campo_atual:
             if not padrao_campo.match(linha):
-                resultado[campo_atual] += " " + linha.strip()
+                trecho = linha.strip()
+                if resultado[campo_atual]:
+                    resultado[campo_atual] += " " + trecho
+                else:
+                    resultado[campo_atual] = trecho
 
     return {k: v.strip() for k, v in resultado.items()}

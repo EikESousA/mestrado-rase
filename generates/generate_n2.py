@@ -14,7 +14,14 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnableSerializable
 from langchain_ollama import OllamaLLM
 
+from config.models import MODEL_NAMES
 from utils.generates.generate_config import generate_config
+from utils.generates.meta import build_meta, env_seed
+from utils.generates.resume import (
+    append_checkpoint,
+    clear_checkpoint,
+    load_existing_output,
+)
 from utils.generates.invoke_with_timeout import invoke_with_timeout
 from utils.generates.reset_model import reset_model
 from utils.logs.init_log import init_log
@@ -35,7 +42,7 @@ def generate_n2(
         parser = argparse.ArgumentParser(description="Gerar operadores RASE N2.")
         parser.add_argument(
             "--model",
-            choices=["llama", "alpaca", "mistral", "dolphin", "gemma", "qwen"],
+            choices=MODEL_NAMES,
             default="mistral",
             help="Modelo base para geracao.",
         )
@@ -80,30 +87,48 @@ def generate_n2(
         print("Erro: Falha ao decodificar JSON de entrada.")
         return
 
-    llm: OllamaLLM = OllamaLLM(
-        model=model_id,
-        temperature=0.1,
-        top_p=0.9,
-        repeat_penalty=1.1,
-        client_kwargs={"timeout": 600},
-    )
+    seed = env_seed()
+    llm_kwargs: Dict[str, Any] = {
+        "model": model_id,
+        "temperature": 0.1,
+        "top_p": 0.9,
+        "repeat_penalty": 1.1,
+        "num_predict": 512,
+        "client_kwargs": {"timeout": 600},
+    }
+    if seed is not None:
+        llm_kwargs["seed"] = seed
+    llm: OllamaLLM = OllamaLLM(**llm_kwargs)
     prompt: ChatPromptTemplate = ChatPromptTemplate.from_template(template)
     chain: RunnableSerializable[Dict[str, str], str] = prompt | llm
 
-    result_data: Dict[str, Any] = {"counts": 0, "datas": [], "time": 0.0}
-    total_start_time: float = time.time()
+    existing = load_existing_output(output_path)
+    resume_from = len(existing.get("datas", [])) if existing else 0
+    result_data: Dict[str, Any] = {
+        "meta": build_meta(model_id=model_id, prompt_text=template, seed=seed),
+        "counts": resume_from,
+        "datas": list(existing.get("datas", [])) if existing else [],
+        "time": float(existing.get("time", 0.0)) if existing else 0.0,
+    }
+    total_start_time: float = time.time() - result_data["time"]
 
-    with open(output_path, "w", encoding="utf-8") as file:
-        json.dump(result_data, file, ensure_ascii=False, indent=2)
+    if resume_from == 0:
+        with open(output_path, "w", encoding="utf-8") as file:
+            json.dump(result_data, file, ensure_ascii=False, indent=2)
+        clear_checkpoint(output_path)
+    else:
+        log(f"Retomando execucao N2 a partir do item {resume_from + 1}.")
 
     log(
         "Inicio geracao N2. "
         f"Modelo={model_id} Entrada={input_path} Saida={output_path}"
     )
-    log(f"Total de textos: {len(data.get('datas', []))}")
+    log(f"Total de textos: {len(data.get('datas', []))} (ja processados: {resume_from})")
 
     try:
         for count, item in enumerate(data["datas"], start=1):
+            if count <= resume_from:
+                continue
             raw_text = item["text"].replace("\n", " ").strip()
             preview = raw_text[:40].rstrip()
             suffix = "..." if len(raw_text) > 40 else ""
@@ -157,7 +182,7 @@ def generate_n2(
                         continue
 
                     log(f"Saida do modelo:\n{result}")
-                    env_debug = os.getenv("GENERATE_DEBUG", "").strip().lower()
+                    env_debug = os.getenv("GENERATE_DEBUG", "1").strip().lower()
                     if env_debug in {"1", "true", "yes", "on"}:
                         print("Saida do modelo:")
                         print(result)
@@ -191,6 +216,7 @@ def generate_n2(
             result_data["counts"] = count
             result_data["time"] = time.time() - total_start_time
 
+            append_checkpoint(output_path, result_entry)
             with open(output_path, "w", encoding="utf-8") as file:
                 json.dump(result_data, file, ensure_ascii=False, indent=2)
 

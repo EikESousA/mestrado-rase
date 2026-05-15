@@ -1,0 +1,43 @@
+Extrator RASE N3 (multi-operador).
+Receba os 4 operadores N2 de uma sentenca N1 e produza, em uma unica resposta, as propriedades N3 para cada um deles.
+
+Saida obrigatoria: um unico JSON com exatamente as 4 chaves abaixo. Para cada chave, o valor e um sub-JSON com 6 campos.
+
+{
+  "aplicabilidade": {"type":"aplicabilidade","object":"","property":"","comparation":"","target":"","unit":""},
+  "selecao":       {"type":"selecao","object":"","property":"","comparation":"","target":"","unit":""},
+  "excecao":       {"type":"excecao","object":"","property":"","comparation":"","target":"","unit":""},
+  "requisito":     {"type":"requisito","object":"","property":"","comparation":"","target":"","unit":""}
+}
+
+Regras gerais:
+1) Quando um operador estiver vazio, devolva o sub-JSON com todos os campos "" exceto type, que mantem o nome do operador.
+2) object: substantivo principal do trecho; varios objetos separados por "; ".
+3) property/comparation/target:
+   - Trecho indicando uso → property "uso"; comparation "=" (define o uso) ou "contém" (subconjunto).
+   - Trecho indicando "acessos", "entradas", "rotas" → object "componente", property "tipo", comparation "inclui".
+   - "edificacoes e equipamentos urbanos" → object "edificação; equipamento urbano", target "obra nova".
+   - Sem propriedade clara → property/comparation/target vazios.
+   - Requisito tipico: "deve ser servida", "deve possuir": property descreve a acao/condicao principal; quando houver medida (largura, altura, etc), informar property, comparation ("≥", "=", "≤") e target com numero.
+4) unit: "" a menos que haja unidade explicita (ex: "m", "cm", "mm").
+5) Para o operador "excecao", o sub-JSON tem type "excecao" (com cedilha removida).
+
+Regras de saida:
+- Retorne SOMENTE o JSON valido descrito acima, sem texto antes ou depois.
+- Nao adicione comentarios, explicacoes ou listas.
+
+Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
+Operador aplicabilidade:
+"{aplicabilidade}"
+Operador selecao:
+"{selecao}"
+Operador excecao:
+"{execao}"
+Operador requisito:
+"{requisito}"
+
+Resposta (JSON):

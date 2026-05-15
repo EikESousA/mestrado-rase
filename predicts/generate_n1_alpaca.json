@@ -1,4 +1,13 @@
 {
+  "meta": {
+    "model_id": "splitpierre/bode-alpaca-pt-br:13b-Q4_0",
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "repeat_penalty": 1.1,
+    "seed": 42,
+    "prompt_sha256": "de98d4b3b73631dca28f9251dc039836cc34413c224c91c85ec7ed75f5548def",
+    "code_git_sha": "d5fd10f9975c2b08d2537035d2d724f8c60365e3"
+  },
   "counts": 79,
   "datas": [
     {
@@ -73,25 +82,7 @@
       "text": "Nas edificações e equipamentos urbanos, todas as entradas, bem como as rotas de interligação às funções do edifício, devem ser acessíveis.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter entradas acessíveis.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Equipamentos urbanos devem ter entradas acessíveis.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Rotas de interligação às funções do edifício devem ser acessíveis.",
+          "text_n1": "Todas as entradas e rotas de interligação devem ser acessíveis em edificações e equipamentos urbanos.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -183,7 +174,7 @@
       "text": "A inclinação transversal da superfície deve ser de até 2 % para pisosinternos e de até 3 % para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5 %. Inclinações iguais ou superioresa 5 % são consideradas rampas e, portanto, devem atender a 6.6.",
       "texts_n1": [
         {
-          "text_n1": "A inclinação transversal da superfície deve ser de até 2% para pisos internos e de até 3% para pisos externos.",
+          "text_n1": "Pisos internos devem ter inclinacao transversal de no maximo 2%.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -192,7 +183,7 @@
           }
         },
         {
-          "text_n1": "2.",
+          "text_n1": "Pisos externos devem ter inclinacao transversal de no maximo 3%.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -201,7 +192,7 @@
           }
         },
         {
-          "text_n1": "A inclinação longitudinal da superfície deve ser inferior a 5%.",
+          "text_n1": "A inclinação longitudinal da superfície deve ser inferior a 5 %.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -210,16 +201,7 @@
           }
         },
         {
-          "text_n1": "3.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Inclinações iguais ou superiores a 5% são consideradas rampas e, portanto, devem atender a 6.6.",
+          "text_n1": "Inclinações iguais ou superiores a 5 % são consideradas rampas e, portanto, devem atender a 6.6.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -233,7 +215,7 @@
       "text": "Em reformas, pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5 %, conforme Tabela 7, sem avançar nas áreas de circulação transversal, e protegido lateralmente com elemento construído ou vegetação.",
       "texts_n1": [
         {
-          "text_n1": "Pode-se considerar o desnível máximo de 75 mm, tratado com inclinação máxima de 12,5%, conforme Tabela 7, sem avançar nas áreas de circulação transversal e protegido lateralmente com elemento construído ou vegetação.",
+          "text_n1": "Pode-se considerar o desnível máximo de 75 mm em reformas, tratado com inclinação máxima de 12,5%, sem avançar nas áreas de circulação transversal e protegido lateralmente com elemento construído ou vegetação.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -247,7 +229,7 @@
       "text": "As soleiras das portas ou vãos de passagem que apresentem desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.",
       "texts_n1": [
         {
-          "text_n1": "As soleiras das portas ou vãos de passagem que apresentem desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado.",
+          "text_n1": "As soleiras das portas ou vãos de passagem devem ter uma inclinação transversal de no máximo 2%.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -265,7 +247,7 @@
           }
         },
         {
-          "text_n1": "A parte do desnível deve ser vencida com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso.",
+          "text_n1": "Pisos internos devem ter uma inclinação transversal de no máximo 2%.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -283,7 +265,25 @@
           }
         },
         {
-          "text_n1": "Sem avançar sobre a área de circulação pública.",
+          "text_n1": "Pisos externos devem ter uma inclinação transversal de no máximo 3%.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "4.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "A parte do desnível deve ser vencida com uma rampa, e o restante da extensão pode permanecer como degrau.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -297,7 +297,7 @@
       "text": "A superfície das tampas deve estar nivelada com o piso adjacente, e eventuais frestas devem possuir dimensão máxima de 15 mm.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter superfícies niveladas com o piso adjacente, e qualquer fresta deve ter uma dimensão máxima de 15 mm.",
+          "text_n1": "Pisos internos devem ter superfícies niveladas com o piso adjacente, e eventuais frestas devem possuir dimensões máximas de 15 mm.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -311,7 +311,7 @@
       "text": "A sinalização visual e tátil no piso indica situações de risco e direção. Deve atender ao disposto em 5.4.6 e em normas específicas.",
       "texts_n1": [
         {
-          "text_n1": "Sentença 1: Sinalização visual e tátil no piso deve indicar situações de risco e direção.",
+          "text_n1": "Sentença 1: A sinalização visual e tátil no piso deve indicar situações de risco e direção.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -320,7 +320,7 @@
           }
         },
         {
-          "text_n1": "Sentença 2: A sinalização deve atender ao disposto em 5.4.6 e normas específicas.",
+          "text_n1": "Sentença 2: Deve atender ao disposto em 5.4.6 e em normas específicas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -366,7 +366,16 @@
       "text": "Nas áreas de resgate, deve ser previsto no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento, sendo no mínimo um por pavimento e um para cada escada e elevador de emergência. Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R. pode ser compartilhado.",
       "texts_n1": [
         {
-          "text_n1": "Nas áreas de resgate, deve haver um M.R. para cada 500 pessoas de lotação, por pavimento.",
+          "text_n1": "Nas áreas de resgate, deve haver um M.R.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "para cada 500 pessoas de lotação, por pavimento.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -384,7 +393,16 @@
           }
         },
         {
-          "text_n1": "Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R. pode ser compartilhado.",
+          "text_n1": "Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "pode ser compartilhado.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -434,7 +452,7 @@
           }
         },
         {
-          "text_n1": "Para inclinações superiores a 5%, deve ser atendido o descrito em 6.6.",
+          "text_n1": "Para inclinações superiores a 5 %, deve ser atendido o descrito em 6.6.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -484,7 +502,7 @@
           }
         },
         {
-          "text_n1": "Rampas devem ter inclinação conforme a Tabela 6.",
+          "text_n1": "Exceto por rampas em plateias, palcos e praias, todos os outros devem ter inclinação transversal de no máximo 2%.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -493,7 +511,7 @@
           }
         },
         {
-          "text_n1": "Exceto rampas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).",
+          "text_n1": "Rampas em plateias, palcos e praias devem ter inclinação transversal de no máximo 3%.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -562,7 +580,34 @@
           }
         },
         {
-          "text_n1": "As rampas devem ter uma inclinação transversal de no máximo 2% para pisos internos e no máximo 3% para pisos externos.",
+          "text_n1": "As rampas devem ter elementos de segurança, como guarda-corpo e corrimãos, guias de balizamento com altura mínima de 0,05 m, instalados ou construídos nos limites da largura da rampa, conforme Figura 72.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "3.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "4.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "5.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -576,25 +621,7 @@
       "text": "A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm. Deve atender às especificações da Figura 72 e ser garantida em rampas e em escadas.",
       "texts_n1": [
         {
-          "text_n1": "A guia de balizamento pode ser de alvenaria ou outro material alternativo, com a mesma finalidade, com altura mínima de 5 cm.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "2.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Deve atender às especificações da Figura 72 e ser garantida em rampas e em escadas.",
+          "text_n1": "Pisos internos devem ter uma guia de balizamento de alvenaria ou outro material alternativo com altura mínima de 5 cm, que deve atender às especificações da Figura 72 e ser garantida em rampas e escadas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -608,7 +635,16 @@
       "text": "Quando houver porta nos patamares, sua área de varredura não pode interferir na dimensão mínima do patamar.",
       "texts_n1": [
         {
-          "text_n1": "Por que os patamares devem ter uma porta? Suas áreas de varredura não devem interferir na dimensão mínima do patamar.",
+          "text_n1": "Por que a porta deve ser instalada em um patamar?.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "A área de varredura da porta não deve interferir na dimensão mínima do patamar.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -622,7 +658,7 @@
       "text": "Nas rotas acessíveis não podem ser utilizados degraus e escadas fixas com espelhos vazados. Quando houver bocel ou espelho inclinado, a projeção da aresta pode avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.",
       "texts_n1": [
         {
-          "text_n1": "Pisos acessíveis não devem ter degraus e escadas fixas com espelhos vazados.",
+          "text_n1": "Pisos acessíveis não devem ter degraus ou escadas fixas com espelhos vazados.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -631,7 +667,7 @@
           }
         },
         {
-          "text_n1": "Espelhos ou bocel podem avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.",
+          "text_n1": "Espelhos e bocel podem avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -677,7 +713,7 @@
       "text": "Em construções novas, o primeiro e o último degraus de um lance deescada devem distar no mínimo 0,30 m da área de circulação adjacente e devem estar sinalizados de acordo com o disposto na Seção 5.",
       "texts_n1": [
         {
-          "text_n1": "Pisos novos: degraus de escada devem estar no mínimo 0,30 m da área de circulação e devem ser sinalizados de acordo com a Seção 5.",
+          "text_n1": "Pisos novos: degraus de escada devem estar no mínimo 0,30 m da área de circulação e devem ser sinalizados conforme a seção 5.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -894,6 +930,15 @@
             "selection": "",
             "exception": ""
           }
+        },
+        {
+          "text_n1": "Corrimões intermediarias devem ser instaladas em escadas ou rampas com largura igual ou superior a 2,40 m.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
         }
       ]
     },
@@ -901,7 +946,16 @@
       "text": "Em escadas e degraus é permitida a instalação de apenas um corrimão duplo e com duas alturas, a 0,92 m e a 0,70 m do piso, respeitando a largura mínima de 1,20 m, em ambos os lados, conforme Figura 78.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter corrimão dupla com alturas de 0,92 m e 0,70 m, respeitando largura mínima de 1,20 m, conforme Figura 78.",
+          "text_n1": "Pisos internos devem ter corrimão dupla com alturas de 0,92 m e 0,70 m do piso, respeitando a largura mínima de 1,20 m.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "Escadas e degraus podem instalar apenas uma corrimão dupla com essas alturas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -947,7 +1001,7 @@
       "text": "No deslocamento frontal, quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta, e quando abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta, conforme a Figura 81. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter inclinacao transversal de no maximo 2%.",
+          "text_n1": "Sentença 1: A inclinação transversal da superfície deve ser de até 2% para pisos internos e de até 3% para pisos externos.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -956,7 +1010,7 @@
           }
         },
         {
-          "text_n1": "Pisos externos devem ter inclinacao transversal de no maximo 3%.",
+          "text_n1": "Sentença 2: Quando as portas abrirem no sentido do deslocamento do usuário, deve existir um espaço livre de 0,30 m entre a parede e a porta.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -965,7 +1019,7 @@
           }
         },
         {
-          "text_n1": "Existir um espaço livre de 0,30 m entre a parede e a porta quando as portas abrirem no sentido do deslocamento do usuário.",
+          "text_n1": "Sentença 3: Quando as portas abrirem no sentido oposto ao deslocamento do usuário, deve existir um espaço livre de 0,60 m, contíguo à maçaneta, conforme a Figura 81.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -974,16 +1028,7 @@
           }
         },
         {
-          "text_n1": "Existir um espaço livre de 0,60 m, contíguo à maçaneta, quando as portas abrirem no sentido oposto ao deslocamento do usuário.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor devem ser garantidos conforme 6.11.2.9 e 6.11.2.10.",
+          "text_n1": "Sentença 4: A garantia da existência destes espaços livres deve ser feita através de equipamento de automação da abertura e fechamento das portas por meio de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1084,7 +1129,7 @@
       "text": "Quando as portas forem providas de dispositivos de acionamento pelo usuário, estes devem estar instalados fora da área de abertura da folha da porta e à altura de alcance entre 0,80 m e 1,00 m.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter inclinacao transversal de no maximo 2%.",
+          "text_n1": "Por que as portas devem ter dispositivos de acionamento instalados fora da área de abertura da folha da porta?.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1093,16 +1138,7 @@
           }
         },
         {
-          "text_n1": "Pisos externos devem ter inclinacao transversal de no maximo 3%.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Dispositivos de acionamento pelo usuário devem estar instalados fora da área de abertura da folha da porta e à altura de alcance entre 0,80 m e 1,00 m.",
+          "text_n1": "As portas devem ter dispositivos de acionamento instalados fora da área de abertura da folha da porta, entre 0,80 m e 1,00 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1125,7 +1161,16 @@
           }
         },
         {
-          "text_n1": "Os trilhos ou as guias inferiores devem estar nivelados com a superfície do piso, e eventuais frestas resultantes da guia inferior devem ter largura de no máximo 15 mm.",
+          "text_n1": "Fresta resultante deve ser de no máximo 15 mm.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "Guias inferiores devem estar niveladas com a superfície do piso.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1139,7 +1184,25 @@
       "text": "A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo, e na circulação dos pedestres.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter sinalização vertical das vagas reservadas que não interfere com áreas de acesso ao veículo ou circulação de pedestres.",
+          "text_n1": "Sentença 1: A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com as áreas de acesso ao veículo, e na circulação dos pedestres.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "Sentença 2: Não deve haver interferência entre a sinalização vertical das vagas reservadas e as áreas de acesso ao veículo.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "Sentença 3: A sinalização vertical das vagas reservadas deve estar posicionada de maneira a não interferir com a circulação dos pedestres.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1176,7 +1239,7 @@
       "text": "A circulação vertical pode ser realizada por escadas, rampas ou equipamentos eletromecânicos e é considerada acessível quando atender no mínimo a duas formas de deslocamento vertical.",
       "texts_n1": [
         {
-          "text_n1": "Escadas, rampas e equipamentos eletromecânicos podem ser usados para realizar a circulação vertical.",
+          "text_n1": "Escadas, rampas e equipamentos eletromecânicos são métodos para a circulação vertical.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1194,7 +1257,7 @@
           }
         },
         {
-          "text_n1": "A circulação vertical deve atender ao mínimo a duas formas de deslocamento vertical.",
+          "text_n1": "A circulação vertical deve ser considerada acessível quando atender ao menos duas formas de deslocamento vertical.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1208,16 +1271,7 @@
       "text": "Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos com desníveis superiores a 20 mm devem ser considerados como degraus.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Desníveis superiores a 20 mm em pisos externos devem ser considerados como degraus.",
+          "text_n1": "Pisos internos com desníveis superiores a 20 mm devem ser considerados como degraus, de acordo com 6.7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1231,7 +1285,7 @@
       "text": "As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico. As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.",
       "texts_n1": [
         {
-          "text_n1": "Por que as portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga devem ser dotadas de barras antipânico? As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.",
+          "text_n1": "Por que as portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga devem ser dotadas de barras antipânico?.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1254,7 +1308,7 @@
       "text": "As escadas devem ter no mínimo um patamar a cada 3,20 m de desnível e sempre que houver mudança de direção.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter uma escada a cada 3,20 m de desnível.",
+          "text_n1": "Pisos internos devem ter um patamar a cada 3,20 m de desnível.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1263,7 +1317,7 @@
           }
         },
         {
-          "text_n1": "Escadas devem ser adicionadas sempre que houver mudança de direção.",
+          "text_n1": "Escadas devem ter mudanças de direção sempre que houver mudança de desnível.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1277,7 +1331,7 @@
       "text": "Os corrimãos laterais devem ser contínuos, sem interrupção nos patamares das escadas e rampas, e devem prolongar-se paralelamente ao patamar, pelo menos por 0,30 m nas extremidades, sem interferir com áreas de circulação ou prejudicar a  vazão, conforme Figura 76.",
       "texts_n1": [
         {
-          "text_n1": "Os corrimãos laterais devem ser contínuos e prolongar-se paralelamente ao patamar.",
+          "text_n1": "Os corrimãos laterais devem ser contínuos e prolongar-se paralelamente ao patamar por pelo menos 0,30 m nas extremidades.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1295,7 +1349,7 @@
           }
         },
         {
-          "text_n1": "Os corrimãos laterais não devem interromper áreas de circulação ou prejudicar a vazão, conforme Figura 76.",
+          "text_n1": "Não interferir com áreas de circulação ou prejudicar a vazão, conforme Figura 76.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1327,7 +1381,7 @@
           }
         },
         {
-          "text_n1": "Bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°) devem ser implantados em edificações e equipamentos urbanos existentes, sendo no mínimo um bolsão a cada 15,00 m.",
+          "text_n1": "Bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°) devem ser implantados a cada 15,0 m.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1366,6 +1420,15 @@
             "selection": "",
             "exception": ""
           }
+        },
+        {
+          "text_n1": "São aceitos níveis inferiores de iluminância para ambientes específicos, conforme normas técnicas específicas.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
         }
       ]
     },
@@ -1391,7 +1454,7 @@
           }
         },
         {
-          "text_n1": "Se não for possível adaptar todas as entradas, o maior número de acessos deve ser adaptado.",
+          "text_n1": "Se não for possível tornar todas as entradas acessíveis, o maior número de entradas deve ser adaptado.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1464,7 +1527,7 @@
       "text": "Quando existir porta giratória, deve ser prevista, junto a esta, outraentrada que garanta condições de acessibilidade. Portas giratórias devem ser evitadas, mas quando forem instaladas, as dimensões entre as pás devem ser compatíveis com as medidas necessárias para o deslocamento de uma pessoa em cadeira de rodas e devem ainda ser dotadas de sistema de segurança para rebatimento das pásem caso de sinistro.",
       "texts_n1": [
         {
-          "text_n1": "Por que existir porta giratória, deve ser prevista, junto a esta, outra entrada que garante condições de acessibilidade.",
+          "text_n1": "Portas giratórias devem ser instaladas com dimensões compatíveis com as medidas necessárias para o deslocamento de uma pessoa em cadeira de rodas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1473,7 +1536,16 @@
           }
         },
         {
-          "text_n1": "Portas giratórias devem ser evitadas, mas quando forem instaladas, as dimensões entre as pás devem ser compatíveis com as medidas necessárias para o deslocamento de uma pessoa em cadeira de rodas e devem ainda ser dotadas de sistema de segurança para rebatimento das pás em caso de sinistro.",
+          "text_n1": "2.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "As portas giratórias devem ter um sistema de segurança para rebatimento das pás em caso de sinistro.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1487,7 +1559,7 @@
       "text": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68. Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.",
       "texts_n1": [
         {
-          "text_n1": "Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68.",
+          "text_n1": "Pisos internos devem ter inclinação transversal de no máximo 2%.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1496,7 +1568,7 @@
           }
         },
         {
-          "text_n1": "Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.",
+          "text_n1": "Pisos externos devem ter inclinação transversal de no máximo 3%.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1510,7 +1582,7 @@
       "text": "Nas áreas de circulação, quando o desnível for lateral, observar o descrito em 4.3.7.",
       "texts_n1": [
         {
-          "text_n1": "Por que as áreas de circulação devem ter um desnível lateral observado em 4.3.7?.",
+          "text_n1": "Pode-se observar o desnível lateral nas áreas de circulação conforme descrito em 4.3.7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1533,25 +1605,7 @@
           }
         },
         {
-          "text_n1": "Grelhas e juntas de dilatação nos pisos internos devem ser instaladas perpendicularmente ao fluxo principal ou ter vãos quadriculados/circulares, quando houver fluxos em mais de um sentido de circulação.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Pisos externos devem ter grelhas e juntas de dilatação fora do fluxo principal de circulação.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Grelhas e juntas de dilatação nos pisos externos devem ser instaladas perpendicularmente ao fluxo principal ou ter vãos quadriculados/circulares, quando houver fluxos em mais de um sentido de circulação.",
+          "text_n1": "Quando não possível tecnicamente, os vãos devem ter dimensão máxima de 15 mm, ser instalados perpendicularmente ao fluxo principal ou ter vãos de formato quadriculado/circular, quando houver fluxos em mais de um sentido de circulação.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1583,7 +1637,7 @@
           }
         },
         {
-          "text_n1": "Quando existentes, eles devem ser firmemente fixados ao piso, embutidos ou sobrepostos e nivelados de maneira que eventual desnível não exceda 5 mm.",
+          "text_n1": "Quando existentes, devem ser firmemente fixados ao piso, embutidos ou sobrepostos e nivelados de maneira que eventual desnível não exceda 5 mm.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1597,7 +1651,7 @@
       "text": "Quando as rotas de fuga incorporarem escadas de emergência ou elevadores de emergência, devem ser previstas áreas de resgate (6.4.5) com espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas (5.5.2.2), dimensionadas de acordo com o M.R.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter inclinação transversal de no máximo 2%.",
+          "text_n1": "As rotas de fuga devem incluir escadas de emergência ou elevadores de emergência.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1606,7 +1660,7 @@
           }
         },
         {
-          "text_n1": "Pisos externos devem ter inclinação transversal de no máximo 3%.",
+          "text_n1": "2.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1615,7 +1669,25 @@
           }
         },
         {
-          "text_n1": "Áreas de resgate com espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas devem ser previstas.",
+          "text_n1": "Áreas de resgate devem ser previstas para pessoas em cadeiras de rodas.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "3.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "Espaço reservado e demarcado deve ser dimensionado de acordo com o M.R.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1629,7 +1701,43 @@
       "text": "A área de resgate deve: a) estar localizada fora do fluxo principal de circulação; b) garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; c) ser ventilada; d) ser provida de dispositivo de emergência ou intercomunicador; e) deve ter o M.R. sinalizado conforme 5.5.2.2.",
       "texts_n1": [
         {
-          "text_n1": "a) A área de resgate deve estar localizada fora do fluxo principal de circulação. b) A área de resgate deve garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3. c) A área de resgate deve ser ventilada. d) A área de resgate deve ter um dispositivo de emergência ou intercomunicador. e) A área de resgate deve ter o M.R. sinalizado conforme 5.5.2.2.",
+          "text_n1": "a) A área de resgate deve estar localizada fora do fluxo principal de circulação.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "b) A área de resgate deve garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3. c) A área de resgate deve ser ventilada.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "d) A área de resgate deve ter um dispositivo de emergência ou intercomunicador.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "e) A área de resgate deve ter o M.R.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "sinalizado conforme 5.5.2.2.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1673,24 +1781,6 @@
             "selection": "",
             "exception": ""
           }
-        },
-        {
-          "text_n1": "Inclinações superiores a 8,33% podem ser utilizadas em reformas.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "A Tabela 7 lista as possibilidades de soluções que atendem à Tabela 6.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
         }
       ]
     },
@@ -1699,6 +1789,15 @@
       "texts_n1": [
         {
           "text_n1": "Pisos internos devem ter uma inclinação transversal de no máximo 2%.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "2.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1721,25 +1820,7 @@
       "text": "Toda rampa deve possuir corrimão de duas alturas em cada lado, conforme demonstrado na Figura 72.",
       "texts_n1": [
         {
-          "text_n1": "Todas as rampas devem ter uma corrimão de duas alturas em cada lado.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "2.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "A inclinação transversal da superfície deve ser de até 2% para pisos internos e de até 3% para pisos externos.",
+          "text_n1": "Pisos internos devem ter uma corrimão de duas alturas em cada lado, conforme mostrado na Figura 72.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1753,7 +1834,7 @@
       "text": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter uma inclinação transversal de no máximo 2%.",
+          "text_n1": "Pisos internos devem ter inclinação transversal de no máximo 10 cm.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1762,16 +1843,7 @@
           }
         },
         {
-          "text_n1": "Pisos externos devem ter uma inclinação transversal de no máximo 3%.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "A projeção dos corrimãos pode incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.",
+          "text_n1": "Corrimãos podem incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1982,7 +2054,7 @@
           }
         },
         {
-          "text_n1": "Não deve haver interrupção nos patamares das escadas e rampas.",
+          "text_n1": "Não interferir com áreas de circulação ou prejudicar a vazão, conforme Figura 76.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -1996,7 +2068,7 @@
       "text": "Em edificações existentes, onde for impraticável promover o prolongamento do corrimão no sentido do caminhamento, este pode ser feito ao longo da área de circulação ou fixado na parede adjacente.",
       "texts_n1": [
         {
-          "text_n1": "Pisos existentes: Prolongar o corrimão é possível em áreas de caminhamento, se for prático; pode ser feito ao longo da área de circulação ou fixado na parede adjacente.",
+          "text_n1": "Pisos existentes: Prolongar o corrimão é possível se for impraticável para caminhar; pode ser feito ao longo da área de circulação ou fixado na parede adjacente.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2042,7 +2114,7 @@
           }
         },
         {
-          "text_n1": "Deve respeitar os demais itens de segurança desta Norma, como dimensionamento, corrimãos e sinalização.",
+          "text_n1": "Devem respeitar os demais itens de segurança da Norma, como dimensionamento, corrimãos e sinalização.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2056,7 +2128,16 @@
       "text": "Para a utilização das portas em sequência, é necessário um espaço de transposição com um círculo de 1,50 m de diâmetro, somado às dimensões da largura das portas (y), exemplificado na Figura 80, além dos 0,60 m ao lado da maçaneta de cada porta, para permitir a aproximação de uma pessoa em cadeira de rodas.",
       "texts_n1": [
         {
-          "text_n1": "Por que as portas devem ter um espaço de transposição com um círculo de 1,50 m de diâmetro? As portas devem ter um espaço de transposição com um círculo de 1,50 m de diâmetro para permitir a aproximação de uma pessoa em cadeira de rodas.",
+          "text_n1": "Por que as portas devem ter um espaço de transposição com um círculo de 1,50 m de diâmetro?.",
+          "operators_n2": {
+            "requeriments": "",
+            "aplicability": "",
+            "selection": "",
+            "exception": ""
+          }
+        },
+        {
+          "text_n1": "As dimensões da largura das portas (y) e a distância de 0,60 m ao lado da maçaneta de cada porta devem ser adicionadas para permitir a aproximação de uma pessoa em cadeira de rodas.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2070,7 +2151,7 @@
       "text": "No deslocamento lateral, deve ser garantido 0,60 m de espaço livre de cada um dos lados, conforme Figura 82. Na impraticabilidade da existência destes espaços livres, deve-se garantir equipamento de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter inclinacao transversal de no maximo 2%.",
+          "text_n1": "Sentença 1: A inclinação transversal da superfície deve ser de até 2% para pisos internos e de até 3% para pisos externos.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2079,7 +2160,7 @@
           }
         },
         {
-          "text_n1": "Pisos externos devem ter inclinacao transversal de no maximo 3%.",
+          "text_n1": "Sentença 2: No deslocamento lateral, deve-se garantir 0,60 m de espaço livre de cada um dos lados, conforme a Figura 82.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2088,16 +2169,7 @@
           }
         },
         {
-          "text_n1": "0,60 m de espaço livre deve ser garantido de cada lado, conforme Figura 82.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Equipamento de automação da abertura e fechamento das portas deve ser garantido através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
+          "text_n1": "Sentença 3: Na impossibilidade da existência destes espaços livres, deve-se garantir equipamentos de automação da abertura e fechamento das portas através de botoeira ou sensor, conforme 6.11.2.9 e 6.11.2.10.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2125,7 +2197,7 @@
       "text": "As maçanetas das portas devem ser do tipo alavanca, instaladas a uma altura entre 0,80 m e 1,10 m.",
       "texts_n1": [
         {
-          "text_n1": "Porteiras devem ter maçanetas de alavanca instaladas a uma altura de 0,80-1,10 metros.",
+          "text_n1": "Porteiras devem ter maçanetas de alavanca instaladas a uma altura de 0,80 a 1,10 metros.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2162,34 +2234,7 @@
       "text": "Quando as portas forem acionadas por sensores ópticos, estes devem estar ajustados para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas. Deve também ser previsto dispositivo de segurança que impeça o fechamento da porta sobre a pessoa.",
       "texts_n1": [
         {
-          "text_n1": "Por exemplo: Entrada: Quando as portas são acionadas por sensores ópticos, elas devem estar ajustadas para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Também deve ser previsto dispositivo de segurança que impede o fechamento da porta sobre a pessoa.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Saída: Sensores ópticos devem estar ajustados para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Dispositivo de segurança deve ser previsto para evitar o fechamento da porta sobre a pessoa.",
+          "text_n1": "Por exemplo:.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2244,16 +2289,7 @@
       "text": "As vagas para estacionamento para idosos devem ser posicionadas próximas das entradas, garantindo o menor percurso de deslocamento.",
       "texts_n1": [
         {
-          "text_n1": "Pisos internos devem ter inclinacao transversal de no maximo 2%.",
-          "operators_n2": {
-            "requeriments": "",
-            "aplicability": "",
-            "selection": "",
-            "exception": ""
-          }
-        },
-        {
-          "text_n1": "Pisos externos devem ter inclinacao transversal de no maximo 3%.",
+          "text_n1": "Pisos internos devem ter vagas para estacionamento para idosos próximas às entradas, garantindo o menor percurso de deslocamento.",
           "operators_n2": {
             "requeriments": "",
             "aplicability": "",
@@ -2287,5 +2323,5 @@
       ]
     }
   ],
-  "time": 104.55244016647339
+  "time": 1205.0588583946228
 }

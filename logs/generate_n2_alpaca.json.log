@@ -74,3 +74,1447 @@ requisito: devem ser servidas por uma ou mais rotas acessíveis
 [2026-01-07 18:14:19] Texto 5 concluido (0.80s)
 [2026-01-07 18:14:19] Iniciando Texto 6: A inclinação transversal da superfície d...
 [2026-01-07 18:14:19] Chamando modelo (texto 6, sentenca 1, tentativa 1)
+[2026-05-15 00:02:24] Inicio geracao N2. Modelo=splitpierre/bode-alpaca-pt-br:13b-Q4_0 Entrada=predicts/generate_n1_alpaca.json Saida=predicts/generate_n2_alpaca.json
+[2026-05-15 00:02:24] Total de textos: 79 (ja processados: 0)
+[2026-05-15 00:02:24] Iniciando Texto 1: As áreas de qualquer espaço ou edificaçã...
+[2026-05-15 00:02:24] Chamando modelo (texto 1, sentenca 1, tentativa 1)
+[2026-05-15 00:03:01] Saida do modelo:
+aplicabilidade: Áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas por uma ou mais rotas acessíveis
+[2026-05-15 00:03:01] Chamando modelo (texto 1, sentenca 2, tentativa 1)
+[2026-05-15 00:03:08] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+[2026-05-15 00:03:08] Chamando modelo (texto 1, sentenca 3, tentativa 1)
+[2026-05-15 00:03:18] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: de uso público ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+[2026-05-15 00:03:18] Chamando modelo (texto 1, sentenca 4, tentativa 1)
+[2026-05-15 00:03:29] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+[2026-05-15 00:03:29] Chamando modelo (texto 1, sentenca 5, tentativa 1)
+[2026-05-15 00:03:38] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+[2026-05-15 00:03:38] Chamando modelo (texto 1, sentenca 6, tentativa 1)
+[2026-05-15 00:03:46] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+[2026-05-15 00:03:46] Chamando modelo (texto 1, sentenca 7, tentativa 1)
+[2026-05-15 00:04:10] Saida do modelo:
+aplicabilidade: Áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+
+áreas de uso restrito: edificações residenciais multifamiliares, condomínios e conjuntos habitacionais
+selecao: não necessitam atender às condições de acessibilidade
+execao: ""
+requisito: devem estar conectadas às rotas acessíveis
+[2026-05-15 00:04:10] Texto 1 concluido (105.54s)
+[2026-05-15 00:04:10] Iniciando Texto 2: Nas edificações e equipamentos urbanos,...
+[2026-05-15 00:04:10] Chamando modelo (texto 2, sentenca 1, tentativa 1)
+[2026-05-15 00:04:25] Saida do modelo:
+aplicabilidade: Todas as entradas e rotas de interligação em edificações e equipamentos urbanos devem ser acessíveis.
+selecao: Edificações e equipamentos urbanos.
+execao: ""
+requisito: Devem ser acessíveis todas as entradas e rotas de interligação em edificações e equipamentos urbanos.
+[2026-05-15 00:04:25] Texto 2 concluido (15.54s)
+[2026-05-15 00:04:25] Iniciando Texto 3: Os acessos devem ser vinculados através...
+[2026-05-15 00:04:25] Chamando modelo (texto 3, sentenca 1, tentativa 1)
+[2026-05-15 00:04:43] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:04:43] Chamando modelo (texto 3, sentenca 2, tentativa 1)
+[2026-05-15 00:04:50] Saida do modelo:
+aplicabilidade: Espaços e edificios
+selecao: uso publico ou coletivo
+execao: Nenhum
+requisito: Rotas acessíveis
+[2026-05-15 00:04:50] Chamando modelo (texto 3, sentenca 3, tentativa 1)
+[2026-05-15 00:05:02] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:05:02] Texto 3 concluido (36.46s)
+[2026-05-15 00:05:02] Iniciando Texto 4: A instalação do dispositivo acessível pa...
+[2026-05-15 00:05:02] Chamando modelo (texto 4, sentenca 1, tentativa 1)
+[2026-05-15 00:05:23] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:05:23] Chamando modelo (texto 4, sentenca 2, tentativa 1)
+[2026-05-15 00:05:33] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:05:33] Chamando modelo (texto 4, sentenca 3, tentativa 1)
+[2026-05-15 00:05:49] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:05:49] Texto 4 concluido (47.77s)
+[2026-05-15 00:05:49] Iniciando Texto 5: Deve ser prevista a sinalização informat...
+[2026-05-15 00:05:49] Chamando modelo (texto 5, sentenca 1, tentativa 1)
+[2026-05-15 00:06:05] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:06:05] Texto 5 concluido (15.15s)
+[2026-05-15 00:06:05] Iniciando Texto 6: A inclinação transversal da superfície d...
+[2026-05-15 00:06:05] Chamando modelo (texto 6, sentenca 1, tentativa 1)
+[2026-05-15 00:06:17] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de até 2%
+execao: ""
+requisito: Devem ter inclinacão transversal de no maximo 2%
+[2026-05-15 00:06:17] Chamando modelo (texto 6, sentenca 2, tentativa 1)
+[2026-05-15 00:06:32] Saida do modelo:
+aplicabilidade: Pisos externos
+selecao: Inclinação transversal de no maximo 3%
+execao: Nenhum
+requisito: Inclinações iguais ou superiores a 5% devem atender a 6,6
+[2026-05-15 00:06:32] Chamando modelo (texto 6, sentenca 3, tentativa 1)
+[2026-05-15 00:06:44] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:06:44] Chamando modelo (texto 6, sentenca 4, tentativa 1)
+[2026-05-15 00:06:58] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:06:58] Texto 6 concluido (53.48s)
+[2026-05-15 00:06:58] Iniciando Texto 7: Em reformas, pode-se considerar o desnív...
+[2026-05-15 00:06:58] Chamando modelo (texto 7, sentenca 1, tentativa 1)
+[2026-05-15 00:07:16] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos devem ser servidos de uma ou mais rotas acessíveis.
+execao: ""
+requisito: Devem ser servidas de uma ou mais rotas acessíveis.
+[2026-05-15 00:07:16] Texto 7 concluido (17.90s)
+[2026-05-15 00:07:16] Iniciando Texto 8: As soleiras das portas ou vãos de passag...
+[2026-05-15 00:07:16] Chamando modelo (texto 8, sentenca 1, tentativa 1)
+[2026-05-15 00:08:22] Ainda aguardando resposta do modelo (66s)...
+[2026-05-15 00:08:39] Saida do modelo:
+aplicabilidade: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+selecao: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+execao: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com r
+[2026-05-15 00:08:39] Chamando modelo (texto 8, sentenca 2, tentativa 1)
+[2026-05-15 00:09:30] Saida do modelo:
+aplicabilidade: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+requisito: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+[2026-05-15 00:09:30] Chamando modelo (texto 8, sentenca 3, tentativa 1)
+[2026-05-15 00:10:07] Saida do modelo:
+aplicabilidade: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7.
+selecao: Pisos internos devem ter uma inclinação transversal de no máximo 2%.
+execao: ""
+requisito: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7.
+[2026-05-15 00:10:07] Chamando modelo (texto 8, sentenca 4, tentativa 1)
+[2026-05-15 00:11:00] Saida do modelo:
+aplicabilidade: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+requisito: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+[2026-05-15 00:11:00] Chamando modelo (texto 8, sentenca 5, tentativa 1)
+[2026-05-15 00:11:35] Saida do modelo:
+aplicabilidade: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+selecao: Pisos externos devem ter uma inclinação transversal de no máximo 3%.
+[2026-05-15 00:11:35] Chamando modelo (texto 8, sentenca 6, tentativa 1)
+[2026-05-15 00:12:25] Saida do modelo:
+aplicabilidade: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+requisito: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7. Parte do desnível deve ser vencido com rampa, e o restante da extensão pode permanecer como degrau, desde que associado, no mínimo em um dos lados, a uma barra de apoio horizontal ou vertical, com comprimento mínimo de 0,30 m e com seu eixo posicionado a 0,75 m de altura do piso, sem avançar sobre a área de circulação pública.
+[2026-05-15 00:12:25] Chamando modelo (texto 8, sentenca 7, tentativa 1)
+[2026-05-15 00:12:56] Saida do modelo:
+aplicabilidade: As soleiras das portas ou vãos de passagem que apresentam desníveis de até no máximo um degrau devem ter parte de sua extensão substituída por rampa com largura mínima de 0,90 m e com inclinação em função do desnível apresentado e atendendo aos parâmetros estabelecidos nas Tabelas 6 ou 7.
+selecao: A parte do desnível deve ser vencida com uma rampa, e o restante da extensão pode permanecer como degrau.
+execao: ""
+requisito: A parte do desnível deve ser vencida com uma rampa, e o restante da extensão pode permanecer como degrau.
+[2026-05-15 00:12:56] Texto 8 concluido (340.23s)
+[2026-05-15 00:12:56] Iniciando Texto 9: A superfície das tampas deve estar nivel...
+[2026-05-15 00:12:56] Chamando modelo (texto 9, sentenca 1, tentativa 1)
+[2026-05-15 00:13:08] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: superfícies niveladas
+execao: eventuais frestas
+requisito: dimensões máximas de 15 mm
+[2026-05-15 00:13:08] Texto 9 concluido (11.54s)
+[2026-05-15 00:13:08] Iniciando Texto 10: A sinalização visual e tátil no piso ind...
+[2026-05-15 00:13:08] Chamando modelo (texto 10, sentenca 1, tentativa 1)
+[2026-05-15 00:13:24] Saida do modelo:
+aplicabilidade: Sinalização visual e tátil no piso
+selecao: Situações de risco e direção
+execao: Devem atender ao disposto em 5.4.6 e em normas específicas
+requisito: Indicar situações de risco e direção
+[2026-05-15 00:13:24] Chamando modelo (texto 10, sentenca 2, tentativa 1)
+[2026-05-15 00:13:36] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:13:36] Texto 10 concluido (28.74s)
+[2026-05-15 00:13:36] Iniciando Texto 11: Quando em ambientes fechados, as rotas d...
+[2026-05-15 00:13:36] Chamando modelo (texto 11, sentenca 1, tentativa 1)
+[2026-05-15 00:13:54] Saida do modelo:
+aplicabilidade: Em ambientes fechados
+selecao: Pisos internos devem ter inclinacao transversal de no maximo 2%
+execao: Não existem rotas acessiveis
+requisito: As rotas de fuga devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898
+[2026-05-15 00:13:54] Chamando modelo (texto 11, sentenca 2, tentativa 1)
+[2026-05-15 00:14:22] Saida do modelo:
+aplicabilidade: Em ambientes fechados, as rotas de fuga devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.
+selecao: Pisos externos devem ter inclinacao transversal de no maximo 3%.
+execao: ""
+requisito: As rotas de fuga em ambientes fechados devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.
+[2026-05-15 00:14:22] Chamando modelo (texto 11, sentenca 3, tentativa 1)
+[2026-05-15 00:14:54] Saida do modelo:
+aplicabilidade: As rotas de fuga em ambientes fechados devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.
+selecao: As rotas de fuga em ambientes fechados devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.
+execao: ""
+requisito: As rotas de fuga em ambientes fechados devem ser sinalizadas conforme o disposto na Seção 5 e iluminadas com dispositivos de balizamento de acordo com o estabelecido na ABNT NBR 10898.
+[2026-05-15 00:14:54] Texto 11 concluido (77.36s)
+[2026-05-15 00:14:54] Iniciando Texto 12: Nas áreas de resgate, deve ser previsto...
+[2026-05-15 00:14:54] Chamando modelo (texto 12, sentenca 1, tentativa 1)
+[2026-05-15 00:15:05] Saida do modelo:
+aplicabilidade: Áreas de resgate
+selecao: Um M.R. por 500 pessoas de lotação, por pavimento
+execao: Nenhum
+requisito: Por cada escada e elevador de emergência
+[2026-05-15 00:15:05] Chamando modelo (texto 12, sentenca 2, tentativa 1)
+[2026-05-15 00:15:21] Saida do modelo:
+aplicabilidade: As áreas de resgate
+selecao: deve ser previsto no mínimo um M.R. a cada 500 pessoas de lotação, por pavimento
+execao: ""
+requisito: por pavimento e por escada/elevador de emergência
+[2026-05-15 00:15:21] Chamando modelo (texto 12, sentenca 3, tentativa 1)
+[2026-05-15 00:15:30] Saida do modelo:
+aplicabilidade: Áreas de resgate
+selecao: M.R. por 500 pessoas de lotação, por pavimento
+execao: ""
+requisito: M.R. a cada escada e elevador de emergência
+[2026-05-15 00:15:30] Chamando modelo (texto 12, sentenca 4, tentativa 1)
+[2026-05-15 00:15:49] Saida do modelo:
+aplicabilidade: As áreas de resgate devem ser servidas por um ou mais M.R. a cada 500 pessoas de lotação, por pavimento.
+selecao: Se a antecâmara das escadas e a dos elevadores de emergência forem comuns, o quantitativo de M.R. pode ser compartilhado.
+execao: ""
+requisito: Um M.R. por pavimento e um para cada escada e elevador de emergência.
+[2026-05-15 00:15:49] Chamando modelo (texto 12, sentenca 5, tentativa 1)
+[2026-05-15 00:15:59] Saida do modelo:
+aplicabilidade: As áreas de resgate
+selecao: deve ter um M.R. a cada 500 pessoas de lotação, por pavimento
+execao: ""
+requisito: por pavimento e por escada e elevador de emergência
+[2026-05-15 00:15:59] Texto 12 concluido (65.05s)
+[2026-05-15 00:15:59] Iniciando Texto 13: Recomenda-se prever uma área de descanso...
+[2026-05-15 00:15:59] Chamando modelo (texto 13, sentenca 1, tentativa 1)
+[2026-05-15 00:16:21] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos devem ser servidos por uma ou mais rotas acessíveis.
+execao: Nenhum
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:16:21] Chamando modelo (texto 13, sentenca 2, tentativa 1)
+[2026-05-15 00:16:35] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:16:35] Chamando modelo (texto 13, sentenca 3, tentativa 1)
+[2026-05-15 00:16:47] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:16:47] Chamando modelo (texto 13, sentenca 4, tentativa 1)
+[2026-05-15 00:16:58] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:16:58] Chamando modelo (texto 13, sentenca 5, tentativa 1)
+[2026-05-15 00:17:14] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:17:14] Chamando modelo (texto 13, sentenca 6, tentativa 1)
+[2026-05-15 00:17:25] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:17:25] Chamando modelo (texto 13, sentenca 7, tentativa 1)
+[2026-05-15 00:17:41] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:17:41] Texto 13 concluido (102.05s)
+[2026-05-15 00:17:41] Iniciando Texto 14: As rampas devem ter inclinação de acordo...
+[2026-05-15 00:17:41] Chamando modelo (texto 14, sentenca 1, tentativa 1)
+[2026-05-15 00:18:06] Saida do modelo:
+aplicabilidade: As rampas
+selecao: devem ter inclinação de acordo com os limites estabelecidos na Tabela 6
+execao: ""
+requisito: para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso nos patamares a cada 50 m de percurso. Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).
+[2026-05-15 00:18:06] Chamando modelo (texto 14, sentenca 2, tentativa 1)
+[2026-05-15 00:18:29] Saida do modelo:
+aplicabilidade: As rampas
+selecao: devem ter inclinação de acordo com os limites estabelecidos na Tabela 6
+execao: ""
+requisito: para inclinação entre 6,25 % e 8,33 %, é recomendado criar áreas de descanso nos patamares a cada 50 m de percurso. Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).
+[2026-05-15 00:18:29] Chamando modelo (texto 14, sentenca 3, tentativa 1)
+[2026-05-15 00:18:40] Saida do modelo:
+aplicabilidade: As rampas de qualquer espaço ou edificação
+selecao: Exceto por rampas em plateias, palcos e praias
+execao: ""
+requisito: Todos os outros devem ter inclinação transversal de no máximo 2%
+[2026-05-15 00:18:40] Chamando modelo (texto 14, sentenca 4, tentativa 1)
+[2026-05-15 00:18:58] Saida do modelo:
+aplicabilidade: Rampas em plateias, palcos e praias
+selecao: devem ter inclinação transversal de no máximo 3%
+execao: ""
+requisito: Excetuam-se deste requisito as rampas citadas em 10.4 (plateia e palcos), 10.12 (piscinas) e 10.14 (praias).
+[2026-05-15 00:18:58] Texto 14 concluido (77.27s)
+[2026-05-15 00:18:58] Iniciando Texto 15: Para rampas em curva, a inclinação máxim...
+[2026-05-15 00:18:58] Chamando modelo (texto 15, sentenca 1, tentativa 1)
+[2026-05-15 00:19:11] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 2%
+execao: Nenhum
+requisito: Pisos internos devem ter inclinação transversal de no máximo 2%
+[2026-05-15 00:19:11] Chamando modelo (texto 15, sentenca 2, tentativa 1)
+[2026-05-15 00:19:20] Saida do modelo:
+aplicabilidade: Rampas em curva
+selecao: Inclinação máxima de 8,33%
+execao: Nenhum caso
+requisito: Pisos externos devem ter inclinação transversal de no máximo 3%
+[2026-05-15 00:19:20] Texto 15 concluido (21.70s)
+[2026-05-15 00:19:20] Iniciando Texto 16: A largura livre mínima recomendável para...
+[2026-05-15 00:19:20] Chamando modelo (texto 16, sentenca 1, tentativa 1)
+[2026-05-15 00:19:40] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Largura livre mínima recomendável de 1,50 m
+execao: Mínimo admissível de 1,20 m
+requisito: Devem ter largura livre mínima recomendável de 1,50 m
+[2026-05-15 00:19:40] Texto 16 concluido (20.34s)
+[2026-05-15 00:19:40] Iniciando Texto 17: Quando não houver paredes laterais, as r...
+[2026-05-15 00:19:40] Chamando modelo (texto 17, sentenca 1, tentativa 1)
+[2026-05-15 00:20:01] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum elemento de segurança incorporado.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis, conforme Figura 72.
+[2026-05-15 00:20:01] Chamando modelo (texto 17, sentenca 2, tentativa 1)
+[2026-05-15 00:20:12] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:20:12] Chamando modelo (texto 17, sentenca 3, tentativa 1)
+[2026-05-15 00:20:29] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:20:29] Chamando modelo (texto 17, sentenca 4, tentativa 1)
+[2026-05-15 00:20:40] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:20:40] Chamando modelo (texto 17, sentenca 5, tentativa 1)
+[2026-05-15 00:20:51] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:20:51] Chamando modelo (texto 17, sentenca 6, tentativa 1)
+[2026-05-15 00:21:07] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum elemento de segurança incorporado.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:21:07] Texto 17 concluido (86.43s)
+[2026-05-15 00:21:07] Iniciando Texto 18: A guia de balizamento pode ser de alvena...
+[2026-05-15 00:21:07] Chamando modelo (texto 18, sentenca 1, tentativa 1)
+[2026-05-15 00:21:24] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:21:24] Texto 18 concluido (16.93s)
+[2026-05-15 00:21:24] Iniciando Texto 19: Quando houver porta nos patamares, sua á...
+[2026-05-15 00:21:24] Chamando modelo (texto 19, sentenca 1, tentativa 1)
+[2026-05-15 00:21:36] Saida do modelo:
+aplicabilidade: Patamares
+selecao: Não interferir na dimensão mínima do patamar
+execao: Nenhuma
+requisito: Porta deve ser instalada
+[2026-05-15 00:21:36] Chamando modelo (texto 19, sentenca 2, tentativa 1)
+[2026-05-15 00:21:45] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas por uma ou mais rotas acessíveis
+[2026-05-15 00:21:45] Texto 19 concluido (21.49s)
+[2026-05-15 00:21:45] Iniciando Texto 20: Nas rotas acessíveis não podem ser utili...
+[2026-05-15 00:21:45] Chamando modelo (texto 20, sentenca 1, tentativa 1)
+[2026-05-15 00:22:13] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos não devem ter degraus ou escadas fixas com espelhos vazados.
+execao: Não podem haver bocelos ou espelhos inclinados que avancem 1,5 cm sobre o piso abaixo.
+requisito: As rotas acessíveis devem ser servidas por uma ou mais rotas acessíveis sem degraus ou escadas fixas com espelhos vazados.
+[2026-05-15 00:22:13] Chamando modelo (texto 20, sentenca 2, tentativa 1)
+[2026-05-15 00:22:32] Saida do modelo:
+aplicabilidade: Espelhos e bocel podem avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.
+selecao: Espelhos e bocel podem avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.
+execao: ""
+requisito: Espelhos e bocel podem avançar no máximo 1,5 cm sobre o piso abaixo, conforme Figura 74.
+[2026-05-15 00:22:32] Texto 20 concluido (46.91s)
+[2026-05-15 00:22:32] Iniciando Texto 21: As dimensões dos pisos e espelhos devem...
+[2026-05-15 00:22:32] Chamando modelo (texto 21, sentenca 1, tentativa 1)
+[2026-05-15 00:23:04] Saida do modelo:
+aplicabilidade: As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados. Para o dimensionamento, devem ser atendidas as seguintes condições: a) 0,63 m ≤ p + 2e ≤ 0,65 m, b) pisos (p): 0,28 m ≤ p ≤ 0,32 m e c) espelhos (e): 0,16 m ≤ e ≤ 0,18 m;
+selecao: Pisos internos devem ter inclinação transversal de no máximo 2%;
+execao: "";
+requisito: Pisos internos devem ter inclinação transversal de no máximo 2%.
+[2026-05-15 00:23:04] Chamando modelo (texto 21, sentenca 2, tentativa 1)
+[2026-05-15 00:23:31] Saida do modelo:
+aplicabilidade: As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados. Para o dimensionamento, devem ser atendidas as seguintes condições: a) 0,63 m ≤ p + 2e ≤ 0,65 m, b) pisos (p): 0,28 m ≤ p ≤ 0,32 m e c) espelhos (e): 0,16 m ≤ e ≤ 0,18 m;
+selecao: Pisos externos devem ter inclinação transversal de no máximo 3%;
+execao: "";
+requisito: Pisos externos devem ter inclinação transversal de no máximo 3%.
+[2026-05-15 00:23:31] Chamando modelo (texto 21, sentenca 3, tentativa 1)
+[2026-05-15 00:23:54] Saida do modelo:
+aplicabilidade: As dimensões dos pisos e espelhos devem ser constantes em toda a escada ou degraus isolados.
+selecao: Nenhum
+execao: ""
+requisito: Devem ser atendidas as seguintes condições: a) 0,63 m ≤ p + 2e ≤ 0,65 m, b) pisos (p): 0,28 m ≤ p ≤ 0,32 m e c) espelhos (e): 0,16 m ≤ e ≤ 0,18 m.
+[2026-05-15 00:23:54] Texto 21 concluido (81.57s)
+[2026-05-15 00:23:54] Iniciando Texto 22: Em construções novas, o primeiro e o últ...
+[2026-05-15 00:23:54] Chamando modelo (texto 22, sentenca 1, tentativa 1)
+[2026-05-15 00:24:21] Saida do modelo:
+aplicabilidade: Em construções novas, o primeiro e o último degraus de um lance de escada devem estar no mínimo 0,30 m da área de circulação adjacente.
+selecao: Pisos novos: degraus de escada devem estar no mínimo 0,30 m da área de circulação e devem ser sinalizados conforme a seção 5.
+execao: ""
+requisito: Pisos novos: degraus de escada devem estar no mínimo 0,30 m da área de circulação e devem ser sinalizados conforme a seção 5.
+[2026-05-15 00:24:21] Texto 22 concluido (27.87s)
+[2026-05-15 00:24:21] Iniciando Texto 23: Escadas com lances curvos ou mistos deve...
+[2026-05-15 00:24:21] Chamando modelo (texto 23, sentenca 1, tentativa 1)
+[2026-05-15 00:24:39] Saida do modelo:
+aplicabilidade: Escadas com lances curvos ou mistos devem atender à ABNT NBR 9077.
+selecao: Escadas com lances curvos ou mistos devem ser servidas de uma ou mais rotas acessíveis.
+execao: ""
+requisito: Devem ser servidas de uma ou mais rotas acessíveis.
+[2026-05-15 00:24:39] Chamando modelo (texto 23, sentenca 2, tentativa 1)
+[2026-05-15 00:24:53] Saida do modelo:
+aplicabilidade: As escadas com lances curvos ou mistos devem atender à ABNT NBR 9077.
+selecao: Devem ser servidas de uma ou mais rotas acessíveis.
+execao: ""
+requisito: Devem ser servidas de uma ou mais rotas acessíveis.
+[2026-05-15 00:24:53] Chamando modelo (texto 23, sentenca 3, tentativa 1)
+[2026-05-15 00:25:06] Saida do modelo:
+aplicabilidade: Escadas com lances curvos ou mistos devem atender à ABNT NBR 9077.
+selecao: A inclinação transversal dos pisos internos deve ser de até 2%.
+execao: ""
+requisito: Os pisos e espelhos devem ser dimensionados conforme 6.8.2 e Figura 75.
+[2026-05-15 00:25:06] Chamando modelo (texto 23, sentenca 4, tentativa 1)
+[2026-05-15 00:25:17] Saida do modelo:
+aplicabilidade: As escadas com lances curvos ou mistos devem atender à ABNT NBR 9077.
+selecao: Devem ser servidas de uma ou mais rotas acessíveis.
+execao: ""
+requisito: Devem ser servidas de uma ou mais rotas acessíveis.
+[2026-05-15 00:25:17] Chamando modelo (texto 23, sentenca 5, tentativa 1)
+[2026-05-15 00:25:33] Saida do modelo:
+aplicabilidade: Escadas com lances curvos ou mistos devem atender à ABNT NBR 9077.
+selecao: A inclinação transversal dos pisos externos deve ser de até 3%.
+execao: ""
+requisito: Os pisos e espelhos devem ser dimensionados conforme 6.8.2 e Figura 75.
+[2026-05-15 00:25:33] Texto 23 concluido (71.95s)
+[2026-05-15 00:25:33] Iniciando Texto 24: Entre os lances da escada devem ser prev...
+[2026-05-15 00:25:33] Chamando modelo (texto 24, sentenca 1, tentativa 1)
+[2026-05-15 00:25:49] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:25:49] Chamando modelo (texto 24, sentenca 2, tentativa 1)
+[2026-05-15 00:25:57] Saida do modelo:
+aplicabilidade: Pisos externos
+selecao: Inclinação transversal de no máximo 3%
+execao: ""
+requisito: Pisos externos devem ter inclinação transversal de no máximo 3%
+[2026-05-15 00:25:57] Chamando modelo (texto 24, sentenca 3, tentativa 1)
+[2026-05-15 00:26:15] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:26:15] Chamando modelo (texto 24, sentenca 4, tentativa 1)
+[2026-05-15 00:26:29] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:26:29] Texto 24 concluido (55.72s)
+[2026-05-15 00:26:29] Iniciando Texto 25: Os corrimãos podem ser acoplados aos gua...
+[2026-05-15 00:26:29] Chamando modelo (texto 25, sentenca 1, tentativa 1)
+[2026-05-15 00:26:44] Saida do modelo:
+aplicabilidade: Os corrimãos podem ser acoplados aos guarda-corpos
+selecao: Devem ser construídos com materiais rígidos
+execao: ""
+requisito: Devem ser sinalizados conforme a Seção 5
+[2026-05-15 00:26:44] Chamando modelo (texto 25, sentenca 2, tentativa 1)
+[2026-05-15 00:26:52] Saida do modelo:
+aplicabilidade: Espaços e edificios de uso publico ou coletivo
+selecao: Usos publicos e coletivos
+execao: Nenhum
+requisito: Devem ser servidas de uma ou mais rotas acessíveis
+[2026-05-15 00:26:52] Chamando modelo (texto 25, sentenca 3, tentativa 1)
+[2026-05-15 00:27:08] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:27:08] Chamando modelo (texto 25, sentenca 4, tentativa 1)
+[2026-05-15 00:27:19] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:27:19] Chamando modelo (texto 25, sentenca 5, tentativa 1)
+[2026-05-15 00:27:34] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:27:34] Texto 25 concluido (64.86s)
+[2026-05-15 00:27:34] Iniciando Texto 26: Os corrimãos devem ser instalados em ram...
+[2026-05-15 00:27:34] Chamando modelo (texto 26, sentenca 1, tentativa 1)
+[2026-05-15 00:27:54] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:27:54] Chamando modelo (texto 26, sentenca 2, tentativa 1)
+[2026-05-15 00:28:08] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:28:08] Chamando modelo (texto 26, sentenca 3, tentativa 1)
+[2026-05-15 00:28:24] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos devem ser servidos por uma ou mais rotas acessíveis.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:28:24] Texto 26 concluido (50.03s)
+[2026-05-15 00:28:24] Iniciando Texto 27: As extremidades dos corrimãos devem ter...
+[2026-05-15 00:28:24] Chamando modelo (texto 27, sentenca 1, tentativa 1)
+[2026-05-15 00:28:43] Saida do modelo:
+aplicabilidade: As extremidades dos corrimãos
+selecao: devem ter acabamento recurvado, ser fixadas ou justapostas à parede ou piso, ou ainda ter desenho contínuo
+execao: ""
+requisito: sem protuberâncias, conforme Figura 76
+[2026-05-15 00:28:43] Texto 27 concluido (18.93s)
+[2026-05-15 00:28:43] Iniciando Texto 28: Quando se tratar de escadas ou rampas co...
+[2026-05-15 00:28:43] Chamando modelo (texto 28, sentenca 1, tentativa 1)
+[2026-05-15 00:28:57] Saida do modelo:
+aplicabilidade: Escadas ou rampas com largura igual ou superior a 2,40 m
+selecao: Instalação de um corrimão intermediário
+execao: Nenhum
+requisito: Faixa de circulação com largura mínima de 1,20 m
+[2026-05-15 00:28:57] Chamando modelo (texto 28, sentenca 2, tentativa 1)
+[2026-05-15 00:29:08] Saida do modelo:
+aplicabilidade: Escadas ou rampas com largura igual ou superior a 2,40 m
+selecao: Instalação de um corrimão intermediário
+execao: Nenhum
+requisito: Faixa de circulação com largura mínima de 1,20 m
+[2026-05-15 00:29:08] Chamando modelo (texto 28, sentenca 3, tentativa 1)
+[2026-05-15 00:29:23] Saida do modelo:
+aplicabilidade: Escadas ou rampas com largura igual ou superior a 2,40 m
+selecao: Corrimões intermediárias devem ser instaladas
+execao: ""
+requisito: Garantindo faixa de circulação com largura mínima de 1,20 m
+[2026-05-15 00:29:23] Texto 28 concluido (39.85s)
+[2026-05-15 00:29:23] Iniciando Texto 29: Em escadas e degraus é permitida a insta...
+[2026-05-15 00:29:23] Chamando modelo (texto 29, sentenca 1, tentativa 1)
+[2026-05-15 00:29:40] Saida do modelo:
+aplicabilidade: Em escadas e degraus
+selecao: Pisos internos
+execao: ""
+requisito: devem ter corrimão dupla com alturas de 0,92 m e 0,70 m do piso, respeitando a largura mínima de 1,20 m
+[2026-05-15 00:29:40] Chamando modelo (texto 29, sentenca 2, tentativa 1)
+[2026-05-15 00:29:52] Saida do modelo:
+aplicabilidade: Escadas e degraus
+selecao: podem instalar apenas uma corrimão dupla
+execao: com essas alturas
+requisito: respeitando a largura mínima de 1,20 m
+[2026-05-15 00:29:52] Texto 29 concluido (29.47s)
+[2026-05-15 00:29:52] Iniciando Texto 30: Para transposição de obstáculos, objetos...
+[2026-05-15 00:29:52] Chamando modelo (texto 30, sentenca 1, tentativa 1)
+[2026-05-15 00:30:10] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:30:10] Chamando modelo (texto 30, sentenca 2, tentativa 1)
+[2026-05-15 00:30:23] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:30:23] Chamando modelo (texto 30, sentenca 3, tentativa 1)
+[2026-05-15 00:30:36] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:30:36] Texto 30 concluido (43.42s)
+[2026-05-15 00:30:36] Iniciando Texto 31: No deslocamento frontal, quando as porta...
+[2026-05-15 00:30:36] Chamando modelo (texto 31, sentenca 1, tentativa 1)
+[2026-05-15 00:30:58] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:30:58] Chamando modelo (texto 31, sentenca 2, tentativa 1)
+[2026-05-15 00:31:12] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:31:12] Chamando modelo (texto 31, sentenca 3, tentativa 1)
+[2026-05-15 00:31:29] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:31:29] Chamando modelo (texto 31, sentenca 4, tentativa 1)
+[2026-05-15 00:31:44] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:31:44] Texto 31 concluido (67.89s)
+[2026-05-15 00:31:44] Iniciando Texto 32: As portas, quando abertas, devem ter um...
+[2026-05-15 00:31:44] Chamando modelo (texto 32, sentenca 1, tentativa 1)
+[2026-05-15 00:32:00] Saida do modelo:
+aplicabilidade: As portas
+selecao: quando abertas
+execao: ""
+requisito: devem ter um vão livre de no mínimo 0,80 m de largura e 2,10 m de altura
+[2026-05-15 00:32:00] Chamando modelo (texto 32, sentenca 2, tentativa 1)
+[2026-05-15 00:32:08] Saida do modelo:
+aplicabilidade: Portas
+selecao: deve ter um vão livre
+execao: de 0,80 m
+requisito: de pelo menos 0,80 m
+[2026-05-15 00:32:08] Texto 32 concluido (24.47s)
+[2026-05-15 00:32:08] Iniciando Texto 33: O mecanismo de acionamento das portas de...
+[2026-05-15 00:32:08] Chamando modelo (texto 33, sentenca 1, tentativa 1)
+[2026-05-15 00:32:18] Saida do modelo:
+aplicabilidade: Portas
+selecao: devem ser capazes de funcionar com força humana igual ou inferior a 36 N
+execao: ""
+requisito: Porta
+[2026-05-15 00:32:18] Texto 33 concluido (9.89s)
+[2026-05-15 00:32:18] Iniciando Texto 34: As portas de sanitários e vestiários dev...
+[2026-05-15 00:32:18] Chamando modelo (texto 34, sentenca 1, tentativa 1)
+[2026-05-15 00:33:01] Saida do modelo:
+aplicabilidade: As portas de sanitários e vestiários devem ter um puxador horizontal no lado oposto ao lado da abertura da porta, conforme a Figura 84, associado à maçaneta.
+selecao: Deve estar localizado a uma distância de 0,10 m do eixo da porta (dobradiça) e possuir comprimento mínimo de 0,40 m, com diâmetro variando de 35 mm a 25 mm.
+execao: O dispositivo de travamento deve observar o descrito em 4.6.8. Recomenda-se que estas portas ou batentes tenham cor contrastante com a da parede e do piso de forma a facilitar sua localização.
+requisito: As portas de sanitários e vestiários devem ter um puxador horizontal no lado oposto ao lado da abertura da porta, conforme a Figura 84, associado à maçaneta.
+[2026-05-15 00:33:01] Chamando modelo (texto 34, sentenca 2, tentativa 1)
+[2026-05-15 00:33:11] Saida do modelo:
+aplicabilidade: As portas de sanitários e vestiários
+selecao: devem ter um puxador horizontal
+execao: conforme a Figura 84
+requisito: associado à maçaneta
+[2026-05-15 00:33:11] Chamando modelo (texto 34, sentenca 3, tentativa 1)
+[2026-05-15 00:33:20] Saida do modelo:
+aplicabilidade: As portas de sanitários e vestiários
+selecao: devem ter um puxador horizontal
+execao: conforme a Figura 84
+requisito: associado à maçaneta
+[2026-05-15 00:33:20] Chamando modelo (texto 34, sentenca 4, tentativa 1)
+[2026-05-15 00:33:28] Saida do modelo:
+aplicabilidade: As portas de sanitários e vestiários
+selecao: devem ter um puxador horizontal
+execao: conforme a Figura 84
+requisito: associado à maçaneta
+[2026-05-15 00:33:28] Chamando modelo (texto 34, sentenca 5, tentativa 1)
+[2026-05-15 00:33:47] Saida do modelo:
+aplicabilidade: As portas de sanitários e vestiários
+selecao: devem ter um puxador horizontal
+execao: conforme a Figura 84
+requisito: associado à maçaneta, localizado a uma distância de 0,10 m do eixo da porta (dobradiça), com comprimento mínimo de 0,40 m, instalado a 0,90 m do piso.
+[2026-05-15 00:33:47] Texto 34 concluido (88.82s)
+[2026-05-15 00:33:47] Iniciando Texto 35: Quando as portas forem providas de dispo...
+[2026-05-15 00:33:47] Chamando modelo (texto 35, sentenca 1, tentativa 1)
+[2026-05-15 00:34:11] Saida do modelo:
+aplicabilidade: As portas devem ter dispositivos de acionamento instalados fora da área de abertura da folha da porta.
+selecao: Dispositivos de acionamento instalados fora da área de abertura da folha da porta.
+execao: Nenhum dispositivo de acionamento instalado fora da área de abertura da folha da porta.
+requisito: As portas devem ter dispositivos de acionamento instalados fora da área de abertura da folha da porta.
+[2026-05-15 00:34:11] Chamando modelo (texto 35, sentenca 2, tentativa 1)
+[2026-05-15 00:34:32] Saida do modelo:
+aplicabilidade: As portas devem ter dispositivos de acionamento instalados fora da área de abertura da folha da porta, entre 0,80 m e 1,00 m.
+selecao: Dispositivos de acionamento instalados fora da área de abertura da folha da porta, entre 0,80 m e 1,00 m.
+execao: ""
+requisito: As portas devem ter dispositivos de acionamento instalados fora da área de abertura da folha da porta, entre 0,80 m e 1,00 m.
+[2026-05-15 00:34:32] Texto 35 concluido (44.90s)
+[2026-05-15 00:34:32] Iniciando Texto 36: Em portas de correr, recomenda-se a inst...
+[2026-05-15 00:34:32] Chamando modelo (texto 36, sentenca 1, tentativa 1)
+[2026-05-15 00:34:47] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: devem ter trilhos na parte superior nivelados com a superfície do piso
+execao: ""
+requisito: Pisos internos
+[2026-05-15 00:34:47] Chamando modelo (texto 36, sentenca 2, tentativa 1)
+[2026-05-15 00:35:02] Saida do modelo:
+aplicabilidade: Em portas de correr, recomenda-se a instalação de trilhos na sua parte superior.
+selecao: Os trilhos ou as guias inferiores devem estar nivelados com a superfície do piso.
+execao: Eventuais frestas resultantes da guia inferior devem ter largura de no máximo 15 mm.
+requisito: Fresta resultante deve ser de no máximo 15 mm.
+[2026-05-15 00:35:02] Chamando modelo (texto 36, sentenca 3, tentativa 1)
+[2026-05-15 00:35:21] Saida do modelo:
+aplicabilidade: Em portas de correr, recomenda-se a instalação de trilhos na sua parte superior.
+selecao: Guias inferiores devem estar niveladas com a superfície do piso.
+execao: Eventuais frestas resultantes da guia inferior devem ter largura de no máximo 15 mm.
+requisito: Os trilhos ou as guias inferiores devem estar nivelados com a superfície do piso.
+[2026-05-15 00:35:21] Texto 36 concluido (49.38s)
+[2026-05-15 00:35:21] Iniciando Texto 37: A sinalização vertical das vagas reserva...
+[2026-05-15 00:35:21] Chamando modelo (texto 37, sentenca 1, tentativa 1)
+[2026-05-15 00:35:38] Saida do modelo:
+aplicabilidade: As vagas reservadas devem estar posicionadas de maneira a não interferir com as áreas de acesso ao veículo e na circulação dos pedestres.
+selecao: Vagas reservadas
+execao: ""
+requisito: Não deve interferir com as áreas de acesso ao veículo e na circulação dos pedestres.
+[2026-05-15 00:35:38] Chamando modelo (texto 37, sentenca 2, tentativa 1)
+[2026-05-15 00:35:58] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Não deve haver interferência entre a sinalização vertical das vagas reservadas e as áreas de acesso ao veículo.
+execao: ""
+requisito: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:35:58] Chamando modelo (texto 37, sentenca 3, tentativa 1)
+[2026-05-15 00:36:14] Saida do modelo:
+aplicabilidade: As áreas reservadas devem ser posicionadas de maneira a não interferir com a circulação dos pedestres.
+selecao: Sinalização vertical das vagas reservadas
+execao: Não existem casos que NAO seguem a regra.
+requisito: As áreas reservadas devem ser posicionadas de maneira a não interferir com a circulação dos pedestres.
+[2026-05-15 00:36:14] Texto 37 concluido (52.68s)
+[2026-05-15 00:36:14] Iniciando Texto 38: A superfície de varredura do portão não...
+[2026-05-15 00:36:14] Chamando modelo (texto 38, sentenca 1, tentativa 1)
+[2026-05-15 00:36:28] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 2%
+execao: Nenhum
+requisito: Inclinação transversal de no máximo 2%
+[2026-05-15 00:36:28] Chamando modelo (texto 38, sentenca 2, tentativa 1)
+[2026-05-15 00:36:37] Saida do modelo:
+aplicabilidade: Pisos externos
+selecao: Inclinação transversal de no máximo 3%
+execao: Nenhum
+requisito: Inclinação transversal de no máximo 3%
+[2026-05-15 00:36:37] Texto 38 concluido (23.48s)
+[2026-05-15 00:36:37] Iniciando Texto 39: A circulação vertical pode ser realizada...
+[2026-05-15 00:36:37] Chamando modelo (texto 39, sentenca 1, tentativa 1)
+[2026-05-15 00:36:50] Saida do modelo:
+aplicabilidade: Escadas, Rampas, Equipamentos Eletromecânicos
+selecao: Métodos para a Circulação Vertical
+execao: Nenhum
+requisito: Acessível por Escadas, Rampas ou Equipamentos Eletromecânicos
+[2026-05-15 00:36:50] Chamando modelo (texto 39, sentenca 2, tentativa 1)
+[2026-05-15 00:37:02] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: uso público ou coletivo
+execao: ""
+requisito: devem ser servidas por uma ou mais rampas, escadas ou equipamentos eletromecânicos
+[2026-05-15 00:37:02] Chamando modelo (texto 39, sentenca 3, tentativa 1)
+[2026-05-15 00:37:14] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:37:14] Texto 39 concluido (36.75s)
+[2026-05-15 00:37:14] Iniciando Texto 40: Desníveis superiores a 20 mm, quando ine...
+[2026-05-15 00:37:14] Chamando modelo (texto 40, sentenca 1, tentativa 1)
+[2026-05-15 00:37:31] Saida do modelo:
+aplicabilidade: Pisos internos com desníveis superiores a 20 mm
+selecao: devem ser considerados como degraus, de acordo com 6.7
+execao: ""
+requisito: Pisos internos com desníveis superiores a 20 mm devem ser considerados como degraus
+[2026-05-15 00:37:31] Texto 40 concluido (17.37s)
+[2026-05-15 00:37:31] Iniciando Texto 41: As rotas de fuga devem atender ao dispos...
+[2026-05-15 00:37:31] Chamando modelo (texto 41, sentenca 1, tentativa 1)
+[2026-05-15 00:38:03] Saida do modelo:
+aplicabilidade: As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga devem ser dotadas de barras antipânico.
+selecao: Por que as portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga devem ser dotadas de barras antipânico?
+execao: ""
+requisito: As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga devem ser dotadas de barras antipânico.
+[2026-05-15 00:38:03] Chamando modelo (texto 41, sentenca 2, tentativa 1)
+[2026-05-15 00:38:30] Saida do modelo:
+aplicabilidade: As rotas de fuga devem atender ao disposto na ABNT NBR 9077 e outras regulamentações locais contra incêndio e pânico.
+selecao: As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.
+execao: ""
+requisito: As portas de corredores, acessos, áreas de resgate, escadas de emergência e descargas integrantes de rotas de fuga acessíveis devem ser dotadas de barras antipânico, conforme ABNT NBR 11785.
+[2026-05-15 00:38:30] Texto 41 concluido (59.16s)
+[2026-05-15 00:38:30] Iniciando Texto 42: As escadas devem ter no mínimo um patama...
+[2026-05-15 00:38:30] Chamando modelo (texto 42, sentenca 1, tentativa 1)
+[2026-05-15 00:38:39] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: mudança de direção
+execao: ""
+requisito: ter um patamar a cada 3,20 m de desnível
+[2026-05-15 00:38:39] Chamando modelo (texto 42, sentenca 2, tentativa 1)
+[2026-05-15 00:38:54] Saida do modelo:
+aplicabilidade: Escadas
+selecao: mudanças de direção
+execao: sempre que houver mudança de desnível
+requisito: ter no mínimo um patamar a cada 3,20 m de desnível
+[2026-05-15 00:38:54] Texto 42 concluido (23.99s)
+[2026-05-15 00:38:54] Iniciando Texto 43: Os corrimãos laterais devem ser contínuo...
+[2026-05-15 00:38:54] Chamando modelo (texto 43, sentenca 1, tentativa 1)
+[2026-05-15 00:39:14] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos devem ser servidos por uma ou mais rotas acessíveis.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:39:14] Chamando modelo (texto 43, sentenca 2, tentativa 1)
+[2026-05-15 00:39:23] Saida do modelo:
+aplicabilidade: Espaços e edificios de uso publico ou coletivo
+selecao: Nenhum
+execao: Nenhum
+requisito: Devem ser servidas por uma ou mais rotas acessíveis
+[2026-05-15 00:39:23] Chamando modelo (texto 43, sentenca 3, tentativa 1)
+[2026-05-15 00:39:34] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Nenhum.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:39:34] Texto 43 concluido (39.78s)
+[2026-05-15 00:39:34] Iniciando Texto 44: Em edificações e equipamentos urbanos ex...
+[2026-05-15 00:39:34] Chamando modelo (texto 44, sentenca 1, tentativa 1)
+[2026-05-15 00:40:00] Saida do modelo:
+aplicabilidade: Edificações e equipamentos urbanos existentes
+selecao: Adequação dos corredores
+execao: Bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°)
+requisito: Implantação de bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°), sendo no mínimo um bolsão a cada 15,00 m.
+[2026-05-15 00:40:00] Chamando modelo (texto 44, sentenca 2, tentativa 1)
+[2026-05-15 00:40:20] Saida do modelo:
+aplicabilidade: Edificações e equipamentos urbanos existentes
+selecao: Adequação dos corredores
+execao: Bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°)
+requisito: Implantação de bolsões de retorno com dimensões que permitam a manobra completa de uma cadeira de rodas (180°), sendo no mínimo um bolsão a cada 15,00 m.
+[2026-05-15 00:40:20] Chamando modelo (texto 44, sentenca 3, tentativa 1)
+[2026-05-15 00:40:34] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:40:34] Texto 44 concluido (59.59s)
+[2026-05-15 00:40:34] Iniciando Texto 45: Toda rota acessível deve ser provida de...
+[2026-05-15 00:40:34] Chamando modelo (texto 45, sentenca 1, tentativa 1)
+[2026-05-15 00:40:51] Saida do modelo:
+aplicabilidade: Todas as áreas internas
+selecao: Pisos devem ter inclinação transversal de no máximo 2%
+execao: Nenhum
+requisito: Inclinação transversal de no máximo 2%
+[2026-05-15 00:40:51] Chamando modelo (texto 45, sentenca 2, tentativa 1)
+[2026-05-15 00:41:09] Saida do modelo:
+aplicabilidade: Todas as rotas acessíveis devem ter iluminação natural ou artificial com nível mínimo de 150 lux medidos a 1,00m do chão.
+selecao: Pisos externos devem ter inclinação transversal de no máximo 3%.
+execao: ""
+requisito: Todas as rotas acessíveis devem ser providas com iluminação natural ou artificial com nível mínimo de 150 lux medidos a 1,00m do chão.
+[2026-05-15 00:41:09] Chamando modelo (texto 45, sentenca 3, tentativa 1)
+[2026-05-15 00:41:35] Saida do modelo:
+aplicabilidade: Todas as rotas acessíveis devem ser servidas por iluminação natural ou artificial com nível mínimo de 150 lux medidos a 1,00m do chão.
+selecao: Rotas acessíveis devem ter iluminação natural ou artificial com nível mínimo de 150 lux medidos a 1,00m do chão.
+execao: Nenhum caso é excepcionalmente permitido.
+requisito: Todas as rotas acessíveis devem ser servidas por iluminação natural ou artificial com nível mínimo de 150 lux medidos a 1,00m do chão.
+[2026-05-15 00:41:35] Chamando modelo (texto 45, sentenca 4, tentativa 1)
+[2026-05-15 00:41:59] Saida do modelo:
+aplicabilidade: Toda rota acessível deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00m do chão.
+selecao: Sendo aceitos níveis inferiores de iluminância para ambientes específicos, conforme normas técnicas específicas.
+execao: ""
+requisito: Toda rota acessível deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00m do chão.
+[2026-05-15 00:41:59] Texto 45 concluido (85.36s)
+[2026-05-15 00:41:59] Iniciando Texto 46: Na adaptação de edificações e equipament...
+[2026-05-15 00:41:59] Chamando modelo (texto 46, sentenca 1, tentativa 1)
+[2026-05-15 00:42:22] Saida do modelo:
+aplicabilidade: Todos os edifícios e equipamentos urbanos existentes devem ser adaptados para que todas as entradas sejam acessíveis.
+selecao: Todos os edifícios e equipamentos urbanos existentes devem ser adaptados para que todas as entradas sejam acessíveis.
+execao: Nenhum
+requisito: Todos os edifícios e equipamentos urbanos existentes devem ser adaptados para que todas as entradas sejam acessíveis.
+[2026-05-15 00:42:22] Chamando modelo (texto 46, sentenca 2, tentativa 1)
+[2026-05-15 00:42:37] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Não aplicável.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:42:37] Chamando modelo (texto 46, sentenca 3, tentativa 1)
+[2026-05-15 00:42:49] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Não aplicável.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:42:49] Chamando modelo (texto 46, sentenca 4, tentativa 1)
+[2026-05-15 00:43:04] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Não aplicável.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:43:04] Chamando modelo (texto 46, sentenca 5, tentativa 1)
+[2026-05-15 00:43:16] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:43:16] Chamando modelo (texto 46, sentenca 6, tentativa 1)
+[2026-05-15 00:43:27] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:43:27] Chamando modelo (texto 46, sentenca 7, tentativa 1)
+[2026-05-15 00:43:42] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:43:42] Texto 46 concluido (103.06s)
+[2026-05-15 00:43:42] Iniciando Texto 47: O percurso entre o estacionamento de veí...
+[2026-05-15 00:43:42] Chamando modelo (texto 47, sentenca 1, tentativa 1)
+[2026-05-15 00:43:59] Saida do modelo:
+aplicabilidade: Espaços e edificacoes
+selecao: uso publico ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessiveis
+
+aplicabilidade: Pisos internos
+selecao: Inclinacao transversal de no maximo 2%
+execao: ""
+requisito: deve ter inclinacao transversal de no maximo 2%
+[2026-05-15 00:43:59] Chamando modelo (texto 47, sentenca 2, tentativa 1)
+[2026-05-15 00:44:07] Saida do modelo:
+aplicabilidade:
+selecao:
+execao:
+requisito:
+[2026-05-15 00:44:07] Texto 47 concluido (24.78s)
+[2026-05-15 00:44:07] Iniciando Texto 48: Quando existir porta giratória, deve ser...
+[2026-05-15 00:44:07] Chamando modelo (texto 48, sentenca 1, tentativa 1)
+[2026-05-15 00:44:25] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:44:25] Chamando modelo (texto 48, sentenca 2, tentativa 1)
+[2026-05-15 00:44:39] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:44:39] Chamando modelo (texto 48, sentenca 3, tentativa 1)
+[2026-05-15 00:44:58] Saida do modelo:
+aplicabilidade: As portas giratórias devem ter um sistema de segurança para rebatimento das pás em caso de sinistro.
+selecao: Portas giratórias devem ser evitadas, mas quando forem instaladas, as dimensões entre as pás devem ser compatíveis com as medidas necessárias para o deslocamento de uma pessoa em cadeira de rodas.
+execao: ""
+requisito: As portas giratórias devem ter um sistema de segurança para rebatimento das pás em caso de sinistro.
+[2026-05-15 00:44:58] Texto 48 concluido (51.20s)
+[2026-05-15 00:44:58] Iniciando Texto 49: Desníveis superiores a 5 mm até 20 mm de...
+[2026-05-15 00:44:58] Chamando modelo (texto 49, sentenca 1, tentativa 1)
+[2026-05-15 00:45:24] Saida do modelo:
+aplicabilidade: Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68. Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.
+selecao: Pisos internos devem ter inclinação transversal de no máximo 2%.
+execao: ""
+requisito: Pisos internos devem ter inclinação transversal de no máximo 2%.
+[2026-05-15 00:45:24] Chamando modelo (texto 49, sentenca 2, tentativa 1)
+[2026-05-15 00:45:45] Saida do modelo:
+aplicabilidade: Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68. Desníveis superiores a 20 mm, quando inevitáveis, devem ser considerados como degraus, conforme 6.7.
+selecao: Pisos externos devem ter inclinação transversal de no máximo 3%.
+execao: ""
+requisito: Pisos externos devem ter inclinação transversal de no máximo 3%.
+[2026-05-15 00:45:45] Texto 49 concluido (47.15s)
+[2026-05-15 00:45:45] Iniciando Texto 50: Nas áreas de circulação, quando o desnív...
+[2026-05-15 00:45:45] Chamando modelo (texto 50, sentenca 1, tentativa 1)
+[2026-05-15 00:45:55] Saida do modelo:
+aplicabilidade: Áreas de circulação
+selecao: Lateral
+execao: Não observado
+requisito: Observar desnível lateral
+[2026-05-15 00:45:55] Texto 50 concluido (9.16s)
+[2026-05-15 00:45:55] Iniciando Texto 51: Em rotas acessíveis, as grelhas e juntas...
+[2026-05-15 00:45:55] Chamando modelo (texto 51, sentenca 1, tentativa 1)
+[2026-05-15 00:46:12] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:46:12] Chamando modelo (texto 51, sentenca 2, tentativa 1)
+[2026-05-15 00:46:31] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos devem ser servidos por uma ou mais rotas acessíveis.
+execao: Nenhum
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:46:31] Texto 51 concluido (36.61s)
+[2026-05-15 00:46:31] Iniciando Texto 52: Quando existentes, devem ser firmemente...
+[2026-05-15 00:46:31] Chamando modelo (texto 52, sentenca 1, tentativa 1)
+[2026-05-15 00:46:43] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 2%
+execao: ""
+requisito: Pisos internos devem ter inclinação transversal de no máximo 2%
+[2026-05-15 00:46:43] Chamando modelo (texto 52, sentenca 2, tentativa 1)
+[2026-05-15 00:46:56] Saida do modelo:
+aplicabilidade: Pisos externos
+selecao: Inclinação transversal de no máximo 3%
+execao: Nenhum
+requisito: Pisos externos devem ter inclinação transversal de no máximo 3%
+[2026-05-15 00:46:56] Chamando modelo (texto 52, sentenca 3, tentativa 1)
+[2026-05-15 00:47:11] Saida do modelo:
+aplicabilidade: As áreas existentes devem ser firmemente fixadas ao piso, embutidas ou sobrepostas e niveladas de maneira que eventual desnível não exceda 5 mm.
+selecao: Áreas existentes de qualquer espaço ou edificação de uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas de uma ou mais rotas acessíveis.
+[2026-05-15 00:47:11] Texto 52 concluido (39.74s)
+[2026-05-15 00:47:11] Iniciando Texto 53: Quando as rotas de fuga incorporarem esc...
+[2026-05-15 00:47:11] Chamando modelo (texto 53, sentenca 1, tentativa 1)
+[2026-05-15 00:47:33] Saida do modelo:
+aplicabilidade: As rotas de fuga incorporam escadas de emergência ou elevadores de emergência
+selecao: devem incluir espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas
+execao: ""
+requisito: devem ser previstas áreas de resgate com espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas
+[2026-05-15 00:47:33] Chamando modelo (texto 53, sentenca 2, tentativa 1)
+[2026-05-15 00:47:44] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:47:44] Chamando modelo (texto 53, sentenca 3, tentativa 1)
+[2026-05-15 00:48:06] Saida do modelo:
+aplicabilidade: Áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos devem ter áreas de resgate previstas com espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas.
+execao: ""
+requisito: Devem ser previstas áreas de resgate com espaço reservado e demarcado para o posicionamento de pessoas em cadeiras de rodas, dimensionadas de acordo com o M.R.
+[2026-05-15 00:48:06] Chamando modelo (texto 53, sentenca 4, tentativa 1)
+[2026-05-15 00:48:17] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:48:17] Chamando modelo (texto 53, sentenca 5, tentativa 1)
+[2026-05-15 00:48:32] Saida do modelo:
+aplicabilidade: Espaços de uso publico ou coletivo
+selecao: Devem ser servidas de uma ou mais rotas acessíveis
+execao: Nenhum caso conhecido
+requisito: Devem ter áreas de resgate com espaço reservado para o posicionamento de pessoas em cadeiras de rodas
+[2026-05-15 00:48:32] Texto 53 concluido (81.29s)
+[2026-05-15 00:48:32] Iniciando Texto 54: A área de resgate deve: a) estar localiz...
+[2026-05-15 00:48:32] Chamando modelo (texto 54, sentenca 1, tentativa 1)
+[2026-05-15 00:48:54] Saida do modelo:
+aplicabilidade: As áreas de resgate devem estar localizadas fora do fluxo principal de circulação.
+selecao: A área de resgate deve garantir uma área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3.
+execao: Nenhum.
+requisito: As áreas de resgate devem ser ventiladas e ter um dispositivo de emergência ou intercomunicador.
+[2026-05-15 00:48:54] Chamando modelo (texto 54, sentenca 2, tentativa 1)
+[2026-05-15 00:49:13] Saida do modelo:
+aplicabilidade: As áreas de resgate devem estar localizadas fora do fluxo principal de circulação.
+selecao: A área de resgate deve garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3.
+execao: Nenhuma exceção é permitida.
+requisito: A área de resgate deve ser ventilada.
+[2026-05-15 00:49:13] Chamando modelo (texto 54, sentenca 3, tentativa 1)
+[2026-05-15 00:50:19] Ainda aguardando resposta do modelo (66s)...
+[2026-05-15 00:50:23] Saida do modelo:
+aplicabilidade: As áreas de resgate devem estar localizadas fora do fluxo principal de circulação; garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizadas em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; deve ter um dispositivo de emergência ou intercomunicador; deve ser ventilada; deve ter o M.R. sinalizado conforme 5.5.2.2.
+selecao: Usos publicos ou coletivos; devem ser servidas de uma ou mais rotas acessíveis; deve estar localizada fora do fluxo principal de circulação; deve garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; deve ter um dispositivo de emergência ou intercomunicador; deve ser ventilada; deve ter o M.R. sinalizado conforme 5.5.2.2.
+execao: Devem ser respeitados os parâmetros mínimos definidos em 4.3.6; deve ter um dispositivo de emergência ou intercomunicador; deve ser ventilada; deve ter o M.R. sinalizado conforme 5.5.2.2.
+requisito: Devem ser servidas de uma ou mais rotas acessíveis; deve estar localizada fora do fluxo principal de circulação; deve garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizada em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; deve ter um dispositivo de emergência ou intercomunicador; deve ser ventilada; deve ter o M.R. sinalizado conforme 5.5.2.2.
+[2026-05-15 00:50:23] Chamando modelo (texto 54, sentenca 4, tentativa 1)
+[2026-05-15 00:50:42] Saida do modelo:
+aplicabilidade: As áreas de resgate devem estar localizadas fora do fluxo principal de circulação.
+selecao: Garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3.
+execao: Devem ser respeitados os parâmetros mínimos definidos em 4.3.6.
+requisito: Devem ter o M.R. sinalizado conforme 5.5.2.2.
+[2026-05-15 00:50:42] Chamando modelo (texto 54, sentenca 5, tentativa 1)
+[2026-05-15 00:51:29] Saida do modelo:
+aplicabilidade: As áreas de resgate devem estar localizadas fora do fluxo principal de circulação; garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizadas em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; deve ter o M.R. sinalizado conforme 5.5.2.2.
+selecao: As áreas de resgate devem estar localizadas fora do fluxo principal de circulação; garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizadas em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; deve ter o M.R. sinalizado conforme 5.5.2.2.
+execao: Nenhum.
+requisito: As áreas de resgate devem estar localizadas fora do fluxo principal de circulação; garantir área mínima de circulação e manobra para rotação de 180°, conforme 4.3.3, e, quando localizadas em nichos, devem ser respeitados os parâmetros mínimos definidos em 4.3.6; deve ter o M.R. sinalizado conforme 5.5.2.2.
+[2026-05-15 00:51:29] Texto 54 concluido (177.22s)
+[2026-05-15 00:51:29] Iniciando Texto 55: São consideradas rampas as superfícies d...
+[2026-05-15 00:51:29] Chamando modelo (texto 55, sentenca 1, tentativa 1)
+[2026-05-15 00:51:42] Saida do modelo:
+aplicabilidade: Rampas
+selecao: Superfícies de piso com declividade igual ou superior a 5%
+execao: Nenhum
+requisito: Pisos internos devem ter inclinação transversal de no máximo 2%
+[2026-05-15 00:51:42] Chamando modelo (texto 55, sentenca 2, tentativa 1)
+[2026-05-15 00:51:53] Saida do modelo:
+aplicabilidade: Rampas
+selecao: Superfícies de piso com declividade igual ou superior a 5%
+execao: Nenhum
+requisito: Condições de 6,3
+[2026-05-15 00:51:53] Texto 55 concluido (23.94s)
+[2026-05-15 00:51:53] Iniciando Texto 56: Em reformas, quando esgotadas as possibi...
+[2026-05-15 00:51:53] Chamando modelo (texto 56, sentenca 1, tentativa 1)
+[2026-05-15 00:52:06] Saida do modelo:
+aplicabilidade: Em reformas
+selecao: Pode-se realizar com inclinações de 8,33% a 12,5%
+execao: ""
+requisito: conforme Tabela 7
+[2026-05-15 00:52:06] Texto 56 concluido (12.68s)
+[2026-05-15 00:52:06] Iniciando Texto 57: A inclinação transversal não pode excede...
+[2026-05-15 00:52:06] Chamando modelo (texto 57, sentenca 1, tentativa 1)
+[2026-05-15 00:52:21] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 2%
+execao: ""
+requisito: Inclinação transversal de no máximo 2% em rampas internas e 3% em rampas externas
+[2026-05-15 00:52:21] Chamando modelo (texto 57, sentenca 2, tentativa 1)
+[2026-05-15 00:52:32] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação
+selecao: deve ser servida por uma ou mais rotas acessíveis
+execao: ""
+requisito: deve ter uma inclinação transversal não superior a 2% em rampas internas e 3% em rampas externas
+[2026-05-15 00:52:32] Chamando modelo (texto 57, sentenca 3, tentativa 1)
+[2026-05-15 00:52:40] Saida do modelo:
+aplicabilidade: Rampas internas e externas
+selecao: Pisos externos
+execao: Nenhum
+requisito: Inclinação transversal de no máximo 3%
+[2026-05-15 00:52:40] Texto 57 concluido (33.92s)
+[2026-05-15 00:52:40] Iniciando Texto 58: Toda rampa deve possuir corrimão de duas...
+[2026-05-15 00:52:40] Chamando modelo (texto 58, sentenca 1, tentativa 1)
+[2026-05-15 00:52:54] Saida do modelo:
+aplicabilidade: Todos os pisos internos
+selecao: Devem ter uma corrimão de duas alturas em cada lado
+execao: Nenhum
+requisito: Conforme mostrado na Figura 72
+[2026-05-15 00:52:54] Texto 58 concluido (14.16s)
+[2026-05-15 00:52:54] Iniciando Texto 59: A projeção dos corrimãos pode incidir de...
+[2026-05-15 00:52:54] Chamando modelo (texto 59, sentenca 1, tentativa 1)
+[2026-05-15 00:53:07] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 10 cm
+execao: Exceções em 6.6.2.7
+requisito: Devem ter inclinação transversal de no máximo 10 cm
+[2026-05-15 00:53:07] Chamando modelo (texto 59, sentenca 2, tentativa 1)
+[2026-05-15 00:53:34] Saida do modelo:
+aplicabilidade: Corrimãos podem incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.
+selecao: Corrimãos podem incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.
+execao: ""
+requisito: Corrimãos podem incidir dentro da largura mínima admissível da rampa em até 10 cm de cada lado, exceto nos casos previstos em 6.6.2.7.
+[2026-05-15 00:53:34] Texto 59 concluido (39.64s)
+[2026-05-15 00:53:34] Iniciando Texto 60: Os patamares no início e no término das...
+[2026-05-15 00:53:34] Chamando modelo (texto 60, sentenca 1, tentativa 1)
+[2026-05-15 00:53:51] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao:
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:53:51] Chamando modelo (texto 60, sentenca 2, tentativa 1)
+[2026-05-15 00:54:07] Saida do modelo:
+aplicabilidade: Patamares em mudanças de direção
+selecao: Pisos externos devem ter inclinação transversal de no máximo 3%
+execao: Patamares nos inícios e finais das rampas
+requisito: Devem ser previstos patamares intermediários com dimensão longitudinal mínima de 1,20 m
+[2026-05-15 00:54:07] Chamando modelo (texto 60, sentenca 3, tentativa 1)
+[2026-05-15 00:54:29] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos devem ter patamares intermediários com dimensões longitudinais mínimas de 1,20 m.
+execao: Patamares intermediários com dimensões longitudinais mínimas de 1,20 m devem ser previstos entre os segmentos de rampa.
+requisito: Os patamares no início e no término das rampas devem ter dimensões longitudinais mínimas de 1,20 m, conforme Figura 73.
+[2026-05-15 00:54:29] Chamando modelo (texto 60, sentenca 4, tentativa 1)
+[2026-05-15 00:54:45] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:54:45] Texto 60 concluido (71.46s)
+[2026-05-15 00:54:45] Iniciando Texto 61: A inclinação transversal dos patamares n...
+[2026-05-15 00:54:45] Chamando modelo (texto 61, sentenca 1, tentativa 1)
+[2026-05-15 00:54:57] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 2%
+execao: ""
+requisito: Pisos internos devem ter uma inclinação transversal de no máximo 2%
+[2026-05-15 00:54:57] Chamando modelo (texto 61, sentenca 2, tentativa 1)
+[2026-05-15 00:55:10] Saida do modelo:
+aplicabilidade: Pisos externos
+selecao: Inclinação transversal de no máximo 3%
+execao: Nenhum
+requisito: Pisos externos devem ter uma inclinação transversal de no máximo 3%
+[2026-05-15 00:55:10] Texto 61 concluido (24.30s)
+[2026-05-15 00:55:10] Iniciando Texto 62: Uma sequência de três degraus ou mais é...
+[2026-05-15 00:55:10] Chamando modelo (texto 62, sentenca 1, tentativa 1)
+[2026-05-15 00:55:19] Saida do modelo:
+aplicabilidade: Uma sequência de três degraus ou mais
+selecao: é considerada uma escada
+execao: ""
+requisito: Uma sequência de três degraus ou mais
+[2026-05-15 00:55:19] Texto 62 concluido (9.20s)
+[2026-05-15 00:55:19] Iniciando Texto 63: A largura das escadas deve ser estabelec...
+[2026-05-15 00:55:19] Chamando modelo (texto 63, sentenca 1, tentativa 1)
+[2026-05-15 00:55:33] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 2%
+execao: Nenhum
+requisito: Pisos internos devem ter inclinação transversal de no máximo 2%
+[2026-05-15 00:55:33] Chamando modelo (texto 63, sentenca 2, tentativa 1)
+[2026-05-15 00:55:44] Saida do modelo:
+aplicabilidade: Pisos externos
+selecao: Inclinação transversal de no máximo 3%
+execao: Não aplicável
+requisito: Inclinação transversal de no máximo 3%
+[2026-05-15 00:55:44] Chamando modelo (texto 63, sentenca 3, tentativa 1)
+[2026-05-15 00:55:59] Saida do modelo:
+aplicabilidade: As escadas devem ser servidas de um fluxo de despesa, conforme ABNT NBR 9077.
+selecao: A largura mínima para escadas em rotas acessíveis é de 1,20 m.
+execao: ""
+requisito: Deve dispor de guia de balizamento conforme 6.6.3.
+[2026-05-15 00:55:59] Chamando modelo (texto 63, sentenca 4, tentativa 1)
+[2026-05-15 00:56:16] Saida do modelo:
+aplicabilidade: As escadas devem ser servidas de uma ou mais rotas acessíveis.
+selecao: A largura mínima para escadas em rotas acessíveis é de 1,20 m.
+execao: Nenhum.
+requisito: Deve dispor de guia de balizamento conforme 6.6.3.
+[2026-05-15 00:56:16] Texto 63 concluido (56.75s)
+[2026-05-15 00:56:16] Iniciando Texto 64: A inclinação transversal dos degraus não...
+[2026-05-15 00:56:16] Chamando modelo (texto 64, sentenca 1, tentativa 1)
+[2026-05-15 00:56:27] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 1%
+execao: ""
+requisito: Devem ter uma inclinação transversal de no máximo 1%
+[2026-05-15 00:56:27] Chamando modelo (texto 64, sentenca 2, tentativa 1)
+[2026-05-15 00:56:36] Saida do modelo:
+aplicabilidade: Escadas externas
+selecao: Inclinação transversal de no máximo 2%
+execao: Nenhum
+requisito: Escadas externas devem ter uma inclinação transversal de no máximo 2%
+[2026-05-15 00:56:36] Texto 64 concluido (20.47s)
+[2026-05-15 00:56:36] Iniciando Texto 65: A inclinação transversal dos patamares n...
+[2026-05-15 00:56:36] Chamando modelo (texto 65, sentenca 1, tentativa 1)
+[2026-05-15 00:56:50] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Inclinação transversal de no máximo 1%
+execao: ""
+requisito: Devem ter uma inclinação transversal de no máximo 1%
+[2026-05-15 00:56:50] Chamando modelo (texto 65, sentenca 2, tentativa 1)
+[2026-05-15 00:56:59] Saida do modelo:
+aplicabilidade: Escadas externas
+selecao: Inclinação transversal de no máximo 2%
+execao: Nenhum
+requisito: Escadas externas devem ter uma inclinação transversal de no máximo 2%
+[2026-05-15 00:56:59] Texto 65 concluido (23.26s)
+[2026-05-15 00:56:59] Iniciando Texto 66: O dimensionamento dos corrimãos deve ate...
+[2026-05-15 00:56:59] Chamando modelo (texto 66, sentenca 1, tentativa 1)
+[2026-05-15 00:57:11] Saida do modelo:
+aplicabilidade: Pisos internos
+selecao: Corrimãos que atendem ao padrão de 4,6,5
+execao: Nenhum
+requisito: Corrimãos devem ser servidas de uma ou mais rotas acessiveis
+[2026-05-15 00:57:11] Texto 66 concluido (11.83s)
+[2026-05-15 00:57:11] Iniciando Texto 67: Os corrimãos laterais devem ser contínuo...
+[2026-05-15 00:57:11] Chamando modelo (texto 67, sentenca 1, tentativa 1)
+[2026-05-15 00:57:33] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos devem ser servidos por uma ou mais rotas acessíveis.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:57:33] Chamando modelo (texto 67, sentenca 2, tentativa 1)
+[2026-05-15 00:57:41] Saida do modelo:
+aplicabilidade: Espaços e edificios de uso publico ou coletivo
+selecao: Nenhum
+execao: Nenhum
+requisito: Devem ser servidas por uma ou mais rotas acessíveis
+[2026-05-15 00:57:41] Chamando modelo (texto 67, sentenca 3, tentativa 1)
+[2026-05-15 00:57:59] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Nenhum subconjunto de uso público ou coletivo é permitido.
+execao: Nenhuma exceção é permitida.
+requisito: As áreas de qualquer espaço ou edificação deve ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 00:57:59] Texto 67 concluido (48.20s)
+[2026-05-15 00:57:59] Iniciando Texto 68: Em edificações existentes, onde for impr...
+[2026-05-15 00:57:59] Chamando modelo (texto 68, sentenca 1, tentativa 1)
+[2026-05-15 00:58:25] Saida do modelo:
+aplicabilidade: Em edificações existentes, onde for impraticável promover o prolongamento do corrimão no sentido do caminhamento, este pode ser feito ao longo da área de circulação ou fixado na parede adjacente.
+selecao: Pisos existentes: Prolongar o corrimão é possível se for impraticável para caminhar; pode ser feito ao longo da área de circulação ou fixado na parede adjacente.
+execao: ""
+requisito: Pisos existentes devem ser servidas de uma ou mais rotas acessiveis.
+[2026-05-15 00:58:25] Texto 68 concluido (26.02s)
+[2026-05-15 00:58:25] Iniciando Texto 69: Os corrimãos intermediários somente deve...
+[2026-05-15 00:58:25] Chamando modelo (texto 69, sentenca 1, tentativa 1)
+[2026-05-15 00:58:38] Saida do modelo:
+aplicabilidade: Pisos intermediários
+selecao: Inclinação transversal de no máximo 2%
+execao: Nenhum
+requisito: Inclinação transversal de no máximo 2%
+[2026-05-15 00:58:38] Chamando modelo (texto 69, sentenca 2, tentativa 1)
+[2026-05-15 00:58:47] Saida do modelo:
+aplicabilidade: Pisos externos
+selecao: Inclinação transversal de no máximo 3%
+execao: Nenhum
+requisito: Devem ter inclinação transversal de no máximo 3%
+[2026-05-15 00:58:47] Texto 69 concluido (21.85s)
+[2026-05-15 00:58:47] Iniciando Texto 70: Quando não houver paredes laterais, as r...
+[2026-05-15 00:58:47] Chamando modelo (texto 70, sentenca 1, tentativa 1)
+[2026-05-15 00:59:11] Saida do modelo:
+aplicabilidade: As áreas sem paredes laterais devem incorporar elementos de segurança, como guia de balizamento e guarda-corpo.
+selecao: Rampas ou escadas sem paredes laterais devem respeitar os demais itens de segurança desta Norma.
+execao: ""
+requisito: As áreas sem paredes laterais devem incorporar elementos de segurança, como guia de balizamento e guarda-corpo.
+[2026-05-15 00:59:11] Chamando modelo (texto 70, sentenca 2, tentativa 1)
+[2026-05-15 00:59:34] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos devem respeitar os demais itens de segurança da Norma, como dimensionamento, corrimãos e sinalização.
+execao: Nenhum elemento de segurança deve ser ignorado.
+requisito: Devemos respeitar todos os demais itens de segurança da Norma, como dimensionamento, corrimãos e sinalização.
+[2026-05-15 00:59:34] Texto 70 concluido (46.37s)
+[2026-05-15 00:59:34] Iniciando Texto 71: Para a utilização das portas em sequênci...
+[2026-05-15 00:59:34] Chamando modelo (texto 71, sentenca 1, tentativa 1)
+[2026-05-15 00:59:51] Saida do modelo:
+aplicabilidade: As portas devem ter um espaço de transposição com um círculo de 1,50 m de diâmetro.
+selecao: Para a utilização das portas em sequência.
+execao: ""
+requisito: Para permitir a aproximação de uma pessoa em cadeira de rodas.
+[2026-05-15 00:59:51] Chamando modelo (texto 71, sentenca 2, tentativa 1)
+[2026-05-15 01:00:08] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 01:00:08] Texto 71 concluido (34.17s)
+[2026-05-15 01:00:08] Iniciando Texto 72: No deslocamento lateral, deve ser garant...
+[2026-05-15 01:00:08] Chamando modelo (texto 72, sentenca 1, tentativa 1)
+[2026-05-15 01:00:26] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 01:00:26] Chamando modelo (texto 72, sentenca 2, tentativa 1)
+[2026-05-15 01:00:39] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos e coletivos devem ser servidos por uma ou mais rotas acessíveis.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 01:00:39] Chamando modelo (texto 72, sentenca 3, tentativa 1)
+[2026-05-15 01:00:59] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Usos públicos ou coletivos.
+execao: Nenhum.
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 01:00:59] Texto 72 concluido (51.47s)
+[2026-05-15 01:00:59] Iniciando Texto 73: Quando instaladas em locais de prática e...
+[2026-05-15 01:00:59] Chamando modelo (texto 73, sentenca 1, tentativa 1)
+[2026-05-15 01:01:14] Saida do modelo:
+aplicabilidade: As portas devem ter um vão livre mínimo de 1,00 m.
+selecao: Em locais de prática esportiva.
+execao: ""
+requisito: Devem ser instaladas em locais de prática esportiva.
+[2026-05-15 01:01:14] Texto 73 concluido (14.41s)
+[2026-05-15 01:01:14] Iniciando Texto 74: As maçanetas das portas devem ser do tip...
+[2026-05-15 01:01:14] Chamando modelo (texto 74, sentenca 1, tentativa 1)
+[2026-05-15 01:01:25] Saida do modelo:
+aplicabilidade: Portas
+selecao: maçanetas de alavanca
+execao: ""
+requisito: instaladas a uma altura entre 0,80 m e 1,10 m
+[2026-05-15 01:01:25] Texto 74 concluido (11.24s)
+[2026-05-15 01:01:25] Iniciando Texto 75: As portas do tipo vaivém devem ter visor...
+[2026-05-15 01:01:25] Chamando modelo (texto 75, sentenca 1, tentativa 1)
+[2026-05-15 01:01:56] Saida do modelo:
+aplicabilidade: As portas do tipo vaivém devem ter visor com largura mínima de 0,20 m, tendo sua face inferior situada entre 0,40 m e 0,90 m do piso, e a face superior no mínimo a 1,50 m do piso. O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta, conforme Figura 85.
+selecao: Pisos internos devem ter uma inclinação transversal de até 2%.
+execao: ""
+requisito: Pisos internos devem ter uma inclinação transversal de até 2%.
+[2026-05-15 01:01:56] Chamando modelo (texto 75, sentenca 2, tentativa 1)
+[2026-05-15 01:02:21] Saida do modelo:
+aplicabilidade: As portas do tipo vaivém devem ter visor com largura mínima de 0,20 m, tendo sua face inferior situada entre 0,40 m e 0,90 m do piso, e a face superior no mínimo a 1,50 m do piso. O visor deve estar localizado no mínimo entre o eixo vertical central da porta e o lado oposto às dobradiças da porta, conforme Figura 85.
+selecao: Pisos externos devem ter uma inclinação transversal de até 3%.
+execao: ""
+requisito: Pisos externos devem ter uma inclinação transversal de até 3%.
+[2026-05-15 01:02:21] Texto 75 concluido (56.56s)
+[2026-05-15 01:02:21] Iniciando Texto 76: Quando as portas forem acionadas por sen...
+[2026-05-15 01:02:21] Chamando modelo (texto 76, sentenca 1, tentativa 1)
+[2026-05-15 01:02:38] Saida do modelo:
+aplicabilidade: As portas de qualquer espaço ou edificação
+selecao: devem estar ajustadas para detectar pessoas de baixa estatura, crianças e usuários de cadeiras de rodas
+execao: ""
+requisito: devem ser previstos dispositivos de segurança que impeçam o fechamento da porta sobre a pessoa
+[2026-05-15 01:02:38] Texto 76 concluido (16.29s)
+[2026-05-15 01:02:38] Iniciando Texto 77: Características da sinalização visual na...
+[2026-05-15 01:02:38] Chamando modelo (texto 77, sentenca 1, tentativa 1)
+[2026-05-15 01:03:05] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Uso público ou coletivo.
+execao: ""
+requisito: Devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 01:03:05] Chamando modelo (texto 77, sentenca 2, tentativa 1)
+[2026-05-15 01:03:12] Saida do modelo:
+aplicabilidade: Pisos externos
+selecao: Inclinação transversal de no máximo 3%
+execao:
+requisito:
+[2026-05-15 01:03:12] Chamando modelo (texto 77, sentenca 3, tentativa 1)
+[2026-05-15 01:03:35] Saida do modelo:
+aplicabilidade: Características da sinalização visual nas portas e paredes de vidro
+selecao: a sinalização deve ser contínua, composta por uma faixa com no mínimo 50 mm de espessura, instalada a uma altura entre 0,90 m e 1,00 m em relação ao piso acabado
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessíveis
+[2026-05-15 01:03:35] Chamando modelo (texto 77, sentenca 4, tentativa 1)
+[2026-05-15 01:04:03] Saida do modelo:
+aplicabilidade: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+selecao: Nenhum elemento foi selecionado.
+execao: Nenhum elemento foi executado.
+requisito: As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas por uma ou mais rotas acessíveis.
+[2026-05-15 01:04:03] Texto 77 concluido (85.23s)
+[2026-05-15 01:04:03] Iniciando Texto 78: As vagas para estacionamento para idosos...
+[2026-05-15 01:04:03] Chamando modelo (texto 78, sentenca 1, tentativa 1)
+[2026-05-15 01:04:23] Saida do modelo:
+aplicabilidade: As vagas para estacionamento para idosos devem ser posicionadas próximas das entradas, garantindo o menor percurso de deslocamento.
+selecao: Pisos internos devem ter vagas para estacionamento para idosos próximas às entradas, garantindo o menor percurso de deslocamento.
+execao: ""
+requisito: Vagas para estacionamento para idosos devem ser posicionadas próximas das entradas, garantindo o menor percurso de deslocamento.
+[2026-05-15 01:04:23] Texto 78 concluido (20.29s)
+[2026-05-15 01:04:23] Iniciando Texto 79: Desníveis superiores a 5 mm até 20 mm de...
+[2026-05-15 01:04:23] Chamando modelo (texto 79, sentenca 1, tentativa 1)
+[2026-05-15 01:04:37] Saida do modelo:
+aplicabilidade: Desníveis superiores a 5 mm até 20 mm
+selecao: Pisos internos
+execao: ""
+requisito: devem ter desnível de no máximo 2%
+[2026-05-15 01:04:37] Chamando modelo (texto 79, sentenca 2, tentativa 1)
+[2026-05-15 01:04:53] Saida do modelo:
+aplicabilidade: Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68.
+selecao: Pisos externos devem ter desnível de no máximo 3%.
+execao: ""
+requisito: Desníveis superiores a 5 mm até 20 mm devem possuir inclinação máxima de 1:2 (50 %), conforme Figura 68.
+[2026-05-15 01:04:53] Texto 79 concluido (30.10s)
+[2026-05-15 10:12:11] Retomando execucao N2 a partir do item 80.
+[2026-05-15 10:12:11] Inicio geracao N2. Modelo=splitpierre/bode-alpaca-pt-br:13b-Q4_0 Entrada=predicts/generate_n1_alpaca.json Saida=predicts/generate_n2_alpaca.json
+[2026-05-15 10:12:11] Total de textos: 79 (ja processados: 79)

@@ -1,12 +1,14 @@
 from typing import List
 
-from sentence_transformers import SentenceTransformer, util
+import torch
+from sentence_transformers import SentenceTransformer
 
 
 def compute_multilingual_scores(
     model: SentenceTransformer,
     targets: List[str],
     predictions: List[str],
+    batch_size: int = 64,
 ) -> List[float | None]:
     if not targets:
         return []
@@ -20,11 +22,22 @@ def compute_multilingual_scores(
         return scores
     valid_targets = [targets[i] for i in valid_indices]
     valid_predictions = [predictions[i] for i in valid_indices]
-    target_embeddings = model.encode(valid_targets, convert_to_tensor=True)
-    predicted_embeddings = model.encode(valid_predictions, convert_to_tensor=True)
+
+    target_embeddings = model.encode(
+        valid_targets,
+        convert_to_tensor=True,
+        normalize_embeddings=True,
+        batch_size=batch_size,
+        show_progress_bar=False,
+    )
+    predicted_embeddings = model.encode(
+        valid_predictions,
+        convert_to_tensor=True,
+        normalize_embeddings=True,
+        batch_size=batch_size,
+        show_progress_bar=False,
+    )
+    diag = torch.sum(target_embeddings * predicted_embeddings, dim=1).tolist()
     for local_index, original_index in enumerate(valid_indices):
-        scores[original_index] = util.pytorch_cos_sim(
-            target_embeddings[local_index],
-            predicted_embeddings[local_index],
-        ).item()
+        scores[original_index] = float(diag[local_index])
     return scores

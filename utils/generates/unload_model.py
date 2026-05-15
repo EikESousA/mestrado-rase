@@ -1,8 +1,17 @@
-import subprocess
+import os
+from typing import Callable
+
+import ollama
 
 
-def unload_model(model_id: str) -> None:
+def unload_model(model_id: str, log: Callable[[str], None] | None = None) -> None:
+    host = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
     try:
-        subprocess.run(["ollama", "stop", model_id], check=False)
-    except (subprocess.SubprocessError, FileNotFoundError):
-        print("Erro: falha ao descarregar o modelo.")
+        client = ollama.Client(host=host)
+        client.generate(model=model_id, prompt="", keep_alive=0)
+    except Exception as exc:
+        msg = f"Falha ao descarregar modelo {model_id}: {exc}"
+        if log is not None:
+            log(msg)
+        else:
+            print(msg)

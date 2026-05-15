@@ -6,3 +6,15 @@ __pycache__/
 
 /src/models/*
 !/src/models/.gitkeep
+
+# arquivos arquivados / experimentos antigos
+/tmp/
+
+# logs e checkpoints temporarios
+/logs/*.log
+/logs/*.jsonl
+*.checkpoint.jsonl
+
+# requirements lock gerado
+requirements.lock
+

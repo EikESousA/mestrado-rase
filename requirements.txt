@@ -3,8 +3,12 @@ gensim
 huggingface-hub
 langchain-ollama
 langchain-core
+bert-score
+nltk
 ollama
+pot
 python-Levenshtein
-safetensors
+rouge-score
+safetensors[numpy]
 scikit-learn
 sentence-transformers

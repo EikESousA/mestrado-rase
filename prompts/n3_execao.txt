@@ -3,7 +3,7 @@ Use APENAS o operador N2 de execao para gerar as propriedades N3. O texto comple
 
 Regras:
 1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
-2) type deve ser "execcao". Se o operador estiver vazio, todos os campos devem ser "".
+2) type deve ser "excecao". Se o operador estiver vazio, todos os campos devem ser "".
 3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
 4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
 5) property/comparation/target:
@@ -23,7 +23,7 @@ Areas de uso restrito, como casas de maquinas, barriletes e passagem de uso tecn
 
 Resposta (JSON):
 {
-  "type": "execcao",
+  "type": "excecao",
   "object": "espaço",
   "property": "uso",
   "comparation": "contém",

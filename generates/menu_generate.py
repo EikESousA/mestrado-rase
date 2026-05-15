@@ -10,6 +10,10 @@ from utils.screens.show_debug_banner import show_debug_banner
 from utils.screens.wait_to_return import wait_to_return
 
 
+def _toggle(option: Tuple[str, str, bool]) -> Tuple[str, str, bool]:
+    return (option[0], option[1], not option[2])
+
+
 def menu_generate() -> None:
     options_n: List[Tuple[str, str, bool]] = [
         ("1", "n1", False),
@@ -27,23 +31,19 @@ def menu_generate() -> None:
         ("f", "qwen", False),
     ]
 
+    key_index_n = {opt[0]: i for i, opt in enumerate(options_n)}
+    key_index_model = {opt[0]: i for i, opt in enumerate(options_model)}
+
     while True:
         show_debug_banner()
         print(menu_bar_line())
         print(menu_text_line("GERAR DADOS", align_left=False))
         print(menu_bar_line())
-        print(menu_text_line(f"1 - [{'x' if options_n[0][2] else ' '}] {options_n[0][1]}"))
-        print(menu_text_line(f"2 - [{'x' if options_n[1][2] else ' '}] {options_n[1][1]}"))
-        print(menu_text_line(f"3 - [{'x' if options_n[2][2] else ' '}] {options_n[2][1]}"))
-        print(menu_text_line(f"4 - [{'x' if options_n[3][2] else ' '}] {options_n[3][1]}"))
-        print(menu_text_line(f"5 - [{'x' if options_n[4][2] else ' '}] {options_n[4][1]}"))
+        for key, name, active in options_n:
+            print(menu_text_line(f"{key} - [{'x' if active else ' '}] {name}"))
         print(menu_bar_line())
-        print(menu_text_line(f"a - [{'x' if options_model[0][2] else ' '}] {options_model[0][1]}"))
-        print(menu_text_line(f"b - [{'x' if options_model[1][2] else ' '}] {options_model[1][1]}"))
-        print(menu_text_line(f"c - [{'x' if options_model[2][2] else ' '}] {options_model[2][1]}"))
-        print(menu_text_line(f"d - [{'x' if options_model[3][2] else ' '}] {options_model[3][1]}"))
-        print(menu_text_line(f"e - [{'x' if options_model[4][2] else ' '}] {options_model[4][1]}"))
-        print(menu_text_line(f"f - [{'x' if options_model[5][2] else ' '}] {options_model[5][1]}"))
+        for key, name, active in options_model:
+            print(menu_text_line(f"{key} - [{'x' if active else ' '}] {name}"))
         print(menu_bar_line())
         print(menu_text_line("Enter - Processar"))
         print(menu_bar_line())
@@ -58,43 +58,20 @@ def menu_generate() -> None:
         if choice == "0":
             clear_screen()
             break
-        elif choice == "1":
+        if choice in key_index_n:
             clear_screen()
-            options_n[0] = (options_n[0][0], options_n[0][1], not options_n[0][2])
-        elif choice == "2":
+            i = key_index_n[choice]
+            options_n[i] = _toggle(options_n[i])
+            continue
+        if choice in key_index_model:
             clear_screen()
-            options_n[1] = (options_n[1][0], options_n[1][1], not options_n[1][2])
-        elif choice == "3":
-            clear_screen()
-            options_n[2] = (options_n[2][0], options_n[2][1], not options_n[2][2])
-        elif choice == "4":
-            clear_screen()
-            options_n[3] = (options_n[3][0], options_n[3][1], not options_n[3][2])
-        elif choice == "5":
-            clear_screen()
-            options_n[4] = (options_n[4][0], options_n[4][1], not options_n[4][2])
-        elif choice == "a":
-            clear_screen()
-            options_model[0] = (options_model[0][0], options_model[0][1], not options_model[0][2])
-        elif choice == "b":
-            clear_screen()
-            options_model[1] = (options_model[1][0], options_model[1][1], not options_model[1][2])
-        elif choice == "c":
-            clear_screen()
-            options_model[2] = (options_model[2][0], options_model[2][1], not options_model[2][2])
-        elif choice == "d":
-            clear_screen()
-            options_model[3] = (options_model[3][0], options_model[3][1], not options_model[3][2])
-        elif choice == "e":
-            clear_screen()
-            options_model[4] = (options_model[4][0], options_model[4][1], not options_model[4][2])
-        elif choice == "f":
-            clear_screen()
-            options_model[5] = (options_model[5][0], options_model[5][1], not options_model[5][2])
-        elif choice == "":
+            i = key_index_model[choice]
+            options_model[i] = _toggle(options_model[i])
+            continue
+        if choice == "":
             clear_screen()
             active_ns: List[str] = [n_key for _, n_key, active in options_n if active]
-            active_models: List[str] = [model_key for _, model_key, active in options_model if active]
+            active_models: List[str] = [m for _, m, active in options_model if active]
 
             if not active_ns:
                 print("Selecione o 1, 2, 3, 4 ou 5 para gerar os dados.")
@@ -114,7 +91,8 @@ def menu_generate() -> None:
             wait_to_return()
             clear_screen()
             print()
-        else:
-            clear_screen()
-            print("Digite uma das opcoes")
-            print()
+            continue
+
+        clear_screen()
+        print("Digite uma das opcoes")
+        print()

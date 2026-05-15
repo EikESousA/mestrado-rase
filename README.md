@@ -19,7 +19,7 @@
 
 Este código foi desenvolvido como parte do Mestrado do aluno Eike Natan Sousa Brito, no Programa de Pós-Graduação em Ciência da Computação (PROCC) da Fundação Universidade Federal de Sergipe (UFS), durante o período de 2024-2025.
 
-O objetivo principal do projeto é a leitura e interpretação automatizada de normas de engenharia, convertendo um código RASE para o formato JSON. Para isso, utiliza-se o modelo LLaMA 3, explorando técnicas avançadas de Engenharia de Prompt, Fine-Tuning e Recuperação Aumentada por Geração (RAG). Esse processo visa aprimorar a compreensão e estruturação dos dados extraídos das normas, proporcionando maior precisão e eficiência na conversão para um formato estruturado e de fácil manipulação.
+O objetivo principal do projeto é a leitura e interpretação automatizada de normas de engenharia, convertendo um código RASE para o formato JSON. O pipeline atual utiliza **Engenharia de Prompt** sobre seis LLMs locais servidos pelo Ollama (Llama 3.3, Bode-Alpaca PT-BR, Mistral PT, Dolphin PT, Gemma Gaia PT-BR e Qwen2.5 PT), aplicando-os em três níveis sequenciais: **N1** (segmentação em sentenças), **N2** (identificação dos operadores RASE — *Requirements*, *Applicability*, *Selection*, *Exception*) e **N3** (extração estruturada das propriedades). A validação compara as saídas com o `dataset.json` de referência usando 7 métricas de similaridade e 4 métricas de classificação.
 
 ### Sistema Operacional
 
@@ -27,22 +27,27 @@ Deve funcionar conforme pretendido no **Windows**, **Linux** ou **macOS**.
 
 ### Interpretador Python
 
-Atualmente requer Python **3.11.9**.
+Recomendado Python **3.11.9**. Funciona em Python **3.12** (testado).
 
 ## Estrutura rapida
 
 - `main.py`: menu principal para gerar e validar dados.
+- `config/models.py`: lista central dos modelos Ollama (nomes + IDs).
 - `generates/menu_generate.py`: menu de selecao de N e modelos.
 - `validates/menu_validate.py`: menu de selecao de validacoes.
+- `prompts/`: templates `n1.txt`, `n2.txt`, `n3_*.txt` (per-operador) e `n3_combined.txt` (multi-operador).
 - `dataset.json`: entrada de textos.
 - `predicts/`: saida gerada.
 - `metrics/`: saida das validacoes.
+- `utils/validates/run_validation.py`: orquestrador unico das validacoes (compartilhado pelos 5 scripts).
 
 ## Requisitos
 
-- Python 3.11+.
+- Python 3.11+ (3.12 funciona).
 - Ollama instalado e em execucao (`ollama serve`).
 - Modelos serao baixados automaticamente pelo menu (quando necessario).
+- A metrica WMD usa `pot` (Python Optimal Transport), ja listado em `requirements.txt`.
+- Os pesos NILC FastText/Word2Vec (Portugues) sao baixados sob demanda do Hugging Face em `wmd_ft`/`wmd_nilc`.
 
 ## Instalacao
 
@@ -50,6 +55,13 @@ Atualmente requer Python **3.11.9**.
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+```
+
+Alternativa rapida com [uv](https://docs.astral.sh/uv/) (nao requer `python3-venv`):
+
+```bash
+uv venv .venv --python 3.12
+uv pip install --python .venv/bin/python -r requirements.txt
 ```
 
 ## Como iniciar
@@ -95,12 +107,18 @@ python generates/generate_n2.py --model mistral
 
 ### Geracao N3
 
-`generates/generate_n3.py` preenche `properties_n3` para cada operador N2. Usa prompts especificos por operador em `prompts/n3_*.txt`.
+`generates/generate_n3.py` preenche `properties_n3` para cada operador N2. Por padrao usa um **prompt unico multi-operador** (`prompts/n3_combined.txt`) que retorna o JSON dos 4 operadores em uma so chamada do LLM — ~4x mais rapido que o modo legacy.
 
 Comando:
 
 ```bash
 python generates/generate_n3.py --model mistral
+```
+
+Para reverter ao modo legacy (4 chamadas por sentenca, uma por operador, com prompts em `prompts/n3_*.txt`):
+
+```bash
+N3_LEGACY=1 python generates/generate_n3.py --model mistral
 ```
 
 ### Geracao N1+N2+N3
@@ -115,13 +133,23 @@ python generates/generate_n1n2n3.py --model mistral
 
 ### Validacao N1
 
-`validates/validate_n1.py` compara as sentencas N1 geradas com o `dataset.json` e grava metricas em `metrics/validate_n1.json`. Sao usadas:
+`validates/validate_n1.py` compara as sentencas N1 geradas com o `dataset.json` e grava metricas em `metrics/validate_n1.json`. Sao usadas 7 metricas de similaridade e 4 de classificacao:
 
-- FuzzyWuzzy (similaridade parcial)
-- TF-IDF
-- SBERT (pt)
-- SentenceTransformer multilingual
-- WMD (FastText e NILC, quando disponiveis)
+Similaridade:
+
+- FuzzyWuzzy (similaridade parcial por caracteres)
+- TF-IDF (cosseno)
+- SBERT pt (`tgsc/sentence-transformer-ult5-pt-small`)
+- BERTimbau Legal (`rufimelo/Legal-BERTimbau-sts-large-ma-v3`)
+- Multilingual (`sentence-transformers/paraphrase-multilingual-mpnet-base-v2`)
+- WMD com NILC FastText PT (`nilc-nlp/fasttext-cbow-300d`)
+- WMD com NILC Word2Vec PT (`nilc-nlp/word2vec-cbow-300d`)
+
+Classificacao (derivada do par alinhado por indice, threshold de similaridade 0,7 sobre Multilingual):
+
+- Accuracy, Precision, Recall, F1
+- Em N2 reportada tambem por operador (R, A, S, E) e macro-media.
+- Em N3 reportada por campo (`object`, `property`, `comparation`, `target`, `unit`) e macro-media (correspondencia exata apos normalizacao).
 
 ### Validacao N2/N3
 
@@ -200,18 +228,72 @@ Em `models.<modelo>.items`, cada item inclui:
 - `text_n1`: sentenca N1 correspondente (no N2).
 - `target`: texto de referencia do dataset.
 - `predicted`: texto gerado pelo modelo.
-- `fuzzywuzzy`, `tfidf`, `sbert`, `multilingual`, `wmd_ft`, `wmd_nilc`: scores por par (0 a 1 quando aplicavel).
+- `fuzzywuzzy`, `tfidf`, `sbert`, `bertimbau`, `multilingual`, `wmd_ft`, `wmd_nilc`: scores por par (0 a 1 quando aplicavel).
+
+Cada entrada de `models.<modelo>` tambem inclui `classification` com:
+
+- `overall`: TP/FP/FN/TN + accuracy/precision/recall/f1 (agregado).
+- `by_operator` (N2): metricas por operador R/A/S/E.
+- `by_field` (N3): metricas por campo do JSON.
+- `macro`: media das submetricas.
 
 Interpretacao dos scores:
 
 - `fuzzywuzzy`: similaridade parcial por caracteres.
 - `tfidf`: similaridade cosseno em TF-IDF.
-- `sbert`: similaridade semantica com SBERT pt.
+- `sbert`: similaridade semantica com SBERT pt (`ult5-pt-small`).
+- `bertimbau`: similaridade semantica com BERTimbau Legal.
 - `multilingual`: similaridade semantica multilingue.
-- `wmd_ft`: similaridade derivada do Word Mover's Distance com FastText.
-- `wmd_nilc`: similaridade derivada do Word Mover's Distance com NILC (quando disponivel).
+- `wmd_ft`: similaridade derivada do Word Mover's Distance com NILC FastText PT.
+- `wmd_nilc`: similaridade derivada do Word Mover's Distance com NILC Word2Vec PT.
 
-Os valores em `averages` sao medias simples de cada metrica, ignorando valores ausentes. Quanto mais proximo de 1, maior a similaridade entre `target` e `predicted` em todas as metricas, incluindo WMD (que ja e normalizado).
+Os valores em `averages` sao medias simples de cada metrica, ignorando valores ausentes; o campo `classification_macro` traz a macro-media de accuracy/precision/recall/f1. Quanto mais proximo de 1, maior a similaridade entre `target` e `predicted` em todas as metricas, incluindo WMD (que ja e normalizado para [0,1]).
+
+## Variaveis de ambiente
+
+Geracao (defaults ja otimizados — exportar so para opt-out):
+
+- `GENERATE_DEBUG=0` — desliga logs em `logs/` (default ligado).
+- `GEN_SEED=42` — seed deterministica do Ollama (default; setar `none` desliga).
+- `GEN_RESUME=0` — desliga retomada por checkpoint (default ligado).
+- `N3_LEGACY=1` — N3 usa 4 chamadas (uma por operador) em vez do prompt combinado.
+- `GEN_TIMEOUT=600` — timeout em segundos por chamada LLM.
+- `GEN_HEARTBEAT=30` — intervalo (segundos) entre mensagens de "ainda aguardando...".
+- `USE_OLLAMA_DIRECT=1` — substitui `langchain_ollama` por cliente `ollama` direto.
+
+Validacao (defaults ja otimizados — exportar so para opt-out):
+
+- `VALIDATE_HUNGARIAN=0` — usa alinhamento por indice (default = Hungarian/similaridade).
+- `VALIDATE_BERTSCORE=0` — desativa a metrica BERTScore (default ligado).
+- `VALIDATE_ROUGE=0` — desativa a metrica ROUGE-L (default ligado).
+- `METRICS_SPLIT_ITEMS=0` — items inline no JSON principal (default = split em jsonl).
+- `SBERT_MODEL=<repo>` — sobrescreve o SBERT padrao
+  (default `tgsc/sentence-transformer-ult5-pt-small`).
+
+Logging:
+
+- `LOG_FORMAT=json` — escreve logs em JSON Lines (`{"ts","iso","level","msg"}`).
+
+Infra:
+
+- `OLLAMA_HOST=http://...` — endereco do Ollama (default `http://localhost:11434`).
+- `OLLAMA_HOSTS=http://a,http://b` — multiplos hosts; modelos distribuidos via ThreadPoolExecutor.
+- `HF_TOKEN` (opcional) — token Hugging Face para evitar warnings de rate limit.
+
+## Ferramentas auxiliares
+
+- `tools/generate_tables.py` — gera tabelas LaTeX e CSV a partir de `metrics/`.
+- `tools/run_seed_sweep.py` — roda multiplas seeds e calcula media/desvio.
+- `tools/baseline_regex.py` — baseline nao-LLM (regex) para comparacao.
+- `tools/quality_time.py` — calcula F1/segundo por modelo (qualidade vs custo).
+
+## Docker
+
+```bash
+docker compose up --build
+```
+
+Sobe um container `ollama` e o app com volumes para os pesos. Veja `docker-compose.yml`.
 
 ## Ajuda
 

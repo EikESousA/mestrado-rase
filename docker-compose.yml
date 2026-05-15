@@ -1,0 +1,26 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: mestrado-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama-data:/root/.ollama
+    restart: unless-stopped
+
+  app:
+    build: .
+    container_name: mestrado-app
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_HOST=http://ollama:11434
+    volumes:
+      - .:/app
+      - hf-cache:/root/.cache/huggingface
+    stdin_open: true
+    tty: true
+
+volumes:
+  ollama-data:
+  hf-cache:

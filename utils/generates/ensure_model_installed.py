@@ -1,25 +1,25 @@
-import subprocess
+import os
+
+import ollama
 
 
 def ensure_model_installed(model: str, model_id: str) -> bool:
+    host = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
     try:
-        result: subprocess.CompletedProcess[str] = subprocess.run(
-            ["ollama", "list"],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-    except (subprocess.SubprocessError, FileNotFoundError):
-        print("Erro: falha ao executar o Ollama.")
+        client = ollama.Client(host=host)
+        listing = client.list()
+    except Exception as exc:
+        print(f"Erro ao consultar Ollama em {host}: {exc}")
         return False
 
-    if model_id in result.stdout:
+    installed = {m.get("model") or m.get("name") for m in listing.get("models", [])}
+    if model_id in installed:
         return True
 
     print(f"Modelo {model} nao encontrado. Instalando {model_id}...")
-    pull: subprocess.CompletedProcess[str] = subprocess.run(["ollama", "pull", model_id], check=False)
-    if pull.returncode != 0:
-        print(f"Erro ao instalar o modelo {model_id}.")
+    try:
+        client.pull(model_id)
+    except Exception as exc:
+        print(f"Erro ao instalar o modelo {model_id}: {exc}")
         return False
-
     return True

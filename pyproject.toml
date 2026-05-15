@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mestrado-rase"
+version = "0.2.0"
+description = "Extracao RASE de normas brasileiras via LLMs locais (Ollama)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "CC0-1.0" }
+authors = [{ name = "Eike Natan Sousa Brito", email = "eike.sousa@hotmail.com" }]
+dependencies = [
+    "bert-score",
+    "fuzzywuzzy",
+    "gensim",
+    "huggingface-hub",
+    "langchain-ollama",
+    "langchain-core",
+    "nltk",
+    "ollama",
+    "pot",
+    "python-Levenshtein",
+    "rouge-score",
+    "safetensors[numpy]",
+    "scikit-learn",
+    "sentence-transformers",
+]
+
+[tool.setuptools]
+packages = ["config", "generates", "validates", "utils", "tools"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "W"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_unused_ignores = true
+ignore_missing_imports = true
