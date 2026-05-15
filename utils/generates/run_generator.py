@@ -1,6 +1,26 @@
 import os
+import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Callable, Dict, List
+
+
+_DEFAULT_COOLDOWN_BY_LEVEL: Dict[str, float] = {
+    "n1": 30.0,
+    "n2": 60.0,
+    "n1n2": 60.0,
+    "n3": 90.0,
+    "n1n2n3": 90.0,
+}
+
+
+def _cooldown_seconds(n_key: str) -> float:
+    raw = os.environ.get("GEN_MODEL_COOLDOWN", "").strip()
+    if raw:
+        try:
+            return max(0.0, float(raw))
+        except ValueError:
+            pass
+    return _DEFAULT_COOLDOWN_BY_LEVEL.get(n_key, 30.0)
 
 from config.models import MODELS, predict_path
 from utils.generates.check_ollama_installed import check_ollama_installed
@@ -100,8 +120,12 @@ def run_generator(n_key: str, models: List[str]) -> None:
 
     if len(hosts) == 1:
         # Sequencial (Ollama serializa GPU local).
-        for model, model_id in tasks:
+        cooldown = _cooldown_seconds(n_key)
+        for i, (model, model_id) in enumerate(tasks):
             _run_one(generator, n_key, model, model_id, input_template, hosts[0])
+            if cooldown > 0 and i < len(tasks) - 1:
+                print(f"Cooldown de {cooldown:.0f}s antes do proximo modelo...")
+                time.sleep(cooldown)
         return
 
     # Distribui (model, model_id) entre hosts via round-robin com workers paralelos.

@@ -84,6 +84,8 @@ def generate_n1(
         return
 
     seed = env_seed()
+    keep_alive = os.environ.get("N1_KEEP_ALIVE", "30s").strip()
+
     llm_kwargs: Dict[str, Any] = {
         "model": model_id,
         "temperature": 0.1,
@@ -95,6 +97,8 @@ def generate_n1(
     }
     if seed is not None:
         llm_kwargs["seed"] = seed
+    if keep_alive:
+        llm_kwargs["keep_alive"] = keep_alive
     llm: OllamaLLM = OllamaLLM(**llm_kwargs)
     prompt: ChatPromptTemplate = ChatPromptTemplate.from_template(template)
     chain: RunnableSerializable[Dict[str, str], str] = prompt | llm
@@ -192,8 +196,12 @@ def generate_n1(
             result_data["time"] = time.time() - total_start_time
 
             append_checkpoint(output_path, result_entry)
-            with open(output_path, "w", encoding="utf-8") as file:
+            tmp_path = output_path + ".tmp"
+            with open(tmp_path, "w", encoding="utf-8") as file:
                 json.dump(result_data, file, ensure_ascii=False, indent=2)
+                file.flush()
+                os.fsync(file.fileno())
+            os.replace(tmp_path, output_path)
 
             print(f"Texto {count} ({elapsed_time:.2f}s): {preview}{suffix}")
             log(f"Texto {count} concluido ({elapsed_time:.2f}s)")

@@ -24,6 +24,11 @@ def main() -> None:
     if args.debug:
         os.environ["GENERATE_DEBUG"] = "1"
 
+    # Defaults seguros para evitar pico de carga (memoria/temperatura).
+    # Podem ser sobrescritos pelo ambiente do usuario.
+    os.environ.setdefault("OLLAMA_NUM_PARALLEL", "1")
+    os.environ.setdefault("OLLAMA_MAX_LOADED_MODELS", "1")
+
     try:
         while True:
             clear_screen()

@@ -88,16 +88,41 @@ def generate_n2(
         return
 
     seed = env_seed()
+
+    def _env_int(name: str, default: int) -> int:
+        raw = os.environ.get(name, "").strip()
+        if not raw:
+            return default
+        try:
+            return int(raw)
+        except ValueError:
+            return default
+
+    def _env_float(name: str, default: float) -> float:
+        raw = os.environ.get(name, "").strip()
+        if not raw:
+            return default
+        try:
+            return float(raw)
+        except ValueError:
+            return default
+
+    num_predict = _env_int("N2_NUM_PREDICT", 512)
+    keep_alive = os.environ.get("N2_KEEP_ALIVE", "30s").strip()
+    pause_between_texts = _env_float("N2_TEMP_PAUSE", 2.0)
+
     llm_kwargs: Dict[str, Any] = {
         "model": model_id,
         "temperature": 0.1,
         "top_p": 0.9,
         "repeat_penalty": 1.1,
-        "num_predict": 512,
+        "num_predict": num_predict,
         "client_kwargs": {"timeout": 600},
     }
     if seed is not None:
         llm_kwargs["seed"] = seed
+    if keep_alive:
+        llm_kwargs["keep_alive"] = keep_alive
     llm: OllamaLLM = OllamaLLM(**llm_kwargs)
     prompt: ChatPromptTemplate = ChatPromptTemplate.from_template(template)
     chain: RunnableSerializable[Dict[str, str], str] = prompt | llm
@@ -217,11 +242,19 @@ def generate_n2(
             result_data["time"] = time.time() - total_start_time
 
             append_checkpoint(output_path, result_entry)
-            with open(output_path, "w", encoding="utf-8") as file:
+            tmp_path = output_path + ".tmp"
+            with open(tmp_path, "w", encoding="utf-8") as file:
                 json.dump(result_data, file, ensure_ascii=False, indent=2)
+                file.flush()
+                os.fsync(file.fileno())
+            os.replace(tmp_path, output_path)
 
             print(f"Texto {count} ({elapsed_time:.2f}s): {preview}{suffix}")
             log(f"Texto {count} concluido ({elapsed_time:.2f}s)")
+
+            if pause_between_texts > 0:
+                log(f"Pausa termica de {pause_between_texts:.1f}s.")
+                time.sleep(pause_between_texts)
     finally:
         close_log()
 
