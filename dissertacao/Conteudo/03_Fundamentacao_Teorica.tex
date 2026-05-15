@@ -198,6 +198,19 @@ Diversas técnicas foram desenvolvidas para representar palavras vetorialmente (
 No contexto do PLN moderno, representações vetoriais, como \textit{word embeddings} e \textit{sentence embeddings}, têm sido amplamente utilizadas. Modelos como Word2Vec, GloVe, fastText e OpenAIEmbeddings destacam-se no campo \cite{devlin2019}. O OpenAIEmbeddings, em particular, apresenta um desempenho robusto em diversas tarefas de PLN.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Métricas de Similaridade Textual}
+
+A avaliação de saídas geradas por LLMs em tarefas de conversão de texto requer a comparação entre o texto produzido pelo modelo e um texto de referência. Como nem sempre a correspondência exata é desejável --- muitas vezes paráfrases corretas devem ser aceitas ---, são utilizadas métricas de similaridade que se dividem, de forma geral, em três famílias: \textit{lexicais}, \textit{semânticas} e \textit{de distância} \cite{jurafsky2009}.
+
+As métricas \textbf{lexicais} comparam as cadeias de caracteres ou os tokens presentes nos textos, sem considerar o significado das palavras. Uma das mais difundidas é a baseada na distância de Levenshtein, que conta o número mínimo de operações de edição (inserção, remoção ou substituição) necessárias para transformar uma cadeia em outra. A biblioteca \textit{FuzzyWuzzy} oferece variantes dessa medida, como o \textit{partial ratio}, adequado para casos em que uma string é fragmento da outra. Outra métrica lexical clássica é a similaridade do cosseno aplicada a vetores TF-IDF (\textit{Term Frequency--Inverse Document Frequency}), que pondera os termos pela sua importância relativa no corpus \cite{manning2008}.
+
+As métricas \textbf{semânticas} apoiam-se em \textit{sentence embeddings}: representam cada texto como um vetor em um espaço de alta dimensionalidade, treinado para aproximar sentenças com significado parecido. A similaridade é então calculada pelo cosseno entre os vetores. Modelos como o \textit{Sentence-BERT} (SBERT) \cite{reimers2019} estendem o BERT para gerar tais representações de forma eficiente. Para o português, destaca-se o BERTimbau \cite{souza2020}, especializado em textos em português brasileiro, com variantes ajustadas para o domínio jurídico. Modelos multilíngues, como o \textit{paraphrase-multilingual-mpnet-base}, permitem comparações entre línguas diferentes em um mesmo espaço vetorial.
+
+As métricas \textbf{de distância} medem o custo de transformar um texto em outro no espaço de \textit{embeddings}. O \textit{Word Mover's Distance} (WMD) \cite{kusner2015} formaliza esse problema como um transporte ótimo entre as palavras de duas sentenças, ponderado pela distância euclidiana entre seus \textit{embeddings}. Para o português, o WMD pode ser calculado com \textit{embeddings} do FastText \cite{bojanowski2017} ou com modelos do projeto NILC, treinados em corpora em português. Valores normalizados de WMD aproximam-se de 1 quando as sentenças são semanticamente próximas e tendem a 0 quando distantes.
+
+Essas três famílias são complementares: as lexicais penalizam reformulações que preservam o significado, enquanto as semânticas e as de distância capturam equivalências apesar de variações de superfície. A combinação das três fornece um retrato mais completo da qualidade das saídas de LLMs e é amplamente utilizada na literatura de PLN aplicada \cite{reimers2019}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section {Redes Neurais Artificiais}
 
 O sistema nervoso humano é composto por neurônios, que desempenham a função de transmitir informações essenciais para o funcionamento, comportamento e raciocínio do corpo humano \cite{tafner1995}. As Redes Neurais Artificiais (RNAs) são técnicas computacionais inspiradas na estrutura neural do ser humano, adquirindo conhecimento por meio da experiência \cite{haykin1999}. Assim, uma rede neural artificial pode ser compreendida como uma abstração da rede neural biológica, com o objetivo de modelar processos de aprendizado e resolver problemas complexos.
@@ -578,32 +591,7 @@ O Modelo de Recompensa (RM) utiliza dados de preferência para gerar pares de re
 
 Por fim, o prompt é concatenado com as respostas em uma única linha, embaralhadas aleatoriamente, e então separadas para cálculo de pontuação. Esta abordagem melhora a eficiência do treinamento sem perda de precisão.
 
-Para melhorar ainda mais os modelos de LLM, podem ser utilizadas técnicas como a \textit{Retrieval-Augmented Generation} (RAG). A RAG representa uma inovação significativa na operação dos LLM, pois ajuda a melhorar a precisão e a atualidade das respostas do modelo \cite{lewis2021}.
-
-Diferentemente do fine-tuning, a RAG introduz um sistema intermediário de pesquisa em bases de dados externas, frequentemente implementado como Bases de Dados Vetoriais (VecDBs) \cite{akkiraju2024}.
-
-A eficácia da RAG tem sido demonstrada em vários domínios que exigem informações atualizadas. Por exemplo, Gautier Izacard e Touvron, mostraram que modelos RAG superaram os LLM tradicionais em tarefas de pergunta-resposta de domínio aberto, alcançando uma melhoria de até 30\% em métricas padrão como \textit{Exact Match} e \textit{F1-score} \cite{izacard2021}.
-
-A metodologia RAG fundamenta-se em três componentes técnicos principais: pesquisa vetorial, similaridade vetorial e \textit{re-ranking}, confome a Figura \ref{img:3.7.1}. Estes elementos permitem que o sistema supere a simples correspondência de palavras-chave, possibilitando a identificação do significado semântico das palavras para produzir respostas mais contextualizadas \cite{manning2008}.
-
-\begin{figure}[htb]
-    \centering
-    \caption{Arquitetura RAG: Geração Aumentada por Recuperação}
-    \begin{center}
-        \includegraphics[scale=0.5]
-        {Imagens/3.7.1-rag.png}
-    \end{center}
-    \label{img:3.7.1}
-    Fonte: Própria (2024).
-\end{figure}
-
-\begin{itemize}
-    \item \textbf{Pesquisa vetorial}: Utiliza representações numéricas de alta dimensão para codificar o conteúdo semântico dos textos \cite{mikolov2013a}.
-    \item \textbf{Similaridade vetorial}: Aplica métricas matemáticas para quantificar a proximidade semântica entre vetores. As métricas mais comuns da similaridade vetorial são: Similaridade do Cosseno, Distância Euclidiana e Produto Escalar \cite{mikolov2013a}.
-    \item \textbf{Re-ranking}: Implementa algoritmos adicionais para ajustar os resultados iniciais da pesquisa, dando maior probabilidade aos mais relevantes \cite{mikolov2013a}.
-\end{itemize}
-
-Outra técnica também utilizada para melhorar as respostas de LLMs é a engenharia de \textit{prompt}, que envolve a preparação de estratégias de códigos ou estímulos para gerar respostas características, concisas e proeminentes. Com isso, torna-se uma prática essencial para o aproveitamento máximo das potencialidades dos LLMs \cite{brown2020}.
+Dentre as técnicas para especializar LLMs em tarefas de domínio específico sem alterar seus pesos, destaca-se a \textit{Engenharia de Prompt}, que envolve a preparação cuidadosa das instruções enviadas ao modelo para obter respostas características, concisas e contextualmente adequadas. A Engenharia de Prompt tornou-se uma prática essencial para o aproveitamento máximo das potencialidades dos LLMs \cite{brown2020}, sendo a abordagem adotada nesta pesquisa.
 
 O \textit{prompt} funciona como uma configuração dos modelos para que uma tarefa possa ser concluída. Não se trata apenas da criação de instruções independentes, mas de uma habilidade que tenha um entrosamento profundo das capacidades e limitações dos LLMs. Existem vários estágios para refinar, repetir e testar continuamente os prompts com base nos resultados obtidos \cite{nascimento2024}.
 
@@ -704,3 +692,5 @@ Outro estudo sobre o chatbot JULE, que usa BIM e PLN, mostrou avanços na efici�
 Um estudo com LLMs como GPT-3.5 e GPT-4 aplicados a segurança em BIM demonstrou precisão significativa, mas também dificuldades em questões complexas como emergências e cálculos. A limitação aqui está na falta de confiabilidade para questões mais técnicas, e embora os LLMs possam interpretar normas e regulamentos, é necessário garantir maior precisão e evitar informações enviesadas \cite{sammou2024}.
 
 Além disso, a pesquisa sobre técnicas de engenharia de prompt para otimizar LLMs no setor AEC destacou que prompts genéricos não são eficazes. O uso de prompts mais específicos melhorou a precisão, mas problemas como alucinações do modelo e a necessidade de validação externa persistem \cite{samsami2024}. A adaptação dos modelos às regulamentações específicas do setor é crucial, e o uso de LLMs para interpretar regras regulatórias se mostra útil, mas ainda exige ajustes finos e validação.
+
+\textbf{Diferencial desta pesquisa.} Os trabalhos revisados concentram-se em LLMs proprietários (ChatGPT, GPT-3.5, GPT-4, Bard) e em aplicações pontuais de Engenharia de Prompt, sem comparações sistemáticas entre modelos \textit{open-source} nem decomposição explícita da tarefa em níveis. Esta dissertação distingue-se ao avaliar comparativamente seis LLMs \textit{open-source} servidos localmente via Ollama (Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen), aplicando-os à conversão de normas brasileiras da AEC para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3) e em três experimentos (EN1, EN2 e EN1N2). A avaliação combina métricas lexicais, semânticas e de distância, complementadas por métricas de classificação, oferecendo um retrato multidimensional do desempenho de cada modelo.

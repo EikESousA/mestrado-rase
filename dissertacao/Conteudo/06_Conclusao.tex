@@ -1,0 +1,46 @@
+\chapter{Conclusão}
+
+Esta dissertação investigou a aplicação de seis Modelos de Linguagem de Grande Porte (LLMs) \textit{open-source} --- Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen --- na conversão automática de normas técnicas brasileiras da AEC para o formato RASE, utilizando \textbf{exclusivamente Engenharia de Prompt}. A tarefa foi decomposta em três níveis sucessivos de normalização (N1, N2 e N3) e avaliada em três experimentos (EN1, EN2 e EN1N2) sobre um \textit{dataset} de 79 normas anotadas, com base em métricas de similaridade lexical, semântica, de distância e de classificação.
+
+\section{Síntese dos Resultados}
+
+A decomposição em três níveis de normalização viabilizou a conversão de normas AEC em representações RASE sem recurso a \textit{Fine-Tuning} ou \textit{Retrieval-Augmented Generation}. A Engenharia de Prompt, isoladamente, foi suficiente para atingir similaridade semântica superior a 0{,}80 no melhor cenário (Llama em EN2). As métricas baseadas em \textit{embeddings} (SBERT, BERTimbau e Multilingual) demonstraram-se as mais adequadas para validar transformações normativas, ao tolerarem reformulações que preservam o significado original. Globalmente, o Llama liderou a qualidade nos três experimentos, o Dolphin ofereceu o melhor custo-benefício ao combinar qualidade competitiva com tempos até cem vezes menores, e Qwen e Alpaca apresentaram desempenho insatisfatório em todas as métricas.
+
+\section{Contribuições}
+
+Como principais contribuições, esta pesquisa apresenta:
+
+\begin{itemize}
+    \item A definição operacional de três níveis de normalização sobre a metodologia RASE: \textbf{N1} (segmentação atômica), \textbf{N2} (identificação dos operadores RASE) e \textbf{N3} (estruturação semântica em JSON), com prompts dedicados a cada nível e a cada operador.
+    \item Uma comparação sistemática de seis LLMs \textit{open-source} servidos localmente via Ollama, na tarefa de conversão de normas brasileiras da AEC, sob protocolo experimental idêntico (mesmo \textit{dataset}, mesmos prompts e mesmo hardware).
+    \item Um conjunto reproduzível de prompts especializados por nível e por operador, disponível em \texttt{mestrado-rase/prompts/}, que pode ser reutilizado e estendido em pesquisas futuras.
+    \item Um \textit{dataset} anotado de 79 normas brasileiras, com referência em todos os níveis (N1, N2 e N3) e por operador RASE, viabilizando avaliações replicáveis.
+    \item Uma avaliação multimétrica que combina similaridade lexical, semântica e de distância, complementadas por métricas de classificação, fornecendo um retrato multidimensional do desempenho de cada modelo.
+\end{itemize}
+
+\section{Limitações}
+
+A pesquisa apresenta limitações que delimitam o alcance das suas conclusões:
+
+\begin{itemize}
+    \item O \textit{dataset} é relativamente pequeno (79 normas) e restrito a normas brasileiras de acessibilidade (NBR~9050 e similares); resultados podem variar em outros domínios normativos.
+    \item A avaliação do nível N3 não tem a mesma profundidade que as dos níveis N1 e N2; o aprofundamento da validação N3 fica como tarefa imediata.
+    \item As métricas de classificação dependem da escolha de um limiar de similaridade, que possui caráter parcialmente arbitrário e influencia diretamente as taxas observadas de Precisão e Revocação.
+    \item Não houve aplicação prática em software BIM (validação fim-a-fim em projetos reais); o ciclo completo de verificação ainda precisa ser fechado.
+    \item Os modelos foram executados em uma única estação de trabalho, sem análise de variância entre execuções ou entre configurações de \textit{hardware}.
+\end{itemize}
+
+\section{Trabalhos Futuros}
+
+Como direções de pesquisa futuras, destacam-se:
+
+\begin{itemize}
+    \item \textbf{Aplicação em BIM}: integração dos resultados ao Revit ou Dynamo, fechando o ciclo de verificação automática de conformidade em projetos reais.
+    \item \textbf{\textit{Fine-Tuning} e RAG}: explorar essas técnicas como evoluções naturais da abordagem baseada apenas em prompts, comparando os ganhos relativos em qualidade e custo computacional.
+    \item \textbf{Ampliação do \textit{dataset}}: incluir um espectro maior de normas brasileiras (NBRs estruturais, hidráulicas e elétricas) e expandir para normas internacionais.
+    \item \textbf{Avaliação humana}: complementar as métricas automáticas com avaliações por especialistas da AEC, capazes de capturar nuances semânticas que os \textit{embeddings} não detectam.
+    \item \textbf{Estudo de variância}: realizar múltiplas execuções por modelo, variando configurações de temperatura e de \textit{seed}, para quantificar a estabilidade das saídas.
+    \item \textbf{Otimização do pipeline}: investigar estratégias de mitigação da propagação de erros em EN1N2, como reescrita iterativa ou \textit{self-consistency}.
+\end{itemize}
+
+Em síntese, a pesquisa demonstrou que LLMs \textit{open-source}, quando combinados com uma decomposição cuidadosa da tarefa e com prompts especializados, constituem uma alternativa viável e acessível para a automação da conversão de normas técnicas da AEC para representações computáveis, abrindo caminho para a verificação automática de conformidade em projetos baseados em BIM.

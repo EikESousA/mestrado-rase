@@ -1,219 +1,155 @@
-\chapter{Proposta}
+\chapter{Metodologia}
 
-A pesquisa propõe o desenvolvimento de um modelo LLM baseado no LLaMa 3, open-source, com o objetivo de interpretar regras e padrões regulatórios da AEC e convertê-los para a metodologia RASE. O sistema converterá essas informações para o software Revit, implementando um código de validação para verificar se os elementos do projeto estão em conformidade com as normas, destacando os corretos e incorretos. Para treinar o modelo, serão usadas bases de dados que convertem normas regulatórias em código RASE. O autor Eduardo \cite{eduardo2020} é uma referência para essa abordagem. Para alcançar o resultado esperado, serão realizadas três tarefas distintas com três modelos de treinamento diferentes, sendo um processo de conversão das normas para dados estruturados RASE.
+Este capítulo descreve a metodologia adotada na pesquisa, organizada em torno de três decisões centrais: (i) a decomposição da tarefa de conversão de normas para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3); (ii) o uso exclusivo de Engenharia de Prompt como técnica de especialização dos modelos, sem \textit{Fine-Tuning} e sem \textit{Retrieval-Augmented Generation}; e (iii) a comparação sistemática de seis Modelos de Linguagem de Grande Porte (LLMs) \textit{open-source} servidos localmente via Ollama. O capítulo apresenta também o \textit{dataset} utilizado, o pipeline de execução, os três experimentos conduzidos (EN1, EN2 e EN1N2), as métricas de validação e o ambiente computacional empregado.
 
-\section{Materiais e Métodos}
+\section{Visão Geral}
 
-A metodologia proposta para este trabalho busca construir um conjunto de modelos utilizando o LLaMa 3 para interpretar normas AEC e convertê-las para a linguagem RASE. A conversão será realizada em três etapas, com cada etapa correspondendo a um modelo específico, que será treinado e ajustado de acordo com técnicas de engenharia de prompt e estratégias de treinamento adequadas.
+A pesquisa avaliou o uso de LLMs \textit{open-source} para converter normas técnicas da AEC em representações computáveis no formato RASE, utilizando \textbf{exclusivamente Engenharia de Prompt}. A conversão foi modelada como um processo de normalização em três níveis sucessivos: N1 (segmentação atômica das sentenças normativas), N2 (identificação dos operadores RASE) e N3 (estruturação semântica em JSON). Seis modelos LLM foram avaliados sob três experimentos (EN1, EN2 e EN1N2), aplicados a um \textit{dataset} composto por 79 normas brasileiras anotadas, e comparados por meio de métricas de similaridade textual e de classificação.
 
-Os modelos utilizados são:
+\section{Necessidade de Normalização em Três Níveis}
 
-\begin{itemize}
-    \item \textbf{Modelo R1 - Extração de Normas e Separação de Regras}:  
-        \begin{itemize}
-             \item \textbf{Objetivo}: Identificar e extrair as normas presentes em documentos regulatórios da AEC e dividi-las em regras individuais.
-             \item \textbf{Modelo}: Modelo R1.
-             \item \textbf{Entrada}: Documento normativo (exemplo: regulamento de construção, código de edificações).
-             \item \textbf{Saída}: Regras separadas, com cada norma identificada como uma unidade de verificação.
-             \item \textbf{Exemplo de Entrada}: "A inclinação transversal da superfície deve ser de até 2\% para pisos internos e de até 3\% para pisos externos."
-             \item \textbf{Exemplo de Saída}: ["Pisos internos devem ter inclinação transversal menor ou igual a 2\%;", "Pisos externos devem ter inclinação transversal menor ou igual a 3\%;"]
+A transformação completa de uma norma técnica em texto bruto para a sua representação RASE final em JSON envolve raciocínios distintos: segmentação sintática, classificação semântica e extração de atributos estruturados. Pedir todas essas decisões em uma única chamada ao LLM tende a degradar a qualidade da saída, induzindo alucinações, omissões e estruturas inválidas. A decomposição em três níveis sucessivos isola cada decisão, mantém cada chamada ao modelo com escopo bem delimitado e permite validar cada etapa independentemente.
 
-        \end{itemize}
-    \item \textbf{Modelo R2 - Organização das Regras em Operadores RASE}:  
-        \begin{itemize}
-             \item \textbf{Objetivo}: Classificar as regras extraídas de acordo com os quatro atributos do modelo RASE: Requisito, Aplicabilidade, Seleção e Exceção.
-             \item \textbf{Modelo}: Modelo R2.
-             \item \textbf{Entrada}: Regras extraídas na etapa anterior.
-             \item \textbf{Saída}: Regras organizadas em operadores RASE, permitindo a análise semântica de sua aplicação.
-             \item \textbf{Exemplo de Entrada}: "Pisos internos devem ter inclinação transversal menor ou igual a 2\%;"
-             \item \textbf{Exemplo de Saída}: "A\{Pisos\} S\{internos\} R\{devem ter inclinação transversal menor ou igual a 2\%\};"
+\subsection{N1 --- Segmentação Atômica}
 
-        \end{itemize}
-    \item \textbf{Modelo R3}:  
-        \begin{itemize}
-            \item \textbf{Objetivo}: Converter os operadores identificados na etapa anterior em atributos RASE aplicáveis, ou seja, regras que podem ser implementadas diretamente em softwares de modelagem (BIM).
-            \item \textbf{Modelo}: Modelo R3.
-            \item \textbf{Entrada}: Operadores RASE organizados.
-            \item \textbf{Saída}: Atributos RASE em JSON, prontos para verificação em ferramentas de modelagem de projetos, como o Revit.
-            \item \textbf{Exemplo de Entrada}:
-            \begin{lstlisting}[language=json]
-            {
-              "texto_completo": "Os corrimaos podem ser acoplados aos guarda-corpos.",
-              "texto_segmentado": "Os A{corrimaos} R{podem ser acoplados aos guarda-corpos.}",
-            }
-            \end{lstlisting}
-             \item \textbf{Exemplo de Saída}:
-            \begin{lstlisting}[language=json]
-            {
-              "texto_completo": "Os corrimaos podem ser acoplados aos guarda-corpos.",
-              "texto_segmentado": "Os A{corrimaos} R{podem ser acoplados aos guarda-corpos.}",
-              "segmentos": [
-                {
-                  "texto_metrico": "corrimaos",
-                  "tipo": "aplicabilidade",
-                  "objeto": "componente",
-                  "propriedade": "tipo",
-                  "comparacao": "=",
-                  "valor": "corrimao",
-                  "unidade": ""
-                },
-                {
-                  "texto_metrico": "podem ser acoplados aos guarda-corpos.",
-                  "tipo": "requisito",
-                  "objeto": "corrimao",
-                  "propriedade": "guarda-corpo",
-                  "comparacao": "=",
-                  "valor": "VERDADEIRO",
-                  "unidade": ""
-                }
-              ]
-            }
-            \end{lstlisting}
-        \end{itemize}
-\end{itemize}
+Uma sentença normativa frequentemente contém múltiplas regras coordenadas. Por exemplo, o texto ``A inclinação transversal deve ser de até 2\% para pisos internos e de até 3\% para pisos externos'' contém duas regras computáveis distintas. O nível N1 tem como objetivo segmentar a sentença original em sentenças atômicas, em que cada item representa uma única regra. Sem essa segmentação, as etapas subsequentes não conseguem aplicar corretamente os operadores RASE.
 
-Para alcançar os objetivos propostos, a pesquisa utilizará as seguintes ferramentas e bases de dados:
+O prompt utilizado em N1 (arquivo \texttt{prompts/n1.txt}) instrui o modelo a quebrar a sentença em sentenças curtas e diretas, uma regra computável por sentença, sem inventar elementos, acompanhado de um exemplo demonstrativo.
+
+\subsection{N2 --- Identificação dos Operadores RASE}
+
+Dada uma regra atômica produzida em N1, o nível N2 tem como objetivo identificar quais trechos correspondem a Requisito (R), Aplicabilidade (A), Seleção (S) e Exceção (E), segundo a metodologia RASE. Essa classificação é o cerne da formalização: sem ela, o texto permanece em linguagem natural.
+
+O prompt N2 (\texttt{prompts/n2.txt}) define uma ordem fixa para os quatro operadores e um formato exato de saída em quatro linhas, marcando o campo vazio com aspas duplas (\verb|""|). O prompt inclui um exemplo único embutido, que serve de âncora para o modelo.
+
+\subsection{N3 --- Estruturação Semântica em JSON}
+
+Mesmo após classificar um trecho como R, A, S ou E, o conteúdo permanece em linguagem natural. Para que uma regra possa ser verificada automaticamente contra um modelo BIM, é necessário extrair um tripé estruturado composto por \textit{objeto}, \textit{propriedade} e \textit{valor}, complementado por \textit{comparador} e \textit{unidade}. O nível N3 produz esta representação em formato JSON, com os campos \verb|type|, \verb|object|, \verb|property|, \verb|comparation|, \verb|target| e \verb|unit|.
+
+Em função da natureza distinta de cada operador RASE, optou-se por utilizar \textbf{um prompt por operador} em N3 (\texttt{prompts/n3\_aplicabilidade.txt}, \texttt{n3\_requisito.txt}, \texttt{n3\_selecao.txt} e \texttt{n3\_execao.txt}). A Aplicabilidade descreve \textit{a quem} a regra se aplica; o Requisito descreve \textit{o que} é exigido; a Seleção restringe o escopo; e a Exceção define os casos não cobertos. Cada prompt traz o esquema JSON explícito, regras heurísticas de mapeamento por padrões textuais comuns (por exemplo, ``uso público'' $\rightarrow$ \verb|property "uso", comparation "=", target "público"|) e múltiplos exemplos \textit{few-shot} por operador.
+
+\section{Engenharia de Prompt}
+
+A pesquisa utilizou exclusivamente Engenharia de Prompt como abordagem de especialização. Não foi empregado \textit{Fine-Tuning} dos modelos, nem \textit{Retrieval-Augmented Generation}, nem qualquer banco vetorial. Toda a adaptação dos LLMs à tarefa foi realizada pelo desenho dos prompts, mantidos no diretório \texttt{prompts/} do projeto. Três técnicas clássicas de Engenharia de Prompt foram aplicadas, cada uma escolhida em função da natureza do nível em que atua.
+
+\subsection{Prompt Direct}
+
+O \textit{Prompt Direct} consiste em uma instrução direta e objetiva, sem encadeamento explícito de raciocínio. Foi aplicado ao nível \textbf{N1}, cuja tarefa --- segmentar uma sentença em sub-regras --- é estruturalmente simples e não exige raciocínio profundo sobre semântica normativa. Suas principais vantagens são o menor consumo de tokens e a menor latência; o risco principal é a queda de robustez diante de sentenças longas ou ambíguas. No código, \texttt{prompts/n1.txt} consiste em cinco regras imperativas e um exemplo curto, sem instruções de raciocínio passo a passo.
+
+\subsection{Prompt Chain-of-Thought}
+
+O \textit{Prompt Chain-of-Thought} instrui o modelo a explicitar o raciocínio em etapas antes da resposta final. Foi aplicado ao nível \textbf{N2}, em que a classificação de trechos como R, A, S ou E exige a interpretação do papel sintático-semântico do trecho dentro da regra. Esta técnica reduz alucinações e melhora a classificação em sentenças com múltiplos operadores, ao custo de maior consumo de tokens. O arquivo \texttt{prompts/n2.txt} apresenta a ordem fixa dos passos (1.~aplicabilidade $\rightarrow$ 2.~seleção $\rightarrow$ 3.~exceção $\rightarrow$ 4.~requisito), guiando o modelo por uma cadeia de decisão explícita.
+
+\subsection{Prompt Few-Shot}
+
+O \textit{Prompt Few-Shot} inclui no próprio prompt exemplos completos de entrada e saída, ancorando o formato esperado. Foi aplicado ao nível \textbf{N3}, em que a saída precisa obedecer a um esquema JSON rígido: sem exemplos, os modelos divergem do formato ou inventam campos. A técnica traz alta aderência ao formato e à terminologia esperada, ao custo de consumir parte da janela de contexto com os exemplos. Cada um dos arquivos \texttt{prompts/n3\_*.txt} traz de dois a quatro exemplos completos no padrão \textit{operador N2} $\rightarrow$ \textit{JSON}.
+
+\section{Modelos LLM Avaliados}
+
+Seis modelos \textit{open-source} foram servidos localmente por meio do \textbf{Ollama} (\texttt{ollama serve}), conforme a Tabela~\ref{tab:modelos_llm}. Todos foram executados sobre o mesmo hardware, com os mesmos prompts e o mesmo \textit{dataset}, garantindo comparabilidade direta entre os resultados.
+
+\begin{table}[ht]
+\centering
+\caption{Modelos LLM \textit{open-source} avaliados.}
+\label{tab:modelos_llm}
+\begin{tabular}{lll}
+\hline
+Modelo & Origem & Notas \\
+\hline
+Llama   & Meta                     & Modelo de referência, maior latência observada \\
+Dolphin & Cognitive Computations   & Variante alinhada por instruções \\
+Gemma   & Google                   & Modelo compacto \\
+Mistral & Mistral AI               & LLM eficiente em parâmetros \\
+Alpaca  & Stanford                 & Variante Llama instruída \\
+Qwen    & Alibaba                  & LLM multilíngue \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Dataset}
+
+O \textit{dataset} utilizado é mantido em um único arquivo, \texttt{mestrado-rase/dataset.json}, com aproximadamente 270~KB e \textbf{79 normas} anotadas (\verb|counts: 79|). As normas foram derivadas de regulamentações brasileiras da AEC, com ênfase na NBR~9050 \cite{abnt9050} (acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos), adaptadas a partir do trabalho de Eduardo~\cite{eduardo2020}.
+
+Cada entrada do \textit{dataset} é estruturada da seguinte forma:
 
 \begin{itemize}
-    \item \textbf{LLaMa 3}: Modelo base para as três etapas de transformação das normas.  
-    \item \textbf{PostgresVector}: Usado para armazenamento e consulta de dados vetoriais, facilitando a busca por similaridade em grandes volumes de texto. A consulta será feita por similaridade de cosseno para otimizar a recuperação de informações relevantes. 
-    \item \textbf{Base de Dados de Normas AEC}: Dados específicos para cada modelo, baseados no trabalho de Eduardo \cite{eduardo2020}, que serão expandidos para melhorar o desempenho, especialmente no uso das técnicas mais avançadas. Caso seja necessário, utilizará de dados em inglês e convertidos para linguagem em português a partir de uma LLM como ChatGPT 4.  
+    \item \texttt{text}: texto bruto da norma.
+    \item \texttt{texts\_n1}: lista de regras atômicas, cada uma com \texttt{text\_n1} e \texttt{operators\_n2}.
+    \item \texttt{operators\_n2}: dicionário com as chaves \texttt{requeriments}, \texttt{aplicability}, \texttt{selection} e \texttt{exception}, cada uma com \texttt{text\_n2} e \texttt{properties\_n3}.
+    \item \texttt{properties\_n3}: representação em JSON com os campos \texttt{type}, \texttt{object}, \texttt{property}, \texttt{comparation}, \texttt{target} e \texttt{unit}.
 \end{itemize}
 
-Cada modelo empregará técnicas de engenharia de prompt para otimizar os resultados dos LLMs, minimizando possíveis alucinações. Serão utilizados prompts específicos desenvolvidos pelo autor Samsami \cite{samsami2024}, Brown \cite{brown2020} e Radford \cite{radford2019}, que já demonstraram eficácia em reduzir erros em áreas específicas, com a expectativa de auxiliar também na conversão de normas AEC para RASE. Os tipos de engenharia de prompt que podem ser úteis são:  
+O mesmo arquivo serve como entrada para os geradores e como \textit{target} de referência para os validadores, simplificando a reprodutibilidade dos experimentos.
+
+\section{Pipeline de Execução e Experimentos}
+
+A orquestração dos experimentos é realizada pelo arquivo \texttt{main.py}, que aciona \texttt{generates/menu\_generate.py} (etapa de geração) e \texttt{validates/menu\_validate.py} (etapa de validação). As saídas geradas são persistidas em \texttt{predicts/generate\_<nível>\_<modelo>.json}, e os resultados das validações em \texttt{metrics/validate\_<nível>.json}.
+
+Para isolar as contribuições de cada nível e avaliar a propagação de erros, foram definidos três experimentos.
+
+\subsection{Experimento EN1}
+
+O experimento EN1 avalia a geração N1 isoladamente. A entrada é o campo \texttt{text} do \textit{dataset}, e a saída gerada é comparada ao \texttt{text\_n1} de referência. O experimento mede a qualidade da segmentação a partir do texto bruto, sem influência de etapas posteriores.
+
+\subsection{Experimento EN2}
+
+O experimento EN2 avalia a geração N2 isoladamente, eliminando o ruído proveniente da etapa anterior. A entrada é o \texttt{text\_n1} de referência (extraído diretamente do \textit{dataset}), e a saída gerada é comparada ao \texttt{text\_n2} de referência, por operador (R, A, S e E). O experimento mede a qualidade pura da classificação RASE.
+
+\subsection{Experimento EN1N2}
+
+O experimento EN1N2 corresponde ao pipeline encadeado: o N1 gerado pelo modelo na primeira etapa alimenta a etapa N2 do mesmo modelo. A saída final é comparada ao \texttt{text\_n2} de referência. O objetivo é avaliar a \textbf{propagação de erros} entre os dois níveis em um cenário totalmente automatizado.
+
+\section{Métricas de Validação}
+
+As saídas dos LLMs foram avaliadas por dez métricas, organizadas em quatro famílias: similaridade lexical, similaridade semântica, distância semântica e classificação.
+
+\subsection{Similaridade Lexical}
 
 \begin{itemize}
-    \item \textbf{Prompt Direct}: 
-        \begin{itemize}
-            \item \textbf{Descrição}:  Essa técnica envolve a formulação de um prompt claro e direto, que instrui o modelo a realizar uma tarefa específica sem ambiguidade. O objetivo aqui é fornecer ao modelo uma solicitação precisa para que ele execute a tarefa de maneira eficaz, sem sobrecarregar o modelo com informações desnecessárias ou erradas \cite{samsami2024}. Em seu caso, isso pode ser utilizado para solicitar a segmentação de uma norma AEC ou a aplicação de operadores RASE de forma simples e objetiva.
-            \item \textbf{Exemplo}: "Divida a norma a seguir em segmentos de aplicabilidade, requisito e seleção: 'Os corrimãos podem ser acoplados aos guarda-corpos e devem ser construídos com materiais rígidos.'"
-            \item \textbf{Eficácia}: Acredita que essa abordagem seja a mais eficaz para o \textbf{Modelo R1}, que tem como objetivo a segmentação clara das normas.
-        \end{itemize}
-    \item \textbf{Prompt Chain-of-Thought}: 
-        \begin{itemize}
-            \item \textbf{Descrição}: Essa técnica envolve pedir ao modelo para seguir um raciocínio passo a passo, ou seja, encorajá-lo a fazer um "raciocínio explícito" sobre a tarefa. Ao invés de simplesmente gerar uma resposta, o modelo deve explicar suas decisões ou como chegou a um resultado \cite{brown2020}. Esse tipo de engenharia de prompt é útil quando a tarefa exige uma cadeia de raciocínios complexos, como a atribuição de operadores RASE em um texto normativo.
-            \item \textbf{Exemplo}: "Primeiro, identifique se a sentença envolve um requisito, uma aplicabilidade ou uma seleção. Explique o porquê, e depois aplique os operadores RASE de acordo."
-            \item \textbf{Eficácia}: Acredita que essa abordagem seja mais adequada para o \textbf{Modelo R2}, que requer a aplicação de operadores RASE aos segmentos gerados pelo Modelo R1.
-        \end{itemize}
-    \item \textbf{Prompt Few-Shot}: 
-        \begin{itemize}
-            \item \textbf{Descrição}: Essa técnica envolve fornecer ao modelo exemplos de entrada e saída antes de fazer a solicitação principal. Ao fornecer um número limitado de exemplos de como as normas devem ser convertidas para a linguagem RASE, o modelo aprende a generalizar essas tarefas com menos dados \cite{radford2019}. Essa abordagem é ideal quando há uma quantidade limitada de dados rotulados ou quando o modelo precisa aprender a partir de um número reduzido de exemplos, como no caso das normas AEC, que podem ser complexas e variadas.
-            \item \textbf{Exemplo}: 'As portas devem ter uma altura mínima de 2 metros.' → 'A\{portas\} R\{devem ter uma altura mínima de 2 metros.\}' Agora, converta a seguinte norma: 'Os corrimãos devem ser feitos de materiais rígidos.'"
-            \item \textbf{Eficácia}: Acredita que esse método seja mais adequado para o \textbf{Modelo R2} e \textbf{Modelo R3}, que transforma os segmentos em atributos RASE no formato JSON.
-        \end{itemize}
+    \item \textbf{FuzzyWuzzy}: utiliza \texttt{fuzz.partial\_ratio}, baseado na distância de Levenshtein parcial; tolera fragmentos da string-alvo.
+    \item \textbf{TF-IDF}: cosseno entre vetores TF-IDF das duas \textit{strings}, ponderando termos pela sua importância no corpus.
 \end{itemize}
 
-Para otimizar o desempenho dos modelos em cada uma das etapas de conversão das normas para a linguagem RASE, serão aplicadas quatro abordagens, todas utilizando engenharia de prompt para ajustar o comportamento dos modelos LLaMa às necessidades específicas do problema: 
+\subsection{Similaridade Semântica}
 
 \begin{itemize}
-    \item \textbf{Abordagem EP}: Esta abordagem utiliza exclusivamente engenharia de prompt, empregando prompts específicos e cuidadosamente elaborados para garantir que os modelos sejam orientados a realizar tarefas de segmentação de normas de forma eficaz e precisa. A engenharia de prompt é aplicada aqui para otimizar a interpretação e processamento das normas AEC. 
-    \item \textbf{Técnica EPFT}: Além da engenharia de prompt, esta técnica incorpora fine-tuning do modelo, utilizando uma base de dados orientada ao problema de conversão de normas. O objetivo do fine-tuning é ajustar os parâmetros do modelo com base em dados específicos, aprimorando sua performance na conversão de normas para os operadores RASE.  
-    \item \textbf{Técnica EPRAG}: A aplicação de engenharia de prompt é combinada com um banco de dados vetorial, que serve para fornecer contexto adicional e melhorar a capacidade do modelo em interpretar corretamente as normas. Esse contexto adicional ajudará os modelos a fornecer respostas mais precisas, especialmente quando envolvem complexidade semântica, como no caso de normas com várias condições e exceções.
-    \item \textbf{Técnica EPFTRAG}: Esta abordagem é uma combinação das técnicas EPFT e EPRAG, utilizando tanto fine-tuning quanto contexto adicional via banco de dados vetorial. Esta técnica será aplicada principalmente ao Modelo R3, que exige uma compreensão mais profunda das normas para gerar atributos RASE no formato JSON, com base em uma maior quantidade de contexto.  
+    \item \textbf{SBERT (PT)}: \textit{embeddings} produzidos pelo modelo \texttt{tgsc/sentence-transformer-ult5-pt-small}.
+    \item \textbf{BERTimbau}: \textit{embeddings} de \texttt{rufimelo/Legal-BERTimbau-sts-large-ma-v3}, especializado em texto jurídico em português brasileiro.
+    \item \textbf{Multilingual}: \textit{embeddings} de \texttt{sentence-transformers/paraphrase-multilingual-mpnet-base-v2}, treinado em mais de cinquenta idiomas.
 \end{itemize}
 
-Os parâmetros padrão \cite{llama3} do LLaMa para o fine-tuning incluem uma taxa de aprendizado de 2e-5, um tamanho de lote de 32, e 3 épocas de treinamento, com o otimizador AdamW e taxa de decaimento do peso de 0,01. Esses parâmetros podem ser ajustados conforme necessário, dependendo da capacidade computacional.
-
-Cada modelo será alimentado com conjuntos de dados específicos, todos os dados são de normas brasileiras e cada regra irá obter as transformações (respostas) para todos os modelos (R1, R2 e R3). A avaliação dos resultados será feita manualmente, com base na precisão das respostas geradas em relação ao conteúdo normativo correto. O uso de dados no formato JSON para o Modelo R3 garantirá que os atributos sejam corretamente gerados para validação em projetos.
-
-A comparação entre as abordagens será feita com base em três métricas principais:
-\begin{itemize}
-    \item \textbf{Precisão}: A exatidão na interpretação e conversão das normas para o formato RASE.
-    \item \textbf{Eficiência}: A rapidez e eficácia na transformação das normas em dados estruturados para implementação no software BIM.
-    \item \textbf{Generalização}: A capacidade do modelo de lidar com diferentes conjuntos de dados de normas e sua adaptação a novas regras ou documentos regulatórios.
-\end{itemize}
-
-Após o treinamento e avaliação dos modelos, as normas AEC convertidas para RASE serão integradas ao Revit por meio da extensão Dynamo. O código gerado fará a validação dos elementos do projeto, destacando os componentes corretos em verde, incorretos em vermelho, e sem regras associadas em azul, como mostra a Figura \ref{img:1.1.1}. Além disso, uma planilha será gerada para documentar os resultados da avaliação.
-
-\begin{figure}[htb]
-    \centering
-    \caption{Pipeline da pesquisa.}
-    \begin{center}
-        \includegraphics[scale=0.45]
-        {Imagens/1.1.1-metodologia.png}
-    \end{center}
-    \label{img:1.1.1}
-    Fonte: Própria (2024).
-\end{figure}
-
-Para cada projeto selecionado, serão identificados todos os elementos que estão dentro, fora ou não associados às regras selecionadas. Após a identificação, as informações do RASE serão processadas e a precisão do JSON será analisada.
-
-Por fim, serão analisadas três questões a partir dos dados avaliados:
-\begin{enumerate}
-    \item Qual abordagem de engenharia de prompt (EP, EPFT, EPRAG, EPFTRAG) proporciona os melhores resultados em termos de precisão e eficiência para converter normas em dados RASE?
-     \item Os modelos gerados conseguem aplicar as normas de forma eficaz no software Revit, validando corretamente os elementos dos projetos?
-     \item Qual é a capacidade dos modelos em generalizar para novos conjuntos de dados normativos e diferentes tipos de regras?
-\end{enumerate}
-
-Essas questões ajudarão a determinar se o objetivo da pesquisa — automatizar a validação de projetos BIM de acordo com as normas AEC — foi alcançado com sucesso, garantindo precisão na conversão das normas em dados estruturados e aplicáveis.
-
-\section{Desenvolvimento Inicial}
-
-No desenvolvimento inicial da pesquisa, foram implementados algoritmos baseados em três modelos LLaMa 3 (R1, R2 e R3), com o objetivo de converter normas regulatórias AEC para a linguagem RASE. Para esta fase inicial, foi utilizada uma abordagem de engenharia de prompt com prompts genéricos, para avaliar a capacidade dos modelos de interpretarem as normas de forma básica e aplicarem os operadores RASE.
-
-Foram realizados cerca de 30 testes iniciais para validar o desempenho dos modelos com os prompts genéricos. Cada modelo foi alimentado com documentos normativos e, após a aplicação dos prompts, os resultados foram avaliados quanto à sua precisão na extração, organização e conversão das normas para RASE. A avaliação foi feita de forma manual, lendo-se um a um e analisando-se os resultados.
-
-Os modelos, de forma geral, demonstraram um desempenho em torno de 90\% nas tarefas de segmentação (R1) e organização de regras (R2). No entanto, o Modelo R3 teve dificuldades na conversão de alguns atributos para o formato JSON, especialmente devido à falta de implementação de atributos padrão do RASE. Por exemplo, quando a norma indicava "nível de iluminância", o modelo retornou apenas "luz", o que sugere que o modelo não possuía a base de dados completa de atributos RASE.
-
-Os algoritmos foram implementados em Python utilizando a biblioteca Langchain, que irá facilitar na integração com bancos de dados vetoriais. Essa biblioteca será especialmente útil quando se utilizar o RAG ou técnicas de engenharia de prompt. A base de dados utilizada foi a disponibilizada pelo autor Eduardo \cite{eduardo2020}, no qual, o mesmo inseriu dados que podem ser utilizados para os três modelos (R1, R2 e R3) na abordagem EP, porém não são dados suficientes para realizar as outras abordagens (EPFT, EPRAG, EPFTRAG).
-
-\section{Desafios Futuros}
-
-Apesar dos bons resultados iniciais, alguns desafios importantes permanecem para o próximo estágio do desenvolvimento. Estes desafios estão principalmente relacionados à melhoria da conversão de atributos no Modelo R3, que será essencial para garantir a aplicação eficaz dos atributos RASE no Revit.
+\subsection{Distância Semântica (WMD)}
 
 \begin{itemize}
-    \item \textbf{Implementação de Atributos Padrão RASE}: O modelo R3 precisa ser ajustado para considerar atributos padrão não identificados nos testes iniciais, como "nível de iluminância", "dimensões mínimas", entre outros. Para isso, será necessário criar uma base de dados de atributos RASE padrão ou realizar o fine-tuning do modelo com dados que incluam esses atributos. Isso permitirá que o modelo faça conversões mais precisas e confiáveis para o formato JSON, atendendo a uma gama mais ampla de normas.
-    
-    \item \textbf{Aprimoramento da Qualidade dos Prompts}: Embora os prompts genéricos tenham funcionado bem, será necessário desenvolver prompts mais específicos e contextualmente adaptados para cada modelo (R1, R2 e R3). A criação de prompts mais refinados será fundamental para garantir que o modelo compreenda com precisão as nuances das regulamentações e as converta corretamente para os operadores e atributos RASE. Esse refinamento contínuo dos prompts deve ser uma prioridade para melhorar o desempenho do sistema.
-    
-    \item \textbf{Ajuste de Parâmetros do Fine-Tuning}: Para melhorar a conversão para atributos RASE, será necessário realizar fine-tuning no modelo utilizando um conjunto de dados mais robusto e focado em normas AEC com exemplos mais variados. A calibração dos parâmetros de fine-tuning, como a taxa de aprendizado e o número de épocas, será essencial para garantir que o modelo se adapte bem aos requisitos específicos das normas. Com um número maior de exemplos e uma abordagem mais direcionada, o modelo pode alcançar maior precisão na conversão das normas.
-
-    \item \textbf{Utilização de Banco de Dados Vetorial}: Para aprimorar a precisão da conversão das normas e facilitar a recuperação de informações relevantes durante o processo de treinamento, será implementado um banco de dados vetorial, como o PostgresVector. Esse banco de dados permitirá armazenar as normas e atributos RASE em formato vetorial, otimizando a busca por similaridade através de consultas baseadas em cosseno. A utilização de um banco de dados vetorial proporcionará um acesso mais eficiente a grandes volumes de dados normativos, possibilitando ao modelo uma melhor generalização e uma resposta mais precisa, especialmente quando houver complexidade semântica nas regras.
-    
-    \item \textbf{Validação e Integração com Revit}: Após a implementação dos ajustes nos modelos, será necessário validar a integração com o software Revit, usando a extensão Dynamo para verificar se os atributos RASE gerados estão sendo corretamente aplicados aos elementos do projeto. Isso envolve garantir que as normas sejam interpretadas de maneira que resultem em validações precisas e eficientes para os projetos de arquitetura e engenharia.
-    
-    \item \textbf{Aumento da Base de Dados}: A base de dados de normas AEC deve ser expandida para incluir uma variedade maior de documentos regulatórios, cobrindo diferentes regiões, tipos de construção e novas regulamentações que possam surgir. A diversidade e o volume maior de dados permitirão que o modelo aprenda a generalizar melhor as normas, lidando com diferentes formatos e interpretações. Essa expansão será fundamental para treinar os modelos de forma mais robusta e ampliar sua aplicabilidade a uma gama mais ampla de normas.
-    
-    \item \textbf{Aumento de Testes}: O número de testes realizados precisa ser ampliado para garantir que os modelos se comportem de maneira consistente e eficaz em diferentes cenários. Testes adicionais devem ser realizados para avaliar a precisão da segmentação das normas, a organização dos operadores RASE e a conversão para o formato JSON, cobrindo um número maior de exemplos e cenários variados. Essa ampliação de testes ajudará a identificar eventuais falhas ou limitações no modelo que ainda não foram detectadas nos experimentos iniciais e permitirá ajustes finos antes da implementação final.
+    \item \textbf{WMD\_ft}: \textit{Word Mover's Distance} com \textit{embeddings} do FastText (\texttt{fasttext-wiki-news-subwords-300}).
+    \item \textbf{WMD\_nilc}: WMD com \textit{embeddings} do projeto NILC (\texttt{cbow\_s300.txt}), com normalização para o intervalo $[0,1]$.
 \end{itemize}
 
-Esses desafios são cruciais para a continuidade do desenvolvimento e garantir que o sistema final seja robusto e capaz de lidar com uma variedade de documentos normativos da AEC, promovendo a conformidade e eficiência nos projetos de construção. A combinação de uma base de dados mais ampla, o refinamento contínuo dos testes e a adaptação dos modelos às regulamentações e padrões específicos será essencial para alcançar os objetivos da pesquisa.
+\subsection{Métricas de Classificação}
 
-\section{Fases da projeto e cronograma}
-
-Os desafios definidos na seção \textit{Desafios Futuros} são o objetivo central de estudo deste mestrado. Através deles, serão delineadas as fases que, por meio da resolução desses desafios, levarão ao alcance dos objetivos da pesquisa. Cada fase será essencial para aprimorar as ferramentas e técnicas utilizadas no projeto, possibilitando uma solução robusta para a conversão de normas AEC em dados estruturados e aplicáveis no contexto BIM.
-
-O cronograma será executado em 12 meses, como mostra na Figura \ref{img:4.1.1}, divididos em etapas:
+Complementarmente às métricas de similaridade, são calculadas quatro métricas de classificação, derivadas da matriz de confusão entre a saída do modelo e a referência. O critério de acerto adotado consiste em um limiar sobre a similaridade semântica (SBERT ou Multilingual) para os níveis N1 e N2, e em correspondência exata por campo do JSON para o nível N3.
 
 \begin{itemize}
-    \item \textbf{Coleta e Preparação de Dados (Meses 1-2)}: Nessa fase, será feita a coleta de dados necessários para o projeto, com foco em dados que irão compor o banco de dados vetorial. Também incluirá a preparação dos dados para treinamento e ajustes no modelo (fine-tuning). Exemplos de prompt também serão elaborados para validar os modelos. O desafio dessa fase é a \textbf{Implementação de Atributos Padrão RASE}.
-    
-    \item \textbf{Criação, Teste e Avaliação de Prompts (Mês 3)}: Durante este mês, o foco será na criação de prompts específicos (\textit{Prompt Few-Shot}, \textit{Prompt Chain-of-Thought}, \textit{Prompt Direct}) para cada modelo, bem como a execução de testes para avaliar a eficácia de cada prompt. A avaliação será feita com base no desempenho dos modelos ao utilizarem os prompts criados. O desafio dessa fase é a \textbf{Aprimoramento da Qualidade dos Prompts}.
-    
-    \item \textbf{Implementação de Fine-tuning (Mês 4)}: Nesta fase, o fine-tuning dos modelos será implementado de forma mais detalhada. Após essa implementação, cada modelo será avaliado novamente para medir seu desempenho após o ajuste. O desafio dessa fase é a \textbf{Ajuste de Parâmetros do Fine-Tuning}.
-    
-    \item \textbf{Implementação do RAG (Mês 5)}: O RAG (contexto vetorial) será implementado em cada um dos modelos para melhorar a contextualização e o desempenho. Após a implementação, uma nova avaliação será feita para verificar os efeitos do RAG. O desafio dessa fase é a \textbf{Utilização de Banco de Dados Vetorial}.
-    
-    \item \textbf{Implementação da Técnica EPFTRAG (Mês 6)}: A técnica EPFTRAG será implementada, com avaliação de como ela impacta cada modelo. O objetivo é testar essa abordagem específica para otimizar os resultados dos modelos. O desafio dessa fase é a \textbf{Aumento da Base de Dados e Aumento de Testes}.
-    
-    \item \textbf{Implementação no Revit® (Meses 7-8)}: Durante esses meses, os resultados dos melhores modelos do projeto serão implementados no software Revit®, focando na integração prática dos modelos e técnicas desenvolvidas no contexto da ferramenta de modelagem. O desafio dessa fase é a \textbf{Validação e Integração com Revit}.
-    
-    \item \textbf{Escrita do Artigo (Meses 9-10)}: Com o trabalho de pesquisa avançado, a escrita do artigo científico será realizada. Este artigo resumirá os resultados obtidos ao longo do projeto e sua contribuição para a área.
-    
-    \item \textbf{Escrita da Dissertação (Meses 10-12)}: Após o artigo, a dissertação será escrita, detalhando todos os aspectos do projeto, metodologia, resultados e discussões, com um foco mais aprofundado para a defesa acadêmica. 
-    
-    \item \textbf{Apresentação da Defesa (Mês 12)}: Finalmente, o projeto será concluído com a apresentação da defesa, onde os resultados do trabalho serão apresentados e defendidos diante da banca examinadora.
+    \item \textbf{Acurácia}: \(\mathrm{ACC} = (\mathrm{VP} + \mathrm{VN})/(\mathrm{VP} + \mathrm{VN} + \mathrm{FP} + \mathrm{FN})\).
+    \item \textbf{Precisão}: \(\mathrm{PRE} = \mathrm{VP}/(\mathrm{VP} + \mathrm{FP})\).
+    \item \textbf{Revocação}: \(\mathrm{REC} = \mathrm{VP}/(\mathrm{VP} + \mathrm{FN})\).
+    \item \textbf{F1-score}: \(\mathrm{F1} = 2 \cdot (\mathrm{PRE} \cdot \mathrm{REC})/(\mathrm{PRE} + \mathrm{REC})\).
 \end{itemize}
 
-Essas são as fases que guiarão o cronograma do projeto (Figura \ref{img:4.1.1}), cada uma com seu objetivo e entregas específicas.
+As quatro novas métricas são persistidas em \texttt{metrics/validate\_*.json}, ao lado das métricas de similaridade.
 
-\begin{figure}[htb]
-    \centering
-    \caption{Cronograma de execução}
-    \begin{center}
-        \includegraphics[scale=0.8]
-        {Imagens/4.1.1-cronograma.png}
-    \end{center}
-    \label{img:4.1.1}
-    Fonte: Própria (2024).
-\end{figure}
+\section{Ambiente Computacional}
+
+Todas as execuções foram conduzidas em uma única estação de trabalho, com a seguinte configuração:
+
+\begin{itemize}
+    \item \textbf{CPU}: Intel Core i9-13900K, 13ª geração, 3{,}00~GHz.
+    \item \textbf{Memória RAM}: 32~GB.
+    \item \textbf{GPU}: NVIDIA RTX 4080.
+    \item \textbf{Sistema operacional}: Ubuntu~22.04.
+    \item \textbf{Python}: 3.11.9.
+    \item \textbf{Servidor LLM}: Ollama (\texttt{ollama serve}).
+    \item \textbf{Bibliotecas principais}: \texttt{sentence-transformers}, \texttt{gensim}, \texttt{fuzzywuzzy} e \texttt{scikit-learn} (para TF-IDF).
+\end{itemize}
+
+A padronização do ambiente, dos prompts e do \textit{dataset} entre os seis modelos garante que as diferenças observadas nos capítulos seguintes possam ser atribuídas ao comportamento dos LLMs e não a variações de infraestrutura ou de protocolo de avaliação.
