@@ -9,7 +9,7 @@ import argparse
 import csv
 import json
 from pathlib import Path
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, Iterable, List, Optional, Sequence
 
 
 METRIC_LABELS: Dict[str, str] = {
@@ -129,22 +129,53 @@ def _build_tables_for_metrics(
             writer.writerow(sim_row + clf_row[1:])
 
 
+def generate_tables(
+    levels: Optional[Sequence[str]] = None,
+    metrics_dir: str = "metrics",
+    out_dir: str = "tables",
+) -> int:
+    """Gera tabelas LaTeX/CSV a partir de metrics/validate_*.json.
+
+    Retorna o numero de arquivos processados. Quando `levels` e informado,
+    apenas os niveis listados (n1, n2, n3, n1n2, n1n2n3) sao processados.
+    """
+    metrics_path = Path(metrics_dir)
+    out_path = Path(out_dir)
+
+    if not metrics_path.is_dir():
+        print(f"Diretorio nao encontrado: {metrics_path}")
+        return 0
+
+    all_files = sorted(metrics_path.glob("validate_*.json"))
+    if levels:
+        wanted = {f"validate_{lvl}.json" for lvl in levels}
+        files = [f for f in all_files if f.name in wanted]
+    else:
+        files = all_files
+
+    if not files:
+        print(f"Nenhum arquivo correspondente em {metrics_path}")
+        return 0
+
+    for file_path in files:
+        _build_tables_for_metrics(file_path, out_path)
+        print(f"OK: {file_path.name}")
+    print(f"Tabelas geradas em {out_path}/")
+    return len(files)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Gera tabelas LaTeX a partir de metrics/.")
     parser.add_argument("--metrics-dir", default="metrics")
     parser.add_argument("--out-dir", default="tables")
+    parser.add_argument(
+        "--levels",
+        nargs="*",
+        default=None,
+        help="Niveis a processar (n1 n2 n3 n1n2 n1n2n3). Default: todos.",
+    )
     args = parser.parse_args()
-
-    metrics_dir = Path(args.metrics_dir)
-    out_dir = Path(args.out_dir)
-    files = sorted(metrics_dir.glob("validate_*.json"))
-    if not files:
-        print(f"Nenhum arquivo encontrado em {metrics_dir}")
-        return
-    for file_path in files:
-        _build_tables_for_metrics(file_path, out_dir)
-        print(f"OK: {file_path.name}")
-    print(f"Tabelas geradas em {out_dir}/")
+    generate_tables(levels=args.levels, metrics_dir=args.metrics_dir, out_dir=args.out_dir)
 
 
 if __name__ == "__main__":

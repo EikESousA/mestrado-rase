@@ -77,6 +77,15 @@ def menu_validate() -> None:
                 input("Digite qualquer tecla para voltar ao menu.")
                 continue
             ran_any = False
+            if "n1" in active_ns:
+                validate_n1("dataset.json", "predicts", "metrics/validate_n1.json")
+                ran_any = True
+            if "n2" in active_ns:
+                validate_n2("dataset.json", "predicts", "metrics/validate_n2.json")
+                ran_any = True
+            if "n3" in active_ns:
+                validate_n3("dataset.json", "predicts", "metrics/validate_n3.json")
+                ran_any = True
             if "n1n2" in active_ns:
                 validate_n1n2(
                     "dataset.json",
@@ -90,23 +99,6 @@ def menu_validate() -> None:
                     "predicts",
                     "metrics/validate_n1n2n3.json",
                 )
-                ran_any = True
-            if "n1" in active_ns and "n1n2" not in active_ns and "n1n2n3" not in active_ns:
-                validate_n1("dataset.json", "predicts", "metrics/validate_n1.json")
-                ran_any = True
-            if (
-                "n2" in active_ns
-                and "n1n2" not in active_ns
-                and "n1n2n3" not in active_ns
-            ):
-                validate_n2("dataset.json", "predicts", "metrics/validate_n2.json")
-                ran_any = True
-            if (
-                "n3" in active_ns
-                and "n1n2" not in active_ns
-                and "n1n2n3" not in active_ns
-            ):
-                validate_n3("dataset.json", "predicts", "metrics/validate_n3.json")
                 ran_any = True
             if not ran_any:
                 print("Validacao ainda nao implementada.")

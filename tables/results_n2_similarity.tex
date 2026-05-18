@@ -1,0 +1,17 @@
+\begin{table}[ht]
+  \centering
+  \caption{Metricas de similaridade (N2)}
+  \label{tab:results_n2_similarity}
+  \begin{tabular}{lrrrrrrrrr}
+    \toprule
+    Modelo & FuzzyWuzzy & TF-IDF & SBERT & BERTimbau & Multilingual & WMD-FT & WMD-NILC & BERTScore & ROUGE-L \\
+    \midrule
+    alpaca & 0.334 & 0.168 & 0.386 & 0.418 & 0.484 & 0.522 & 0.486 & 0.702 & 0.172 \\
+    dolphin & 0.511 & 0.423 & 0.557 & 0.621 & 0.665 & 0.620 & 0.589 & 0.786 & 0.412 \\
+    gemma & 0.384 & 0.364 & 0.520 & 0.579 & 0.625 & 0.608 & 0.577 & 0.772 & 0.350 \\
+    llama & 0.638 & 0.447 & 0.595 & 0.657 & 0.685 & 0.617 & 0.586 & 0.796 & 0.427 \\
+    mistral & 0.563 & 0.385 & 0.575 & 0.607 & 0.665 & 0.607 & 0.575 & 0.779 & 0.377 \\
+    qwen & 0.336 & 0.083 & 0.304 & 0.369 & 0.444 & 0.496 & 0.462 & 0.684 & 0.111 \\
+    \bottomrule
+  \end{tabular}
+\end{table}

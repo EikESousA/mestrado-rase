@@ -2,6 +2,7 @@ import argparse
 import os
 
 from generates.menu_generate import menu_generate
+from tools.menu_tables import menu_tables
 from utils.app._bootstrap_venv import _bootstrap_venv
 from utils.screens.clear_screen import clear_screen
 from utils.screens.menu_bar_line import menu_bar_line
@@ -40,6 +41,7 @@ def main() -> None:
             print(menu_bar_line())
             print(menu_text_line("1 - Gerar dados", align_left=True))
             print(menu_text_line("2 - Validar Dados", align_left=True))
+            print(menu_text_line("3 - Gerar Tabelas", align_left=True))
             print(menu_bar_line())
             print(menu_text_line("0 - Sair", align_left=True, color="red"))
             print(menu_bar_line())
@@ -56,6 +58,10 @@ def main() -> None:
             elif choice == "2":
                 clear_screen()
                 menu_validate()
+                print()
+            elif choice == "3":
+                clear_screen()
+                menu_tables()
                 print()
             elif choice == "0":
                 clear_screen()
