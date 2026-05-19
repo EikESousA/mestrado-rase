@@ -33,13 +33,14 @@ Com a transformação das normas regulatórias para o formato RASE, torna-se pos
 
 \subsection*{Objetivo geral}
 
-Avaliar comparativamente o uso de seis Modelos de Linguagem de Grande Porte (LLMs) \textit{open-source} --- Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen --- na conversão automática de normas técnicas brasileiras da AEC (em especial a NBR 9050) para o formato RASE, utilizando exclusivamente Engenharia de Prompt em três níveis sucessivos de normalização (N1, N2 e N3).
+Avaliar comparativamente o uso de seis Modelos de Linguagem de Grande Porte (LLMs) \textit{open-source} (Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen) na conversão automática de normas técnicas brasileiras da AEC (em especial a NBR 9050) para o formato RASE, utilizando exclusivamente Engenharia de Prompt em três níveis sucessivos de normalização (N1, N2 e N3).
 
 \subsection*{Objetivos específicos}
 
 \begin{itemize}
-    \item Definir e implementar três níveis de normalização sobre a metodologia RASE: \textbf{N1} --- segmentação atômica de sentenças normativas; \textbf{N2} --- identificação dos operadores RASE (Requisito, Aplicabilidade, Seleção e Exceção); e \textbf{N3} --- estruturação semântica das regras em formato JSON.
+    \item Definir e implementar três níveis de normalização sobre a metodologia RASE: \textbf{N1} (segmentação atômica de sentenças normativas); \textbf{N2} (identificação dos operadores RASE (Requisito, Aplicabilidade, Seleção e Exceção)); e \textbf{N3} (estruturação semântica das regras em formato JSON).
     \item Projetar prompts adequados a cada nível, empregando as técnicas \textit{Prompt Direct}, \textit{Prompt Chain-of-Thought} e \textit{Prompt Few-Shot}.
+<<<<<<< HEAD
     \item Comparar os seis LLMs \textit{open-source} sob três experimentos: \textbf{EN1} (avaliação isolada do N1), \textbf{EN2} (avaliação isolada do N2 com o N1 de referência como entrada) e \textbf{EN1N2} (pipeline encadeado N1 $\rightarrow$ N2).
     \item Avaliar a qualidade das saídas com métricas de similaridade lexical (FuzzyWuzzy, TF-IDF), semântica (SBERT, BERTimbau, Multilingual), de distância (\textit{Word Mover's Distance} com FastText e NILC) e voltadas para geração (BERTScore e ROUGE-L), complementadas por métricas de classificação (Acurácia, Precisão, Revocação e F1-score).
     \item Analisar a propagação de erros entre as etapas do pipeline e o custo computacional (tempo) por modelo.
@@ -50,6 +51,13 @@ Avaliar comparativamente o uso de seis Modelos de Linguagem de Grande Porte (LLM
 Não fazem parte do escopo desta dissertação: a aplicação dos resultados em software BIM (Revit, Dynamo ou similares); o \textit{Fine-Tuning} dos modelos; o uso de \textit{Retrieval-Augmented Generation} ou de bancos vetoriais; o treinamento de \textit{embeddings} próprios; e a ampliação para normas internacionais.
 
 
+=======
+    \item Comparar os seis LLMs \textit{open-source} sob cinco experimentos: \textbf{EN1} (avaliação isolada do N1), \textbf{EN2} (avaliação isolada do N2 com o N1 de referência como entrada), \textbf{EN1N2} (pipeline encadeado N1 $\rightarrow$ N2), \textbf{EN3} (avaliação isolada do N3 com o N2 de referência como entrada) e \textbf{EN1N2N3} (pipeline encadeado completo N1 $\rightarrow$ N2 $\rightarrow$ N3).
+    \item Avaliar a qualidade das saídas com métricas de similaridade lexical (FuzzyWuzzy, TF-IDF), semântica (SBERT, BERTimbau, Multilingual) e de distância (\textit{Word Mover's Distance} com FastText e NILC), complementadas por métricas de classificação (Acurácia, Precisão, Revocação e F1-score).
+    \item Analisar a propagação de erros entre as etapas do pipeline e o custo computacional (tempo) por modelo.
+\end{itemize}
+
+>>>>>>> b1bd44c (citation)
 \section{Organização do Documento}
 
-O restante deste documento está estruturado da seguinte forma. O \textbf{Capítulo 2 --- Fundamentação Teórica} apresenta os conceitos de BIM, Aprendizado de Máquina, Processamento de Linguagem Natural, Redes Neurais (incluindo LSTM, BiLSTM e Transformers), Modelos de Linguagem de Grande Porte e a metodologia RASE, além das métricas utilizadas e dos trabalhos relacionados. O \textbf{Capítulo 3 --- Metodologia} descreve os níveis de normalização N1, N2 e N3, as técnicas de Engenharia de Prompt aplicadas, os seis modelos LLM avaliados, o \textit{dataset} de 79 normas, o pipeline de execução e as métricas de validação. O \textbf{Capítulo 4 --- Resultados} apresenta o desempenho por modelo e por métrica nos experimentos EN1, EN2 e EN1N2, os tempos de execução observados e a análise comparativa. O \textbf{Capítulo 5 --- Conclusão} sintetiza as contribuições, discute as limitações e aponta direções para trabalhos futuros.
+O restante deste documento está estruturado da seguinte forma. O \textbf{Capítulo 2 --- Fundamentação Teórica} apresenta os conceitos de BIM, Aprendizado de Máquina, Processamento de Linguagem Natural, Redes Neurais (incluindo LSTM, BiLSTM e Transformers), Modelos de Linguagem de Grande Porte e a metodologia RASE, além das métricas utilizadas e dos trabalhos relacionados. O \textbf{Capítulo 3 --- Metodologia} descreve os níveis de normalização N1, N2 e N3, as técnicas de Engenharia de Prompt aplicadas, os seis modelos LLM avaliados, o \textit{dataset} de 79 normas, o pipeline de execução e as métricas de validação. O \textbf{Capítulo 4 --- Resultados} apresenta o desempenho por modelo e por métrica nos experimentos EN1, EN2, EN1N2, EN3 e EN1N2N3, os tempos de execução observados e a análise comparativa. O \textbf{Capítulo 5 --- Conclusão} sintetiza as contribuições, discute as limitações e aponta direções para trabalhos futuros.
