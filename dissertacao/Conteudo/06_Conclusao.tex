@@ -1,69 +1,50 @@
 \chapter{Conclusão}
 
-<<<<<<< HEAD
-Esta dissertação investigou a aplicação de seis Modelos de Linguagem de Grande Porte (LLMs) \textit{open-source} --- Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen --- na conversão automática de normas técnicas brasileiras da AEC para o formato RASE, utilizando \textbf{exclusivamente Engenharia de Prompt}. A tarefa foi decomposta em três níveis sucessivos de normalização (N1, N2 e N3) e avaliada em três experimentos (EN1, EN2 e EN1N2) sobre um \textit{dataset} de 79 normas anotadas, com base em treze métricas: nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação derivadas da matriz de confusão.
+Esta dissertação investigou a aplicação de seis LLMs \textit{open-source} --- Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen --- na conversão automática de normas técnicas brasileiras da AEC para o formato RASE, usando \textbf{apenas Engenharia de Prompt}. A tarefa foi decomposta em três níveis sucessivos de normalização (N1, N2 e N3) e avaliada em três experimentos comparativos (EN1, EN2 e EN1N2), somados à avaliação isolada do N3, sobre um \textit{dataset} de 79 normas anotadas. A avaliação combinou treze métricas: nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação, derivadas da matriz de confusão.
 
 \section{Síntese dos Resultados}
 
-A decomposição em três níveis de normalização viabilizou a conversão de normas AEC em representações RASE sem recurso a \textit{Fine-Tuning} ou \textit{Retrieval-Augmented Generation}. A Engenharia de Prompt, isoladamente, foi suficiente para atingir similaridade semântica próxima a 0{,}90 nos melhores cenários (Dolphin em EN1, com BERTimbau~0{,}891 e Multilingual~0{,}913; Llama em N3 isolado, com SBERT~0{,}947). As métricas baseadas em \textit{embeddings} (SBERT, BERTimbau e Multilingual) e o BERTScore demonstraram-se as mais adequadas para validar transformações normativas, ao tolerarem reformulações que preservam o significado original; o BERTimbau apresentou ganho consistente sobre o SBERT, evidenciando o valor de \textit{embeddings} de domínio jurídico em português.
+A decomposição em três níveis viabilizou a conversão de normas AEC em representações RASE sem recorrer a \textit{Fine-Tuning} nem a \textit{Retrieval-Augmented Generation}. Engenharia de Prompt sozinha bastou para alcançar similaridade semântica perto de 0{,}90 nos melhores cenários (Dolphin em EN1, com BERTimbau~0{,}891 e Multilingual~0{,}913; Llama em N3 isolado, com SBERT~0{,}947). As métricas baseadas em \textit{embeddings} (SBERT, BERTimbau, Multilingual) e o BERTScore foram as mais adequadas para validar transformações normativas, porque toleram reformulações que preservam o sentido. O BERTimbau manteve ganho consistente sobre o SBERT --- evidência prática do valor de \textit{embeddings} de domínio jurídico em PT-BR.
 
-Globalmente, considerando a média sobre as nove métricas de similaridade nos três experimentos, o \textbf{Dolphin} apresentou a melhor média global (0{,}676), impulsionado pelo domínio absoluto em EN1, sendo também a melhor opção em termos de custo-benefício --- aproximadamente noventa vezes mais rápido que o Llama no pipeline encadeado. O \textbf{Llama} liderou em EN2 e em N3 isolado, mas com latência muito maior. Mistral seguiu como terceiro melhor desempenho, com tempos curtos e qualidade próxima dos líderes. Qwen e Alpaca apresentaram desempenho insatisfatório em todas as métricas. As métricas de classificação confirmaram que os operadores Seleção e Exceção são as classes mais difíceis em N2 para todos os modelos, com F1 próxima de zero, indicando a necessidade de prompts mais especializados para esses operadores.
-=======
-Esta dissertação investigou a aplicação de seis Modelos de Linguagem de Grande Porte (LLMs) \textit{open-source} --- Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen --- na conversão automática de normas técnicas brasileiras da AEC para o formato RASE, utilizando \textbf{exclusivamente Engenharia de Prompt}. A tarefa foi decomposta em três níveis sucessivos de normalização (N1, N2 e N3) e avaliada em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3) sobre um \textit{dataset} de 79 normas anotadas, com base em métricas de similaridade lexical, semântica, de distância e de classificação.
-
-\section{Síntese dos Resultados}
-
-A decomposição em três níveis de normalização viabilizou a conversão de normas AEC em representações RASE com Engenharia de Prompt isolada, suficiente para atingir similaridade semântica superior a 0{,}80 no melhor cenário (Llama em EN2). As métricas baseadas em \textit{embeddings} (SBERT, BERTimbau e Multilingual) demonstraram-se as mais adequadas para validar transformações normativas, ao tolerarem reformulações que preservam o significado original. Globalmente, o Llama liderou a qualidade nos três experimentos, o Dolphin ofereceu o melhor custo-benefício ao combinar qualidade competitiva com tempos até cem vezes menores, e Qwen e Alpaca apresentaram desempenho insatisfatório em todas as métricas.
->>>>>>> b1bd44c (citation)
+No agregado das nove métricas de similaridade sobre os três experimentos, o \textbf{Dolphin} fechou com a melhor média global (0{,}676), puxado pela dominância em EN1. É também o melhor em custo-benefício: cerca de noventa vezes mais rápido que o Llama no \textit{pipeline} encadeado. O \textbf{Llama} liderou EN2 e N3 isolado, mas com latência bem maior. Mistral aparece como o terceiro, com tempos curtos e qualidade próxima dos líderes. Qwen e Alpaca apresentaram desempenho insatisfatório em todas as métricas. As métricas de classificação confirmaram um achado importante: os operadores Seleção e Exceção são as classes mais difíceis em N2 para todos os modelos, com F1 próxima de zero --- o que aponta a necessidade de \textit{prompts} mais especializados para esses dois operadores.
 
 \section{Contribuições}
 
-Como principais contribuições, esta pesquisa apresenta:
+A pesquisa entrega cinco contribuições centrais:
 
 \begin{itemize}
-    \item A definição operacional de três níveis de normalização sobre a metodologia RASE: \textbf{N1} (segmentação atômica), \textbf{N2} (identificação dos operadores RASE) e \textbf{N3} (estruturação semântica em JSON), com prompts dedicados a cada nível e a cada operador.
-    \item Uma comparação sistemática de seis LLMs \textit{open-source} servidos localmente via Ollama, na tarefa de conversão de normas brasileiras da AEC, sob protocolo experimental idêntico (mesmo \textit{dataset}, mesmos prompts e mesmo hardware).
-    \item Um conjunto reproduzível de prompts especializados por nível e por operador, organizado em arquivos de texto dedicados, que pode ser reutilizado e estendido em pesquisas futuras.
+    \item A definição operacional de três níveis de normalização sobre a metodologia RASE --- \textbf{N1} (segmentação atômica), \textbf{N2} (identificação dos operadores RASE) e \textbf{N3} (estruturação semântica em JSON) ---, com \textit{prompts} dedicados a cada nível e a cada operador.
+    \item Uma comparação sistemática de seis LLMs \textit{open-source} servidos localmente via Ollama, na tarefa de conversão de normas brasileiras da AEC, sob protocolo experimental idêntico (mesmo \textit{dataset}, mesmos \textit{prompts}, mesmo \textit{hardware}).
+    \item Um conjunto reproduzível de \textit{prompts} especializados por nível e por operador, organizado em arquivos de texto dedicados, pronto para ser reutilizado e estendido em pesquisas futuras.
     \item Um \textit{dataset} anotado de 79 normas brasileiras, com referência em todos os níveis (N1, N2 e N3) e por operador RASE, viabilizando avaliações replicáveis.
-    \item Uma avaliação multimétrica composta por treze métricas (nove de similaridade textual e quatro de classificação), fornecendo um retrato multidimensional do desempenho de cada modelo, com detalhamento por instância em \texttt{metrics/details/} para apoiar reanálises.
+    \item Uma avaliação multimétrica com treze métricas (nove de similaridade textual e quatro de classificação), entregando um retrato multidimensional do desempenho de cada modelo, com detalhamento por instância em \texttt{metrics/details/} para apoiar reanálises.
 \end{itemize}
 
 \section{Limitações}
 
-A pesquisa apresenta limitações que delimitam o alcance das suas conclusões:
+A pesquisa tem limitações que delimitam o alcance das conclusões:
 
 \begin{itemize}
-    \item O \textit{dataset} é relativamente pequeno (79 normas) e restrito a normas brasileiras de acessibilidade (NBR~9050 e similares); resultados podem variar em outros domínios normativos.
-<<<<<<< HEAD
-    \item As métricas de classificação dependem da escolha do critério de acerto: limiar sobre similaridade semântica em N1 e N2 (parcialmente arbitrário) e correspondência exata em N3 (severa demais para campos com variações léxicas legítimas). Critérios mais flexíveis em N3 e múltiplos limiares em N1/N2 ficam como linha de aprofundamento.
-    \item A classificação dos operadores Seleção e Exceção em N2 obteve F1 próxima de zero para todos os modelos, indicando uma limitação estrutural da formulação atual do prompt N2 que ainda não foi superada por nenhum dos LLMs avaliados.
-    \item Não houve aplicação prática em software BIM (validação fim-a-fim em projetos reais); o ciclo completo de verificação automática de conformidade ainda precisa ser fechado.
-    \item Os modelos foram executados em uma única estação de trabalho, sem análise de variância entre execuções, sem variação de temperatura e sem variação de \textit{seed}.
-=======
-    \item A avaliação dos experimentos EN3 e EN1N2N3 adota um critério de acerto mais rígido (correspondência exata por campo do JSON), o que penaliza variações pequenas mesmo quando o conteúdo gerado é equivalente; o refinamento de critérios de equivalência semântica por campo fica como tarefa imediata.
-    \item As métricas de classificação dependem da escolha de um limiar de similaridade, que possui caráter parcialmente arbitrário e influencia diretamente as taxas observadas de Precisão e Revocação.
-    \item Não houve aplicação prática em software BIM (validação fim-a-fim em projetos reais); o ciclo completo de verificação ainda precisa ser fechado.
-    \item Os modelos foram executados em uma única estação de trabalho, sem análise de variância entre execuções ou entre configurações de \textit{hardware}.
->>>>>>> b1bd44c (citation)
+    \item O \textit{dataset} é pequeno (79 normas) e está concentrado em normas brasileiras de acessibilidade (NBR~9050 e similares) --- os resultados podem mudar em outros domínios normativos.
+    \item As métricas de classificação dependem do critério de acerto adotado: limiar sobre similaridade semântica em N1 e N2 (parcialmente arbitrário) e correspondência exata em N3 (rígida demais para campos com variações léxicas legítimas). Critérios mais flexíveis em N3 e múltiplos limiares em N1 e N2 ficam como linha de aprofundamento.
+    \item A classificação de Seleção e Exceção em N2 obteve F1 próxima de zero para todos os modelos, sinalizando uma limitação estrutural da formulação atual do \textit{prompt} N2 --- nenhum dos seis LLMs conseguiu superá-la.
+    \item Não houve aplicação prática em \textit{software} BIM. A validação fim a fim em projetos reais ainda está em aberto; o ciclo completo de verificação automática de conformidade precisa ser fechado.
+    \item Todos os experimentos rodaram em uma única estação de trabalho, sem análise de variância entre execuções, sem variação de temperatura e sem variação de \textit{seed}.
 \end{itemize}
 
 \section{Trabalhos Futuros}
 
-Como direções de pesquisa futuras, destacam-se:
+Algumas direções de pesquisa futura que considero promissoras:
 
 \begin{itemize}
-    \item \textbf{Aplicação em BIM}: integração dos resultados ao Revit ou Dynamo, fechando o ciclo de verificação automática de conformidade em projetos reais.
-    \item \textbf{Prompt N2 dedicado a Seleção e Exceção}: redesenho do prompt N2 ou introdução de uma etapa específica para esses dois operadores, dado que ambos colapsaram em F1 próximo de zero para todos os seis modelos avaliados.
-    \item \textbf{\textit{Fine-Tuning} e RAG}: explorar essas técnicas como evoluções naturais da abordagem baseada apenas em prompts, comparando os ganhos relativos em qualidade e custo computacional, em especial para os operadores difíceis identificados acima.
-    \item \textbf{Ampliação do \textit{dataset}}: incluir um espectro maior de normas brasileiras (NBRs estruturais, hidráulicas e elétricas) e expandir para normas internacionais.
-    \item \textbf{Avaliação humana}: complementar as métricas automáticas com avaliações por especialistas da AEC, capazes de capturar nuances semânticas que os \textit{embeddings} não detectam.
-    \item \textbf{Estudo de variância}: realizar múltiplas execuções por modelo, variando configurações de temperatura e de \textit{seed}, para quantificar a estabilidade das saídas.
-<<<<<<< HEAD
-    \item \textbf{Critérios alternativos de classificação em N3}: substituir a correspondência exata por correspondência normalizada (\textit{lowercase}, remoção de \textit{stopwords}, comparação por sinônimos), revisitando as métricas de Acurácia, Precisão, Revocação e F1 em N3.
-    \item \textbf{Otimização do pipeline}: investigar estratégias de mitigação da propagação de erros em EN1N2, como reescrita iterativa, \textit{self-consistency} ou roteamento de operadores difíceis para o modelo mais adequado (\textit{ensemble} entre Dolphin e Llama, conforme o nível).
-=======
-    \item \textbf{Otimização do pipeline}: investigar estratégias de mitigação da propagação de erros em EN1N2 e em EN1N2N3, como reescrita iterativa, \textit{self-consistency} e verificação cruzada entre operadores RASE.
->>>>>>> b1bd44c (citation)
+    \item \textbf{Aplicação em BIM}: integrar os resultados ao Revit ou ao Dynamo e fechar o ciclo de verificação automática de conformidade em projetos reais.
+    \item \textbf{\textit{Prompt} N2 dedicado a Seleção e Exceção}: redesenhar o \textit{prompt} N2 ou introduzir uma etapa específica para esses dois operadores. Ambos colapsaram em F1 próxima de zero nos seis modelos, o que torna esse o ponto de maior alavancagem.
+    \item \textbf{\textit{Fine-Tuning} e RAG}: explorar essas técnicas como evoluções naturais da abordagem baseada apenas em \textit{prompts}, medindo o ganho em qualidade e em custo computacional --- em especial para os operadores difíceis citados acima.
+    \item \textbf{Ampliação do \textit{dataset}}: incluir um espectro maior de NBRs (estruturais, hidráulicas, elétricas) e expandir para normas internacionais.
+    \item \textbf{Avaliação humana}: complementar as métricas automáticas com avaliação por especialistas da AEC, capazes de capturar nuances semânticas que escapam aos \textit{embeddings}.
+    \item \textbf{Estudo de variância}: rodar múltiplas execuções por modelo, variando temperatura e \textit{seed}, para quantificar a estabilidade das saídas.
+    \item \textbf{Critérios alternativos de classificação em N3}: trocar a correspondência exata por correspondência normalizada (\textit{lowercase}, remoção de \textit{stopwords}, comparação por sinônimos) e revisitar Acurácia, Precisão, Revocação e F1 em N3.
+    \item \textbf{Otimização do \textit{pipeline}}: estudar estratégias de mitigação da propagação de erros em EN1N2 --- reescrita iterativa, \textit{self-consistency} ou roteamento de operadores difíceis para o modelo mais adequado (\textit{ensemble} Dolphin/Llama por nível).
 \end{itemize}
 
-Em síntese, a pesquisa demonstrou que LLMs \textit{open-source}, quando combinados com uma decomposição cuidadosa da tarefa e com prompts especializados, constituem uma alternativa viável e acessível para a automação da conversão de normas técnicas da AEC para representações computáveis, abrindo caminho para a verificação automática de conformidade em projetos baseados em BIM.
+No conjunto, a pesquisa mostra que LLMs \textit{open-source}, somados a uma decomposição cuidadosa da tarefa e a \textit{prompts} especializados, são alternativa viável e acessível para automatizar a conversão de normas técnicas da AEC em representações computáveis --- abrindo caminho para a verificação automática de conformidade em projetos baseados em BIM.
