@@ -1,123 +1,273 @@
 \chapter{Resultados}
 
-Este capítulo apresenta os resultados obtidos pela aplicação dos seis Modelos de Linguagem de Grande Porte (LLMs) \textit{open-source} sobre as 79 normas brasileiras do \textit{dataset}, nos três experimentos definidos no capítulo anterior: EN1 (segmentação N1 isolada), EN2 (identificação RASE com N1 de referência) e EN1N2 (pipeline encadeado). Para cada experimento são reportadas as médias agregadas por métrica, os resultados detalhados por modelo, os tempos de execução observados e uma discussão integrada do desempenho. As métricas analisadas são as seis de similaridade textual (FuzzyWuzzy, TF-IDF, SBERT, Multilingual, WMD\_ft e WMD\_nilc), complementadas pela análise por modelo no nível BERTimbau apresentada ao final.
+Este capítulo apresenta os resultados obtidos pela aplicação dos seis Modelos de Linguagem de Grande Porte (LLMs) \textit{open-source} sobre as 79 normas brasileiras do \textit{dataset}, nos três experimentos definidos no capítulo anterior: EN1 (segmentação N1 isolada), EN2 (identificação RASE com N1 de referência) e EN1N2 (pipeline encadeado N1 $\rightarrow$ N2). Os resultados são extraídos diretamente dos arquivos \texttt{metrics/validate\_*.json}, gerados pela rotina de validação descrita na Seção~3.7. Para cada experimento, reportam-se as médias agregadas por métrica, os resultados detalhados por modelo, os tempos de execução e uma discussão integrada do desempenho. Como referência adicional, a Seção~\ref{sec:n3} sumariza também os resultados isolados do nível N3.
 
 \section{Visão Geral dos Experimentos}
 
-A Tabela~\ref{tab:metricas_resultados} sintetiza as médias por métrica nos três experimentos, agregadas sobre os seis modelos. Observa-se a superioridade consistente das métricas baseadas em \textit{embeddings} (SBERT, Multilingual e WMD), bem como a perda gradual de desempenho na transição de EN1 para EN1N2.
+A Tabela~\ref{tab:metricas_resultados} sintetiza as médias por métrica nos três experimentos, agregadas sobre os seis modelos. Observa-se a superioridade consistente das métricas baseadas em \textit{embeddings} (SBERT, BERTimbau, Multilingual e BERTScore) e a perda gradual de desempenho na transição de EN1 para EN1N2 nas métricas lexicais (FuzzyWuzzy, TF-IDF, ROUGE-L).
 
 \begin{table}[ht]
 \centering
-\caption{Médias por métrica nos três experimentos.}
+\caption{Médias por métrica nos três experimentos, agregadas sobre os seis modelos.}
 \label{tab:metricas_resultados}
-\begin{tabular}{lcccccc}
+\small
+\begin{tabular}{lccc}
 \hline
-Experimento & FuzzyWuzzy & TF-IDF & SBERT & Multilingual & WMD\_ft & WMD\_nilc \\
+Métrica       & EN1   & EN2   & EN1N2 \\
 \hline
-EN1   & 0{,}638 & 0{,}460 & 0{,}710 & 0{,}749 & 0{,}661 & 0{,}659 \\
-EN2   & 0{,}528 & 0{,}462 & 0{,}587 & 0{,}668 & 0{,}694 & 0{,}655 \\
-EN1N2 & 0{,}502 & 0{,}360 & 0{,}567 & 0{,}650 & 0{,}628 & 0{,}608 \\
+FuzzyWuzzy    & 0{,}475 & 0{,}461 & 0{,}464 \\
+TF-IDF        & 0{,}636 & 0{,}312 & 0{,}417 \\
+SBERT         & 0{,}801 & 0{,}490 & 0{,}594 \\
+BERTimbau     & 0{,}816 & 0{,}542 & 0{,}631 \\
+Multilingual  & 0{,}850 & 0{,}595 & 0{,}679 \\
+WMD\_ft       & 0{,}716 & 0{,}580 & 0{,}625 \\
+WMD\_nilc     & 0{,}688 & 0{,}546 & 0{,}595 \\
+BERTScore     & 0{,}866 & 0{,}753 & 0{,}790 \\
+ROUGE-L       & 0{,}599 & 0{,}308 & 0{,}404 \\
+\hline
+Acurácia      & 0{,}475 & 0{,}273 & --- \\
+Precisão      & 0{,}545 & 0{,}202 & --- \\
+Revocação     & 0{,}774 & 0{,}198 & --- \\
+F1-score      & 0{,}631 & 0{,}197 & --- \\
 \hline
 \end{tabular}
 \end{table}
+
+As métricas semânticas (SBERT, BERTimbau e Multilingual) e a métrica voltada para geração BERTScore foram as que melhor preservaram seu valor agregado ao longo dos três experimentos, mostrando-se mais robustas a variações de superfície. As métricas lexicais e ROUGE-L, ao contrário, são fortemente afetadas pela reformulação produzida pelos LLMs. Para o nível N3 (estruturação JSON), as métricas de similaridade textual permanecem altas (vide Seção~\ref{sec:n3}), mas as métricas de classificação por correspondência exata revelam dificuldades sistemáticas na produção dos campos estruturados.
 
 \section{Resultados por Experimento}
 
 \subsection{EN1 --- Segmentação N1}
 
-No experimento EN1, a comparação concentrou-se na proximidade entre as regras N1 geradas pelo LLM e as regras N1 de referência. As métricas semânticas superaram as lexicais (SBERT~0{,}710 e Multilingual~0{,}749 contra TF-IDF~0{,}460 e FuzzyWuzzy~0{,}638), indicando que a tarefa de segmentação tolera reformulações lexicais quando a semântica é preservada. O modelo \textbf{Dolphin} liderou as métricas semânticas e de distância (SBERT~0{,}840; Multilingual~0{,}873; WMD\_ft~0{,}748; WMD\_nilc~0{,}740), enquanto o \textbf{Gemma} obteve a maior pontuação em FuzzyWuzzy (0{,}724). A Tabela~\ref{tab:resultados_en1} apresenta os resultados detalhados por modelo.
+No experimento EN1, a comparação concentrou-se na proximidade entre as regras N1 geradas pelo LLM e as regras N1 de referência. As métricas semânticas superaram as lexicais (Multilingual~0{,}850, BERTimbau~0{,}816 e SBERT~0{,}801 contra TF-IDF~0{,}636 e FuzzyWuzzy~0{,}475), indicando que a tarefa de segmentação tolera reformulações lexicais quando a semântica é preservada. O modelo \textbf{Dolphin} liderou em \textit{todas} as métricas de similaridade e em três das quatro métricas de classificação, configurando-se como o melhor desempenho isolado em EN1. A Tabela~\ref{tab:resultados_en1} apresenta os números detalhados.
 
 \begin{table}[ht]
 \centering
-\caption{Resultados por modelo em EN1.}
+\caption{Resultados por modelo em EN1 (similaridade e classificação).}
 \label{tab:resultados_en1}
-\begin{tabular}{lcccccc}
+\scriptsize
+\begin{tabular}{lccccccccc}
 \hline
-Modelo & FuzzyWuzzy & TF-IDF & SBERT & Multilingual & WMD\_ft & WMD\_nilc \\
+Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
 \hline
-Alpaca  & 0{,}576 & 0{,}331 & 0{,}605 & 0{,}645 & 0{,}608 & 0{,}630 \\
-Dolphin & 0{,}667 & 0{,}650 & 0{,}840 & 0{,}873 & 0{,}748 & 0{,}740 \\
-Gemma   & 0{,}724 & 0{,}550 & 0{,}765 & 0{,}789 & 0{,}687 & 0{,}681 \\
-Llama   & 0{,}711 & 0{,}535 & 0{,}764 & 0{,}788 & 0{,}674 & 0{,}665 \\
-Mistral & 0{,}656 & 0{,}508 & 0{,}747 & 0{,}804 & 0{,}669 & 0{,}667 \\
-Qwen    & 0{,}491 & 0{,}189 & 0{,}538 & 0{,}596 & 0{,}580 & 0{,}569 \\
+Alpaca  & 0{,}473 & 0{,}561 & 0{,}748 & 0{,}762 & 0{,}803 & 0{,}694 & 0{,}664 & 0{,}841 & 0{,}540 \\
+Dolphin & \textbf{0{,}641} & \textbf{0{,}756} & \textbf{0{,}873} & \textbf{0{,}891} & \textbf{0{,}913} & \textbf{0{,}774} & \textbf{0{,}751} & \textbf{0{,}905} & \textbf{0{,}703} \\
+Gemma   & 0{,}412 & 0{,}695 & 0{,}842 & 0{,}850 & 0{,}885 & 0{,}726 & 0{,}699 & 0{,}883 & 0{,}648 \\
+Llama   & 0{,}422 & 0{,}672 & 0{,}835 & 0{,}844 & 0{,}873 & 0{,}711 & 0{,}684 & 0{,}871 & 0{,}605 \\
+Mistral & 0{,}534 & 0{,}704 & 0{,}842 & 0{,}874 & 0{,}899 & 0{,}726 & 0{,}699 & 0{,}888 & 0{,}651 \\
+Qwen    & 0{,}367 & 0{,}429 & 0{,}668 & 0{,}673 & 0{,}726 & 0{,}663 & 0{,}632 & 0{,}808 & 0{,}448 \\
+\hline
+\multicolumn{10}{c}{Métricas de classificação (Acurácia / Precisão / Revocação / F1)} \\
+\hline
+Alpaca  & \multicolumn{9}{l}{0{,}419 / 0{,}512 / 0{,}699 / 0{,}591} \\
+Dolphin & \multicolumn{9}{l}{\textbf{0{,}676} / \textbf{0{,}812} / 0{,}801 / \textbf{0{,}806}} \\
+Gemma   & \multicolumn{9}{l}{0{,}466 / 0{,}486 / \textbf{0{,}917} / 0{,}636} \\
+Llama   & \multicolumn{9}{l}{0{,}446 / 0{,}479 / 0{,}865 / 0{,}616} \\
+Mistral & \multicolumn{9}{l}{0{,}610 / 0{,}670 / 0{,}872 / 0{,}758} \\
+Qwen    & \multicolumn{9}{l}{0{,}235 / 0{,}311 / 0{,}487 / 0{,}380} \\
 \hline
 \end{tabular}
 \end{table}
+
+A Figura~\ref{img:4.2.1} apresenta o comparativo visual entre os seis modelos nas nove métricas de similaridade em EN1.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\linewidth]{Imagens/4.2.1-resultados-en1-barras.png}
+\caption{Comparativo modelo $\times$ métrica em EN1.}
+\label{img:4.2.1}
+\end{figure}
 
 \subsection{EN2 --- Identificação dos Operadores RASE}
 
-No experimento EN2, a análise concentrou-se na qualidade da identificação e estruturação dos operadores RASE a partir do N1 de referência. As médias agregadas foram inferiores às do EN1 (SBERT~0{,}587; Multilingual~0{,}668), evidenciando a maior dificuldade da formalização estruturada em comparação com a segmentação. As métricas de distância semântica (WMD\_ft~0{,}694; WMD\_nilc~0{,}655) superaram TF-IDF e FuzzyWuzzy, sinalizando robustez a variações de superfície. O modelo \textbf{Llama} apresentou liderança consistente em todas as métricas (Multilingual~0{,}869; WMD\_ft~0{,}857; SBERT~0{,}806; FuzzyWuzzy~0{,}761; TF-IDF~0{,}777; WMD\_nilc~0{,}806), configurando-se como o melhor desempenho global para EN2. Os números completos por modelo aparecem na Tabela~\ref{tab:resultados_en2}.
+No experimento EN2, a análise concentrou-se na qualidade da identificação e estruturação dos operadores RASE a partir do N1 de referência. As médias agregadas foram inferiores às do EN1 (SBERT~0{,}490; Multilingual~0{,}595), evidenciando a maior dificuldade da formalização estruturada. As métricas de classificação caem de forma ainda mais acentuada (F1 macro~0{,}197), refletindo a dificuldade dos LLMs em distinguir corretamente os operadores Seleção e Exceção. O modelo \textbf{Llama} apresenta liderança nas métricas semânticas e lexicais; o \textbf{Dolphin} apresenta a melhor F1 macro (0{,}286). A Tabela~\ref{tab:resultados_en2} apresenta os números detalhados.
 
 \begin{table}[ht]
 \centering
-\caption{Resultados por modelo em EN2.}
+\caption{Resultados por modelo em EN2 (similaridade e classificação macro por operador).}
 \label{tab:resultados_en2}
-\begin{tabular}{lcccccc}
+\scriptsize
+\begin{tabular}{lccccccccc}
 \hline
-Modelo & FuzzyWuzzy & TF-IDF & SBERT & Multilingual & WMD\_ft & WMD\_nilc \\
+Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
 \hline
-Alpaca  & 0{,}355 & 0{,}196 & 0{,}400 & 0{,}482 & 0{,}552 & 0{,}527 \\
-Dolphin & 0{,}581 & 0{,}524 & 0{,}629 & 0{,}711 & 0{,}707 & 0{,}672 \\
-Gemma   & 0{,}468 & 0{,}555 & 0{,}655 & 0{,}740 & 0{,}761 & 0{,}710 \\
-Llama   & 0{,}761 & 0{,}777 & 0{,}806 & 0{,}869 & 0{,}857 & 0{,}806 \\
-Mistral & 0{,}652 & 0{,}584 & 0{,}669 & 0{,}734 & 0{,}747 & 0{,}703 \\
-Qwen    & 0{,}351 & 0{,}136 & 0{,}364 & 0{,}471 & 0{,}543 & 0{,}513 \\
+Alpaca  & 0{,}334 & 0{,}168 & 0{,}386 & 0{,}418 & 0{,}484 & 0{,}522 & 0{,}486 & 0{,}702 & 0{,}172 \\
+Dolphin & 0{,}511 & 0{,}423 & 0{,}557 & 0{,}621 & 0{,}665 & \textbf{0{,}620} & \textbf{0{,}589} & 0{,}786 & 0{,}412 \\
+Gemma   & 0{,}384 & 0{,}364 & 0{,}520 & 0{,}579 & 0{,}625 & 0{,}608 & 0{,}577 & 0{,}772 & 0{,}350 \\
+Llama   & \textbf{0{,}638} & \textbf{0{,}447} & \textbf{0{,}595} & \textbf{0{,}657} & \textbf{0{,}685} & 0{,}617 & 0{,}586 & \textbf{0{,}796} & \textbf{0{,}427} \\
+Mistral & 0{,}563 & 0{,}385 & 0{,}575 & 0{,}607 & 0{,}665 & 0{,}607 & 0{,}575 & 0{,}779 & 0{,}377 \\
+Qwen    & 0{,}336 & 0{,}083 & 0{,}304 & 0{,}369 & 0{,}444 & 0{,}496 & 0{,}462 & 0{,}684 & 0{,}111 \\
+\hline
+\multicolumn{10}{c}{Métricas de classificação --- macro (Acurácia / Precisão / Revocação / F1)} \\
+\hline
+Alpaca  & \multicolumn{9}{l}{0{,}081 / 0{,}103 / 0{,}109 / 0{,}105} \\
+Dolphin & \multicolumn{9}{l}{0{,}339 / 0{,}301 / 0{,}276 / \textbf{0{,}286}} \\
+Gemma   & \multicolumn{9}{l}{0{,}182 / 0{,}252 / \textbf{0{,}300} / 0{,}265} \\
+Llama   & \multicolumn{9}{l}{\textbf{0{,}439} / 0{,}237 / 0{,}250 / 0{,}243} \\
+Mistral & \multicolumn{9}{l}{0{,}434 / 0{,}268 / 0{,}214 / 0{,}238} \\
+Qwen    & \multicolumn{9}{l}{0{,}160 / 0{,}051 / 0{,}039 / 0{,}044} \\
 \hline
 \end{tabular}
 \end{table}
 
+A Figura~\ref{img:4.2.2} consolida o desempenho dos seis modelos nas nove métricas de similaridade em EN2.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\linewidth]{Imagens/4.2.2-resultados-en2-barras.png}
+\caption{Comparativo modelo $\times$ métrica em EN2.}
+\label{img:4.2.2}
+\end{figure}
+
 \subsection{EN1N2 --- Pipeline Encadeado}
 
-O experimento EN1N2 avaliou a robustez do pipeline totalmente automatizado, em que a saída do nível N1 alimenta a etapa N2 do mesmo modelo. Os resultados confirmam a hipótese de \textbf{propagação de erros}: as médias caíram em relação ao EN2 direto, com quedas em TF-IDF (0{,}360), SBERT (0{,}567) e Multilingual (0{,}650). A degradação não é uniforme entre as métricas, mas é consistente entre os modelos. O \textbf{Llama} manteve a melhor performance em métricas semânticas (SBERT~0{,}678; Multilingual~0{,}743), enquanto o \textbf{Dolphin} foi superior em TF-IDF e WMD (TF-IDF~0{,}506; WMD\_ft~0{,}692; WMD\_nilc~0{,}669), revelando perfis complementares no cenário encadeado. A Tabela~\ref{tab:resultados_en1n2} apresenta os números completos.
+O experimento EN1N2 avaliou a robustez do pipeline totalmente automatizado, em que o N1 gerado pelo modelo na primeira etapa alimenta a etapa N2 do mesmo modelo. Os resultados confirmam a hipótese de \textbf{propagação de erros}: as médias caem em relação ao EN2 em parte das métricas, mas mantêm-se próximas ou ligeiramente superiores em outras, em particular nas semânticas (Multilingual sobe de 0{,}595 para 0{,}679; BERTimbau de 0{,}542 para 0{,}631; SBERT de 0{,}490 para 0{,}594). Esse comportamento decorre do fato de o pipeline produzir saídas mais próximas das frases originais e, portanto, mais alinhadas ao texto de referência no nível semântico, ainda que perca em precisão na atribuição de operadores. \textbf{Dolphin} e \textbf{Llama} alternam a liderança: o Dolphin domina TF-IDF, WMD\_ft, WMD\_nilc, BERTScore e ROUGE-L; o Llama lidera em SBERT e empata em Multilingual. A Tabela~\ref{tab:resultados_en1n2} apresenta os números detalhados.
 
 \begin{table}[ht]
 \centering
-\caption{Resultados por modelo em EN1N2.}
+\caption{Resultados por modelo em EN1N2 (similaridade).}
 \label{tab:resultados_en1n2}
-\begin{tabular}{lcccccc}
+\scriptsize
+\begin{tabular}{lccccccccc}
 \hline
-Modelo & FuzzyWuzzy & TF-IDF & SBERT & Multilingual & WMD\_ft & WMD\_nilc \\
+Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
 \hline
-Alpaca  & 0{,}389 & 0{,}208 & 0{,}449 & 0{,}530 & 0{,}560 & 0{,}547 \\
-Dolphin & 0{,}554 & 0{,}506 & 0{,}661 & 0{,}740 & 0{,}692 & 0{,}669 \\
-Gemma   & 0{,}450 & 0{,}407 & 0{,}586 & 0{,}671 & 0{,}651 & 0{,}628 \\
-Llama   & 0{,}654 & 0{,}492 & 0{,}678 & 0{,}743 & 0{,}663 & 0{,}650 \\
-Mistral & 0{,}594 & 0{,}429 & 0{,}638 & 0{,}718 & 0{,}654 & 0{,}634 \\
-Qwen    & 0{,}369 & 0{,}119 & 0{,}393 & 0{,}501 & 0{,}545 & 0{,}522 \\
+Alpaca  & 0{,}375 & 0{,}285 & 0{,}494 & 0{,}523 & 0{,}581 & 0{,}573 & 0{,}538 & 0{,}742 & 0{,}282 \\
+Dolphin & 0{,}549 & \textbf{0{,}529} & 0{,}662 & 0{,}711 & \textbf{0{,}749} & \textbf{0{,}673} & \textbf{0{,}644} & \textbf{0{,}826} & \textbf{0{,}509} \\
+Gemma   & 0{,}391 & 0{,}458 & 0{,}615 & 0{,}656 & 0{,}701 & 0{,}646 & 0{,}617 & 0{,}804 & 0{,}436 \\
+Llama   & \textbf{0{,}570} & 0{,}521 & \textbf{0{,}677} & \textbf{0{,}721} & \textbf{0{,}749} & 0{,}649 & 0{,}620 & 0{,}821 & 0{,}488 \\
+Mistral & 0{,}559 & 0{,}489 & 0{,}667 & 0{,}698 & 0{,}740 & 0{,}648 & 0{,}618 & 0{,}817 & 0{,}468 \\
+Qwen    & 0{,}342 & 0{,}219 & 0{,}448 & 0{,}478 & 0{,}551 & 0{,}562 & 0{,}530 & 0{,}731 & 0{,}240 \\
+\hline
+\end{tabular}
+\end{table}
+
+A Figura~\ref{img:4.2.3} apresenta o comparativo visual em EN1N2, evidenciando a alternância de liderança entre Dolphin e Llama por métrica.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\linewidth]{Imagens/4.2.3-resultados-en1n2-barras.png}
+\caption{Comparativo modelo $\times$ métrica em EN1N2.}
+\label{img:4.2.3}
+\end{figure}
+
+\section{Resultados Isolados do Nível N3}
+\label{sec:n3}
+
+O nível N3 (estruturação semântica em JSON) foi também avaliado isoladamente, recebendo como entrada os operadores N2 de referência. Por se tratar de uma saída \textit{quase-estruturada} composta por campos curtos com vocabulário restrito (\texttt{object}, \texttt{property}, \texttt{comparation}, \texttt{target}, \texttt{unit}), as métricas de similaridade textual atingem patamares muito mais elevados do que em N1 e N2 --- ver a Tabela~\ref{tab:resultados_n3}. As métricas de classificação por correspondência exata, no entanto, expõem dificuldades sistemáticas: a precisão macro fica abaixo de 4\%, sinalizando que os modelos preservam o significado, mas variam o vocabulário em relação à referência (por exemplo, \texttt{target = ``público''} \textit{vs.} \texttt{target = ``uso público''}).
+
+\begin{table}[ht]
+\centering
+\caption{Resultados por modelo em N3 isolado.}
+\label{tab:resultados_n3}
+\scriptsize
+\begin{tabular}{lccccccccc}
+\hline
+Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
+\hline
+Alpaca  & 0{,}729 & 0{,}395 & 0{,}846 & 0{,}745 & 0{,}798 & 0{,}756 & 0{,}751 & 0{,}815 & 0{,}624 \\
+Dolphin & 0{,}860 & 0{,}694 & 0{,}912 & 0{,}848 & 0{,}887 & 0{,}842 & 0{,}839 & 0{,}901 & 0{,}799 \\
+Gemma   & 0{,}751 & 0{,}480 & 0{,}858 & 0{,}755 & 0{,}823 & 0{,}762 & 0{,}757 & 0{,}810 & 0{,}652 \\
+Llama   & \textbf{0{,}892} & \textbf{0{,}736} & \textbf{0{,}947} & \textbf{0{,}897} & \textbf{0{,}928} & \textbf{0{,}915} & \textbf{0{,}912} & \textbf{0{,}925} & \textbf{0{,}871} \\
+Mistral & 0{,}877 & 0{,}689 & 0{,}938 & 0{,}891 & 0{,}914 & 0{,}903 & 0{,}900 & 0{,}922 & 0{,}842 \\
+Qwen    & 0{,}872 & 0{,}590 & 0{,}937 & 0{,}877 & 0{,}889 & 0{,}898 & 0{,}895 & 0{,}905 & 0{,}804 \\
+\hline
+\multicolumn{10}{c}{Métricas de classificação macro por campo (Acurácia / Precisão / Revocação / F1)} \\
+\hline
+Alpaca  & \multicolumn{9}{l}{0{,}283 / 0{,}012 / 0{,}434 / 0{,}024} \\
+Dolphin & \multicolumn{9}{l}{0{,}705 / 0{,}034 / 0{,}447 / 0{,}062} \\
+Gemma   & \multicolumn{9}{l}{0{,}292 / 0{,}017 / \textbf{0{,}603} / 0{,}033} \\
+Llama   & \multicolumn{9}{l}{0{,}725 / \textbf{0{,}038} / 0{,}361 / \textbf{0{,}067}} \\
+Mistral & \multicolumn{9}{l}{\textbf{0{,}760} / 0{,}037 / 0{,}371 / 0{,}066} \\
+Qwen    & \multicolumn{9}{l}{0{,}692 / 0{,}004 / 0{,}063 / 0{,}008} \\
 \hline
 \end{tabular}
 \end{table}
 
 \section{Resultados por Modelo}
 
-A análise por modelo permite identificar os perfis de desempenho de cada LLM ao longo dos três experimentos. Considerando a média global de todas as métricas em todos os experimentos, o ranking é o seguinte: \textbf{Llama} (média global aproximadamente 0{,}716), \textbf{Dolphin} (0{,}676), \textbf{Mistral} (0{,}656), \textbf{Gemma} (intermediário), \textbf{Alpaca} (0{,}477) e \textbf{Qwen} (0{,}433).
+A Tabela~\ref{tab:ranking_global} apresenta a média global por modelo, agregada sobre as nove métricas de similaridade textual e os três experimentos (EN1, EN2 e EN1N2). O ranking final difere do esperado: \textbf{Dolphin}, e não Llama, apresenta a melhor média global, sustentada pela liderança quase total em EN1 e por desempenho competitivo nas demais etapas. Llama lidera em EN2 e mantém-se entre os melhores em EN1N2 nas métricas semânticas. Mistral é o terceiro melhor, seguido por Gemma, Alpaca e Qwen.
 
-\textbf{Llama.} Apresentou desempenho líder em EN2 e EN1N2 nas métricas semânticas. Em EN1 obteve FuzzyWuzzy~0{,}711, TF-IDF~0{,}535, SBERT~0{,}764, Multilingual~0{,}788, WMD\_ft~0{,}674 e WMD\_nilc~0{,}665; em EN2, liderou com FuzzyWuzzy~0{,}761, TF-IDF~0{,}777, SBERT~0{,}806, Multilingual~0{,}869, WMD\_ft~0{,}857 e WMD\_nilc~0{,}806; em EN1N2, manteve FuzzyWuzzy~0{,}654, TF-IDF~0{,}492, SBERT~0{,}678, Multilingual~0{,}743, WMD\_ft~0{,}663 e WMD\_nilc~0{,}650.
+\begin{table}[ht]
+\centering
+\caption{Média global por modelo (nove métricas de similaridade $\times$ três experimentos).}
+\label{tab:ranking_global}
+\begin{tabular}{lcccc}
+\hline
+Modelo  & EN1   & EN2   & EN1N2 & Média Global \\
+\hline
+Dolphin & 0{,}801 & 0{,}576 & 0{,}650 & \textbf{0{,}676} \\
+Llama   & 0{,}724 & 0{,}605 & 0{,}646 & 0{,}658 \\
+Mistral & 0{,}757 & 0{,}570 & 0{,}634 & 0{,}654 \\
+Gemma   & 0{,}738 & 0{,}531 & 0{,}591 & 0{,}620 \\
+Alpaca  & 0{,}676 & 0{,}408 & 0{,}488 & 0{,}524 \\
+Qwen    & 0{,}602 & 0{,}366 & 0{,}456 & 0{,}475 \\
+\hline
+\end{tabular}
+\end{table}
 
-\textbf{Dolphin.} Mostrou-se o melhor segmentador em EN1 e o líder em métricas de distância em EN1N2. Em EN1, obteve FuzzyWuzzy~0{,}667, TF-IDF~0{,}650, SBERT~0{,}840, Multilingual~0{,}873, WMD\_ft~0{,}748 e WMD\_nilc~0{,}740; em EN2, FuzzyWuzzy~0{,}581, TF-IDF~0{,}524, SBERT~0{,}629, Multilingual~0{,}711, WMD\_ft~0{,}707 e WMD\_nilc~0{,}672; em EN1N2, FuzzyWuzzy~0{,}554, TF-IDF~0{,}506, SBERT~0{,}661, Multilingual~0{,}740, WMD\_ft~0{,}692 e WMD\_nilc~0{,}669.
+A Figura~\ref{img:4.3.1} apresenta a mesma informação em forma de \textit{heatmap}, evidenciando visualmente as zonas de queda de desempenho entre EN1 e EN2 e o destaque do Dolphin em EN1.
 
-\textbf{Gemma.} Liderou em FuzzyWuzzy no EN1 e manteve desempenho razoável em EN2. Em EN1, FuzzyWuzzy~0{,}724, TF-IDF~0{,}550, SBERT~0{,}765, Multilingual~0{,}789, WMD\_ft~0{,}687 e WMD\_nilc~0{,}681; em EN2, FuzzyWuzzy~0{,}468, TF-IDF~0{,}555, SBERT~0{,}655, Multilingual~0{,}740, WMD\_ft~0{,}761 e WMD\_nilc~0{,}710; em EN1N2, FuzzyWuzzy~0{,}450, TF-IDF~0{,}407, SBERT~0{,}586, Multilingual~0{,}671, WMD\_ft~0{,}651 e WMD\_nilc~0{,}628.
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.7\linewidth]{Imagens/4.3.1-heatmap-global.png}
+\caption{Heatmap das médias por modelo e experimento (média das nove métricas de similaridade).}
+\label{img:4.3.1}
+\end{figure}
 
-\textbf{Mistral.} Apresentou desempenho intermediário e consistente em todos os cenários. Em EN1, FuzzyWuzzy~0{,}656, TF-IDF~0{,}508, SBERT~0{,}747, Multilingual~0{,}804, WMD\_ft~0{,}669 e WMD\_nilc~0{,}667; em EN2, FuzzyWuzzy~0{,}652, TF-IDF~0{,}584, SBERT~0{,}669, Multilingual~0{,}734, WMD\_ft~0{,}747 e WMD\_nilc~0{,}703; em EN1N2, FuzzyWuzzy~0{,}594, TF-IDF~0{,}429, SBERT~0{,}638, Multilingual~0{,}718, WMD\_ft~0{,}654 e WMD\_nilc~0{,}634.
+A seguir, destacam-se as observações por modelo.
 
-\textbf{Alpaca.} Apresentou desempenho fraco em todos os experimentos. Em EN1, FuzzyWuzzy~0{,}576, TF-IDF~0{,}331, SBERT~0{,}605, Multilingual~0{,}645, WMD\_ft~0{,}608 e WMD\_nilc~0{,}630; em EN2, queda acentuada (FuzzyWuzzy~0{,}355, TF-IDF~0{,}196, SBERT~0{,}400, Multilingual~0{,}482, WMD\_ft~0{,}552 e WMD\_nilc~0{,}527); em EN1N2, FuzzyWuzzy~0{,}389, TF-IDF~0{,}208, SBERT~0{,}449, Multilingual~0{,}530, WMD\_ft~0{,}560 e WMD\_nilc~0{,}547.
+\textbf{Dolphin.} Foi o melhor segmentador em EN1, com domínio absoluto em todas as nove métricas (BERTimbau~0{,}891; Multilingual~0{,}913; SBERT~0{,}873; BERTScore~0{,}905) e a melhor F1 macro de classificação em EN1 (0{,}806). Em EN2, lidera em WMD\_ft (0{,}620), WMD\_nilc (0{,}589) e F1 macro (0{,}286). Em EN1N2, lidera em TF-IDF (0{,}529), WMD\_ft (0{,}673), WMD\_nilc (0{,}644), BERTScore (0{,}826) e ROUGE-L (0{,}509). Combinada com o baixo custo computacional (Seção~\ref{sec:tempo}), representa a melhor relação custo-benefício observada.
 
-\textbf{Qwen.} Apresentou o pior desempenho geral. Em EN1, FuzzyWuzzy~0{,}491, TF-IDF~0{,}189, SBERT~0{,}538, Multilingual~0{,}596, WMD\_ft~0{,}580 e WMD\_nilc~0{,}569; em EN2, FuzzyWuzzy~0{,}351, TF-IDF~0{,}136, SBERT~0{,}364, Multilingual~0{,}471, WMD\_ft~0{,}543 e WMD\_nilc~0{,}513; em EN1N2, FuzzyWuzzy~0{,}369, TF-IDF~0{,}119, SBERT~0{,}393, Multilingual~0{,}501, WMD\_ft~0{,}545 e WMD\_nilc~0{,}522.
+\textbf{Llama.} Apresentou o melhor desempenho em EN2 nas métricas FuzzyWuzzy (0{,}638), TF-IDF (0{,}447), SBERT (0{,}595), BERTimbau (0{,}657), Multilingual (0{,}685), BERTScore (0{,}796) e ROUGE-L (0{,}427), além da maior acurácia macro de classificação em EN2 (0{,}439). Em EN1N2, lidera em FuzzyWuzzy (0{,}570), SBERT (0{,}677), BERTimbau (0{,}721) e empata com o Dolphin em Multilingual (0{,}749). No N3 isolado, é o melhor em todas as métricas de similaridade textual.
+
+\textbf{Mistral.} Apresentou desempenho consistente em todos os cenários, ficando próximo dos líderes em EN1 (Multilingual~0{,}899; BERTimbau~0{,}874) e EN1N2 (Multilingual~0{,}740; BERTimbau~0{,}698), com a segunda melhor acurácia macro em EN2 (0{,}434).
+
+\textbf{Gemma.} Liderou em revocação macro de classificação em EN1 (0{,}917) e EN2 (0{,}300), indicando boa cobertura, mas com precisão menor. Mantém médias intermediárias nas métricas semânticas.
+
+\textbf{Alpaca.} Apresentou desempenho fraco em todos os experimentos, com queda acentuada em EN2 (SBERT~0{,}386; F1 macro~0{,}105).
+
+\textbf{Qwen.} Apresentou o pior desempenho geral, com colapso em EN2 (TF-IDF~0{,}083; F1 macro~0{,}044) e a maior latência observada no pipeline encadeado (vide Seção~\ref{sec:tempo}). É também afetado pela tendência de produzir saídas em chinês simplificado, fora do idioma esperado.
 
 \section{Análise por Métrica}
 
-\textbf{Métricas lexicais.} FuzzyWuzzy e TF-IDF apresentaram quedas progressivas de EN1 para EN1N2 (FuzzyWuzzy: 0{,}638 $\rightarrow$ 0{,}502; TF-IDF: 0{,}460 $\rightarrow$ 0{,}360). Por dependerem da sobreposição lexical, essas métricas penalizam reformulações sintáticas e sinonímias produzidas pelos LLMs.
+\textbf{Métricas lexicais.} FuzzyWuzzy e TF-IDF apresentam quedas claras de EN1 para EN2 (FuzzyWuzzy: 0{,}475 $\rightarrow$ 0{,}461; TF-IDF: 0{,}636 $\rightarrow$ 0{,}312). Por dependerem da sobreposição lexical, essas métricas penalizam reformulações sintáticas e sinonímias produzidas pelos LLMs.
 
-\textbf{Métricas semânticas.} SBERT e Multilingual mantiveram médias mais altas e mais estáveis, capturando equivalências mesmo na presença de paráfrases. Multilingual foi a métrica com maior média absoluta em todos os três experimentos. O BERTimbau, especializado em texto jurídico em português, foi aplicado em uma rodada complementar de validação do modelo Llama, obtendo médias de 0{,}773 (EN1), 0{,}851 (EN2) e 0{,}719 (EN1N2). Os valores reforçam a aderência semântica de modelos de domínio jurídico ao formato RASE.
+\textbf{Métricas semânticas.} SBERT, BERTimbau e Multilingual mantêm médias altas e estáveis. O BERTimbau, especializado em texto jurídico em português, apresenta resultados ligeiramente superiores ao SBERT em quase todos os modelos e experimentos (EN1: 0{,}816 \textit{vs.} 0{,}801; EN1N2: 0{,}631 \textit{vs.} 0{,}594), reforçando o ganho do uso de \textit{embeddings} de domínio para validar transformações normativas.
 
-\textbf{Métricas de distância (WMD).} O desempenho foi intermediário, entre lexicais e semânticas. As medidas WMD foram mais altas em EN2 (WMD\_ft~0{,}694; WMD\_nilc~0{,}655), indicando maior sensibilidade à estruturação correta dos operadores RASE.
+\textbf{Métricas voltadas para geração.} O BERTScore foi a métrica com maior média absoluta em EN2 (0{,}753) e EN1N2 (0{,}790), graças ao alinhamento ótimo entre \textit{tokens} mesmo com forte reformulação. O ROUGE-L, ao contrário, comportou-se como uma métrica lexical, com queda acentuada em EN2 (0{,}308).
 
-\textbf{Métricas de classificação.} Sobre as tabelas de Acurácia, Precisão, Revocação e F1-score, calculadas com limiar sobre a similaridade semântica, a complementação fornecida no validador permitirá relatar a proporção de regras corretamente identificadas por operador, em adição às médias de similaridade aqui apresentadas.
+\textbf{Métricas de distância (WMD).} O desempenho é intermediário, entre lexicais e semânticas. As medidas WMD foram mais altas em EN1 (WMD\_ft~0{,}716; WMD\_nilc~0{,}688), refletindo a maior proximidade lexical das saídas de segmentação ao texto original.
+
+\textbf{Métricas de classificação.} Em EN1, a F1 macro chega a 0{,}806 (Dolphin), sinalizando que a maior parte das sentenças atômicas é corretamente segmentada. Em EN2, a F1 cai para um máximo de 0{,}286 (Dolphin), com colapso em Seleção e Exceção (F1 próximo de zero para todos os modelos), o que indica que esses operadores são especialmente difíceis de identificar mesmo para os modelos líderes. Em N3, a baixa precisão por correspondência exata mostra que o emparelhamento token-a-token é severo demais para um campo cuja semântica é preservada com variações léxicas.
+
+As Figuras~\ref{img:4.4.1}, \ref{img:4.4.2} e \ref{img:4.4.3} apresentam o mapa de calor modelo $\times$ métrica em cada experimento, com os valores numéricos sobrepostos.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{Imagens/4.4.1-heatmap-en1.png}
+\caption{Heatmap modelo $\times$ métrica em EN1.}
+\label{img:4.4.1}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{Imagens/4.4.2-heatmap-en2.png}
+\caption{Heatmap modelo $\times$ métrica em EN2.}
+\label{img:4.4.2}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.9\linewidth]{Imagens/4.4.3-heatmap-en1n2.png}
+\caption{Heatmap modelo $\times$ métrica em EN1N2.}
+\label{img:4.4.3}
+\end{figure}
 
 \section{Tempo de Execução}
+\label{sec:tempo}
 
-O tempo total de geração foi medido para cada modelo em cada nível. A Tabela~\ref{tab:tempo_n1} mostra os tempos em N1; a Tabela~\ref{tab:tempo_n2}, em N2; e a Tabela~\ref{tab:tempo_n1n2}, no pipeline encadeado N1N2.
+O tempo total de geração foi medido para cada modelo em cada nível. A Tabela~\ref{tab:tempo_n1} apresenta os tempos em N1; a Tabela~\ref{tab:tempo_n2}, em N2; e a Tabela~\ref{tab:tempo_n1n2}, no pipeline encadeado N1N2.
 
 \begin{table}[ht]
 \centering
@@ -127,12 +277,12 @@ O tempo total de geração foi medido para cada modelo em cada nível. A Tabela~
 \hline
 Modelo & Tempo (s) & Tempo (h:mm:ss) \\
 \hline
-Alpaca  & 104{,}55  & 0:01:44 \\
-Dolphin & 62{,}65   & 0:01:02 \\
-Gemma   & 133{,}04  & 0:02:13 \\
-Llama   & 5\,676{,}97 & 1:34:36 \\
-Mistral & 70{,}04   & 0:01:10 \\
-Qwen    & 309{,}59  & 0:05:09 \\
+Alpaca  & 104{,}55     & 0:01:44 \\
+Dolphin & 62{,}65      & 0:01:02 \\
+Gemma   & 133{,}04     & 0:02:13 \\
+Llama   & 5\,676{,}97  & 1:34:36 \\
+Mistral & 70{,}04      & 0:01:10 \\
+Qwen    & 309{,}59     & 0:05:09 \\
 \hline
 \end{tabular}
 \end{table}
@@ -145,12 +295,12 @@ Qwen    & 309{,}59  & 0:05:09 \\
 \hline
 Modelo & Tempo (s) & Tempo (h:mm:ss) \\
 \hline
-Alpaca  & 249{,}10  & 0:04:09 \\
-Dolphin & 124{,}69  & 0:02:04 \\
-Gemma   & 244{,}19  & 0:04:04 \\
-Llama   & 6\,895{,}71 & 1:54:55 \\
-Mistral & 123{,}63  & 0:02:03 \\
-Qwen    & 6\,515{,}09 & 1:48:35 \\
+Alpaca  & 249{,}10     & 0:04:09 \\
+Dolphin & 124{,}69     & 0:02:04 \\
+Gemma   & 244{,}19     & 0:04:04 \\
+Llama   & 6\,895{,}71  & 1:54:55 \\
+Mistral & 123{,}63     & 0:02:03 \\
+Qwen    & 6\,515{,}09  & 1:48:35 \\
 \hline
 \end{tabular}
 \end{table}
@@ -163,28 +313,28 @@ Qwen    & 6\,515{,}09 & 1:48:35 \\
 \hline
 Modelo & Tempo (s) & Tempo (h:mm:ss) \\
 \hline
-Alpaca  & 330{,}84  & 0:05:30 \\
-Dolphin & 104{,}28  & 0:01:44 \\
-Gemma   & 427{,}22  & 0:07:07 \\
-Llama   & 9\,450{,}14 & 2:37:30 \\
-Mistral & 138{,}39  & 0:02:18 \\
-Qwen    & 10\,093{,}84 & 2:48:13 \\
+Alpaca  & 330{,}84      & 0:05:30 \\
+Dolphin & 104{,}28      & 0:01:44 \\
+Gemma   & 427{,}22      & 0:07:07 \\
+Llama   & 9\,450{,}14   & 2:37:30 \\
+Mistral & 138{,}39      & 0:02:18 \\
+Qwen    & 10\,093{,}84  & 2:48:13 \\
 \hline
 \end{tabular}
 \end{table}
 
-Os tempos evidenciam um claro \textit{trade-off} entre qualidade e custo computacional. O Llama, líder em qualidade, é também o mais lento (1h34min em N1, 2h37min em N1N2), apresentando tempos cerca de 50 a 100 vezes maiores que os modelos mais rápidos. O Dolphin destaca-se por combinar qualidade competitiva com tempo de execução baixo em todos os níveis (62~s em N1; 1m44s em N1N2). O Qwen, além de pior desempenho qualitativo, apresenta também o maior tempo no pipeline encadeado (2h48min).
+Os tempos revelam um claro \textit{trade-off} entre qualidade e custo computacional. Llama e Qwen são os mais lentos (1h34min e 5min em N1; 2h37min e 2h48min em N1N2). Dolphin destaca-se por combinar a melhor média global de qualidade com tempos da ordem de 1 a 2 minutos (62~s em N1; 1m44s em N1N2), sendo \textbf{aproximadamente 90 vezes mais rápido que o Llama} no pipeline encadeado, com qualidade equivalente ou superior em várias métricas. Mistral fica em situação semelhante: tempos curtos (2 minutos) e qualidade próxima da liderança.
 
 \section{Discussão Integrada}
 
-A análise conjunta dos três experimentos e das seis métricas permite extrair as seguintes observações.
+A análise conjunta dos três experimentos e das treze métricas permite consolidar cinco observações.
 
-\textbf{1. Embeddings semânticos são as métricas mais adequadas.} SBERT, BERTimbau e Multilingual capturam equivalência semântica mesmo quando há variação de superfície, sendo as métricas mais informativas para validar a transformação de normas em RASE.
+\textbf{1. Embeddings semânticos e BERTScore são as métricas mais adequadas para esta tarefa.} As métricas semânticas (SBERT, BERTimbau, Multilingual) e a métrica voltada para geração BERTScore capturam equivalência mesmo com forte reformulação lexical, sendo as métricas mais estáveis ao longo dos experimentos. BERTimbau apresenta valores ligeiramente superiores ao SBERT em PT-BR, indicando o ganho do uso de \textit{embeddings} de domínio jurídico.
 
-\textbf{2. O pipeline encadeado sofre degradação esperada por propagação de erros.} A queda das médias em EN1N2 em relação a EN2 é consistente com a hipótese de acúmulo de erros entre etapas. Ainda assim, a robustez relativa das métricas semânticas mostra que o significado é preservado em boa parte mesmo quando a forma muda.
+\textbf{2. O pipeline encadeado não degrada uniformemente as métricas.} A queda esperada por propagação de erros é observada nas lexicais (FuzzyWuzzy, TF-IDF, ROUGE-L), mas as métricas semânticas no pipeline encadeado (EN1N2) chegam a superar EN2 isolado em médias agregadas (Multilingual~0{,}679 \textit{vs.}~0{,}595), porque o N1 do próprio modelo tende a produzir frases mais próximas das originais, beneficiando o emparelhamento semântico, mesmo quando a etapa N2 falha na atribuição correta dos operadores. A inspeção das métricas de classificação confirma que esse ganho semântico não se traduz em melhor classificação RASE: o pipeline ainda exige saída atomizada e corretamente rotulada para que a verificação automática funcione.
 
-\textbf{3. Há perfis complementares entre os modelos.} O Llama é o melhor para qualidade global, especialmente em EN2 e em métricas semânticas no EN1N2. O Dolphin oferece o melhor custo-benefício, combinando qualidade competitiva com tempos muito menores, sendo a escolha indicada quando a latência importa.
+\textbf{3. Existem perfis complementares entre os modelos líderes.} Dolphin é o melhor em qualidade global (0{,}676) e oferece o melhor custo-benefício, sendo dominante em EN1 e líder em métricas de distância no EN1N2. Llama lidera EN2 e mantém-se entre os melhores em métricas semânticas no EN1N2 e em N3 isolado, sendo a melhor opção quando há tolerância ao custo computacional.
 
-\textbf{4. Qwen e Alpaca não são recomendados para a tarefa.} Os dois modelos exibem desempenho consistentemente inferior em todas as métricas e em todos os experimentos, com Qwen apresentando ainda o pior tempo em EN1N2.
+\textbf{4. Qwen e Alpaca não são recomendados.} Ambos exibem desempenho consistentemente inferior em todas as métricas e em todos os experimentos. Qwen apresenta ainda a maior latência no pipeline encadeado (2h48min) e tendência a gerar saídas fora do idioma esperado.
 
-\textbf{5. A decomposição em três níveis foi essencial.} A separação entre segmentação (N1), classificação RASE (N2) e estruturação JSON (N3) viabilizou a obtenção de saídas válidas sem a necessidade de \textit{Fine-Tuning} ou de \textit{Retrieval-Augmented Generation}, confirmando que Engenharia de Prompt isolada é suficiente para alcançar similaridade semântica superior a 0{,}80 no melhor cenário (Llama em EN2).
+\textbf{5. A decomposição em três níveis foi essencial.} A separação entre segmentação (N1), classificação RASE (N2) e estruturação JSON (N3) viabilizou a obtenção de saídas válidas sem a necessidade de \textit{Fine-Tuning} ou de \textit{Retrieval-Augmented Generation}, confirmando que Engenharia de Prompt isolada é suficiente para alcançar similaridade semântica próxima a 0{,}90 no melhor cenário (Dolphin em EN1: BERTimbau~0{,}891; Llama em N3 isolado: SBERT~0{,}947). As dificuldades remanescentes concentram-se na classificação correta dos operadores Seleção e Exceção em N2, que se mostraram as classes mais difíceis para todos os modelos avaliados.

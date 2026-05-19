@@ -4,7 +4,14 @@ Este capítulo descreve a metodologia adotada na pesquisa, organizada em torno d
 
 \section{Visão Geral}
 
-A pesquisa avaliou o uso de LLMs \textit{open-source} para converter normas técnicas da AEC em representações computáveis no formato RASE, utilizando \textbf{exclusivamente Engenharia de Prompt}. A conversão foi modelada como um processo de normalização em três níveis sucessivos: N1 (segmentação atômica das sentenças normativas), N2 (identificação dos operadores RASE) e N3 (estruturação semântica em JSON). Seis modelos LLM foram avaliados sob três experimentos (EN1, EN2 e EN1N2), aplicados a um \textit{dataset} composto por 79 normas brasileiras anotadas, e comparados por meio de métricas de similaridade textual e de classificação.
+A pesquisa avaliou o uso de LLMs \textit{open-source} para converter normas técnicas da AEC em representações computáveis no formato RASE, utilizando \textbf{exclusivamente Engenharia de Prompt}. A conversão foi modelada como um processo de normalização em três níveis sucessivos: N1 (segmentação atômica das sentenças normativas), N2 (identificação dos operadores RASE) e N3 (estruturação semântica em JSON). Seis modelos LLM foram avaliados sob três experimentos (EN1, EN2 e EN1N2), aplicados a um \textit{dataset} composto por 79 normas brasileiras anotadas, e comparados por meio de treze métricas: nove métricas de similaridade textual (lexicais, semânticas, distância e geração) e quatro métricas de classificação derivadas da matriz de confusão. A Figura~\ref{img:4.1} apresenta uma visão geral do pipeline, do texto bruto à representação RASE final, com indicação dos prompts utilizados em cada nível, do servidor Ollama que hospeda os modelos e da etapa de validação par a par contra o \textit{dataset} de referência.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.98\linewidth]{Imagens/4.1-pipeline.png}
+\caption{Pipeline de conversão de normas técnicas para o formato RASE.}
+\label{img:4.1}
+\end{figure}
 
 \section{Necessidade de Normalização em Três Níveis}
 
@@ -46,22 +53,23 @@ O \textit{Prompt Few-Shot} inclui no próprio prompt exemplos completos de entra
 
 \section{Modelos LLM Avaliados}
 
-Seis modelos \textit{open-source} foram servidos localmente por meio do \textbf{Ollama} (\texttt{ollama serve}), conforme a Tabela~\ref{tab:modelos_llm}. Todos foram executados sobre o mesmo hardware, com os mesmos prompts e o mesmo \textit{dataset}, garantindo comparabilidade direta entre os resultados.
+Seis modelos \textit{open-source} foram servidos localmente por meio do \textbf{Ollama}~\cite{ollama2024} (\texttt{ollama serve}), conforme a Tabela~\ref{tab:modelos_llm}. Todos foram executados sobre o mesmo hardware, com os mesmos prompts e o mesmo \textit{dataset}, garantindo comparabilidade direta entre os resultados. Cinco dos seis modelos correspondem a \textit{checkpoints} adaptados para português brasileiro publicados por terceiros (em especial \texttt{cnmoro/*}, \texttt{splitpierre/*} e \texttt{brunoconterato/*}), todos disponíveis publicamente no registro do Ollama; o Llama foi avaliado em sua versão oficial \texttt{llama3.1:8b}. A coluna \textit{tag} identifica precisamente cada \textit{checkpoint} reprodutível.
 
 \begin{table}[ht]
 \centering
-\caption{Modelos LLM \textit{open-source} avaliados.}
+\caption{Modelos LLM \textit{open-source} avaliados, com origem e \textit{tag} servida via Ollama (definidos em \texttt{config/models.py}).}
 \label{tab:modelos_llm}
-\begin{tabular}{lll}
+\small
+\begin{tabular}{llll}
 \hline
-Modelo & Origem & Notas \\
+Modelo & Origem & Tag servida via Ollama & Parâmetros \\
 \hline
-Llama   & Meta                     & Modelo de referência, maior latência observada \\
-Dolphin & Cognitive Computations   & Variante alinhada por instruções \\
-Gemma   & Google                   & Modelo compacto \\
-Mistral & Mistral AI               & LLM eficiente em parâmetros \\
-Alpaca  & Stanford                 & Variante Llama instruída \\
-Qwen    & Alibaba                  & LLM multilíngue \\
+Llama   & Meta                  & \texttt{llama3.1:8b}                                       & 8B \\
+Dolphin & cnmoro (LLaMA-3 PT)   & \texttt{cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4\_k\_m} & 8B (Q4\_K\_M) \\
+Gemma   & brunoconterato (PT-BR)& \texttt{brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16}       & 4B (FP16) \\
+Mistral & cnmoro (PT)           & \texttt{cnmoro/mistral\_7b\_portuguese:q4\_K\_M}            & 7B (Q4\_K\_M) \\
+Alpaca  & splitpierre (Bode PT-BR) & \texttt{splitpierre/bode-alpaca-pt-br:13b-Q4\_0}        & 13B (Q4\_0) \\
+Qwen    & cnmoro (PT)           & \texttt{cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4\_k\_m}         & 0,5B (Q4\_K\_M) \\
 \hline
 \end{tabular}
 \end{table}
@@ -85,7 +93,14 @@ O mesmo arquivo serve como entrada para os geradores e como \textit{target} de r
 
 A orquestração dos experimentos é realizada pelo arquivo \texttt{main.py}, que aciona \texttt{generates/menu\_generate.py} (etapa de geração) e \texttt{validates/menu\_validate.py} (etapa de validação). As saídas geradas são persistidas em \texttt{predicts/generate\_<nível>\_<modelo>.json}, e os resultados das validações em \texttt{metrics/validate\_<nível>.json}.
 
-Para isolar as contribuições de cada nível e avaliar a propagação de erros, foram definidos três experimentos.
+Para isolar as contribuições de cada nível e avaliar a propagação de erros, foram definidos três experimentos, ilustrados na Figura~\ref{img:4.2}. EN1 e EN2 avaliam isoladamente cada etapa --- EN2 utiliza o N1 de referência para eliminar ruído da etapa anterior ---, enquanto EN1N2 simula o pipeline encadeado em que a saída N1 do próprio modelo alimenta sua etapa N2, medindo a propagação de erro.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.98\linewidth]{Imagens/4.2-experimentos.png}
+\caption{Estrutura dos três experimentos EN1, EN2 e EN1N2.}
+\label{img:4.2}
+\end{figure}
 
 \subsection{Experimento EN1}
 
@@ -101,33 +116,48 @@ O experimento EN1N2 corresponde ao pipeline encadeado: o N1 gerado pelo modelo n
 
 \section{Métricas de Validação}
 
-As saídas dos LLMs foram avaliadas por dez métricas, organizadas em quatro famílias: similaridade lexical, similaridade semântica, distância semântica e classificação.
+As saídas dos LLMs foram avaliadas por treze métricas, organizadas em cinco famílias: similaridade lexical, similaridade semântica, distância semântica, métricas voltadas para geração e classificação. As nove primeiras métricas de similaridade são calculadas par a par entre a saída prevista e a referência do \textit{dataset}, em uma escala normalizada $[0,1]$, em que valores mais altos indicam maior similaridade. As quatro métricas de classificação são derivadas da matriz de confusão entre a saída do modelo e a referência.
 
 \subsection{Similaridade Lexical}
 
 \begin{itemize}
     \item \textbf{FuzzyWuzzy}: utiliza \texttt{fuzz.partial\_ratio}, baseado na distância de Levenshtein parcial; tolera fragmentos da string-alvo.
-    \item \textbf{TF-IDF}: cosseno entre vetores TF-IDF das duas \textit{strings}, ponderando termos pela sua importância no corpus.
+    \item \textbf{TF-IDF}: cosseno entre vetores TF-IDF das duas \textit{strings}, ponderando os termos pela sua importância no corpus \cite{manning2008}.
 \end{itemize}
 
 \subsection{Similaridade Semântica}
 
 \begin{itemize}
-    \item \textbf{SBERT (PT)}: \textit{embeddings} produzidos pelo modelo \texttt{tgsc/sentence-transformer-ult5-pt-small}.
-    \item \textbf{BERTimbau}: \textit{embeddings} de \texttt{rufimelo/Legal-BERTimbau-sts-large-ma-v3}, especializado em texto jurídico em português brasileiro.
+    \item \textbf{SBERT (PT)}: \textit{embeddings} produzidos pelo modelo \texttt{tgsc/sentence-transformer-ult5-pt-small} \cite{reimers2019}.
+    \item \textbf{BERTimbau}: \textit{embeddings} de \texttt{rufimelo/Legal-BERTimbau-sts-large-ma-v3}, especializado em texto jurídico em português brasileiro \cite{souza2020}.
     \item \textbf{Multilingual}: \textit{embeddings} de \texttt{sentence-transformers/paraphrase-multilingual-mpnet-base-v2}, treinado em mais de cinquenta idiomas.
 \end{itemize}
 
 \subsection{Distância Semântica (WMD)}
 
 \begin{itemize}
-    \item \textbf{WMD\_ft}: \textit{Word Mover's Distance} com \textit{embeddings} do FastText (\texttt{fasttext-wiki-news-subwords-300}).
-    \item \textbf{WMD\_nilc}: WMD com \textit{embeddings} do projeto NILC (\texttt{cbow\_s300.txt}), com normalização para o intervalo $[0,1]$.
+    \item \textbf{WMD\_ft}: \textit{Word Mover's Distance} \cite{kusner2015} com \textit{embeddings} do FastText (\texttt{fasttext-wiki-news-subwords-300}) \cite{bojanowski2017}.
+    \item \textbf{WMD\_nilc}: WMD com \textit{embeddings} do projeto NILC (\texttt{cbow\_s300.txt}), treinados sobre corpora em português brasileiro, com valor normalizado para o intervalo $[0,1]$.
+\end{itemize}
+
+\subsection{Métricas Voltadas para Geração}
+
+\begin{itemize}
+    \item \textbf{BERTScore}: similaridade contextual baseada em \textit{embeddings} do BERT, com alinhamento ótimo entre os \textit{tokens} da saída e da referência \cite{zhang2020bertscore}.
+    \item \textbf{ROUGE-L}: razão entre a maior subsequência comum (LCS) e a referência, originalmente proposta para sumarização \cite{lin2004rouge}.
 \end{itemize}
 
 \subsection{Métricas de Classificação}
 
-Complementarmente às métricas de similaridade, são calculadas quatro métricas de classificação, derivadas da matriz de confusão entre a saída do modelo e a referência. O critério de acerto adotado consiste em um limiar sobre a similaridade semântica (SBERT ou Multilingual) para os níveis N1 e N2, e em correspondência exata por campo do JSON para o nível N3.
+Complementarmente às métricas de similaridade, foram calculadas quatro métricas de classificação. O critério de acerto foi definido em função do nível de normalização:
+
+\begin{itemize}
+    \item Em \textbf{N1}, considera-se uma sentença atômica prevista como \textit{verdadeiro positivo} (VP) se sua similaridade semântica em relação a alguma sentença da referência exceder um limiar pré-definido. Como N1 não possui rótulos negativos no \textit{dataset}, calculam-se apenas as estatísticas baseadas em VP, FP e FN.
+    \item Em \textbf{N2}, a métrica é calculada por operador (Requisito, Aplicabilidade, Seleção e Exceção) e reporta-se tanto a média macro entre os quatro operadores quanto a média \textit{overall}; o emparelhamento utiliza o mesmo critério baseado em similaridade semântica de N1.
+    \item Em \textbf{N3}, a métrica é calculada por campo do JSON (\texttt{object}, \texttt{property}, \texttt{comparation}, \texttt{target} e \texttt{unit}) por correspondência exata, sendo reportada a média macro entre os cinco campos.
+\end{itemize}
+
+As métricas são definidas como:
 
 \begin{itemize}
     \item \textbf{Acurácia}: \(\mathrm{ACC} = (\mathrm{VP} + \mathrm{VN})/(\mathrm{VP} + \mathrm{VN} + \mathrm{FP} + \mathrm{FN})\).
@@ -136,7 +166,7 @@ Complementarmente às métricas de similaridade, são calculadas quatro métrica
     \item \textbf{F1-score}: \(\mathrm{F1} = 2 \cdot (\mathrm{PRE} \cdot \mathrm{REC})/(\mathrm{PRE} + \mathrm{REC})\).
 \end{itemize}
 
-As quatro novas métricas são persistidas em \texttt{metrics/validate\_*.json}, ao lado das métricas de similaridade.
+Todas as métricas são persistidas em \texttt{metrics/validate\_*.json}, e o detalhamento por instância é registrado em \texttt{metrics/details/validate\_<nível>\_<modelo>.jsonl}.
 
 \section{Ambiente Computacional}
 

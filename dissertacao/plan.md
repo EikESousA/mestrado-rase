@@ -607,60 +607,89 @@ Como a pesquisa usa **6 LLMs** (não apenas LLaMA 3) e **não realiza verificaç
 ## 11. Checklist consolidada
 
 ### `Modelo-Mestrado-PROCC.tex`
-- [ ] Atualizar `\include` para incluir `05_Resultados` e `06_Conclusao`.
-- [ ] Reavaliar título.
+- [x] Atualizar `\include` para incluir `05_Resultados` e `06_Conclusao`.
+- [x] Reavaliar título (agora: "Análise Comparativa de LLMs Open-Source para a Conversão de Normas de Arquitetura, Engenharia e Construção em Representações RASE").
+- [x] Remover `\usepackage{lipsum}`.
 
 ### `Pre_Textual/`
-- [ ] Reescrever `Resumo.tex`.
-- [ ] Reescrever `Abstract.tex`.
-- [ ] Atualizar `Abreviaturas.tex`.
+- [x] Reescrever `Resumo.tex` (atualizado com Dolphin líder global e 13 métricas).
+- [x] Reescrever `Abstract.tex` (tradução fiel do novo Resumo).
+- [x] Atualizar `Abreviaturas.tex` (incluindo BERTimbau, BERTScore, ROUGE, FuzzyWuzzy, FastText, NILC, ACC/PRE/REC/F1, N1/N2/N3, EN1/EN2/EN1N2).
 
 ### `01_Introducao.tex`
-- [ ] R1/R2/R3 → N1/N2/N3.
-- [ ] Reescrever objetivo (§1).
-- [ ] Remover Revit / verde-vermelho-azul / EPFT/EPRAG/EPFTRAG.
-- [ ] Renomear seção para "Organização do Documento".
-- [ ] Adicionar delimitação de escopo.
+- [x] R1/R2/R3 → N1/N2/N3.
+- [x] Reescrever objetivo geral, específicos e delimitação.
+- [x] Remover Revit / verde-vermelho-azul / EPFT/EPRAG/EPFTRAG (incluindo comentários).
+- [x] Renomear seção para "Organização do Documento".
+- [x] Padronizar "Modelos de Linguagem de Grande Porte" (antes alternava com "Escala").
+- [x] Listar BERTScore e ROUGE-L nos objetivos específicos.
 
 ### `03_Fundamentacao_Teorica.tex`
-- [ ] Remover discussão de RAG da seção 2.7 LLM.
-- [ ] Confirmar presença de Acurácia/Precisão/Revocação/F1 em 2.2.
-- [ ] Adicionar subseção sobre métricas de similaridade textual.
-- [ ] Atualizar Trabalhos Relacionados para destacar diferencial.
+- [x] Remover discussão de RAG da seção LLM.
+- [x] Acurácia/Precisão/Revocação/F1 já presentes em 2.2.
+- [x] Subseção "Métricas de Similaridade Textual" adicionada — agora com quatro famílias (lexical, semântica, distância, voltadas para geração com BERTScore/ROUGE-L).
+- [x] Trabalhos Relacionados com bloco "Diferencial desta pesquisa", citando todas as famílias de métricas.
+- [x] Corrigir typo `\cite{mcculloch1943})` → `\cite{mcculloch1943}`.
 
 ### `04_Metodo.tex`
-- [ ] Renomear capítulo para Metodologia.
-- [ ] Reescrever em pretérito.
-- [ ] R1/R2/R3 → N1/N2/N3.
-- [ ] Remover EPFT, EPRAG, EPFTRAG, PostgresVector, Dynamo, Revit.
-- [ ] Adicionar seção 3.2 (Necessidade de Normalização).
-- [ ] Adicionar seção 3.3 com subseções 3.3.1/3.3.2/3.3.3.
-- [ ] Substituir lista de modelos (6 LLMs via Ollama).
-- [ ] Substituir métricas (incluir BERTimbau + Accuracy/Precision/Recall/F1).
-- [ ] Remover seções "Desenvolvimento Inicial", "Desafios Futuros", "Cronograma".
-- [ ] Adicionar seção de Ambiente Computacional.
+- [x] `\chapter{Metodologia}`.
+- [x] Pretérito ao longo do capítulo.
+- [x] R1/R2/R3 → N1/N2/N3.
+- [x] Removido EPFT, EPRAG, EPFTRAG, PostgresVector, Dynamo, Revit.
+- [x] Seção 3.2 "Necessidade de Normalização" e 3.3 "Engenharia de Prompt" (Direct/CoT/Few-Shot).
+- [x] Tabela com os 6 LLMs via Ollama; entrada do Llama suavizada (deixa de ser "modelo de referência").
+- [x] Métricas atualizadas para treze: 2 lexicais + 3 semânticas + 2 distância + 2 geração (BERTScore, ROUGE-L) + 4 classificação. Critério de acerto detalhado por nível (limiar em N1/N2, exact match em N3).
+- [x] Seções de cronograma/desenvolvimento inicial removidas.
+- [x] Seção 3.8 "Ambiente Computacional" presente.
+- [x] Citação ao Ollama (`\cite{ollama2024}`).
 
-### `05_Resultados.tex` (criar)
-- [ ] Criar arquivo novo.
-- [ ] Migrar tabelas de `resultados.md`.
-- [ ] Recalcular médias incluindo BERTimbau.
-- [ ] Incluir métricas de classificação após implementação.
-- [ ] Adicionar gráficos comparativos.
+### `05_Resultados.tex`
+- [x] Capítulo completo, com números reais lidos diretamente dos JSONs em `metrics/`.
+- [x] Tabelas com 9 métricas de similaridade (FW, TF-IDF, SBERT, BERTimbau, Multilingual, WMD\_ft, WMD\_nilc, BERTScore, ROUGE-L) + métricas de classificação.
+- [x] Médias agregadas recalculadas sobre os 6 modelos.
+- [x] Seção dedicada ao N3 isolado com classificação por campo do JSON.
+- [x] Ranking global revisado: Dolphin (0,676) > Llama (0,658) > Mistral (0,654).
+- [x] Análise por modelo, métrica, tempo de execução e discussão integrada.
+- [x] Gráficos de barras (4.2.1, 4.2.2, 4.2.3) e heatmaps (4.3.1, 4.4.1, 4.4.2, 4.4.3) gerados via `tools/plot_results.py` a partir dos JSONs e referenciados no capítulo.
 
-### `06_Conclusao.tex` (renomear de `05_Conclusao.tex`)
-- [ ] Renomear arquivo.
-- [ ] Redigir Síntese, Contribuições, Limitações, Trabalhos Futuros.
+### `06_Conclusao.tex`
+- [x] Síntese alinhada ao novo ranking (Dolphin líder global, Llama melhor em EN2/N3).
+- [x] Contribuições, Limitações, Trabalhos Futuros redigidos.
+- [x] Limitação acrescentada: F1 ≈ 0 para Seleção/Exceção em N2 (limitação estrutural).
+- [x] Trabalhos futuros incluem prompt N2 dedicado a Seleção/Exceção e critérios alternativos de classificação em N3.
 
 ### `mestrado-rase/`
-- [ ] Implementar Accuracy/Precision/Recall/F1 nos validadores.
-- [ ] Re-executar validações.
-- [ ] Confirmar `validate_n3.json` para os 6 modelos.
-- [ ] Atualizar README.
+- [x] Accuracy/Precision/Recall/F1 implementadas (`utils/validates/compute_classification_scores.py`); persistidas em `metrics/validate_*.json`.
+- [x] Validações executadas para os seis modelos (n1, n2, n3, n1n2, n1n2n3).
+- [x] `metrics/validate_n3.json` existente.
+- [x] README atualizado para citar todas as métricas.
+- [x] BERTimbau integrado a todos os validadores.
 
 ### `Bibliografia.bib`
-- [ ] Adicionar SBERT, BERTimbau, WMD, FastText, Ollama, NBR 9050.
-- [ ] Remover citações órfãs de RAG.
+- [x] Adicionado `ollama2024`, `zhang2020bertscore`, `lin2004rouge`.
+- [x] `reimers2019`, `souza2020`, `kusner2015`, `bojanowski2017`, `abnt9050` já presentes e citados.
+- [x] Removidas as entradas órfãs `lewis2021`, `akkiraju2024`, `izacard2021`, `mikolov2013a`.
 
 ### `Imagens/`
-- [ ] Remover `1.1.1-metodologia.png`, `3.7.1-rag.png`, `4.1.1-cronograma.png`.
-- [ ] Criar pipeline atualizado, diagrama de experimentos, gráficos comparativos.
+- [x] Removidos `1.1.1-metodologia.png`, `3.7.1-rag.png`, `4.1.1-cronograma.png`.
+- [x] Gerados 7 gráficos comparativos: barras EN1/EN2/EN1N2 (`4.2.1-`, `4.2.2-`, `4.2.3-resultados-*-barras.png`) e heatmaps (`4.3.1-heatmap-global.png`, `4.4.1-`, `4.4.2-`, `4.4.3-heatmap-*.png`). Script: `tools/plot_results.py`.
+- [ ] (Opcional, ainda pendente) Pipeline desenhado: fluxo dataset → N1 → N2 → N3 → métricas; diagrama dos três experimentos (caixas EN1, EN2, EN1N2). Esses são diagramas conceituais que precisariam ser desenhados (Excalidraw/draw.io); não saem dos JSONs.
+
+### Arquivos auxiliares
+- [x] Removido `Conteudo/FUNDAMENTACAO_TEORICA_SEM_REMOVER.tex` (backup com RAG).
+- [x] Removido `Conteudo/TRABALHOS_RELACIONADOS.tex` (órfão, conteúdo já presente em `03_Fundamentacao_Teorica.tex`).
+- [x] Limpos `.aux` antigos em `Conteudo/` e `Pre_Textual/`.
+
+---
+
+## 12. Pendências remanescentes (não bloqueantes)
+
+1. **Compilar o PDF** com `latexmk -pdf Modelo-Mestrado-PROCC.tex` no ambiente local (não há `pdflatex` no WSL atual). Após a compilação, conferir:
+   - Numeração final de seções e referências cruzadas.
+   - Renderização das tabelas (algumas usam `\scriptsize`/`\small` para caber em retrato).
+   - Lista de figuras (agora inclui 9 imagens novas em `Imagens/4.*.png`, incluindo `4.1-pipeline.png` e `4.2-experimentos.png`).
+2. **Concluído**:
+   - Gráficos comparativos (`tools/plot_results.py`): 7 PNGs com barras e heatmaps.
+   - Diagramas conceituais (`tools/plot_diagrams.py`): pipeline (`4.1-pipeline.png`) e experimentos (`4.2-experimentos.png`), referenciados no Capítulo 3 (Metodologia).
+   - Limpeza do `.bib`: 4 entradas órfãs removidas.
+   - Tabela de modelos LLM com as \textit{tags} reais do Ollama vindas de `config/models.py`.
