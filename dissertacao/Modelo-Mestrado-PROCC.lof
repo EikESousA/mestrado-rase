@@ -1,25 +1,25 @@
 \babel@toc {brazil}{}\relax 
 \babel@toc {brazil}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Representação do BIM - Fonte: \citeauthor {hoch}}}{17}{figure.2.1}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Matriz de confusão.}}{20}{figure.2.2}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Exemplo da transformação de palavras em \textit {word embeddings}.}}{23}{figure.2.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Exemplo da transformação de \textit {word embeddings} para \textit {sentence embeddings}.}}{24}{figure.2.4}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Rede Neural MLP.}}{27}{figure.2.5}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Estrutura de um neurônio no MLP.}}{28}{figure.2.6}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Exemplo do deslocamento do gráfico através da mudança da constante bias.}}{29}{figure.2.7}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Tipos de camadas e conexões de nodos.}}{33}{figure.2.8}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Exemplo de um modelo seq2seq para tradução do inglês para português.}}{36}{figure.2.9}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Exemplo de um modelo com o mecanismo de atenção para tradução do inglês para português.}}{37}{figure.2.10}%
+\contentsline {figure}{\numberline {01}{\ignorespaces Representação do BIM - Fonte: \citeauthor {hoch}}}{16}{figure.2.1}%
+\contentsline {figure}{\numberline {02}{\ignorespaces Matriz de confusão.}}{20}{figure.2.2}%
+\contentsline {figure}{\numberline {03}{\ignorespaces Exemplo da transformação de palavras em \textit {word embeddings}.}}{23}{figure.2.3}%
+\contentsline {figure}{\numberline {04}{\ignorespaces Exemplo da transformação de \textit {word embeddings} para \textit {sentence embeddings}.}}{24}{figure.2.4}%
+\contentsline {figure}{\numberline {05}{\ignorespaces Rede Neural MLP.}}{27}{figure.2.5}%
+\contentsline {figure}{\numberline {06}{\ignorespaces Estrutura de um neurônio no MLP.}}{28}{figure.2.6}%
+\contentsline {figure}{\numberline {07}{\ignorespaces Exemplo do deslocamento do gráfico através da mudança da constante bias.}}{29}{figure.2.7}%
+\contentsline {figure}{\numberline {08}{\ignorespaces Tipos de camadas e conexões de nodos.}}{32}{figure.2.8}%
+\contentsline {figure}{\numberline {09}{\ignorespaces Exemplo de um modelo seq2seq para tradução do inglês para português.}}{35}{figure.2.9}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Exemplo de um modelo com o mecanismo de atenção para tradução do inglês para português.}}{36}{figure.2.10}%
 \contentsline {figure}{\numberline {11}{\ignorespaces Exemplo do cálculo de uma camada de \textit {self-attention}.}}{38}{figure.2.11}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Representação da pilha (\textit {stack}) do \textit {transformer}.}}{40}{figure.2.12}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Camadas do \textit {encoder} e \textit {decoder} do \textit {transformer}.}}{41}{figure.2.13}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Utilização da metodologia RASE na NBR 9050}}{47}{figure.2.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Pipeline de conversão de normas técnicas para o formato RASE.}}{51}{figure.3.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Estrutura dos três experimentos comparativos EN1, EN2 e EN1N2.}}{55}{figure.3.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Comparativo modelo $\times $ métrica em EN1.}}{61}{figure.4.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Comparativo modelo $\times $ métrica em EN2.}}{62}{figure.4.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Comparativo modelo $\times $ métrica em EN1N2.}}{63}{figure.4.19}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Heatmap das médias por modelo e experimento (média das nove métricas de similaridade).}}{65}{figure.4.20}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Heatmap modelo $\times $ métrica em EN1.}}{67}{figure.4.21}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Heatmap modelo $\times $ métrica em EN2.}}{67}{figure.4.22}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Heatmap modelo $\times $ métrica em EN1N2.}}{68}{figure.4.23}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Representação da pilha (\textit {stack}) do \textit {transformer}.}}{39}{figure.2.12}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Camadas do \textit {encoder} e \textit {decoder} do \textit {transformer}.}}{40}{figure.2.13}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Utilização da metodologia RASE na NBR 9050}}{48}{figure.2.14}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Pipeline de conversão de normas técnicas para o formato RASE.}}{52}{figure.3.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Estrutura dos cinco experimentos: EN1, EN2 e EN3 (isolados) e EN1N2 e EN1N2N3 (encadeados).}}{56}{figure.3.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Comparativo modelo $\times $ métrica em EN1.}}{62}{figure.4.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Comparativo modelo $\times $ métrica em EN2.}}{63}{figure.4.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Comparativo modelo $\times $ métrica em EN1N2.}}{64}{figure.4.19}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Heatmap das médias por modelo e experimento (média das nove métricas de similaridade).}}{66}{figure.4.20}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Heatmap modelo $\times $ métrica em EN1.}}{68}{figure.4.21}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Heatmap modelo $\times $ métrica em EN2.}}{69}{figure.4.22}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Heatmap modelo $\times $ métrica em EN1N2.}}{69}{figure.4.23}%

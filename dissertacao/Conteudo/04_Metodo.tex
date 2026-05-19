@@ -1,10 +1,10 @@
 \chapter{Metodologia}
 
-Este capítulo descreve a metodologia da pesquisa, que se sustenta em três decisões: (i) decompor a tarefa de conversão de normas para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3); (ii) usar Engenharia de Prompt como técnica de especialização dos modelos; e (iii) comparar de forma sistemática seis LLMs \textit{open-source} servidos localmente via Ollama. Na sequência, o capítulo apresenta o \textit{dataset} adotado, o \textit{pipeline} de execução, os três experimentos comparativos (EN1, EN2 e EN1N2), a avaliação isolada do N3, as métricas de validação e o ambiente computacional.
+Este capítulo descreve a metodologia da pesquisa, que se sustenta em três decisões: (i) decompor a tarefa de conversão de normas para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3); (ii) usar Engenharia de Prompt como técnica de especialização dos modelos; e (iii) comparar de forma sistemática seis LLMs \textit{open-source} servidos localmente via Ollama. Na sequência, o capítulo apresenta o \textit{dataset} adotado, o \textit{pipeline} de execução, os cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3), as métricas de validação e o ambiente computacional.
 
 \section{Visão Geral}
 
-A pesquisa avaliou LLMs \textit{open-source} na conversão de normas técnicas da AEC para representações computáveis no formato RASE, usando \textbf{somente Engenharia de Prompt}. A conversão foi modelada como um processo de normalização em três níveis: N1 segmenta a sentença normativa em regras atômicas; N2 identifica os operadores RASE; N3 estrutura a saída em JSON. Seis modelos foram comparados em três experimentos (EN1, EN2 e EN1N2) sobre um \textit{dataset} de 79 normas brasileiras anotadas, com treze métricas no total --- nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação derivadas da matriz de confusão. O nível N3 exige um critério de avaliação diferente (saída JSON estruturada), e por isso é avaliado em separado, na seção dedicada do capítulo de Resultados. A Figura~\ref{img:4.1} mostra o \textit{pipeline} do começo ao fim --- do texto bruto à representação RASE ---, com os \textit{prompts} usados em cada nível, o servidor Ollama que hospeda os modelos e a etapa de validação par a par contra o \textit{dataset} de referência.
+A pesquisa avaliou LLMs \textit{open-source} na conversão de normas técnicas da AEC para representações computáveis no formato RASE, usando \textbf{somente Engenharia de Prompt}. A conversão foi modelada como um processo de normalização em três níveis: N1 segmenta a sentença normativa em regras atômicas; N2 identifica os operadores RASE; N3 estrutura a saída em JSON. Seis modelos foram comparados em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3) sobre um \textit{dataset} de 79 normas brasileiras anotadas, com treze métricas no total --- nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação derivadas da matriz de confusão. O nível N3 exige um critério de avaliação adicional (correspondência exata por campo do JSON), tratado em EN3 e em EN1N2N3 no capítulo de Resultados. A Figura~\ref{img:4.1} mostra o \textit{pipeline} do começo ao fim --- do texto bruto à representação RASE ---, com os \textit{prompts} usados em cada nível, o servidor Ollama que hospeda os modelos e a etapa de validação par a par contra o \textit{dataset} de referência.
 
 \begin{figure}[ht]
 \centering
@@ -59,17 +59,18 @@ Os seis modelos \textit{open-source} rodaram localmente via \textbf{Ollama}~\cit
 \centering
 \caption{Modelos LLM \textit{open-source} avaliados, com origem e \textit{tag} servida via Ollama (definidos em \texttt{config/models.py}).}
 \label{tab:modelos_llm}
-\small
-\begin{tabular}{llll}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l l >{\raggedright\arraybackslash}p{6.5cm} l@{}}
 \hline
 Modelo & Origem & Tag servida via Ollama & Parâmetros \\
 \hline
-Llama   & Meta                  & \texttt{llama3.1:8b}                                       & 8B \\
-Dolphin & cnmoro (LLaMA-3 PT)   & \texttt{cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4\_k\_m} & 8B (Q4\_K\_M) \\
-Gemma   & brunoconterato (PT-BR)& \texttt{brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16}       & 4B (FP16) \\
-Mistral & cnmoro (PT)           & \texttt{cnmoro/mistral\_7b\_portuguese:q4\_K\_M}            & 7B (Q4\_K\_M) \\
-Alpaca  & splitpierre (Bode PT-BR) & \texttt{splitpierre/bode-alpaca-pt-br:13b-Q4\_0}        & 13B (Q4\_0) \\
-Qwen    & cnmoro (PT)           & \texttt{cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4\_k\_m}         & 0,5B (Q4\_K\_M) \\
+Llama   & Meta                     & \texttt{llama3.1:8b}                                & 8B \\
+Dolphin & cnmoro (LLaMA-3 PT)      & \texttt{cnmoro/llama-3-8b-} \texttt{dolphin-portuguese-v0.3:4\_k\_m} & 8B (Q4\_K\_M) \\
+Gemma   & brunoconterato (PT-BR)   & \texttt{brunoconterato/} \texttt{Gemma-3-Gaia-PT-BR-4b-it:f16}      & 4B (FP16) \\
+Mistral & cnmoro (PT)              & \texttt{cnmoro/} \texttt{mistral\_7b\_portuguese:q4\_K\_M}          & 7B (Q4\_K\_M) \\
+Alpaca  & splitpierre (Bode PT-BR) & \texttt{splitpierre/} \texttt{bode-alpaca-pt-br:13b-Q4\_0}          & 13B (Q4\_0) \\
+Qwen    & cnmoro (PT)              & \texttt{cnmoro/} \texttt{Qwen2.5-0.5B-Portuguese-v1:q4\_k\_m}       & 0,5B (Q4\_K\_M) \\
 \hline
 \end{tabular}
 \end{table}
@@ -91,14 +92,14 @@ O mesmo arquivo serve como entrada para os geradores e como \textit{target} de r
 
 \section{\textit{Pipeline} de Execução e Experimentos}
 
-A orquestração dos experimentos vive em um \textit{script} principal, que oferece um menu para a etapa de geração e outro para a de validação. As saídas de cada modelo, em cada experimento, são persistidas em arquivos JSON próprios, no padrão \texttt{generate\_<nível>\_<modelo>.json} (por exemplo, \texttt{generate\_n1\_alpaca.json} para o N1 produzido pelo Alpaca). Os resultados das validações seguem o mesmo princípio, agora um arquivo por experimento, no padrão \texttt{validate\_<experimento>.json} (\texttt{validate\_n1.json}, \texttt{validate\_n1n2.json}, \texttt{validate\_n1n2n3.json}).
+A orquestração dos experimentos vive em um \textit{script} principal, que oferece um menu para a etapa de geração e outro para a de validação. As saídas de cada modelo, em cada experimento, são persistidas em arquivos JSON próprios, no padrão \texttt{generate\_<nível>\_<modelo>.json} (por exemplo, \texttt{generate\_n1\_alpaca.json} para o N1 produzido pelo Alpaca). Os resultados das validações seguem o mesmo princípio, agora um arquivo por experimento, no padrão \texttt{validate\_<experimento>.json} (\texttt{validate\_n1.json}, \texttt{validate\_n2.json}, \texttt{validate\_n1n2.json}, \texttt{validate\_n3.json} e \texttt{validate\_n1n2n3.json}).
 
-Para isolar o que cada nível contribui --- e medir como o erro se propaga ---, defini três experimentos comparativos, ilustrados na Figura~\ref{img:4.2}. EN1 e EN2 avaliam cada etapa em separado; o EN2 usa o N1 de referência justamente para eliminar o ruído da etapa anterior. Já o EN1N2 simula o \textit{pipeline} encadeado: o N1 produzido pelo próprio modelo alimenta sua etapa N2, expondo a propagação de erros. Em paralelo, o N3 é avaliado em isolamento (EN3), e o \textit{pipeline} completo N1$\rightarrow$N2$\rightarrow$N3 (EN1N2N3) entra como referência no capítulo de Resultados.
+Para isolar o que cada nível contribui --- e medir como o erro se propaga ---, defini cinco experimentos, ilustrados na Figura~\ref{img:4.2}. EN1, EN2 e EN3 avaliam cada etapa em separado: cada um deles recebe o nível anterior \textit{de referência} (extraído do \textit{dataset}) como entrada, eliminando o ruído das etapas precedentes. Em paralelo, EN1N2 simula o \textit{pipeline} encadeado dos dois primeiros níveis --- o N1 produzido pelo próprio modelo alimenta sua etapa N2 ---, e EN1N2N3 fecha o \textit{pipeline} completo N1$\rightarrow$N2$\rightarrow$N3, encadeando as três etapas com saídas geradas pelo próprio modelo. Esses dois últimos cenários expõem a \textbf{propagação de erros} ao longo da cadeia.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=0.98\linewidth]{Imagens/4.2-experimentos.png}
-\caption{Estrutura dos três experimentos comparativos EN1, EN2 e EN1N2.}
+\caption{Estrutura dos cinco experimentos: EN1, EN2 e EN3 (isolados) e EN1N2 e EN1N2N3 (encadeados).}
 \label{img:4.2}
 \end{figure}
 

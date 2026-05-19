@@ -9,6 +9,16 @@
 \usepackage{listings}
 \usepackage{xcolor}
 
+% Numeração de figuras e tabelas em sequência global, com dois dígitos (Figura 01, Figura 02 ...),
+% sem reiniciar a cada capítulo, e legenda no formato "Figura NN -- Texto".
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\makeatletter
+\renewcommand{\thefigure}{\two@digits{\value{figure}}}
+\renewcommand{\thetable}{\two@digits{\value{table}}}
+\makeatother
+
 
 \lstdefinelanguage{json}{
   basicstyle=\ttfamily\small,

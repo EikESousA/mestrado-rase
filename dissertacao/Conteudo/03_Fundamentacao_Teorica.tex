@@ -40,7 +40,40 @@ A resistência à adoção do BIM faz sentido quando se mede o tamanho da mudan�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Normas de Engenharia}
 
-As normas técnicas formam o arcabouço regulatório do setor AEC --- são elas que definem os requisitos mínimos de segurança, desempenho, qualidade e interoperabilidade dos projetos. No Brasil, a coordenação cabe à Associação Brasileira de Normas Técnicas (ABNT), que publica as NBRs. Um exemplo recorrente na construção civil é a NBR~9050, dedicada à acessibilidade em edificações, mobiliário, espaços e equipamentos urbanos \cite{abnt9050}. No plano internacional, a Organização Internacional de Padronização (ISO) publica normas adotadas por diversos países; em BIM, a referência consolidada é a série ISO~19650, voltada à organização e digitalização da informação sobre obras de construção \cite{iso19650}.
+As normas técnicas formam o arcabouço regulatório do setor AEC --- são elas que definem os requisitos mínimos de segurança, desempenho, qualidade e interoperabilidade dos projetos. No Brasil, a coordenação cabe à Associação Brasileira de Normas Técnicas (ABNT), que publica as NBRs. No plano internacional, a Organização Internacional de Padronização (ISO) publica normas adotadas por diversos países; em BIM, a referência consolidada é a série ISO~19650, voltada à organização e digitalização da informação sobre obras de construção \cite{iso19650}.
+
+\subsection{Normas Regulatórias Brasileiras na AEC}
+\label{sec:normas_regulatorias}
+
+O arcabouço normativo brasileiro do setor AEC é amplo e organiza-se por domínio técnico. Para o escopo desta pesquisa, interessa o subconjunto que regula \textbf{requisitos de projeto e desempenho da edificação}, isto é, as NBRs cujo texto se presta à formalização como regras computáveis. A Tabela~\ref{tab:nbrs} relaciona exemplos relevantes; o detalhamento da NBR~9050, escolhida como referência operacional do \textit{dataset} desta dissertação, vem na sequência.
+
+\begin{table}[ht]
+\centering
+\caption{Exemplos de normas brasileiras relevantes à verificação automática em BIM.}
+\label{tab:nbrs}
+\small
+\begin{tabular}{lll}
+\hline
+Norma          & Domínio                                     & Tipo de requisito \\
+\hline
+NBR~9050       & Acessibilidade                              & Geométrico, dimensional, de uso \\
+NBR~9077       & Saídas de emergência em edifícios            & Geométrico, dimensional, de fluxo \\
+NBR~15575      & Desempenho de edificações habitacionais      & Térmico, acústico, de durabilidade \\
+NBR~6118       & Projeto de estruturas de concreto           & Estrutural, de detalhamento \\
+NBR~5410       & Instalações elétricas de baixa tensão        & Elétrico, de segurança \\
+NBR~5626       & Sistemas prediais de água fria              & Hidráulico, dimensional \\
+NBR~13714      & Sistemas de hidrantes prediais              & De segurança contra incêndio \\
+\hline
+\end{tabular}
+\end{table}
+
+Cada uma dessas normas combina três camadas textuais: (i) \textit{definições e referências}, sem valor de verificação direta; (ii) \textit{requisitos prescritivos}, com limites numéricos e geométricos passíveis de checagem automática; e (iii) \textit{recomendações e exceções}, em texto livre, frequentemente condicionadas a categorias específicas do edifício. Em qualquer das três camadas, o texto bruto é longo, recursivo e fortemente dependente de definições prévias --- o que torna a tradução para regras computáveis um trabalho não trivial e, hoje, predominantemente manual.
+
+\subsubsection*{NBR~9050 --- Acessibilidade}
+
+A NBR~9050 \cite{abnt9050} é o caso recorrente na construção civil brasileira: estabelece os critérios e parâmetros técnicos para acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos. A norma cobre desde sinalização tátil e auditiva até dimensões de rampas, portas, sanitários adaptados e rotas acessíveis. O texto é majoritariamente prescritivo, com valores numéricos diretamente verificáveis em um modelo BIM --- por exemplo, ``a inclinação máxima admissível em rampas é de 8{,}33\%'', ou ``o vão livre de portas acessíveis deve ser igual ou superior a 0{,}80~m''. É justamente esse perfil prescritivo, com requisitos quantitativos e exceções bem delimitadas, que faz da NBR~9050 a escolha natural para o \textit{dataset} desta pesquisa: 79 trechos normativos extraídos da NBR~9050 e de NBRs adjacentes foram anotados nos três níveis (N1, N2 e N3) descritos no Capítulo de Método.
+
+\subsubsection*{Verificação manual e seus limites}
 
 O problema é que a aplicação dessas normas continua predominantemente manual. O profissional lê trechos longos de texto, identifica os requisitos que interessam e verifica item a item contra o projeto. Em um modelo BIM com centenas ou milhares de elementos sujeitos a normas simultâneas, esse esforço cresce de forma combinatória. \citeonline{eastman2009} mostram que a verificação manual é cara, frágil e pouco escalável --- e é exatamente daí que vem a pesquisa em checagem automática baseada em regras.
 
@@ -197,8 +230,7 @@ Há ainda uma extensão importante: o \textit{sentence embedding}, que considera
         \centering
         \caption{Exemplo da transformação de \textit{word embeddings} para \textit{sentence embeddings}.}
     	\begin{center}
-            \includegraphics[scale=0.9]
-            {Imagens/3.5.4-sentenceembeddings.png}
+            \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.5.4-sentenceembeddings.png}
     	\end{center}
         \label{img:3.5.4}
     	Fonte: Própria (2021).
@@ -248,8 +280,7 @@ A estrutura de um neurônio em uma rede MLP processa informações recebidas do 
     \centering
     \caption{Rede Neural MLP.}
     \begin{center}
-        \includegraphics[scale=1]
-        {Imagens/3.4.1-rna.png}
+        \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.4.1-rna.png}
     \end{center}
     \label{img:3.2.1}
     Fonte: Própria (2024).
@@ -261,8 +292,7 @@ A Figura \ref{img:3.4.2} demonstra o processamento de informações por um neur�
     \centering
     \caption{Estrutura de um neurônio no MLP.}
     \begin{center}
-        \includegraphics[scale=0.9]
-        {Imagens/3.4.2-rnamlp.png}
+        \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.4.2-rnamlp.png}
     \end{center}
     \label{img:3.4.2}
     Fonte: Própria (2024).
@@ -279,8 +309,7 @@ O bias ($\theta$) é responsável pelo deslocamento inicial da função de ativa
     \centering
     \caption{Exemplo do deslocamento do gráfico através da mudança da constante bias.}
     \begin{center}
-        \includegraphics[scale=1]
-        {Imagens/3.4.3-bias.png}
+        \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.4.3-bias.png}
     \end{center}
     \label{img:3.4.3}
     Fonte: Própria (2024).
@@ -461,7 +490,7 @@ Esse contexto final é passado para a segunda RNN, o \textit{decoder}, que tamb�
     \centering
     \caption{Exemplo de um modelo seq2seq para tradução do inglês para português.}
     \begin{center}
-        \includegraphics[scale=0.7]{Imagens/3.6.1-seq2seq.png}
+        \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.6.1-seq2seq.png}
     \end{center}
     \label{img:3.6.1}
     Fonte: Própria (2024).
@@ -603,6 +632,22 @@ O Modelo de Recompensa (RM) utiliza dados de preferência para gerar pares de re
 
 No passo final, o \textit{prompt} é concatenado com as respostas em uma única linha, embaralhadas aleatoriamente, e na sequência separadas para o cálculo da pontuação. Essa abordagem ganha eficiência sem perder precisão.
 
+\subsection{Outros LLMs \textit{open-source} avaliados}
+
+Além do LLaMA, esta pesquisa avalia outros cinco LLMs \textit{open-source} servidos localmente via Ollama. Todos compartilham a arquitetura \textit{Transformer} decodificadora e o paradigma de pré-treinamento massivo seguido de pós-treinamento por instruções, mas se distinguem em escolhas de dados, alinhamento e foco de uso. A síntese a seguir cobre os pontos relevantes para a tarefa de conversão de normas em RASE.
+
+\textbf{Mistral.} A Mistral AI lançou em 2023 o Mistral~7B, modelo decodificador com 7 bilhões de parâmetros que combinou \textit{grouped-query attention} (GQA) e \textit{sliding-window attention} (SWA) para reduzir o custo computacional sem sacrificar qualidade \cite{jiang2023}. Apesar do tamanho modesto, superou o LLaMA~2 13B em diversas avaliações de raciocínio, matemática e geração de código, e ainda hoje serve como referência de modelo enxuto para inferência local \cite{jiang2023}. A versão Mistral~7B-Instruct foi ajustada para seguir instruções por meio de SFT, e é a variante disponibilizada por padrão no Ollama.
+
+\textbf{Gemma.} Família de modelos \textit{open-weights} desenvolvida pelo Google DeepMind a partir da mesma pesquisa que originou o Gemini \cite{gemma2024}. Disponível em tamanhos de 2B e 7B parâmetros, o Gemma adota a arquitetura \textit{Transformer} decodificadora padrão, com SentencePiece BPE e treinamento em corpus multilíngue de cerca de 6 trilhões de \textit{tokens}, seguido de SFT e RLHF. Os relatórios técnicos apontam ganho relativo em raciocínio matemático e código em comparação com modelos abertos de porte equivalente \cite{gemma2024}.
+
+\textbf{Dolphin.} Variante \textit{fine-tuned} do Mistral~7B, criada pela Cognitive Computations sobre o dataset Dolphin --- uma reimplementação livre do conjunto Orca da Microsoft, focada em raciocínio passo a passo. O modelo herda a arquitetura e os pesos base do Mistral, mas adiciona uma camada de SFT em diálogos sintéticos longos no estilo \textit{Chain-of-Thought}, que tende a melhorar o seguimento de instruções estruturadas. É o modelo que apresenta a melhor relação custo-benefício nos experimentos desta dissertação.
+
+\textbf{Alpaca.} Lançado em 2023 pelo Stanford Center for Research on Foundation Models, o Alpaca é um SFT do LLaMA original (7B) sobre 52 mil instruções autogeradas pelo método \textit{Self-Instruct} \cite{taori2023}. O experimento foi pioneiro em demonstrar que um SFT barato sobre instruções sintéticas geradas por modelos maiores (text-davinci-003, à época) conseguia aproximar o comportamento de um modelo \textit{instruction-tuned} a uma fração do custo \cite{taori2023}. O modelo serve, nesta pesquisa, como linha de base de SFT instrucional sobre um LLM aberto de primeira geração.
+
+\textbf{Qwen.} Família de modelos \textit{open-source} desenvolvida pela Alibaba Cloud, treinada em corpus de até 3 trilhões de \textit{tokens} com forte ênfase em chinês e inglês \cite{qwen2023}. Adota \textit{Transformer} decodificador com \textit{rotary positional embeddings} (RoPE) e variantes \textit{instruction-tuned} (Qwen-Chat) baseadas em SFT e RLHF. Em \textit{benchmarks} multilíngues, o Qwen costuma se aproximar dos modelos de porte equivalente, mas a fração reduzida de português no pré-treinamento influencia o desempenho observado em normas brasileiras --- inclusive a tendência, registrada nesta dissertação, de gerar saídas em chinês simplificado.
+
+Os seis modelos foram escolhidos por representarem perfis complementares (peso, alinhamento, idioma, foco de \textit{fine-tuning}), por estarem disponíveis em pesos abertos sob licenças permissivas e por serem executáveis no Ollama com requisitos de hardware compatíveis com o ambiente experimental adotado.
+
 Entre as técnicas que especializam LLMs em tarefas de domínio sem alterar seus pesos, a \textit{Engenharia de Prompt} é a mais leve. Consiste em desenhar com cuidado a instrução enviada ao modelo, de forma a obter respostas concisas e adequadas ao contexto. Hoje, é prática essencial para extrair o máximo dos LLMs \cite{brown2020} --- e é a abordagem adotada nesta pesquisa.
 
 O \textit{prompt} funciona como uma configuração do modelo para a tarefa em questão. Não se trata só de escrever uma instrução isolada: é uma habilidade que exige entendimento profundo das capacidades e limites do LLM. O processo costuma ser iterativo --- refina, repete, testa, refina de novo \cite{nascimento2024}.
@@ -671,11 +716,9 @@ Concluída a aplicação dos operadores RASE, gera-se o atributo correspondente 
 \begin{figure}[htb]
     \centering
     \caption{Utilização da metodologia RASE na NBR 9050}
-    \begin{center}
-        \includegraphics[scale=0.8]
-        {Imagens/3.8.1-rase.png}
-    \end{center}
     \label{img:3.8.1}
+    \includegraphics[width=0.9\textwidth,keepaspectratio]{Imagens/3.8.1-rase.png}
+
     Fonte: Própria (2024).
 \end{figure}
 
@@ -705,4 +748,4 @@ O terceiro trabalho aplicou GPT-3.5 e GPT-4 à segurança em BIM e teve resultad
 
 O quarto estudo fecha o quadro com uma constatação prática: \textit{prompts} genéricos não funcionam no setor AEC. Trocá-los por \textit{prompts} específicos melhorou a precisão, ainda que alucinações em tarefas complexas e a necessidade de validação externa não tenham sumido \cite{samsami2024}. Adaptar o modelo às regulamentações do setor é um requisito de viabilidade --- e o uso de LLMs para interpretar regras regulatórias se mostra útil, embora ainda dependente de ajustes finos e revisão humana.
 
-\textbf{Diferencial desta pesquisa.} Os trabalhos revisados concentram-se em LLMs proprietários (ChatGPT, GPT-3.5, GPT-4, Bard) e em aplicações pontuais de Engenharia de Prompt, sem comparações sistemáticas entre modelos \textit{open-source} nem decomposição explícita da tarefa em níveis. Esta dissertação distingue-se ao avaliar comparativamente seis LLMs \textit{open-source} servidos localmente via Ollama (Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen), aplicando-os à conversão de normas brasileiras da AEC para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3) e em três experimentos (EN1, EN2 e EN1N2). A avaliação combina métricas lexicais, semânticas, de distância e voltadas para geração (BERTScore e ROUGE-L), complementadas por métricas de classificação, oferecendo um retrato multidimensional do desempenho de cada modelo.
+\textbf{Diferencial desta pesquisa.} Os trabalhos revisados concentram-se em LLMs proprietários (ChatGPT, GPT-3.5, GPT-4, Bard) e em aplicações pontuais de Engenharia de Prompt, sem comparações sistemáticas entre modelos \textit{open-source} nem decomposição explícita da tarefa em níveis. Esta dissertação distingue-se ao avaliar comparativamente seis LLMs \textit{open-source} servidos localmente via Ollama (Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen), aplicando-os à conversão de normas brasileiras da AEC para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3) e em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3). A avaliação combina métricas lexicais, semânticas, de distância e voltadas para geração (BERTScore e ROUGE-L), complementadas por métricas de classificação, oferecendo um retrato multidimensional do desempenho de cada modelo.
