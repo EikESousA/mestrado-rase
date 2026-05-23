@@ -8,23 +8,23 @@
 \contentsline {section}{\numberline {2.1}\textit {Building Information Modeling} (BIM)}{14}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Normas de Engenharia}{15}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Normas Regulatórias Brasileiras na AEC}{16}{subsection.2.2.1}%
-\contentsline {section}{\numberline {2.3}Aprendizado de Máquina}{18}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Processamento de Linguagem Natural (PLN)}{21}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Métricas de Similaridade Textual}{25}{section.2.5}%
-\contentsline {section}{\numberline {2.6}Redes Neurais Artificiais}{26}{section.2.6}%
-\contentsline {section}{\numberline {2.7}Memória de Longo e Curto Prazo (LSTM)}{33}{section.2.7}%
-\contentsline {section}{\numberline {2.8}\textit {Transformers}}{34}{section.2.8}%
-\contentsline {section}{\numberline {2.9}Modelos de Linguagem de Grande Porte (LLMs)}{40}{section.2.9}%
-\contentsline {subsection}{\numberline {2.9.1}Outros LLMs \textit {open-source} avaliados}{44}{subsection.2.9.1}%
-\contentsline {section}{\numberline {2.10}Metodologia RASE}{45}{section.2.10}%
-\contentsline {section}{\numberline {2.11}Trabalhos Relacionados}{47}{section.2.11}%
+\contentsline {section}{\numberline {2.3}Metodologia RASE}{18}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Aprendizado de Máquina}{20}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Processamento de Linguagem Natural (PLN)}{23}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Métricas de Similaridade Textual}{27}{section.2.6}%
+\contentsline {section}{\numberline {2.7}Redes Neurais Artificiais}{28}{section.2.7}%
+\contentsline {section}{\numberline {2.8}Memória de Longo e Curto Prazo (LSTM)}{35}{section.2.8}%
+\contentsline {section}{\numberline {2.9}\textit {Transformers}}{37}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Modelos de Linguagem de Grande Porte (LLMs)}{42}{section.2.10}%
+\contentsline {subsection}{\numberline {2.10.1}Outros LLMs \textit {open-source} avaliados}{46}{subsection.2.10.1}%
+\contentsline {section}{\numberline {2.11}Trabalhos Relacionados}{48}{section.2.11}%
 \contentsline {subsection}{\numberline {2.11.1}Análise dos Trabalhos Relacionados}{49}{subsection.2.11.1}%
 \contentsline {chapter}{\chapternumberline {3}Metodologia}{51}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Visão Geral}{51}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Necessidade de Normalização em Três Níveis}{52}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}N1 --- Segmentação Atômica}{52}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}N2 --- Identificação dos Operadores RASE}{52}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}N3 --- Estruturação Semântica em JSON}{53}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.1}N1: Segmentação Atômica}{52}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}N2: Identificação dos Operadores RASE}{52}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}N3: Estruturação Semântica em JSON}{53}{subsection.3.2.3}%
 \contentsline {section}{\numberline {3.3}Engenharia de Prompt}{53}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}\textit {Prompt Direct}}{53}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}\textit {Prompt Chain-of-Thought}}{53}{subsection.3.3.2}%
@@ -47,12 +47,12 @@
 \contentsline {chapter}{\chapternumberline {4}Resultados}{60}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Visão Geral dos Experimentos}{60}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Resultados por Experimento}{61}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}EN1 --- Segmentação N1}{61}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}EN2 --- Identificação dos Operadores RASE}{62}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}EN1N2 --- Pipeline Encadeado}{62}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4.3}Resultados do Nível N3 --- EN3 e EN1N2N3}{63}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}EN3 --- Estruturação Semântica em JSON com N2 de referência}{64}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}EN1N2N3 --- Pipeline Encadeado Completo}{65}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.2.1}EN1: Segmentação N1}{61}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}EN2: Identificação dos Operadores RASE}{62}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}EN1N2: Pipeline Encadeado}{62}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Resultados do Nível N3: EN3 e EN1N2N3}{63}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}EN3: Estruturação Semântica em JSON com N2 de referência}{64}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}EN1N2N3: Pipeline Encadeado Completo}{65}{subsection.4.3.2}%
 \contentsline {section}{\numberline {4.4}Resultados por Modelo}{65}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Análise por Métrica}{67}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Tempo de Execução}{68}{section.4.6}%
@@ -63,5 +63,5 @@
 \contentsline {section}{\numberline {5.3}Limitações}{73}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Trabalhos Futuros}{74}{section.5.4}%
 \vspace {\cftbeforepartskip }
-\contentsline {chapter}{Refer\^encias}{76}{chapter*.16}%
+\contentsline {chapter}{Refer\^encias}{76}{chapter*.13}%
 \vspace {\cftbeforepartskip }

@@ -5,7 +5,7 @@
 
 BIM (\textit{Building Information Modeling}, ou Modelagem da Informação da Construção) não é uma tecnologia específica: é um processo articulado ao planejamento e à execução de obras. Para \citeonline{penttila2016}, trata-se de um conjunto estruturado de políticas, processos e ferramentas que organiza os dados digitais do projeto ao longo de todo o ciclo de vida do edifício.
 
-A metodologia surgiu logo após o CAD 3D paramétrico, tecnologia que já tinha sido adotada em setores como o aeroespacial, o automotivo e o de manufatura antes de chegar à construção civil \cite{eastman2011}. O BIM vai além da representação 3D tradicional: incorpora acabamento, custos, fabricante e as relações entre os elementos. O ganho prático aparece quando há alterações estruturais --- todos os dados se atualizam de forma centralizada, sem propagação manual. Em compensação, a adoção exige equipes preparadas tanto no controle quanto no acompanhamento, o que pesa no investimento inicial mas se paga na gestão do ciclo de vida \cite{coelho2018}.
+A metodologia surgiu logo após o CAD 3D paramétrico, tecnologia que já tinha sido adotada em setores como o aeroespacial, o automotivo e o de manufatura antes de chegar à construção civil \cite{eastman2011}. O BIM vai além da representação 3D tradicional: incorpora acabamento, custos, fabricante e as relações entre os elementos. O ganho prático aparece quando há alterações estruturais onde todos os dados se atualizam de forma centralizada, sem propagação manual. Em compensação, a adoção exige equipes preparadas tanto no controle quanto no acompanhamento, o que pesa no investimento inicial mas se paga na gestão do ciclo de vida \cite{coelho2018}.
 
 Outro ganho é trabalhar várias dimensões em um único projeto. As informações que alimentam o modelo permitem reduzir falhas, encurtar prazos e ganhar controle sobre as atualizações \cite{parreira2013}.
 
@@ -13,19 +13,19 @@ Segundo \citeonline{eastman2011}, o BIM possui sete dimensões que podem ser exp
 
 \begin{itemize}
 
-\item \textbf{BIM 3D --- Modelo Virtual 3D}: estende a modelagem 2D para uma representação completa em X, Y e Z. Algoritmos vindos da computação gráfica detectam colisões antes da obra começar --- e essa detecção precoce derruba o custo de retrabalho no canteiro.
+\item \textbf{BIM 3D: Modelo Virtual 3D}: estende a modelagem 2D para uma representação completa em X, Y e Z. Algoritmos vindos da computação gráfica detectam colisões antes da obra começar.
 
-\item \textbf{BIM 4D --- Programação}: imagine planejar uma laje sabendo, antes da concretagem, em qual semana cada elemento estará pronto. É o que o 4D entrega: o modelo é organizado em etapas, com sequência de montagem atribuída a cada componente. Cronogramas e prazos de entrega passam a ser simuláveis.
+\item \textbf{BIM 4D: Programação}: imagine planejar uma laje sabendo, antes da concretagem, em qual semana cada elemento estará pronto. É o que o 4D entrega: o modelo é organizado em etapas, com sequência de montagem atribuída a cada componente. Cronogramas e prazos de entrega passam a ser simuláveis.
 
-\item \textbf{BIM 5D --- Estimativa de Custos}: estima custos por fase do projeto, gera relatórios financeiros e permite comparar alternativas considerando tempo e investimento.
+\item \textbf{BIM 5D: Estimativa de Custos}: estima custos por fase do projeto, gera relatórios financeiros e permite comparar alternativas considerando tempo e investimento.
 
-\item \textbf{BIM 6D --- Sustentabilidade}: incorpora dados de impacto ambiental e consumo energético ao modelo, ajustando custos e investimentos durante e depois da obra.
+\item \textbf{BIM 6D: Sustentabilidade}: incorpora dados de impacto ambiental e consumo energético ao modelo, ajustando custos e investimentos durante e depois da obra.
 
-\item \textbf{BIM 7D --- Gerenciamento de Instalações}: cada elemento da construção (estrutura, acabamento, equipamento) ganha um registro detalhado em banco de dados. A partir dele, programam-se manutenções, verificam-se garantias e gerenciam-se os componentes ao longo da vida útil do edifício.
+\item \textbf{BIM 7D: Gerenciamento de Instalações}: cada elemento da construção (estrutura, acabamento, equipamento) ganha um registro detalhado em banco de dados. A partir dele, programam-se manutenções, verificam-se garantias e gerenciam-se os componentes ao longo da vida útil do edifício.
 
 \end{itemize}
 
-A resistência à adoção do BIM faz sentido quando se mede o tamanho da mudança em relação ao CAD. \citeonline{coelho2018} mostra que ferramentas como o AutoCAD são, por si só, um obstáculo: trocar de \textit{software} significa reconfigurar rotinas e treinar de novo. \citeonline{souza2009} acrescenta um segundo obstáculo --- volumes maiores de dados e \textit{hardware} mais robusto ---, o que pesa especialmente em empresas menores.
+A resistência à adoção do BIM faz sentido quando se mede o tamanho da mudança em relação ao CAD. \citeonline{coelho2018} mostra que ferramentas como o AutoCAD são, por si só, um obstáculo: trocar de \textit{software} significa reconfigurar rotinas e treinar de novo. \citeonline{souza2009} acrescenta um segundo obstáculo, que são volumes maiores de dados e \textit{hardware} mais robusto, o que pesa especialmente em empresas menores.
 
 \citeonline{eastman2011} lembra ainda que o conceito BIM não pertence a um único \textit{software}. Cobrir o ciclo de vida completo em uma só aplicação seria inviável pela própria complexidade do processo. Na prática, monta-se uma cadeia de ferramentas especializadas, e essa cadeia frequentemente esbarra em problemas de compatibilidade na troca de dados \cite{ibrahim2004}. \citeonline{bottega2012} relata que, mesmo depois da adoção do BIM, a transferência de arquivos sofre com o tamanho dos dados e com a diversidade de \textit{softwares}.
 
@@ -34,13 +34,15 @@ A resistência à adoção do BIM faz sentido quando se mede o tamanho da mudan�
     \includegraphics[scale=0.5]
     {Imagens/3.1.1-bim.png} 
     \end{center} 
-    \caption{\label{img:3.1.1} Representação do BIM - Fonte: \citeauthor{hoch}} 
+    \caption{\label{img:3.1.1} Representação do BIM - Fonte: \citeauthor{hoch}}
 \end{figure}
+
+Toda essa riqueza de informação, porém, só tem valor prático se o modelo respeitar as regras que disciplinam a construção. É aqui que o BIM encontra as normas técnicas: cada elemento modelado (uma rampa, uma porta, uma instalação elétrica) precisa atender a requisitos de segurança, desempenho e acessibilidade fixados em norma. Verificar essa conformidade é uma das aplicações mais promissoras do BIM, mas depende de traduzir o texto normativo para uma forma que o próprio modelo digital consiga checar.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Normas de Engenharia}
 
-As normas técnicas formam o arcabouço regulatório do setor AEC --- são elas que definem os requisitos mínimos de segurança, desempenho, qualidade e interoperabilidade dos projetos. No Brasil, a coordenação cabe à Associação Brasileira de Normas Técnicas (ABNT), que publica as NBRs. No plano internacional, a Organização Internacional de Padronização (ISO) publica normas adotadas por diversos países; em BIM, a referência consolidada é a série ISO~19650, voltada à organização e digitalização da informação sobre obras de construção \cite{iso19650}.
+As normas técnicas formam o arcabouço regulatório do setor AEC, as mesmas definem os requisitos mínimos de segurança, desempenho, qualidade e interoperabilidade dos projetos. No Brasil, a coordenação cabe à Associação Brasileira de Normas Técnicas (ABNT), que publica as NBRs. No plano internacional, a Organização Internacional de Padronização (ISO) publica normas adotadas por diversos países; em BIM, a referência consolidada é a série ISO~19650, voltada à organização e digitalização da informação sobre obras de construção \cite{iso19650}.
 
 \subsection{Normas Regulatórias Brasileiras na AEC}
 \label{sec:normas_regulatorias}
@@ -67,42 +69,106 @@ NBR~13714      & Sistemas de hidrantes prediais              & De segurança con
 \end{tabular}
 \end{table}
 
-Cada uma dessas normas combina três camadas textuais: (i) \textit{definições e referências}, sem valor de verificação direta; (ii) \textit{requisitos prescritivos}, com limites numéricos e geométricos passíveis de checagem automática; e (iii) \textit{recomendações e exceções}, em texto livre, frequentemente condicionadas a categorias específicas do edifício. Em qualquer das três camadas, o texto bruto é longo, recursivo e fortemente dependente de definições prévias --- o que torna a tradução para regras computáveis um trabalho não trivial e, hoje, predominantemente manual.
+Cada uma dessas normas combina três camadas textuais: (i) \textit{definições e referências}, sem valor de verificação direta; (ii) \textit{requisitos prescritivos}, com limites numéricos e geométricos passíveis de checagem automática; e (iii) \textit{recomendações e exceções}, em texto livre, frequentemente condicionadas a categorias específicas do edifício. Em qualquer das três camadas, o texto bruto é longo, recursivo e fortemente dependente de definições prévias, fazendo com que a tradução para regras computáveis um trabalho não trivial e, hoje, predominantemente manual.
 
-\subsubsection*{NBR~9050 --- Acessibilidade}
+A NBR~9050 \cite{abnt9050} é o caso recorrente na construção civil brasileira: estabelece os critérios e parâmetros técnicos para acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos. A norma cobre desde sinalização tátil e auditiva até dimensões de rampas, portas, sanitários adaptados e rotas acessíveis. O texto é majoritariamente prescritivo, com valores numéricos diretamente verificáveis em um modelo BIM, por exemplo, ``a inclinação máxima admissível em rampas é de 8{,}33\%'', ou ``o vão livre de portas acessíveis deve ser igual ou superior a 0{,}80~m''. É justamente esse perfil prescritivo, com requisitos quantitativos e exceções bem delimitadas, que faz da NBR~9050 a escolha natural para o \textit{dataset} desta pesquisa: 79 trechos normativos extraídos da NBR~9050 e de NBRs adjacentes foram anotados nos três níveis (N1, N2 e N3) descritos no Capítulo de Método.
 
-A NBR~9050 \cite{abnt9050} é o caso recorrente na construção civil brasileira: estabelece os critérios e parâmetros técnicos para acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos. A norma cobre desde sinalização tátil e auditiva até dimensões de rampas, portas, sanitários adaptados e rotas acessíveis. O texto é majoritariamente prescritivo, com valores numéricos diretamente verificáveis em um modelo BIM --- por exemplo, ``a inclinação máxima admissível em rampas é de 8{,}33\%'', ou ``o vão livre de portas acessíveis deve ser igual ou superior a 0{,}80~m''. É justamente esse perfil prescritivo, com requisitos quantitativos e exceções bem delimitadas, que faz da NBR~9050 a escolha natural para o \textit{dataset} desta pesquisa: 79 trechos normativos extraídos da NBR~9050 e de NBRs adjacentes foram anotados nos três níveis (N1, N2 e N3) descritos no Capítulo de Método.
+O problema é que a aplicação dessas normas continua predominantemente manual. O profissional lê trechos longos de texto, identifica os requisitos que interessam e verifica item a item contra o projeto. Em um modelo BIM com centenas ou milhares de elementos sujeitos a normas simultâneas, esse esforço cresce de forma combinatória. \citeonline{eastman2009} mostram que a verificação manual é cara, frágil e pouco escalável, é exatamente daí que vem a pesquisa em checagem automática baseada em regras.
 
-\subsubsection*{Verificação manual e seus limites}
+Automatizar essa verificação, porém, esbarra em três obstáculos concretos. O primeiro é a linguagem natural em que os textos normativos são escritos: ambiguidade e referências cruzadas atrapalham a tradução direta para regras computáveis \cite{dimyadi2013}. O segundo é a variação regional, normas mudam entre países e contextos, o que limita o reaproveitamento do que já foi formalizado em outros lugares \cite{dimyadi2013,solihin2015}. O terceiro é semântico: distinguir o que é requisito, o que é aplicabilidade e o que é exceção dentro de um trecho normativo exige um esquema padronizado que sirva a ferramentas diferentes \cite{solihin2015}.
 
-O problema é que a aplicação dessas normas continua predominantemente manual. O profissional lê trechos longos de texto, identifica os requisitos que interessam e verifica item a item contra o projeto. Em um modelo BIM com centenas ou milhares de elementos sujeitos a normas simultâneas, esse esforço cresce de forma combinatória. \citeonline{eastman2009} mostram que a verificação manual é cara, frágil e pouco escalável --- e é exatamente daí que vem a pesquisa em checagem automática baseada em regras.
+A resposta que a literatura vem ensaiando é estruturar a norma em um esquema computável antes da verificação. \citeonline{beach2015} demonstram que um sistema baseado em regras consegue automatizar a checagem regulatória da construção quando as normas estão formalizadas. A metodologia RASE, proposta por \citeonline{hjelseth2011}, vai nessa direção: marca cada trecho normativo como Requisito, Aplicabilidade, Seleção ou Exceção, criando um substrato adequado à verificação automática em modelos BIM. Em paralelo, trabalhos recentes começaram a investigar LLMs como caminho para baratear essa tradução das normas em representações computáveis \cite{fuchs2024}.
 
-Automatizar essa verificação, porém, esbarra em três obstáculos concretos. O primeiro é a linguagem natural em que os textos normativos são escritos: ambiguidade e referências cruzadas atrapalham a tradução direta para regras computáveis \cite{dimyadi2013}. O segundo é a variação regional --- normas mudam entre países e contextos, o que limita o reaproveitamento do que já foi formalizado em outros lugares \cite{dimyadi2013,solihin2015}. O terceiro é semântico: distinguir o que é requisito, o que é aplicabilidade e o que é exceção dentro de um trecho normativo exige um esquema padronizado que sirva a ferramentas diferentes \cite{solihin2015}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Metodologia RASE}
 
-A resposta que a literatura vem ensaiando é estruturar a norma em um esquema computável \textit{antes} da verificação. \citeonline{beach2015} demonstram que um sistema baseado em regras consegue automatizar a checagem regulatória da construção quando as normas estão formalizadas. A metodologia RASE, proposta por \citeonline{hjelseth2011}, vai nessa direção: marca cada trecho normativo como Requisito, Aplicabilidade, Seleção ou Exceção, criando um substrato adequado à verificação automática em modelos BIM. Em paralelo, trabalhos recentes começaram a investigar LLMs como caminho para baratear essa tradução das normas em representações computáveis \cite{fuchs2024}.
+Para capturar informações presentes em regulamentos, estruturar a conversão dessas regras em linguagem computacional e viabilizar a verificação automática em escala, \citeonline{hjelseth2015} propôs duas metodologias complementares: a Tx3 e a RASE.
+
+A metodologia Tx3 propõe três ações a serem realizadas conforme a classificação das informações presentes nos regulamentos: 
+
+\begin{itemize}
+    \item \textbf{Transcrever (T1)}: Deve ser aplicada para instruções que podem ser diretamente transcritas em regras computáveis; 
+    \item \textbf{Transformar (T2)}: Deve ser aplicada para instruções que necessitam ser reestruturadas ou reescritas de forma a preservar o sentido original;
+    \item \textbf{Transferir (T3)}: Deve ser aplicada quando os requisitos são expressos de maneira imprecisa, sem conexão clara entre os objetivos do regulamento e os indicadores. Nestes casos, é necessária a análise de um profissional especializado.
+\end{itemize}
+
+Após a classificação do texto original, os elementos classificados como T1 e T2 são reescritos e submetidos à metodologia RASE. A metodologia RASE, baseada em conceitos semânticos, transforma documentos normativos em regras bem definidas, utilizáveis em \textit{softwares} baseados em BIM \cite{hjelseth2011}. O processo consiste na identificação de quatro operadores lógicos:
+
+\begin{itemize}
+    \item \textbf{Requisito (R)}: Expressa o dever associado, frequentemente identificado pelo imperativo “deve”. Por exemplo, na frase “Toda rota acessível de espaço privado deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00 m do chão”, o requisito é: “deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux”.
+    \item \textbf{Aplicabilidade (A)}: Identifica a quem ou ao que o requisito se aplica. No exemplo anterior, a aplicabilidade é: “rota acessível”.
+    \item \textbf{Seleção (S)}: Indica um subconjunto da aplicabilidade. No exemplo, a seleção é: “de espaço privado”;
+    \item \textbf{Exceção (E)}: Define os elementos excluídos da regra. Completando o exemplo anterior com a norma “São aceitos níveis inferiores de iluminância para ambientes específicos, como cinemas, teatros ou outros, conforme normas técnicas específicas.”, a exceção é: “níveis inferiores para cinemas, teatros e outros”, pois isso não se aplica a regra. 
+\end{itemize}
+
+Para facilitar a visualização, utiliza-se um sistema de cores, onde de costume é utilizado: Requisitos (azul), Aplicabilidade (verde), Seleção (vermelho) e Exceção (laranja). Cada operador identificado é associado a atributos específicos:
+\begin{itemize}
+    \item \textbf{Objeto}: Termos padronizados, como “escada” ou “corrimão”.
+    \item \textbf{Propriedade (A)}: Termos classificados, como “nível de iluminância” ou “sistema de segurança”.
+    \item \textbf{Comparador}: Pode ser maior, menor, igual, diferente, entre outros.
+    \item \textbf{Valor}: Valores numéricos, unidades ou descrições.
+    \item \textbf{Unidade}: Tipo de unidade do valor numérico caso exista. 
+\end{itemize}
+
+Como exemplo, considere o texto da norma NBR 9050: “A inclinação transversal da superfície deve ser de até 2\% para pisos internos e de até 3\% para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5\%. Inclinações iguais ou superiores a 5\% são consideradas rampas e, portanto, devem atender a 6.6.” 
+
+Aplicando a metodologia Tx3 e RASE:
+
+\begin{itemize}
+    \item \textbf{Tx3 (Transcrever)}:
+    \begin{itemize}
+        \item Pisos internos devem ter inclinação transversal menor ou igual a 2\%;
+        \item Pisos externos devem ter inclinação transversal menor ou igual a 3\%;
+        \item Pisos internos devem ter inclinação longitudinal menor do que 5\%;
+        \item Pisos externos devem ter inclinação longitudinal menor do que 5\%;
+        \item Pisos com inclinação longitudinal maior ou igual a 5\% são considerados rampas e devem atender a 6.6;
+    \end{itemize}
+
+    \item \textbf{RASE (Operadores)}:
+    \begin{itemize}
+        \item A\{Pisos\} S\{internos\} R\{devem ter inclinação transversal menor ou igual a 2\%\};
+        \item A\{Pisos\} S\{externos\} R\{devem ter inclinação transversal menor ou igual a 3\%\};
+        \item A\{Pisos\} S\{internos\} R\{devem ter inclinação longitudinal menor do que 5\%\};
+        \item A\{Pisos\} S\{externos\} R\{devem ter inclinação longitudinal menor do que 5\%\};
+        \item A\{Pisos\} E\{com inclinação longitudinal maior ou igual a 5\% são consideradas rampas\} R\{devem atender a 6.6\};
+    \end{itemize}
+\end{itemize}
+
+Concluída a aplicação dos operadores RASE, gera-se o atributo correspondente a cada operador, como mostra a Figura \ref{img:3.8.1}.
+
+\begin{figure}[htb]
+    \centering
+    \caption{Utilização da metodologia RASE na NBR 9050}
+    \label{img:3.8.1}
+    \includegraphics[width=0.9\textwidth,keepaspectratio]{Imagens/3.8.1-rase.png}
+
+    Fonte: Própria (2025).
+\end{figure}
+
+Aplicar a RASE à mão, porém, reintroduz o gargalo que se quer eliminar: marcar operador a operador exige um especialista e não escala para o volume de normas do setor AEC. Identificar, em uma sentença normativa, o que é Requisito, Aplicabilidade, Seleção ou Exceção é, no fundo, um problema de classificação e de estruturação de texto, que é exatamente o tipo de tarefa que o Aprendizado de Máquina aprende a partir de exemplos, em vez de regras codificadas à mão. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Aprendizado de Máquina}
 
-O Aprendizado de Máquina (AM) é o ramo da Inteligência Artificial (IA) que estuda como máquinas podem inferir regras a partir de exemplos, em vez de seguir regras codificadas à mão por um programador \cite{mitchell1997}. Em vez de dizer ao computador \textit{como} classificar um e-mail como spam, mostram-se a ele milhares de e-mails já rotulados e deixa-se que descubra os padrões. A partir desse processo de treinamento, o algoritmo gera um modelo capaz de lidar com situações novas \cite{tan2006}.
+O Aprendizado de Máquina (AM) é o ramo da Inteligência Artificial (IA) que estuda como máquinas podem inferir regras a partir de exemplos, em vez de seguir regras codificadas à mão por um programador \cite{mitchell1997}. Em vez de dizer ao computador como classificar um e-mail como spam, mostram-se a ele milhares de e-mails já rotulados e deixa-se que descubra os padrões. A partir desse processo de treinamento, o algoritmo gera um modelo capaz de lidar com situações novas \cite{tan2006}.
 
 A literatura distingue três grandes paradigmas de aprendizagem:
 
 \begin{itemize}
     \item \textbf{Aprendizagem supervisionada}: o conjunto de treino traz cada exemplo já rotulado, e o modelo aprende a prever esses rótulos em dados novos. Tipicamente, isso se desdobra em duas tarefas: \textit{classificação} (categorizar uma instância em uma classe discreta) e \textit{regressão} (estimar um valor contínuo a partir do histórico) \cite{faceli2011}.
 
-    \item \textbf{Aprendizagem não supervisionada}: aqui os dados não vêm com rótulos. O objetivo passa a ser descobrir estrutura nos próprios dados --- agrupar instâncias parecidas, identificar anomalias ou gerar recomendações. Mesmo sem rótulos, o modelo consegue separar os dados em grupos a partir dos padrões observados \cite{faceli2011}.
+    \item \textbf{Aprendizagem não supervisionada}: aqui os dados não vêm com rótulos. O objetivo passa a ser descobrir estrutura nos próprios dados, agrupar instâncias parecidas, identificar anomalias ou gerar recomendações. Mesmo sem rótulos, o modelo consegue separar os dados em grupos a partir dos padrões observados \cite{faceli2011}.
 
     \item \textbf{Aprendizagem por reforço}: o modelo aprende por tentativa e erro. A cada ação, o agente recebe uma recompensa ou uma punição; ao longo do tempo, aprende a sequência de decisões que maximiza a recompensa acumulada. É a abordagem por trás de jogos, sistemas de controle e simulações em ambientes complexos \cite{cerri2017}.
 \end{itemize}
 
-Em classificação, o modelo deve generalizar os padrões aprendidos no treino para categorizar instâncias novas. Em regressão, o alvo é um valor contínuo --- prever a venda futura de um produto, estimar o preço de um imóvel a partir de variáveis históricas, calcular a expectativa de vida de um país \cite{guimaraes2019}.
+Em classificação, o modelo deve generalizar os padrões aprendidos no treino para categorizar instâncias novas. Em regressão, o alvo é um valor contínuo, como por exemplo, prever a venda futura de um produto, estimar o preço de um imóvel a partir de variáveis históricas, calcular a expectativa de vida de um país \cite{guimaraes2019}.
 
 Exemplos clássicos de classificação: a partir de uma imagem, decidir se a pessoa é homem ou mulher; a partir de um texto, identificar o sentimento como positivo ou negativo. Já a regressão aparece, por exemplo, na previsão de vendas, na avaliação imobiliária ou no cálculo de expectativa de vida.
 
 Esse processo todo segue um fluxo de etapas relativamente estável: obter os dados; preparar, limpar e tratar; escolher e treinar o modelo; testar; avaliar; refinar \cite{tan2006}. A qualidade do que se obtém no final depende muito da qualidade dos dados de entrada \cite{guimaraes2019}. Daí a importância de um pré-processamento rigoroso.
 
-O pré-processamento ataca os ruídos que aparecem nos dados brutos --- anomalias, valores ausentes, atributos irrelevantes que prejudicam o aprendizado. O sucesso dessa etapa depende, em boa medida, da habilidade do profissional em diagnosticar o problema e escolher a técnica certa \cite{neves2003}.
+O pré-processamento ataca os ruídos que aparecem nos dados brutos, tratando anomalias, valores ausentes, atributos irrelevantes que prejudicam o aprendizado. O sucesso dessa etapa depende, em boa medida, da habilidade do profissional em diagnosticar o problema e escolher a técnica certa \cite{neves2003}.
 
 Outros problemas aparecem no próprio treinamento. O \textit{overfitting} ocorre quando o modelo decora demais os dados de treino e perde a capacidade de generalizar. O \textit{underfitting} é o oposto: o modelo não captura padrão suficiente e entrega desempenho insatisfatório \cite{russel2010}.
 
@@ -133,7 +199,7 @@ Uma vez que o modelo é construído, torna-se essencial medir seu desempenho. En
                 \includegraphics[scale=1]{Imagens/3.3.1-matrizconfusao.png}
         	\end{center}
             \label{img:3.3.1}
-        	Fonte: Própria (2024).
+        	Fonte: Própria (2025).
         \end{figure}
 
     \item A \textbf{precisão (PRE ou \textit{precision})}: É utilizada para trabalhar somente com os valores positivos, e sua fórmula é calculada pelos valores verdadeiros positivos divididos pelo total de predições positivas (verdadeiro positivo + falso positivo) (Equação \ref{eq:3.3.2}).
@@ -166,7 +232,7 @@ Já o Aprendizado Profundo (\textit{Deep Learning}) é a vertente do AM que se a
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Processamento de Linguagem Natural (PLN)}
 
-Em 1950, Alan Turing --- frequentemente lembrado como o pai da computação --- propôs o Teste de Turing: um experimento em que um avaliador tenta decidir se está conversando com uma pessoa ou com uma máquina. É comum apontar esse teste como o marco fundador da reflexão sobre Processamento de Linguagem Natural (PLN) \cite{russel2010}.
+Em 1950, Alan Turing, propôs o Teste de Turing: um experimento em que um avaliador tenta decidir se está conversando com uma pessoa ou com uma máquina. É comum apontar esse teste como o marco fundador da reflexão sobre Processamento de Linguagem Natural (PLN) \cite{russel2010}.
 
 O PLN tem por objetivo viabilizar tarefas computacionais sobre a linguagem humana, intermediando a interação entre máquinas e usuários por texto ou fala \cite{jurafsky2009}. Para Liddy, trata-se de uma técnica que analisa e representa o texto de modo a se aproximar do processamento que um humano faria em cada aplicação \cite{liddy1998}.
 
@@ -184,9 +250,9 @@ Os sistemas de PLN podem ser classificados de acordo com o nível de unidade lin
     \item \textbf{Nível Pragmático}: Compreensão do contexto comunicacional. Por exemplo, quando alguém diz "Nossa, as janelas estão todas abertas! Como está frio aqui!" e outra pessoa responde "Vou fechá-las", é possível inferir a intenção implícita da primeira pessoa.
 \end{itemize}
 
-Bulengo propõe quatro etapas para o PLN, executadas nessa ordem: morfológica, sintática, semântica e pragmática \cite{bulegon2010}. Santos discorda em parte e argumenta que normalmente só as três primeiras são utilizadas. Na análise morfológica identificam-se substantivos, verbos e adjetivos, montando um ``dicionário'' que alimenta a análise sintática --- esta, por sua vez, decide quem é sujeito, predicado e complemento. A análise semântica fecha o ciclo lidando com os termos ambíguos a partir do contexto \cite{santos2015}.
+Bulengo propõe quatro etapas para o PLN, executadas nessa ordem: morfológica, sintática, semântica e pragmática \cite{bulegon2010}. Santos discorda em parte e argumenta que normalmente só as três primeiras são utilizadas. Na análise morfológica identificam-se substantivos, verbos e adjetivos, montando um ``dicionário'' que alimenta a análise sintática, esta, por sua vez, decide quem é sujeito, predicado e complemento. A análise semântica fecha o ciclo lidando com os termos ambíguos a partir do contexto \cite{santos2015}.
 
-Implementar todos os níveis em um único sistema é raro: a complexidade cresce a cada camada. Mesmo assim, o PLN aparece em uma quantidade enorme de aplicações --- reconhecedores e sintetizadores de fala, corretores ortográficos, tradutores automáticos, geração e sumarização de texto, extração de informações, interfaces de linguagem natural \cite{vieira2001}.
+Implementar todos os níveis em um único sistema é raro: a complexidade cresce a cada camada. Mesmo assim, o PLN aparece em uma quantidade enorme de aplicações, como por exemplo, reconhecedores e sintetizadores de fala, corretores ortográficos, tradutores automáticos, geração e sumarização de texto, extração de informações, interfaces de linguagem natural \cite{vieira2001}.
 
 À medida que o campo cresceu, o PLN passou a beber em Filosofia da Linguagem, Psicologia, Matemática, Linguística e Ciência da Computação. Assim como no AM, há um conjunto de etapas de pré-processamento que estruturam a linguagem, reduzem o vocabulário e melhoram o desempenho dos modelos \cite{rezende2011}.
 
@@ -201,7 +267,7 @@ Entre as principais tarefas de pré-processamento no PLN, destacam-se:
     \item \textbf{Correção Ortográfica}: Tratamento de erros de digitação e abreviações para evitar problemas nos modelos.
 \end{itemize}
 
-A representação vetorial de palavras é conhecida como \textit{word embeddings}: a ideia é transformar palavras em números preservando suas relações semânticas. O processo parte de um \textit{corpus} --- conjunto de textos do qual as relações serão aprendidas. Primeiro o texto é quebrado em palavras; em seguida, cada palavra ganha um vetor cujo tamanho corresponde ao número de dimensões definidas pelo \textit{corpus}. A Figura \ref{img:3.5.3} traz uma ilustração com três dimensões (morfológica, tamanho e cor) representando um conceito completo.
+A representação vetorial de palavras é conhecida como \textit{word embeddings}: a ideia é transformar palavras em números preservando suas relações semânticas. O processo parte de um \textit{corpus} (conjunto de textos do qual as relações serão aprendidas). Primeiro o texto é quebrado em palavras; em seguida, cada palavra ganha um vetor cujo tamanho corresponde ao número de dimensões definidas pelo \textit{corpus}. A Figura \ref{img:3.5.3} traz uma ilustração com três dimensões (morfológica, tamanho e cor) representando um conceito completo.
 
     \begin{figure}[htb]
         \centering
@@ -211,14 +277,14 @@ A representação vetorial de palavras é conhecida como \textit{word embeddings
             {Imagens/3.5.3-wordembeddings.png}
     	\end{center}
         \label{img:3.5.3}
-    	Fonte: Própria (2021).
+    	Fonte: Própria (2025).
     \end{figure}
 
 Entre as vantagens do \textit{word embedding} estão:
 
 \begin{itemize}
     \item \textbf{Representação sem contexto}: cada palavra é analisada independentemente do contexto imediato. Algumas nuances se perdem, mas a categorização permanece útil.
-    \item \textbf{Relações semânticas}: em um espaço n-dimensional, palavras com significado próximo ficam vizinhas --- ``macaco'' e ``gorila'', por exemplo.
+    \item \textbf{Relações semânticas}: em um espaço n-dimensional, palavras com significado próximo ficam vizinhas, como ``macaco'' e ``gorila''.
     \item \textbf{Operações matemáticas}: vetores podem ser somados ou subtraídos para descobrir relações entre palavras. Adicionar um vetor associado a uma característica a outro vetor pode resultar em uma palavra relacionada.
 \end{itemize}
 
@@ -233,17 +299,17 @@ Há ainda uma extensão importante: o \textit{sentence embedding}, que considera
             \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.5.4-sentenceembeddings.png}
     	\end{center}
         \label{img:3.5.4}
-    	Fonte: Própria (2021).
+    	Fonte: Própria (2025).
     \end{figure}
 
-Há várias técnicas para representar palavras vetorialmente (\textit{word embeddings}), e elas se diferenciam pela arquitetura e pela base de dados usada no treinamento \cite{martin2009}. Vale acrescentar que essas representações podem ser transferidas para domínios semelhantes via Transferência de Aprendizado --- tema discutido em outra seção.
+Há várias técnicas para representar palavras vetorialmente (\textit{word embeddings}), e elas se diferenciam pela arquitetura e pela base de dados usada no treinamento \cite{martin2009}. Vale acrescentar que essas representações podem ser transferidas para domínios semelhantes via Transferência de Aprendizado, tema discutido em outra seção.
 
 No contexto do PLN moderno, representações vetoriais como \textit{word embeddings} e \textit{sentence embeddings} têm sido amplamente utilizadas. Modelos como Word2Vec \cite{mikolov2013b}, GloVe \cite{pennington2014}, fastText \cite{bojanowski2017} e os \textit{embeddings} disponibilizados pela OpenAI destacam-se nesse campo, oferecendo desempenho robusto em diversas tarefas de PLN.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Métricas de Similaridade Textual}
 
-Avaliar a saída de um LLM em tarefas de conversão de texto exige comparar o texto produzido com um texto de referência. Como a correspondência exata raramente é desejável --- uma paráfrase correta também precisa contar como acerto ---, usa-se um conjunto de métricas de similaridade. Elas se dividem em quatro famílias: \textit{lexicais}, \textit{semânticas}, \textit{de distância} e \textit{voltadas para geração} \cite{jurafsky2009}.
+Avaliar a saída de um LLM em tarefas de conversão de texto exige comparar o texto produzido com um texto de referência. Como a correspondência exata raramente é desejável (uma paráfrase correta também precisa contar como acerto), usa-se um conjunto de métricas de similaridade. Elas se dividem em quatro famílias: \textit{lexicais}, \textit{semânticas}, \textit{de distância} e \textit{voltadas para geração} \cite{jurafsky2009}.
 
 \textbf{Lexicais.} Comparam diretamente as cadeias de caracteres ou os \textit{tokens} dos dois textos, ignorando o significado. A mais difundida é baseada na distância de Levenshtein, que mede o número mínimo de inserções, remoções e substituições necessárias para transformar uma cadeia em outra. A biblioteca \textit{FuzzyWuzzy} oferece variantes dessa medida; uma delas é o \textit{partial ratio}, útil quando uma das \textit{strings} é fragmento da outra. Outra alternativa clássica é a similaridade do cosseno sobre vetores TF-IDF (\textit{Term Frequency--Inverse Document Frequency}), que pondera cada termo pela sua importância relativa no corpus \cite{manning2008}.
 
@@ -253,7 +319,7 @@ Avaliar a saída de um LLM em tarefas de conversão de texto exige comparar o te
 
 \textbf{Voltadas para geração.} Surgiram na literatura de tradução automática e sumarização, em que a forma exata da resposta pode variar bastante. O \textit{BERTScore} \cite{zhang2020bertscore} alinha cada \textit{token} da saída ao \textit{token} mais próximo da referência usando \textit{embeddings} do BERT, e agrega o resultado em precisão, revocação e F1 contextuais. O \textit{ROUGE-L} \cite{lin2004rouge} calcula a razão entre a maior subsequência comum (\textit{Longest Common Subsequence}) e o comprimento da referência, captando paralelismo sintático mesmo com inserções no meio.
 
-As quatro famílias são complementares. As lexicais e o ROUGE-L punem reformulações que preservam o sentido; semânticas, de distância e BERTScore enxergam equivalência por trás da variação de superfície. Combinar as quatro fornece um retrato bem mais completo da qualidade das saídas de LLMs --- prática consolidada na literatura de PLN aplicada \cite{reimers2019}.
+As quatro famílias são complementares. As lexicais e o ROUGE-L punem reformulações que preservam o sentido; semânticas, de distância e BERTScore enxergam equivalência por trás da variação de superfície. Combinar as quatro fornece um retrato bem mais completo da qualidade das saídas de LLMs, prática consolidada na literatura de PLN aplicada \cite{reimers2019}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Redes Neurais Artificiais}
@@ -262,7 +328,7 @@ O sistema nervoso humano é formado por neurônios, células que transmitem as i
 
 A primeira simulação computacional de uma rede neural biológica veio em 1943, das mãos dos psiquiatras Warren McCulloch e Walter Pitts. O trabalho descreveu o comportamento e a memória dos neurônios biológicos em forma artificial, mas deixou de fora a parte do aprendizado \cite{mcculloch1943}. Esse passo foi dado em 1949, por Donald Hebb, no primeiro estudo dedicado à fase de aprendizado: ele mostrou que o peso de cada conexão entre neurônios resulta em uma força de excitação análoga à observada nos neurônios biológicos \cite{hebb1949}. O modelo, ainda assim, não reconhecia padrões.
 
-A virada veio em 1958, quando Rosenblatt apresentou o primeiro modelo capaz de detectar padrões e características --- ajustando os pesos das conexões, o modelo aprendia a classificar \cite{rosenblatt1958}. Esse modelo ficou conhecido como \textit{perceptron} e organiza-se em três camadas:
+A virada veio em 1958, quando Rosenblatt apresentou o primeiro modelo capaz de detectar padrões e características: ajustando os pesos das conexões, o modelo aprendia a classificar \cite{rosenblatt1958}. Esse modelo ficou conhecido como \textit{perceptron} e organiza-se em três camadas:
 
 \begin{itemize}  
     \item \textbf{Camada de entrada}: Responsável por receber informações do ambiente externo e repassá-las às camadas intermediárias.
@@ -283,7 +349,7 @@ A estrutura de um neurônio em uma rede MLP processa informações recebidas do 
         \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.4.1-rna.png}
     \end{center}
     \label{img:3.2.1}
-    Fonte: Própria (2024).
+    Fonte: Própria (2025).
 \end{figure}
 
 A Figura \ref{img:3.4.2} demonstra o processamento de informações por um neurônio em uma rede MLP, onde, dado um conjunto de valores '\textit{x}' (que representam as informações do mundo externo), esses valores são associados a pesos '\textit{w}'. A partir disso, é efetuada uma soma ponderada dos produtos '\textit{x}' e '\textit{w}', à qual é somado o limiar de ativação (bias ou polarização), como mostrado na Equação \ref{eq:3.4.1}.
@@ -295,7 +361,7 @@ A Figura \ref{img:3.4.2} demonstra o processamento de informações por um neur�
         \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.4.2-rnamlp.png}
     \end{center}
     \label{img:3.4.2}
-    Fonte: Própria (2024).
+    Fonte: Própria (2025).
 \end{figure}
 
 \begin{equation}
@@ -312,7 +378,7 @@ O bias ($\theta$) é responsável pelo deslocamento inicial da função de ativa
         \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.4.3-bias.png}
     \end{center}
     \label{img:3.4.3}
-    Fonte: Própria (2024).
+    Fonte: Própria (2025).
 \end{figure}
 
 O valor \textit{u} obtido, chamado de ponto de ativação, é avaliado pela função de ativação, que é responsável por calcular o sinal da saída do neurônio. A função de ativação, também conhecida como função de transferência, tem o objetivo de limitar a amplitude da saída do neurônio. Ou seja, o valor obtido estará no intervalo entre 0 e 1, podendo ser interpretado como uma probabilidade do resultado \cite{goodfellow2016}.
@@ -324,7 +390,7 @@ As funções de ativação mais populares são:
 \begin{itemize}
     \item \textbf{Função de Etapa Binária} ($ f(x) = 1$, se x>=0 e $f(x) = 0$, se x<0): Essa função determina se o neurônio deve ou não estar ativo. Caso o valor '\textit{u}' seja maior que um limite pré-determinado, o neurônio é ativado; caso contrário, ele permanece desativado. Embora útil em classificadores binários, é mais utilizada como referência teórica, pois, no processo de retropropagação (backpropagation), os gradientes das funções de ativação retornam zero, o que impede a melhoria dos resultados \cite{feng2019}.
 
-    \item \textbf{Função Linear} ($f(x) = ax$): cada camada passa por uma transformação linear. O problema é que essa função sofre da mesma limitação da etapa binária --- a derivada é constante, independentemente do valor de entrada, o que impede aprimoramentos via \textit{backpropagation} \cite{feng2019}.
+    \item \textbf{Função Linear} ($f(x) = ax$): cada camada passa por uma transformação linear. O problema é que essa função sofre da mesma limitação da etapa binária: a derivada é constante, independentemente do valor de entrada, o que impede aprimoramentos via \textit{backpropagation} \cite{feng2019}.
 
     \item \textbf{Função Sigmoid} ($ f (x) = 1 / (1 + e^{-x}) $): Essa função comprime os valores de saída para o intervalo entre 0 e 1, o que é útil para classificar uma classe específica. Embora não seja linear e permita saídas não lineares em redes neurais, apresenta dois problemas principais: 1) os gradientes podem se aproximar de zero, o que prejudica o aprendizado da rede, e 2) os valores de saída são sempre positivos, o que pode não ser desejável em todos os casos. Apesar disso, ela é amplamente utilizada em classificadores \cite{feng2019}.
 
@@ -340,7 +406,7 @@ As funções de ativação mais populares são:
 O treinamento de uma rede neural artificial multicamadas consiste em ajustar os pesos sinápticos e o bias de modo que as saídas se aproximem das saídas esperadas. Esse processo ocorre em duas etapas \cite{russel2010}:
 
 \begin{itemize}
-    \item \textbf{Propagação (forward-propagation)}: Nesta etapa, aplica-se a Equação 3.7 em cada neurônio. O fluxo de dados começa na camada de entrada, atravessa as camadas ocultas e finaliza na camada de saída \cite{hafemann2014}.
+    \item \textbf{Propagação (forward-propagation)}: Nesta etapa, aplica-se a Equação~\ref{eq:3.4.1} em cada neurônio. O fluxo de dados começa na camada de entrada, atravessa as camadas ocultas e finaliza na camada de saída \cite{hafemann2014}.
     
     \item \textbf{Retropropagação (backpropagation)}: Após a etapa de propagação, os valores de saída são comparados com os valores desejados usando uma função custo, que mede o desempenho da rede. Caso o desempenho seja insatisfatório, inicia-se a retropropagação para minimizar o erro, ajustando os pesos e os bias. Isso é feito utilizando o método do Gradiente Descendente \cite{hafemann2014}.
     
@@ -406,12 +472,12 @@ Um dos ganhos centrais da Aprendizagem Profunda é a extração automática de c
             {Imagens/3.4.4-tiposrna.png}
     	\end{center}
         \label{img:3.4.4}
-    	Fonte: Própria (2024).
+    	Fonte: Própria (2025).
     \end{figure}
 
 A diferença entre Redes Neurais Recorrentes (RNN) e Redes Neurais Feedforward (FNN) está justamente nos ciclos: nas RNNs, a saída pode realimentar camadas anteriores. Com isso, o modelo passa a capturar dependências temporais entre os dados \cite{ramakrishnan2018}.
 
-Esse ciclo dá à RNN um estado interno --- uma espécie de memória --- que processa entradas sequenciais, característica útil em reconhecimento de fala, PLN, previsão de séries temporais e correlatos.
+Esse ciclo dá à RNN um estado interno (uma espécie de memória) que processa entradas sequenciais, característica útil em reconhecimento de fala, PLN, previsão de séries temporais e correlatos.
 
 Há um preço a pagar. A repetição de operações no ciclo da RNN, somada à matriz de pesos $W$ de cada camada, torna a rede progressivamente profunda. Isso abre espaço para dois problemas conhecidos: dissipação do gradiente (\textit{gradient vanishing}) e explosão do gradiente (\textit{gradient explosion}) \cite{goodfellow2016}.
 
@@ -422,7 +488,7 @@ A resposta veio em 1997, com Hochreiter e Schmidhuber: o LSTM (\textit{Long Shor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Memória de Longo e Curto Prazo (LSTM)}
 
-O LSTM é uma evolução da RNN. Seu funcionamento se organiza em cadeia: cada camada representa um intervalo de tempo $t$, e a rede contém células de memória --- cada célula com três portões (entrada, esquecimento e saída).
+O LSTM é uma evolução da RNN. Seu funcionamento se organiza em cadeia: cada camada representa um intervalo de tempo $t$, e a rede contém células de memória, cada uma com três portões (entrada, esquecimento e saída).
 
 \begin{itemize}
     \item \textbf{Portão de entrada (\textit{input gate})}: a partir do fluxo de dados que chega, atualiza o estado de memória da célula \cite{abdelnasser2019}.
@@ -470,7 +536,7 @@ No passo final, a camada \textit{sigmoid} decide quais informações da célula 
     \label{eq:3.5.6}
 \end{equation}
 
-A LSTM tem uma estrutura computacional pesada: opera ativando diferentes funções para manter, alterar ou descartar informação. Apesar do custo, é uma rede que se mostrou bem-sucedida em tarefas sequenciais \cite{tai2015}. Desse sucesso surgiu uma variante: a \textit{Bidirectional LSTM} (BiLSTM), formada por duas LSTMs em paralelo --- uma percorre a sequência para frente, outra para trás. Com isso, a rede passa a capturar informação passada e futura, ampliando seu poder de aprendizado \cite{graves2013}.
+A LSTM tem uma estrutura computacional pesada: opera ativando diferentes funções para manter, alterar ou descartar informação. Apesar do custo, é uma rede que se mostrou bem-sucedida em tarefas sequenciais \cite{tai2015}. Desse sucesso surgiu uma variante: a \textit{Bidirectional LSTM} (BiLSTM), formada por duas LSTMs em paralelo: uma percorre a sequência para frente, outra para trás. Com isso, a rede passa a capturar informação passada e futura, ampliando seu poder de aprendizado \cite{graves2013}.
 
 RNNs e LSTMs lidam bem com sequências e foram projetadas para tarefas \textit{sequence-to-sequence} (\textit{seq2seq}), em que se recebe uma sequência de dados e se produz outra. No PLN, porém, a estrutura neural que vem dominando o cenário é o \textit{transformer}, em razão do desempenho que entrega em tradução, sumarização, legendagem de imagens e tarefas correlatas.
 
@@ -493,7 +559,7 @@ Esse contexto final é passado para a segunda RNN, o \textit{decoder}, que tamb�
         \includegraphics[width=\linewidth,keepaspectratio]{Imagens/3.6.1-seq2seq.png}
     \end{center}
     \label{img:3.6.1}
-    Fonte: Própria (2024).
+    Fonte: Própria (2025).
 \end{figure}
 
 Não é necessário, entretanto, utilizar apenas RNNs para codificadores e decodificadores. É possível combinar diversos modelos, como demonstra \citeonline{mun2016}, que utiliza um codificador CNN (\textit{Convolutional Neural Networks}) \cite{simard2003}, um codificador RNN e um decodificador LSTM em um modelo que gera legendas de imagens.
@@ -512,7 +578,7 @@ O \textit{decoder} recebe e extrai do estado oculto final as informações neces
         {Imagens/3.6.2-attention.png}
     \end{center}
     \label{img:3.6.2}
-    Fonte: Própria (2024).
+    Fonte: Própria (2025).
 \end{figure}
 
 De acordo com \citeonline{bahdanau2015}, o mecanismo de atenção obtém melhores resultados na maioria das tarefas que necessitam ``traduzir'' uma sequência em outra, podendo transformar um texto em seu resumo ou uma imagem em sua legenda. Porém, modelos recorrentes, mesmo utilizando o mecanismo de atenção (\textit{Attention}), dada a sua natureza sequencial, acabam realizando processos computacionais intensivos para captar o contexto de uma sequência. Por isso, foi criada a arquitetura \textit{Transformer}, uma técnica que proporciona melhorias significativas tanto na eficiência computacional quanto na performance dos modelos baseados em arquiteturas recorrentes.
@@ -531,7 +597,7 @@ A camada \textit{self-attention} (Figura \ref{img:3.6.3}) converte cada palavra 
         {Imagens/3.6.3-selfattention.png}
     \end{center}
     \label{img:3.6.3}
-    Fonte: Própria (2024).
+    Fonte: Própria (2025).
 \end{figure}
 
 Essa pontuação é dividida pela raiz quadrada do comprimento dos vetores \textit{k} ($\sqrt{d^k}$) para garantir maior estabilidade dos gradientes (Figura \ref{img:3.6.3} (g)). Com isso, o resultado de cada par de palavras é submetido à transformação \textit{softmax}, que gera valores no intervalo entre 0 e 1, sendo que a soma de todos os valores é igual a 1 (Figura \ref{img:3.6.3} (h)). Esse resultado representa a “atenção” que a rede deve dar a cada par de palavras. Em seguida, o valor do \textit{softmax} é multiplicado pelo vetor \textit{v} das palavras correspondentes (ou seja, a palavra com a qual a palavra-foco faz par), resultando em vetores \textit{s} (Figura \ref{img:3.6.3} (i)), que são somados, produzindo, finalmente, um vetor \textit{z} para a palavra-foco (Figura \ref{img:3.6.3} (j)), que incorpora as relações entre a palavra-foco e todas as demais palavras da sequência, com a devida atenção considerada \cite{vaswani2017}.
@@ -542,7 +608,7 @@ O módulo \textit{encoder} possui um conjunto de matrizes $W^q$, $Q^k$ e $W^v$, 
 
 Na etapa final, todos os vetores \textit{z} (\textit{attention heads}) são concatenados e multiplicados pela matriz de peso $W^o$, também ajustada durante o treinamento. Cada palavra acaba representada por um vetor \textit{z} de mesmo tamanho do vetor \textit{v}; esses vetores passam por uma camada \textit{feed-forward}, que produz os \textit{embeddings} finais enviados do \textit{encoder} para o \textit{decoder}.
 
-O \textit{decoder} recebe os \textit{embeddings} e os transforma em matrizes de atenção \textit{K} e \textit{V}, que serão usadas nas camadas \textit{encoder-decoder attention}. Essa camada aplica o \textit{self-attention} sobre o primeiro vetor recebido --- no exemplo da tradução, o início da sequência traduzida ---, com o mesmo processamento da camada \textit{self-attention} do \textit{encoder}. A diferença está nas matrizes: aqui, em vez de $W^k$ e $W^V$, usam-se as matrizes \textit{K} e \textit{V}, que são produto do processamento da sequência de entrada.
+O \textit{decoder} recebe os \textit{embeddings} e os transforma em matrizes de atenção \textit{K} e \textit{V}, que serão usadas nas camadas \textit{encoder-decoder attention}. Essa camada aplica o \textit{self-attention} sobre o primeiro vetor recebido (no exemplo da tradução, o início da sequência traduzida), com o mesmo processamento da camada \textit{self-attention} do \textit{encoder}. A diferença está nas matrizes: aqui, em vez de $W^k$ e $W^V$, usam-se as matrizes \textit{K} e \textit{V}, que são produto do processamento da sequência de entrada.
 
 O resultado da pilha que forma o \textit{decoder} é, da mesma forma que no \textit{encoder}, um \textit{embedding} de comprimento igual ao \textit{embedding} que representa o texto original. Esse \textit{embedding} passa por uma camada linear, convertendo-o em um vetor que, no exemplo de tradução, tem comprimento igual ao do vocabulário do segundo idioma (português), resultando na representação de cada uma das palavras traduzidas.
 
@@ -561,7 +627,7 @@ Esse vetor é ativado pela função \textit{softmax}, resultando em um vetor de 
 
 Por essas razões, o \textit{transformer} acabou ultrapassando RNNs e LSTMs em uma série de tarefas. As palavras não precisam entrar na rede na ordem original: todas são processadas ao mesmo tempo, o que abre espaço para paralelização e ganho de velocidade. O mecanismo de atenção, por sua vez, captura relações entre palavras distantes na sequência, ajudando a precisão \cite{popel2018}.
 
-Há ainda dois detalhes da arquitetura: depois de cada unidade de atenção e \textit{feed-forward} existem camadas de adição e normalização \cite{popel2018}; e cada \textit{embedding} recebe um \textit{positional encoding}, que reintroduz a ordem das palavras --- sem ele, o modelo trataria a sequência como um saco de palavras \cite{vaswani2017}. A Figura \ref{img:3.6.5} mostra a configuração de uma pilha do \textit{encoder} e do \textit{decoder}.
+Há ainda dois detalhes da arquitetura: depois de cada unidade de atenção e \textit{feed-forward} existem camadas de adição e normalização \cite{popel2018}; e cada \textit{embedding} recebe um \textit{positional encoding}, que reintroduz a ordem das palavras; sem ele, o modelo trataria a sequência como um saco de palavras \cite{vaswani2017}. A Figura \ref{img:3.6.5} mostra a configuração de uma pilha do \textit{encoder} e do \textit{decoder}.
 
 \begin{figure}[htb]
     \centering
@@ -583,20 +649,20 @@ O treinamento de um LLM costuma seguir o paradigma de aprendizado não supervisi
 
 À medida que o modelo aprende os padrões de associação entre palavras, ganha capacidade de prever a estrutura de frases com base em probabilidade. O resultado é um modelo capaz de capturar relações complexas entre palavras e frases \cite{touvron2023}.
 
-A escala que sustenta esses modelos vem com um custo: o volume de dados e a quantidade de cálculos probabilísticos exigem hardware especializado. GPUs --- unidades de processamento gráfico --- entram no jogo justamente por processarem cargas pesadas em paralelo, o que as torna o hardware natural para LLMs \cite{strubell2019}.
+A escala que sustenta esses modelos vem com um custo: o volume de dados e a quantidade de cálculos probabilísticos exigem hardware especializado. GPUs (unidades de processamento gráfico) entram no jogo justamente por processarem cargas pesadas em paralelo, o que as torna o hardware natural para LLMs \cite{strubell2019}.
 
 A arquitetura por trás do desempenho desses modelos é o \textit{Transformer}: seus parâmetros absorvem as dependências e relações contextuais entre os elementos da sequência, e definem os limites a partir dos quais é possível analisar volumes massivos de dados \cite{naveed2024}.
 
 O lançamento do ChatGPT e do GPT-4 (\textit{Generative Pre-trained Transformer}), pela OpenAI, virou a chave da percepção sobre LLMs \cite{openai2024}. Apesar do desempenho notável, a OpenAI optou por não publicar detalhes da estratégia de treinamento nem os pesos do modelo.
 
-Como resposta a esse fechamento, a Meta lançou o LLaMA (\textit{Large Language Model Meta AI}), de código aberto, em tamanhos que vão de 7 a 405 bilhões de parâmetros. Segundo os autores, o LLaMA atinge desempenho equivalente ao dos principais modelos --- caso do GPT-4 --- e fica próximo do estado da arte em uma variedade de tarefas \cite{touvron2023}. O treinamento envolve duas etapas principais:
+Como resposta a esse fechamento, a Meta lançou o LLaMA (\textit{Large Language Model Meta AI}), de código aberto, em tamanhos que vão de 7 a 405 bilhões de parâmetros. Segundo os autores, o LLaMA atinge desempenho equivalente ao dos principais modelos (caso do GPT-4) e fica próximo do estado da arte em uma variedade de tarefas \cite{touvron2023}. O treinamento envolve duas etapas principais:
 
 \begin{itemize}
     \item \textbf{Pré-treinamento}: no qual o modelo é treinado em grande escala usando tarefas simples como a previsão da próxima palavra \cite{llama3}.
     \item \textbf{Pós-treinamento}: no qual o modelo é ajustado para seguir instruções, alinhar-se às preferências humanas e melhorar capacidades específicas (como a codificação) \cite{llama3}.
 \end{itemize}
 
-O modelo LLaMA, atualmente na versão 3.3, suporta nativamente multilinguismo, codificação e raciocínio. Seu maior modelo Transformer possui 405B de parâmetros e processa informações em uma janela de contexto de até 128k tokens \cite{llama3}.
+O modelo LLaMA, atualmente na versão 3.3 (2025), suporta nativamente multilinguismo, codificação e raciocínio. Seu maior modelo Transformer possui 405B de parâmetros e processa informações em uma janela de contexto de até 128k tokens \cite{llama3}.
 
 Para obter esses resultados, os autores afirmam que um grande modelo de linguagem de alta qualidade precisa de:
 
@@ -640,112 +706,46 @@ Além do LLaMA, esta pesquisa avalia outros cinco LLMs \textit{open-source} serv
 
 \textbf{Gemma.} Família de modelos \textit{open-weights} desenvolvida pelo Google DeepMind a partir da mesma pesquisa que originou o Gemini \cite{gemma2024}. Disponível em tamanhos de 2B e 7B parâmetros, o Gemma adota a arquitetura \textit{Transformer} decodificadora padrão, com SentencePiece BPE e treinamento em corpus multilíngue de cerca de 6 trilhões de \textit{tokens}, seguido de SFT e RLHF. Os relatórios técnicos apontam ganho relativo em raciocínio matemático e código em comparação com modelos abertos de porte equivalente \cite{gemma2024}.
 
-\textbf{Dolphin.} Variante \textit{fine-tuned} do Mistral~7B, criada pela Cognitive Computations sobre o dataset Dolphin --- uma reimplementação livre do conjunto Orca da Microsoft, focada em raciocínio passo a passo. O modelo herda a arquitetura e os pesos base do Mistral, mas adiciona uma camada de SFT em diálogos sintéticos longos no estilo \textit{Chain-of-Thought}, que tende a melhorar o seguimento de instruções estruturadas. É o modelo que apresenta a melhor relação custo-benefício nos experimentos desta dissertação.
+\textbf{Dolphin.} Variante \textit{fine-tuned} do Mistral~7B, criada pela Cognitive Computations sobre o dataset Dolphin, uma reimplementação livre do conjunto Orca da Microsoft, focada em raciocínio passo a passo. O modelo herda a arquitetura e os pesos base do Mistral, mas adiciona uma camada de SFT em diálogos sintéticos longos no estilo \textit{Chain-of-Thought}, que tende a melhorar o seguimento de instruções estruturadas. É o modelo que apresenta a melhor relação custo-benefício nos experimentos desta dissertação.
 
 \textbf{Alpaca.} Lançado em 2023 pelo Stanford Center for Research on Foundation Models, o Alpaca é um SFT do LLaMA original (7B) sobre 52 mil instruções autogeradas pelo método \textit{Self-Instruct} \cite{taori2023}. O experimento foi pioneiro em demonstrar que um SFT barato sobre instruções sintéticas geradas por modelos maiores (text-davinci-003, à época) conseguia aproximar o comportamento de um modelo \textit{instruction-tuned} a uma fração do custo \cite{taori2023}. O modelo serve, nesta pesquisa, como linha de base de SFT instrucional sobre um LLM aberto de primeira geração.
 
-\textbf{Qwen.} Família de modelos \textit{open-source} desenvolvida pela Alibaba Cloud, treinada em corpus de até 3 trilhões de \textit{tokens} com forte ênfase em chinês e inglês \cite{qwen2023}. Adota \textit{Transformer} decodificador com \textit{rotary positional embeddings} (RoPE) e variantes \textit{instruction-tuned} (Qwen-Chat) baseadas em SFT e RLHF. Em \textit{benchmarks} multilíngues, o Qwen costuma se aproximar dos modelos de porte equivalente, mas a fração reduzida de português no pré-treinamento influencia o desempenho observado em normas brasileiras --- inclusive a tendência, registrada nesta dissertação, de gerar saídas em chinês simplificado.
+\textbf{Qwen.} Família de modelos \textit{open-source} desenvolvida pela Alibaba Cloud, treinada em corpus de até 3 trilhões de \textit{tokens} com forte ênfase em chinês e inglês \cite{qwen2023}. Adota \textit{Transformer} decodificador com \textit{rotary positional embeddings} (RoPE) e variantes \textit{instruction-tuned} (Qwen-Chat) baseadas em SFT e RLHF. Em \textit{benchmarks} multilíngues, o Qwen costuma se aproximar dos modelos de porte equivalente, mas a fração reduzida de português no pré-treinamento influencia o desempenho observado em normas brasileiras, inclusive a tendência, registrada nesta dissertação, de gerar saídas em chinês simplificado.
 
 Os seis modelos foram escolhidos por representarem perfis complementares (peso, alinhamento, idioma, foco de \textit{fine-tuning}), por estarem disponíveis em pesos abertos sob licenças permissivas e por serem executáveis no Ollama com requisitos de hardware compatíveis com o ambiente experimental adotado.
 
-Entre as técnicas que especializam LLMs em tarefas de domínio sem alterar seus pesos, a \textit{Engenharia de Prompt} é a mais leve. Consiste em desenhar com cuidado a instrução enviada ao modelo, de forma a obter respostas concisas e adequadas ao contexto. Hoje, é prática essencial para extrair o máximo dos LLMs \cite{brown2020} --- e é a abordagem adotada nesta pesquisa.
+Entre as técnicas que especializam LLMs em tarefas de domínio sem alterar seus pesos, a \textit{Engenharia de Prompt} é a mais leve. Consiste em desenhar com cuidado a instrução enviada ao modelo, de forma a obter respostas concisas e adequadas ao contexto. Hoje, é prática essencial para extrair o máximo dos LLMs \cite{brown2020}, e é a abordagem adotada nesta pesquisa.
 
-O \textit{prompt} funciona como uma configuração do modelo para a tarefa em questão. Não se trata só de escrever uma instrução isolada: é uma habilidade que exige entendimento profundo das capacidades e limites do LLM. O processo costuma ser iterativo --- refina, repete, testa, refina de novo \cite{nascimento2024}.
+O \textit{prompt} funciona como uma configuração do modelo para a tarefa em questão. Não se trata só de escrever uma instrução isolada: é uma habilidade que exige entendimento profundo das capacidades e limites do LLM. O processo costuma ser iterativo: refina, repete, testa, refina de novo \cite{nascimento2024}.
 
-Um bom \textit{prompt} é claro e preciso: dá ao modelo o que ele precisa para compreender a tarefa e indica o formato esperado da resposta. Para a família LLaMA, Zhang argumenta que \textit{prompts} curtos e simples funcionam melhor --- o modelo entende a tarefa com mais facilidade \cite{zhang2024}.
+Um bom \textit{prompt} é claro e preciso: dá ao modelo o que ele precisa para compreender a tarefa e indica o formato esperado da resposta. Para a família LLaMA, Zhang argumenta que \textit{prompts} curtos e simples funcionam melhor, pois o modelo entende a tarefa com mais facilidade \cite{zhang2024}.
 
 \textit{Prompts} longos demais fazem o modelo perder informação relevante no meio do caminho. A quantidade de exemplos também pesa: quanto mais claros os exemplos fornecidos, mais precisa fica a extração, porque o modelo entende melhor o que se espera \cite{zhang2024}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Metodologia RASE}
-
-Para capturar informações presentes em regulamentos, estruturar a conversão dessas regras em linguagem computacional e viabilizar a verificação automática em escala, \citeonline{hjelseth2015} propôs duas metodologias complementares: a Tx3 e a RASE.
-
-A metodologia Tx3 propõe três ações a serem realizadas conforme a classificação das informações presentes nos regulamentos: 
-
-\begin{itemize}
-    \item \textbf{Transcrever (T1)}: Deve ser aplicada para instruções que podem ser diretamente transcritas em regras computáveis; 
-    \item \textbf{Transformar (T2)}: Deve ser aplicada para instruções que necessitam ser reestruturadas ou reescritas de forma a preservar o sentido original;
-    \item \textbf{Transferir (T3)}: Deve ser aplicada quando os requisitos são expressos de maneira imprecisa, sem conexão clara entre os objetivos do regulamento e os indicadores. Nestes casos, é necessária a análise de um profissional especializado.
-\end{itemize}
-
-Após a classificação do texto original, os elementos classificados como T1 e T2 são reescritos e submetidos à metodologia RASE. A metodologia RASE, baseada em conceitos semânticos, transforma documentos normativos em regras bem definidas, utilizáveis em \textit{softwares} baseados em BIM \cite{hjelseth2011}. O processo consiste na identificação de quatro operadores lógicos:
-
-\begin{itemize}
-    \item \textbf{Requisito (R)}: Expressa o dever associado, frequentemente identificado pelo imperativo “deve”. Por exemplo, na frase “Toda rota acessível de espaço privado deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux medidos a 1,00 m do chão”, o requisito é: “deve ser provida de iluminação natural ou artificial com nível mínimo de iluminância de 150 lux”.
-    \item \textbf{Aplicabilidade (A)}: Identifica a quem ou ao que o requisito se aplica. No exemplo anterior, a aplicabilidade é: “rota acessível”.
-    \item \textbf{Seleção (S)}: Indica um subconjunto da aplicabilidade. No exemplo, a seleção é: “de espaço privado”;
-    \item \textbf{Exceção (E)}: Define os elementos excluídos da regra. Completando o exemplo anterior com a norma “São aceitos níveis inferiores de iluminância para ambientes específicos, como cinemas, teatros ou outros, conforme normas técnicas específicas.”, a exceção é: “níveis inferiores para cinemas, teatros e outros”, pois isso não se aplica a regra. 
-\end{itemize}
-
-Para facilitar a visualização, utiliza-se um sistema de cores, onde de costume é utilizado: Requisitos (azul), Aplicabilidade (verde), Seleção (vermelho) e Exceção (laranja). Cada operador identificado é associado a atributos específicos:
-\begin{itemize}
-    \item \textbf{Objeto}: Termos padronizados, como “escada” ou “corrimão”.
-    \item \textbf{Propriedade (A)}: Termos classificados, como “nível de iluminância” ou “sistema de segurança”.
-    \item \textbf{Comparador}: Pode ser maior, menor, igual, diferente, entre outros.
-    \item \textbf{Valor}: Valores numéricos, unidades ou descrições.
-    \item \textbf{Unidade}: Tipo de unidade do valor numérico caso exista. 
-\end{itemize}
-
-Como exemplo, considere o texto da norma NBR 9050: “A inclinação transversal da superfície deve ser de até 2\% para pisos internos e de até 3\% para pisos externos. A inclinação longitudinal da superfície deve ser inferior a 5\%. Inclinações iguais ou superiores a 5\% são consideradas rampas e, portanto, devem atender a 6.6.” 
-
-Aplicando a metodologia Tx3 e RASE:
-
-\begin{itemize}
-    \item \textbf{Tx3 (Transcrever)}:
-    \begin{itemize}
-        \item Pisos internos devem ter inclinação transversal menor ou igual a 2\%;
-        \item Pisos externos devem ter inclinação transversal menor ou igual a 3\%;
-        \item Pisos internos devem ter inclinação longitudinal menor do que 5\%;
-        \item Pisos externos devem ter inclinação longitudinal menor do que 5\%;
-        \item Pisos com inclinação longitudinal maior ou igual a 5\% são considerados rampas e devem atender a 6.6;
-    \end{itemize}
-
-    \item \textbf{RASE (Operadores)}:
-    \begin{itemize}
-        \item A\{Pisos\} S\{internos\} R\{devem ter inclinação transversal menor ou igual a 2\%\};
-        \item A\{Pisos\} S\{externos\} R\{devem ter inclinação transversal menor ou igual a 3\%\};
-        \item A\{Pisos\} S\{internos\} R\{devem ter inclinação longitudinal menor do que 5\%\};
-        \item A\{Pisos\} S\{externos\} R\{devem ter inclinação longitudinal menor do que 5\%\};
-        \item A\{Pisos\} E\{com inclinação longitudinal maior ou igual a 5\% são consideradas rampas\} R\{devem atender a 6.6\};
-    \end{itemize}
-\end{itemize}
-
-Concluída a aplicação dos operadores RASE, gera-se o atributo correspondente a cada operador, como mostra a Figura \ref{img:3.8.1}.
-
-\begin{figure}[htb]
-    \centering
-    \caption{Utilização da metodologia RASE na NBR 9050}
-    \label{img:3.8.1}
-    \includegraphics[width=0.9\textwidth,keepaspectratio]{Imagens/3.8.1-rase.png}
-
-    Fonte: Própria (2024).
-\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Trabalhos Relacionados}
 
-A integração do BIM com tecnologias de IA generativa (IAG) --- ChatGPT e congêneres --- ainda é pouco explorada no setor AEC. O tema cobre aplicações práticas, \textit{frameworks} propostos, desafios em aberto e direções futuras, sendo objeto de uma onda recente de trabalhos.
+A integração do BIM com tecnologias de IA generativa (IAG), como ChatGPT e congêneres, ainda é pouco explorada no setor AEC. O tema cobre aplicações práticas, \textit{frameworks} propostos, desafios em aberto e direções futuras, sendo objeto de uma onda recente de trabalhos.
 
 O primeiro estudo que analisamos trata da integração entre BIM e IAG, em particular ChatGPT e Bard. Os autores identificam o uso dessas tecnologias em \textit{design} e tomada de decisão \cite{rane2023}. Em contrapartida, apontam um conjunto de desafios: falta de padronização dos dados, deficiências em segurança e a necessidade de capacitar os profissionais do setor \cite{rane2023}. Os modelos generativos ainda têm dificuldade em interpretar a semântica de dados BIM e enfrentam problemas gerais como alta demanda computacional e ausência de diretrizes éticas \cite{rane2023}. Como resposta, os autores propõem um \textit{framework} que ataca a otimização de processos, a redução de custo e tempo e a adoção da IA via interfaces mais intuitivas \cite{rane2023}.
 
 O segundo trabalho apresenta o JULE, um \textit{chatbot} projetado para gerentes de obra \cite{lin2023}. Ele combina BIM com PLN para entregar informação em tempo real no canteiro: o usuário consulta dimensões de componentes estruturais e ferramentas necessárias sem precisar abrir as interfaces convencionais do BIM \cite{lin2023}. A solução obteve alta precisão na identificação de intenção e na recuperação das informações solicitadas, melhorando o uso prático de sistemas BIM no canteiro \cite{lin2023}.
 
-Um terceiro estudo aplicou LLMs --- GPT-3.5 e GPT-4 --- a projetos BIM voltados a segurança \cite{sammou2024}. Os autores testaram os modelos em 385 questões de múltipla escolha de exames da BCSP, cobrindo gestão de sistemas, identificação de perigos e ergonomia \cite{sammou2024}. Usaram três técnicas de Engenharia de Prompt --- \textit{Prompt Direct}, \textit{Chain-of-Thought} e \textit{Few-Shot} --- e mediram precisão e consistência. O GPT-4 atingiu 84,6\% de acerto contra 73,8\% do GPT-3.5. Apesar do bom desempenho em gerenciamento e controle de perigos, ambos os modelos travaram em questões de emergência e cálculos matemáticos \cite{sammou2024}. O trabalho aponta o potencial dos modelos, mas reforça a necessidade de aprimoramento contra respostas imprecisas ou enviesadas \cite{sammou2024}.
+Um terceiro estudo aplicou LLMs (GPT-3.5 e GPT-4) a projetos BIM voltados a segurança \cite{sammou2024}. Os autores testaram os modelos em 385 questões de múltipla escolha de exames da BCSP, cobrindo gestão de sistemas, identificação de perigos e ergonomia \cite{sammou2024}. Usaram três técnicas de Engenharia de Prompt (\textit{Prompt Direct}, \textit{Chain-of-Thought} e \textit{Few-Shot}) e mediram precisão e consistência. O GPT-4 atingiu 84,6\% de acerto contra 73,8\% do GPT-3.5. Apesar do bom desempenho em gerenciamento e controle de perigos, ambos os modelos travaram em questões de emergência e cálculos matemáticos \cite{sammou2024}. O trabalho aponta o potencial dos modelos, mas reforça a necessidade de aprimoramento contra respostas imprecisas ou enviesadas \cite{sammou2024}.
 
-O quarto estudo explorou técnicas de engenharia de \textit{prompt} para otimizar LLMs no setor AEC. Os autores mostram que interações genéricas limitam a eficácia dos modelos e geram saídas desalinhadas com as necessidades do setor \cite{samsami2024}. Confiabilidade, adaptação às regulamentações e aceitação pelo mercado aparecem como barreiras adicionais. Para enfrentá-las, os pesquisadores coletaram \textit{prompts} eficazes --- instrucionais e baseados em restrições --- e testaram a abordagem em projetos reais \cite{samsami2024}. \textit{Prompts} bem desenhados reduziram erros de cronograma e melhoraram o reconhecimento de perigos. Mesmo assim, persistem alucinações em tarefas complexas e a necessidade de validação externa \cite{samsami2024}.
+O quarto estudo explorou técnicas de engenharia de \textit{prompt} para otimizar LLMs no setor AEC. Os autores mostram que interações genéricas limitam a eficácia dos modelos e geram saídas desalinhadas com as necessidades do setor \cite{samsami2024}. Confiabilidade, adaptação às regulamentações e aceitação pelo mercado aparecem como barreiras adicionais. Para enfrentá-las, os pesquisadores coletaram \textit{prompts} eficazes (instrucionais e baseados em restrições) e testaram a abordagem em projetos reais \cite{samsami2024}. \textit{Prompts} bem desenhados reduziram erros de cronograma e melhoraram o reconhecimento de perigos. Mesmo assim, persistem alucinações em tarefas complexas e a necessidade de validação externa \cite{samsami2024}.
 
-No conjunto, os quatro trabalhos oferecem um panorama relativamente atualizado da integração entre LLMs e BIM no setor AEC. Há avanços, mas pontos sensíveis seguem sem solução robusta --- interpretação semântica dos dados BIM, segurança e adaptação dos modelos às demandas específicas do setor são exemplos. O campo segue aberto para pesquisa e inovação.
+No conjunto, os quatro trabalhos oferecem um panorama relativamente atualizado da integração entre LLMs e BIM no setor AEC. Há avanços, mas pontos sensíveis seguem sem solução robusta: interpretação semântica dos dados BIM, segurança e adaptação dos modelos às demandas específicas do setor são exemplos. O campo segue aberto para pesquisa e inovação.
 
 \subsection{Análise dos Trabalhos Relacionados}
 
-A integração entre BIM, LLMs e IA generativa no setor AEC já mostra avanços, mas o terreno ainda é acidentado. O primeiro estudo identifica ganhos em \textit{design} e tomada de decisão a partir de ChatGPT e Bard. Os obstáculos relatados --- falta de padronização dos dados, segurança e complexidade semântica dos dados BIM --- continuam abertos \cite{rane2023}. Faz sentido usar LLM aqui pela capacidade de varrer grandes volumes e produzir \textit{insights}; o limite continua sendo a interpretação semântica.
+A integração entre BIM, LLMs e IA generativa no setor AEC já mostra avanços, mas o terreno ainda é acidentado. O primeiro estudo identifica ganhos em \textit{design} e tomada de decisão a partir de ChatGPT e Bard. Os obstáculos relatados (falta de padronização dos dados, segurança e complexidade semântica dos dados BIM) continuam abertos \cite{rane2023}. Faz sentido usar LLM aqui pela capacidade de varrer grandes volumes e produzir \textit{insights}; o limite continua sendo a interpretação semântica.
 
-O segundo estudo, sobre o JULE, combina BIM com PLN e mostra ganhos concretos no canteiro: consultas rápidas, sem depender das interfaces tradicionais. A condição para esse ganho é ter dados BIM bem estruturados --- e é aí que aparece a barreira. Falhas semânticas e dificuldades de adaptar os dados ao modelo seguem como pontos sensíveis \cite{lin2023}. Para interpretar regras e padrões regulatórios, os LLMs continuam sendo um caminho atraente pela agilidade na recuperação.
+O segundo estudo, sobre o JULE, combina BIM com PLN e mostra ganhos concretos no canteiro: consultas rápidas, sem depender das interfaces tradicionais. A condição para esse ganho é ter dados BIM bem estruturados, e é aí que aparece a barreira. Falhas semânticas e dificuldades de adaptar os dados ao modelo seguem como pontos sensíveis \cite{lin2023}. Para interpretar regras e padrões regulatórios, os LLMs continuam sendo um caminho atraente pela agilidade na recuperação.
 
-O terceiro trabalho aplicou GPT-3.5 e GPT-4 à segurança em BIM e teve resultados desiguais: precisão considerável no agregado, mas queda visível em questões complexas como emergências e cálculos. O ponto fraco fica claro --- confiabilidade em questões técnicas. Os LLMs interpretam normas e regulamentos, mas exigem ajuste para evitar respostas imprecisas ou enviesadas \cite{sammou2024}.
+O terceiro trabalho aplicou GPT-3.5 e GPT-4 à segurança em BIM e teve resultados desiguais: precisão considerável no agregado, mas queda visível em questões complexas como emergências e cálculos. O ponto fraco fica claro: confiabilidade em questões técnicas. Os LLMs interpretam normas e regulamentos, mas exigem ajuste para evitar respostas imprecisas ou enviesadas \cite{sammou2024}.
 
-O quarto estudo fecha o quadro com uma constatação prática: \textit{prompts} genéricos não funcionam no setor AEC. Trocá-los por \textit{prompts} específicos melhorou a precisão, ainda que alucinações em tarefas complexas e a necessidade de validação externa não tenham sumido \cite{samsami2024}. Adaptar o modelo às regulamentações do setor é um requisito de viabilidade --- e o uso de LLMs para interpretar regras regulatórias se mostra útil, embora ainda dependente de ajustes finos e revisão humana.
+O quarto estudo fecha o quadro com uma constatação prática: \textit{prompts} genéricos não funcionam no setor AEC. Trocá-los por \textit{prompts} específicos melhorou a precisão, ainda que alucinações em tarefas complexas e a necessidade de validação externa não tenham sumido \cite{samsami2024}. Adaptar o modelo às regulamentações do setor é um requisito de viabilidade, e o uso de LLMs para interpretar regras regulatórias se mostra útil, embora ainda dependente de ajustes finos e revisão humana.
 
 \textbf{Diferencial desta pesquisa.} Os trabalhos revisados concentram-se em LLMs proprietários (ChatGPT, GPT-3.5, GPT-4, Bard) e em aplicações pontuais de Engenharia de Prompt, sem comparações sistemáticas entre modelos \textit{open-source} nem decomposição explícita da tarefa em níveis. Esta dissertação distingue-se ao avaliar comparativamente seis LLMs \textit{open-source} servidos localmente via Ollama (Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen), aplicando-os à conversão de normas brasileiras da AEC para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3) e em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3). A avaliação combina métricas lexicais, semânticas, de distância e voltadas para geração (BERTScore e ROUGE-L), complementadas por métricas de classificação, oferecendo um retrato multidimensional do desempenho de cada modelo.

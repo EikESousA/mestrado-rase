@@ -4,7 +4,7 @@ Este capítulo descreve a metodologia da pesquisa, que se sustenta em três deci
 
 \section{Visão Geral}
 
-A pesquisa avaliou LLMs \textit{open-source} na conversão de normas técnicas da AEC para representações computáveis no formato RASE, usando \textbf{somente Engenharia de Prompt}. A conversão foi modelada como um processo de normalização em três níveis: N1 segmenta a sentença normativa em regras atômicas; N2 identifica os operadores RASE; N3 estrutura a saída em JSON. Seis modelos foram comparados em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3) sobre um \textit{dataset} de 79 normas brasileiras anotadas, com treze métricas no total --- nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação derivadas da matriz de confusão. O nível N3 exige um critério de avaliação adicional (correspondência exata por campo do JSON), tratado em EN3 e em EN1N2N3 no capítulo de Resultados. A Figura~\ref{img:4.1} mostra o \textit{pipeline} do começo ao fim --- do texto bruto à representação RASE ---, com os \textit{prompts} usados em cada nível, o servidor Ollama que hospeda os modelos e a etapa de validação par a par contra o \textit{dataset} de referência.
+A pesquisa avaliou LLMs \textit{open-source} na conversão de normas técnicas da AEC para representações computáveis no formato RASE, usando somente Engenharia de Prompt. A conversão foi modelada como um processo de normalização em três níveis: N1 segmenta a sentença normativa em regras atômicas; N2 identifica os operadores RASE; N3 estrutura a saída em JSON. Seis modelos foram comparados em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3) sobre um \textit{dataset} de 79 normas brasileiras anotadas, com treze métricas no total: nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação derivadas da matriz de confusão. O nível N3 exige um critério de avaliação adicional (correspondência exata por campo do JSON), tratado em EN3 e em EN1N2N3 no capítulo de Resultados. A Figura~\ref{img:4.1} mostra o \textit{pipeline} do começo ao fim (do texto bruto à representação RASE), com os \textit{prompts} usados em cada nível, o servidor Ollama que hospeda os modelos e a etapa de validação par a par contra o \textit{dataset} de referência.
 
 \begin{figure}[ht]
 \centering
@@ -15,45 +15,45 @@ A pesquisa avaliou LLMs \textit{open-source} na conversão de normas técnicas d
 
 \section{Necessidade de Normalização em Três Níveis}
 
-Sair do texto bruto de uma norma e chegar à representação RASE em JSON exige três raciocínios distintos: segmentação sintática, classificação semântica e extração de atributos estruturados. Pedir tudo isso em uma única chamada ao LLM costuma degradar a saída --- aparecem alucinações, omissões e JSONs inválidos. Decompor em três níveis sucessivos isola cada decisão, mantém o escopo de cada chamada bem delimitado e permite validar cada etapa em separado.
+Sair do texto bruto de uma norma e chegar à representação RASE em JSON exige três raciocínios distintos: segmentação sintática, classificação semântica e extração de atributos estruturados. Pedir tudo isso em uma única chamada ao LLM costuma degradar a saída: aparecem alucinações, omissões e JSONs inválidos. Decompor em três níveis sucessivos isola cada decisão, mantém o escopo de cada chamada bem delimitado e permite validar cada etapa em separado.
 
-\subsection{N1 --- Segmentação Atômica}
+\subsection{N1: Segmentação Atômica}
 
 Sentenças normativas costumam embutir mais de uma regra coordenada. Veja o trecho ``A inclinação transversal deve ser de até 2\% para pisos internos e de até 3\% para pisos externos'': são duas regras computáveis em uma mesma frase. O N1 existe para quebrar a sentença original em itens atômicos, com uma única regra por item. Sem essa segmentação, as etapas seguintes não conseguem atribuir corretamente os operadores RASE.
 
 O \textit{prompt} N1 vive em um arquivo de texto próprio. Instrui o modelo a produzir sentenças curtas e diretas, uma regra por linha, sem inventar elementos, e traz um exemplo demonstrativo.
 
-\subsection{N2 --- Identificação dos Operadores RASE}
+\subsection{N2: Identificação dos Operadores RASE}
 
-A partir de uma regra atômica vinda do N1, o N2 identifica quais trechos correspondem a Requisito (R), Aplicabilidade (A), Seleção (S) e Exceção (E), conforme a metodologia RASE. Essa classificação é o coração da formalização --- sem ela, o texto continua em linguagem natural.
+A partir de uma regra atômica vinda do N1, o N2 identifica quais trechos correspondem a Requisito (R), Aplicabilidade (A), Seleção (S) e Exceção (E), conforme a metodologia RASE. Essa classificação é o coração da formalização: sem ela, o texto continua em linguagem natural.
 
 O \textit{prompt} N2 também é mantido em arquivo próprio. Fixa a ordem dos quatro operadores e exige um formato exato de saída em quatro linhas, marcando o campo vazio com aspas duplas (\verb|""|). Um exemplo único embutido serve de âncora para o modelo.
 
-\subsection{N3 --- Estruturação Semântica em JSON}
+\subsection{N3: Estruturação Semântica em JSON}
 
 Classificar um trecho como R, A, S ou E ainda deixa o conteúdo em linguagem natural. Para que a regra possa ser verificada automaticamente contra um modelo BIM, é preciso extrair o tripé \textit{objeto--propriedade--valor}, completado por \textit{comparador} e \textit{unidade}. O N3 produz esse JSON com os campos \verb|type|, \verb|object|, \verb|property|, \verb|comparation|, \verb|target| e \verb|unit|.
 
-Como cada operador RASE tem natureza distinta, optei por \textbf{um \textit{prompt} por operador} em N3 --- arquivos de texto separados para Aplicabilidade, Requisito, Seleção e Exceção. A Aplicabilidade descreve \textit{a quem} a regra se aplica; o Requisito, \textit{o que} é exigido; a Seleção restringe o escopo; a Exceção define os casos não cobertos. Cada \textit{prompt} traz o esquema JSON explícito, heurísticas de mapeamento por padrões textuais comuns (por exemplo, ``uso público'' $\rightarrow$ \verb|property "uso", comparation "=", target "público"|) e exemplos \textit{few-shot} no próprio arquivo.
+Como cada operador RASE tem natureza distinta, optei por \textbf{um \textit{prompt} por operador} em N3: arquivos de texto separados para Aplicabilidade, Requisito, Seleção e Exceção. A Aplicabilidade descreve \textit{a quem} a regra se aplica; o Requisito, \textit{o que} é exigido; a Seleção restringe o escopo; a Exceção define os casos não cobertos. Cada \textit{prompt} traz o esquema JSON explícito, heurísticas de mapeamento por padrões textuais comuns (por exemplo, ``uso público'' $\rightarrow$ \verb|property "uso", comparation "=", target "público"|) e exemplos \textit{few-shot} no próprio arquivo.
 
 \section{Engenharia de Prompt}
 
-A especialização dos LLMs foi feita por Engenharia de Prompt --- nenhuma alteração de pesos, nenhuma infraestrutura de recuperação. Toda a adaptação à tarefa vive nos \textit{prompts}, organizados em arquivos de texto por nível e por operador. Três técnicas clássicas foram aplicadas, cada uma escolhida pela natureza do nível em que atua.
+A especialização dos LLMs foi feita por Engenharia de Prompt, sem alteração de pesos nem infraestrutura de recuperação. Toda a adaptação à tarefa vive nos \textit{prompts}, organizados em arquivos de texto por nível e por operador. Três técnicas clássicas foram aplicadas, cada uma escolhida pela natureza do nível em que atua.
 
 \subsection{\textit{Prompt Direct}}
 
-O \textit{Prompt Direct} é uma instrução direta e objetiva, sem cadeia explícita de raciocínio. Foi a escolha para o \textbf{N1}, cuja tarefa --- segmentar uma sentença em sub-regras --- é estruturalmente simples e não exige raciocínio profundo sobre semântica normativa. Como vantagens, gasta menos \textit{tokens} e tem menor latência; como risco, pode perder robustez em sentenças longas ou ambíguas. O \textit{prompt} do N1 reúne cinco regras imperativas e um exemplo curto, sem passo a passo de raciocínio.
+O \textit{Prompt Direct} é uma instrução direta e objetiva, sem cadeia explícita de raciocínio. Foi a escolha para o \textbf{N1}, cuja tarefa, segmentar uma sentença em sub-regras, é estruturalmente simples e não exige raciocínio profundo sobre semântica normativa. Como vantagens, gasta menos \textit{tokens} e tem menor latência; como risco, pode perder robustez em sentenças longas ou ambíguas. O \textit{prompt} do N1 reúne cinco regras imperativas e um exemplo curto, sem passo a passo de raciocínio.
 
 \subsection{\textit{Prompt Chain-of-Thought}}
 
-O \textit{Chain-of-Thought} pede ao modelo que explicite o raciocínio em etapas antes de responder. Coube ao \textbf{N2}, em que classificar um trecho como R, A, S ou E depende de entender o papel sintático-semântico dentro da regra. A técnica reduz alucinações e melhora a classificação em sentenças com múltiplos operadores --- ao preço de mais \textit{tokens} consumidos. O \textit{prompt} do N2 fixa a ordem dos passos (1.~aplicabilidade $\rightarrow$ 2.~seleção $\rightarrow$ 3.~exceção $\rightarrow$ 4.~requisito), guiando o modelo por uma cadeia de decisão explícita.
+O \textit{Chain-of-Thought} pede ao modelo que explicite o raciocínio em etapas antes de responder. Coube ao \textbf{N2}, em que classificar um trecho como R, A, S ou E depende de entender o papel sintático-semântico dentro da regra. A técnica reduz alucinações e melhora a classificação em sentenças com múltiplos operadores, ao preço de mais \textit{tokens} consumidos. O \textit{prompt} do N2 fixa a ordem dos passos (1.~aplicabilidade $\rightarrow$ 2.~seleção $\rightarrow$ 3.~exceção $\rightarrow$ 4.~requisito), guiando o modelo por uma cadeia de decisão explícita.
 
 \subsection{\textit{Prompt Few-Shot}}
 
-O \textit{Few-Shot} embute, no próprio \textit{prompt}, exemplos completos de entrada e saída --- e isso ancora o formato esperado. Foi aplicado ao \textbf{N3}, em que a saída precisa obedecer a um esquema JSON rígido: sem exemplos, os modelos divergem do formato ou inventam campos. A técnica entrega alta aderência ao formato e ao vocabulário esperado, mas consome parte da janela de contexto com os exemplos. Cada \textit{prompt} de N3 (um por operador RASE) traz de dois a quatro exemplos completos no padrão \textit{operador N2} $\rightarrow$ \textit{JSON}.
+O \textit{Few-Shot} embute, no próprio \textit{prompt}, exemplos completos de entrada e saída, o que ancora o formato esperado. Foi aplicado ao \textbf{N3}, em que a saída precisa obedecer a um esquema JSON rígido: sem exemplos, os modelos divergem do formato ou inventam campos. A técnica entrega alta aderência ao formato e ao vocabulário esperado, mas consome parte da janela de contexto com os exemplos. Cada \textit{prompt} de N3 (um por operador RASE) traz de dois a quatro exemplos completos no padrão \textit{operador N2} $\rightarrow$ \textit{JSON}.
 
 \section{Modelos LLM Avaliados}
 
-Os seis modelos \textit{open-source} rodaram localmente via \textbf{Ollama}~\cite{ollama2024} (\texttt{ollama serve}), conforme a Tabela~\ref{tab:modelos_llm}. Todos foram executados no mesmo \textit{hardware}, com os mesmos \textit{prompts} e o mesmo \textit{dataset} --- a comparabilidade entre os resultados depende dessa padronização. Cinco dos seis modelos vêm de \textit{checkpoints} adaptados para português brasileiro publicados por terceiros (em especial \texttt{cnmoro/*}, \texttt{splitpierre/*} e \texttt{brunoconterato/*}), todos publicamente disponíveis no registro do Ollama; o Llama foi avaliado em sua versão oficial \texttt{llama3.1:8b}. A coluna \textit{tag} identifica de forma precisa o \textit{checkpoint} reprodutível usado em cada caso.
+Os seis modelos \textit{open-source} rodaram localmente via \textbf{Ollama}~\cite{ollama2024} (\texttt{ollama serve}), conforme a Tabela~\ref{tab:modelos_llm}. Todos foram executados no mesmo \textit{hardware}, com os mesmos \textit{prompts} e o mesmo \textit{dataset}, pois a comparabilidade entre os resultados depende dessa padronização. Cinco dos seis modelos vêm de \textit{checkpoints} adaptados para português brasileiro publicados por terceiros (em especial \texttt{cnmoro/*}, \texttt{splitpierre/*} e \texttt{brunoconterato/*}), todos publicamente disponíveis no registro do Ollama; o Llama foi avaliado em sua versão oficial \texttt{llama3.1:8b}. A coluna \textit{tag} identifica de forma precisa o \textit{checkpoint} reprodutível usado em cada caso.
 
 \begin{table}[ht]
 \centering
@@ -94,7 +94,7 @@ O mesmo arquivo serve como entrada para os geradores e como \textit{target} de r
 
 A orquestração dos experimentos vive em um \textit{script} principal, que oferece um menu para a etapa de geração e outro para a de validação. As saídas de cada modelo, em cada experimento, são persistidas em arquivos JSON próprios, no padrão \texttt{generate\_<nível>\_<modelo>.json} (por exemplo, \texttt{generate\_n1\_alpaca.json} para o N1 produzido pelo Alpaca). Os resultados das validações seguem o mesmo princípio, agora um arquivo por experimento, no padrão \texttt{validate\_<experimento>.json} (\texttt{validate\_n1.json}, \texttt{validate\_n2.json}, \texttt{validate\_n1n2.json}, \texttt{validate\_n3.json} e \texttt{validate\_n1n2n3.json}).
 
-Para isolar o que cada nível contribui --- e medir como o erro se propaga ---, defini cinco experimentos, ilustrados na Figura~\ref{img:4.2}. EN1, EN2 e EN3 avaliam cada etapa em separado: cada um deles recebe o nível anterior \textit{de referência} (extraído do \textit{dataset}) como entrada, eliminando o ruído das etapas precedentes. Em paralelo, EN1N2 simula o \textit{pipeline} encadeado dos dois primeiros níveis --- o N1 produzido pelo próprio modelo alimenta sua etapa N2 ---, e EN1N2N3 fecha o \textit{pipeline} completo N1$\rightarrow$N2$\rightarrow$N3, encadeando as três etapas com saídas geradas pelo próprio modelo. Esses dois últimos cenários expõem a \textbf{propagação de erros} ao longo da cadeia.
+Para isolar o que cada nível contribui e medir como o erro se propaga, defini cinco experimentos, ilustrados na Figura~\ref{img:4.2}. EN1, EN2 e EN3 avaliam cada etapa em separado: cada um deles recebe o nível anterior \textit{de referência} (extraído do \textit{dataset}) como entrada, eliminando o ruído das etapas precedentes. Em paralelo, EN1N2 simula o \textit{pipeline} encadeado dos dois primeiros níveis (o N1 produzido pelo próprio modelo alimenta sua etapa N2), e EN1N2N3 fecha o \textit{pipeline} completo N1$\rightarrow$N2$\rightarrow$N3, encadeando as três etapas com saídas geradas pelo próprio modelo. Esses dois últimos cenários expõem a \textbf{propagação de erros} ao longo da cadeia.
 
 \begin{figure}[ht]
 \centering
@@ -121,11 +121,11 @@ O EN3 avalia o N3 em isolamento, novamente sem o ruído das etapas anteriores. A
 
 \subsection{Experimento EN1N2N3}
 
-O EN1N2N3 fecha o \textit{pipeline} encadeado: o N1 do modelo alimenta o N2 do mesmo modelo, que alimenta o N3 do mesmo modelo. A saída final --- JSON estruturado por operador --- é comparada à referência do \textit{dataset}. Este cenário replica o uso real do \textit{pipeline} em produção e expõe a \textbf{propagação de erros} ao longo dos três níveis.
+O EN1N2N3 fecha o \textit{pipeline} encadeado: o N1 do modelo alimenta o N2 do mesmo modelo, que alimenta o N3 do mesmo modelo. A saída final (JSON estruturado por operador) é comparada à referência do \textit{dataset}. Este cenário replica o uso real do \textit{pipeline} em produção e expõe a \textbf{propagação de erros} ao longo dos três níveis.
 
 \section{Métricas de Validação}
 
-A avaliação combinou treze métricas em cinco famílias: similaridade lexical, similaridade semântica, distância semântica, métricas voltadas para geração e métricas de classificação. As nove primeiras (similaridade) são calculadas par a par entre saída prevista e referência do \textit{dataset}, sempre em escala normalizada $[0,1]$ --- quanto maior, mais próxima a saída está da referência. As quatro métricas de classificação derivam da matriz de confusão entre saída e referência.
+A avaliação combinou treze métricas em cinco famílias: similaridade lexical, similaridade semântica, distância semântica, métricas voltadas para geração e métricas de classificação. As nove primeiras (similaridade) são calculadas par a par entre saída prevista e referência do \textit{dataset}, sempre em escala normalizada $[0,1]$: quanto maior, mais próxima a saída está da referência. As quatro métricas de classificação derivam da matriz de confusão entre saída e referência.
 
 \subsection{Similaridade Lexical}
 
@@ -191,4 +191,4 @@ Todas as execuções foram conduzidas em uma única estação de trabalho, com a
     \item \textbf{Bibliotecas principais}: \texttt{sentence-transformers}, \texttt{gensim}, \texttt{fuzzywuzzy} e \texttt{scikit-learn} (para TF-IDF).
 \end{itemize}
 
-Padronizar ambiente, \textit{prompts} e \textit{dataset} entre os seis modelos é o que permite atribuir as diferenças observadas nos capítulos seguintes ao comportamento dos próprios LLMs --- e não a oscilações de infraestrutura ou de protocolo de avaliação.
+Padronizar ambiente, \textit{prompts} e \textit{dataset} entre os seis modelos é o que permite atribuir as diferenças observadas nos capítulos seguintes ao comportamento dos próprios LLMs, e não a oscilações de infraestrutura ou de protocolo de avaliação.

@@ -472,6 +472,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+INPUT ./Imagens/3.8.1-rase.png
+INPUT ./Imagens/3.8.1-rase.png
+INPUT ./Imagens/3.8.1-rase.png
+INPUT ./Imagens/3.8.1-rase.png
+INPUT ./Imagens/3.8.1-rase.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-BoldItalic-tlf-t1.tfm
 INPUT ./Imagens/3.3.1-matrizconfusao.png
 INPUT ./Imagens/3.3.1-matrizconfusao.png
@@ -561,11 +566,6 @@ INPUT ./Imagens/3.6.5-camadastransformer.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-BoldItalic-tlf-t1.tfm
-INPUT ./Imagens/3.8.1-rase.png
-INPUT ./Imagens/3.8.1-rase.png
-INPUT ./Imagens/3.8.1-rase.png
-INPUT ./Imagens/3.8.1-rase.png
-INPUT ./Imagens/3.8.1-rase.png
 INPUT ./Conteudo/04_Metodo.tex
 INPUT ./Conteudo/04_Metodo.tex
 OUTPUT Conteudo/04_Metodo.aux
