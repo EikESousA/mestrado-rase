@@ -5,14 +5,6 @@
 \providecommand{\abntbstabout}[1]{}
 \abntbstabout{v-1.9.7 }
 
-\bibitem[{Abdel-Nasser} e {Mahmoud} 2019]{abdelnasser2019}
-\abntrefinfo{{Abdel-Nasser} e {Mahmoud}}{{Abdel-Nasser}; {Mahmoud}}{2019}
-{{Abdel-Nasser}, M.; {Mahmoud}, K. Accurate photovoltaic power forecasting
-  models using deep lstm-rnn.
-\emph{Neural Computing \& Applications}, Springer London, p. 2727–2740, jul
-  2019.
-ISSN 0941-0643.}
-
 \bibitem[AI@Meta 2024]{llama3}
 \abntrefinfo{AI@Meta}{AI@META}{2024}
 {AI@META. Llama 3 model card.
@@ -284,6 +276,14 @@ ISBN 0131873210.}
   \emph{Proceedings of the 32nd International Conference on Machine Learning
   (ICML)}. [S.l.: s.n.], 2015. p. 957--966.}
 
+\bibitem[{Lecun} et al. 1998]{lecun1998}
+\abntrefinfo{{Lecun} et al.}{{Lecun} et al.}{1998}
+{{Lecun}, Y. et al. Gradient-based learning applied to document recognition.
+  In:  \emph{Gradient-based learning applied to document recognition}. [S.l.]:
+  Institute of Electrical and Electronics Engineers Inc., 1998. v.~86, n.~11,
+  p. 2278--2324.
+ISSN 0018-9219.}
+
 \bibitem[{Liddy} 1998]{liddy1998}
 \abntrefinfo{{Liddy}}{{Liddy}}{1998}
 {{Liddy}, E.~D. \emph{Enhanced text retrieval using natural language
@@ -419,12 +419,12 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2303.08774}.}
   Linguistics, 2014. p. 1532--1543. Dispon{\'\i}vel em:
   \url{https://aclanthology.org/D14-1162/}.}
 
-\bibitem[Penttilä 2016]{penttila2016}
-\abntrefinfo{Penttilä}{PENTTILä}{2016}
+\bibitem[Penttilä 2006]{penttila2016}
+\abntrefinfo{Penttilä}{PENTTILä}{2006}
 {PENTTILä, H. Describing the changes in architectural information technology
   to understand design complexity and free-form architectural expression.
 \emph{Journal of Information Technology in Construction}, v.~11, n.~4, 02
-  2016.}
+  2006.}
 
 \bibitem[{Popel} e {Bojar} 2018]{popel2018}
 \abntrefinfo{{Popel} e {Bojar}}{{Popel}; {Bojar}}{2018}
@@ -438,13 +438,6 @@ ISSN 1804-0462.}
 {RAFAILOV, R. et al. \emph{Direct Preference Optimization: Your Language Model
   is Secretly a Reward Model}. 2024.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2305.18290}.}
-
-\bibitem[{Ramakrishnan} e {Soni} 2018]{ramakrishnan2018}
-\abntrefinfo{{Ramakrishnan} e {Soni}}{{Ramakrishnan}; {Soni}}{2018}
-{{Ramakrishnan}, N.; {Soni}, T. Network traffic prediction using recurrent
-  neural networks.
-\emph{2018 17th IEEE International Conference on Machine Learning and
-  Applications (ICMLA)}, p. 187--193, 2018.}
 
 \bibitem[Rane, Choudhary e Rane 2023]{rane2023}
 \abntrefinfo{Rane, Choudhary e Rane}{RANE; CHOUDHARY; RANE}{2023}
@@ -537,13 +530,6 @@ Dispon{\'\i}vel em:
 \emph{Neural Networks}, Elsevier BV, v.~61, p. 85–117, Jan 2015.
 ISSN 0893-6080.}
 
-\bibitem[{Sensoy}, {Kaplan} e {Kandemir} 2018]{sensoy2018}
-\abntrefinfo{{Sensoy}, {Kaplan} e {Kandemir}}{{Sensoy}; {Kaplan};
-  {Kandemir}}{2018}
-{{Sensoy}, M.; {Kaplan}, L.; {Kandemir}, M. Evidential deep learning to
-  quantify classification uncertainty. In:  \emph{Evidential Deep Learning to
-  Quantify Classification Uncertainty}. [S.l.: s.n.], 2018. p. 3179--3189.}
-
 \bibitem[{Shao}, {Zhu} e {Li} 2015]{shao2015}
 \abntrefinfo{{Shao}, {Zhu} e {Li}}{{Shao}; {Zhu}; {Li}}{2015}
 {{Shao}, L.; {Zhu}, F.; {Li}, X. Transfer learning for visual categorization: a
@@ -551,14 +537,6 @@ ISSN 0893-6080.}
 \emph{IEEE transactions on neural networks and learning systems}, v.~26, n.~5,
   p. 1019—1034, May 2015.
 ISSN 2162-237x.}
-
-\bibitem[{Simard}, {Steinkraus} e {Platt} 2003]{simard2003}
-\abntrefinfo{{Simard}, {Steinkraus} e {Platt}}{{Simard}; {Steinkraus};
-  {Platt}}{2003}
-{{Simard}, P.; {Steinkraus}, D.; {Platt}, J. Best practices for convolutional
-  neural networks applied to visual document analysis. In:  \emph{Seventh
-  International Conference on Document Analysis and Recognition, 2003.
-  Proceedings.} [S.l.: s.n.], 2003. p. 958--963.}
 
 \bibitem[{Soares} e {Teive} 2015]{soares2015}
 \abntrefinfo{{Soares} e {Teive}}{{Soares}; {Teive}}{2015}
@@ -603,8 +581,9 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/1906.02243}.}
 
 \bibitem[{Tafner}, {Xerez} e {Filho} 1995]{tafner1995}
 \abntrefinfo{{Tafner}, {Xerez} e {Filho}}{{Tafner}; {Xerez}; {Filho}}{1995}
-{{Tafner}, M.~A.; {Xerez}, M. de; {Filho}, E.~R. \emph{Malcon Anderson Tafner,
-  Marcos de Xerez, Eulampio Rodrigues Filho}. Belo Horizonte: Blumenau, 1995.
+{{Tafner}, M.~A.; {Xerez}, M. de; {Filho}, E.~R. \emph{Redes neurais
+  artificiais: introdução e princípios de neurocomputação}. Blumenau: Eko,
+  1995.
 ISBN 8571140502.}
 
 \bibitem[{Tai}, {Socher} e {Manning} 2015]{tai2015}
@@ -633,13 +612,6 @@ ISBN 978-85-7393-761-9.}
   Models}. 2023.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2302.13971}.}
 
-\bibitem[Vargas 2023]{fgv2023}
-\abntrefinfo{Vargas}{VARGAS}{2023}
-{VARGAS, F.~G. Digitalização na construção: O uso do bim.
-\emph{Blog do IBRE - FGV}, 2023.
-Dispon{\'\i}vel em:
-  \url{https://blogdoibre.fgv.br/posts/digitalizacao-na-construcao-o-uso-do-bim}.}
-
 \bibitem[{Vaswani} et al. 2017]{vaswani2017}
 \abntrefinfo{{Vaswani} et al.}{{Vaswani} et al.}{2017}
 {{Vaswani}, A. et al. \emph{Attention Is All You Need}. 2017.
@@ -655,12 +627,6 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/1706.03762}.}
 \abntrefinfo{{Willmott}}{{Willmott}}{1981}
 {{Willmott}, C.~J. On the validation of models.
 \emph{Physical Geography}, Taylor and Francis, v.~2, n.~2, p. 184--194, 1981.}
-
-\bibitem[Zhang et al. 2024]{zhang2024}
-\abntrefinfo{Zhang et al.}{ZHANG et al.}{2024}
-{ZHANG, R. et al. \emph{LLaMA-Adapter: Efficient Fine-tuning of Language Models
-  with Zero-init Attention}. 2024.
-Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2303.16199}.}
 
 \bibitem[Zhang et al. 2020]{zhang2020bertscore}
 \abntrefinfo{Zhang et al.}{ZHANG et al.}{2020}

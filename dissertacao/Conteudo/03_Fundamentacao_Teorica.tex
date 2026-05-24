@@ -336,7 +336,7 @@ A virada veio em 1958, quando Rosenblatt apresentou o primeiro modelo capaz de d
     \item \textbf{Camada de saída}: Produz e apresenta o resultado final.
 \end{itemize}
 
-O \textit{perceptron} de três camadas, porém, esbarra em um teto: para classificar padrões, encontra apenas uma única solução. Para problemas que exigem mais de uma, Minsky e Papert propuseram empilhar várias camadas intermediárias, criando o \textit{Multi-layer Perceptron} (MLP) \cite{minsky1969}.
+O \textit{perceptron}, porém, esbarra em um teto: \citeonline{minsky1969} demonstraram que um modelo de camada única não resolve problemas que não são linearmente separáveis, como o ou-exclusivo (XOR). A superação veio com o empilhamento de várias camadas intermediárias --- o \textit{Multi-layer Perceptron} (MLP) ---, cujo treinamento só se tornou viável anos depois, com o algoritmo de retropropagação do erro \cite{rumelhart1986}.
 
 O MLP é um conjunto de neurônios conectados em paralelo, cada conexão com um peso que mede sua influência na rede. A saída de um neurônio vira entrada de outro nas camadas intermediárias, e dessa interação em cadeia emerge a capacidade de reconhecer padrões e características \cite{soares2015}.
 
@@ -400,7 +400,7 @@ As funções de ativação mais populares são:
 
     \item \textbf{Função Leaky ReLU} ($f(x) = ax$, se x < 0 e $f(x) = x$, se x >= 0): Uma variação da ReLU que corrige o problema do gradiente zero. Quando '\textit{x}' < 0, é aplicada uma componente linear em vez de zero, garantindo um gradiente constante mesmo para valores negativos. É especialmente útil em camadas ocultas e para lidar com neurônios defeituosos \cite{feng2019}.
 
-    \item \textbf{Função Softmax}: É uma extensão da Sigmoid, projetada para problemas de classificação com múltiplas classes. Transforma as saídas de cada classe em valores entre 0 e 1, normalizando-as para que sua soma seja igual a 1. Assim, é possível interpretar os resultados como probabilidades de pertencimento a cada classe \cite{sensoy2018}.
+    \item \textbf{Função Softmax}: É uma extensão da Sigmoid, projetada para problemas de classificação com múltiplas classes. Transforma as saídas de cada classe em valores entre 0 e 1, normalizando-as para que sua soma seja igual a 1. Assim, é possível interpretar os resultados como probabilidades de pertencimento a cada classe \cite{feng2019}.
 \end{itemize}
 
 O treinamento de uma rede neural artificial multicamadas consiste em ajustar os pesos sinápticos e o bias de modo que as saídas se aproximem das saídas esperadas. Esse processo ocorre em duas etapas \cite{russel2010}:
@@ -475,7 +475,7 @@ Um dos ganhos centrais da Aprendizagem Profunda é a extração automática de c
     	Fonte: Própria (2025).
     \end{figure}
 
-A diferença entre Redes Neurais Recorrentes (RNN) e Redes Neurais Feedforward (FNN) está justamente nos ciclos: nas RNNs, a saída pode realimentar camadas anteriores. Com isso, o modelo passa a capturar dependências temporais entre os dados \cite{ramakrishnan2018}.
+A diferença entre Redes Neurais Recorrentes (RNN) e Redes Neurais Feedforward (FNN) está justamente nos ciclos: nas RNNs, a saída pode realimentar camadas anteriores. Com isso, o modelo passa a capturar dependências temporais entre os dados \cite{goodfellow2016}.
 
 Esse ciclo dá à RNN um estado interno (uma espécie de memória) que processa entradas sequenciais, característica útil em reconhecimento de fala, PLN, previsão de séries temporais e correlatos.
 
@@ -491,11 +491,11 @@ A resposta veio em 1997, com Hochreiter e Schmidhuber: o LSTM (\textit{Long Shor
 O LSTM é uma evolução da RNN. Seu funcionamento se organiza em cadeia: cada camada representa um intervalo de tempo $t$, e a rede contém células de memória, cada uma com três portões (entrada, esquecimento e saída).
 
 \begin{itemize}
-    \item \textbf{Portão de entrada (\textit{input gate})}: a partir do fluxo de dados que chega, atualiza o estado de memória da célula \cite{abdelnasser2019}.
+    \item \textbf{Portão de entrada (\textit{input gate})}: a partir do fluxo de dados que chega, atualiza o estado de memória da célula \cite{hochreiter1997}.
 
-    \item \textbf{Portão de esquecimento (\textit{forget gate})}: decide qual informação permanece na memória \cite{abdelnasser2019}.
+    \item \textbf{Portão de esquecimento (\textit{forget gate})}: decide qual informação permanece na memória \cite{hochreiter1997}.
 
-    \item \textbf{Portão de saída (\textit{output gate})}: define como a saída da célula é influenciada pela entrada atual e pela memória armazenada \cite{abdelnasser2019}.
+    \item \textbf{Portão de saída (\textit{output gate})}: define como a saída da célula é influenciada pela entrada atual e pela memória armazenada \cite{hochreiter1997}.
 \end{itemize}
 
 Segundo \citeonline{tai2015}, o primeiro passo dentro da célula LSTM é decidir o que descartar e o que manter no estado atual. Esse cálculo cabe ao portão de esquecimento, que retorna um valor entre 0 (esquecer) e 1 (manter), aplicado pela função \textit{sigmoid} (Equação~\ref{eq:3.5.1}).
@@ -544,7 +544,7 @@ RNNs e LSTMs lidam bem com sequências e foram projetadas para tarefas \textit{s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\textit{Transformers}}
 
-Por anos, redes neurais recorrentes \cite{ramakrishnan2018}, LSTMs \cite{hochreiter1997} e RNNs com portas \cite{chung2014} foram o estado da arte em modelagem de sequência. A premissa do \textit{seq2seq} é simples: receber uma sequência de dados em um domínio e devolver outra sequência em um domínio diferente, usando para isso um modelo de AM ou de Aprendizado Profundo \cite{sutskever2014}.
+Por anos, redes neurais recorrentes \cite{goodfellow2016}, LSTMs \cite{hochreiter1997} e RNNs com portas \cite{chung2014} foram o estado da arte em modelagem de sequência. A premissa do \textit{seq2seq} é simples: receber uma sequência de dados em um domínio e devolver outra sequência em um domínio diferente, usando para isso um modelo de AM ou de Aprendizado Profundo \cite{sutskever2014}.
 
 A arquitetura típica tem dois módulos: o \textit{encoder} (codificador) processa a sequência de entrada e a transforma em um contexto; o \textit{decoder} (decodificador) recebe esse contexto e produz a sequência de saída \cite{sutskever2014}. Um exemplo concreto é a tradução inglês-português: o \textit{encoder} comprime o texto em inglês em um ``contexto livre de idioma'', e o \textit{decoder} usa esse contexto para gerar a versão em português.
 
@@ -562,7 +562,7 @@ Esse contexto final é passado para a segunda RNN, o \textit{decoder}, que tamb�
     Fonte: Própria (2025).
 \end{figure}
 
-Não é necessário, entretanto, utilizar apenas RNNs para codificadores e decodificadores. É possível combinar diversos modelos, como demonstra \citeonline{mun2016}, que utiliza um codificador CNN (\textit{Convolutional Neural Networks}) \cite{simard2003}, um codificador RNN e um decodificador LSTM em um modelo que gera legendas de imagens.
+Não é necessário, entretanto, utilizar apenas RNNs para codificadores e decodificadores. É possível combinar diversos modelos, como demonstra \citeonline{mun2016}, que utiliza um codificador CNN (\textit{Convolutional Neural Networks}) \cite{lecun1998}, um codificador RNN e um decodificador LSTM em um modelo que gera legendas de imagens.
 
 Como pode ser visto na Figura \ref{img:3.6.1}, a frase original tem 7 palavras, enquanto a frase traduzida contém 5 palavras. Por isso, dependendo da complexidade do problema, e no caso de traduções, a tarefa de traduzir não se trata de um simples alinhamento das palavras individuais. É necessário que o modelo seja capaz de focar em uma palavra, caso seja necessário, ou em um trecho específico da frase, criando assim o conceito de atenção.
 
@@ -718,9 +718,9 @@ Entre as técnicas que especializam LLMs em tarefas de domínio sem alterar seus
 
 O \textit{prompt} funciona como uma configuração do modelo para a tarefa em questão. Não se trata só de escrever uma instrução isolada: é uma habilidade que exige entendimento profundo das capacidades e limites do LLM. O processo costuma ser iterativo: refina, repete, testa, refina de novo \cite{nascimento2024}.
 
-Um bom \textit{prompt} é claro e preciso: dá ao modelo o que ele precisa para compreender a tarefa e indica o formato esperado da resposta. Para a família LLaMA, Zhang argumenta que \textit{prompts} curtos e simples funcionam melhor, pois o modelo entende a tarefa com mais facilidade \cite{zhang2024}.
+Um bom \textit{prompt} é claro e preciso: dá ao modelo o que ele precisa para compreender a tarefa e indica o formato esperado da resposta. Em geral, \textit{prompts} curtos e bem estruturados favorecem o entendimento da tarefa pelo modelo \cite{nascimento2024}.
 
-\textit{Prompts} longos demais fazem o modelo perder informação relevante no meio do caminho. A quantidade de exemplos também pesa: quanto mais claros os exemplos fornecidos, mais precisa fica a extração, porque o modelo entende melhor o que se espera \cite{zhang2024}.
+\textit{Prompts} longos demais fazem o modelo perder informação relevante no meio do caminho. A quantidade de exemplos também pesa: poucos exemplos bem escolhidos (\textit{few-shot}) tornam a extração mais precisa, porque o modelo entende melhor o que se espera \cite{brown2020}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
