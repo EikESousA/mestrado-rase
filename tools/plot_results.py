@@ -155,13 +155,6 @@ def main() -> None:
     bar_plot(n2, "EN2 — Identificação RASE: modelos × métricas", OUT_DIR / "4.2.2-resultados-en2-barras.png")
     bar_plot(n1n2, "EN1N2 — Pipeline encadeado: modelos × métricas", OUT_DIR / "4.2.3-resultados-en1n2-barras.png")
 
-    heatmap(n1, "Heatmap modelo × métrica — EN1", OUT_DIR / "4.4.1-heatmap-en1.png")
-    heatmap(n2, "Heatmap modelo × métrica — EN2", OUT_DIR / "4.4.2-heatmap-en2.png")
-    heatmap(n1n2, "Heatmap modelo × métrica — EN1N2", OUT_DIR / "4.4.3-heatmap-en1n2.png")
-
-    global_mat = np.column_stack([n1.mean(axis=1), n2.mean(axis=1), n1n2.mean(axis=1)])
-    heatmap_global(global_mat, ["EN1", "EN2", "EN1N2"], OUT_DIR / "4.3.1-heatmap-global.png")
-
     print("Gerados em", OUT_DIR)
 
 

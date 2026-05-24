@@ -258,15 +258,6 @@ Alpaca  & 0{,}676 & 0{,}408 & 0{,}488 & \pior{\textbf{0{,}718}} & \pior{0{,}610}
 \end{tabular}
 \end{table}
 
-A Figura~\ref{img:4.3.1} apresenta a mesma informação em forma de \textit{heatmap}, evidenciando visualmente as zonas de queda de desempenho entre EN1 e EN2 e o destaque do Dolphin em EN1.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.7\linewidth]{Imagens/4.3.1-heatmap-global.png}
-\caption{Heatmap das médias por modelo e experimento (média das nove métricas de similaridade).}
-\label{img:4.3.1}
-\end{figure}
-
 A seguir, destacam-se as observações por modelo.
 
 \textbf{Llama.} Lidera a média global (0{,}730) e domina os experimentos do nível N3: em EN3 isolado ficou à frente em \textit{todas} as nove métricas (SBERT~0{,}947; Multilingual~0{,}928; BERTScore~0{,}925); em EN1N2N3, repetiu a liderança nas nove métricas (SBERT~0{,}834; Multilingual~0{,}853; BERTScore~0{,}882). Foi também o melhor em EN2 em sete métricas: FuzzyWuzzy (0{,}638), TF-IDF (0{,}447), SBERT (0{,}595), BERTimbau (0{,}657), Multilingual (0{,}685), BERTScore (0{,}796) e ROUGE-L (0{,}427), além da maior acurácia macro de classificação no mesmo experimento (0{,}439). No EN1N2, liderou em FuzzyWuzzy (0{,}570), SBERT (0{,}677) e BERTimbau (0{,}721), empatando com o Dolphin em Multilingual (0{,}749). É a escolha quando se tolera o custo computacional.
@@ -292,29 +283,6 @@ A seguir, destacam-se as observações por modelo.
 \textbf{Métricas de distância (WMD).} Desempenho intermediário, entre lexicais e semânticas. Os valores foram mais altos em EN1 (WMD\_ft~0{,}716; WMD\_nilc~0{,}688) e em EN3 (WMD\_ft~0{,}846; WMD\_nilc~0{,}842), refletindo a proximidade lexical maior entre as saídas e o texto/JSON de referência nesses dois cenários.
 
 \textbf{Métricas de classificação.} Em EN1, a F1 macro chega a 0{,}806 (Dolphin), o que indica que a maior parte das sentenças atômicas é segmentada corretamente. Em EN2, a F1 desaba para 0{,}286 no melhor caso (Dolphin), com colapso em Seleção e Exceção: F1 próxima de zero para todos os modelos. Esses dois operadores são especialmente difíceis de identificar mesmo para os líderes. Em EN3, a baixa precisão por correspondência exata (precisão macro abaixo de 4\% para todos os modelos) mostra que o emparelhamento \textit{token} a \textit{token} é severo demais para um campo cuja semântica resiste a variações léxicas legítimas.
-
-As Figuras~\ref{img:4.4.1}, \ref{img:4.4.2} e \ref{img:4.4.3} apresentam o mapa de calor modelo $\times$ métrica em cada experimento, com os valores numéricos sobrepostos.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.9\linewidth]{Imagens/4.4.1-heatmap-en1.png}
-\caption{Heatmap modelo $\times$ métrica em EN1.}
-\label{img:4.4.1}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.9\linewidth]{Imagens/4.4.2-heatmap-en2.png}
-\caption{Heatmap modelo $\times$ métrica em EN2.}
-\label{img:4.4.2}
-\end{figure}
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.9\linewidth]{Imagens/4.4.3-heatmap-en1n2.png}
-\caption{Heatmap modelo $\times$ métrica em EN1N2.}
-\label{img:4.4.3}
-\end{figure}
 
 \section{Tempo de Execução}
 \label{sec:tempo}
@@ -425,4 +393,4 @@ A leitura conjunta dos três experimentos e das treze métricas permite consolid
 
 \textbf{4. Qwen e Alpaca não são recomendados.} Ambos têm desempenho consistentemente inferior em todas as métricas e experimentos. O Qwen ainda registra a maior latência do \textit{pipeline} encadeado (2h48min) e tende a gerar saídas fora do idioma esperado.
 
-\textbf{5. A decomposição em três níveis foi decisiva.} Separar segmentação (N1), classificação RASE (N2) e estruturação JSON (N3) viabilizou saídas válidas sem \textit{Fine-Tuning} nem \textit{Retrieval-Augmented Generation}, ou seja, Engenharia de Prompt sozinha basta para alcançar similaridade semântica perto de 0{,}90 nos melhores cenários (Dolphin em EN1, com BERTimbau~0{,}891; Llama em N3 isolado, com SBERT~0{,}947). O que sobra de dificuldade está concentrado na classificação correta dos operadores Seleção e Exceção em N2, as classes mais difíceis para todos os modelos avaliados.
+\textbf{5. A decomposição em três níveis foi decisiva.} Separar segmentação (N1), classificação RASE (N2) e estruturação JSON (N3) viabilizou saídas válidas sem utilizar \textit{Fine-Tuning} nem \textit{Retrieval-Augmented Generation}, ou seja, Engenharia de Prompt sozinha basta para alcançar similaridade semântica perto de 0{,}90 nos melhores cenários (Dolphin em EN1, com BERTimbau~0{,}891; Llama em N3 isolado, com SBERT~0{,}947). O que sobra de dificuldade está concentrado na classificação correta dos operadores Seleção e Exceção em N2, as classes mais difíceis para todos os modelos avaliados.

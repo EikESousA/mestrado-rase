@@ -53,24 +53,24 @@
 \contentsline {subsection}{\numberline {4.2.4}EN3: Estruturação Semântica em JSON com N2 de referência}{69}{subsection.4.2.4}%
 \contentsline {subsection}{\numberline {4.2.5}EN1N2N3: Pipeline Encadeado Completo}{70}{subsection.4.2.5}%
 \contentsline {section}{\numberline {4.3}Resultados por Modelo}{71}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Análise por Métrica}{73}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Análise por Métrica}{72}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Tempo de Execução}{73}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Discussão Integrada}{75}{section.4.6}%
-\contentsline {chapter}{\chapternumberline {5}Conclusão}{78}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Síntese dos Resultados}{78}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Contribuições}{79}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Limitações}{79}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Trabalhos Futuros}{80}{section.5.4}%
+\contentsline {section}{\numberline {4.6}Discussão Integrada}{74}{section.4.6}%
+\contentsline {chapter}{\chapternumberline {5}Conclusão}{76}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Síntese dos Resultados}{76}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Contribuições}{77}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Limitações}{77}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Trabalhos Futuros}{78}{section.5.4}%
 \vspace {\cftbeforepartskip }
-\contentsline {chapter}{Refer\^encias}{82}{chapter*.15}%
+\contentsline {chapter}{Refer\^encias}{80}{chapter*.15}%
 \vspace {\cftbeforepartskip }
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\contentsline {part}{Ap\^endices}{90}{section*.17}%
-\contentsline {appendix}{\chapternumberline {A}Prompts utilizados na Engenharia de Prompt}{91}{appendix.A}%
-\contentsline {section}{\numberline {A.1}N1 --- \textit {Prompt Direct}}{91}{section.A.1}%
-\contentsline {section}{\numberline {A.2}N2 --- \textit {Chain-of-Thought}}{92}{section.A.2}%
-\contentsline {section}{\numberline {A.3}N3 --- \textit {Few-Shot}}{93}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Aplicabilidade}{93}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Requisito}{96}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Seleção}{98}{subsection.A.3.3}%
-\contentsline {subsection}{\numberline {A.3.4}Exceção}{99}{subsection.A.3.4}%
+\contentsline {part}{Ap\^endices}{88}{section*.17}%
+\contentsline {appendix}{\chapternumberline {A}Prompts utilizados na Engenharia de Prompt}{89}{appendix.A}%
+\contentsline {section}{\numberline {A.1}N1 --- \textit {Prompt Direct}}{89}{section.A.1}%
+\contentsline {section}{\numberline {A.2}N2 --- \textit {Chain-of-Thought}}{90}{section.A.2}%
+\contentsline {section}{\numberline {A.3}N3 --- \textit {Few-Shot}}{91}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Aplicabilidade}{91}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Requisito}{94}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Seleção}{96}{subsection.A.3.3}%
+\contentsline {subsection}{\numberline {A.3.4}Exceção}{97}{subsection.A.3.4}%
