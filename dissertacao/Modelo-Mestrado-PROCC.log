@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.19)  23 MAY 2026 22:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.19)  23 MAY 2026 23:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -972,54 +972,54 @@ Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 
 
 Writing index file Modelo-Mestrado-PROCC.idx 
-LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 51.
+LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 57.
 (/usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 12.0pt on input line 51.
+(Font)              scaled to size 12.0pt on input line 57.
  (./Modelo-Mestrado-PROCC.aux (./Pre_Textual/Resumo.aux) (./Pre_Textual/Abstract.aux) (./Pre_Textual/Abreviaturas.aux) (./Pre_Textual/Simbolos.aux) (./Conteudo/01_Introducao.aux) (./Conteudo/03_Fundamentacao_Teorica.aux) (./Conteudo/04_Metodo.aux) (./Conteudo/05_Resultados.aux) (./Conteudo/06_Conclusao.aux) (./Pos_Textual/Apendices.aux))
 \openout1 = `Modelo-Mestrado-PROCC.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 51.
-LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 51.
+LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 57.
+LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 57.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 51.
-LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 51.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 57.
+LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 57.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 51.
-LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 51.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 57.
+LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 57.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 51.
-LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 51.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 57.
+LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 57.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
-LaTeX Font Info:    ... okay on input line 51.
-Package hyperref Info: Link coloring ON on input line 51.
+LaTeX Font Info:    ... okay on input line 57.
+Package hyperref Info: Link coloring ON on input line 57.
 \myptabbox=\box71
 \myptabboxwidth=\skip292
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -1043,21 +1043,21 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@mv@tabular=\count392
 \c@mv@boldtabular=\count393
-LaTeX Info: Command `\dddot' is already robust on input line 51.
-LaTeX Info: Command `\ddddot' is already robust on input line 51.
-LaTeX Info: Redefining \microtypecontext on input line 51.
-Package microtype Info: Applying patch `item' on input line 51.
-Package microtype Info: Applying patch `toc' on input line 51.
-Package microtype Info: Applying patch `eqnum' on input line 51.
-Package microtype Info: Applying patch `footnote' on input line 51.
-Package microtype Info: Applying patch `verbatim' on input line 51.
+LaTeX Info: Command `\dddot' is already robust on input line 57.
+LaTeX Info: Command `\ddddot' is already robust on input line 57.
+LaTeX Info: Redefining \microtypecontext on input line 57.
+Package microtype Info: Applying patch `item' on input line 57.
+Package microtype Info: Applying patch `toc' on input line 57.
+Package microtype Info: Applying patch `eqnum' on input line 57.
+Package microtype Info: Applying patch `footnote' on input line 57.
+Package microtype Info: Applying patch `verbatim' on input line 57.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 51.
+LaTeX Info: Redefining \showhyphens on input line 57.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1072,28 +1072,28 @@ Package epstopdf Info: Source file: <Imagens/logo_ufs.eps>
 (epstopdf)                    date: 2026-05-15 11:22:47
 (epstopdf)                    size: 41388 bytes
 (epstopdf)             Command: <repstopdf --outfile=Imagens/logo_ufs-eps-converted-to.pdf Imagens/logo_ufs.eps>
-(epstopdf)             \includegraphics on input line 67.
+(epstopdf)             \includegraphics on input line 73.
 Package epstopdf Info: Output file is already uptodate.
 <Imagens/logo_ufs-eps-converted-to.pdf, id=5, 246.9225pt x 355.3275pt>
 File: Imagens/logo_ufs-eps-converted-to.pdf Graphic file (type pdf)
 <use Imagens/logo_ufs-eps-converted-to.pdf>
-Package pdftex.def Info: Imagens/logo_ufs-eps-converted-to.pdf  used on input line 67.
+Package pdftex.def Info: Imagens/logo_ufs-eps-converted-to.pdf  used on input line 73.
 (pdftex.def)             Requested size: 74.0773pt x 106.59906pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 12.0pt on input line 67.
+(Font)              scaled to size 12.0pt on input line 73.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 67.
+(Font)              scaled to size 17.28pt on input line 73.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 17.28pt on input line 67.
+(Font)              scaled to size 17.28pt on input line 73.
 <Imagens/logo_procc.pdf, id=6, 466.6252pt x 267.4559pt>
 File: Imagens/logo_procc.pdf Graphic file (type pdf)
 <use Imagens/logo_procc.pdf>
-Package pdftex.def Info: Imagens/logo_procc.pdf  used on input line 67.
+Package pdftex.def Info: Imagens/logo_procc.pdf  used on input line 73.
 (pdftex.def)             Requested size: 139.98863pt x 80.23738pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc} <./Imagens/logo_ufs-eps-converted-to.pdf> <./Imagens/logo_procc.pdf>]
-LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 69.
+LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 75.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )<<ot1.cmap>>
@@ -1102,22 +1102,22 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 <<oml.cmap>>
-LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 69.
+LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 75.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2018/04/14 Fontinst v1.933 font definitions for U/ntxmia.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 69.
+LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 75.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
-LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 69.
+LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 75.
  (/usr/share/texlive/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.69 
+l.75 
       [1
 
 
@@ -1181,7 +1181,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 69.
+(Font)              scaled to size 14.4pt on input line 68.
  [11]) [12]
 \openout2 = `Conteudo/01_Introducao.aux'.
 
@@ -1224,7 +1224,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 
 
 ]
-<Imagens/3.1.1-bim.png, id=439, 478.06606pt x 423.5022pt>
+<Imagens/3.1.1-bim.png, id=437, 478.06606pt x 423.5022pt>
 File: Imagens/3.1.1-bim.png Graphic file (type png)
 <use Imagens/3.1.1-bim.png>
 Package pdftex.def Info: Imagens/3.1.1-bim.png  used on input line 35.
@@ -1233,7 +1233,7 @@ Package pdftex.def Info: Imagens/3.1.1-bim.png  used on input line 35.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 56.
  [19 <./Imagens/3.1.1-bim.png>] [20] [21]
-<Imagens/3.8.1-rase.png, id=497, 777.6252pt x 361.35pt>
+<Imagens/3.8.1-rase.png, id=495, 777.6252pt x 361.35pt>
 File: Imagens/3.8.1-rase.png Graphic file (type png)
 <use Imagens/3.8.1-rase.png>
 Package pdftex.def Info: Imagens/3.8.1-rase.png  used on input line 143.
@@ -1242,53 +1242,53 @@ Package pdftex.def Info: Imagens/3.8.1-rase.png  used on input line 143.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 (Font)              scaled to size 12.0pt on input line 178.
  [24]
-<Imagens/3.3.1-matrizconfusao.png, id=543, 431.81325pt x 367.8543pt>
+<Imagens/3.3.1-matrizconfusao.png, id=541, 431.81325pt x 367.8543pt>
 File: Imagens/3.3.1-matrizconfusao.png Graphic file (type png)
 <use Imagens/3.3.1-matrizconfusao.png>
 Package pdftex.def Info: Imagens/3.3.1-matrizconfusao.png  used on input line 199.
 (pdftex.def)             Requested size: 431.81218pt x 367.85338pt.
  [25{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}] [26 <./Imagens/3.3.1-matrizconfusao.png>] [27]
-<Imagens/3.5.3-wordembeddings.png, id=595, 413.3844pt x 426.03165pt>
+<Imagens/3.5.3-wordembeddings.png, id=593, 413.3844pt x 426.03165pt>
 File: Imagens/3.5.3-wordembeddings.png Graphic file (type png)
 <use Imagens/3.5.3-wordembeddings.png>
 Package pdftex.def Info: Imagens/3.5.3-wordembeddings.png  used on input line 277.
 (pdftex.def)             Requested size: 248.03255pt x 255.62096pt.
  [28]
-<Imagens/3.5.4-sentenceembeddings.png, id=608, 630.55576pt x 365.6862pt>
+<Imagens/3.5.4-sentenceembeddings.png, id=606, 630.55576pt x 365.6862pt>
 File: Imagens/3.5.4-sentenceembeddings.png Graphic file (type png)
 <use Imagens/3.5.4-sentenceembeddings.png>
 Package pdftex.def Info: Imagens/3.5.4-sentenceembeddings.png  used on input line 299.
 (pdftex.def)             Requested size: 455.0pt x 263.87975pt.
  [29 <./Imagens/3.5.3-wordembeddings.png>] [30 <./Imagens/3.5.4-sentenceembeddings.png>] [31]
-<Imagens/3.4.1-rna.png, id=685, 570.933pt x 367.8543pt>
+<Imagens/3.4.1-rna.png, id=683, 570.933pt x 367.8543pt>
 File: Imagens/3.4.1-rna.png Graphic file (type png)
 <use Imagens/3.4.1-rna.png>
 Package pdftex.def Info: Imagens/3.4.1-rna.png  used on input line 349.
 (pdftex.def)             Requested size: 455.0pt x 293.16682pt.
-<Imagens/3.4.2-rnamlp.png, id=688, 587.91644pt x 367.8543pt>
+<Imagens/3.4.2-rnamlp.png, id=686, 587.91644pt x 367.8543pt>
 File: Imagens/3.4.2-rnamlp.png Graphic file (type png)
 <use Imagens/3.4.2-rnamlp.png>
 Package pdftex.def Info: Imagens/3.4.2-rnamlp.png  used on input line 361.
 (pdftex.def)             Requested size: 455.0pt x 284.69121pt.
-<Imagens/3.4.3-bias.png, id=692, 561.17654pt x 399.6531pt>
+<Imagens/3.4.3-bias.png, id=690, 561.17654pt x 399.6531pt>
 File: Imagens/3.4.3-bias.png Graphic file (type png)
 <use Imagens/3.4.3-bias.png>
 Package pdftex.def Info: Imagens/3.4.3-bias.png  used on input line 378.
 (pdftex.def)             Requested size: 455.0pt x 324.04654pt.
  [32] [33 <./Imagens/3.4.1-rna.png>] [34 <./Imagens/3.4.2-rnamlp.png>] [35 <./Imagens/3.4.3-bias.png>] [36]
-<Imagens/3.4.4-tiposrna.png, id=801, 535.88205pt x 569.84895pt>
+<Imagens/3.4.4-tiposrna.png, id=799, 535.88205pt x 569.84895pt>
 File: Imagens/3.4.4-tiposrna.png Graphic file (type png)
 <use Imagens/3.4.4-tiposrna.png>
 Package pdftex.def Info: Imagens/3.4.4-tiposrna.png  used on input line 472.
 (pdftex.def)             Requested size: 321.53171pt x 341.912pt.
  [37] [38 <./Imagens/3.4.4-tiposrna.png>] [39]
-<Imagens/3.6.1-seq2seq.png, id=865, 777.6252pt x 368.577pt>
+<Imagens/3.6.1-seq2seq.png, id=863, 777.6252pt x 368.577pt>
 File: Imagens/3.6.1-seq2seq.png Graphic file (type png)
 <use Imagens/3.6.1-seq2seq.png>
 Package pdftex.def Info: Imagens/3.6.1-seq2seq.png  used on input line 559.
 (pdftex.def)             Requested size: 455.0pt x 215.66446pt.
  [40]
-<Imagens/3.6.2-attention.png, id=887, 793.16325pt x 423.86356pt>
+<Imagens/3.6.2-attention.png, id=885, 793.16325pt x 423.86356pt>
 File: Imagens/3.6.2-attention.png Graphic file (type png)
 <use Imagens/3.6.2-attention.png>
 Package pdftex.def Info: Imagens/3.6.2-attention.png  used on input line 578.
@@ -1299,7 +1299,7 @@ Overfull \hbox (100.21051pt too wide) in paragraph at lines 577--579
  []
 
 [41 <./Imagens/3.6.1-seq2seq.png>] [42 <./Imagens/3.6.2-attention.png>]
-<Imagens/3.6.3-selfattention.png, id=911, 651.8754pt x 534.798pt>
+<Imagens/3.6.3-selfattention.png, id=909, 651.8754pt x 534.798pt>
 File: Imagens/3.6.3-selfattention.png Graphic file (type png)
 <use Imagens/3.6.3-selfattention.png>
 Package pdftex.def Info: Imagens/3.6.3-selfattention.png  used on input line 597.
@@ -1310,13 +1310,13 @@ Overfull \hbox (1.30966pt too wide) in paragraph at lines 596--598
  []
 
 [43 <./Imagens/3.6.3-selfattention.png>]
-<Imagens/3.6.4-transformer.png, id=928, 548.5293pt x 479.1501pt>
+<Imagens/3.6.4-transformer.png, id=926, 548.5293pt x 479.1501pt>
 File: Imagens/3.6.4-transformer.png Graphic file (type png)
 <use Imagens/3.6.4-transformer.png>
 Package pdftex.def Info: Imagens/3.6.4-transformer.png  used on input line 622.
 (pdftex.def)             Requested size: 383.96788pt x 335.40277pt.
  [44]
-<Imagens/3.6.5-camadastransformer.png, id=943, 676.4472pt x 506.97404pt>
+<Imagens/3.6.5-camadastransformer.png, id=941, 676.4472pt x 506.97404pt>
 File: Imagens/3.6.5-camadastransformer.png Graphic file (type png)
 <use Imagens/3.6.5-camadastransformer.png>
 Package pdftex.def Info: Imagens/3.6.5-camadastransformer.png  used on input line 637.
@@ -1338,7 +1338,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 \openout2 = `Conteudo/04_Metodo.aux'.
 
  (./Conteudo/04_Metodo.tex
-<Imagens/4.1-pipeline.png, id=1115, 682.2288pt x 368.21565pt>
+<Imagens/4.1-pipeline.png, id=1113, 682.2288pt x 368.21565pt>
 File: Imagens/4.1-pipeline.png Graphic file (type png)
 <use Imagens/4.1-pipeline.png>
 Package pdftex.def Info: Imagens/4.1-pipeline.png  used on input line 11.
@@ -1356,113 +1356,118 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
 LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
 (Font)              scaled to size 10.95pt on input line 93.
  [58] [59]
-<Imagens/4.2-experimentos.png, id=1190, 882.4167pt x 807.61725pt>
+<Imagens/4.2-experimentos.png, id=1188, 882.4167pt x 807.61725pt>
 File: Imagens/4.2-experimentos.png Graphic file (type png)
 <use Imagens/4.2-experimentos.png>
 Package pdftex.def Info: Imagens/4.2-experimentos.png  used on input line 130.
 (pdftex.def)             Requested size: 445.89806pt x 408.09612pt.
  [60 <./Imagens/4.2-experimentos.png>] [61] [62] [63]
-Overfull \hbox (13.33528pt too wide) in paragraph at lines 222--223
+Overfull \hbox (13.33528pt too wide) in paragraph at lines 223--224
 []\T1/ntxtlf/b/n/12 (-20) Bibliotecas prin-ci-pais\T1/ntxtlf/m/n/12 (-20) : \T1/ntxtt/m/n/12 sentence-transformers\T1/ntxtlf/m/n/12 (-20) , \T1/ntxtt/m/n/12 gensim\T1/ntxtlf/m/n/12 (-20) , \T1/ntxtt/m/n/12 fuzzywuzzy \T1/ntxtlf/m/n/12 (-20) e \T1/ntxtt/m/n/12 scikit-learn
  []
 
 ) [64]
 \openout2 = `Conteudo/05_Resultados.aux'.
 
- (./Conteudo/05_Resultados.tex [65
+ (./Conteudo/05_Resultados.tex
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 10.95pt on input line 20.
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
+(Font)              scaled to size 10.95pt on input line 21.
+ [65
 
 
 
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 9.0pt on input line 48.
+(Font)              scaled to size 9.0pt on input line 58.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 9.0pt on input line 54.
-<Imagens/4.2.1-resultados-en1-barras.png, id=1236, 715.473pt x 345.4506pt>
+(Font)              scaled to size 9.0pt on input line 65.
+LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
+(Font)              scaled to size 9.0pt on input line 72.
+<Imagens/4.2.1-resultados-en1-barras.png, id=1234, 715.473pt x 345.4506pt>
 File: Imagens/4.2.1-resultados-en1-barras.png Graphic file (type png)
 <use Imagens/4.2.1-resultados-en1-barras.png>
-Package pdftex.def Info: Imagens/4.2.1-resultados-en1-barras.png  used on input line 76.
+Package pdftex.def Info: Imagens/4.2.1-resultados-en1-barras.png  used on input line 89.
 (pdftex.def)             Requested size: 432.24861pt x 208.70044pt.
  [66]
-<Imagens/4.2.2-resultados-en2-barras.png, id=1244, 715.473pt x 345.4506pt>
+<Imagens/4.2.2-resultados-en2-barras.png, id=1242, 715.473pt x 345.4506pt>
 File: Imagens/4.2.2-resultados-en2-barras.png Graphic file (type png)
 <use Imagens/4.2.2-resultados-en2-barras.png>
-Package pdftex.def Info: Imagens/4.2.2-resultados-en2-barras.png  used on input line 117.
+Package pdftex.def Info: Imagens/4.2.2-resultados-en2-barras.png  used on input line 133.
 (pdftex.def)             Requested size: 432.24861pt x 208.70044pt.
  [67 <./Imagens/4.2.1-resultados-en1-barras.png>]
-<Imagens/4.2.3-resultados-en1n2-barras.png, id=1252, 715.473pt x 345.4506pt>
+<Imagens/4.2.3-resultados-en1n2-barras.png, id=1250, 715.473pt x 345.4506pt>
 File: Imagens/4.2.3-resultados-en1n2-barras.png Graphic file (type png)
 <use Imagens/4.2.3-resultados-en1n2-barras.png>
-Package pdftex.def Info: Imagens/4.2.3-resultados-en1n2-barras.png  used on input line 149.
+Package pdftex.def Info: Imagens/4.2.3-resultados-en1n2-barras.png  used on input line 167.
 (pdftex.def)             Requested size: 432.24861pt x 208.70044pt.
  [68 <./Imagens/4.2.2-resultados-en2-barras.png>] [69 <./Imagens/4.2.3-resultados-en1n2-barras.png>]
-Overfull \hbox (74.00085pt too wide) in paragraph at lines 216--217
-[]\T1/ntxtlf/m/n/12 (-20) A saída de cada mo-delo é per-sis-tida em um ar-quivo JSON pró-prio (\T1/ntxtt/m/n/12 generate_n1n2n3_<modelo>.json\T1/ntxtlf/m/n/12 (-20) ),
+Overfull \hbox (51.51082pt too wide) in paragraph at lines 236--237
+[]\T1/ntxtlf/m/n/12 (-20) A saída de cada mo-delo é per-sis-tida em um ar-quivo JSON pró-prio (\T1/ntxtlf/m/it/12 (-20) ge-ne-rate_n1n2n3_<modelo>.json\T1/ntxtlf/m/n/12 (-20) ),
  []
 
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 10.95pt on input line 231.
 [70]
-<Imagens/4.3.1-heatmap-global.png, id=1271, 404.712pt x 317.2653pt>
+<Imagens/4.3.1-heatmap-global.png, id=1269, 404.712pt x 317.2653pt>
 File: Imagens/4.3.1-heatmap-global.png Graphic file (type png)
 <use Imagens/4.3.1-heatmap-global.png>
-Package pdftex.def Info: Imagens/4.3.1-heatmap-global.png  used on input line 245.
+Package pdftex.def Info: Imagens/4.3.1-heatmap-global.png  used on input line 265.
 (pdftex.def)             Requested size: 318.49861pt x 249.69283pt.
- [71 <./Imagens/4.3.1-heatmap-global.png>]
-Overfull \hbox (6.01778pt too wide) in paragraph at lines 266--267
+ [71]
+Overfull \hbox (6.01778pt too wide) in paragraph at lines 286--287
 []\T1/ntxtlf/b/n/12 (-20) Métricas le-xi-cais. \T1/ntxtlf/m/n/12 (-20) FuzzyWuzzy e TF-IDF caem cla-ra-mente de EN1 para EN2 (FuzzyWuzzy:
  []
 
-[72]
-<Imagens/4.4.1-heatmap-en1.png, id=1287, 641.0349pt x 317.2653pt>
+[72 <./Imagens/4.3.1-heatmap-global.png>]
+<Imagens/4.4.1-heatmap-en1.png, id=1285, 641.0349pt x 317.2653pt>
 File: Imagens/4.4.1-heatmap-en1.png Graphic file (type png)
 <use Imagens/4.4.1-heatmap-en1.png>
-Package pdftex.def Info: Imagens/4.4.1-heatmap-en1.png  used on input line 280.
+Package pdftex.def Info: Imagens/4.4.1-heatmap-en1.png  used on input line 300.
 (pdftex.def)             Requested size: 409.49722pt x 202.6715pt.
-<Imagens/4.4.2-heatmap-en2.png, id=1288, 641.0349pt x 317.2653pt>
+<Imagens/4.4.2-heatmap-en2.png, id=1286, 641.0349pt x 317.2653pt>
 File: Imagens/4.4.2-heatmap-en2.png Graphic file (type png)
 <use Imagens/4.4.2-heatmap-en2.png>
-Package pdftex.def Info: Imagens/4.4.2-heatmap-en2.png  used on input line 287.
+Package pdftex.def Info: Imagens/4.4.2-heatmap-en2.png  used on input line 307.
 (pdftex.def)             Requested size: 409.49722pt x 202.6715pt.
-<Imagens/4.4.3-heatmap-en1n2.png, id=1289, 641.0349pt x 317.2653pt>
+<Imagens/4.4.3-heatmap-en1n2.png, id=1287, 641.0349pt x 317.2653pt>
 File: Imagens/4.4.3-heatmap-en1n2.png Graphic file (type png)
 <use Imagens/4.4.3-heatmap-en1n2.png>
-Package pdftex.def Info: Imagens/4.4.3-heatmap-en1n2.png  used on input line 294.
+Package pdftex.def Info: Imagens/4.4.3-heatmap-en1n2.png  used on input line 314.
 (pdftex.def)             Requested size: 409.49722pt x 202.6715pt.
- [73 <./Imagens/4.4.1-heatmap-en1.png>] [74 <./Imagens/4.4.2-heatmap-en2.png> <./Imagens/4.4.3-heatmap-en1n2.png>] [75]) [76]
+ [73] [74 <./Imagens/4.4.1-heatmap-en1.png> <./Imagens/4.4.2-heatmap-en2.png>] [75 <./Imagens/4.4.3-heatmap-en1n2.png>] [76]) [77]
 \openout2 = `Conteudo/06_Conclusao.aux'.
 
- (./Conteudo/06_Conclusao.tex [77
+ (./Conteudo/06_Conclusao.tex [78
 
 
 
 
-] [78]) [79] [80] (./Modelo-Mestrado-PROCC.bbl (./Modelo-Mestrado-PROCC.brf)
+] [79]) [80] [81] (./Modelo-Mestrado-PROCC.bbl (./Modelo-Mestrado-PROCC.brf)
 \tf@brf=\write5
 \openout5 = `Modelo-Mestrado-PROCC.brf'.
 
 
 bibitemlist
-[81
+[82
 
 
 
-] [82] [83] [84] [85] [86] [87]) [88]
+] [83] [84] [85] [86] [87] [88]) [89]
 \openout2 = `Pos_Textual/Apendices.aux'.
 
- (./Pos_Textual/Apendices.tex [89
+ (./Pos_Textual/Apendices.tex [90
 
 
 
-] [90
+] [91
 
-] [91]
+] [92]
 Underfull \hbox (badness 10000) in paragraph at lines 93--93
 []\T1/ntxtlf/m/it/12 (+20) Prompt \T1/ntxtlf/m/n/12 (+20) do ope-ra-dor Apli-ca-bi-li-dade (N3) ---
  []
 
-[92] [93] [94] [95] [96] [97] [98] [99]) [100]
+[93] [94] [95] [96] [97] [98] [99] [100]) [101]
 \tf@lof=\write6
 \openout6 = `Modelo-Mestrado-PROCC.lof'.
 
@@ -1486,18 +1491,18 @@ Package rerunfilecheck Info: File `Modelo-Mestrado-PROCC.brf' has not changed.
 (rerunfilecheck)             Checksum: C2F957321DACCEE22D9F62164F580F65;10190.
  ) 
 Here is how much of TeX's memory you used:
- 27610 strings out of 474222
- 435174 string characters out of 5748733
+ 27627 strings out of 474222
+ 435507 string characters out of 5748733
  2089975 words of memory out of 5000000
- 48315 multiletter control sequences out of 15000+600000
- 700326 words of font info for 351 fonts, out of 8000000 for 9000
+ 48322 multiletter control sequences out of 15000+600000
+ 706592 words of font info for 357 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,13n,121p,2307b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Modelo-Mestrado-PROCC.pdf (101 pages, 3356853 bytes).
+Output written on Modelo-Mestrado-PROCC.pdf (102 pages, 3359297 bytes).
 PDF statistics:
- 2392 PDF objects out of 2487 (max. 8388607)
- 2192 compressed objects within 22 object streams
+ 2391 PDF objects out of 2487 (max. 8388607)
+ 2190 compressed objects within 22 object streams
  717 named destinations out of 1000 (max. 500000)
- 56074 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 60162 words of extra memory for PDF output out of 61914 (max. 10000000)
 

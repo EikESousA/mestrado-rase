@@ -1,6 +1,8 @@
 \chapter{Resultados}
 
-Este capítulo apresenta os resultados da aplicação dos seis LLMs \textit{open-source} sobre as 79 normas brasileiras do \textit{dataset}, nos cinco experimentos definidos no capítulo anterior: EN1 (segmentação N1 isolada), EN2 (identificação RASE com N1 de referência), EN1N2 (\textit{pipeline} encadeado N1$\rightarrow$N2), EN3 (estruturação JSON em isolamento, com N2 de referência) e EN1N2N3 (\textit{pipeline} encadeado completo N1$\rightarrow$N2$\rightarrow$N3). Todos os números vêm diretamente dos arquivos \texttt{metrics/validate\_*.json}, gerados pela rotina de validação descrita na Seção~3.7. Para cada experimento, o texto traz as médias agregadas por métrica, os resultados detalhados por modelo, os tempos de execução e uma discussão integrada. A Seção~\ref{sec:n3} traz, em separado, os resultados do nível N3 (em EN3 isolado e em EN1N2N3 encadeado).
+Este capítulo apresenta os resultados da aplicação dos seis LLMs \textit{open-source} sobre as 79 normas brasileiras do \textit{dataset}, nos cinco experimentos definidos no capítulo anterior: EN1 (segmentação N1 isolada), EN2 (identificação RASE com N1 de referência), EN1N2 (\textit{pipeline} encadeado N1$\rightarrow$N2), EN3 (estruturação JSON em isolamento, com N2 de referência) e EN1N2N3 (\textit{pipeline} encadeado completo N1$\rightarrow$N2$\rightarrow$N3). Todos os números vêm diretamente dos arquivos \textit{metrics/validate\_*.json}, gerados pela rotina de validação descrita na Seção~3.7. Para cada experimento, o texto traz as médias agregadas por métrica, os resultados detalhados por modelo, os tempos de execução e uma discussão integrada.
+
+\textbf{Convenção de leitura das tabelas.} Em todas as tabelas numéricas deste capítulo, o realce é feito \textbf{por coluna}: o melhor valor de cada coluna aparece em \melhor{verde} e o pior em \pior{vermelho}. Nas tabelas de qualidade (similaridade e classificação), os valores em \textbf{negrito} são aqueles dentro do limiar de similaridade adotado na validação, isto é, \(\geq 0{,}7\) (Seção~\ref{sec:metricas_classificacao}). Já nas tabelas de tempo de execução, em que \emph{menor é melhor}, o \melhor{verde} marca o modelo mais rápido e o \pior{vermelho} o mais lento, e o negrito não se aplica.
 
 \section{Visão Geral dos Experimentos}
 
@@ -15,20 +17,28 @@ A Tabela~\ref{tab:metricas_resultados} resume as médias por métrica nos cinco 
 \hline
 Métrica       & EN1   & EN2   & EN1N2 & EN3   & EN1N2N3 \\
 \hline
-FuzzyWuzzy    & 0{,}475 & 0{,}461 & 0{,}464 & 0{,}847 & 0{,}617 \\
-TF-IDF        & 0{,}636 & 0{,}312 & 0{,}417 & 0{,}597 & 0{,}514 \\
-SBERT         & 0{,}801 & 0{,}490 & 0{,}594 & 0{,}906 & 0{,}777 \\
-BERTimbau     & 0{,}816 & 0{,}542 & 0{,}631 & 0{,}836 & 0{,}752 \\
-Multilingual  & 0{,}850 & 0{,}595 & 0{,}679 & 0{,}873 & 0{,}793 \\
-WMD\_ft       & 0{,}716 & 0{,}580 & 0{,}625 & 0{,}846 & 0{,}757 \\
-WMD\_nilc     & 0{,}688 & 0{,}546 & 0{,}595 & 0{,}842 & 0{,}742 \\
-BERTScore     & 0{,}866 & 0{,}753 & 0{,}790 & 0{,}880 & 0{,}843 \\
-ROUGE-L       & 0{,}599 & 0{,}308 & 0{,}404 & 0{,}765 & 0{,}616 \\
+\multicolumn{6}{@{}l}{\textit{Similaridade lexical}} \\
+\hspace{1em}FuzzyWuzzy & \pior{0{,}475} & 0{,}461 & 0{,}464 & \textbf{0{,}847} & 0{,}617 \\
+\hspace{1em}TF-IDF & 0{,}636 & 0{,}312 & 0{,}417 & 0{,}597 & \pior{0{,}514} \\
 \hline
-Acurácia      & 0{,}475 & 0{,}273 & ---     & 0{,}576 & --- \\
-Precisão      & 0{,}545 & 0{,}202 & ---     & 0{,}024 & --- \\
-Revocação     & 0{,}774 & 0{,}198 & ---     & 0{,}380 & --- \\
-F1-score      & 0{,}631 & 0{,}197 & ---     & 0{,}043 & --- \\
+\multicolumn{6}{@{}l}{\textit{Similaridade semântica}} \\
+\hspace{1em}SBERT & \textbf{0{,}801} & 0{,}490 & 0{,}594 & \melhor{\textbf{0{,}906}} & \textbf{0{,}777} \\
+\hspace{1em}BERTimbau & \textbf{0{,}816} & 0{,}542 & 0{,}631 & \textbf{0{,}836} & \textbf{0{,}752} \\
+\hspace{1em}Multilingual & \textbf{0{,}850} & 0{,}595 & 0{,}679 & \textbf{0{,}873} & \textbf{0{,}793} \\
+\hline
+\multicolumn{6}{@{}l}{\textit{Distância semântica (WMD)}} \\
+\hspace{1em}WMD\_ft & \textbf{0{,}716} & 0{,}580 & 0{,}625 & \textbf{0{,}846} & \textbf{0{,}757} \\
+\hspace{1em}WMD\_nilc & 0{,}688 & 0{,}546 & 0{,}595 & \textbf{0{,}842} & \textbf{0{,}742} \\
+\hline
+\multicolumn{6}{@{}l}{\textit{Métricas voltadas para geração}} \\
+\hspace{1em}BERTScore & \melhor{\textbf{0{,}866}} & \melhor{\textbf{0{,}753}} & \melhor{\textbf{0{,}790}} & \textbf{0{,}880} & \melhor{\textbf{0{,}843}} \\
+\hspace{1em}ROUGE-L & 0{,}599 & 0{,}308 & \pior{0{,}404} & \textbf{0{,}765} & 0{,}616 \\
+\hline
+\multicolumn{6}{@{}l}{\textit{Métricas de classificação}} \\
+\hspace{1em}Acurácia & \pior{0{,}475} & 0{,}273 & --- & 0{,}576 & --- \\
+\hspace{1em}Precisão & 0{,}545 & 0{,}202 & --- & \pior{0{,}024} & --- \\
+\hspace{1em}Revocação & \textbf{0{,}774} & 0{,}198 & --- & 0{,}380 & --- \\
+\hspace{1em}F1-score & 0{,}631 & \pior{0{,}197} & --- & 0{,}043 & --- \\
 \hline
 \end{tabular}
 \end{table}
@@ -48,23 +58,26 @@ No EN1, a comparação foi entre as regras N1 geradas pelos LLMs e o N1 de refer
 \scriptsize
 \begin{tabular}{lccccccccc}
 \hline
+ & \multicolumn{2}{c}{Lexical} & \multicolumn{3}{c}{Semântica} & \multicolumn{2}{c}{WMD} & \multicolumn{2}{c}{Geração} \\
+\cline{2-3}\cline{4-6}\cline{7-8}\cline{9-10}
 Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
 \hline
-Alpaca  & 0{,}473 & 0{,}561 & 0{,}748 & 0{,}762 & 0{,}803 & 0{,}694 & 0{,}664 & 0{,}841 & 0{,}540 \\
-Dolphin & \textbf{0{,}641} & \textbf{0{,}756} & \textbf{0{,}873} & \textbf{0{,}891} & \textbf{0{,}913} & \textbf{0{,}774} & \textbf{0{,}751} & \textbf{0{,}905} & \textbf{0{,}703} \\
-Gemma   & 0{,}412 & 0{,}695 & 0{,}842 & 0{,}850 & 0{,}885 & 0{,}726 & 0{,}699 & 0{,}883 & 0{,}648 \\
-Llama   & 0{,}422 & 0{,}672 & 0{,}835 & 0{,}844 & 0{,}873 & 0{,}711 & 0{,}684 & 0{,}871 & 0{,}605 \\
-Mistral & 0{,}534 & 0{,}704 & 0{,}842 & 0{,}874 & 0{,}899 & 0{,}726 & 0{,}699 & 0{,}888 & 0{,}651 \\
-Qwen    & 0{,}367 & 0{,}429 & 0{,}668 & 0{,}673 & 0{,}726 & 0{,}663 & 0{,}632 & 0{,}808 & 0{,}448 \\
+Alpaca  & 0{,}473 & 0{,}561 & \textbf{0{,}748} & \textbf{0{,}762} & \textbf{0{,}803} & 0{,}694 & 0{,}664 & \textbf{0{,}841} & 0{,}540 \\
+Dolphin & \melhor{0{,}641} & \melhor{\textbf{0{,}756}} & \melhor{\textbf{0{,}873}} & \melhor{\textbf{0{,}891}} & \melhor{\textbf{0{,}913}} & \melhor{\textbf{0{,}774}} & \melhor{\textbf{0{,}751}} & \melhor{\textbf{0{,}905}} & \melhor{\textbf{0{,}703}} \\
+Gemma   & 0{,}412 & 0{,}695 & \textbf{0{,}842} & \textbf{0{,}850} & \textbf{0{,}885} & \textbf{0{,}726} & 0{,}699 & \textbf{0{,}883} & 0{,}648 \\
+Llama   & 0{,}422 & 0{,}672 & \textbf{0{,}835} & \textbf{0{,}844} & \textbf{0{,}873} & \textbf{0{,}711} & 0{,}684 & \textbf{0{,}871} & 0{,}605 \\
+Mistral & 0{,}534 & \textbf{0{,}704} & \textbf{0{,}842} & \textbf{0{,}874} & \textbf{0{,}899} & \textbf{0{,}726} & 0{,}699 & \textbf{0{,}888} & 0{,}651 \\
+Qwen    & \pior{0{,}367} & \pior{0{,}429} & \pior{0{,}668} & \pior{0{,}673} & \pior{\textbf{0{,}726}} & \pior{0{,}663} & \pior{0{,}632} & \pior{\textbf{0{,}808}} & \pior{0{,}448} \\
 \hline
-\multicolumn{10}{c}{Métricas de classificação (Acurácia / Precisão / Revocação / F1)} \\
+\multicolumn{10}{@{}l}{\textit{Métricas de classificação}} \\
+Modelo  & \multicolumn{2}{c}{Acurácia} & \multicolumn{2}{c}{Precisão} & \multicolumn{2}{c}{Revocação} & \multicolumn{3}{c}{F1} \\
 \hline
-Alpaca  & \multicolumn{9}{l}{0{,}419 / 0{,}512 / 0{,}699 / 0{,}591} \\
-Dolphin & \multicolumn{9}{l}{\textbf{0{,}676} / \textbf{0{,}812} / 0{,}801 / \textbf{0{,}806}} \\
-Gemma   & \multicolumn{9}{l}{0{,}466 / 0{,}486 / \textbf{0{,}917} / 0{,}636} \\
-Llama   & \multicolumn{9}{l}{0{,}446 / 0{,}479 / 0{,}865 / 0{,}616} \\
-Mistral & \multicolumn{9}{l}{0{,}610 / 0{,}670 / 0{,}872 / 0{,}758} \\
-Qwen    & \multicolumn{9}{l}{0{,}235 / 0{,}311 / 0{,}487 / 0{,}380} \\
+Alpaca  & \multicolumn{2}{c}{0{,}419} & \multicolumn{2}{c}{0{,}512} & \multicolumn{2}{c}{0{,}699} & \multicolumn{3}{c}{0{,}591} \\
+Dolphin & \multicolumn{2}{c}{\melhor{0{,}676}} & \multicolumn{2}{c}{\melhor{\textbf{0{,}812}}} & \multicolumn{2}{c}{\textbf{0{,}801}} & \multicolumn{3}{c}{\melhor{\textbf{0{,}806}}} \\
+Gemma   & \multicolumn{2}{c}{0{,}466} & \multicolumn{2}{c}{0{,}486} & \multicolumn{2}{c}{\melhor{\textbf{0{,}917}}} & \multicolumn{3}{c}{0{,}636} \\
+Llama   & \multicolumn{2}{c}{0{,}446} & \multicolumn{2}{c}{0{,}479} & \multicolumn{2}{c}{\textbf{0{,}865}} & \multicolumn{3}{c}{0{,}616} \\
+Mistral & \multicolumn{2}{c}{0{,}610} & \multicolumn{2}{c}{0{,}670} & \multicolumn{2}{c}{\textbf{0{,}872}} & \multicolumn{3}{c}{\textbf{0{,}758}} \\
+Qwen    & \multicolumn{2}{c}{\pior{0{,}235}} & \multicolumn{2}{c}{\pior{0{,}311}} & \multicolumn{2}{c}{\pior{0{,}487}} & \multicolumn{3}{c}{\pior{0{,}380}} \\
 \hline
 \end{tabular}
 \end{table}
@@ -89,23 +102,26 @@ O EN2 mediu a identificação e a estruturação dos operadores RASE a partir do
 \scriptsize
 \begin{tabular}{lccccccccc}
 \hline
+ & \multicolumn{2}{c}{Lexical} & \multicolumn{3}{c}{Semântica} & \multicolumn{2}{c}{WMD} & \multicolumn{2}{c}{Geração} \\
+\cline{2-3}\cline{4-6}\cline{7-8}\cline{9-10}
 Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
 \hline
-Alpaca  & 0{,}334 & 0{,}168 & 0{,}386 & 0{,}418 & 0{,}484 & 0{,}522 & 0{,}486 & 0{,}702 & 0{,}172 \\
-Dolphin & 0{,}511 & 0{,}423 & 0{,}557 & 0{,}621 & 0{,}665 & \textbf{0{,}620} & \textbf{0{,}589} & 0{,}786 & 0{,}412 \\
-Gemma   & 0{,}384 & 0{,}364 & 0{,}520 & 0{,}579 & 0{,}625 & 0{,}608 & 0{,}577 & 0{,}772 & 0{,}350 \\
-Llama   & \textbf{0{,}638} & \textbf{0{,}447} & \textbf{0{,}595} & \textbf{0{,}657} & \textbf{0{,}685} & 0{,}617 & 0{,}586 & \textbf{0{,}796} & \textbf{0{,}427} \\
-Mistral & 0{,}563 & 0{,}385 & 0{,}575 & 0{,}607 & 0{,}665 & 0{,}607 & 0{,}575 & 0{,}779 & 0{,}377 \\
-Qwen    & 0{,}336 & 0{,}083 & 0{,}304 & 0{,}369 & 0{,}444 & 0{,}496 & 0{,}462 & 0{,}684 & 0{,}111 \\
+Alpaca  & \pior{0{,}334} & 0{,}168 & 0{,}386 & 0{,}418 & 0{,}484 & 0{,}522 & 0{,}486 & \textbf{0{,}702} & 0{,}172 \\
+Dolphin & 0{,}511 & 0{,}423 & 0{,}557 & 0{,}621 & 0{,}665 & \melhor{0{,}620} & \melhor{0{,}589} & \textbf{0{,}786} & 0{,}412 \\
+Gemma   & 0{,}384 & 0{,}364 & 0{,}520 & 0{,}579 & 0{,}625 & 0{,}608 & 0{,}577 & \textbf{0{,}772} & 0{,}350 \\
+Llama   & \melhor{0{,}638} & \melhor{0{,}447} & \melhor{0{,}595} & \melhor{0{,}657} & \melhor{0{,}685} & 0{,}617 & 0{,}586 & \melhor{\textbf{0{,}796}} & \melhor{0{,}427} \\
+Mistral & 0{,}563 & 0{,}385 & 0{,}575 & 0{,}607 & 0{,}665 & 0{,}607 & 0{,}575 & \textbf{0{,}779} & 0{,}377 \\
+Qwen    & 0{,}336 & \pior{0{,}083} & \pior{0{,}304} & \pior{0{,}369} & \pior{0{,}444} & \pior{0{,}496} & \pior{0{,}462} & \pior{0{,}684} & \pior{0{,}111} \\
 \hline
-\multicolumn{10}{c}{Métricas de classificação: macro (Acurácia / Precisão / Revocação / F1)} \\
+\multicolumn{10}{@{}l}{\textit{Métricas de classificação} (macro por operador)} \\
+Modelo  & \multicolumn{2}{c}{Acurácia} & \multicolumn{2}{c}{Precisão} & \multicolumn{2}{c}{Revocação} & \multicolumn{3}{c}{F1} \\
 \hline
-Alpaca  & \multicolumn{9}{l}{0{,}081 / 0{,}103 / 0{,}109 / 0{,}105} \\
-Dolphin & \multicolumn{9}{l}{0{,}339 / 0{,}301 / 0{,}276 / \textbf{0{,}286}} \\
-Gemma   & \multicolumn{9}{l}{0{,}182 / 0{,}252 / \textbf{0{,}300} / 0{,}265} \\
-Llama   & \multicolumn{9}{l}{\textbf{0{,}439} / 0{,}237 / 0{,}250 / 0{,}243} \\
-Mistral & \multicolumn{9}{l}{0{,}434 / 0{,}268 / 0{,}214 / 0{,}238} \\
-Qwen    & \multicolumn{9}{l}{0{,}160 / 0{,}051 / 0{,}039 / 0{,}044} \\
+Alpaca  & \multicolumn{2}{c}{\pior{0{,}081}} & \multicolumn{2}{c}{0{,}103} & \multicolumn{2}{c}{0{,}109} & \multicolumn{3}{c}{0{,}105} \\
+Dolphin & \multicolumn{2}{c}{0{,}339} & \multicolumn{2}{c}{\melhor{0{,}301}} & \multicolumn{2}{c}{0{,}276} & \multicolumn{3}{c}{\melhor{0{,}286}} \\
+Gemma   & \multicolumn{2}{c}{0{,}182} & \multicolumn{2}{c}{0{,}252} & \multicolumn{2}{c}{\melhor{0{,}300}} & \multicolumn{3}{c}{0{,}265} \\
+Llama   & \multicolumn{2}{c}{\melhor{0{,}439}} & \multicolumn{2}{c}{0{,}237} & \multicolumn{2}{c}{0{,}250} & \multicolumn{3}{c}{0{,}243} \\
+Mistral & \multicolumn{2}{c}{0{,}434} & \multicolumn{2}{c}{0{,}268} & \multicolumn{2}{c}{0{,}214} & \multicolumn{3}{c}{0{,}238} \\
+Qwen    & \multicolumn{2}{c}{0{,}160} & \multicolumn{2}{c}{\pior{0{,}051}} & \multicolumn{2}{c}{\pior{0{,}039}} & \multicolumn{3}{c}{\pior{0{,}044}} \\
 \hline
 \end{tabular}
 \end{table}
@@ -130,14 +146,16 @@ O EN1N2 testou a robustez do \textit{pipeline} totalmente automatizado: o N1 pro
 \scriptsize
 \begin{tabular}{lccccccccc}
 \hline
+ & \multicolumn{2}{c}{Lexical} & \multicolumn{3}{c}{Semântica} & \multicolumn{2}{c}{WMD} & \multicolumn{2}{c}{Geração} \\
+\cline{2-3}\cline{4-6}\cline{7-8}\cline{9-10}
 Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
 \hline
-Alpaca  & 0{,}375 & 0{,}285 & 0{,}494 & 0{,}523 & 0{,}581 & 0{,}573 & 0{,}538 & 0{,}742 & 0{,}282 \\
-Dolphin & 0{,}549 & \textbf{0{,}529} & 0{,}662 & 0{,}711 & \textbf{0{,}749} & \textbf{0{,}673} & \textbf{0{,}644} & \textbf{0{,}826} & \textbf{0{,}509} \\
-Gemma   & 0{,}391 & 0{,}458 & 0{,}615 & 0{,}656 & 0{,}701 & 0{,}646 & 0{,}617 & 0{,}804 & 0{,}436 \\
-Llama   & \textbf{0{,}570} & 0{,}521 & \textbf{0{,}677} & \textbf{0{,}721} & \textbf{0{,}749} & 0{,}649 & 0{,}620 & 0{,}821 & 0{,}488 \\
-Mistral & 0{,}559 & 0{,}489 & 0{,}667 & 0{,}698 & 0{,}740 & 0{,}648 & 0{,}618 & 0{,}817 & 0{,}468 \\
-Qwen    & 0{,}342 & 0{,}219 & 0{,}448 & 0{,}478 & 0{,}551 & 0{,}562 & 0{,}530 & 0{,}731 & 0{,}240 \\
+Alpaca  & 0{,}375 & 0{,}285 & 0{,}494 & 0{,}523 & 0{,}581 & 0{,}573 & 0{,}538 & \textbf{0{,}742} & 0{,}282 \\
+Dolphin & 0{,}549 & \melhor{0{,}529} & 0{,}662 & \textbf{0{,}711} & \melhor{\textbf{0{,}749}} & \melhor{0{,}673} & \melhor{0{,}644} & \melhor{\textbf{0{,}826}} & \melhor{0{,}509} \\
+Gemma   & 0{,}391 & 0{,}458 & 0{,}615 & 0{,}656 & \textbf{0{,}701} & 0{,}646 & 0{,}617 & \textbf{0{,}804} & 0{,}436 \\
+Llama   & \melhor{0{,}570} & 0{,}521 & \melhor{0{,}677} & \melhor{\textbf{0{,}721}} & \melhor{\textbf{0{,}749}} & 0{,}649 & 0{,}620 & \textbf{0{,}821} & 0{,}488 \\
+Mistral & 0{,}559 & 0{,}489 & 0{,}667 & 0{,}698 & \textbf{0{,}740} & 0{,}648 & 0{,}618 & \textbf{0{,}817} & 0{,}468 \\
+Qwen    & \pior{0{,}342} & \pior{0{,}219} & \pior{0{,}448} & \pior{0{,}478} & \pior{0{,}551} & \pior{0{,}562} & \pior{0{,}530} & \pior{\textbf{0{,}731}} & \pior{0{,}240} \\
 \hline
 \end{tabular}
 \end{table}
@@ -151,12 +169,9 @@ A Figura~\ref{img:4.2.3} apresenta o comparativo visual em EN1N2, evidenciando a
 \label{img:4.2.3}
 \end{figure}
 
-\section{Resultados do Nível N3: EN3 e EN1N2N3}
-\label{sec:n3}
+\subsection{EN3: Estruturação Semântica em JSON com N2 de referência}
 
 O nível N3 (estruturação semântica em JSON) foi avaliado em dois cenários complementares: o EN3, em isolamento, recebendo como entrada os operadores N2 de referência; e o EN1N2N3, no \textit{pipeline} encadeado de ponta a ponta, em que o N1 gerado alimenta o N2 do mesmo modelo, que por sua vez alimenta o N3 do mesmo modelo. Em ambos os cenários, a comparação não é entre \textit{strings} normativas inteiras, e sim campo a campo (\texttt{type}, \texttt{object}, \texttt{property}, \texttt{comparation}, \texttt{target} e \texttt{unit}), sobre a serialização canônica do JSON gerado contra o JSON anotado.
-
-\subsection{EN3: Estruturação Semântica em JSON com N2 de referência}
 
 Como a saída é \textit{quase-estruturada} e composta por campos curtos com vocabulário restrito, as métricas de similaridade textual sobem para patamares bem mais altos do que em N1 e N2 (ver Tabela~\ref{tab:resultados_n3}). As métricas de classificação por correspondência exata, em compensação, mostram um quadro bem mais duro: a precisão macro fica abaixo de 4\%. Isso sinaliza que os modelos preservam o significado, mas variam o vocabulário em relação à referência, por exemplo \texttt{target = ``público''} em vez de \texttt{target = ``uso público''}. O \textbf{Llama} dominou: liderou em \textit{todas} as nove métricas de similaridade, com SBERT~0{,}947 e Multilingual~0{,}928. Mistral, Dolphin e Qwen ficam próximos em métricas semânticas, mostrando que a etapa N3 isolada é a mais homogênea entre os modelos avaliados.
 
@@ -167,23 +182,26 @@ Como a saída é \textit{quase-estruturada} e composta por campos curtos com voc
 \scriptsize
 \begin{tabular}{lccccccccc}
 \hline
+ & \multicolumn{2}{c}{Lexical} & \multicolumn{3}{c}{Semântica} & \multicolumn{2}{c}{WMD} & \multicolumn{2}{c}{Geração} \\
+\cline{2-3}\cline{4-6}\cline{7-8}\cline{9-10}
 Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
 \hline
-Alpaca  & 0{,}729 & 0{,}395 & 0{,}846 & 0{,}745 & 0{,}798 & 0{,}756 & 0{,}751 & 0{,}815 & 0{,}624 \\
-Dolphin & 0{,}860 & 0{,}694 & 0{,}912 & 0{,}848 & 0{,}887 & 0{,}842 & 0{,}839 & 0{,}901 & 0{,}799 \\
-Gemma   & 0{,}751 & 0{,}480 & 0{,}858 & 0{,}755 & 0{,}823 & 0{,}762 & 0{,}757 & 0{,}810 & 0{,}652 \\
-Llama   & \textbf{0{,}892} & \textbf{0{,}736} & \textbf{0{,}947} & \textbf{0{,}897} & \textbf{0{,}928} & \textbf{0{,}915} & \textbf{0{,}912} & \textbf{0{,}925} & \textbf{0{,}871} \\
-Mistral & 0{,}877 & 0{,}689 & 0{,}938 & 0{,}891 & 0{,}914 & 0{,}903 & 0{,}900 & 0{,}922 & 0{,}842 \\
-Qwen    & 0{,}872 & 0{,}590 & 0{,}937 & 0{,}877 & 0{,}889 & 0{,}898 & 0{,}895 & 0{,}905 & 0{,}804 \\
+Alpaca  & \pior{\textbf{0{,}729}} & \pior{0{,}395} & \pior{\textbf{0{,}846}} & \pior{\textbf{0{,}745}} & \pior{\textbf{0{,}798}} & \pior{\textbf{0{,}756}} & \pior{\textbf{0{,}751}} & \textbf{0{,}815} & \pior{0{,}624} \\
+Dolphin & \textbf{0{,}860} & 0{,}694 & \textbf{0{,}912} & \textbf{0{,}848} & \textbf{0{,}887} & \textbf{0{,}842} & \textbf{0{,}839} & \textbf{0{,}901} & \textbf{0{,}799} \\
+Gemma   & \textbf{0{,}751} & 0{,}480 & \textbf{0{,}858} & \textbf{0{,}755} & \textbf{0{,}823} & \textbf{0{,}762} & \textbf{0{,}757} & \pior{\textbf{0{,}810}} & 0{,}652 \\
+Llama   & \melhor{\textbf{0{,}892}} & \melhor{\textbf{0{,}736}} & \melhor{\textbf{0{,}947}} & \melhor{\textbf{0{,}897}} & \melhor{\textbf{0{,}928}} & \melhor{\textbf{0{,}915}} & \melhor{\textbf{0{,}912}} & \melhor{\textbf{0{,}925}} & \melhor{\textbf{0{,}871}} \\
+Mistral & \textbf{0{,}877} & 0{,}689 & \textbf{0{,}938} & \textbf{0{,}891} & \textbf{0{,}914} & \textbf{0{,}903} & \textbf{0{,}900} & \textbf{0{,}922} & \textbf{0{,}842} \\
+Qwen    & \textbf{0{,}872} & 0{,}590 & \textbf{0{,}937} & \textbf{0{,}877} & \textbf{0{,}889} & \textbf{0{,}898} & \textbf{0{,}895} & \textbf{0{,}905} & \textbf{0{,}804} \\
 \hline
-\multicolumn{10}{c}{Métricas de classificação macro por campo (Acurácia / Precisão / Revocação / F1)} \\
+\multicolumn{10}{@{}l}{\textit{Métricas de classificação} (macro por campo)} \\
+Modelo  & \multicolumn{2}{c}{Acurácia} & \multicolumn{2}{c}{Precisão} & \multicolumn{2}{c}{Revocação} & \multicolumn{3}{c}{F1} \\
 \hline
-Alpaca  & \multicolumn{9}{l}{0{,}283 / 0{,}012 / 0{,}434 / 0{,}024} \\
-Dolphin & \multicolumn{9}{l}{0{,}705 / 0{,}034 / 0{,}447 / 0{,}062} \\
-Gemma   & \multicolumn{9}{l}{0{,}292 / 0{,}017 / \textbf{0{,}603} / 0{,}033} \\
-Llama   & \multicolumn{9}{l}{0{,}725 / \textbf{0{,}038} / 0{,}361 / \textbf{0{,}067}} \\
-Mistral & \multicolumn{9}{l}{\textbf{0{,}760} / 0{,}037 / 0{,}371 / 0{,}066} \\
-Qwen    & \multicolumn{9}{l}{0{,}692 / 0{,}004 / 0{,}063 / 0{,}008} \\
+Alpaca  & \multicolumn{2}{c}{\pior{0{,}283}} & \multicolumn{2}{c}{0{,}012} & \multicolumn{2}{c}{0{,}434} & \multicolumn{3}{c}{0{,}024} \\
+Dolphin & \multicolumn{2}{c}{\textbf{0{,}705}} & \multicolumn{2}{c}{0{,}034} & \multicolumn{2}{c}{0{,}447} & \multicolumn{3}{c}{0{,}062} \\
+Gemma   & \multicolumn{2}{c}{0{,}292} & \multicolumn{2}{c}{0{,}017} & \multicolumn{2}{c}{\melhor{0{,}603}} & \multicolumn{3}{c}{0{,}033} \\
+Llama   & \multicolumn{2}{c}{\textbf{0{,}725}} & \multicolumn{2}{c}{\melhor{0{,}038}} & \multicolumn{2}{c}{0{,}361} & \multicolumn{3}{c}{\melhor{0{,}067}} \\
+Mistral & \multicolumn{2}{c}{\melhor{\textbf{0{,}760}}} & \multicolumn{2}{c}{0{,}037} & \multicolumn{2}{c}{0{,}371} & \multicolumn{3}{c}{0{,}066} \\
+Qwen    & \multicolumn{2}{c}{0{,}692} & \multicolumn{2}{c}{\pior{0{,}004}} & \multicolumn{2}{c}{\pior{0{,}063}} & \multicolumn{3}{c}{\pior{0{,}008}} \\
 \hline
 \end{tabular}
 \end{table}
@@ -201,19 +219,21 @@ O EN1N2N3 é o \textit{pipeline} automatizado de ponta a ponta. Este é o cenár
 \scriptsize
 \begin{tabular}{lccccccccc}
 \hline
+ & \multicolumn{2}{c}{Lexical} & \multicolumn{3}{c}{Semântica} & \multicolumn{2}{c}{WMD} & \multicolumn{2}{c}{Geração} \\
+\cline{2-3}\cline{4-6}\cline{7-8}\cline{9-10}
 Modelo & FW & TF-IDF & SBERT & BERTimbau & Multi. & WMD\_ft & WMD\_nilc & BERTScore & ROUGE-L \\
 \hline
-Alpaca  & 0{,}525 & 0{,}345 & 0{,}687 & 0{,}645 & 0{,}701 & 0{,}676 & 0{,}658 & 0{,}782 & 0{,}471 \\
-Dolphin & 0{,}685 & 0{,}600 & 0{,}811 & 0{,}794 & 0{,}832 & 0{,}776 & 0{,}762 & 0{,}871 & 0{,}683 \\
-Gemma   & 0{,}536 & 0{,}419 & 0{,}747 & 0{,}710 & 0{,}767 & 0{,}712 & 0{,}697 & 0{,}807 & 0{,}553 \\
-Llama   & \textbf{0{,}701} & \textbf{0{,}630} & \textbf{0{,}834} & \textbf{0{,}823} & \textbf{0{,}853} & \textbf{0{,}804} & \textbf{0{,}790} & \textbf{0{,}882} & \textbf{0{,}711} \\
-Mistral & 0{,}693 & 0{,}600 & 0{,}830 & 0{,}814 & 0{,}845 & 0{,}801 & 0{,}788 & 0{,}879 & 0{,}691 \\
-Qwen    & 0{,}561 & 0{,}490 & 0{,}750 & 0{,}724 & 0{,}762 & 0{,}773 & 0{,}759 & 0{,}838 & 0{,}590 \\
+Alpaca  & \pior{0{,}525} & \pior{0{,}345} & \pior{0{,}687} & \pior{0{,}645} & \pior{\textbf{0{,}701}} & \pior{0{,}676} & \pior{0{,}658} & \pior{\textbf{0{,}782}} & \pior{0{,}471} \\
+Dolphin & 0{,}685 & 0{,}600 & \textbf{0{,}811} & \textbf{0{,}794} & \textbf{0{,}832} & \textbf{0{,}776} & \textbf{0{,}762} & \textbf{0{,}871} & 0{,}683 \\
+Gemma   & 0{,}536 & 0{,}419 & \textbf{0{,}747} & \textbf{0{,}710} & \textbf{0{,}767} & \textbf{0{,}712} & 0{,}697 & \textbf{0{,}807} & 0{,}553 \\
+Llama   & \melhor{\textbf{0{,}701}} & \melhor{0{,}630} & \melhor{\textbf{0{,}834}} & \melhor{\textbf{0{,}823}} & \melhor{\textbf{0{,}853}} & \melhor{\textbf{0{,}804}} & \melhor{\textbf{0{,}790}} & \melhor{\textbf{0{,}882}} & \melhor{\textbf{0{,}711}} \\
+Mistral & 0{,}693 & 0{,}600 & \textbf{0{,}830} & \textbf{0{,}814} & \textbf{0{,}845} & \textbf{0{,}801} & \textbf{0{,}788} & \textbf{0{,}879} & 0{,}691 \\
+Qwen    & 0{,}561 & 0{,}490 & \textbf{0{,}750} & \textbf{0{,}724} & \textbf{0{,}762} & \textbf{0{,}773} & \textbf{0{,}759} & \textbf{0{,}838} & 0{,}590 \\
 \hline
 \end{tabular}
 \end{table}
 
-A saída de cada modelo é persistida em um arquivo JSON próprio (\texttt{generate\_n1n2n3\_<modelo>.json}), e as métricas agregadas ficam em um arquivo único (\texttt{validate\_n1n2n3.json}). O \textbf{Llama} mantém a liderança que conquistou em EN3 isolado, agora em todas as nove métricas de similaridade; \textbf{Mistral} fica imediatamente atrás, com diferenças marginais (Multilingual~0{,}845 \textit{vs.}~0{,}853). Em linha com o padrão observado em EN1N2, Llama, Mistral e Dolphin preservam vantagem relativa também na cadeia completa, ao passo que Alpaca e Gemma acumulam queda em todas as métricas e entregam o pior desempenho global, evidenciando que falhas em N1/N2 contaminam a estruturação final em N3 mesmo nas métricas semânticas.
+A saída de cada modelo é persistida em um arquivo JSON próprio (\textit{generate\_n1n2n3\_<modelo>.json}), e as métricas agregadas ficam em um arquivo único (\textit{validate\_n1n2n3.json}). O \textbf{Llama} mantém a liderança que conquistou em EN3 isolado, agora em todas as nove métricas de similaridade; \textbf{Mistral} fica imediatamente atrás, com diferenças marginais (Multilingual~0{,}845 \textit{vs.}~0{,}853). Em linha com o padrão observado em EN1N2, Llama, Mistral e Dolphin preservam vantagem relativa também na cadeia completa, ao passo que Alpaca e Gemma acumulam queda em todas as métricas e entregam o pior desempenho global, evidenciando que falhas em N1/N2 contaminam a estruturação final em N3 mesmo nas métricas semânticas.
 
 \section{Resultados por Modelo}
 
@@ -228,12 +248,12 @@ A Tabela~\ref{tab:ranking_global} traz a média global por modelo, agregando as 
 \hline
 Modelo  & EN1   & EN2   & EN1N2 & EN3   & EN1N2N3 & Média Global \\
 \hline
-Llama   & 0{,}724 & 0{,}605 & 0{,}646 & \textbf{0{,}892} & \textbf{0{,}781} & \textbf{0{,}730} \\
-Dolphin & \textbf{0{,}801} & 0{,}576 & 0{,}650 & 0{,}843 & 0{,}757 & 0{,}725 \\
-Mistral & 0{,}757 & 0{,}570 & 0{,}634 & 0{,}875 & 0{,}771 & 0{,}721 \\
-Gemma   & 0{,}738 & 0{,}531 & 0{,}591 & 0{,}739 & 0{,}661 & 0{,}652 \\
-Qwen    & 0{,}602 & 0{,}366 & 0{,}456 & 0{,}852 & 0{,}694 & 0{,}594 \\
-Alpaca  & 0{,}676 & 0{,}408 & 0{,}488 & 0{,}718 & 0{,}610 & 0{,}580 \\
+Llama   & \textbf{0{,}724} & \melhor{0{,}605} & 0{,}646 & \melhor{\textbf{0{,}892}} & \melhor{\textbf{0{,}781}} & \melhor{\textbf{0{,}730}} \\
+Dolphin & \melhor{\textbf{0{,}801}} & 0{,}576 & \melhor{0{,}650} & \textbf{0{,}843} & \textbf{0{,}757} & \textbf{0{,}725} \\
+Mistral & \textbf{0{,}757} & 0{,}570 & 0{,}634 & \textbf{0{,}875} & \textbf{0{,}771} & \textbf{0{,}721} \\
+Gemma   & \textbf{0{,}738} & 0{,}531 & 0{,}591 & \textbf{0{,}739} & 0{,}661 & 0{,}652 \\
+Qwen    & \pior{0{,}602} & \pior{0{,}366} & \pior{0{,}456} & \textbf{0{,}852} & 0{,}694 & 0{,}594 \\
+Alpaca  & 0{,}676 & 0{,}408 & 0{,}488 & \pior{\textbf{0{,}718}} & \pior{0{,}610} & \pior{0{,}580} \\
 \hline
 \end{tabular}
 \end{table}
@@ -309,12 +329,12 @@ O tempo total de geração foi medido por modelo e por experimento. A Tabela~\re
 \hline
 Modelo & Tempo (s) & Tempo (h:mm:ss) \\
 \hline
-Alpaca  & 104{,}55     & 0:01:44 \\
-Dolphin & 62{,}65      & 0:01:02 \\
-Gemma   & 133{,}04     & 0:02:13 \\
-Llama   & 5\,676{,}97  & 1:34:36 \\
-Mistral & 70{,}04      & 0:01:10 \\
-Qwen    & 309{,}59     & 0:05:09 \\
+Alpaca  & 104{,}55 & 0:01:44 \\
+Dolphin & \melhor{62{,}65} & \melhor{0:01:02} \\
+Gemma   & 133{,}04 & 0:02:13 \\
+Llama   & \pior{5\,676{,}97} & \pior{1:34:36} \\
+Mistral & 70{,}04 & 0:01:10 \\
+Qwen    & 309{,}59 & 0:05:09 \\
 \hline
 \end{tabular}
 \end{table}
@@ -327,12 +347,12 @@ Qwen    & 309{,}59     & 0:05:09 \\
 \hline
 Modelo & Tempo (s) & Tempo (h:mm:ss) \\
 \hline
-Alpaca  & 249{,}10     & 0:04:09 \\
-Dolphin & 124{,}69     & 0:02:04 \\
-Gemma   & 244{,}19     & 0:04:04 \\
-Llama   & 6\,895{,}71  & 1:54:55 \\
-Mistral & 123{,}63     & 0:02:03 \\
-Qwen    & 6\,515{,}09  & 1:48:35 \\
+Alpaca  & 249{,}10 & 0:04:09 \\
+Dolphin & 124{,}69 & 0:02:04 \\
+Gemma   & 244{,}19 & 0:04:04 \\
+Llama   & \pior{6\,895{,}71} & \pior{1:54:55} \\
+Mistral & \melhor{123{,}63} & \melhor{0:02:03} \\
+Qwen    & 6\,515{,}09 & 1:48:35 \\
 \hline
 \end{tabular}
 \end{table}
@@ -345,12 +365,12 @@ Qwen    & 6\,515{,}09  & 1:48:35 \\
 \hline
 Modelo & Tempo (s) & Tempo (h:mm:ss) \\
 \hline
-Alpaca  & 330{,}84      & 0:05:30 \\
-Dolphin & 104{,}28      & 0:01:44 \\
-Gemma   & 427{,}22      & 0:07:07 \\
-Llama   & 9\,450{,}14   & 2:37:30 \\
-Mistral & 138{,}39      & 0:02:18 \\
-Qwen    & 10\,093{,}84  & 2:48:13 \\
+Alpaca  & 330{,}84 & 0:05:30 \\
+Dolphin & \melhor{104{,}28} & \melhor{0:01:44} \\
+Gemma   & 427{,}22 & 0:07:07 \\
+Llama   & 9\,450{,}14 & 2:37:30 \\
+Mistral & 138{,}39 & 0:02:18 \\
+Qwen    & \pior{10\,093{,}84} & \pior{2:48:13} \\
 \hline
 \end{tabular}
 \end{table}
@@ -363,12 +383,12 @@ Qwen    & 10\,093{,}84  & 2:48:13 \\
 \hline
 Modelo & Tempo (s) & Tempo (h:mm:ss) \\
 \hline
-Alpaca  & 2\,104{,}92  & 0:35:05 \\
-Dolphin & 584{,}96     & 0:09:45 \\
-Gemma   & 5\,982{,}38  & 1:39:42 \\
-Llama   & 800{,}78     & 0:13:21 \\
-Mistral & 627{,}68     & 0:10:28 \\
-Qwen    & 847{,}41     & 0:14:07 \\
+Alpaca  & 2\,104{,}92 & 0:35:05 \\
+Dolphin & \melhor{584{,}96} & \melhor{0:09:45} \\
+Gemma   & \pior{5\,982{,}38} & \pior{1:39:42} \\
+Llama   & 800{,}78 & 0:13:21 \\
+Mistral & 627{,}68 & 0:10:28 \\
+Qwen    & 847{,}41 & 0:14:07 \\
 \hline
 \end{tabular}
 \end{table}
@@ -381,12 +401,12 @@ Qwen    & 847{,}41     & 0:14:07 \\
 \hline
 Modelo & Tempo (s) & Tempo (h:mm:ss) \\
 \hline
-Alpaca  & 1\,395{,}35  & 0:23:15 \\
-Dolphin & 757{,}65     & 0:12:38 \\
-Gemma   & 6\,364{,}48  & 1:46:04 \\
-Llama   & 808{,}62     & 0:13:29 \\
-Mistral & 637{,}88     & 0:10:38 \\
-Qwen    & 808{,}72     & 0:13:29 \\
+Alpaca  & 1\,395{,}35 & 0:23:15 \\
+Dolphin & 757{,}65 & 0:12:38 \\
+Gemma   & \pior{6\,364{,}48} & \pior{1:46:04} \\
+Llama   & 808{,}62 & 0:13:29 \\
+Mistral & \melhor{637{,}88} & \melhor{0:10:38} \\
+Qwen    & 808{,}72 & 0:13:29 \\
 \hline
 \end{tabular}
 \end{table}
