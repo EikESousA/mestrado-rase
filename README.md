@@ -19,7 +19,9 @@
 
 Este código foi desenvolvido como parte do Mestrado do aluno Eike Natan Sousa Brito, no Programa de Pós-Graduação em Ciência da Computação (PROCC) da Fundação Universidade Federal de Sergipe (UFS), durante o período de 2024-2025.
 
-O objetivo principal do projeto é a leitura e interpretação automatizada de normas de engenharia, convertendo um código RASE para o formato JSON. O pipeline atual utiliza **Engenharia de Prompt** sobre seis LLMs locais servidos pelo Ollama (Llama 3.3, Bode-Alpaca PT-BR, Mistral PT, Dolphin PT, Gemma Gaia PT-BR e Qwen2.5 PT), aplicando-os em três níveis sequenciais: **N1** (segmentação em sentenças), **N2** (identificação dos operadores RASE — *Requirements*, *Applicability*, *Selection*, *Exception*) e **N3** (extração estruturada das propriedades). A validação compara as saídas com o `dataset.json` de referência usando 7 métricas de similaridade e 4 métricas de classificação.
+O objetivo principal do projeto é a leitura e interpretação automatizada de normas de engenharia, convertendo-as para o formato RASE em JSON. O pipeline atual utiliza **Engenharia de Prompt** sobre seis LLMs locais servidos pelo Ollama (Llama 3.1 8B, Bode-Alpaca PT-BR, Mistral PT, Dolphin PT, Gemma Gaia PT-BR e Qwen2.5 PT), aplicando-os em três níveis sequenciais: **N1** (segmentação em sentenças atômicas), **N2** (identificação dos operadores RASE — *Requirement*, *Applicability*, *Selection*, *Exception*) e **N3** (extração estruturada das propriedades em JSON). A validação compara as saídas com o `dataset.json` de referência (79 normas brasileiras anotadas, com ênfase na NBR 9050) usando **9 métricas de similaridade e 4 de classificação** (13 no total).
+
+O texto completo da pesquisa está em `dissertacao/` (LaTeX), com o PDF compilado em `dissertacao/Modelo-Mestrado-PROCC.pdf`.
 
 ### Sistema Operacional
 
@@ -40,6 +42,31 @@ Recomendado Python **3.11.9**. Funciona em Python **3.12** (testado).
 - `predicts/`: saida gerada.
 - `metrics/`: saida das validacoes.
 - `utils/validates/run_validation.py`: orquestrador unico das validacoes (compartilhado pelos 5 scripts).
+
+## Modelos avaliados
+
+Os seis modelos *open-source* sao servidos localmente via Ollama; as *tags* exatas ficam em `config/models.py`:
+
+| Nome (`--model`) | Tag Ollama | Parametros |
+|------------------|------------|------------|
+| `llama`   | `llama3.1:8b`                                     | 8B |
+| `dolphin` | `cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4_k_m` | 8B (Q4_K_M) |
+| `gemma`   | `brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16`     | 4B (FP16) |
+| `mistral` | `cnmoro/mistral_7b_portuguese:q4_K_M`             | 7B (Q4_K_M) |
+| `alpaca`  | `splitpierre/bode-alpaca-pt-br:13b-Q4_0`          | 13B (Q4_0) |
+| `qwen`    | `cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4_k_m`        | 0,5B (Q4_K_M) |
+
+## Experimentos
+
+A avaliacao usa cinco experimentos (sufixos `n1`, `n2`, `n1n2`, `n3`, `n1n2n3` na geracao/validacao):
+
+- **EN1** — segmentacao N1 isolada (texto bruto -> N1).
+- **EN2** — identificacao RASE isolada (N1 de referencia -> N2).
+- **EN1N2** — pipeline encadeado N1 -> N2 (a saida do proprio modelo alimenta a etapa seguinte).
+- **EN3** — estruturacao JSON isolada (N2 de referencia -> N3).
+- **EN1N2N3** — pipeline completo encadeado N1 -> N2 -> N3.
+
+EN1, EN2 e EN3 medem cada nivel em isolamento (recebem o nivel anterior de referencia); EN1N2 e EN1N2N3 expoem a propagacao de erros ao longo da cadeia.
 
 ## Requisitos
 
@@ -133,7 +160,7 @@ python generates/generate_n1n2n3.py --model mistral
 
 ### Validacao N1
 
-`validates/validate_n1.py` compara as sentencas N1 geradas com o `dataset.json` e grava metricas em `metrics/validate_n1.json`. Sao usadas 7 metricas de similaridade e 4 de classificacao:
+`validates/validate_n1.py` compara as sentencas N1 geradas com o `dataset.json` e grava metricas em `metrics/validate_n1.json`. Sao usadas 9 metricas de similaridade e 4 de classificacao:
 
 Similaridade:
 
@@ -144,6 +171,8 @@ Similaridade:
 - Multilingual (`sentence-transformers/paraphrase-multilingual-mpnet-base-v2`)
 - WMD com NILC FastText PT (`nilc-nlp/fasttext-cbow-300d`)
 - WMD com NILC Word2Vec PT (`nilc-nlp/word2vec-cbow-300d`)
+- BERTScore (similaridade contextual via *embeddings* do BERT; ativa por padrao, opt-out com `VALIDATE_BERTSCORE=0`)
+- ROUGE-L (maior subsequencia comum; ativa por padrao, opt-out com `VALIDATE_ROUGE=0`)
 
 Classificacao (derivada do par alinhado por indice, threshold de similaridade 0,7 sobre Multilingual):
 
@@ -228,7 +257,7 @@ Em `models.<modelo>.items`, cada item inclui:
 - `text_n1`: sentenca N1 correspondente (no N2).
 - `target`: texto de referencia do dataset.
 - `predicted`: texto gerado pelo modelo.
-- `fuzzywuzzy`, `tfidf`, `sbert`, `bertimbau`, `multilingual`, `wmd_ft`, `wmd_nilc`: scores por par (0 a 1 quando aplicavel).
+- `fuzzywuzzy`, `tfidf`, `sbert`, `bertimbau`, `multilingual`, `wmd_ft`, `wmd_nilc`, `bertscore`, `rouge_l`: scores por par (0 a 1 quando aplicavel).
 
 Cada entrada de `models.<modelo>` tambem inclui `classification` com:
 
@@ -246,6 +275,8 @@ Interpretacao dos scores:
 - `multilingual`: similaridade semantica multilingue.
 - `wmd_ft`: similaridade derivada do Word Mover's Distance com NILC FastText PT.
 - `wmd_nilc`: similaridade derivada do Word Mover's Distance com NILC Word2Vec PT.
+- `bertscore`: similaridade contextual (precisao/revocacao/F1 com *embeddings* do BERT).
+- `rouge_l`: razao entre a maior subsequencia comum (LCS) e a referencia.
 
 Os valores em `averages` sao medias simples de cada metrica, ignorando valores ausentes; o campo `classification_macro` traz a macro-media de accuracy/precision/recall/f1. Quanto mais proximo de 1, maior a similaridade entre `target` e `predicted` em todas as metricas, incluindo WMD (que ja e normalizado para [0,1]).
 
@@ -286,6 +317,11 @@ Infra:
 - `tools/run_seed_sweep.py` — roda multiplas seeds e calcula media/desvio.
 - `tools/baseline_regex.py` — baseline nao-LLM (regex) para comparacao.
 - `tools/quality_time.py` — calcula F1/segundo por modelo (qualidade vs custo).
+- `tools/plot_results.py` — gera os graficos de barras dos resultados (`dissertacao/Imagens/`).
+- `tools/plot_diagrams.py` — gera os diagramas do pipeline e dos experimentos.
+- `tools/plot_theory_diagrams.py` — gera os diagramas conceituais da fundamentacao.
+- `tools/build_figure_rase.py` — gera a figura de exemplo da anotacao RASE.
+- `tools/menu_tables.py` — menu para (re)gerar tabelas e figuras.
 
 ## Docker
 
@@ -297,10 +333,10 @@ Sobe um container `ollama` e o app com volumes para os pesos. Veja `docker-compo
 
 ## Ajuda
 
-Se você tiver dúvidas, relatórios de bugs ou solicitações de recursos, não hesite em nos mandar mensagem para o email **eike.sousa@hotmail.com**.
+Se você tiver dúvidas, relatórios de bugs ou solicitações de recursos, não hesite em nos mandar mensagem para o email **eike.sousa@gmail.com**.
 
-Lembre-se de seguir nosso **[Código de Conduta](https://github.com/EikESousA/IAnvisa/blob/main/CODE_OF_CONDUCT.md)**.
+Lembre-se de seguir nosso **[Código de Conduta](CODE_OF_CONDUCT.md)**.
 
 ## Licença
 
-Licenciado pelo CC0-1.0 license. Consulte o arquivo **[LICENSE](https://github.com/EikESousA/IAnvisa/blob/main/LICENSE)** para obter detalhes.
+Licenciado pela licença CC0-1.0. Consulte o arquivo **[LICENSE](LICENSE.md)** para obter detalhes.
