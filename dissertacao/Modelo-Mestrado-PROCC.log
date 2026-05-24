@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.19)  23 MAY 2026 22:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.19)  23 MAY 2026 22:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1361,11 +1361,7 @@ File: Imagens/4.2-experimentos.png Graphic file (type png)
 <use Imagens/4.2-experimentos.png>
 Package pdftex.def Info: Imagens/4.2-experimentos.png  used on input line 130.
 (pdftex.def)             Requested size: 445.89806pt x 408.09612pt.
- [60 <./Imagens/4.2-experimentos.png>] [61] [62]
-
-LaTeX Warning: Reference `tab:exemplos_classificacao' on page 63 undefined on input line 207.
-
-[63]
+ [60 <./Imagens/4.2-experimentos.png>] [61] [62] [63]
 Overfull \hbox (13.33528pt too wide) in paragraph at lines 222--223
 []\T1/ntxtlf/b/n/12 (-20) Bibliotecas prin-ci-pais\T1/ntxtlf/m/n/12 (-20) : \T1/ntxtt/m/n/12 sentence-transformers\T1/ntxtlf/m/n/12 (-20) , \T1/ntxtt/m/n/12 gensim\T1/ntxtlf/m/n/12 (-20) , \T1/ntxtt/m/n/12 fuzzywuzzy \T1/ntxtlf/m/n/12 (-20) e \T1/ntxtt/m/n/12 scikit-learn
  []
@@ -1486,23 +1482,19 @@ enddocument/afterlastpage: lastpage setting LastPage.
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Modelo-Mestrado-PROCC.brf' has not changed.
 (rerunfilecheck)             Checksum: C2F957321DACCEE22D9F62164F580F65;10190.
  ) 
 Here is how much of TeX's memory you used:
- 27611 strings out of 474222
- 435202 string characters out of 5748733
+ 27610 strings out of 474222
+ 435174 string characters out of 5748733
  2089975 words of memory out of 5000000
- 48316 multiletter control sequences out of 15000+600000
+ 48315 multiletter control sequences out of 15000+600000
  700326 words of font info for 351 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,13n,121p,2307b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Modelo-Mestrado-PROCC.pdf (101 pages, 3357160 bytes).
+Output written on Modelo-Mestrado-PROCC.pdf (101 pages, 3356853 bytes).
 PDF statistics:
  2392 PDF objects out of 2487 (max. 8388607)
  2192 compressed objects within 22 object streams
