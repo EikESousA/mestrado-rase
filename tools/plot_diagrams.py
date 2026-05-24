@@ -114,50 +114,79 @@ def plot_pipeline() -> Path:
 
 
 def plot_experiments() -> Path:
-    fig, ax = plt.subplots(figsize=(14, 7.5))
-    ax.set_xlim(0, 16)
-    ax.set_ylim(0, 10)
+    fig, ax = plt.subplots(figsize=(15.5, 14.5))
+    ax.set_xlim(0, 18)
+    ax.set_ylim(0, 16)
     ax.set_aspect("equal")
     ax.axis("off")
 
-    # ---------- EN1 ----------
-    ax.text(0.5, 9.3, "EN1 — Segmentação N1 isolada", fontsize=11, fontweight="bold", color="#1A73E8")
-    y1 = 8.4
-    box(ax, 1.8, y1, 2.0, 0.9, "text\n(bruto)", facecolor="#FFF3E0", edgecolor="#E8710A", fontsize=9)
-    box(ax, 5.5, y1, 2.4, 1.0, "Modelo: N1", facecolor="#E8F0FE", edgecolor="#1A73E8", fontsize=10, weight="bold")
-    box(ax, 9.2, y1, 2.5, 0.9, "texts_n1_pred", facecolor="#FFFFFF", edgecolor="#5F6368", fontsize=9)
-    box(ax, 13.4, y1, 2.6, 0.9, "compara com\ntexts_n1_ref", facecolor="#FCE8E6", edgecolor="#D93025", fontsize=9)
-    arrow(ax, 2.85, y1, 4.25, y1)
-    arrow(ax, 6.75, y1, 7.9, y1)
-    arrow(ax, 10.5, y1, 12.05, y1, color="#D93025")
+    styles = {
+        "raw": dict(facecolor="#FFF3E0", edgecolor="#E8710A", weight="normal"),
+        "ref": dict(facecolor="#E6F4EA", edgecolor="#188038", weight="normal"),
+        "model": dict(facecolor="#E8F0FE", edgecolor="#1A73E8", weight="bold"),
+        "pred": dict(facecolor="#FFFFFF", edgecolor="#5F6368", weight="normal"),
+        "compare": dict(facecolor="#FCE8E6", edgecolor="#D93025", weight="normal"),
+    }
 
-    # ---------- EN2 ----------
-    ax.text(0.5, 6.3, "EN2 — Identificação RASE isolada (N1 de referência como entrada)", fontsize=11, fontweight="bold", color="#1A73E8")
-    y2 = 5.4
-    box(ax, 1.8, y2, 2.0, 0.9, "texts_n1\n(referência)", facecolor="#E6F4EA", edgecolor="#188038", fontsize=9)
-    box(ax, 5.5, y2, 2.4, 1.0, "Modelo: N2", facecolor="#E8F0FE", edgecolor="#1A73E8", fontsize=10, weight="bold")
-    box(ax, 9.2, y2, 2.5, 0.9, "operators_n2_pred", facecolor="#FFFFFF", edgecolor="#5F6368", fontsize=9)
-    box(ax, 13.4, y2, 2.6, 0.9, "compara com\noperators_n2_ref", facecolor="#FCE8E6", edgecolor="#D93025", fontsize=9)
-    arrow(ax, 2.85, y2, 4.25, y2)
-    arrow(ax, 6.75, y2, 7.9, y2)
-    arrow(ax, 10.5, y2, 12.05, y2, color="#D93025")
+    def draw_row(y, title, steps, x_left=0.7, x_right=17.3, box_h=1.0):
+        n = len(steps)
+        cell = (x_right - x_left) / n
+        bw = cell * 0.72
+        fontsize = 10 if n <= 4 else (9 if n <= 6 else 8)
+        ax.text(x_left - 0.1, y + box_h / 2 + 0.45, title, fontsize=11,
+                fontweight="bold", color="#1A73E8", ha="left", va="bottom")
+        centers = [x_left + cell * (i + 0.5) for i in range(n)]
+        for cx, (label, kind) in zip(centers, steps):
+            st = styles[kind]
+            box(ax, cx, y, bw, box_h, label, facecolor=st["facecolor"],
+                edgecolor=st["edgecolor"], fontsize=fontsize, weight=st["weight"])
+        for i in range(n - 1):
+            color = "#D93025" if i == n - 2 else "#5F6368"
+            arrow(ax, centers[i] + bw / 2, y, centers[i + 1] - bw / 2, y, color=color)
 
-    # ---------- EN1N2 ----------
-    ax.text(0.5, 3.3, "EN1N2 — Pipeline encadeado (N1 do modelo alimenta N2 do mesmo modelo)", fontsize=11, fontweight="bold", color="#1A73E8")
-    y3 = 2.2
-    box(ax, 1.3, y3, 1.6, 0.9, "text\n(bruto)", facecolor="#FFF3E0", edgecolor="#E8710A", fontsize=9)
-    box(ax, 4.0, y3, 1.8, 1.0, "Modelo: N1", facecolor="#E8F0FE", edgecolor="#1A73E8", fontsize=10, weight="bold")
-    box(ax, 6.7, y3, 1.9, 0.9, "texts_n1_pred", facecolor="#FFFFFF", edgecolor="#5F6368", fontsize=9)
-    box(ax, 9.4, y3, 1.8, 1.0, "Modelo: N2", facecolor="#E8F0FE", edgecolor="#1A73E8", fontsize=10, weight="bold")
-    box(ax, 12.2, y3, 2.1, 0.9, "operators_n2_pred", facecolor="#FFFFFF", edgecolor="#5F6368", fontsize=9)
-    box(ax, 14.7, y3, 1.2, 0.9, "compara\ncom ref.", facecolor="#FCE8E6", edgecolor="#D93025", fontsize=8)
-    arrow(ax, 2.1, y3, 3.1, y3)
-    arrow(ax, 4.9, y3, 5.75, y3)
-    arrow(ax, 7.65, y3, 8.5, y3)
-    arrow(ax, 10.3, y3, 11.15, y3)
-    arrow(ax, 13.25, y3, 14.1, y3, color="#D93025")
+    rows = [
+        (14.4, "EN1 — Segmentação N1 isolada", [
+            ("text\n(bruto)", "raw"),
+            ("Modelo: N1", "model"),
+            ("texts_n1_pred", "pred"),
+            ("compara com\ntexts_n1_ref", "compare"),
+        ]),
+        (11.2, "EN2 — Identificação RASE isolada (N1 de referência como entrada)", [
+            ("texts_n1\n(referência)", "ref"),
+            ("Modelo: N2", "model"),
+            ("operators_n2_pred", "pred"),
+            ("compara com\noperators_n2_ref", "compare"),
+        ]),
+        (8.0, "EN3 — Estruturação N3 isolada (N2 de referência como entrada)", [
+            ("operators_n2\n(referência)", "ref"),
+            ("Modelo: N3", "model"),
+            ("properties_n3_pred", "pred"),
+            ("compara com\nproperties_n3_ref", "compare"),
+        ]),
+        (4.8, "EN1N2 — Pipeline encadeado (N1$\\rightarrow$N2 do mesmo modelo)", [
+            ("text\n(bruto)", "raw"),
+            ("Modelo: N1", "model"),
+            ("texts_n1_pred", "pred"),
+            ("Modelo: N2", "model"),
+            ("operators_n2_pred", "pred"),
+            ("compara\ncom ref.", "compare"),
+        ]),
+        (1.6, "EN1N2N3 — Pipeline completo encadeado (N1$\\rightarrow$N2$\\rightarrow$N3 do mesmo modelo)", [
+            ("text\n(bruto)", "raw"),
+            ("Modelo: N1", "model"),
+            ("texts_n1_\npred", "pred"),
+            ("Modelo: N2", "model"),
+            ("operators_n2_\npred", "pred"),
+            ("Modelo: N3", "model"),
+            ("properties_n3_\npred", "pred"),
+            ("compara\ncom ref.", "compare"),
+        ]),
+    ]
+    for y, title, steps in rows:
+        draw_row(y, title, steps)
 
-    ax.set_title("Os três experimentos: EN1, EN2 e EN1N2", fontsize=12, fontweight="bold", pad=10)
+    ax.set_title("Os cinco experimentos: EN1, EN2 e EN3 (isolados); EN1N2 e EN1N2N3 (encadeados)",
+                 fontsize=13, fontweight="bold", pad=12)
     out = OUT_DIR / "4.2-experimentos.png"
     fig.savefig(out, dpi=200, bbox_inches="tight")
     plt.close(fig)

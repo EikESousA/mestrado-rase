@@ -4,15 +4,392 @@
 \partapendices
 
 % ----------------------------------------------------------
-\chapter{Quisque libero justo}
+\chapter{Prompts utilizados na Engenharia de Prompt}
+\label{ap:prompts}
 % ----------------------------------------------------------
 
-\lipsum[50]
+Este apêndice reproduz, na íntegra e exatamente como foram enviados aos modelos, os \textit{prompts} de cada nível de normalização (N1, N2 e N3). Cada \textit{prompt} reside em um arquivo de texto próprio no diretório \texttt{prompts/} do repositório. Os textos são apresentados sem acentuação nas instruções, tal como nos arquivos-fonte; a acentuação aparece apenas nos exemplos de saída esperada. Os marcadores entre chaves --- \verb|{text}|, \verb|{text_n1}|, \verb|{aplicabilidade}|, \verb|{requisito}|, \verb|{selecao}| e \verb|{execao}| --- são substituídos, em tempo de execução, pelo texto bruto da norma, pela regra atômica do N1 e pelo operador N2 correspondente.
 
 % ----------------------------------------------------------
-\chapter{Nullam elementum urna vel imperdiet sodales elit ipsum pharetra ligula
-ac pretium ante justo a nulla curabitur tristique arcu eu metus}
+\section{N1 --- \textit{Prompt Direct}}
 % ----------------------------------------------------------
-\lipsum[55-57]
+
+\begin{lstlisting}[caption={\textit{Prompt} do nível N1 (\textit{Prompt Direct}) --- \texttt{prompts/n1.txt}.}, label={lst:n1}]
+Voce e um reescritor. Transforme o texto em sentencas RASE N1.
+
+Regras:
+1) Quebre em sentencas curtas e diretas.
+2) Cada sentenca deve ter uma unica regra computavel.
+3) Nao invente elementos (aplicabilidade, selecao, requisito, excecao). Preserve apenas o que existir.
+4) Nao adicione explicacoes, titulos, bullets, numeracao ou o texto original.
+5) Saida: apenas as sentencas, uma por linha, terminadas com ponto final.
+
+Exemplo:
+Entrada:
+A inclinacao transversal da superficie deve ser de ate 2 % para pisos internos e de ate 3 % para pisos externos.
+Saida:
+Pisos internos devem ter inclinacao transversal de no maximo 2%.
+Pisos externos devem ter inclinacao transversal de no maximo 3%.
+
+TEXTO_INICIO
+{text}
+TEXTO_FIM
+\end{lstlisting}
+
+% ----------------------------------------------------------
+\section{N2 --- \textit{Chain-of-Thought}}
+% ----------------------------------------------------------
+
+\begin{lstlisting}[caption={\textit{Prompt} do nível N2 (\textit{Chain-of-Thought}) --- \texttt{prompts/n2.txt}.}, label={lst:n2}]
+Extrator RASE N2.
+Use APENAS o Texto N1 para extrair os elementos. O Texto completo e apenas referencia.
+
+Regras (ordem fixa):
+1) aplicabilidade (opcional): onde/quando se aplica, sem verbos.
+2) selecao (opcional): subconjunto da aplicabilidade, sem verbos.
+3) execao (opcional): casos que NAO seguem a regra.
+4) requisito (obrigatorio): acao/condicao principal, comeca com verbo.
+
+Regras de saida:
+- Retorne exatamente 4 linhas no formato abaixo.
+- Cada campo deve aparecer no maximo uma vez.
+- Se nao existir, use "" (string vazia).
+- Nao adicione explicacoes, listas ou texto extra.
+
+Exemplo (formato):
+Texto completo:
+"As areas ... Norma."
+Texto N1:
+"As areas de qualquer espaco ou edificacao de uso publico ou coletivo devem ser servidas de uma ou mais rotas acessiveis."
+Resposta (4 linhas):
+aplicabilidade: As areas de qualquer espaco ou edificacao
+selecao: uso publico ou coletivo
+execao: ""
+requisito: devem ser servidas de uma ou mais rotas acessiveis
+
+Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
+
+Resposta (4 linhas):
+aplicabilidade:
+selecao:
+execao:
+requisito:
+\end{lstlisting}
+
+% ----------------------------------------------------------
+\section{N3 --- \textit{Few-Shot}}
+% ----------------------------------------------------------
+
+O nível N3 emprega um \textit{prompt} por operador RASE. Os quatro compartilham a mesma estrutura --- esquema JSON de saída, heurísticas de mapeamento e exemplos \textit{few-shot} ---, variando apenas as heurísticas e os exemplos próprios de cada operador.
+
+% ----------------------------------------------------------
+\subsection{Aplicabilidade}
+% ----------------------------------------------------------
+
+\begin{lstlisting}[caption={\textit{Prompt} do operador Aplicabilidade (N3) --- \texttt{prompts/n3\_aplicabilidade.txt}.}, label={lst:n3-apl}]
+Extrator RASE N3 (aplicabilidade).
+Use APENAS o operador N2 de aplicabilidade para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+
+Regras:
+1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
+2) type deve ser "aplicabilidade". Se o operador estiver vazio, todos os campos devem ser "".
+3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
+4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+5) property/comparation/target:
+   - Quando o trecho indicar uso (ex: "edificacoes residenciais"), use property "uso".
+     - comparation "=" quando o texto definir o uso.
+     - comparation "contém" quando for subconjunto/parte do uso.
+   - Quando o trecho indicar "acessos", use object "componente", property "tipo",
+     comparation "inclui", target "porta; passagem".
+   - Quando o trecho indicar "edificacoes e equipamentos urbanos", use
+     object "edificação; equipamento urbano" e target "obra nova".
+   - Quando o trecho indicar tipo do componente (ex: entradas, rotas), use property "tipo", comparation "inclui".
+   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
+6) unit: use "" (vazio) a menos que exista unidade explicita.
+
+Regras de saida:
+- Retorne somente um JSON valido.
+- Nao adicione explicacoes ou texto extra.
+
+Exemplo:
+Operador N2 (aplicabilidade):
+As edificacoes residenciais multifamiliares, condominios e conjuntos habitacionais
+
+Resposta (JSON):
+{
+  "type": "aplicabilidade",
+  "object": "edificação",
+  "property": "uso",
+  "comparation": "=",
+  "target": "residenciais multifamiliares, condomínios e conjuntos habitacionais",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (aplicabilidade):
+Os acessos
+
+Resposta (JSON):
+{
+  "type": "aplicabilidade",
+  "object": "componente",
+  "property": "tipo",
+  "comparation": "inclui",
+  "target": "porta; passagem",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (aplicabilidade):
+edificacoes e equipamentos urbanos
+
+Resposta (JSON):
+{
+  "type": "aplicabilidade",
+  "object": "edificação; equipamento urbano",
+  "property": "",
+  "comparation": "",
+  "target": "obra nova",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (aplicabilidade):
+As unidades autonomas acessiveis
+
+Resposta (JSON):
+{
+  "type": "aplicabilidade",
+  "object": "espaço",
+  "property": "uso",
+  "comparation": "contém",
+  "target": "comum",
+  "unit": ""
+}
+
+Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
+Operador N2 (aplicabilidade):
+"{aplicabilidade}"
+
+Resposta (JSON):
+\end{lstlisting}
+
+% ----------------------------------------------------------
+\subsection{Requisito}
+% ----------------------------------------------------------
+
+\begin{lstlisting}[caption={\textit{Prompt} do operador Requisito (N3) --- \texttt{prompts/n3\_requisito.txt}.}, label={lst:n3-req}]
+Extrator RASE N3 (requisito).
+Use APENAS o operador N2 de requisito para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+
+Regras:
+1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
+2) type deve ser "requisito". Se o operador estiver vazio, todos os campos devem ser "".
+3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
+4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+5) property/comparation/target:
+   - "acessivel" -> property "acessível", comparation "=", target "VERDADEIRO"
+   - "conectadas as rotas acessiveis" / "vinculados atraves de rota acessivel" ->
+     property "conectado a rota acessível" (ou "conectado à rota acessível" se houver crase),
+     comparation "=", target "VERDADEIRO"
+   - "livres de obstaculos" -> property "possui obstáculo", comparation "=", target "FALSO"
+   - "devem ser servidas de rota(s) acessiveis" -> property "uso", comparation "=", target "VERDADEIRO"
+   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
+6) unit: use "" (vazio) a menos que exista unidade explicita.
+
+Regras de saida:
+- Retorne somente um JSON valido.
+- Nao adicione explicacoes ou texto extra.
+
+Exemplo:
+Operador N2 (requisito):
+devem permanecer livres de quaisquer obstaculos de forma permanente
+
+Resposta (JSON):
+{
+  "type": "requisito",
+  "object": "porta; passagem",
+  "property": "possui obstáculo",
+  "comparation": "=",
+  "target": "FALSO",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (requisito):
+devem ser acessiveis
+
+Resposta (JSON):
+{
+  "type": "requisito",
+  "object": "porta; espaço",
+  "property": "acessível",
+  "comparation": "=",
+  "target": "VERDADEIRO",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (requisito):
+devem ser servidas de uma ou mais rotas acessiveis
+
+Resposta (JSON):
+{
+  "type": "requisito",
+  "object": "espaço ou edificação",
+  "property": "uso",
+  "comparation": "=",
+  "target": "VERDADEIRO",
+  "unit": ""
+}
+
+Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
+Operador N2 (requisito):
+"{requisito}"
+
+Resposta (JSON):
+\end{lstlisting}
+
+% ----------------------------------------------------------
+\subsection{Seleção}
+% ----------------------------------------------------------
+
+\begin{lstlisting}[caption={\textit{Prompt} do operador Seleção (N3) --- \texttt{prompts/n3\_selecao.txt}.}, label={lst:n3-sel}]
+Extrator RASE N3 (selecao).
+Use APENAS o operador N2 de selecao para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+
+Regras:
+1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
+2) type deve ser "selecao". Se o operador estiver vazio, todos os campos devem ser "".
+3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
+4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+5) property/comparation/target:
+   - "uso publico/coletivo/comum/restrito" -> property "uso".
+     - comparation "=" quando o texto definir o uso.
+     - comparation "contém" quando o texto indicar subconjunto (ex: "uso comum", "uso restrito").
+   - listagem de tipos (entradas, rotas, circulacoes) -> property "tipo", comparation "inclui",
+     target com tipos normalizados (ex: "porta; passagem; circulação").
+   - Quando a selecao for apenas um qualificador (ex: "internos", "externos", "eventuais"),
+     deixe todos os campos vazios.
+   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
+6) unit: use "" (vazio) a menos que exista unidade explicita.
+
+Regras de saida:
+- Retorne somente um JSON valido.
+- Nao adicione explicacoes ou texto extra.
+
+Exemplo:
+Operador N2 (selecao):
+uso publico ou coletivo
+
+Resposta (JSON):
+{
+  "type": "selecao",
+  "object": "espaço",
+  "property": "uso",
+  "comparation": "=",
+  "target": "público ou coletivo",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (selecao):
+todas as entradas, bem como as rotas de interligacao as funcoes do edificio
+
+Resposta (JSON):
+{
+  "type": "selecao",
+  "object": "componente; espaço",
+  "property": "tipo",
+  "comparation": "inclui",
+  "target": "porta; passagem; circulação",
+  "unit": ""
+}
+
+Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
+Operador N2 (selecao):
+"{selecao}"
+
+Resposta (JSON):
+\end{lstlisting}
+
+% ----------------------------------------------------------
+\subsection{Exceção}
+% ----------------------------------------------------------
+
+\begin{lstlisting}[caption={\textit{Prompt} do operador Exceção (N3) --- \texttt{prompts/n3\_execao.txt}.}, label={lst:n3-exc}]
+Extrator RASE N3 (execao).
+Use APENAS o operador N2 de execao para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
+
+Regras:
+1) Gere um JSON com os campos: type, object, property, comparation, target, unit.
+2) type deve ser "excecao". Se o operador estiver vazio, todos os campos devem ser "".
+3) Use o operador como fonte principal; use Texto completo/N1 apenas para desambiguar.
+4) object: substantivo(s) principal(is) do trecho; se houver mais de um, separe por "; ".
+5) property/comparation/target:
+   - "uso restrito" ou listagem de areas excluidas -> property "uso", comparation "contém",
+     target com lista normalizada (ex: "casa de máquinas, barrilete e técnico").
+   - Quando for apenas condicao/tempo ("em reformas", "se ..."), deixe todos os campos vazios.
+   - Quando nao houver propriedade clara, deixe property/comparation/target vazios.
+6) unit: use "" (vazio) a menos que exista unidade explicita.
+
+Regras de saida:
+- Retorne somente um JSON valido.
+- Nao adicione explicacoes ou texto extra.
+
+Exemplo:
+Operador N2 (execao):
+Areas de uso restrito, como casas de maquinas, barriletes e passagem de uso tecnico
+
+Resposta (JSON):
+{
+  "type": "excecao",
+  "object": "espaço",
+  "property": "uso",
+  "comparation": "contém",
+  "target": "casa de máquinas, barrilete e técnico",
+  "unit": ""
+}
+
+Exemplo:
+Operador N2 (execao):
+Em reformas
+
+Resposta (JSON):
+{
+  "type": "",
+  "object": "",
+  "property": "",
+  "comparation": "",
+  "target": "",
+  "unit": ""
+}
+
+Agora processe:
+Texto completo:
+"{text}"
+Texto N1:
+"{text_n1}"
+Operador N2 (execao):
+"{execao}"
+
+Resposta (JSON):
+\end{lstlisting}
 
 \end{apendicesenv}
