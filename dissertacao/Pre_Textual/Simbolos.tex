@@ -3,15 +3,50 @@
 % ---
 
 \begin{simbolos}
-  \item[$ \theta $] Bias
-  \item[$ w $] Peso
-  \item[$ u $] Ponto de ativação
-  \item[$ q $] Query
-  \item[$ k $] Key
-  \item[$ v $] Value
-  \item[$ W^q $] Cabeça de atenção da Query
-  \item[$ Q^k $] Cabeça de atenção da Key
-  \item[$ W^v $] Cabeça de atenção do Value
-  
+  % Neurônio artificial e funções de ativação
+  \item[$ u $] Potencial (ponto) de ativação do neurônio
+  \item[$ x_{i} $] $i$-ésimo valor de entrada do neurônio
+  \item[$ w_{i} $] Peso (sináptico) da $i$-ésima conexão
+  \item[$ \theta $] Bias: deslocamento (limiar) da função de ativação
+  \item[$ n $] Número de entradas (ou de amostras)
+  \item[$ f(x) $] Função de ativação
+
+  % Treinamento: funções de erro/custo e otimização
+  \item[$ E(w) $] Função de erro/custo (entropia cruzada)
+  \item[$ t_{i} $] Valor-alvo (rótulo) da $i$-ésima amostra
+  \item[$ y_{i} $] Saída prevista para a $i$-ésima amostra
+  \item[$ e_{i} $] Erro da $i$-ésima amostra
+  \item[$ O_{i} $] Valor observado (na MAE)
+  \item[$ P_{i} $] Valor predito (na MAE)
+  \item[$ \theta_{i} $] Valor real de referência da $i$-ésima amostra (na MSE)
+  \item[$ \theta_{ip} $] Valor predito da $i$-ésima amostra (na MSE)
+  \item[$ \eta $] Taxa de aprendizado
+  \item[$ b $] Bias (vetor) no gradiente descendente
+  \item[$ \mathcal{B} $] Mini-lote (\textit{batch}) de amostras
+
+  % Célula LSTM
+  \item[$ h_{t} $] Estado oculto (saída) no instante $t$
+  \item[$ x_{t} $] Entrada no instante $t$
+  \item[$ C_{t} $] Estado da célula no instante $t$
+  \item[$ \tilde{C}_{t} $] Vetor de candidatos a estado da célula
+  \item[$ f_{t} $] Saída do portão de esquecimento
+  \item[$ i_{t} $] Saída do portão de entrada
+  \item[$ o_{t} $] Saída do portão de saída
+  \item[$ W_{f}, W_{i}, W_{C}, W_{o} $] Matrizes de peso dos portões da LSTM
+  \item[$ b_{f}, b_{i}, b_{C}, b_{o} $] Vetores de bias dos portões da LSTM
+
+  % Mecanismo de atenção (Transformer / self-attention)
+  \item[$ q $] Vetor \textit{query}
+  \item[$ k $] Vetor \textit{key}
+  \item[$ v $] Vetor \textit{value}
+  \item[$ W^q $] Matriz de projeção da \textit{query}
+  \item[$ W^k $] Matriz de projeção da \textit{key}
+  \item[$ W^v $] Matriz de projeção do \textit{value}
+  \item[$ W^o $] Matriz de peso aplicada à concatenação das cabeças de atenção
+  \item[$ d^k $] Dimensão (comprimento) dos vetores \textit{key}
+  \item[$ s $] Vetores \textit{value} ponderados pela atenção
+  \item[$ z $] Vetor de saída da \textit{self-attention} para a palavra-foco
+  \item[$ K, V $] Matrizes de atenção da camada \textit{encoder--decoder}
+
 \end{simbolos}
 % ---

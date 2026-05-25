@@ -1,45 +1,91 @@
 % Lista de abreviaturas e siglas
 
 \begin{siglas}
-  	\item[DCOMP]{Departamento de Computação}
-    	\item[UFS]{Universidade Federal de Sergipe}
-    	\item[BIM]{Building Information Modeling ou Modelagem da Informação da Construção}
-    	\item[AEC]{Architecture, Engineering and Construction ou Arquitetura, Engenharia e Construção}
-    	\item[IA]{Artificial Intelligence ou Inteligência Artificial}
-    	\item[IAG]{Generative AI ou IA Generativa}
-    	\item[AM]{Machine Learning ou Aprendizado de Máquina}
-    	\item[PLN]{Natural Language Processing ou Processamento de Linguagem Natural}
-        \item[RNA]{Artificial Neural Networks ou Redes Neurais Artificiais}
-    	\item[MLP]{Multi-Layer Perceptron ou Perceptron Multi-Camadas}
-        \item[RNN]{Recurrent Neural Networks ou Redes Neurais Recorrentes}
-        \item[LSTM]{Long Short-Term Memory ou Memória de Longo e Curto Prazo}
-    	\item[BiLSTM]{Bidirectional Long Short-Term Memory ou Memória de Longo e Curto Prazo Bidirecional}
-    	\item[LLM]{Large Language Model ou Modelo de Linguagem de Grande Porte}
-    	\item[EP]{Prompt Engineering ou Engenharia de Prompt}
-    	\item[BERT]{Bidirectional Encoder Representations from Transformers}
-    	\item[SBERT]{Sentence-BERT}
-    	\item[BERTimbau]{BERT Pré-treinado para o Português Brasileiro}
-    	\item[BERTScore]{Métrica de Similaridade Baseada em \textit{Embeddings} do BERT}
-    	\item[ROUGE]{Recall-Oriented Understudy for Gisting Evaluation}
-    	\item[TF-IDF]{Term Frequency--Inverse Document Frequency}
-    	\item[FuzzyWuzzy]{Biblioteca de Similaridade Lexical Baseada em Distância de Levenshtein}
-    	\item[FastText]{Modelo de Word Embeddings Baseado em Subpalavras}
-    	\item[NILC]{Núcleo Interinstitucional de Linguística Computacional}
-    	\item[WMD]{Word Mover's Distance ou Distância do Movimentador de Palavras}
-    	\item[JSON]{JavaScript Object Notation}
-    	\item[NBR]{Norma Brasileira}
-    	\item[RASE]{Requirement, Applicability, Selection, Exception}
-    	\item[N1]{Nível 1 de normalização: Segmentação Atômica}
-    	\item[N2]{Nível 2 de normalização: Identificação dos Operadores RASE}
-    	\item[N3]{Nível 3 de normalização: Estruturação Semântica em JSON}
-    	\item[EN1]{Experimento de avaliação isolada do nível N1}
-    	\item[EN2]{Experimento de avaliação isolada do nível N2}
-    	\item[EN1N2]{Experimento do pipeline encadeado N1 $\rightarrow$ N2}
-    	\item[ACC]{Accuracy ou Acurácia}
-    	\item[PRE]{Precision ou Precisão}
-    	\item[REC]{Recall ou Revocação}
-    	\item[F1]{F1-score ou Medida F1}
-    	\item[MSE]{Mean Squared Error ou Erro Quadrático Médio}
-    	\item[RMSE]{Root Mean Squared Error ou Raiz do Erro Quadrático Médio}
-        \item[MAE]{Mean Absolute Error ou Erro Médio Absoluto}
+    % Instituições
+    \item[DCOMP]{Departamento de Computação}
+    \item[UFS]{Universidade Federal de Sergipe}
+    \item[ABNT]{Associação Brasileira de Normas Técnicas}
+    \item[ISO]{International Organization for Standardization ou Organização Internacional de Padronização}
+
+    % Domínio AEC / BIM
+    \item[BIM]{Building Information Modeling ou Modelagem da Informação da Construção}
+    \item[AEC]{Architecture, Engineering and Construction ou Arquitetura, Engenharia e Construção}
+    \item[CAD]{Computer-Aided Design ou Desenho Assistido por Computador}
+    \item[NBR]{Norma Brasileira}
+
+    % Inteligência Artificial e Aprendizado de Máquina
+    \item[IA]{Artificial Intelligence ou Inteligência Artificial}
+    \item[IAG]{Generative AI ou IA Generativa}
+    \item[AM]{Machine Learning ou Aprendizado de Máquina}
+    \item[PLN]{Natural Language Processing ou Processamento de Linguagem Natural}
+
+    % Arquiteturas de redes neurais
+    \item[RNA]{Artificial Neural Networks ou Redes Neurais Artificiais}
+    \item[MLP]{Multi-Layer Perceptron ou Perceptron Multi-Camadas}
+    \item[ReLU]{Rectified Linear Unit ou Unidade Linear Retificada}
+    \item[RNN]{Recurrent Neural Networks ou Redes Neurais Recorrentes}
+    \item[LSTM]{Long Short-Term Memory ou Memória de Longo e Curto Prazo}
+    \item[BiLSTM]{Bidirectional Long Short-Term Memory ou Memória de Longo e Curto Prazo Bidirecional}
+    \item[GQA]{Grouped-Query Attention ou Atenção por Consulta Agrupada}
+    \item[SWA]{Sliding-Window Attention ou Atenção por Janela Deslizante}
+
+    % Modelos de linguagem e técnicas de treinamento/adaptação
+    \item[LLM]{Large Language Model ou Modelo de Linguagem de Grande Porte}
+    \item[GPT]{Generative Pre-trained Transformer ou Transformador Generativo Pré-treinado}
+    \item[EP]{Prompt Engineering ou Engenharia de Prompt}
+    \item[CoT]{Chain-of-Thought ou Cadeia de Pensamento}
+    \item[SFT]{Supervised Fine-Tuning ou Ajuste Fino Supervisionado}
+    \item[DPO]{Direct Preference Optimization ou Otimização de Preferência Direta}
+    \item[RS]{Rejection Sampling ou Amostragem de Rejeição}
+    \item[RAG]{Retrieval-Augmented Generation ou Geração Aumentada por Recuperação}
+    \item[Ollama]{Plataforma de Execução Local de Modelos de Linguagem (LLMs)}
+
+    % Representações vetoriais (word embeddings)
+    \item[Word2Vec]{Modelo de Word Embeddings Baseado em Contexto}
+    \item[GloVe]{Global Vectors for Word Representation}
+    \item[FastText]{Modelo de Word Embeddings Baseado em Subpalavras}
+    \item[NILC]{Núcleo Interinstitucional de Linguística Computacional}
+
+    % Modelos e métricas de similaridade textual
+    \item[BERT]{Bidirectional Encoder Representations from Transformers}
+    \item[SBERT]{Sentence-BERT}
+    \item[BERTimbau]{BERT Pré-treinado para o Português Brasileiro}
+    \item[BERTScore]{Métrica de Similaridade Baseada em \textit{Embeddings} do BERT}
+    \item[ROUGE]{Recall-Oriented Understudy for Gisting Evaluation}
+    \item[LCS]{Longest Common Subsequence ou Maior Subsequência Comum}
+    \item[TF-IDF]{Term Frequency--Inverse Document Frequency}
+    \item[FuzzyWuzzy]{Biblioteca de Similaridade Lexical Baseada em Distância de Levenshtein}
+    \item[WMD]{Word Mover's Distance ou Distância do Movimentador de Palavras}
+
+    % Formato de dados e metodologias de formalização normativa
+    \item[JSON]{JavaScript Object Notation}
+    \item[Tx3]{Transcrever, Transformar e Transferir}
+    \item[RASE]{Requirement, Applicability, Selection, Exception}
+
+    % Níveis de normalização
+    \item[N1]{Nível 1 de normalização: Segmentação Atômica}
+    \item[N2]{Nível 2 de normalização: Identificação dos Operadores RASE}
+    \item[N3]{Nível 3 de normalização: Estruturação Semântica em JSON}
+
+    % Experimentos
+    \item[EN1]{Experimento de avaliação isolada do nível N1}
+    \item[EN2]{Experimento de avaliação isolada do nível N2}
+    \item[EN1N2]{Experimento do pipeline encadeado N1 $\rightarrow$ N2}
+    \item[EN3]{Experimento de avaliação isolada do nível N3}
+    \item[EN1N2N3]{Experimento do pipeline encadeado completo N1 $\rightarrow$ N2 $\rightarrow$ N3}
+
+    % Matriz de confusão
+    \item[TP / VP]{True Positive ou Verdadeiro Positivo}
+    \item[TN / VN]{True Negative ou Verdadeiro Negativo}
+    \item[FP]{False Positive ou Falso Positivo}
+    \item[FN]{False Negative ou Falso Negativo}
+
+    % Métricas de classificação e de erro
+    \item[ACC]{Accuracy ou Acurácia}
+    \item[PRE]{Precision ou Precisão}
+    \item[REC]{Recall ou Revocação}
+    \item[F1]{F1-score ou Medida F1}
+    \item[MSE]{Mean Squared Error ou Erro Quadrático Médio}
+    \item[RMSE]{Root Mean Squared Error ou Raiz do Erro Quadrático Médio}
+    \item[MAE]{Mean Absolute Error ou Erro Médio Absoluto}
 \end{siglas}

@@ -91,7 +91,7 @@ Cada entrada do \textit{dataset} é estruturada da seguinte forma:
 O Código~\ref{lst:dataset} apresenta uma entrada real do \textit{dataset}, extraída da NBR~9050, com a estrutura aninhada completa: o texto bruto da norma (\texttt{text}), uma das regras atômicas segmentadas (\texttt{text\_n1}) e seus quatro operadores RASE (\texttt{operators\_n2}), cada um com o trecho classificado (\texttt{text\_n2}) e as propriedades estruturadas em JSON (\texttt{properties\_n3}). Operadores ausentes preservam a estrutura com \textit{strings} vazias, como ilustra a \texttt{exception}.
 
 \begin{lstlisting}[caption={Exemplo de entrada do \textit{dataset} (NBR~9050), com a decomposição RASE de referência nos três níveis.}, label={lst:dataset}]
-"text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis. [...]",
+"text": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis.",
 "texts_n1": [
 	{
 		"text_n1": "As áreas de qualquer espaço ou edificação de uso público ou coletivo devem ser servidas de uma ou mais rotas acessíveis.",
@@ -205,7 +205,7 @@ As métricas são definidas como:
     \item \textbf{F1-score}: \(\mathrm{F1} = 2 \cdot (\mathrm{PRE} \cdot \mathrm{REC})/(\mathrm{PRE} + \mathrm{REC})\).
 \end{itemize}
 
-Para tornar concretos esses conceitos, convém fixar a convenção adotada. Em todos os níveis, o item avaliado: uma sentença, em N1; um operador, em N2; um campo do JSON, em N3; é tratado como \textit{positivo} quando está preenchido e como \textit{negativo} quando está vazio (\texttt{" "}). Disso decorre que: \textbf{VP} significa preenchido na referência e na previsão, e os dois ``casam''; \textbf{VN}, vazio em ambos; \textbf{FN}, preenchido na referência mas vazio na previsão (omissão); e \textbf{FP}, vazio na referência mas preenchido na previsão (alucinação). O critério de ``casar'' é a similaridade semântica acima do limiar (0{,}7) em N1 e N2, e a igualdade exata (após normalização de caixa, acentos e pontuação final) em N3. Quando ambos os lados estão preenchidos, mas não casam, a ocorrência é contada simultaneamente como FP e FN (emitiu algo errado \emph{e} perdeu o correto). Note que N1 não gera VN, pois não há item que ``deva estar vazio'': toda sentença, prevista ou de referência, é conteúdo.
+Para tornar concretos esses conceitos, convém fixar a convenção adotada. Em todos os níveis, o item avaliado: uma sentença, em N1; um operador, em N2; um campo do JSON, em N3; é tratado como \textit{positivo} quando está preenchido e como \textit{negativo} quando está vazio (\verb|""|). Disso decorre que: \textbf{VP} significa preenchido na referência e na previsão, e os dois ``casam''; \textbf{VN}, vazio em ambos; \textbf{FN}, preenchido na referência mas vazio na previsão (omissão); e \textbf{FP}, vazio na referência mas preenchido na previsão (alucinação). O critério de ``casar'' é a similaridade semântica acima do limiar (0{,}7) em N1 e N2, e a igualdade exata (após normalização de caixa, acentos e pontuação final) em N3. Quando ambos os lados estão preenchidos, mas não casam, a ocorrência é contada simultaneamente como FP e FN (emitiu algo errado \emph{e} perdeu o correto). Note que N1 não gera VN, pois não há item que ``deva estar vazio'': toda sentença, prevista ou de referência, é conteúdo.
 
 Todas as métricas são persistidas em \textit{metrics/validate\_*.json}, e o detalhamento por instância é registrado em \textit{metrics/details/validate\_<nível>\_<modelo>.jsonl}.
 

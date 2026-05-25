@@ -401,9 +401,6 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/newtx/t1ntxtt.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
-INPUT ./Modelo-Mestrado-PROCC.loc
-INPUT ./Modelo-Mestrado-PROCC.loc
-INPUT Modelo-Mestrado-PROCC.loc
 INPUT ./Pre_Textual/Abreviaturas.tex
 INPUT ./Pre_Textual/Abreviaturas.tex
 OUTPUT Pre_Textual/Abreviaturas.aux
@@ -422,6 +419,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmi.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/NewTXMI.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/stxscr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntx-Regular-tlf-ot1.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txmiaX.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc
 INPUT ./Modelo-Mestrado-PROCC.toc
 INPUT ./Modelo-Mestrado-PROCC.toc
 INPUT Modelo-Mestrado-PROCC.toc
@@ -521,11 +522,7 @@ INPUT ./Imagens/3.3.1-matrizconfusao.png
 INPUT ./Imagens/3.3.1-matrizconfusao.png
 INPUT ./Imagens/3.3.1-matrizconfusao.png
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxmia.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txmiaX.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txmiaSTbb.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntx-Regular-tlf-ot1.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1r.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc
 INPUT ./Imagens/3.5.3-wordembeddings.png
 INPUT ./Imagens/3.5.3-wordembeddings.png
 INPUT ./Imagens/3.5.3-wordembeddings.png
@@ -709,7 +706,6 @@ INPUT ./Pos_Textual/Apendices.tex
 INPUT Pos_Textual/Apendices.tex
 OUTPUT Modelo-Mestrado-PROCC.lof
 OUTPUT Modelo-Mestrado-PROCC.lot
-OUTPUT Modelo-Mestrado-PROCC.loc
 OUTPUT Modelo-Mestrado-PROCC.toc
 INPUT Modelo-Mestrado-PROCC.aux
 INPUT ./Pre_Textual/Resumo.aux
