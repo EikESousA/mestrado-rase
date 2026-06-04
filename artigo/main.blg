@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: cas-model2-names.bst
+Database file #1: references.bib
+Warning--to sort, need author or key in iso19650
+Warning--to sort, need author or key in abnt9050
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty pages in hjelseth2011
+Warning--empty pages in souza2020
+Warning--empty pages in vaswani2017
+Warning--empty pages in zhang2020bertscore
+You've used 36 entries,
+            2990 wiz_defined-function locations,
+            946 strings with 13818 characters,
+and the built_in function-call counts, 24173 in all, are:
+= -- 1817
+> -- 1084
+< -- 21
++ -- 423
+- -- 381
+* -- 2671
+:= -- 3527
+add.period$ -- 111
+call.type$ -- 36
+change.case$ -- 303
+chr.to.int$ -- 36
+cite$ -- 46
+duplicate$ -- 1798
+empty$ -- 1694
+format.name$ -- 487
+if$ -- 4505
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 343
+newline$ -- 198
+num.names$ -- 136
+pop$ -- 691
+preamble$ -- 1
+purify$ -- 270
+quote$ -- 0
+skip$ -- 579
+stack$ -- 0
+substring$ -- 745
+swap$ -- 1285
+text.length$ -- 5
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 312
+warning$ -- 6
+while$ -- 133
+width$ -- 0
+write$ -- 527
+(There were 6 warnings)
