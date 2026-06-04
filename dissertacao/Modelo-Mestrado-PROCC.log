@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.19)  25 MAY 2026 14:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.19)  4 JUN 2026 09:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1179,7 +1179,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 71.
+(Font)              scaled to size 14.4pt on input line 69.
  [12]) [13]
 \openout2 = `Conteudo/01_Introducao.aux'.
 
@@ -1222,7 +1222,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 
 
 ]
-<Imagens/3.1.1-bim.png, id=444, 478.06606pt x 423.5022pt>
+<Imagens/3.1.1-bim.png, id=440, 478.06606pt x 423.5022pt>
 File: Imagens/3.1.1-bim.png Graphic file (type png)
 <use Imagens/3.1.1-bim.png>
 Package pdftex.def Info: Imagens/3.1.1-bim.png  used on input line 35.
@@ -1231,7 +1231,7 @@ Package pdftex.def Info: Imagens/3.1.1-bim.png  used on input line 35.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 56.
  [21 <./Imagens/3.1.1-bim.png>] [22] [23]
-<Imagens/3.8.1-rase.png, id=501, 777.6252pt x 361.35pt>
+<Imagens/3.8.1-rase.png, id=497, 777.6252pt x 361.35pt>
 File: Imagens/3.8.1-rase.png Graphic file (type png)
 <use Imagens/3.8.1-rase.png>
 Package pdftex.def Info: Imagens/3.8.1-rase.png  used on input line 143.
@@ -1240,53 +1240,53 @@ Package pdftex.def Info: Imagens/3.8.1-rase.png  used on input line 143.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 (Font)              scaled to size 12.0pt on input line 178.
  [26]
-<Imagens/3.3.1-matrizconfusao.png, id=547, 431.81325pt x 367.8543pt>
+<Imagens/3.3.1-matrizconfusao.png, id=543, 431.81325pt x 367.8543pt>
 File: Imagens/3.3.1-matrizconfusao.png Graphic file (type png)
 <use Imagens/3.3.1-matrizconfusao.png>
 Package pdftex.def Info: Imagens/3.3.1-matrizconfusao.png  used on input line 199.
 (pdftex.def)             Requested size: 431.81218pt x 367.85338pt.
  [27] [28 <./Imagens/3.3.1-matrizconfusao.png>] [29]
-<Imagens/3.5.3-wordembeddings.png, id=598, 413.3844pt x 426.03165pt>
+<Imagens/3.5.3-wordembeddings.png, id=594, 413.3844pt x 426.03165pt>
 File: Imagens/3.5.3-wordembeddings.png Graphic file (type png)
 <use Imagens/3.5.3-wordembeddings.png>
 Package pdftex.def Info: Imagens/3.5.3-wordembeddings.png  used on input line 277.
 (pdftex.def)             Requested size: 248.03255pt x 255.62096pt.
  [30]
-<Imagens/3.5.4-sentenceembeddings.png, id=613, 630.55576pt x 365.6862pt>
+<Imagens/3.5.4-sentenceembeddings.png, id=609, 630.55576pt x 365.6862pt>
 File: Imagens/3.5.4-sentenceembeddings.png Graphic file (type png)
 <use Imagens/3.5.4-sentenceembeddings.png>
 Package pdftex.def Info: Imagens/3.5.4-sentenceembeddings.png  used on input line 299.
 (pdftex.def)             Requested size: 455.0pt x 263.87975pt.
  [31 <./Imagens/3.5.3-wordembeddings.png>] [32 <./Imagens/3.5.4-sentenceembeddings.png>] [33]
-<Imagens/3.4.1-rna.png, id=690, 570.933pt x 367.8543pt>
+<Imagens/3.4.1-rna.png, id=686, 570.933pt x 367.8543pt>
 File: Imagens/3.4.1-rna.png Graphic file (type png)
 <use Imagens/3.4.1-rna.png>
 Package pdftex.def Info: Imagens/3.4.1-rna.png  used on input line 349.
 (pdftex.def)             Requested size: 455.0pt x 293.16682pt.
-<Imagens/3.4.2-rnamlp.png, id=693, 587.91644pt x 367.8543pt>
+<Imagens/3.4.2-rnamlp.png, id=689, 587.91644pt x 367.8543pt>
 File: Imagens/3.4.2-rnamlp.png Graphic file (type png)
 <use Imagens/3.4.2-rnamlp.png>
 Package pdftex.def Info: Imagens/3.4.2-rnamlp.png  used on input line 361.
 (pdftex.def)             Requested size: 455.0pt x 284.69121pt.
-<Imagens/3.4.3-bias.png, id=697, 561.17654pt x 399.6531pt>
+<Imagens/3.4.3-bias.png, id=693, 561.17654pt x 399.6531pt>
 File: Imagens/3.4.3-bias.png Graphic file (type png)
 <use Imagens/3.4.3-bias.png>
 Package pdftex.def Info: Imagens/3.4.3-bias.png  used on input line 378.
 (pdftex.def)             Requested size: 455.0pt x 324.04654pt.
  [34] [35 <./Imagens/3.4.1-rna.png>] [36 <./Imagens/3.4.2-rnamlp.png>] [37 <./Imagens/3.4.3-bias.png>] [38]
-<Imagens/3.4.4-tiposrna.png, id=805, 535.88205pt x 569.84895pt>
+<Imagens/3.4.4-tiposrna.png, id=801, 535.88205pt x 569.84895pt>
 File: Imagens/3.4.4-tiposrna.png Graphic file (type png)
 <use Imagens/3.4.4-tiposrna.png>
 Package pdftex.def Info: Imagens/3.4.4-tiposrna.png  used on input line 472.
 (pdftex.def)             Requested size: 321.53171pt x 341.912pt.
  [39] [40 <./Imagens/3.4.4-tiposrna.png>] [41]
-<Imagens/3.6.1-seq2seq.png, id=868, 777.6252pt x 368.577pt>
+<Imagens/3.6.1-seq2seq.png, id=864, 777.6252pt x 368.577pt>
 File: Imagens/3.6.1-seq2seq.png Graphic file (type png)
 <use Imagens/3.6.1-seq2seq.png>
 Package pdftex.def Info: Imagens/3.6.1-seq2seq.png  used on input line 559.
 (pdftex.def)             Requested size: 455.0pt x 215.66446pt.
  [42]
-<Imagens/3.6.2-attention.png, id=889, 793.16325pt x 423.86356pt>
+<Imagens/3.6.2-attention.png, id=885, 793.16325pt x 423.86356pt>
 File: Imagens/3.6.2-attention.png Graphic file (type png)
 <use Imagens/3.6.2-attention.png>
 Package pdftex.def Info: Imagens/3.6.2-attention.png  used on input line 578.
@@ -1297,7 +1297,7 @@ Overfull \hbox (100.21051pt too wide) in paragraph at lines 577--579
  []
 
 [43 <./Imagens/3.6.1-seq2seq.png>] [44 <./Imagens/3.6.2-attention.png>]
-<Imagens/3.6.3-selfattention.png, id=912, 651.8754pt x 534.798pt>
+<Imagens/3.6.3-selfattention.png, id=908, 651.8754pt x 534.798pt>
 File: Imagens/3.6.3-selfattention.png Graphic file (type png)
 <use Imagens/3.6.3-selfattention.png>
 Package pdftex.def Info: Imagens/3.6.3-selfattention.png  used on input line 597.
@@ -1308,13 +1308,13 @@ Overfull \hbox (1.30966pt too wide) in paragraph at lines 596--598
  []
 
 [45 <./Imagens/3.6.3-selfattention.png>]
-<Imagens/3.6.4-transformer.png, id=929, 548.5293pt x 479.1501pt>
+<Imagens/3.6.4-transformer.png, id=925, 548.5293pt x 479.1501pt>
 File: Imagens/3.6.4-transformer.png Graphic file (type png)
 <use Imagens/3.6.4-transformer.png>
 Package pdftex.def Info: Imagens/3.6.4-transformer.png  used on input line 622.
 (pdftex.def)             Requested size: 383.96788pt x 335.40277pt.
  [46]
-<Imagens/3.6.5-camadastransformer.png, id=944, 676.4472pt x 506.97404pt>
+<Imagens/3.6.5-camadastransformer.png, id=940, 676.4472pt x 506.97404pt>
 File: Imagens/3.6.5-camadastransformer.png Graphic file (type png)
 <use Imagens/3.6.5-camadastransformer.png>
 Package pdftex.def Info: Imagens/3.6.5-camadastransformer.png  used on input line 637.
@@ -1326,45 +1326,44 @@ Overfull \hbox (18.50981pt too wide) in paragraph at lines 636--638
 
 [47 <./Imagens/3.6.4-transformer.png>] [48 <./Imagens/3.6.5-camadastransformer.png>]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.8pt on input line 671.
+(Font)              scaled to size 8.8pt on input line 672.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 6.6pt on input line 671.
- [49] [50]
-LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
-(Font)              scaled to size 14.4pt on input line 701.
- [51] [52] [53] [54]) [55]
+(Font)              scaled to size 6.6pt on input line 672.
+ [49] [50] [51] [52]) [53] [54]
 \openout2 = `Conteudo/04_Metodo.aux'.
 
- (./Conteudo/04_Metodo.tex
-<Imagens/4.1-pipeline.png, id=1116, 682.2288pt x 368.21565pt>
-File: Imagens/4.1-pipeline.png Graphic file (type png)
-<use Imagens/4.1-pipeline.png>
-Package pdftex.def Info: Imagens/4.1-pipeline.png  used on input line 11.
-(pdftex.def)             Requested size: 445.89806pt x 240.6633pt.
- [56
+ (./Conteudo/04_Metodo.tex [55
 
 
 
 
-] [57 <./Imagens/4.1-pipeline.png>] [58]
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 68.
- [59]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 93.
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 93.
- [60] [61]
-<Imagens/4.2-experimentos.png, id=1191, 882.4167pt x 807.61725pt>
+]
+LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
+(Font)              scaled to size 14.4pt on input line 27.
+<Imagens/4.2-experimentos.png, id=1093, 882.4167pt x 807.61725pt>
 File: Imagens/4.2-experimentos.png Graphic file (type png)
 <use Imagens/4.2-experimentos.png>
-Package pdftex.def Info: Imagens/4.2-experimentos.png  used on input line 130.
+Package pdftex.def Info: Imagens/4.2-experimentos.png  used on input line 35.
 (pdftex.def)             Requested size: 445.89806pt x 408.09612pt.
- [62 <./Imagens/4.2-experimentos.png>] [63] [64] [65]
-Overfull \hbox (13.33528pt too wide) in paragraph at lines 223--224
+ [56] [57 <./Imagens/4.2-experimentos.png>]
+<Imagens/4.1-pipeline.png, id=1104, 682.2288pt x 368.21565pt>
+File: Imagens/4.1-pipeline.png Graphic file (type png)
+<use Imagens/4.1-pipeline.png>
+Package pdftex.def Info: Imagens/4.1-pipeline.png  used on input line 66.
+(pdftex.def)             Requested size: 445.89806pt x 240.6633pt.
+ [58] [59 <./Imagens/4.1-pipeline.png>] [60]
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 10.0pt on input line 115.
+ [61] [62]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 154.
+LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
+(Font)              scaled to size 10.95pt on input line 154.
+ [63] [64] [65] [66] [67]
+Overfull \hbox (13.33528pt too wide) in paragraph at lines 265--266
 []\T1/ntxtlf/b/n/12 (-20) Bibliotecas prin-ci-pais\T1/ntxtlf/m/n/12 (-20) : \T1/ntxtt/m/n/12 sentence-transformers\T1/ntxtlf/m/n/12 (-20) , \T1/ntxtt/m/n/12 gensim\T1/ntxtlf/m/n/12 (-20) , \T1/ntxtt/m/n/12 fuzzywuzzy \T1/ntxtlf/m/n/12 (-20) e \T1/ntxtt/m/n/12 scikit-learn
  []
 
-) [66]
+) [68]
 \openout2 = `Conteudo/05_Resultados.aux'.
 
  (./Conteudo/05_Resultados.tex
@@ -1372,7 +1371,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 20.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 10.95pt on input line 21.
- [67
+ [69
 
 
 
@@ -1384,66 +1383,66 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 9.0pt on input line 65.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 9.0pt on input line 72.
-<Imagens/4.2.1-resultados-en1-barras.png, id=1237, 715.473pt x 345.4506pt>
+<Imagens/4.2.1-resultados-en1-barras.png, id=1247, 715.473pt x 345.4506pt>
 File: Imagens/4.2.1-resultados-en1-barras.png Graphic file (type png)
 <use Imagens/4.2.1-resultados-en1-barras.png>
 Package pdftex.def Info: Imagens/4.2.1-resultados-en1-barras.png  used on input line 89.
 (pdftex.def)             Requested size: 432.24861pt x 208.70044pt.
- [68]
-<Imagens/4.2.2-resultados-en2-barras.png, id=1244, 715.473pt x 345.4506pt>
+ [70]
+<Imagens/4.2.2-resultados-en2-barras.png, id=1254, 715.473pt x 345.4506pt>
 File: Imagens/4.2.2-resultados-en2-barras.png Graphic file (type png)
 <use Imagens/4.2.2-resultados-en2-barras.png>
 Package pdftex.def Info: Imagens/4.2.2-resultados-en2-barras.png  used on input line 133.
 (pdftex.def)             Requested size: 432.24861pt x 208.70044pt.
- [69 <./Imagens/4.2.1-resultados-en1-barras.png>]
-<Imagens/4.2.3-resultados-en1n2-barras.png, id=1252, 715.473pt x 345.4506pt>
+ [71 <./Imagens/4.2.1-resultados-en1-barras.png>]
+<Imagens/4.2.3-resultados-en1n2-barras.png, id=1262, 715.473pt x 345.4506pt>
 File: Imagens/4.2.3-resultados-en1n2-barras.png Graphic file (type png)
 <use Imagens/4.2.3-resultados-en1n2-barras.png>
 Package pdftex.def Info: Imagens/4.2.3-resultados-en1n2-barras.png  used on input line 167.
 (pdftex.def)             Requested size: 432.24861pt x 208.70044pt.
- [70 <./Imagens/4.2.2-resultados-en2-barras.png>] [71 <./Imagens/4.2.3-resultados-en1n2-barras.png>]
+ [72 <./Imagens/4.2.2-resultados-en2-barras.png>] [73 <./Imagens/4.2.3-resultados-en1n2-barras.png>]
 Overfull \hbox (51.51082pt too wide) in paragraph at lines 236--237
 []\T1/ntxtlf/m/n/12 (-20) A saída de cada mo-delo é per-sis-tida em um ar-quivo JSON pró-prio (\T1/ntxtlf/m/it/12 (-20) ge-ne-rate_n1n2n3_<modelo>.json\T1/ntxtlf/m/n/12 (-20) ),
  []
 
-[72] [73]
+[74] [75]
 Overfull \hbox (6.01778pt too wide) in paragraph at lines 277--278
 []\T1/ntxtlf/b/n/12 (-20) Métricas le-xi-cais. \T1/ntxtlf/m/n/12 (-20) FuzzyWuzzy e TF-IDF caem cla-ra-mente de EN1 para EN2 (FuzzyWuzzy:
  []
 
-[74] [75] [76]) [77]
+[76] [77] [78]) [79]
 \openout2 = `Conteudo/06_Conclusao.aux'.
 
- (./Conteudo/06_Conclusao.tex [78
+ (./Conteudo/06_Conclusao.tex [80
 
 
 
 
-] [79]) [80] [81] (./Modelo-Mestrado-PROCC.bbl (./Modelo-Mestrado-PROCC.brf)
+] [81]) [82] [83] (./Modelo-Mestrado-PROCC.bbl (./Modelo-Mestrado-PROCC.brf)
 \tf@brf=\write5
 \openout5 = `Modelo-Mestrado-PROCC.brf'.
 
 
 bibitemlist
-[82
+[84
 
 
 
-] [83] [84] [85] [86] [87]) [88]
+] [85] [86] [87] [88] [89]) [90]
 \openout2 = `Pos_Textual/Apendices.aux'.
 
- (./Pos_Textual/Apendices.tex [89
+ (./Pos_Textual/Apendices.tex [91
 
 
 
-] [90
+] [92
 
-] [91]
+] [93]
 Underfull \hbox (badness 10000) in paragraph at lines 93--93
 []\T1/ntxtlf/m/it/12 (+20) Prompt \T1/ntxtlf/m/n/12 (+20) do ope-ra-dor Apli-ca-bi-li-dade (N3) ---
  []
 
-[92] [93] [94] [95] [96] [97] [98] [99]) [100]
+[94] [95] [96] [97] [98] [99] [100] [101]) [102]
 \tf@lof=\write6
 \openout6 = `Modelo-Mestrado-PROCC.lof'.
 
@@ -1461,21 +1460,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `Modelo-Mestrado-PROCC.brf' has not changed.
-(rerunfilecheck)             Checksum: 2A2FEBCBB8B864D47110BEF46A3E549B;10243.
+(rerunfilecheck)             Checksum: 4A29EB9BF44C6BC5D4182E4435E09F17;10193.
  ) 
 Here is how much of TeX's memory you used:
- 27536 strings out of 474222
- 433411 string characters out of 5748733
- 2089975 words of memory out of 5000000
- 48243 multiletter control sequences out of 15000+600000
- 706639 words of font info for 357 fonts, out of 8000000 for 9000
+ 27539 strings out of 474222
+ 433476 string characters out of 5748733
+ 2088975 words of memory out of 5000000
+ 48242 multiletter control sequences out of 15000+600000
+ 706856 words of font info for 359 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,13n,121p,2580b,2255s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></usr/share/texmf/fonts/type1/public/tex-gyre/qtmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ncntrsbk/uncb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on Modelo-Mestrado-PROCC.pdf (101 pages, 2930943 bytes).
+Output written on Modelo-Mestrado-PROCC.pdf (103 pages, 2939587 bytes).
 PDF statistics:
- 2368 PDF objects out of 2487 (max. 8388607)
- 2176 compressed objects within 22 object streams
+ 2375 PDF objects out of 2487 (max. 8388607)
+ 2181 compressed objects within 22 object streams
  708 named destinations out of 1000 (max. 500000)
- 60158 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 60142 words of extra memory for PDF output out of 61914 (max. 10000000)
 

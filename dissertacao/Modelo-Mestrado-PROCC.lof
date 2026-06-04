@@ -14,8 +14,8 @@
 \contentsline {figure}{\numberline {12}{\ignorespaces Exemplo do cálculo de uma camada de \textit {self-attention}.}}{45}{figure.2.12}%
 \contentsline {figure}{\numberline {13}{\ignorespaces Representação da pilha (\textit {stack}) do \textit {transformer}.}}{47}{figure.2.13}%
 \contentsline {figure}{\numberline {14}{\ignorespaces Camadas do \textit {encoder} e \textit {decoder} do \textit {transformer}.}}{48}{figure.2.14}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Pipeline de conversão de normas técnicas para o formato RASE.}}{57}{figure.3.15}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Estrutura dos cinco experimentos: EN1, EN2 e EN3 (isolados) e EN1N2 e EN1N2N3 (encadeados).}}{62}{figure.3.16}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Comparativo modelo $\times $ métrica em EN1.}}{69}{figure.4.17}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Comparativo modelo $\times $ métrica em EN2.}}{70}{figure.4.18}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Comparativo modelo $\times $ métrica em EN1N2.}}{71}{figure.4.19}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Estrutura dos cinco experimentos: EN1, EN2 e EN3 (isolados) e EN1N2 e EN1N2N3 (encadeados).}}{57}{figure.3.15}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Pipeline de conversão de normas técnicas para o formato RASE.}}{59}{figure.3.16}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Comparativo modelo $\times $ métrica em EN1.}}{71}{figure.4.17}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Comparativo modelo $\times $ métrica em EN2.}}{72}{figure.4.18}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Comparativo modelo $\times $ métrica em EN1N2.}}{73}{figure.4.19}%

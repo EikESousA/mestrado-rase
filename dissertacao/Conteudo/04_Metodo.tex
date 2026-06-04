@@ -1,19 +1,8 @@
 \chapter{Metodologia}
 
-Este capítulo descreve a metodologia da pesquisa, que se sustenta em três decisões: (i) decompor a tarefa de conversão de normas para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3); (ii) usar Engenharia de Prompt como técnica de especialização dos modelos; e (iii) comparar de forma sistemática seis LLMs \textit{open-source} servidos localmente via Ollama. Na sequência, o capítulo apresenta o \textit{dataset} adotado, o \textit{pipeline} de execução, os cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3), as métricas de validação e o ambiente computacional.
+Este capítulo descreve a metodologia da pesquisa, que se sustenta em três decisões: (i) decompor a tarefa de conversão de normas para o formato RASE em três níveis sucessivos de normalização (N1, N2 e N3); (ii) usar Engenharia de Prompt como técnica de especialização dos modelos; e (iii) comparar de forma sistemática seis LLMs \textit{open-source} servidos localmente via Ollama. Na sequência, o capítulo detalha a decomposição em três níveis e o \textit{pipeline} de execução com os cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3); apresenta uma visão geral da implementação (estrutura de arquivos e módulos); e, então, a Engenharia de Prompt empregada, os modelos avaliados, o \textit{dataset} adotado, as métricas de validação e o ambiente computacional.
 
-\section{Visão Geral}
-
-A pesquisa avaliou LLMs \textit{open-source} na conversão de normas técnicas da AEC para representações computáveis no formato RASE, usando somente Engenharia de Prompt. A conversão foi modelada como um processo de normalização em três níveis: N1 segmenta a sentença normativa em regras atômicas; N2 identifica os operadores RASE; N3 estrutura a saída em JSON. Seis modelos foram comparados em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3) sobre um \textit{dataset} de 79 normas brasileiras anotadas, com treze métricas no total: nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação derivadas da matriz de confusão. O nível N3 exige um critério de avaliação adicional (correspondência exata por campo do JSON), tratado em EN3 e em EN1N2N3 no capítulo de Resultados. A Figura~\ref{img:4.1} mostra o \textit{pipeline} do começo ao fim (do texto bruto à representação RASE), com os \textit{prompts} usados em cada nível, o servidor Ollama que hospeda os modelos e a etapa de validação par a par contra o \textit{dataset} de referência.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.98\linewidth]{Imagens/4.1-pipeline.png}
-\caption{Pipeline de conversão de normas técnicas para o formato RASE.}
-\label{img:4.1}
-\end{figure}
-
-\section{Necessidade de Normalização em Três Níveis}
+\section{Normalização em Três Níveis e \textit{Pipeline} de Experimentos}
 
 Sair do texto bruto de uma norma e chegar à representação RASE em JSON exige três raciocínios distintos: segmentação sintática, classificação semântica e extração de atributos estruturados. Pedir tudo isso em uma única chamada ao LLM costuma degradar a saída: aparecem alucinações, omissões e JSONs inválidos. Decompor em três níveis sucessivos isola cada decisão, mantém o escopo de cada chamada bem delimitado e permite validar cada etapa em separado.
 
@@ -33,7 +22,65 @@ O \textit{prompt} N2 também é mantido em arquivo próprio. Fixa a ordem dos qu
 
 Classificar um trecho como R, A, S ou E ainda deixa o conteúdo em linguagem natural. Para que a regra possa ser verificada automaticamente contra um modelo BIM, é preciso extrair os dados para objeto, propriedade, valor, comparador e unidade. O N3 produz esse JSON com os campos \textit{type}, \textit{object}, \textit{property}, \textit{comparation}, \textit{target} e \textit{unit}.
 
-Como cada operador RASE tem natureza distinta, optei por um \textit{prompt} por operador em N3: arquivos de texto separados para Aplicabilidade, Requisito, Seleção e Exceção. A Aplicabilidade descreve \textit{a quem} a regra se aplica; o Requisito, \textit{o que} é exigido; a Seleção restringe o escopo; a Exceção define os casos não cobertos. Cada \textit{prompt} traz o esquema JSON explícito, heurísticas de mapeamento por padrões textuais comuns (por exemplo, ``uso público'' $\rightarrow$ \textit{property} "uso", \textit{comparation} "=", \textit{target} "público") e exemplos \textit{few-shot} no próprio arquivo.
+Como cada operador RASE tem natureza distinta, optou-se por um \textit{prompt} por operador em N3: arquivos de texto separados para Aplicabilidade, Requisito, Seleção e Exceção. A Aplicabilidade descreve \textit{a quem} a regra se aplica; o Requisito, \textit{o que} é exigido; a Seleção restringe o escopo; a Exceção define os casos não cobertos. Cada \textit{prompt} traz o esquema JSON explícito, heurísticas de mapeamento por padrões textuais comuns (por exemplo, ``uso público'' $\rightarrow$ \textit{property} "uso", \textit{comparation} "=", \textit{target} "público") e exemplos \textit{few-shot} no próprio arquivo.
+
+\subsection{\textit{Pipeline} de Execução e Experimentos}
+
+A orquestração dos experimentos vive em um \textit{script} principal, que oferece um menu para a etapa de geração e outro para a de validação. As saídas de cada modelo, em cada experimento, são persistidas em arquivos JSON próprios, no padrão \texttt{generate\_<nível>\_<modelo>.json} (por exemplo, \texttt{generate\_n1\_alpaca.json} para o N1 produzido pelo Alpaca). Os resultados das validações seguem o mesmo princípio, agora um arquivo por experimento, no padrão \texttt{validate\_<experimento>.json} (\texttt{validate\_n1.json}).
+
+Para isolar o que cada nível contribui e medir como o erro se propaga, foram definidos cinco experimentos, ilustrados na Figura~\ref{img:4.2}. EN1, EN2 e EN3 avaliam cada etapa em separado: cada um deles recebe o nível anterior \textit{de referência} (extraído do \textit{dataset}) como entrada, eliminando o ruído das etapas precedentes. Em paralelo, EN1N2 simula o \textit{pipeline} encadeado dos dois primeiros níveis (o N1 produzido pelo próprio modelo alimenta sua etapa N2), e EN1N2N3 fecha o \textit{pipeline} completo N1$\rightarrow$N2$\rightarrow$N3, encadeando as três etapas com saídas geradas pelo próprio modelo. Esses dois últimos cenários expõem a \textbf{propagação de erros} ao longo da cadeia.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.98\linewidth]{Imagens/4.2-experimentos.png}
+\caption{Estrutura dos cinco experimentos: EN1, EN2 e EN3 (isolados) e EN1N2 e EN1N2N3 (encadeados).}
+\label{img:4.2}
+\end{figure}
+
+\subsection{Experimento EN1}
+
+O EN1 avalia a geração N1 em isolamento. A entrada é o texto bruto da norma; a saída gerada vai contra o N1 de referência do \textit{dataset}. O que se mede é a qualidade da segmentação a partir do texto bruto, sem interferência das etapas posteriores.
+
+\subsection{Experimento EN2}
+
+O EN2 avalia o N2 sozinho, sem o ruído da etapa anterior. A entrada é o N1 de referência (tirado direto do \textit{dataset}), e a saída é comparada ao N2 de referência, operador por operador (R, A, S e E). O foco aqui é a qualidade pura da classificação RASE.
+
+\subsection{Experimento EN1N2}
+
+O EN1N2 é o \textit{pipeline} encadeado dos dois primeiros níveis: o N1 gerado pelo modelo alimenta a etapa N2 do mesmo modelo. A saída final é comparada ao N2 de referência. O objetivo é medir a \textbf{propagação de erros} entre as duas etapas em um cenário totalmente automatizado.
+
+\subsection{Experimento EN3}
+
+O EN3 avalia o N3 em isolamento, novamente sem o ruído das etapas anteriores. A entrada é o N2 de referência por operador (extraído do \textit{dataset}), e a saída gerada é comparada à representação JSON de referência, nos campos \textit{type}, \textit{object}, \textit{property}, \textit{comparation}, \textit{target} e \textit{unit}. A métrica aqui é a qualidade pura da estruturação semântica em JSON.
+
+\subsection{Experimento EN1N2N3}
+
+O EN1N2N3 fecha o \textit{pipeline} encadeado: o N1 do modelo alimenta o N2 do mesmo modelo, que alimenta o N3 do mesmo modelo. A saída final (JSON estruturado por operador) é comparada à referência do \textit{dataset}. Este cenário replica o uso real do \textit{pipeline} em produção e expõe a \textbf{propagação de erros} ao longo dos três níveis.
+
+\section{Visão Geral}
+
+O \textit{pipeline} descrito na seção anterior foi implementado como um projeto Python modular, orquestrado pelo \textit{script} principal \texttt{main.py}, que expõe um menu com três caminhos: geração de dados, validação e geração de tabelas. A Figura~\ref{img:4.1} mostra o fluxo do começo ao fim (do texto bruto à representação RASE), com os \textit{prompts} usados em cada nível, o servidor Ollama que hospeda os modelos e a etapa de validação par a par contra o \textit{dataset} de referência. Cada etapa conceitual do fluxo corresponde a um módulo dedicado na estrutura de arquivos descrita a seguir.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.98\linewidth]{Imagens/4.1-pipeline.png}
+\caption{Pipeline de conversão de normas técnicas para o formato RASE.}
+\label{img:4.1}
+\end{figure}
+
+O código organiza-se em pacotes por responsabilidade, de modo que cada nível de normalização e cada experimento têm um módulo próprio:
+
+\begin{itemize}
+    \item \texttt{config/}: registro central dos modelos em \textit{models.py} (o dicionário \texttt{MODELS}, que mapeia o nome curto de cada modelo à sua \textit{tag} no Ollama, mais as funções auxiliares \textit{model\_id()} e \textit{predict\_path()}); \texttt{ollama.py} concentra a conexão com o servidor Ollama.
+    \item \texttt{prompts/}: os \textit{prompts} em arquivos de texto, um por nível (\texttt{n1.txt}, \texttt{n2.txt}) e um por operador RASE no N3 (\texttt{n3\_aplicabilidade.txt}, \texttt{n3\_requisito.txt}, \texttt{n3\_selecao.txt} e \texttt{n3\_execao.txt}).
+    \item \texttt{generates/}: um módulo por etapa (\textit{generate\_n1.py}, \textit{generate\_n2.py}, \textit{generate\_n3.py}, \textit{generate\_n1n2.py} e \textit{generate\_n1n2n3.py}). Cada um monta uma cadeia LangChain (\textit{ChatPromptTemplate}~$\mid$~\textit{OllamaLLM}) e persiste a saída em \textit{predicts/generate\_<nível>\_<modelo>.json}; o \texttt{menu\_generate.py} coordena a seleção de níveis e modelos.
+    \item \texttt{validates/}: estrutura simétrica (\texttt{validate\_n1.py} a \texttt{validate\_n1n2n3.py}, mais \texttt{menu\_validate.py}), que consome as predições geradas e o \texttt{dataset.json} de referência, gravando as métricas em \texttt{metrics/validate\_<experimento>.json} e o detalhamento por instância em \texttt{metrics/details/validate\_<nível>\_<modelo>.jsonl}.
+    \item \texttt{utils/}: subpacotes auxiliares por preocupação — \texttt{n1/}, \texttt{n2/} e \texttt{n3/} (limpeza de texto, segmentação e construção de operadores e propriedades), \texttt{generates/} e \texttt{validates/} (emparelhamento de pares e cálculo das métricas), além de \texttt{logs/} e \texttt{screens/} (registro e renderização dos menus).
+    \item \texttt{dataset.json}: o \textit{dataset} anotado único, que serve tanto de entrada para os geradores quanto de referência para os validadores; 
+		\item \texttt{tools/} reúne a geração de tabelas e figuras a partir das métricas.
+\end{itemize}
+
+Essa separação entre \textit{prompts} (texto), geradores, validadores e configuração mantém cada nível de normalização isolado e torna o \textit{pipeline} reprodutível: trocar de modelo significa apenas alterar uma entrada em \texttt{config/models.py}, e cada experimento pode ser regenerado ou revalidado de forma independente.
 
 \section{Engenharia de Prompt}
 
@@ -74,6 +121,20 @@ Qwen    & cnmoro (PT)              & \texttt{cnmoro/} \texttt{Qwen2.5-0.5B-Portu
 \hline
 \end{tabular}
 \end{table}
+
+Os seis modelos compartilham a arquitetura \textit{Transformer} decodificadora e o paradigma de pré-treinamento massivo seguido de pós-treinamento por instruções, mas se distinguem em escolhas de dados, alinhamento e foco de uso. Foram escolhidos por representarem perfis complementares (peso, alinhamento, idioma e foco de \textit{fine-tuning}), por estarem disponíveis em pesos abertos sob licenças permissivas e por serem executáveis no Ollama com requisitos de \textit{hardware} compatíveis com o ambiente experimental adotado. A síntese a seguir cobre, para cada modelo, os pontos relevantes para a tarefa de conversão de normas em RASE; salvo o Llama, avaliado em sua versão oficial, todos foram executados a partir do \textit{checkpoint} adaptado ao português brasileiro indicado na Tabela~\ref{tab:modelos_llm}.
+
+\textbf{Llama.} Modelo decodificador da Meta, cuja arquitetura e estratégia de treinamento foram detalhadas na Seção~\ref{sec:llms}. Foi avaliado na versão oficial \texttt{llama3.1:8b} (8B de parâmetros), servindo como referência de modelo aberto multilíngue de propósito geral frente aos \textit{checkpoints} adaptados ao português utilizados nos demais casos.
+
+\textbf{Dolphin.} Variante \textit{fine-tuned} do Mistral~7B, criada pela Cognitive Computations sobre o \textit{dataset} Dolphin, uma reimplementação livre do conjunto Orca da Microsoft, focada em raciocínio passo a passo. O modelo herda a arquitetura e os pesos base do Mistral, mas adiciona uma camada de SFT em diálogos sintéticos longos no estilo \textit{Chain-of-Thought}, que tende a melhorar o seguimento de instruções estruturadas. Foi avaliado a partir do \textit{checkpoint} \texttt{cnmoro/llama-3-8b-dolphin-portuguese}, adaptado ao português brasileiro.
+
+\textbf{Gemma.} Família de modelos \textit{open-weights} desenvolvida pelo Google DeepMind a partir da mesma pesquisa que originou o Gemini \cite{gemma2024}. Adota a arquitetura \textit{Transformer} decodificadora padrão, com SentencePiece BPE e treinamento em corpus multilíngue de cerca de 6 trilhões de \textit{tokens}, seguido de SFT e RLHF. Os relatórios técnicos apontam ganho relativo em raciocínio matemático e código em comparação com modelos abertos de porte equivalente \cite{gemma2024}. Nesta pesquisa, empregou-se o \textit{checkpoint} \texttt{brunoconterato/Gemma-3-Gaia-PT-BR-4b-it} (4B), ajustado ao português brasileiro.
+
+\textbf{Mistral.} A Mistral AI lançou em 2023 o Mistral~7B, modelo decodificador com 7 bilhões de parâmetros que combinou \textit{grouped-query attention} (GQA) e \textit{sliding-window attention} (SWA) para reduzir o custo computacional sem sacrificar qualidade \cite{jiang2023}. Apesar do tamanho modesto, superou o LLaMA~2 13B em diversas avaliações de raciocínio, matemática e geração de código, e ainda hoje serve como referência de modelo enxuto para inferência local \cite{jiang2023}. A variante avaliada é o \textit{checkpoint} \texttt{cnmoro/mistral\_7b\_portuguese}, ajustado por SFT para seguir instruções em português brasileiro.
+
+\textbf{Alpaca.} Lançado em 2023 pelo Stanford Center for Research on Foundation Models, o Alpaca é um SFT do LLaMA original (7B) sobre 52 mil instruções autogeradas pelo método \textit{Self-Instruct} \cite{taori2023}. O experimento foi pioneiro em demonstrar que um SFT barato sobre instruções sintéticas geradas por modelos maiores (text-davinci-003, à época) conseguia aproximar o comportamento de um modelo \textit{instruction-tuned} a uma fração do custo \cite{taori2023}. Aqui ele serve como linha de base de SFT instrucional sobre um LLM aberto de primeira geração, na adaptação para português brasileiro \texttt{splitpierre/bode-alpaca-pt-br} (13B).
+
+\textbf{Qwen.} Família de modelos \textit{open-source} desenvolvida pela Alibaba Cloud, treinada em corpus de até 3 trilhões de \textit{tokens} com forte ênfase em chinês e inglês \cite{qwen2023}. Adota \textit{Transformer} decodificador com \textit{rotary positional embeddings} (RoPE) e variantes \textit{instruction-tuned} (Qwen-Chat) baseadas em SFT e RLHF. A fração reduzida de português no pré-treinamento influencia o desempenho observado em normas brasileiras; nesta pesquisa utilizou-se o \textit{checkpoint} \texttt{cnmoro/Qwen2.5-0.5B-Portuguese-v1} (0,5B), o menor da seleção.
 
 \section{\textit{Dataset}}
 
@@ -119,76 +180,53 @@ O Código~\ref{lst:dataset} apresenta uma entrada real do \textit{dataset}, extr
 
 O mesmo arquivo serve como entrada para os geradores e como \textit{target} de referência para os validadores, simplificando a reprodutibilidade dos experimentos.
 
-\section{\textit{Pipeline} de Execução e Experimentos}
-
-A orquestração dos experimentos vive em um \textit{script} principal, que oferece um menu para a etapa de geração e outro para a de validação. As saídas de cada modelo, em cada experimento, são persistidas em arquivos JSON próprios, no padrão \texttt{generate\_<nível>\_<modelo>.json} (por exemplo, \texttt{generate\_n1\_alpaca.json} para o N1 produzido pelo Alpaca). Os resultados das validações seguem o mesmo princípio, agora um arquivo por experimento, no padrão \texttt{validate\_<experimento>.json} (\texttt{validate\_n1.json}).
-
-Para isolar o que cada nível contribui e medir como o erro se propaga, defini cinco experimentos, ilustrados na Figura~\ref{img:4.2}. EN1, EN2 e EN3 avaliam cada etapa em separado: cada um deles recebe o nível anterior \textit{de referência} (extraído do \textit{dataset}) como entrada, eliminando o ruído das etapas precedentes. Em paralelo, EN1N2 simula o \textit{pipeline} encadeado dos dois primeiros níveis (o N1 produzido pelo próprio modelo alimenta sua etapa N2), e EN1N2N3 fecha o \textit{pipeline} completo N1$\rightarrow$N2$\rightarrow$N3, encadeando as três etapas com saídas geradas pelo próprio modelo. Esses dois últimos cenários expõem a \textbf{propagação de erros} ao longo da cadeia.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.98\linewidth]{Imagens/4.2-experimentos.png}
-\caption{Estrutura dos cinco experimentos: EN1, EN2 e EN3 (isolados) e EN1N2 e EN1N2N3 (encadeados).}
-\label{img:4.2}
-\end{figure}
-
-\subsection{Experimento EN1}
-
-O EN1 avalia a geração N1 em isolamento. A entrada é o texto bruto da norma; a saída gerada vai contra o N1 de referência do \textit{dataset}. O que se mede é a qualidade da segmentação a partir do texto bruto, sem interferência das etapas posteriores.
-
-\subsection{Experimento EN2}
-
-O EN2 avalia o N2 sozinho, sem o ruído da etapa anterior. A entrada é o N1 de referência (tirado direto do \textit{dataset}), e a saída é comparada ao N2 de referência, operador por operador (R, A, S e E). O foco aqui é a qualidade pura da classificação RASE.
-
-\subsection{Experimento EN1N2}
-
-O EN1N2 é o \textit{pipeline} encadeado dos dois primeiros níveis: o N1 gerado pelo modelo alimenta a etapa N2 do mesmo modelo. A saída final é comparada ao N2 de referência. O objetivo é medir a \textbf{propagação de erros} entre as duas etapas em um cenário totalmente automatizado.
-
-\subsection{Experimento EN3}
-
-O EN3 avalia o N3 em isolamento, novamente sem o ruído das etapas anteriores. A entrada é o N2 de referência por operador (extraído do \textit{dataset}), e a saída gerada é comparada à representação JSON de referência, nos campos \textit{type}, \textit{object}, \textit{property}, \textit{comparation}, \textit{target} e \textit{unit}. A métrica aqui é a qualidade pura da estruturação semântica em JSON.
-
-\subsection{Experimento EN1N2N3}
-
-O EN1N2N3 fecha o \textit{pipeline} encadeado: o N1 do modelo alimenta o N2 do mesmo modelo, que alimenta o N3 do mesmo modelo. A saída final (JSON estruturado por operador) é comparada à referência do \textit{dataset}. Este cenário replica o uso real do \textit{pipeline} em produção e expõe a \textbf{propagação de erros} ao longo dos três níveis.
-
 \section{Métricas de Validação}
 
 A avaliação combinou treze métricas em cinco famílias: similaridade lexical, similaridade semântica, distância semântica, métricas voltadas para geração e métricas de classificação. As nove primeiras (similaridade) são calculadas par a par entre saída prevista e referência do \textit{dataset}, sempre em escala normalizada $[0,1]$: quanto maior, mais próxima a saída está da referência. As quatro métricas de classificação derivam da matriz de confusão entre saída e referência.
 
 \subsection{Similaridade Lexical}
 
+As métricas lexicais comparam a \textbf{forma de superfície} das \textit{strings}, ou seja, os caracteres e as palavras efetivamente escritos, sem qualquer noção de significado. São úteis para flagrar saídas que reproduzem quase literalmente a referência, mas penalizam paráfrases e sinônimos.
+
 \begin{itemize}
-    \item \textbf{FuzzyWuzzy}: utiliza \textit{fuzz.partial\_ratio}, baseado na distância de Levenshtein parcial; tolera fragmentos da string-alvo.
-    \item \textbf{TF-IDF}: cosseno entre vetores TF-IDF das duas \textit{strings}, ponderando os termos pela sua importância no corpus \cite{manning2008}.
+    \item \textbf{FuzzyWuzzy}: utiliza \textit{fuzz.partial\_ratio}, baseado na distância de Levenshtein parcial; mede a sobreposição no nível dos caracteres. Um valor alto significa que as duas \textit{strings} compartilham longos trechos idênticos (mesmas palavras, mesma grafia); é sensível à forma, de modo que reordenar ou trocar palavras por sinônimos reduz a pontuação.
+    \item \textbf{TF-IDF}: cosseno entre vetores TF-IDF das duas \textit{strings}, ponderando os termos pela sua importância no corpus \cite{manning2008}. Diferentemente do FuzzyWuzzy, ignora a ordem e os detalhes de caractere e foca em \textit{quais} termos discriminantes (raros e informativos) as duas \textit{strings} têm em comum: um valor alto indica vocabulário relevante compartilhado, ainda que a frase esteja redigida de outra forma. Em contrapartida, não reconhece sinônimos, pois palavras distintas ocupam dimensões distintas.
 \end{itemize}
 
 \subsection{Similaridade Semântica}
 
+Ao contrário das lexicais, as métricas semânticas comparam o \textbf{significado}: usam \textit{embeddings} neurais que aproximam textos com sentido equivalente mesmo quando escritos com palavras diferentes. Um valor alto indica proximidade de sentido; paráfrases e sinônimos pontuam alto, o que as torna mais justas para avaliar saídas de LLMs.
+
 \begin{itemize}
-    \item \textbf{SBERT (PT)}: \textit{embeddings} produzidos pelo modelo \textit{tgsc/sentence-transformer-ult5-pt-small} \cite{reimers2019}.
-    \item \textbf{BERTimbau}: \textit{embeddings} de \textit{rufimelo/Legal-BERTimbau-sts-large-ma-v3}, especializado em texto jurídico em português brasileiro \cite{souza2020}.
-    \item \textbf{Multilingual}: \textit{embeddings} de \textit{sentence-transformers/paraphrase-multilingual-mpnet-base-v2}, treinado em mais de cinquenta idiomas.
+    \item \textbf{SBERT (PT)}: \textit{embeddings} de sentença para português geral, produzidos pelo modelo \textit{tgsc/sentence-transformer-ult5-pt-small} \cite{reimers2019}; referência de propósito geral para o idioma.
+    \item \textbf{BERTimbau}: \textit{embeddings} de \textit{rufimelo/Legal-BERTimbau-sts-large-ma-v3}, especializado em texto jurídico em português brasileiro \cite{souza2020}; tende a captar melhor o vocabulário normativo, próximo ao das normas avaliadas.
+    \item \textbf{Multilingual}: \textit{embeddings} de \textit{sentence-transformers/paraphrase-multilingual-mpnet-base-v2}, treinado em mais de cinquenta idiomas; mais robusto a saídas que misturam idiomas, situação observada em alguns modelos.
 \end{itemize}
 
 \subsection{Distância Semântica (WMD)}
 
+A \textit{Word Mover's Distance} também mede significado, mas no nível das palavras: calcula o ``custo de transporte'' mínimo para alinhar os \textit{embeddings} das palavras de um texto aos do outro \cite{kusner2015}. A distância bruta é menor quanto mais parecidos os textos; aqui ela é normalizada para $[0,1]$ e invertida, de forma que, como nas demais, um valor alto indica maior proximidade. Diferencia-se da similaridade semântica de sentença por operar palavra a palavra, com alinhamento ótimo.
+
 \begin{itemize}
-    \item \textbf{WMD\_ft}: \textit{Word Mover's Distance} \cite{kusner2015} com \textit{embeddings} do FastText (\textit{fasttext-wiki-news-subwords-300}) \cite{bojanowski2017}.
+    \item \textbf{WMD\_ft}: WMD com \textit{embeddings} do FastText (\textit{fasttext-wiki-news-subwords-300}) \cite{bojanowski2017}.
     \item \textbf{WMD\_nilc}: WMD com \textit{embeddings} do projeto NILC (\textit{cbow\_s300.txt}), treinados sobre corpora em português brasileiro, com valor normalizado para o intervalo $[0,1]$.
 \end{itemize}
 
 \subsection{Métricas Voltadas para Geração}
 
+Originárias da avaliação de tarefas de geração de texto, estas métricas medem o quanto a saída \textbf{reproduz} a referência, combinando aderência de conteúdo e de estrutura.
+
 \begin{itemize}
-    \item \textbf{BERTScore}: similaridade contextual baseada em \textit{embeddings} do BERT, com alinhamento ótimo entre os \textit{tokens} da saída e da referência \cite{zhang2020bertscore}.
-    \item \textbf{ROUGE-L}: razão entre a maior subsequência comum (LCS) e a referência, originalmente proposta para sumarização \cite{lin2004rouge}.
+    \item \textbf{BERTScore}: similaridade contextual baseada em \textit{embeddings} do BERT, com alinhamento ótimo entre os \textit{tokens} da saída e da referência \cite{zhang2020bertscore}. Um valor alto indica que cada \textit{token} gerado encontra um correspondente de sentido próximo na referência, capturando equivalência mesmo sem coincidência exata de palavras.
+    \item \textbf{ROUGE-L}: razão entre a maior subsequência comum (LCS) e a referência, originalmente proposta para sumarização \cite{lin2004rouge}. Por basear-se na LCS, premia a preservação da \textbf{ordem} das palavras: um valor alto indica que a saída mantém a mesma sequência da referência, sendo mais sensível à forma que o BERTScore.
 \end{itemize}
 
 \subsection{Métricas de Classificação}
 \label{sec:metricas_classificacao}
 
-Complementarmente às métricas de similaridade, foram calculadas quatro métricas de classificação. O critério de acerto foi definido em função do nível de normalização:
+As métricas de similaridade dizem \textit{o quão próxima} uma saída está da referência, mas não respondem se cada elemento da decomposição RASE foi efetivamente identificado, omitido ou inventado. Para capturar isso, a tarefa foi tratada também como um problema de \textbf{extração de informação}, em que avaliar a saída equivale a decidir, para cada elemento (uma sentença em N1, um operador em N2, um campo do JSON em N3), se ele foi corretamente recuperado. Essa é a mesma formulação adotada na avaliação de sistemas de recuperação de informação e de extração de entidades, em que o desempenho é medido pela matriz de confusão e pelas métricas dela derivadas, acurácia, precisão, revocação e \textit{F1-score}, padrão clássico na área \cite{manning2008}. A ideia, portanto, é complementar a visão contínua das similaridades com uma visão discreta de acerto/erro, que torna explícitas as \textbf{omissões} (elementos da referência que o modelo não produziu) e as \textbf{alucinações} (elementos que o modelo produziu sem respaldo na referência).
+
+Complementarmente às métricas de similaridade, foram então calculadas quatro métricas de classificação. O critério de acerto foi definido em função do nível de normalização:
 
 \begin{itemize}
     \item Em \textbf{N1}, considera-se uma sentença atômica prevista como \textit{verdadeiro positivo} (VP) se sua similaridade semântica em relação a alguma sentença da referência exceder um limiar pré-definido (0{,}7). Como N1 não possui rótulos negativos no \textit{dataset}, calculam-se apenas as estatísticas baseadas em VP, FP e FN.
@@ -206,6 +244,10 @@ As métricas são definidas como:
 \end{itemize}
 
 Para tornar concretos esses conceitos, convém fixar a convenção adotada. Em todos os níveis, o item avaliado: uma sentença, em N1; um operador, em N2; um campo do JSON, em N3; é tratado como \textit{positivo} quando está preenchido e como \textit{negativo} quando está vazio (\verb|""|). Disso decorre que: \textbf{VP} significa preenchido na referência e na previsão, e os dois ``casam''; \textbf{VN}, vazio em ambos; \textbf{FN}, preenchido na referência mas vazio na previsão (omissão); e \textbf{FP}, vazio na referência mas preenchido na previsão (alucinação). O critério de ``casar'' é a similaridade semântica acima do limiar (0{,}7) em N1 e N2, e a igualdade exata (após normalização de caixa, acentos e pontuação final) em N3. Quando ambos os lados estão preenchidos, mas não casam, a ocorrência é contada simultaneamente como FP e FN (emitiu algo errado \emph{e} perdeu o correto). Note que N1 não gera VN, pois não há item que ``deva estar vazio'': toda sentença, prevista ou de referência, é conteúdo.
+
+A escolha do limiar de 0{,}7 em N1 e N2 decorre da natureza textual desses níveis: como o conteúdo é texto livre, exigir igualdade exata seria severo demais, pois penalizaria paráfrases legítimas (uma sentença correta redigida com outras palavras seria contada como erro); por outro lado, um limiar baixo demais aceitaria como ``casamento'' trechos apenas vagamente parecidos. O valor 0{,}7, na escala normalizada $[0,1]$ de similaridade semântica, foi adotado como ponto de equilíbrio: alto o bastante para exigir equivalência real de sentido, mas tolerante à variação lexical típica das saídas dos LLMs. Em N3 o problema não se coloca, porque os campos do JSON são curtos e padronizados, o que justifica a igualdade exata.
+
+O efeito de alterar esse limiar é direto. Elevá-lo (por exemplo, para 0{,}8 ou 0{,}9) torna o emparelhamento mais rígido: menos pares atingem o corte, de modo que casamentos genuínos, porém parafraseados, passam a ser contados como FP e FN, reduzindo precisão e revocação e produzindo uma avaliação mais conservadora. Reduzi-lo (por exemplo, para 0{,}5) torna o critério permissivo: pares apenas superficialmente semelhantes passam a contar como acerto, inflando artificialmente os escores e mascarando erros reais de classificação. Como o mesmo limiar é aplicado a todos os modelos e experimentos, sua variação desloca os valores absolutos das métricas, mas preserva a \textbf{comparabilidade relativa} entre os modelos, que é o foco desta avaliação.
 
 Todas as métricas são persistidas em \textit{metrics/validate\_*.json}, e o detalhamento por instância é registrado em \textit{metrics/details/validate\_<nível>\_<modelo>.jsonl}.
 
