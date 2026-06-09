@@ -2,6 +2,10 @@
 
 \usepackage[authoryear,longnamesfirst]{natbib}
 \usepackage{xcolor}
+\usepackage{seqsplit}
+
+% Permite que tags longas do Ollama quebrem dentro da célula da tabela.
+\newcommand{\ollamatag}[1]{\texttt{\seqsplit{#1}}}
 
 % Per-column highlighting in result tables: best value in green, worst in red.
 \newcommand{\melhor}[1]{\textcolor{green!55!black}{#1}}
@@ -75,9 +79,9 @@ Adapting these models to specific domains can follow different paths. The lighte
 
 In the AEC sector, LLMs can assist both in reading standards and in converting them into machine-processable formats \citep{fuchs2024}. Yet the literature still has gaps: one of them is precisely the interpretation of laws, codes, and regulatory standards, whose semantic complexity has historically challenged earlier AI methods \citep{fuchs2024}.
 
-Faced with this gap, this work decomposes the conversion of standards to RASE into three successive normalization levels, supported solely by Prompt Engineering: level \textbf{N1} segments the normative sentence into atomic rules; \textbf{N2} identifies, in each rule, the RASE operators; and \textbf{N3} structures the result as JSON. Over this decomposition, six open-source LLMs (Llama, Dolphin, Gemma, Mistral, Alpaca, and Qwen) are compared, served locally, across five experiments that evaluate each level in isolation and in a chained pipeline. Output quality is assessed by nine textual-similarity metrics across four families --- lexical (FuzzyWuzzy and TF-IDF), semantic (SBERT, BERTimbau, and Multilingual), distance-based (\textit{Word Mover's Distance} with FastText and NILC), and generation-oriented (BERTScore and ROUGE-L) --- complemented by four classification metrics (Accuracy, Precision, Recall, and F1-score).
+Faced with this gap, this work decomposes the conversion of standards to RASE into three successive normalization levels, supported solely by Prompt Engineering: level \textbf{N1} segments the normative sentence into atomic rules; \textbf{N2} identifies, in each rule, the RASE operators; and \textbf{N3} structures the result as JSON. Over this decomposition, six open-source LLMs (Llama, Dolphin, Gemma, Mistral, Alpaca, and Qwen) are compared, served locally, across five experiments that evaluate each level in isolation and in a chained pipeline. Output quality is assessed by nine textual-similarity metrics across four families: lexical (FuzzyWuzzy and TF-IDF), semantic (SBERT, BERTimbau, and Multilingual), distance-based (\textit{Word Mover's Distance} with FastText and NILC), and generation-oriented (BERTScore and ROUGE-L); these are complemented by four classification metrics (Accuracy, Precision, Recall, and F1-score).
 
-The contributions of this work lie at the intersection of Architecture, Engineering and Construction (AEC) and Computing: for AEC, it applies NLP models to building-code checking and proposes successive normalization levels over the RASE methodology of \citet{hjelseth2011}; for Computing, it brings LLMs well established in the literature to a previously unexplored domain and subjects them to a systematic performance evaluation.
+The contributions of this work lie at the intersection of Architecture, Engineering and Construction (AEC) and Computing: for AEC, it applies NLP models to building-code checking and proposes successive normalization levels over the RASE methodology of \citet{hjelseth2011}; for Computing, it brings LLMs well established in the literature to a new domain and subjects them to a systematic performance evaluation.
 
 \section{Background}\label{sec:background}
 
@@ -91,7 +95,7 @@ The response the literature has been consolidating is to structure the standard 
 \subsection{Large Language Models and Textual Validation Metrics}\label{sec:llm-metrics}
 Large Language Models (LLMs) are AI models that combine Machine Learning, deep neural networks, and Natural Language Processing techniques to understand and generate human language \citep{touvron2023}. They are typically pre-trained in an unsupervised fashion over billions of words, learning to predict sentence structure probabilistically, and adopt the \textit{Transformer} architecture \citep{vaswani2017}, efficient at handling contextual dependencies over long sequences. The release of ChatGPT and GPT-4 \citep{openai2024} popularized these models, and, as a response to closed models, open-weight alternatives such as LLaMA emerged \citep{touvron2023,llama3}. Among the techniques that specialize an LLM for a domain task without changing its weights, Prompt Engineering is the lightest: it consists of carefully designing the instruction sent to the model, an essential practice for obtaining context-appropriate responses \citep{brown2020}.
 
-Evaluating an LLM's output in text-conversion tasks requires comparing it to a reference. Since exact matching is rarely desirable --- a correct paraphrase must also count as a hit ---, a set of similarity metrics is used, organized into four families \citep{jurafsky2009}. The \textbf{lexical} ones compare the surface form of the strings: FuzzyWuzzy, based on the Levenshtein distance, and cosine similarity over TF-IDF vectors \citep{manning2008}. The \textbf{semantic} ones rely on sentence embeddings that bring texts of equivalent meaning closer, such as Sentence-BERT \citep{reimers2019}, BERTimbau (specialized in Portuguese) \citep{souza2020}, and multilingual models. The \textbf{distance-based} ones measure the cost of aligning the word embeddings of one text to those of another, as in the Word Mover's Distance \citep{kusner2015}, runnable over FastText \citep{bojanowski2017} or NILC embeddings. The \textbf{generation-oriented} ones, originating in machine translation and summarization, measure how much the output reproduces the reference: BERTScore \citep{zhang2020bertscore}, which aligns tokens by contextual similarity, and ROUGE-L \citep{lin2004rouge}, based on the longest common subsequence. To these we add classification metrics (accuracy, precision, recall, and F1-score), derived from the confusion matrix, which make omissions and hallucinations explicit by treating evaluation as an information-extraction problem \citep{manning2008}.
+Evaluating an LLM's output in text-conversion tasks requires comparing it to a reference. Since exact matching is rarely desirable, because a correct paraphrase must also count as a hit, a set of similarity metrics is used, organized into four families \citep{jurafsky2009}. The \textbf{lexical} ones compare the surface form of the strings: FuzzyWuzzy, based on the Levenshtein distance, and cosine similarity over TF-IDF vectors \citep{manning2008}. The \textbf{semantic} ones rely on sentence embeddings that bring texts of equivalent meaning closer, such as Sentence-BERT \citep{reimers2019}, BERTimbau (specialized in Portuguese) \citep{souza2020}, and multilingual models. The \textbf{distance-based} ones measure the cost of aligning the word embeddings of one text to those of another, as in the Word Mover's Distance \citep{kusner2015}, runnable over FastText \citep{bojanowski2017} or NILC embeddings. The \textbf{generation-oriented} ones, originating in machine translation and summarization, measure how much the output reproduces the reference: BERTScore \citep{zhang2020bertscore}, which aligns tokens by contextual similarity, and ROUGE-L \citep{lin2004rouge}, based on the longest common subsequence. To these we add classification metrics (accuracy, precision, recall, and F1-score), derived from the confusion matrix, which make omissions and hallucinations explicit by treating evaluation as an information-extraction problem \citep{manning2008}.
 
 \subsection{Related Work}\label{sec:related-work}
 The integration of BIM with generative AI technologies is still little explored in the AEC sector, but it is the subject of a recent wave of work. \citet{rane2023} analyze the integration between BIM and models such as ChatGPT and Bard, identifying gains in design and decision-making, but pointing to persistent obstacles (lack of data standardization, security shortcomings, and the models' difficulty in interpreting the semantics of BIM data) and proposing an adoption framework. \citet{lin2023} present JULE, a chatbot that combines BIM and NLP to deliver real-time, on-site queries about component dimensions without opening the conventional interfaces, with high accuracy in intent recognition but conditioned on well-structured BIM data. \citet{sammou2024} apply GPT-3.5 and GPT-4 to 385 safety questions and three Prompt Engineering techniques (Prompt Direct, Chain-of-Thought, and Few-Shot): GPT-4 reached 84.6\% accuracy against 73.8\% for GPT-3.5, but both failed on emergency and calculation questions, exposing the fragility of technical reliability. Finally, \citet{samsami2024} show that generic prompts do not work in the AEC sector and that specific prompts reduce errors, although hallucinations in complex tasks and the need for external validation persist. Taken together, these works confirm the potential of LLMs in the sector but reveal a common gap: the absence of a structured, formal representation that translates normative content into computable rules. Without it, LLMs extract text and generate insights but do not convert the standard into something directly machine-verifiable, exactly the point this work addresses by coupling LLMs to the RASE methodology.
@@ -103,16 +107,16 @@ The proposed methodology, here named \textbf{RASE-PE}, rests on three decisions:
 Moving from the raw text of a standard to the RASE representation in JSON requires three distinct reasoning steps: syntactic segmentation, semantic classification, and structured-attribute extraction. Asking for all of this in a single LLM call tends to degrade the output, with hallucinations, omissions, and invalid JSON. RASE-PE decomposes the task into three successive levels, isolating each decision and allowing each step to be validated separately:
 
 \begin{itemize}
-\item \textbf{N1 --- Atomic Segmentation.} Normative sentences often embed more than one coordinated rule (for example, ``the cross slope must be at most 2\% for indoor floors and at most 3\% for outdoor floors'' contains two rules). N1 breaks the original sentence into atomic items, with a single rule per item --- a precondition for the next steps to correctly assign the RASE operators.
-\item \textbf{N2 --- RASE Operator Identification.} From each atomic rule, N2 identifies which spans correspond to Requirement, Applicability, Selection, and Exception. It is the core of the formalization: without it, the text remains in natural language.
-\item \textbf{N3 --- Semantic JSON Structuring.} Classifying a span as R, A, S, or E still leaves it in natural language; for automated checking against a BIM model, the data must be extracted into structured fields. N3 produces a JSON with the fields \textit{type}, \textit{object}, \textit{property}, \textit{comparation}, \textit{target}, and \textit{unit}.
+\item \textbf{N1: Atomic Segmentation.} Normative sentences often embed more than one coordinated rule (for example, ``the cross slope must be at most 2\% for indoor floors and at most 3\% for outdoor floors'' contains two rules). N1 breaks the original sentence into atomic items, with a single rule per item, a precondition for the next steps to correctly assign the RASE operators.
+\item \textbf{N2: RASE Operator Identification.} From each atomic rule, N2 identifies which spans correspond to Requirement, Applicability, Selection, and Exception. It is the core of the formalization: without it, the text remains in natural language.
+\item \textbf{N3: Semantic JSON Structuring.} Classifying a span as R, A, S, or E still leaves it in natural language; for automated checking against a BIM model, the data must be extracted into structured fields. N3 produces a JSON with the fields \textit{type}, \textit{object}, \textit{property}, \textit{comparation}, \textit{target}, and \textit{unit}.
 \end{itemize}
 
 The chaining N1~$\rightarrow$~N2~$\rightarrow$~N3 forms the complete RASE-PE \textit{pipeline} (Figure~\ref{img:pipeline}), from raw text to the structured RASE representation. To isolate the contribution of each level and measure error propagation along the chain, the evaluation is organized into five experiments, presented in Section~\ref{sec:results}.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.98\linewidth]{figs/pipeline.png}
+\includegraphics[width=0.98\linewidth]{figs/pipeline-en.png}
 \caption{RASE-PE \textit{pipeline} for converting technical standards into the RASE format.}
 \label{img:pipeline}
 \end{figure}
@@ -133,12 +137,12 @@ Six open-source models were evaluated, run locally through Ollama \citep{ollama2
 \toprule
 Model & Origin & Tag served through Ollama & Parameters \\
 \midrule
-Llama   & Meta                     & \texttt{llama3.1:8b}                                              & 8B \\
-Dolphin & cnmoro (LLaMA-3 PT)      & \texttt{cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4\_k\_m}        & 8B (Q4\_K\_M) \\
-Gemma   & brunoconterato (PT-BR)   & \texttt{brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16}             & 4B (FP16) \\
-Mistral & cnmoro (PT)              & \texttt{cnmoro/mistral\_7b\_portuguese:q4\_K\_M}                  & 7B (Q4\_K\_M) \\
-Alpaca  & splitpierre (Bode PT-BR) & \texttt{splitpierre/bode-alpaca-pt-br:13b-Q4\_0}                 & 13B (Q4\_0) \\
-Qwen    & cnmoro (PT)              & \texttt{cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4\_k\_m}             & 0.5B (Q4\_K\_M) \\
+Llama   & Meta                     & \ollamatag{llama3.1:8b}                                  & 8B \\
+Dolphin & cnmoro (LLaMA-3 PT)      & \ollamatag{cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4\_k\_m} & 8B (Q4\_K\_M) \\
+Gemma   & brunoconterato (PT-BR)   & \ollamatag{brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16}  & 4B (FP16) \\
+Mistral & cnmoro (PT)              & \ollamatag{cnmoro/mistral\_7b\_portuguese:q4\_K\_M}      & 7B (Q4\_K\_M) \\
+Alpaca  & splitpierre (Bode PT-BR) & \ollamatag{splitpierre/bode-alpaca-pt-br:13b-Q4\_0}      & 13B (Q4\_0) \\
+Qwen    & cnmoro (PT)              & \ollamatag{cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4\_k\_m}   & 0.5B (Q4\_K\_M) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -240,7 +244,7 @@ Figure~\ref{img:4.2.1} presents the visual comparison among the six models acros
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.95\linewidth]{figs/4.2.1-resultados-en1-barras.png}
+\includegraphics[width=0.95\linewidth]{figs/4.2.1-resultados-en1-barras-en.png}
 \caption{Model $\times$ metric comparison in EN1.}
 \label{img:4.2.1}
 \end{figure}
@@ -284,7 +288,7 @@ Figure~\ref{img:4.2.2} consolidates the performance of the six models across the
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.95\linewidth]{figs/4.2.2-resultados-en2-barras.png}
+\includegraphics[width=0.95\linewidth]{figs/4.2.2-resultados-en2-barras-en.png}
 \caption{Model $\times$ metric comparison in EN2.}
 \label{img:4.2.2}
 \end{figure}
@@ -318,7 +322,7 @@ Figure~\ref{img:4.2.3} presents the visual comparison in EN1N2, highlighting the
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=0.95\linewidth]{figs/4.2.3-resultados-en1n2-barras.png}
+\includegraphics[width=0.95\linewidth]{figs/4.2.3-resultados-en1n2-barras-en.png}
 \caption{Model $\times$ metric comparison in EN1N2.}
 \label{img:4.2.3}
 \end{figure}

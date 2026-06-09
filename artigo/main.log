@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.19)  4 JUN 2026 10:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.5.19)  9 JUN 2026 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,48 +639,52 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count331
 )
+(/usr/share/texlive/texmf-dist/tex/latex/seqsplit/seqsplit.sty
+Package: seqsplit 2006/08/07 v0.1 Splitting long sequences (DNA, RNA, proteins,
+ etc.) 
+)
 LaTeX Font Info:    Trying to load font information for T1+stix on input line 1
-0.
+4.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/t1stix.fd
 File: t1stix.fd 2015/04/17 v1.1.2-latex STIX T1 font definitions
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 10.
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 10.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for LS1/stix/m/n on input line 14.
 LaTeX Font Info:    Trying to load font information for LS1+stix on input line 
-10.
+14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stix.fd
 File: ls1stix.fd 2015/04/17 v1.1.2-latex STIX LS1 font definitions
 )
-LaTeX Font Info:    ... okay on input line 10.
-LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for LS2/stix/m/n on input line 14.
 LaTeX Font Info:    Trying to load font information for LS2+stix on input line 
-10.
+14.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls2stix.fd
 File: ls2stix.fd 2015/04/17 v1.1.2-latex STIX LS2 font definitions
 )
-LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    ... okay on input line 14.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -697,24 +701,16 @@ LaTeX Font Info:    ... okay on input line 10.
 \everyMPtoPDFconversion=\toks34
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-
-(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
-Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
-)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
-Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Command `\dddot' is already robust on input line 10.
-LaTeX Info: Command `\ddddot' is already robust on input line 10.
-Package hyperref Info: Link coloring ON on input line 10.
+LaTeX Info: Command `\dddot' is already robust on input line 14.
+LaTeX Info: Command `\ddddot' is already robust on input line 14.
+Package hyperref Info: Link coloring ON on input line 14.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
@@ -759,89 +755,89 @@ Package hyperref Info: Link coloring ON on input line 10.
 \openout4 = `main.abs'.
 
 LaTeX Font Info:    Trying to load font information for LS1+stixscr on input li
-ne 50.
+ne 54.
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stixscr.fd
 File: ls1stixscr.fd 2015/04/17 v1.1.2-latex STIX script LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixex on input lin
-e 50.
+e 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls2stixex.fd
 File: ls2stixex.fd 2015/04/17 v1.1.2-latex STIX extentions LS2 font definitions
 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 54.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 50.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 54.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixfrak on input l
-ine 50.
+ine 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stixfrak.fd
 File: ls1stixfrak.fd 2015/04/17 v1.1.2-latex STIX fraktur LS1 font definitions
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixbb on input lin
-e 50.
+e 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stixbb.fd
 File: ls1stixbb.fd 2015/04/17 v1.1.2-latex STIX blackboard LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixcal on input li
-ne 50.
+ne 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls2stixcal.fd
 File: ls2stixcal.fd 2015/04/17 v1.1.2-latex STIX calligraphic LS2 font definiti
 ons
 )
 LaTeX Font Info:    Trying to load font information for LS1+stixsf on input lin
-e 50.
+e 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls1stixsf.fd
 File: ls1stixsf.fd 2015/04/17 v1.1.2-latex STIX sans-serif LS1 font definitions
 
 )
 LaTeX Font Info:    Trying to load font information for LS2+stixtt on input lin
-e 50.
+e 54.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ls2stixtt.fd
 File: ls2stixtt.fd 2015/04/17 v1.1.2-latex STIX typewriter LS2 font definitions
 
 )
-Overfull \hbox (117.0831pt too wide) detected at line 50
+Overfull \hbox (117.0831pt too wide) detected at line 54
 []
  []
 
 (./main.abs)
 
-Package hyperref Warning: Ignoring empty anchor on input line 50.
+Package hyperref Warning: Ignoring empty anchor on input line 54.
 
 
-Package hyperref Warning: Ignoring empty anchor on input line 50.
+Package hyperref Warning: Ignoring empty anchor on input line 54.
 
 <thumbnails/cas-email.jpeg, id=4, 225.84375pt x 225.84375pt>
 File: thumbnails/cas-email.jpeg Graphic file (type jpg)
 <use thumbnails/cas-email.jpeg>
-Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 50.
+Package pdftex.def Info: thumbnails/cas-email.jpeg  used on input line 54.
 (pdftex.def)             Requested size: 7.99838pt x 8.0pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 5
-0.
+4.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 
-Package hyperref Warning: Ignoring empty anchor on input line 50.
+Package hyperref Warning: Ignoring empty anchor on input line 54.
 
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 5
-9.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 6
+3.
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 ) [1
@@ -850,67 +846,47 @@ File: t1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 st/fonts/enc/dvips/stix/stix-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-super/
 cm-super-t1.enc} <./thumbnails/cas-email.jpeg>] [2] [3] [4]
 LaTeX Font Info:    Trying to load font information for TS1+stix on input line 
-106.
+110.
 
 (/usr/share/texlive/texmf-dist/tex/latex/stix/ts1stix.fd
 File: ts1stix.fd 2015/04/17 v1.1.2-latex STIX TS1 font definitions
 )
-<figs/pipeline.png, id=174, 682.2288pt x 368.21565pt>
-File: figs/pipeline.png Graphic file (type png)
-<use figs/pipeline.png>
-Package pdftex.def Info: figs/pipeline.png  used on input line 115.
-(pdftex.def)             Requested size: 458.96375pt x 247.71454pt.
+<figs/pipeline-en.png, id=174, 682.2288pt x 367.49295pt>
+File: figs/pipeline-en.png Graphic file (type png)
+<use figs/pipeline-en.png>
+Package pdftex.def Info: figs/pipeline-en.png  used on input line 119.
+(pdftex.def)             Requested size: 458.96375pt x 247.22833pt.
  [5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-ts1.enc} <./figs/pi
-peline.png>]
-Overfull \hbox (48.90155pt too wide) in paragraph at lines 137--137
-[]|\T1/cmtt/m/n/8 cnmoro/llama-3-8b-dolphin-portuguese-v0.3:4_k_m|  
- []
-
-
-Overfull \hbox (31.9057pt too wide) in paragraph at lines 138--138
-[]|\T1/cmtt/m/n/8 brunoconterato/Gemma-3-Gaia-PT-BR-4b-it:f16|  
- []
-
-
-Overfull \hbox (10.66089pt too wide) in paragraph at lines 140--140
-[]|\T1/cmtt/m/n/8 splitpierre/bode-alpaca-pt-br:13b-Q4_0|  
- []
-
-
-Overfull \hbox (19.15881pt too wide) in paragraph at lines 141--141
-[]|\T1/cmtt/m/n/8 cnmoro/Qwen2.5-0.5B-Portuguese-v1:q4_k_m|  
- []
-
-
-Overfull \hbox (7.13673pt too wide) in paragraph at lines 150--151
+peline-en.png>]
+Overfull \hbox (7.13673pt too wide) in paragraph at lines 154--155
 \T1/stix/m/n/10 lex-i-cal sim-i-lar-ity (Fuzzy-Wuzzy and TF-IDF), se-man-tic (S
 BERT-PT \T1/cmtt/m/n/10 tgsc/sentence-transformer-ult5-pt-small\T1/stix/m/n/10 
 ,
  []
 
 [6] [7]
-<figs/4.2.1-resultados-en1-barras.png, id=226, 715.473pt x 345.4506pt>
-File: figs/4.2.1-resultados-en1-barras.png Graphic file (type png)
-<use figs/4.2.1-resultados-en1-barras.png>
-Package pdftex.def Info: figs/4.2.1-resultados-en1-barras.png  used on input li
-ne 243.
-(pdftex.def)             Requested size: 444.91434pt x 214.81496pt.
- [8 <./figs/4.2.1-resultados-en1-barras.png>]
-<figs/4.2.2-resultados-en2-barras.png, id=242, 715.473pt x 345.4506pt>
-File: figs/4.2.2-resultados-en2-barras.png Graphic file (type png)
-<use figs/4.2.2-resultados-en2-barras.png>
-Package pdftex.def Info: figs/4.2.2-resultados-en2-barras.png  used on input li
-ne 287.
-(pdftex.def)             Requested size: 444.91434pt x 214.81496pt.
-<figs/4.2.3-resultados-en1n2-barras.png, id=245, 715.473pt x 345.4506pt>
-File: figs/4.2.3-resultados-en1n2-barras.png Graphic file (type png)
-<use figs/4.2.3-resultados-en1n2-barras.png>
-Package pdftex.def Info: figs/4.2.3-resultados-en1n2-barras.png  used on input 
-line 321.
-(pdftex.def)             Requested size: 444.91434pt x 214.81496pt.
- [9 <./figs/4.2.2-resultados-en2-barras.png>] [10 <./figs/4.2.3-resultados-en1n
-2-barras.png>] [11]
-[12] [13] [14] [15] (./main.bbl [16]) [17] (./main.aux)
+<figs/4.2.1-resultados-en1-barras-en.png, id=226, 715.473pt x 344.36655pt>
+File: figs/4.2.1-resultados-en1-barras-en.png Graphic file (type png)
+<use figs/4.2.1-resultados-en1-barras-en.png>
+Package pdftex.def Info: figs/4.2.1-resultados-en1-barras-en.png  used on input
+ line 247.
+(pdftex.def)             Requested size: 444.91434pt x 214.14085pt.
+ [8 <./figs/4.2.1-resultados-en1-barras-en.png>]
+<figs/4.2.2-resultados-en2-barras-en.png, id=241, 715.473pt x 344.36655pt>
+File: figs/4.2.2-resultados-en2-barras-en.png Graphic file (type png)
+<use figs/4.2.2-resultados-en2-barras-en.png>
+Package pdftex.def Info: figs/4.2.2-resultados-en2-barras-en.png  used on input
+ line 291.
+(pdftex.def)             Requested size: 444.91434pt x 214.14085pt.
+ [9 <./figs/4.2.2-resultados-en2-barras-en.png>]
+<figs/4.2.3-resultados-en1n2-barras-en.png, id=253, 715.473pt x 344.36655pt>
+File: figs/4.2.3-resultados-en1n2-barras-en.png Graphic file (type png)
+<use figs/4.2.3-resultados-en1n2-barras-en.png>
+Package pdftex.def Info: figs/4.2.3-resultados-en1n2-barras-en.png  used on inp
+ut line 325.
+(pdftex.def)             Requested size: 444.91434pt x 214.14085pt.
+ [10 <./figs/4.2.3-resultados-en1n2-barras-en.png>]
+[11] [12] [13] [14] [15] (./main.bbl [16]) [17] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -919,13 +895,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 16765 strings out of 474222
- 250554 string characters out of 5748733
- 1965975 words of memory out of 5000000
- 38641 multiletter control sequences out of 15000+600000
+ 16756 strings out of 474222
+ 250398 string characters out of 5748733
+ 1964975 words of memory out of 5000000
+ 38632 multiletter control sequences out of 15000+600000
  666914 words of font info for 177 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,11n,93p,2256b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,11n,93p,2256b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Bold.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-BoldItalic.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/stix/STIXGeneral-Italic.pfb
@@ -940,7 +916,7 @@ super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb><
 are/texlive/texmf-dist/fonts/type1/public/stix/stix-mathit.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/stix/stix-mathrm.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/stix/stix-mathsf.pfb>
-Output written on main.pdf (17 pages, 801806 bytes).
+Output written on main.pdf (17 pages, 786702 bytes).
 PDF statistics:
  447 PDF objects out of 1000 (max. 8388607)
  382 compressed objects within 4 object streams
