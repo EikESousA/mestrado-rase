@@ -12,13 +12,8 @@
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
 %Type = Manual
-\bibitem[{iso(2018)}]{iso19650}
-, \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{{ISO} 19650-1: Organization and digitization of information about buildings and civil engineering works, including building information modelling ({BIM}) -- Information management using building information modelling -- Part 1: Concepts and principles}.
-\newblock \bibinfo{organization}{International Organization for Standardization}. \bibinfo{address}{Geneva}.
-%Type = Manual
-\bibitem[{abn(2020)}]{abnt9050}
-, \bibinfo{year}{2020}.
+\bibitem[{ABNT9050()}]{abnt9050}
+ABNT9050, \bibinfo{year}{2020}.
 \newblock \bibinfo{title}{{NBR} 9050: Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos}.
 \newblock \bibinfo{organization}{Associação Brasileira de Normas Técnicas}. \bibinfo{address}{Rio de Janeiro}.
 %Type = Misc
@@ -82,8 +77,13 @@
 %Type = Inproceedings
 \bibitem[{Hjelseth and Nisbet(2011)}]{hjelseth2011}
 \bibinfo{author}{Hjelseth, E.}, \bibinfo{author}{Nisbet, N.}, \bibinfo{year}{2011}.
-\newblock \bibinfo{title}{Capturing normative constraints by use of the semantic mark-up {RASE} methodology}, in: \bibinfo{booktitle}{Proceedings of the {CIB} W78-W102 International Conference}.
+\newblock \bibinfo{title}{Capturing normative constraints by use of the semantic mark-up {RASE} methodology}, in: \bibinfo{booktitle}{Proceedings of the {CIB} W78-W102 International Conference}, pp. \bibinfo{pages}{1--10}.
 \newblock \URLprefix \url{https://api.semanticscholar.org/CorpusID:62759547}.
+%Type = Manual
+\bibitem[{ISO19650()}]{iso19650}
+ISO19650, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{{ISO} 19650-1: Organization and digitization of information about buildings and civil engineering works, including building information modelling ({BIM}) -- Information management using building information modelling -- Part 1: Concepts and principles}.
+\newblock \bibinfo{organization}{International Organization for Standardization}. \bibinfo{address}{Geneva}.
 %Type = Book
 \bibitem[{Jurafsky and Martin(2009)}]{jurafsky2009}
 \bibinfo{author}{Jurafsky, D.}, \bibinfo{author}{Martin, J.H.}, \bibinfo{year}{2009}.
@@ -169,7 +169,7 @@
 %Type = Inproceedings
 \bibitem[{Souza et~al.(2020)Souza, Nogueira and Lotufo}]{souza2020}
 \bibinfo{author}{Souza, F.}, \bibinfo{author}{Nogueira, R.}, \bibinfo{author}{Lotufo, R.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{{BERTimbau}: Pretrained {BERT} models for {B}razilian {P}ortuguese}, in: \bibinfo{booktitle}{9th Brazilian Conference on Intelligent Systems (BRACIS)}.
+\newblock \bibinfo{title}{{BERTimbau}: Pretrained {BERT} models for {B}razilian {P}ortuguese}, in: \bibinfo{booktitle}{9th Brazilian Conference on Intelligent Systems (BRACIS)}, \bibinfo{publisher}{Springer}. pp. \bibinfo{pages}{403--417}.
 %Type = Book
 \bibitem[{Tan et~al.(2006)Tan, Steinbach and Kumar}]{tan2006}
 \bibinfo{author}{Tan, P.N.}, \bibinfo{author}{Steinbach, M.}, \bibinfo{author}{Kumar, V.}, \bibinfo{year}{2006}.
@@ -183,12 +183,13 @@
 %Type = Inproceedings
 \bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser and Polosukhin}]{vaswani2017}
 \bibinfo{author}{Vaswani, A.}, \bibinfo{author}{Shazeer, N.}, \bibinfo{author}{Parmar, N.}, \bibinfo{author}{Uszkoreit, J.}, \bibinfo{author}{Jones, L.}, \bibinfo{author}{Gomez, A.N.}, \bibinfo{author}{Kaiser, L.}, \bibinfo{author}{Polosukhin, I.}, \bibinfo{year}{2017}.
-\newblock \bibinfo{title}{Attention is all you need}, in: \bibinfo{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}.
+\newblock \bibinfo{title}{Attention is all you need}, in: \bibinfo{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}, pp. \bibinfo{pages}{5998--6008}.
 \newblock \URLprefix \url{https://arxiv.org/abs/1706.03762}.
-%Type = Inproceedings
+%Type = Misc
 \bibitem[{Zhang et~al.(2020)Zhang, Kishore, Wu, Weinberger and Artzi}]{zhang2020bertscore}
 \bibinfo{author}{Zhang, T.}, \bibinfo{author}{Kishore, V.}, \bibinfo{author}{Wu, F.}, \bibinfo{author}{Weinberger, K.Q.}, \bibinfo{author}{Artzi, Y.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{{BERTScore}: Evaluating text generation with {BERT}}, in: \bibinfo{booktitle}{Proceedings of the 8th International Conference on Learning Representations (ICLR)}.
+\newblock \bibinfo{title}{{BERTScore}: Evaluating text generation with {BERT}}.
+\newblock \URLprefix \url{https://arxiv.org/abs/1904.09675}, \href{http://arxiv.org/abs/1904.09675}{\tt arXiv:1904.09675}. \bibinfo{note}{8th International Conference on Learning Representations (ICLR)}.
 %Type = Article
 \bibitem[{Zhao et~al.(2023)Zhao, Zhou, Li, Tang, Wang, Hou, Min, Zhang, Zhang, Dong, Du, Yang, Chen, Chen, Jiang, Ren, Li, Tang, Liu, Nie and Wen}]{zhao2023}
 \bibinfo{author}{Zhao, W.X.}, \bibinfo{author}{Zhou, K.}, \bibinfo{author}{Li, J.}, \bibinfo{author}{Tang, T.}, \bibinfo{author}{Wang, X.}, \bibinfo{author}{Hou, Y.}, \bibinfo{author}{Min, Y.}, \bibinfo{author}{Zhang, B.}, \bibinfo{author}{Zhang, J.}, \bibinfo{author}{Dong, Z.}, \bibinfo{author}{Du, Y.}, \bibinfo{author}{Yang, C.}, \bibinfo{author}{Chen, Y.}, \bibinfo{author}{Chen, Z.}, \bibinfo{author}{Jiang, J.}, \bibinfo{author}{Ren, R.}, \bibinfo{author}{Li, Y.}, \bibinfo{author}{Tang, X.}, \bibinfo{author}{Liu, Z.}, \bibinfo{author}{Nie, J.Y.}, \bibinfo{author}{Wen, J.R.}, \bibinfo{year}{2023}.

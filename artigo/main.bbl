@@ -12,187 +12,319 @@
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
 %Type = Manual
-\bibitem[{iso(2018)}]{iso19650}
-, \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{{ISO} 19650-1: Organization and digitization of information about buildings and civil engineering works, including building information modelling ({BIM}) -- Information management using building information modelling -- Part 1: Concepts and principles}.
-\newblock \bibinfo{organization}{International Organization for Standardization}. \bibinfo{address}{Geneva}.
-%Type = Manual
-\bibitem[{abn(2020)}]{abnt9050}
-, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{{NBR} 9050: Acessibilidade a edificações, mobiliário, espaços e equipamentos urbanos}.
-\newblock \bibinfo{organization}{Associação Brasileira de Normas Técnicas}. \bibinfo{address}{Rio de Janeiro}.
+\bibitem[{ABNT9050()}]{abnt9050}
+ABNT9050, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{{NBR} 9050: Acessibilidade a edificações,
+  mobiliário, espaços e equipamentos urbanos}.
+\newblock \bibinfo{organization}{Associação Brasileira de Normas Técnicas}.
+  \bibinfo{address}{Rio de Janeiro}.
 %Type = Misc
 \bibitem[{{AI@Meta}(2024)}]{llama3}
 \bibinfo{author}{{AI@Meta}}, \bibinfo{year}{2024}.
 \newblock \bibinfo{title}{The {Llama} 3 herd of models}.
 \newblock \bibinfo{howpublished}{Model Card}.
-\newblock \URLprefix \url{https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md}.
+\newblock \URLprefix
+  \url{https://github.com/meta-llama/llama3/blob/main/MODEL_CARD.md}.
 %Type = Article
 \bibitem[{Alawadhi and Yan(2023)}]{alawadhi2023}
-\bibinfo{author}{Alawadhi, M.}, \bibinfo{author}{Yan, W.}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{Deep learning from parametrically generated virtual buildings for real-world object recognition}.
-\newblock \bibinfo{journal}{arXiv preprint arXiv:2302.05283} \URLprefix \url{https://arxiv.org/abs/2302.05283}.
+\bibinfo{author}{Alawadhi, M.}, \bibinfo{author}{Yan, W.},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Deep learning from parametrically generated virtual
+  buildings for real-world object recognition}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2302.05283} \URLprefix
+  \url{https://arxiv.org/abs/2302.05283}.
 %Type = Article
 \bibitem[{Beach et~al.(2015)Beach, Rezgui, Li and Kasim}]{beach2015}
-\bibinfo{author}{Beach, T.H.}, \bibinfo{author}{Rezgui, Y.}, \bibinfo{author}{Li, H.}, \bibinfo{author}{Kasim, T.}, \bibinfo{year}{2015}.
-\newblock \bibinfo{title}{A rule-based semantic approach for automated regulatory compliance in the construction sector}.
-\newblock \bibinfo{journal}{Expert Systems with Applications} \bibinfo{volume}{42}, \bibinfo{pages}{5219--5231}.
+\bibinfo{author}{Beach, T.H.}, \bibinfo{author}{Rezgui, Y.},
+  \bibinfo{author}{Li, H.}, \bibinfo{author}{Kasim, T.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{A rule-based semantic approach for automated
+  regulatory compliance in the construction sector}.
+\newblock \bibinfo{journal}{Expert Systems with Applications}
+  \bibinfo{volume}{42}, \bibinfo{pages}{5219--5231}.
 \newblock \DOIprefix\doi{10.1016/j.eswa.2015.02.029}.
 %Type = Article
-\bibitem[{Bojanowski et~al.(2017)Bojanowski, Grave, Joulin and Mikolov}]{bojanowski2017}
-\bibinfo{author}{Bojanowski, P.}, \bibinfo{author}{Grave, E.}, \bibinfo{author}{Joulin, A.}, \bibinfo{author}{Mikolov, T.}, \bibinfo{year}{2017}.
+\bibitem[{Bojanowski et~al.(2017)Bojanowski, Grave, Joulin and
+  Mikolov}]{bojanowski2017}
+\bibinfo{author}{Bojanowski, P.}, \bibinfo{author}{Grave, E.},
+  \bibinfo{author}{Joulin, A.}, \bibinfo{author}{Mikolov, T.},
+  \bibinfo{year}{2017}.
 \newblock \bibinfo{title}{Enriching word vectors with subword information}.
-\newblock \bibinfo{journal}{Transactions of the Association for Computational Linguistics} \bibinfo{volume}{5}, \bibinfo{pages}{135--146}.
+\newblock \bibinfo{journal}{Transactions of the Association for Computational
+  Linguistics} \bibinfo{volume}{5}, \bibinfo{pages}{135--146}.
 %Type = Misc
 \bibitem[{Brown et~al.(2020)Brown, Mann, Ryder, Subbiah et~al.}]{brown2020}
-\bibinfo{author}{Brown, T.B.}, \bibinfo{author}{Mann, B.}, \bibinfo{author}{Ryder, N.}, \bibinfo{author}{Subbiah, M.}, et~al., \bibinfo{year}{2020}.
+\bibinfo{author}{Brown, T.B.}, \bibinfo{author}{Mann, B.},
+  \bibinfo{author}{Ryder, N.}, \bibinfo{author}{Subbiah, M.}, et~al.,
+  \bibinfo{year}{2020}.
 \newblock \bibinfo{title}{Language models are few-shot learners}.
-\newblock \URLprefix \url{https://arxiv.org/abs/2005.14165}, \href{http://arxiv.org/abs/2005.14165}{\tt arXiv:2005.14165}.
+\newblock \URLprefix \url{https://arxiv.org/abs/2005.14165},
+  \href{http://arxiv.org/abs/2005.14165}{\tt arXiv:2005.14165}.
 %Type = Article
 \bibitem[{Davenport and Patil(2012)}]{davenport2012}
-\bibinfo{author}{Davenport, T.H.}, \bibinfo{author}{Patil, D.J.}, \bibinfo{year}{2012}.
+\bibinfo{author}{Davenport, T.H.}, \bibinfo{author}{Patil, D.J.},
+  \bibinfo{year}{2012}.
 \newblock \bibinfo{title}{Data scientist: The sexiest job of the 21st century}.
-\newblock \bibinfo{journal}{Harvard Business Review} \bibinfo{volume}{90}, \bibinfo{pages}{70--76}.
-\newblock \URLprefix \url{https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century}.
+\newblock \bibinfo{journal}{Harvard Business Review} \bibinfo{volume}{90},
+  \bibinfo{pages}{70--76}.
+\newblock \URLprefix
+  \url{https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century}.
 %Type = Inproceedings
 \bibitem[{Dimyadi and Amor(2013)}]{dimyadi2013}
-\bibinfo{author}{Dimyadi, J.}, \bibinfo{author}{Amor, R.}, \bibinfo{year}{2013}.
-\newblock \bibinfo{title}{Automated building code compliance checking -- where is it at?}, in: \bibinfo{booktitle}{Proceedings of the 19th International {CIB} World Building Congress}, \bibinfo{address}{Brisbane}. pp. \bibinfo{pages}{172--185}.
+\bibinfo{author}{Dimyadi, J.}, \bibinfo{author}{Amor, R.},
+  \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{Automated building code compliance checking -- where
+  is it at?}, in: \bibinfo{booktitle}{Proceedings of the 19th International
+  {CIB} World Building Congress}, \bibinfo{address}{Brisbane}. pp.
+  \bibinfo{pages}{172--185}.
 %Type = Article
 \bibitem[{Eastman et~al.(2009)Eastman, Lee, Jeong and Lee}]{eastman2009}
-\bibinfo{author}{Eastman, C.}, \bibinfo{author}{Lee, J.M.}, \bibinfo{author}{Jeong, Y.S.}, \bibinfo{author}{Lee, J.K.}, \bibinfo{year}{2009}.
+\bibinfo{author}{Eastman, C.}, \bibinfo{author}{Lee, J.M.},
+  \bibinfo{author}{Jeong, Y.S.}, \bibinfo{author}{Lee, J.K.},
+  \bibinfo{year}{2009}.
 \newblock \bibinfo{title}{Automatic rule-based checking of building designs}.
-\newblock \bibinfo{journal}{Automation in Construction} \bibinfo{volume}{18}, \bibinfo{pages}{1011--1033}.
+\newblock \bibinfo{journal}{Automation in Construction} \bibinfo{volume}{18},
+  \bibinfo{pages}{1011--1033}.
 \newblock \DOIprefix\doi{10.1016/j.autcon.2009.07.002}.
 %Type = Book
 \bibitem[{Eastman et~al.(2011)Eastman, Teicholz and Sacks}]{eastman2011}
-\bibinfo{author}{Eastman, C.}, \bibinfo{author}{Teicholz, P.}, \bibinfo{author}{Sacks, R.}, \bibinfo{year}{2011}.
-\newblock \bibinfo{title}{BIM Handbook: A Guide to Building Information Modeling for Owners, Managers, Designers, Engineers and Contractors}.
-\newblock \bibinfo{edition}{2} ed., \bibinfo{publisher}{Wiley}, \bibinfo{address}{New Jersey}.
+\bibinfo{author}{Eastman, C.}, \bibinfo{author}{Teicholz, P.},
+  \bibinfo{author}{Sacks, R.}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{BIM Handbook: A Guide to Building Information
+  Modeling for Owners, Managers, Designers, Engineers and Contractors}.
+\newblock \bibinfo{edition}{2} ed., \bibinfo{publisher}{Wiley},
+  \bibinfo{address}{New Jersey}.
 %Type = Article
 \bibitem[{Fuchs et~al.(2024)Fuchs, Witbrock, Dimyadi and Amor}]{fuchs2024}
-\bibinfo{author}{Fuchs, S.}, \bibinfo{author}{Witbrock, M.}, \bibinfo{author}{Dimyadi, J.}, \bibinfo{author}{Amor, R.}, \bibinfo{year}{2024}.
-\newblock \bibinfo{title}{Using large language models for the interpretation of building regulations}.
-\newblock \bibinfo{journal}{arXiv preprint arXiv:2407.21060} \URLprefix \url{https://arxiv.org/abs/2407.21060}.
+\bibinfo{author}{Fuchs, S.}, \bibinfo{author}{Witbrock, M.},
+  \bibinfo{author}{Dimyadi, J.}, \bibinfo{author}{Amor, R.},
+  \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Using large language models for the interpretation of
+  building regulations}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2407.21060} \URLprefix
+  \url{https://arxiv.org/abs/2407.21060}.
 %Type = Incollection
 \bibitem[{Hjelseth(2015)}]{hjelseth2015}
 \bibinfo{author}{Hjelseth, E.}, \bibinfo{year}{2015}.
-\newblock \bibinfo{title}{{BIM}-based model checking ({BMC})}, in: \bibinfo{booktitle}{Building Information Modeling: Applications and Practices}. \bibinfo{publisher}{ASCE}, pp. \bibinfo{pages}{33--61}.
+\newblock \bibinfo{title}{{BIM}-based model checking ({BMC})}, in:
+  \bibinfo{booktitle}{Building Information Modeling: Applications and
+  Practices}. \bibinfo{publisher}{ASCE}, pp. \bibinfo{pages}{33--61}.
 \newblock \DOIprefix\doi{10.1061/9780784413982.ch02}.
 %Type = Inproceedings
 \bibitem[{Hjelseth and Nisbet(2011)}]{hjelseth2011}
-\bibinfo{author}{Hjelseth, E.}, \bibinfo{author}{Nisbet, N.}, \bibinfo{year}{2011}.
-\newblock \bibinfo{title}{Capturing normative constraints by use of the semantic mark-up {RASE} methodology}, in: \bibinfo{booktitle}{Proceedings of the {CIB} W78-W102 International Conference}.
+\bibinfo{author}{Hjelseth, E.}, \bibinfo{author}{Nisbet, N.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Capturing normative constraints by use of the
+  semantic mark-up {RASE} methodology}, in: \bibinfo{booktitle}{Proceedings of
+  the {CIB} W78-W102 International Conference}, pp. \bibinfo{pages}{1--10}.
 \newblock \URLprefix \url{https://api.semanticscholar.org/CorpusID:62759547}.
+%Type = Manual
+\bibitem[{ISO19650()}]{iso19650}
+ISO19650, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{{ISO} 19650-1: Organization and digitization of
+  information about buildings and civil engineering works, including building
+  information modelling ({BIM}) -- Information management using building
+  information modelling -- Part 1: Concepts and principles}.
+\newblock \bibinfo{organization}{International Organization for
+  Standardization}. \bibinfo{address}{Geneva}.
 %Type = Book
 \bibitem[{Jurafsky and Martin(2009)}]{jurafsky2009}
-\bibinfo{author}{Jurafsky, D.}, \bibinfo{author}{Martin, J.H.}, \bibinfo{year}{2009}.
+\bibinfo{author}{Jurafsky, D.}, \bibinfo{author}{Martin, J.H.},
+  \bibinfo{year}{2009}.
 \newblock \bibinfo{title}{Speech and Language Processing}.
 \newblock \bibinfo{edition}{2} ed., \bibinfo{publisher}{Prentice-Hall}.
 %Type = Inproceedings
 \bibitem[{Kusner et~al.(2015)Kusner, Sun, Kolkin and Weinberger}]{kusner2015}
-\bibinfo{author}{Kusner, M.J.}, \bibinfo{author}{Sun, Y.}, \bibinfo{author}{Kolkin, N.I.}, \bibinfo{author}{Weinberger, K.Q.}, \bibinfo{year}{2015}.
-\newblock \bibinfo{title}{From word embeddings to document distances}, in: \bibinfo{booktitle}{Proceedings of the 32nd International Conference on Machine Learning (ICML)}, pp. \bibinfo{pages}{957--966}.
+\bibinfo{author}{Kusner, M.J.}, \bibinfo{author}{Sun, Y.},
+  \bibinfo{author}{Kolkin, N.I.}, \bibinfo{author}{Weinberger, K.Q.},
+  \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{From word embeddings to document distances}, in:
+  \bibinfo{booktitle}{Proceedings of the 32nd International Conference on
+  Machine Learning (ICML)}, pp. \bibinfo{pages}{957--966}.
 %Type = Inproceedings
 \bibitem[{Lin(2004)}]{lin2004rouge}
 \bibinfo{author}{Lin, C.Y.}, \bibinfo{year}{2004}.
-\newblock \bibinfo{title}{{ROUGE}: A package for automatic evaluation of summaries}, in: \bibinfo{booktitle}{Text Summarization Branches Out: Proceedings of the ACL-04 Workshop}, \bibinfo{publisher}{Association for Computational Linguistics}. pp. \bibinfo{pages}{74--81}.
+\newblock \bibinfo{title}{{ROUGE}: A package for automatic evaluation of
+  summaries}, in: \bibinfo{booktitle}{Text Summarization Branches Out:
+  Proceedings of the ACL-04 Workshop}, \bibinfo{publisher}{Association for
+  Computational Linguistics}. pp. \bibinfo{pages}{74--81}.
 %Type = Article
 \bibitem[{Lin(2023)}]{lin2023}
 \bibinfo{author}{Lin, W.Y.}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{Prototyping a chatbot for site managers using building information modeling ({BIM}) and natural language understanding ({NLU}) techniques}.
-\newblock \bibinfo{journal}{Sensors} \bibinfo{volume}{23}, \bibinfo{pages}{2942}.
+\newblock \bibinfo{title}{Prototyping a chatbot for site managers using
+  building information modeling ({BIM}) and natural language understanding
+  ({NLU}) techniques}.
+\newblock \bibinfo{journal}{Sensors} \bibinfo{volume}{23},
+  \bibinfo{pages}{2942}.
 \newblock \DOIprefix\doi{10.3390/s23062942}.
 %Type = Article
 \bibitem[{Liu et~al.(2022)Liu, Zhang and Li}]{liu2022}
-\bibinfo{author}{Liu, Y.}, \bibinfo{author}{Zhang, X.}, \bibinfo{author}{Li, H.}, \bibinfo{year}{2022}.
-\newblock \bibinfo{title}{{BIM}, machine learning and design rules to improve the assembly process}.
-\newblock \bibinfo{journal}{Sustainability} \bibinfo{volume}{14}, \bibinfo{pages}{288}.
+\bibinfo{author}{Liu, Y.}, \bibinfo{author}{Zhang, X.}, \bibinfo{author}{Li,
+  H.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{{BIM}, machine learning and design rules to improve
+  the assembly process}.
+\newblock \bibinfo{journal}{Sustainability} \bibinfo{volume}{14},
+  \bibinfo{pages}{288}.
 \newblock \URLprefix \url{https://www.mdpi.com/2071-1050/14/1/288}.
 %Type = Book
 \bibitem[{Manning et~al.(2008)Manning, Raghavan and Sch\"utze}]{manning2008}
-\bibinfo{author}{Manning, C.D.}, \bibinfo{author}{Raghavan, P.}, \bibinfo{author}{Sch\"utze, H.}, \bibinfo{year}{2008}.
+\bibinfo{author}{Manning, C.D.}, \bibinfo{author}{Raghavan, P.},
+  \bibinfo{author}{Sch\"utze, H.}, \bibinfo{year}{2008}.
 \newblock \bibinfo{title}{Introduction to Information Retrieval}.
-\newblock \bibinfo{publisher}{Cambridge University Press}, \bibinfo{address}{Cambridge, UK}.
+\newblock \bibinfo{publisher}{Cambridge University Press},
+  \bibinfo{address}{Cambridge, UK}.
 %Type = Misc
 \bibitem[{Mendon\c{c}a and Manzione(2020)}]{eduardo2020}
-\bibinfo{author}{Mendon\c{c}a, E.A.d.}, \bibinfo{author}{Manzione, L.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{Convers\~ao de regras de acessibilidade pela metodologia {RASE} para verifica\c{c}\~ao autom\'atica em modelo {BIM}}.
+\bibinfo{author}{Mendon\c{c}a, E.A.d.}, \bibinfo{author}{Manzione, L.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Convers\~ao de regras de acessibilidade pela
+  metodologia {RASE} para verifica\c{c}\~ao autom\'atica em modelo {BIM}}.
 %Type = Misc
 \bibitem[{{Ollama}(2024)}]{ollama2024}
 \bibinfo{author}{{Ollama}}, \bibinfo{year}{2024}.
-\newblock \bibinfo{title}{Ollama: Get up and running with large language models locally}.
+\newblock \bibinfo{title}{Ollama: Get up and running with large language models
+  locally}.
 \newblock \bibinfo{howpublished}{\url{https://ollama.com}}.
 %Type = Misc
 \bibitem[{OpenAI(2024)}]{openai2024}
 \bibinfo{author}{OpenAI}, \bibinfo{year}{2024}.
 \newblock \bibinfo{title}{{GPT-4} technical report}.
-\newblock \URLprefix \url{https://arxiv.org/abs/2303.08774}, \href{http://arxiv.org/abs/2303.08774}{\tt arXiv:2303.08774}.
+\newblock \URLprefix \url{https://arxiv.org/abs/2303.08774},
+  \href{http://arxiv.org/abs/2303.08774}{\tt arXiv:2303.08774}.
 %Type = Article
 \bibitem[{Rane et~al.(2023)Rane, Choudhary and Rane}]{rane2023}
-\bibinfo{author}{Rane, N.}, \bibinfo{author}{Choudhary, S.}, \bibinfo{author}{Rane, J.}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{Integrating building information modelling ({BIM}) with {ChatGPT}, {Bard}, and similar generative artificial intelligence in the architecture, engineering, and construction industry: applications, a novel framework, challenges, and future scope}.
-\newblock \bibinfo{journal}{SSRN Electronic Journal} \DOIprefix\doi{10.2139/ssrn.4645601}.
+\bibinfo{author}{Rane, N.}, \bibinfo{author}{Choudhary, S.},
+  \bibinfo{author}{Rane, J.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Integrating building information modelling ({BIM})
+  with {ChatGPT}, {Bard}, and similar generative artificial intelligence in the
+  architecture, engineering, and construction industry: applications, a novel
+  framework, challenges, and future scope}.
+\newblock \bibinfo{journal}{SSRN Electronic Journal}
+  \DOIprefix\doi{10.2139/ssrn.4645601}.
 %Type = Inproceedings
 \bibitem[{Reimers and Gurevych(2019)}]{reimers2019}
-\bibinfo{author}{Reimers, N.}, \bibinfo{author}{Gurevych, I.}, \bibinfo{year}{2019}.
-\newblock \bibinfo{title}{{Sentence-BERT}: Sentence embeddings using {Siamese BERT-Networks}}, in: \bibinfo{booktitle}{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP)}, \bibinfo{publisher}{Association for Computational Linguistics}. pp. \bibinfo{pages}{3982--3992}.
+\bibinfo{author}{Reimers, N.}, \bibinfo{author}{Gurevych, I.},
+  \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{{Sentence-BERT}: Sentence embeddings using {Siamese
+  BERT-Networks}}, in: \bibinfo{booktitle}{Proceedings of the 2019 Conference
+  on Empirical Methods in Natural Language Processing (EMNLP)},
+  \bibinfo{publisher}{Association for Computational Linguistics}. pp.
+  \bibinfo{pages}{3982--3992}.
 \newblock \URLprefix \url{https://arxiv.org/abs/1908.10084}.
 %Type = Article
-\bibitem[{Saka et~al.(2024)Saka, Taiwo, Saka, Oluleye, Dauda and Akanbi}]{saka2024}
-\bibinfo{author}{Saka, A.}, \bibinfo{author}{Taiwo, R.}, \bibinfo{author}{Saka, N.}, \bibinfo{author}{Oluleye, B.}, \bibinfo{author}{Dauda, J.}, \bibinfo{author}{Akanbi, L.}, \bibinfo{year}{2024}.
-\newblock \bibinfo{title}{Integrated {BIM} and machine learning system for circularity prediction of construction demolition waste}.
-\newblock \bibinfo{journal}{arXiv preprint arXiv:2407.14847} \URLprefix \url{https://arxiv.org/abs/2407.14847}.
+\bibitem[{Saka et~al.(2024)Saka, Taiwo, Saka, Oluleye, Dauda and
+  Akanbi}]{saka2024}
+\bibinfo{author}{Saka, A.}, \bibinfo{author}{Taiwo, R.}, \bibinfo{author}{Saka,
+  N.}, \bibinfo{author}{Oluleye, B.}, \bibinfo{author}{Dauda, J.},
+  \bibinfo{author}{Akanbi, L.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Integrated {BIM} and machine learning system for
+  circularity prediction of construction demolition waste}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2407.14847} \URLprefix
+  \url{https://arxiv.org/abs/2407.14847}.
 %Type = Misc
 \bibitem[{Sammour et~al.(2024)Sammour, Xu, Wang, Hu and Zhang}]{sammou2024}
-\bibinfo{author}{Sammour, F.}, \bibinfo{author}{Xu, J.}, \bibinfo{author}{Wang, X.}, \bibinfo{author}{Hu, M.}, \bibinfo{author}{Zhang, Z.}, \bibinfo{year}{2024}.
-\newblock \bibinfo{title}{Responsible {AI} in construction safety: Systematic evaluation of large language models and prompt engineering}.
-\newblock \URLprefix \url{https://arxiv.org/abs/2411.08320}, \href{http://arxiv.org/abs/2411.08320}{\tt arXiv:2411.08320}.
+\bibinfo{author}{Sammour, F.}, \bibinfo{author}{Xu, J.}, \bibinfo{author}{Wang,
+  X.}, \bibinfo{author}{Hu, M.}, \bibinfo{author}{Zhang, Z.},
+  \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Responsible {AI} in construction safety: Systematic
+  evaluation of large language models and prompt engineering}.
+\newblock \URLprefix \url{https://arxiv.org/abs/2411.08320},
+  \href{http://arxiv.org/abs/2411.08320}{\tt arXiv:2411.08320}.
 %Type = Article
 \bibitem[{Samsami(2024)}]{samsami2024}
 \bibinfo{author}{Samsami, R.}, \bibinfo{year}{2024}.
-\newblock \bibinfo{title}{Optimizing the utilization of generative artificial intelligence ({AI}) in the {AEC} industry: {ChatGPT} prompt engineering and design}.
-\newblock \bibinfo{journal}{CivilEng} \bibinfo{volume}{5}, \bibinfo{pages}{971--1010}.
+\newblock \bibinfo{title}{Optimizing the utilization of generative artificial
+  intelligence ({AI}) in the {AEC} industry: {ChatGPT} prompt engineering and
+  design}.
+\newblock \bibinfo{journal}{CivilEng} \bibinfo{volume}{5},
+  \bibinfo{pages}{971--1010}.
 \newblock \DOIprefix\doi{10.3390/civileng5040049}.
 %Type = Article
 \bibitem[{Santos and Sampaio(2021)}]{santos2021}
-\bibinfo{author}{Santos, K.T.}, \bibinfo{author}{Sampaio, M.A.B.}, \bibinfo{year}{2021}.
-\newblock \bibinfo{title}{Aplica\c{c}\~ao da metodologia {RASE} na norma de acessibilidade associada ao {BIM}}.
-\newblock \bibinfo{journal}{Simp\'osio Brasileiro de Gest\~ao e Economia da Constru\c{c}\~ao} \bibinfo{volume}{12}, \bibinfo{pages}{1--8}.
+\bibinfo{author}{Santos, K.T.}, \bibinfo{author}{Sampaio, M.A.B.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Aplica\c{c}\~ao da metodologia {RASE} na norma de
+  acessibilidade associada ao {BIM}}.
+\newblock \bibinfo{journal}{Simp\'osio Brasileiro de Gest\~ao e Economia da
+  Constru\c{c}\~ao} \bibinfo{volume}{12}, \bibinfo{pages}{1--8}.
 \newblock \DOIprefix\doi{10.46421/sibragec.v12i00.500}.
 %Type = Article
 \bibitem[{Solihin and Eastman(2015)}]{solihin2015}
-\bibinfo{author}{Solihin, W.}, \bibinfo{author}{Eastman, C.}, \bibinfo{year}{2015}.
-\newblock \bibinfo{title}{Classification of rules for automated {BIM} rule checking development}.
-\newblock \bibinfo{journal}{Automation in Construction} \bibinfo{volume}{53}, \bibinfo{pages}{69--82}.
+\bibinfo{author}{Solihin, W.}, \bibinfo{author}{Eastman, C.},
+  \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{Classification of rules for automated {BIM} rule
+  checking development}.
+\newblock \bibinfo{journal}{Automation in Construction} \bibinfo{volume}{53},
+  \bibinfo{pages}{69--82}.
 \newblock \DOIprefix\doi{10.1016/j.autcon.2015.03.003}.
 %Type = Inproceedings
 \bibitem[{Souza et~al.(2020)Souza, Nogueira and Lotufo}]{souza2020}
-\bibinfo{author}{Souza, F.}, \bibinfo{author}{Nogueira, R.}, \bibinfo{author}{Lotufo, R.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{{BERTimbau}: Pretrained {BERT} models for {B}razilian {P}ortuguese}, in: \bibinfo{booktitle}{9th Brazilian Conference on Intelligent Systems (BRACIS)}.
+\bibinfo{author}{Souza, F.}, \bibinfo{author}{Nogueira, R.},
+  \bibinfo{author}{Lotufo, R.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{{BERTimbau}: Pretrained {BERT} models for {B}razilian
+  {P}ortuguese}, in: \bibinfo{booktitle}{9th Brazilian Conference on
+  Intelligent Systems (BRACIS)}, \bibinfo{publisher}{Springer}. pp.
+  \bibinfo{pages}{403--417}.
 %Type = Book
 \bibitem[{Tan et~al.(2006)Tan, Steinbach and Kumar}]{tan2006}
-\bibinfo{author}{Tan, P.N.}, \bibinfo{author}{Steinbach, M.}, \bibinfo{author}{Kumar, V.}, \bibinfo{year}{2006}.
+\bibinfo{author}{Tan, P.N.}, \bibinfo{author}{Steinbach, M.},
+  \bibinfo{author}{Kumar, V.}, \bibinfo{year}{2006}.
 \newblock \bibinfo{title}{Introduction to Data Mining}.
-\newblock \bibinfo{edition}{1} ed., \bibinfo{publisher}{Pearson Education}, \bibinfo{address}{Boston}.
+\newblock \bibinfo{edition}{1} ed., \bibinfo{publisher}{Pearson Education},
+  \bibinfo{address}{Boston}.
 %Type = Misc
-\bibitem[{Touvron et~al.(2023)Touvron, Lavril, Izacard, Martinet, Lachaux, Lacroix, Rozi\`ere, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave and Lample}]{touvron2023}
-\bibinfo{author}{Touvron, H.}, \bibinfo{author}{Lavril, T.}, \bibinfo{author}{Izacard, G.}, \bibinfo{author}{Martinet, X.}, \bibinfo{author}{Lachaux, M.A.}, \bibinfo{author}{Lacroix, T.}, \bibinfo{author}{Rozi\`ere, B.}, \bibinfo{author}{Goyal, N.}, \bibinfo{author}{Hambro, E.}, \bibinfo{author}{Azhar, F.}, \bibinfo{author}{Rodriguez, A.}, \bibinfo{author}{Joulin, A.}, \bibinfo{author}{Grave, E.}, \bibinfo{author}{Lample, G.}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{{LLaMA}: Open and efficient foundation language models}.
-\newblock \URLprefix \url{https://arxiv.org/abs/2302.13971}, \href{http://arxiv.org/abs/2302.13971}{\tt arXiv:2302.13971}.
+\bibitem[{Touvron et~al.(2023)Touvron, Lavril, Izacard, Martinet, Lachaux,
+  Lacroix, Rozi\`ere, Goyal, Hambro, Azhar, Rodriguez, Joulin, Grave and
+  Lample}]{touvron2023}
+\bibinfo{author}{Touvron, H.}, \bibinfo{author}{Lavril, T.},
+  \bibinfo{author}{Izacard, G.}, \bibinfo{author}{Martinet, X.},
+  \bibinfo{author}{Lachaux, M.A.}, \bibinfo{author}{Lacroix, T.},
+  \bibinfo{author}{Rozi\`ere, B.}, \bibinfo{author}{Goyal, N.},
+  \bibinfo{author}{Hambro, E.}, \bibinfo{author}{Azhar, F.},
+  \bibinfo{author}{Rodriguez, A.}, \bibinfo{author}{Joulin, A.},
+  \bibinfo{author}{Grave, E.}, \bibinfo{author}{Lample, G.},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{{LLaMA}: Open and efficient foundation language
+  models}.
+\newblock \URLprefix \url{https://arxiv.org/abs/2302.13971},
+  \href{http://arxiv.org/abs/2302.13971}{\tt arXiv:2302.13971}.
 %Type = Inproceedings
-\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez, Kaiser and Polosukhin}]{vaswani2017}
-\bibinfo{author}{Vaswani, A.}, \bibinfo{author}{Shazeer, N.}, \bibinfo{author}{Parmar, N.}, \bibinfo{author}{Uszkoreit, J.}, \bibinfo{author}{Jones, L.}, \bibinfo{author}{Gomez, A.N.}, \bibinfo{author}{Kaiser, L.}, \bibinfo{author}{Polosukhin, I.}, \bibinfo{year}{2017}.
-\newblock \bibinfo{title}{Attention is all you need}, in: \bibinfo{booktitle}{Advances in Neural Information Processing Systems (NeurIPS)}.
+\bibitem[{Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones,
+  Gomez, Kaiser and Polosukhin}]{vaswani2017}
+\bibinfo{author}{Vaswani, A.}, \bibinfo{author}{Shazeer, N.},
+  \bibinfo{author}{Parmar, N.}, \bibinfo{author}{Uszkoreit, J.},
+  \bibinfo{author}{Jones, L.}, \bibinfo{author}{Gomez, A.N.},
+  \bibinfo{author}{Kaiser, L.}, \bibinfo{author}{Polosukhin, I.},
+  \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Attention is all you need}, in:
+  \bibinfo{booktitle}{Advances in Neural Information Processing Systems
+  (NeurIPS)}, pp. \bibinfo{pages}{5998--6008}.
 \newblock \URLprefix \url{https://arxiv.org/abs/1706.03762}.
-%Type = Inproceedings
-\bibitem[{Zhang et~al.(2020)Zhang, Kishore, Wu, Weinberger and Artzi}]{zhang2020bertscore}
-\bibinfo{author}{Zhang, T.}, \bibinfo{author}{Kishore, V.}, \bibinfo{author}{Wu, F.}, \bibinfo{author}{Weinberger, K.Q.}, \bibinfo{author}{Artzi, Y.}, \bibinfo{year}{2020}.
-\newblock \bibinfo{title}{{BERTScore}: Evaluating text generation with {BERT}}, in: \bibinfo{booktitle}{Proceedings of the 8th International Conference on Learning Representations (ICLR)}.
+%Type = Misc
+\bibitem[{Zhang et~al.(2020)Zhang, Kishore, Wu, Weinberger and
+  Artzi}]{zhang2020bertscore}
+\bibinfo{author}{Zhang, T.}, \bibinfo{author}{Kishore, V.},
+  \bibinfo{author}{Wu, F.}, \bibinfo{author}{Weinberger, K.Q.},
+  \bibinfo{author}{Artzi, Y.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{{BERTScore}: Evaluating text generation with {BERT}}.
+\newblock \URLprefix \url{https://arxiv.org/abs/1904.09675},
+  \href{http://arxiv.org/abs/1904.09675}{\tt arXiv:1904.09675}.
+  \bibinfo{note}{8th International Conference on Learning Representations
+  (ICLR)}.
 %Type = Article
-\bibitem[{Zhao et~al.(2023)Zhao, Zhou, Li, Tang, Wang, Hou, Min, Zhang, Zhang, Dong, Du, Yang, Chen, Chen, Jiang, Ren, Li, Tang, Liu, Nie and Wen}]{zhao2023}
-\bibinfo{author}{Zhao, W.X.}, \bibinfo{author}{Zhou, K.}, \bibinfo{author}{Li, J.}, \bibinfo{author}{Tang, T.}, \bibinfo{author}{Wang, X.}, \bibinfo{author}{Hou, Y.}, \bibinfo{author}{Min, Y.}, \bibinfo{author}{Zhang, B.}, \bibinfo{author}{Zhang, J.}, \bibinfo{author}{Dong, Z.}, \bibinfo{author}{Du, Y.}, \bibinfo{author}{Yang, C.}, \bibinfo{author}{Chen, Y.}, \bibinfo{author}{Chen, Z.}, \bibinfo{author}{Jiang, J.}, \bibinfo{author}{Ren, R.}, \bibinfo{author}{Li, Y.}, \bibinfo{author}{Tang, X.}, \bibinfo{author}{Liu, Z.}, \bibinfo{author}{Nie, J.Y.}, \bibinfo{author}{Wen, J.R.}, \bibinfo{year}{2023}.
+\bibitem[{Zhao et~al.(2023)Zhao, Zhou, Li, Tang, Wang, Hou, Min, Zhang, Zhang,
+  Dong, Du, Yang, Chen, Chen, Jiang, Ren, Li, Tang, Liu, Nie and
+  Wen}]{zhao2023}
+\bibinfo{author}{Zhao, W.X.}, \bibinfo{author}{Zhou, K.}, \bibinfo{author}{Li,
+  J.}, \bibinfo{author}{Tang, T.}, \bibinfo{author}{Wang, X.},
+  \bibinfo{author}{Hou, Y.}, \bibinfo{author}{Min, Y.}, \bibinfo{author}{Zhang,
+  B.}, \bibinfo{author}{Zhang, J.}, \bibinfo{author}{Dong, Z.},
+  \bibinfo{author}{Du, Y.}, \bibinfo{author}{Yang, C.}, \bibinfo{author}{Chen,
+  Y.}, \bibinfo{author}{Chen, Z.}, \bibinfo{author}{Jiang, J.},
+  \bibinfo{author}{Ren, R.}, \bibinfo{author}{Li, Y.}, \bibinfo{author}{Tang,
+  X.}, \bibinfo{author}{Liu, Z.}, \bibinfo{author}{Nie, J.Y.},
+  \bibinfo{author}{Wen, J.R.}, \bibinfo{year}{2023}.
 \newblock \bibinfo{title}{A survey of large language models}.
-\newblock \bibinfo{journal}{arXiv preprint arXiv:2303.18223} \URLprefix \url{https://arxiv.org/abs/2303.18223}.
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2303.18223} \URLprefix
+  \url{https://arxiv.org/abs/2303.18223}.
 
 \end{thebibliography}

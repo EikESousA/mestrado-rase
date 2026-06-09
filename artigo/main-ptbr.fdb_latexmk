@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main-ptbr"] 1781015815.48259 "main-ptbr.aux" "main-ptbr.bbl" "main-ptbr" 1781015816.47144 0
+["bibtex main-ptbr"] 1781029672.47416 "main-ptbr.aux" "main-ptbr.bbl" "main-ptbr" 1781029673.54621 0
   "./cas-model2-names.bst" 1714831730 31802 28b630660245c09f173aac55be552b29 ""
-  "./references.bib" 1780578202.61791 12098 f15183ca856d2616614e7506d9fffa02 ""
-  "main-ptbr.aux" 1781015816.29163 14623 a817837491f2a5303de43b40ea345b52 "pdflatex"
+  "./references.bib" 1781029670.64163 12459 5074fe3cd67f276a42ad5492902c035b ""
+  "main-ptbr.aux" 1781029673.33613 14625 0b1ff504ecb4d56997f241fa68fe6f29 "pdflatex"
   (generated)
   "main-ptbr.bbl"
   "main-ptbr.blg"
   (rewritten before read)
-["pdflatex"] 1781015815.54751 "/home/eike/mestrado/mestrado-rase/artigo/main-ptbr.tex" "main-ptbr.pdf" "main-ptbr" 1781015816.47156 0
+["pdflatex"] 1781029672.54774 "/home/eike/mestrado/mestrado-rase/artigo/main-ptbr.tex" "main-ptbr.pdf" "main-ptbr" 1781029673.54632 0
   "/etc/texmf/web2c/texmf.cnf" 1779214676.95024 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/eike/mestrado/mestrado-rase/artigo/main-ptbr.tex" 1781015814.37397 74585 5971134a1139b3e355e26e5cfd2e31b4 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc" 1388795362 7013 c55cc8669071ac14036c4a0c96c16202 ""
@@ -171,10 +171,10 @@
   "figs/4.2.2-resultados-en2-barras.png" 1780579270.58855 104171 13770c8862be315b8fb0be5532c75161 ""
   "figs/4.2.3-resultados-en1n2-barras.png" 1780579270.58855 106272 af5364df0eb1a1e64c177b59780b85f0 ""
   "figs/pipeline.png" 1780578135.41581 146601 c8d6bb65f55a11c4e020660a6358c135 ""
-  "main-ptbr.abs" 1781015815.8553 2427 b5ee27b1866e5364e6adeeca59b5c1bc "pdflatex"
-  "main-ptbr.aux" 1781015816.29163 14623 a817837491f2a5303de43b40ea345b52 "pdflatex"
-  "main-ptbr.bbl" 1781015815.53997 16580 a32ff01a0a7fc4160d17342707a2f7d4 "bibtex main-ptbr"
-  "main-ptbr.out" 1781015815.85163 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main-ptbr.abs" 1781029672.87235 2427 b5ee27b1866e5364e6adeeca59b5c1bc "pdflatex"
+  "main-ptbr.aux" 1781029673.33613 14625 0b1ff504ecb4d56997f241fa68fe6f29 "pdflatex"
+  "main-ptbr.bbl" 1781029672.54221 16807 5b9a5486cdfb8a39fbdd1d7da089ebd1 "bibtex main-ptbr"
+  "main-ptbr.out" 1781029672.86842 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "main-ptbr.tex" 1781015814.37397 74585 5971134a1139b3e355e26e5cfd2e31b4 ""
   "thumbnails/cas-email.jpeg" 1584189640 8764 ae276cc9956197082d008c18ae4cbb28 ""
   (generated)

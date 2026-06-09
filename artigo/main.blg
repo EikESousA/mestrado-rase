@@ -3,52 +3,45 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
 The style file: cas-model2-names.bst
 Database file #1: references.bib
-Warning--to sort, need author or key in iso19650
-Warning--to sort, need author or key in abnt9050
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Warning--empty pages in hjelseth2011
-Warning--empty pages in souza2020
-Warning--empty pages in vaswani2017
-Warning--empty pages in zhang2020bertscore
 You've used 36 entries,
             2990 wiz_defined-function locations,
-            946 strings with 13818 characters,
-and the built_in function-call counts, 24173 in all, are:
-= -- 1817
+            956 strings with 13926 characters,
+and the built_in function-call counts, 24743 in all, are:
+= -- 1903
 > -- 1084
-< -- 21
+< -- 24
 + -- 423
 - -- 381
-* -- 2671
-:= -- 3527
-add.period$ -- 111
+* -- 2713
+:= -- 3578
+add.period$ -- 112
 call.type$ -- 36
-change.case$ -- 303
+change.case$ -- 306
 chr.to.int$ -- 36
-cite$ -- 46
-duplicate$ -- 1798
-empty$ -- 1694
+cite$ -- 36
+duplicate$ -- 1831
+empty$ -- 1729
 format.name$ -- 487
-if$ -- 4505
+if$ -- 4657
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 343
-newline$ -- 198
+missing$ -- 346
+newline$ -- 199
 num.names$ -- 136
-pop$ -- 691
+pop$ -- 680
 preamble$ -- 1
-purify$ -- 270
+purify$ -- 272
 quote$ -- 0
-skip$ -- 579
+skip$ -- 608
 stack$ -- 0
-substring$ -- 745
-swap$ -- 1285
-text.length$ -- 5
+substring$ -- 834
+swap$ -- 1331
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 312
-warning$ -- 6
-while$ -- 133
+warning$ -- 0
+while$ -- 142
 width$ -- 0
-write$ -- 527
-(There were 6 warnings)
+write$ -- 536

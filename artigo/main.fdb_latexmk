@@ -1,15 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1781016058.75243 "main.aux" "main.bbl" "main" 1781016129.30194 0
+["bibtex main"] 1781029681.39805 "main.aux" "main.bbl" "main" 1781029682.40881 0
   "./cas-model2-names.bst" 1714831730 31802 28b630660245c09f173aac55be552b29 ""
-  "./references.bib" 1780578202.61791 12098 f15183ca856d2616614e7506d9fffa02 ""
-  "main.aux" 1781016129.11822 14167 011d7e1916d63c95a0be2af3a69eb052 "pdflatex"
+  "./references.bib" 1781029670.64163 12459 5074fe3cd67f276a42ad5492902c035b ""
+  "main.aux" 1781029682.20297 14169 2300f622452d0cb118e538462b1c9aac "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1781016128.3926 "/home/eike/mestrado/mestrado-rase/artigo/main.tex" "main.pdf" "main" 1781016129.30203 0
+["pdflatex"] 1781029681.472 "main.tex" "main.pdf" "main" 1781029682.40894 0
   "/etc/texmf/web2c/texmf.cnf" 1779214676.95024 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/eike/mestrado/mestrado-rase/artigo/main.tex" 1781016128.18803 69542 4c3d99111781f7002a48fca883989860 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-t1.enc" 1388795362 7013 c55cc8669071ac14036c4a0c96c16202 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/stix/stix-ts1.enc" 1388795362 2836 154e6b0061f9b8cb549144b55b268339 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -167,11 +166,11 @@
   "figs/4.2.2-resultados-en2-barras-en.png" 1781016104.00074 97841 47a1a2c87f2a795267f1479091b5114f ""
   "figs/4.2.3-resultados-en1n2-barras-en.png" 1781016104.1106 99151 e7825641c02e7b3002b444d59cbacdf2 ""
   "figs/pipeline-en.png" 1781016046.09349 140903 f6c58eec8ff3b4db7e30e466aa3ff0bc ""
-  "main.abs" 1781016128.69341 2216 0f06c62e2acad174ba7cee9599c84a51 "pdflatex"
-  "main.aux" 1781016129.11822 14167 011d7e1916d63c95a0be2af3a69eb052 "pdflatex"
-  "main.bbl" 1781016058.82115 16580 a32ff01a0a7fc4160d17342707a2f7d4 "bibtex main"
-  "main.out" 1781016128.68975 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1781016128.18803 69542 4c3d99111781f7002a48fca883989860 ""
+  "main.abs" 1781029681.78242 2216 0f06c62e2acad174ba7cee9599c84a51 "pdflatex"
+  "main.aux" 1781029682.20297 14169 2300f622452d0cb118e538462b1c9aac "pdflatex"
+  "main.bbl" 1781029681.468 17069 519abf8ae24d9e06866a03d6bce99559 "bibtex main"
+  "main.out" 1781029681.77456 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1781029663.03299 69548 3b6c0908051f4032b9182fb6986d9c03 ""
   "thumbnails/cas-email.jpeg" 1584189640 8764 ae276cc9956197082d008c18ae4cbb28 ""
   (generated)
   "main.abs"
