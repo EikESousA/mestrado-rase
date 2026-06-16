@@ -1,0 +1,76 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry}
+
+\begin{document}
+
+\noindent Eike Natan Sousa Brito \\
+Universidade Federal de Sergipe \\
+Cidade Universit\'aria Prof. Jos\'e Alo\'isio de Campos \\
+S\~ao Crist\'ov\~ao, Sergipe, 49100-000, Brazil \\
+eike.sousa@hotmail.com
+
+\bigskip
+\noindent June 16, 2026
+
+\bigskip
+\noindent To the Editors \\
+\textit{MethodsX}
+
+\bigskip
+\noindent Dear Editors,
+
+We are pleased to submit our manuscript entitled ``A Comparative Analysis of
+Open-Source LLMs for Converting Architecture, Engineering and Construction
+Standards to the RASE Format'' for consideration in \textit{MethodsX}.
+
+In line with the scope of \textit{MethodsX}, this manuscript describes a
+reproducible method rather than a single set of results. We present RASE-PE, a
+three-level normalization pipeline that uses Prompt Engineering alone---without
+fine-tuning---to convert Architecture, Engineering and Construction (AEC)
+technical standards into the computable RASE format (Requirement, Applicability,
+Selection, Exception) required for automated BIM compliance checking. The method
+decomposes the conversion into three successive levels: (N1) atomic segmentation
+of normative sentences, (N2) identification of RASE operators, and (N3) semantic
+JSON structuring.
+
+We believe the method fits \textit{MethodsX} for the following reasons:
+
+\begin{itemize}
+  \item It is a transferable, step-by-step procedure that other researchers and
+        practitioners can reproduce and adapt to their own standards and models.
+  \item It was validated on a real dataset of 79 annotated NBR~9050 standards
+        across five experiments, using thirteen metrics from five families
+        (lexical, semantic, distance-based, generation-oriented, and
+        classification), reaching semantic similarity close to 0.90 in the best
+        scenarios.
+  \item It relies exclusively on open-source LLMs (Llama, Dolphin, Gemma,
+        Mistral, Alpaca, and Qwen) served locally through Ollama, under an
+        identical dataset, prompt, and hardware protocol, so the full procedure
+        can be reproduced without proprietary tools.
+\end{itemize}
+
+The manuscript follows the \textit{MethodsX} article structure, includes a
+CRediT author statement and a data availability statement, and reports the
+method in sufficient detail to be repeated.
+
+We confirm that this work is original, has not been published previously, and is
+not under consideration by any other journal. All authors have approved the
+submission. The authors declare that they have no known competing financial
+interests or personal relationships that could have influenced the work reported
+in this paper.
+
+Thank you for considering our submission.
+
+\bigskip
+\noindent Sincerely,
+
+\bigskip
+\noindent Eike Natan Sousa Brito (on behalf of all authors) \\
+Co-authors: Andr\'e Carvalho; Marco Ant\^onio Brasiel Sampaio \\
+Universidade Federal de Sergipe, S\~ao Crist\'ov\~ao, Sergipe, Brazil \\
+eike.sousa@hotmail.com
+
+\end{document}
