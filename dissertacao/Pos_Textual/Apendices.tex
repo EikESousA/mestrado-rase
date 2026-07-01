@@ -8,13 +8,13 @@
 \label{ap:prompts}
 % ----------------------------------------------------------
 
-Este apêndice reproduz, na íntegra e exatamente como foram enviados aos modelos, os \textit{prompts} de cada nível de normalização (N1, N2 e N3). Cada \textit{prompt} reside em um arquivo de texto próprio no diretório \texttt{prompts/} do repositório. Os textos são apresentados sem acentuação nas instruções, tal como nos arquivos-fonte; a acentuação aparece apenas nos exemplos de saída esperada. Os marcadores entre chaves --- \verb|{text}|, \verb|{text_n1}|, \verb|{aplicabilidade}|, \verb|{requisito}|, \verb|{selecao}| e \verb|{execao}| --- são substituídos, em tempo de execução, pelo texto bruto da norma, pela regra atômica do N1 e pelo operador N2 correspondente.
+Este apêndice reproduz, na íntegra e exatamente como foram enviados aos modelos, os \textit{prompts} de cada nível de normalização (N1, N2 e N3). Cada \textit{prompt} reside em um arquivo de texto próprio no diretório \texttt{prompts/} do repositório. Os textos são apresentados sem acentuação nas instruções, tal como nos arquivos-fonte; a acentuação aparece apenas nos exemplos de saída esperada. Os marcadores entre chaves (\verb|{text}|, \verb|{text_n1}|, \verb|{aplicabilidade}|, \verb|{requisito}|, \verb|{selecao}| e \verb|{execao}|) são substituídos, em tempo de execução, pelo texto bruto da norma, pela regra atômica do N1 e pelo operador N2 correspondente.
 
 % ----------------------------------------------------------
-\section{N1 --- \textit{Prompt Direct}}
+\section{N1: \textit{Prompt Direct}}
 % ----------------------------------------------------------
 
-\begin{lstlisting}[caption={\textit{Prompt} do nível N1 (\textit{Prompt Direct}) --- \texttt{prompts/n1.txt}.}, label={lst:n1}]
+\begin{lstlisting}[caption={\textit{Prompt} do nível N1 (\textit{Prompt Direct}): \texttt{prompts/n1.txt}.}, label={lst:n1}]
 Voce e um reescritor. Transforme o texto em sentencas RASE N1.
 
 Regras:
@@ -37,10 +37,10 @@ TEXTO_FIM
 \end{lstlisting}
 
 % ----------------------------------------------------------
-\section{N2 --- \textit{Chain-of-Thought}}
+\section{N2: \textit{Chain-of-Thought}}
 % ----------------------------------------------------------
 
-\begin{lstlisting}[caption={\textit{Prompt} do nível N2 (\textit{Chain-of-Thought}) --- \texttt{prompts/n2.txt}.}, label={lst:n2}]
+\begin{lstlisting}[caption={\textit{Prompt} do nível N2 (\textit{Chain-of-Thought}): \texttt{prompts/n2.txt}.}, label={lst:n2}]
 Extrator RASE N2.
 Use APENAS o Texto N1 para extrair os elementos. O Texto completo e apenas referencia.
 
@@ -81,16 +81,16 @@ requisito:
 \end{lstlisting}
 
 % ----------------------------------------------------------
-\section{N3 --- \textit{Few-Shot}}
+\section{N3: \textit{Few-Shot}}
 % ----------------------------------------------------------
 
-O nível N3 emprega um \textit{prompt} por operador RASE. Os quatro compartilham a mesma estrutura --- esquema JSON de saída, heurísticas de mapeamento e exemplos \textit{few-shot} ---, variando apenas as heurísticas e os exemplos próprios de cada operador.
+O nível N3 emprega um \textit{prompt} por operador RASE. Os quatro compartilham a mesma estrutura (esquema JSON de saída, heurísticas de mapeamento e exemplos \textit{few-shot}), variando apenas as heurísticas e os exemplos próprios de cada operador.
 
 % ----------------------------------------------------------
 \subsection{Aplicabilidade}
 % ----------------------------------------------------------
 
-\begin{lstlisting}[caption={\textit{Prompt} do operador Aplicabilidade (N3) --- \texttt{prompts/n3\_aplicabilidade.txt}.}, label={lst:n3-apl}]
+\begin{lstlisting}[caption={\textit{Prompt} do operador Aplicabilidade (N3): \texttt{prompts/n3\_aplicabilidade.txt}.}, label={lst:n3-apl}]
 Extrator RASE N3 (aplicabilidade).
 Use APENAS o operador N2 de aplicabilidade para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
 
@@ -186,7 +186,7 @@ Resposta (JSON):
 \subsection{Requisito}
 % ----------------------------------------------------------
 
-\begin{lstlisting}[caption={\textit{Prompt} do operador Requisito (N3) --- \texttt{prompts/n3\_requisito.txt}.}, label={lst:n3-req}]
+\begin{lstlisting}[caption={\textit{Prompt} do operador Requisito (N3): \texttt{prompts/n3\_requisito.txt}.}, label={lst:n3-req}]
 Extrator RASE N3 (requisito).
 Use APENAS o operador N2 de requisito para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
 
@@ -266,7 +266,7 @@ Resposta (JSON):
 \subsection{Seleção}
 % ----------------------------------------------------------
 
-\begin{lstlisting}[caption={\textit{Prompt} do operador Seleção (N3) --- \texttt{prompts/n3\_selecao.txt}.}, label={lst:n3-sel}]
+\begin{lstlisting}[caption={\textit{Prompt} do operador Seleção (N3): \texttt{prompts/n3\_selecao.txt}.}, label={lst:n3-sel}]
 Extrator RASE N3 (selecao).
 Use APENAS o operador N2 de selecao para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
 
@@ -333,7 +333,7 @@ Resposta (JSON):
 \subsection{Exceção}
 % ----------------------------------------------------------
 
-\begin{lstlisting}[caption={\textit{Prompt} do operador Exceção (N3) --- \texttt{prompts/n3\_execao.txt}.}, label={lst:n3-exc}]
+\begin{lstlisting}[caption={\textit{Prompt} do operador Exceção (N3): \texttt{prompts/n3\_execao.txt}.}, label={lst:n3-exc}]
 Extrator RASE N3 (execao).
 Use APENAS o operador N2 de execao para gerar as propriedades N3. O texto completo/N1 e apenas referencia, se existir.
 

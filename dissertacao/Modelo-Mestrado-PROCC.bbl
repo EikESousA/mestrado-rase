@@ -9,11 +9,13 @@
 \abntrefinfo{AI@Meta}{AI@META}{2024}
 {AI@META. Llama 3 model card.
 \emph{github}, 2024.
-Dispon{\'\i}vel em: \url{https://github.com/meta-llama/llama3/blob/main/MODEL\_CARD.md}.}
+Dispon{\'\i}vel em:
+  \url{https://github.com/meta-llama/llama3/blob/main/MODEL\_CARD.md}.}
 
 \bibitem[Ainslie et al. 2023]{ainslie2023}
 \abntrefinfo{Ainslie et al.}{AINSLIE et al.}{2023}
-{AINSLIE, J. et al. \emph{GQA:Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints}. 2023.
+{AINSLIE, J. et al. \emph{GQA:Training Generalized Multi-Query Transformer
+  Models from Multi-Head Checkpoints}. 2023.
 Dispon{\'\i}vel em: \url{https://arxiv.org/pdf/2305.13245v3}.}
 
 \bibitem[{Alammar} 2018]{alammartransformer}
@@ -24,18 +26,25 @@ Dispon{\'\i}vel em: \url{http://jalammar.github.io/illustrated-transformer/}.}
 
 \bibitem[Alawadhi e Yan 2023]{alawadhi2023}
 \abntrefinfo{Alawadhi e Yan}{ALAWADHI; YAN}{2023}
-{ALAWADHI, M.; YAN, W. Deep learning from parametrically generated virtual buildings for real-world object recognition.
+{ALAWADHI, M.; YAN, W. Deep learning from parametrically generated virtual
+  buildings for real-world object recognition.
 \emph{arXiv preprint arXiv:2302.05283}, 2023.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2302.05283}.}
 
 \bibitem[Associa{\c{c}}{\~a}o Brasileira de Normas T{\'e}cnicas 2020]{abnt9050}
-\abntrefinfo{Associa{\c{c}}{\~a}o Brasileira de Normas T{\'e}cnicas}{ASSOCIA{\c{C}}{\~A}O BRASILEIRA DE NORMAS T{\'E}CNICAS}{2020}
-{ASSOCIA{\c{C}}{\~A}O BRASILEIRA DE NORMAS T{\'E}CNICAS. \emph{{NBR} 9050: Acessibilidade a edifica{\c{c}}{\~o}es, mobili{\'a}rio, espa{\c{c}}os e equipamentos urbanos}.
+\abntrefinfo{Associa{\c{c}}{\~a}o Brasileira de Normas
+  T{\'e}cnicas}{ASSOCIA{\c{C}}{\~A}O BRASILEIRA DE NORMAS T{\'E}CNICAS}{2020}
+{ASSOCIA{\c{C}}{\~A}O BRASILEIRA DE NORMAS T{\'E}CNICAS. \emph{{NBR} 9050:
+  Acessibilidade a edifica{\c{c}}{\~o}es, mobili{\'a}rio, espa{\c{c}}os e
+  equipamentos urbanos}.
 Rio de Janeiro, 2020.}
 
 \bibitem[{Bahdanau}, {Cho} e {Bengio} 2015]{bahdanau2015}
 \abntrefinfo{{Bahdanau}, {Cho} e {Bengio}}{{Bahdanau}; {Cho}; {Bengio}}{2015}
-{{Bahdanau}, D.; {Cho}, K.~H.; {Bengio}, Y. Neural machine translation by jointly learning to align and translate. In:  \emph{3rd International Conference on Learning Representations, ICLR 2015 ; Conference date: 07-05-2015 Through 09-05-2015}. [S.l.: s.n.], 2015.}
+{{Bahdanau}, D.; {Cho}, K.~H.; {Bengio}, Y. Neural machine translation by
+  jointly learning to align and translate. In:  \emph{3rd International
+  Conference on Learning Representations, ICLR 2015 ; Conference date:
+  07-05-2015 Through 09-05-2015}. [S.l.: s.n.], 2015.}
 
 \bibitem[Bai et al. 2023]{qwen2023}
 \abntrefinfo{Bai et al.}{BAI et al.}{2023}
@@ -44,7 +53,8 @@ Rio de Janeiro, 2020.}
 
 \bibitem[Beach et al. 2015]{beach2015}
 \abntrefinfo{Beach et al.}{BEACH et al.}{2015}
-{BEACH, T.~H. et al. A rule-based semantic approach for automated regulatory compliance in the construction sector.
+{BEACH, T.~H. et al. A rule-based semantic approach for automated regulatory
+  compliance in the construction sector.
 \emph{Expert Systems with Applications}, v.~42, n.~12, p. 5219--5231, 2015.}
 
 \bibitem[{Bengio} et al. 2003]{bengio2003}
@@ -56,15 +66,20 @@ ISSN 1532-4435.}
 \bibitem[{Bojanowski} et al. 2017]{bojanowski2017}
 \abntrefinfo{{Bojanowski} et al.}{{Bojanowski} et al.}{2017}
 {{Bojanowski}, P. et al. Enriching word vectors with subword information.
-\emph{Transactions of the Association for Computational Linguistics}, MIT Press, p. 135--146, 2017.}
+\emph{Transactions of the Association for Computational Linguistics}, MIT
+  Press, p. 135--146, 2017.}
 
 \bibitem[Bottega 2012]{bottega2012}
 \abntrefinfo{Bottega}{BOTTEGA}{2012}
-{BOTTEGA, B.~S. \emph{Avaliação dos efeitos do uso da tecnologia BIM sobre a coordenação de projetistas}. [S.l.]: Dissertação de Mestrado - Universidade Federal do Rio Grande do Sul, 2012.}
+{BOTTEGA, B.~S. \emph{Avaliação dos efeitos do uso da tecnologia BIM sobre a
+  coordenação de projetistas}. [S.l.]: Dissertação de Mestrado -
+  Universidade Federal do Rio Grande do Sul, 2012.}
 
 \bibitem[{Braga}, {Ludermir} e {Carvalho} 2000]{braga2000}
-\abntrefinfo{{Braga}, {Ludermir} e {Carvalho}}{{Braga}; {Ludermir}; {Carvalho}}{2000}
-{{Braga}, A. de P.; {Ludermir}, T.~B.; {Carvalho}, A. C.~P. de L.~F. \emph{Redes neurais artificiais: teoria e aplicações}. [S.l.]: Ltc, 2000.}
+\abntrefinfo{{Braga}, {Ludermir} e {Carvalho}}{{Braga}; {Ludermir};
+  {Carvalho}}{2000}
+{{Braga}, A. de P.; {Ludermir}, T.~B.; {Carvalho}, A. C.~P. de L.~F.
+  \emph{Redes neurais artificiais: teoria e aplicações}. [S.l.]: Ltc, 2000.}
 
 \bibitem[Brown et al. 2020]{brown2020}
 \abntrefinfo{Brown et al.}{BROWN et al.}{2020}
@@ -73,40 +88,55 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2005.14165}.}
 
 \bibitem[{Bulegon} e {Moro} 2010]{bulegon2010}
 \abntrefinfo{{Bulegon} e {Moro}}{{Bulegon}; {Moro}}{2010}
-{{Bulegon}, H.; {Moro}, C. M.~C. Mineração de texto e o processamento de linguagem natural em sumários de alta hospitalar. In:  \emph{Mineração de texto e o processamento de linguagem natural em sumários de alta hospitalar}. SP - Brasil: Journal of Health Informatics, 2010. v.~2, n.~2.}
+{{Bulegon}, H.; {Moro}, C. M.~C. Mineração de texto e o processamento de
+  linguagem natural em sumários de alta hospitalar. In:  \emph{Mineração de
+  texto e o processamento de linguagem natural em sumários de alta
+  hospitalar}. SP - Brasil: Journal of Health Informatics, 2010. v.~2, n.~2.}
 
 \bibitem[{Cerri} e {Carvalho} 2017]{cerri2017}
 \abntrefinfo{{Cerri} e {Carvalho}}{{Cerri}; {Carvalho}}{2017}
-{{Cerri}, R.; {Carvalho}, A. C.~P. de~Leon Ferreira~de. Aprendizado de máquina: Breve introdução e aplicações.
-\emph{Cadernos de Ciência \& Tecnologia}, Brasília, v.~34, n.~3, p. 297--313, 12 2017.}
+{{Cerri}, R.; {Carvalho}, A. C.~P. de~Leon Ferreira~de. Aprendizado de
+  máquina: Breve introdução e aplicações.
+\emph{Cadernos de Ciência \& Tecnologia}, Brasília, v.~34, n.~3, p. 297--313,
+  12 2017.}
 
 \bibitem[{Chai} e {Draxler} 2014]{chai2014}
 \abntrefinfo{{Chai} e {Draxler}}{{Chai}; {Draxler}}{2014}
-{{Chai}, T.; {Draxler}, R. Root mean square error (rmse) or mean absolute error (mae)? – arguments against avoiding rmse in the literature.
+{{Chai}, T.; {Draxler}, R. Root mean square error (rmse) or mean absolute error
+  (mae)? – arguments against avoiding rmse in the literature.
 \emph{Geoscientific Model Development}, v.~7, n.~3, p. 1247--1250, 2014.}
 
 \bibitem[{Chung} et al. 2014]{chung2014}
 \abntrefinfo{{Chung} et al.}{{Chung} et al.}{2014}
-{{Chung}, J. et al. \emph{Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling}. 2014.}
+{{Chung}, J. et al. \emph{Empirical Evaluation of Gated Recurrent Neural
+  Networks on Sequence Modeling}. 2014.}
 
 \bibitem[Coelho e Novaes 2018]{coelho2018}
 \abntrefinfo{Coelho e Novaes}{COELHO; NOVAES}{2018}
-{COELHO, S.~S.; NOVAES, C.~C. Modelagem de informações para construção (bim) e ambientes colaborativos para gestão de projetos na construção civil.
+{COELHO, S.~S.; NOVAES, C.~C. Modelagem de informações para construção
+  (bim) e ambientes colaborativos para gestão de projetos na construção
+  civil.
 \emph{Exatas e Engenharia}, v.~8, n.~23, 12 2018.}
 
 \bibitem[{Conneau} et al. 2017]{conneau2017}
 \abntrefinfo{{Conneau} et al.}{{Conneau} et al.}{2017}
-{{Conneau}, A. et al. Supervised learning of universal sentence representations from natural language inference data. In:  \emph{Proceedings of the 2017 Conference on Empirical Methods in Natural Language Processing}. Copenhagen, Denmark: Association for Computational Linguistics, 2017. p. 670--680.}
+{{Conneau}, A. et al. Supervised learning of universal sentence representations
+  from natural language inference data. In:  \emph{Proceedings of the 2017
+  Conference on Empirical Methods in Natural Language Processing}. Copenhagen,
+  Denmark: Association for Computational Linguistics, 2017. p. 670--680.}
 
 \bibitem[Davenport e Patil 2012]{davenport2012}
 \abntrefinfo{Davenport e Patil}{DAVENPORT; PATIL}{2012}
 {DAVENPORT, T.~H.; PATIL, D. Data scientist: thesexiestjobofthe 21st century.
 \emph{Harvard Business Review}, v.~1, n.~1, 2012.
-Dispon{\'\i}vel em: \url{https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century}.}
+Dispon{\'\i}vel em:
+  \url{https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century}.}
 
 \bibitem[Dimyadi e Amor 2013]{dimyadi2013}
 \abntrefinfo{Dimyadi e Amor}{DIMYADI; AMOR}{2013}
-{DIMYADI, J.; AMOR, R. Automated building code compliance checking -- where is it at? In:  \emph{Proceedings of the 19th International {CIB} World Building Congress}. Brisbane: [s.n.], 2013. p. 172--185.}
+{DIMYADI, J.; AMOR, R. Automated building code compliance checking -- where is
+  it at? In:  \emph{Proceedings of the 19th International {CIB} World Building
+  Congress}. Brisbane: [s.n.], 2013. p. 172--185.}
 
 \bibitem[Eastman et al. 2009]{eastman2009}
 \abntrefinfo{Eastman et al.}{EASTMAN et al.}{2009}
@@ -115,50 +145,68 @@ Dispon{\'\i}vel em: \url{https://hbr.org/2012/10/data-scientist-the-sexiest-job-
 
 \bibitem[Eastman, Teicholz e Sacks 2011]{eastman2011}
 \abntrefinfo{Eastman, Teicholz e Sacks}{EASTMAN; TEICHOLZ; SACKS}{2011}
-{EASTMAN, C.; TEICHOLZ, P.; SACKS, R. \emph{Bim Handbook: A Guide to Building Information Modeling for Owners, Managers, Designers, Engineers and Contractors}. 2. ed. Nova Jersey: Wiley, 2011.
+{EASTMAN, C.; TEICHOLZ, P.; SACKS, R. \emph{Bim Handbook: A Guide to Building
+  Information Modeling for Owners, Managers, Designers, Engineers and
+  Contractors}. 2. ed. Nova Jersey: Wiley, 2011.
 ISBN 978-04-7054-137-01.}
 
 \bibitem[{Faceli} et al. 2011]{faceli2011}
 \abntrefinfo{{Faceli} et al.}{{Faceli} et al.}{2011}
-{{Faceli}, K. et al. \emph{Inteligência Artificial - Uma Abordagem de Aprendizado de Máquina}. 1. ed. Rio de Janeiro: Ltc, 2011. 192~p.
+{{Faceli}, K. et al. \emph{Inteligência Artificial - Uma Abordagem de
+  Aprendizado de Máquina}. 1. ed. Rio de Janeiro: Ltc, 2011. 192~p.
 ISBN 9788521618805.}
 
 \bibitem[{Feng} e {Lu} 2019]{feng2019}
 \abntrefinfo{{Feng} e {Lu}}{{Feng}; {Lu}}{2019}
-{{Feng}, J.; {Lu}, S. Performance analysis of various activation functions in artificial neural networks.
+{{Feng}, J.; {Lu}, S. Performance analysis of various activation functions in
+  artificial neural networks.
 \emph{Journal of Physics: Conference Series}, v.~1237, p. 22--30, 06 2019.}
 
 \bibitem[Fuchs et al. 2024]{fuchs2024}
 \abntrefinfo{Fuchs et al.}{FUCHS et al.}{2024}
-{FUCHS, S. et al. Using large language models for the interpretation of building regulations.
+{FUCHS, S. et al. Using large language models for the interpretation of
+  building regulations.
 \emph{arXiv preprint arXiv:2407.21060}, 2024.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2407.21060}.}
 
 \bibitem[{Gemma Team} 2024]{gemma2024}
 \abntrefinfo{{Gemma Team}}{{Gemma Team}}{2024}
-{{Gemma Team}. \emph{{Gemma}: Open Models Based on {Gemini} Research and Technology}.
+{{Gemma Team}. \emph{{Gemma}: Open Models Based on {Gemini} Research and
+  Technology}.
 [S.l.], 2024. ArXiv:2403.08295.}
 
 \bibitem[{Goodfellow}, {Bengio} e {Courville} 2016]{goodfellow2016}
-\abntrefinfo{{Goodfellow}, {Bengio} e {Courville}}{{Goodfellow}; {Bengio}; {Courville}}{2016}
-{{Goodfellow}, I.; {Bengio}, Y.; {Courville}, A. \emph{Deep Learning}. [S.l.]: MIT Press, 2016. 166--223~p.}
+\abntrefinfo{{Goodfellow}, {Bengio} e {Courville}}{{Goodfellow}; {Bengio};
+  {Courville}}{2016}
+{{Goodfellow}, I.; {Bengio}, Y.; {Courville}, A. \emph{Deep Learning}. [S.l.]:
+  MIT Press, 2016. 166--223~p.}
 
 \bibitem[{Graves}, {Jaitly} e {Mohamed} 2013]{graves2013}
-\abntrefinfo{{Graves}, {Jaitly} e {Mohamed}}{{Graves}; {Jaitly}; {Mohamed}}{2013}
-{{Graves}, A.; {Jaitly}, N.; {Mohamed}, A. rahman. Hybrid speech recognition with deep bidirectional lstm. In:  \emph{2013 IEEE Workshop on Automatic Speech Recognition and Understanding}. [S.l.: s.n.], 2013. p. 273--278.}
+\abntrefinfo{{Graves}, {Jaitly} e {Mohamed}}{{Graves}; {Jaitly};
+  {Mohamed}}{2013}
+{{Graves}, A.; {Jaitly}, N.; {Mohamed}, A. rahman. Hybrid speech recognition
+  with deep bidirectional lstm. In:  \emph{2013 IEEE Workshop on Automatic
+  Speech Recognition and Understanding}. [S.l.: s.n.], 2013. p. 273--278.}
 
 \bibitem[{Guimarães}, {Meireles} e {Almeida} 2019]{guimaraes2019}
-\abntrefinfo{{Guimarães}, {Meireles} e {Almeida}}{{Guimarães}; {Meireles}; {Almeida}}{2019}
-{{Guimarães}, L. M.~S.; {Meireles}, M. R.~G.; {Almeida}, P. E.~M. de. Avaliação das etapas de pré-processamento e de treinamento em algoritmos de classificação de textos no contexto da recuperação da informação.
-\emph{Perspectivas em Ciência da Informação}, Belo Horizonte, v.~24, n.~1, p. 169--190, 05 2019.}
+\abntrefinfo{{Guimarães}, {Meireles} e {Almeida}}{{Guimarães}; {Meireles};
+  {Almeida}}{2019}
+{{Guimarães}, L. M.~S.; {Meireles}, M. R.~G.; {Almeida}, P. E.~M. de.
+  Avaliação das etapas de pré-processamento e de treinamento em algoritmos
+  de classificação de textos no contexto da recuperação da informação.
+\emph{Perspectivas em Ciência da Informação}, Belo Horizonte, v.~24, n.~1,
+  p. 169--190, 05 2019.}
 
 \bibitem[{Hafemann} 2014]{hafemann2014}
 \abntrefinfo{{Hafemann}}{{Hafemann}}{2014}
-{{Hafemann}, L.~G. \emph{An Analysis of Deep Neural Networks for Texture Classification}. [S.l.]: Dissertação de Mestrado - Universidade Federal do Paraná, 2014.}
+{{Hafemann}, L.~G. \emph{An Analysis of Deep Neural Networks for Texture
+  Classification}. [S.l.]: Dissertação de Mestrado - Universidade Federal do
+  Paraná, 2014.}
 
 \bibitem[{Haykin} 1999]{haykin1999}
 \abntrefinfo{{Haykin}}{{Haykin}}{1999}
-{{Haykin}, S. \emph{Neural Networks: {A} Comprehensive Foundation}. Upper Saddle River, NJ: Prentice Hall, 1999. 2nd EDITION.}
+{{Haykin}, S. \emph{Neural Networks: {A} Comprehensive Foundation}. Upper
+  Saddle River, NJ: Prentice Hall, 1999. 2nd EDITION.}
 
 \bibitem[{Haykin} 2001]{haykin2001}
 \abntrefinfo{{Haykin}}{{Haykin}}{2001}
@@ -167,18 +215,23 @@ ISBN 9788573077186.}
 
 \bibitem[{Hebb} 1949]{hebb1949}
 \abntrefinfo{{Hebb}}{{Hebb}}{1949}
-{{Hebb}, D.~O. \emph{The organization of behavior: neuropsychological theory}. New York: Wiley, 1949. Jun.
+{{Hebb}, D.~O. \emph{The organization of behavior: neuropsychological theory}.
+  New York: Wiley, 1949. Jun.
 ISBN 0-8058-4300-0.}
 
 \bibitem[Hjelseth 2015]{hjelseth2015}
 \abntrefinfo{Hjelseth}{HJELSETH}{2015}
 {HJELSETH, E. Bim-based model checking (bmc).
-In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.]: Building Information Modeling: Applications and Practices, 2015. p. 33--61.
+In:  \underline{\ \ \ \ \ \ \ \ }. [S.l.]: Building Information Modeling:
+  Applications and Practices, 2015. p. 33--61.
 ISBN 978-0-7844-1398-2.}
 
 \bibitem[Hjelseth e Nisbet 2011]{hjelseth2011}
 \abntrefinfo{Hjelseth e Nisbet}{HJELSETH; NISBET}{2011}
-{HJELSETH, E.; NISBET, N.~N. Capturing normative constraints by use of the semantic mark-up rase methodology. In:  \emph{Capturing normative constraints by use of the semantic mark-up RASE methodology}. [s.n.], 2011. Dispon{\'\i}vel em: \url{https://api.semanticscholar.org/CorpusID:62759547}.}
+{HJELSETH, E.; NISBET, N.~N. Capturing normative constraints by use of the
+  semantic mark-up rase methodology. In:  \emph{Capturing normative constraints
+  by use of the semantic mark-up RASE methodology}. [s.n.], 2011.
+  Dispon{\'\i}vel em: \url{https://api.semanticscholar.org/CorpusID:62759547}.}
 
 \bibitem[Hoch 2016]{hoch}
 \abntrefinfo{Hoch}{HOCH}{2016}
@@ -187,7 +240,8 @@ ISBN 978-0-7844-1398-2.}
 \bibitem[{Hochreiter} e {Schmidhuber} 1997]{hochreiter1997}
 \abntrefinfo{{Hochreiter} e {Schmidhuber}}{{Hochreiter}; {Schmidhuber}}{1997}
 {{Hochreiter}, S.; {Schmidhuber}, J. Long short-term memory.
-\emph{Neural Comput.}, MIT Press, Cambridge, MA, USA, v.~9, n.~8, p. 1735–1780, nov 1997.
+\emph{Neural Comput.}, MIT Press, Cambridge, MA, USA, v.~9, n.~8, p.
+  1735–1780, nov 1997.
 ISSN 0899-7667.}
 
 \bibitem[Ibrahim Robert~Krawczyk 2004]{ibrahim2004}
@@ -196,8 +250,13 @@ ISSN 0899-7667.}
 \emph{Illinois Institute of Technology}, Chicago, 2004.}
 
 \bibitem[International Organization for Standardization 2018]{iso19650}
-\abntrefinfo{International Organization for Standardization}{INTERNATIONAL ORGANIZATION FOR STANDARDIZATION}{2018}
-{INTERNATIONAL ORGANIZATION FOR STANDARDIZATION. \emph{{ISO} 19650-1: Organization and digitization of information about buildings and civil engineering works, including building information modelling ({BIM}) -- Information management using building information modelling -- Part 1: Concepts and principles}.
+\abntrefinfo{International Organization for Standardization}{INTERNATIONAL
+  ORGANIZATION FOR STANDARDIZATION}{2018}
+{INTERNATIONAL ORGANIZATION FOR STANDARDIZATION. \emph{{ISO} 19650-1:
+  Organization and digitization of information about buildings and civil
+  engineering works, including building information modelling ({BIM}) --
+  Information management using building information modelling -- Part 1:
+  Concepts and principles}.
 Geneva, 2018.}
 
 \bibitem[Jiang et al. 2023]{jiang2023}
@@ -207,103 +266,136 @@ Geneva, 2018.}
 
 \bibitem[{Jurafsky} e {Martin} 2009]{jurafsky2009}
 \abntrefinfo{{Jurafsky} e {Martin}}{{Jurafsky}; {Martin}}{2009}
-{{Jurafsky}, D.; {Martin}, J.~H. \emph{Speech and Language Processing (2nd Edition)}. Usa: Prentice-Hall, Inc., 2009.
+{{Jurafsky}, D.; {Martin}, J.~H. \emph{Speech and Language Processing (2nd
+  Edition)}. Usa: Prentice-Hall, Inc., 2009.
 ISBN 0131873210.}
 
 \bibitem[Kusner et al. 2015]{kusner2015}
 \abntrefinfo{Kusner et al.}{KUSNER et al.}{2015}
-{KUSNER, M.~J. et al. From word embeddings to document distances. In:  \emph{Proceedings of the 32nd International Conference on Machine Learning (ICML)}. [S.l.: s.n.], 2015. p. 957--966.}
+{KUSNER, M.~J. et al. From word embeddings to document distances. In:
+  \emph{Proceedings of the 32nd International Conference on Machine Learning
+  (ICML)}. [S.l.: s.n.], 2015. p. 957--966.}
 
 \bibitem[{Lecun} et al. 1998]{lecun1998}
 \abntrefinfo{{Lecun} et al.}{{Lecun} et al.}{1998}
-{{Lecun}, Y. et al. Gradient-based learning applied to document recognition. In:  \emph{Gradient-based learning applied to document recognition}. [S.l.]: Institute of Electrical and Electronics Engineers Inc., 1998. v.~86, n.~11, p. 2278--2324.
+{{Lecun}, Y. et al. Gradient-based learning applied to document recognition.
+  In:  \emph{Gradient-based learning applied to document recognition}. [S.l.]:
+  Institute of Electrical and Electronics Engineers Inc., 1998. v.~86, n.~11,
+  p. 2278--2324.
 ISSN 0018-9219.}
 
 \bibitem[{Liddy} 1998]{liddy1998}
 \abntrefinfo{{Liddy}}{{Liddy}}{1998}
-{{Liddy}, E.~D. \emph{Enhanced text retrieval using natural language processing}. [S.l.]: American Society for Information Science and Technology, 1998. 14--16~p.}
+{{Liddy}, E.~D. \emph{Enhanced text retrieval using natural language
+  processing}. [S.l.]: American Society for Information Science and Technology,
+  1998. 14--16~p.}
 
 \bibitem[Lin 2004]{lin2004rouge}
 \abntrefinfo{Lin}{LIN}{2004}
-{LIN, C.-Y. {ROUGE}: A package for automatic evaluation of summaries. In:  \emph{Text Summarization Branches Out: Proceedings of the ACL-04 Workshop}. [S.l.]: Association for Computational Linguistics, 2004. p. 74--81.}
+{LIN, C.-Y. {ROUGE}: A package for automatic evaluation of summaries. In:
+  \emph{Text Summarization Branches Out: Proceedings of the ACL-04 Workshop}.
+  [S.l.]: Association for Computational Linguistics, 2004. p. 74--81.}
 
 \bibitem[Lin 2023]{lin2023}
 \abntrefinfo{Lin}{LIN}{2023}
-{LIN, W.~Y. Prototyping a chatbot for site managers using building information modeling (bim) and natural language understanding (nlu) techniques.
+{LIN, W.~Y. Prototyping a chatbot for site managers using building information
+  modeling (bim) and natural language understanding (nlu) techniques.
 \emph{Sensors}, v.~23, n.~6, 2023.
 ISSN 1424-8220.
 Dispon{\'\i}vel em: \url{https://www.mdpi.com/1424-8220/23/6/2942}.}
 
 \bibitem[Liu, Zhang e Li 2022]{liu2022}
 \abntrefinfo{Liu, Zhang e Li}{LIU; ZHANG; LI}{2022}
-{LIU, Y.; ZHANG, X.; LI, H. Bim machine learning and design rules to improve the assembly process.
+{LIU, Y.; ZHANG, X.; LI, H. Bim machine learning and design rules to improve
+  the assembly process.
 \emph{Sustainability}, v.~14, n.~1, p.~288, 2022.
 Dispon{\'\i}vel em: \url{https://www.mdpi.com/2071-1050/14/1/288}.}
 
 \bibitem[{Manning}, {Raghavan} e {Schütze} 2008]{manning2008}
-\abntrefinfo{{Manning}, {Raghavan} e {Schütze}}{{Manning}; {Raghavan}; {Schütze}}{2008}
-{{Manning}, C.; {Raghavan}, P.; {Schütze}, H. \emph{Introduction to Information Retrieval}. Cambridge, UK: Cambridge University Press, 2008.
+\abntrefinfo{{Manning}, {Raghavan} e {Schütze}}{{Manning}; {Raghavan};
+  {Schütze}}{2008}
+{{Manning}, C.; {Raghavan}, P.; {Schütze}, H. \emph{Introduction to
+  Information Retrieval}. Cambridge, UK: Cambridge University Press, 2008.
 ISBN 978-0-521-86571-5.}
 
 \bibitem[{Martin} e {Jurafsky} 2009]{martin2009}
 \abntrefinfo{{Martin} e {Jurafsky}}{{Martin}; {Jurafsky}}{2009}
-{{Martin}, J.~H.; {Jurafsky}, D. \emph{Speech and language processing: An introduction to natural language processing, computational linguistics, and speech recognition}. [S.l.]: Pearson/Prentice Hall Upper Saddle River, 2009.}
+{{Martin}, J.~H.; {Jurafsky}, D. \emph{Speech and language processing: An
+  introduction to natural language processing, computational linguistics, and
+  speech recognition}. [S.l.]: Pearson/Prentice Hall Upper Saddle River, 2009.}
 
 \bibitem[{McCaffrey} 2013]{mccaffrey2013}
 \abntrefinfo{{McCaffrey}}{{McCaffrey}}{2013}
-{{McCaffrey}, J. \emph{Why You Should Use Cross-Entropy Error Instead Of Classification Error Or Mean Squared Error For Neural Network Classifier Training}. 2013.
+{{McCaffrey}, J. \emph{Why You Should Use Cross-Entropy Error Instead Of
+  Classification Error Or Mean Squared Error For Neural Network Classifier
+  Training}. 2013.
 Acesso em: 12/02/2021.}
 
 \bibitem[{Mcculloch} e {Pitts} 1943]{mcculloch1943}
 \abntrefinfo{{Mcculloch} e {Pitts}}{{Mcculloch}; {Pitts}}{1943}
-{{Mcculloch}, W.; {Pitts}, W. A logical calculus of ideas immanent in nervous activity.
+{{Mcculloch}, W.; {Pitts}, W. A logical calculus of ideas immanent in nervous
+  activity.
 \emph{Bulletin of Mathematical Biophysics}, p. 127--147, 1943.
 5.}
 
 \bibitem[Mendonça e Manzione 2020]{eduardo2020}
 \abntrefinfo{Mendonça e Manzione}{MENDONçA; MANZIONE}{2020}
-{MENDONçA, E. A.~d.; MANZIONE, L. \emph{Conversão de regras de acessibilidade pela metodologia Rase para verificação automática em modelo BIM}. 2020.}
+{MENDONçA, E. A.~d.; MANZIONE, L. \emph{Conversão de regras de acessibilidade
+  pela metodologia Rase para verificação automática em modelo BIM}. 2020.}
 
 \bibitem[{Mikolov} et al. 2013]{mikolov2013b}
 \abntrefinfo{{Mikolov} et al.}{{Mikolov} et al.}{2013}
-{{Mikolov}, T. et al. Distributed representations of words and phrases and their compositionality. In:  \emph{Advances in neural information processing systems}. [S.l.: s.n.], 2013. p. 3111--3119.}
+{{Mikolov}, T. et al. Distributed representations of words and phrases and
+  their compositionality. In:  \emph{Advances in neural information processing
+  systems}. [S.l.: s.n.], 2013. p. 3111--3119.}
 
 \bibitem[{Minsky} e {Papert} 1969]{minsky1969}
 \abntrefinfo{{Minsky} e {Papert}}{{Minsky}; {Papert}}{1969}
-{{Minsky}, M.; {Papert}, S. \emph{Perceptrons: An Introduction to Computational Geometry}. Cambridge, MA, USA: MIT Press, 1969. 355--368~p.}
+{{Minsky}, M.; {Papert}, S. \emph{Perceptrons: An Introduction to Computational
+  Geometry}. Cambridge, MA, USA: MIT Press, 1969. 355--368~p.}
 
 \bibitem[{Mitchell} 1997]{mitchell1997}
 \abntrefinfo{{Mitchell}}{{Mitchell}}{1997}
-{{Mitchell}, T.~M. \emph{Machine Learning}. 1. ed. Nova York: McGraw-Hill International Editions, 1997. 14~p.
+{{Mitchell}, T.~M. \emph{Machine Learning}. 1. ed. Nova York: McGraw-Hill
+  International Editions, 1997. 14~p.
 ISBN 978-00-7115-467-3.}
 
 \bibitem[{Mun}, {Cho} e {Han} 2016]{mun2016}
 \abntrefinfo{{Mun}, {Cho} e {Han}}{{Mun}; {Cho}; {Han}}{2016}
-{{Mun}, J.; {Cho}, M.; {Han}, B. \emph{Text-guided Attention Model for Image Captioning}. 2016.}
+{{Mun}, J.; {Cho}, M.; {Han}, B. \emph{Text-guided Attention Model for Image
+  Captioning}. 2016.}
 
 \bibitem[Nascimento 2024]{nascimento2024}
 \abntrefinfo{Nascimento}{NASCIMENTO}{2024}
-{NASCIMENTO, J.~R. \emph{Exploração de técnicas de engenharia de prompt para aprimorar os resultados do uso de LLM no TCMRio}. Natal: [s.n.], 2024.
+{NASCIMENTO, J.~R. \emph{Exploração de técnicas de engenharia de prompt para
+  aprimorar os resultados do uso de LLM no TCMRio}. Natal: [s.n.], 2024.
 Acesso em: 25 maio 2024.
 Dispon{\'\i}vel em: \url{https://repositorio.ufrn.br/handle/123456789/58251}.}
 
 \bibitem[{Nasr}, {Badr} e {Joun} 2002]{nasr2002}
 \abntrefinfo{{Nasr}, {Badr} e {Joun}}{{Nasr}; {Badr}; {Joun}}{2002}
-{{Nasr}, G.~E.; {Badr}, E.~A.; {Joun}, C. Cross entropy error function in neural networks: Forecasting gasoline demand. In:  \emph{Proceedings of the Fifteenth International Florida Artificial Intelligence Research Society Conference}. [S.l.]: AAAI Press, 2002. p. 381–384.
+{{Nasr}, G.~E.; {Badr}, E.~A.; {Joun}, C. Cross entropy error function in
+  neural networks: Forecasting gasoline demand. In:  \emph{Proceedings of the
+  Fifteenth International Florida Artificial Intelligence Research Society
+  Conference}. [S.l.]: AAAI Press, 2002. p. 381–384.
 ISBN 157735141x.}
 
 \bibitem[Naveed et al. 2024]{naveed2024}
 \abntrefinfo{Naveed et al.}{NAVEED et al.}{2024}
-{NAVEED, H. et al. \emph{A Comprehensive Overview of Large Language Models}. 2024.
+{NAVEED, H. et al. \emph{A Comprehensive Overview of Large Language Models}.
+  2024.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2307.06435}.}
 
 \bibitem[{Neves} 2003]{neves2003}
 \abntrefinfo{{Neves}}{{Neves}}{2003}
-{{Neves}, R. de~Cássia David~das. \emph{Pré-processamento no processo de descoberta de conhecimento em banco de dados}. [S.l.]: Dissertação de Mestrado - UFRGS Lume, 2003.}
+{{Neves}, R. de~Cássia David~das. \emph{Pré-processamento no processo de
+  descoberta de conhecimento em banco de dados}. [S.l.]: Dissertação de
+  Mestrado - UFRGS Lume, 2003.}
 
 \bibitem[{Ollama} 2024]{ollama2024}
 \abntrefinfo{{Ollama}}{{Ollama}}{2024}
-{{Ollama}. \emph{Ollama: Get up and running with large language models locally}. 2024. \url{https://ollama.com}.
+{{Ollama}. \emph{Ollama: Get up and running with large language models
+  locally}. 2024. \url{https://ollama.com}.
 Acesso em: 2026-05-18.}
 
 \bibitem[OpenAI et al. 2024]{openai2024}
@@ -313,88 +405,124 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2303.08774}.}
 
 \bibitem[Parreira 2013]{parreira2013}
 \abntrefinfo{Parreira}{PARREIRA}{2013}
-{PARREIRA, J.~P. de C. \emph{Implementação BIM nos processos organizacionais em empresas de construção – um caso de estudo}. [S.l.]: Dissertação de Mestrado - Faculdade de Ciências e Tecnologia, 2013.}
+{PARREIRA, J.~P. de C. \emph{Implementação BIM nos processos organizacionais
+  em empresas de construção – um caso de estudo}. [S.l.]: Dissertação de
+  Mestrado - Faculdade de Ciências e Tecnologia, 2013.}
 
 \bibitem[{Pennington}, {Socher} e {Manning} 2014]{pennington2014}
-\abntrefinfo{{Pennington}, {Socher} e {Manning}}{{Pennington}; {Socher}; {Manning}}{2014}
-{{Pennington}, J.; {Socher}, R.; {Manning}, C.~D. Glove: Global vectors for word representation. In:  MOSCHITTI, A.; PANG, B.; DAELEMANS, W. (Ed.). \emph{Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP)}. Doha, Qatar: Association for Computational Linguistics, 2014. p. 1532--1543. Dispon{\'\i}vel em: \url{https://aclanthology.org/D14-1162/}.}
+\abntrefinfo{{Pennington}, {Socher} e {Manning}}{{Pennington}; {Socher};
+  {Manning}}{2014}
+{{Pennington}, J.; {Socher}, R.; {Manning}, C.~D. Glove: Global vectors for
+  word representation. In:  MOSCHITTI, A.; PANG, B.; DAELEMANS, W. (Ed.).
+  \emph{Proceedings of the 2014 conference on empirical methods in natural
+  language processing (EMNLP)}. Doha, Qatar: Association for Computational
+  Linguistics, 2014. p. 1532--1543. Dispon{\'\i}vel em:
+  \url{https://aclanthology.org/D14-1162/}.}
 
 \bibitem[Penttilä 2006]{penttila2016}
 \abntrefinfo{Penttilä}{PENTTILä}{2006}
-{PENTTILä, H. Describing the changes in architectural information technology to understand design complexity and free-form architectural expression.
-\emph{Journal of Information Technology in Construction}, v.~11, n.~4, 02 2006.}
+{PENTTILä, H. Describing the changes in architectural information technology
+  to understand design complexity and free-form architectural expression.
+\emph{Journal of Information Technology in Construction}, v.~11, n.~4, 02
+  2006.}
 
 \bibitem[{Popel} e {Bojar} 2018]{popel2018}
 \abntrefinfo{{Popel} e {Bojar}}{{Popel}; {Bojar}}{2018}
 {{Popel}, M.; {Bojar}, O. Training tips for the transformer model.
-\emph{The Prague Bulletin of Mathematical Linguistics}, Charles University in Prague, Karolinum Press, v.~110, n.~1, p. 43–70, Apr 2018.
+\emph{The Prague Bulletin of Mathematical Linguistics}, Charles University in
+  Prague, Karolinum Press, v.~110, n.~1, p. 43–70, Apr 2018.
 ISSN 1804-0462.}
 
 \bibitem[Rafailov et al. 2024]{rafailov2024}
 \abntrefinfo{Rafailov et al.}{RAFAILOV et al.}{2024}
-{RAFAILOV, R. et al. \emph{Direct Preference Optimization: Your Language Model is Secretly a Reward Model}. 2024.
+{RAFAILOV, R. et al. \emph{Direct Preference Optimization: Your Language Model
+  is Secretly a Reward Model}. 2024.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2305.18290}.}
 
 \bibitem[Rane, Choudhary e Rane 2023]{rane2023}
 \abntrefinfo{Rane, Choudhary e Rane}{RANE; CHOUDHARY; RANE}{2023}
-{RANE, N.; CHOUDHARY, S.; RANE, J. Integrating building information modelling (bim) with chatgpt, bard, and similar generative artificial intelligence in the architecture, engineering, and construction industry: applications, a novel framework, challenges, and future scope.
+{RANE, N.; CHOUDHARY, S.; RANE, J. Integrating building information modelling
+  (bim) with chatgpt, bard, and similar generative artificial intelligence in
+  the architecture, engineering, and construction industry: applications, a
+  novel framework, challenges, and future scope.
 \emph{SSRN Electronic Journal}, 01 2023.}
 
 \bibitem[Reimers e Gurevych 2019]{reimers2019}
 \abntrefinfo{Reimers e Gurevych}{REIMERS; GUREVYCH}{2019}
-{REIMERS, N.; GUREVYCH, I. {Sentence-BERT}: Sentence embeddings using {Siamese BERT-Networks}. In:  \emph{Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP)}. Association for Computational Linguistics, 2019. p. 3982--3992. Dispon{\'\i}vel em: \url{https://arxiv.org/abs/1908.10084}.}
+{REIMERS, N.; GUREVYCH, I. {Sentence-BERT}: Sentence embeddings using {Siamese
+  BERT-Networks}. In:  \emph{Proceedings of the 2019 Conference on Empirical
+  Methods in Natural Language Processing (EMNLP)}. Association for
+  Computational Linguistics, 2019. p. 3982--3992. Dispon{\'\i}vel em:
+  \url{https://arxiv.org/abs/1908.10084}.}
 
 \bibitem[{Rezende}, {Marcacini} e {Moura} 2011]{rezende2011}
-\abntrefinfo{{Rezende}, {Marcacini} e {Moura}}{{Rezende}; {Marcacini}; {Moura}}{2011}
-{{Rezende}, S.~O.; {Marcacini}, R.~M.; {Moura}, M.~F. O uso da mineração de textos para extração e organização não supervisionada de conhecimento.
+\abntrefinfo{{Rezende}, {Marcacini} e {Moura}}{{Rezende}; {Marcacini};
+  {Moura}}{2011}
+{{Rezende}, S.~O.; {Marcacini}, R.~M.; {Moura}, M.~F. O uso da mineração de
+  textos para extração e organização não supervisionada de conhecimento.
 \emph{Revista de Sistemas de Informação da FSMA}, v.~7, p. 7--21, 2011.
 ISSN 19835604.}
 
 \bibitem[{Rojas} 1996]{rojas1996}
 \abntrefinfo{{Rojas}}{{Rojas}}{1996}
-{{Rojas}, R. \emph{Neural Networks - A Systematic Introduction}. Berlin: Springer-Verlag, 1996. 154--155~p.}
+{{Rojas}, R. \emph{Neural Networks - A Systematic Introduction}. Berlin:
+  Springer-Verlag, 1996. 154--155~p.}
 
 \bibitem[{Rosenblatt} 1958]{rosenblatt1958}
 \abntrefinfo{{Rosenblatt}}{{Rosenblatt}}{1958}
-{{Rosenblatt}, F. The perceptron: A probabilistic model for information storage and organization in the brain.
+{{Rosenblatt}, F. The perceptron: A probabilistic model for information storage
+  and organization in the brain.
 \emph{Psychological Review}, v.~65, n.~6, p. 386--408, 1958.}
 
 \bibitem[{Rumelhart}, {Hinton} e {Williams} 1986]{rumelhart1986}
-\abntrefinfo{{Rumelhart}, {Hinton} e {Williams}}{{Rumelhart}; {Hinton}; {Williams}}{1986}
-{{Rumelhart}, D.~E.; {Hinton}, G.~E.; {Williams}, R.~J. {Learning Representations by Back-propagating Errors}.
+\abntrefinfo{{Rumelhart}, {Hinton} e {Williams}}{{Rumelhart}; {Hinton};
+  {Williams}}{1986}
+{{Rumelhart}, D.~E.; {Hinton}, G.~E.; {Williams}, R.~J. {Learning
+  Representations by Back-propagating Errors}.
 \emph{Nature}, v.~323, n.~6088, p. 533--536, 1986.}
 
 \bibitem[Russell e Norvig 2010]{russel2010}
 \abntrefinfo{Russell e Norvig}{RUSSELL; NORVIG}{2010}
-{RUSSELL, S.; NORVIG, P. \emph{Artificial Intelligence: A Modern Approach}. 3. ed. [S.l.]: Prentice Hall, 2010.}
+{RUSSELL, S.; NORVIG, P. \emph{Artificial Intelligence: A Modern Approach}. 3.
+  ed. [S.l.]: Prentice Hall, 2010.}
 
 \bibitem[Saka et al. 2024]{saka2024}
 \abntrefinfo{Saka et al.}{SAKA et al.}{2024}
-{SAKA, A. et al. Integrated bim and machine learning system for circularity prediction of construction demolition waste.
+{SAKA, A. et al. Integrated bim and machine learning system for circularity
+  prediction of construction demolition waste.
 \emph{arXiv preprint arXiv:2407.14847}, 2024.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2407.14847}.}
 
 \bibitem[Sammour et al. 2024]{sammou2024}
 \abntrefinfo{Sammour et al.}{SAMMOUR et al.}{2024}
-{SAMMOUR, F. et al. \emph{Responsible AI in Construction Safety: Systematic Evaluation of Large Language Models and Prompt Engineering}. 2024.
+{SAMMOUR, F. et al. \emph{Responsible AI in Construction Safety: Systematic
+  Evaluation of Large Language Models and Prompt Engineering}. 2024.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2411.08320}.}
 
 \bibitem[Samsami 2024]{samsami2024}
 \abntrefinfo{Samsami}{SAMSAMI}{2024}
-{SAMSAMI, R. Optimizing the utilization of generative artificial intelligence (ai) in the aec industry: Chatgpt prompt engineering and design.
+{SAMSAMI, R. Optimizing the utilization of generative artificial intelligence
+  (ai) in the aec industry: Chatgpt prompt engineering and design.
 \emph{CivilEng}, v.~5, n.~4, p. 971--1010, 2024.
 ISSN 2673-4109.
 Dispon{\'\i}vel em: \url{https://www.mdpi.com/2673-4109/5/4/49}.}
 
 \bibitem[Santos e Sampaio 2021]{santos2021}
 \abntrefinfo{Santos e Sampaio}{SANTOS; SAMPAIO}{2021}
-{SANTOS, K.~T.; SAMPAIO, M. A.~B. Aplicação da metodologia rase na norma de acessibilidade associada ao bim.
-\emph{SIMPÓSIO BRASILEIRO DE GESTÃO E ECONOMIA DA CONSTRUÇÃO}, v.~12, n.~00, p. 1–8, out. 2021.
-Dispon{\'\i}vel em: \url{https://eventos.antac.org.br/index.php/sibragec/article/view/500}.}
+{SANTOS, K.~T.; SAMPAIO, M. A.~B. Aplicação da metodologia rase na norma de
+  acessibilidade associada ao bim.
+\emph{SIMPÓSIO BRASILEIRO DE GESTÃO E ECONOMIA DA CONSTRUÇÃO}, v.~12,
+  n.~00, p. 1–8, out. 2021.
+Dispon{\'\i}vel em:
+  \url{https://eventos.antac.org.br/index.php/sibragec/article/view/500}.}
 
 \bibitem[{Santos} et al. 2015]{santos2015}
 \abntrefinfo{{Santos} et al.}{{Santos} et al.}{2015}
-{{Santos}, R. et al. Técnicas de processamento de linguagem natural aplicadas ao processo de mineração de textos: Resultados preliminares de um mapeamento sistemático. In:  \emph{Técnicas de processamento de linguagem natural aplicadas ao processo de mineração de textos: Resultados preliminares de um mapeamento sistemático}. [S.l.: s.n.], 2015.}
+{{Santos}, R. et al. Técnicas de processamento de linguagem natural aplicadas
+  ao processo de mineração de textos: Resultados preliminares de um
+  mapeamento sistemático. In:  \emph{Técnicas de processamento de linguagem
+  natural aplicadas ao processo de mineração de textos: Resultados
+  preliminares de um mapeamento sistemático}. [S.l.: s.n.], 2015.}
 
 \bibitem[{Schmidhuber} 2015]{schmidhuber2015}
 \abntrefinfo{{Schmidhuber}}{{Schmidhuber}}{2015}
@@ -404,59 +532,84 @@ ISSN 0893-6080.}
 
 \bibitem[{Shao}, {Zhu} e {Li} 2015]{shao2015}
 \abntrefinfo{{Shao}, {Zhu} e {Li}}{{Shao}; {Zhu}; {Li}}{2015}
-{{Shao}, L.; {Zhu}, F.; {Li}, X. Transfer learning for visual categorization: a survey.
-\emph{IEEE transactions on neural networks and learning systems}, v.~26, n.~5, p. 1019—1034, May 2015.
+{{Shao}, L.; {Zhu}, F.; {Li}, X. Transfer learning for visual categorization: a
+  survey.
+\emph{IEEE transactions on neural networks and learning systems}, v.~26, n.~5,
+  p. 1019—1034, May 2015.
 ISSN 2162-237x.}
 
 \bibitem[{Soares} e {Teive} 2015]{soares2015}
 \abntrefinfo{{Soares} e {Teive}}{{Soares}; {Teive}}{2015}
-{{Soares}, D.; {Teive}, R. Estudo comparativo entre as redes neurais artificiais mlp e rbf para previsão de cheias em curto prazo.
-\emph{Revista de Informática Teórica e Aplicada}, v.~22, n.~2, p. 67--86, 2015.
+{{Soares}, D.; {Teive}, R. Estudo comparativo entre as redes neurais
+  artificiais mlp e rbf para previsão de cheias em curto prazo.
+\emph{Revista de Informática Teórica e Aplicada}, v.~22, n.~2, p. 67--86,
+  2015.
 ISSN 21752745.}
 
 \bibitem[Solihin e Eastman 2015]{solihin2015}
 \abntrefinfo{Solihin e Eastman}{SOLIHIN; EASTMAN}{2015}
-{SOLIHIN, W.; EASTMAN, C. Classification of rules for automated {BIM} rule checking development.
+{SOLIHIN, W.; EASTMAN, C. Classification of rules for automated {BIM} rule
+  checking development.
 \emph{Automation in Construction}, v.~53, p. 69--82, 2015.}
 
 \bibitem[{Souza}, {Nogueira} e {Lotufo} 2020]{souza2020}
-\abntrefinfo{{Souza}, {Nogueira} e {Lotufo}}{{Souza}; {Nogueira}; {Lotufo}}{2020}
-{{Souza}, F.; {Nogueira}, R.; {Lotufo}, R. {BERT}imbau: pretrained {BERT} models for {B}razilian {P}ortuguese. In:  \emph{9th Brazilian Conference on Intelligent Systems, {BRACIS}, Rio Grande do Sul, Brazil, October 20-23 (to appear)}. [S.l.: s.n.], 2020.}
+\abntrefinfo{{Souza}, {Nogueira} e {Lotufo}}{{Souza}; {Nogueira};
+  {Lotufo}}{2020}
+{{Souza}, F.; {Nogueira}, R.; {Lotufo}, R. {BERT}imbau: pretrained {BERT}
+  models for {B}razilian {P}ortuguese. In:  \emph{9th Brazilian Conference on
+  Intelligent Systems, {BRACIS}, Rio Grande do Sul, Brazil, October 20-23 (to
+  appear)}. [S.l.: s.n.], 2020.}
 
 \bibitem[Souza 2009]{souza2009}
 \abntrefinfo{Souza}{SOUZA}{2009}
-{SOUZA, L. L.~A. de. \emph{Diagnóstico do uso do BIM em empresas de projeto de Arquitetura}. [S.l.]: Dissertação de Mestrado - Universidade Federal Fluminense, 2009.}
+{SOUZA, L. L.~A. de. \emph{Diagnóstico do uso do BIM em empresas de projeto de
+  Arquitetura}. [S.l.]: Dissertação de Mestrado - Universidade Federal
+  Fluminense, 2009.}
 
 \bibitem[Strubell, Ganesh e McCallum 2019]{strubell2019}
 \abntrefinfo{Strubell, Ganesh e McCallum}{STRUBELL; GANESH; MCCALLUM}{2019}
-{STRUBELL, E.; GANESH, A.; MCCALLUM, A. \emph{Energy and Policy Considerations for Deep Learning in NLP}. 2019.
+{STRUBELL, E.; GANESH, A.; MCCALLUM, A. \emph{Energy and Policy Considerations
+  for Deep Learning in NLP}. 2019.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/1906.02243}.}
 
 \bibitem[{Sutskever}, {Vinyals} e {Le} 2014]{sutskever2014}
 \abntrefinfo{{Sutskever}, {Vinyals} e {Le}}{{Sutskever}; {Vinyals}; {Le}}{2014}
-{{Sutskever}, I.; {Vinyals}, O.; {Le}, Q.~V. Sequence to sequence learning with neural networks. In:  {Ghahramani}, Z. et al. (Ed.). \emph{Advances in Neural Information Processing Systems}. [S.l.]: Curran Associates, Inc., 2014. v.~27.}
+{{Sutskever}, I.; {Vinyals}, O.; {Le}, Q.~V. Sequence to sequence learning with
+  neural networks. In:  {Ghahramani}, Z. et al. (Ed.). \emph{Advances in Neural
+  Information Processing Systems}. [S.l.]: Curran Associates, Inc., 2014.
+  v.~27.}
 
 \bibitem[{Tafner}, {Xerez} e {Filho} 1995]{tafner1995}
 \abntrefinfo{{Tafner}, {Xerez} e {Filho}}{{Tafner}; {Xerez}; {Filho}}{1995}
-{{Tafner}, M.~A.; {Xerez}, M. de; {Filho}, E.~R. \emph{Redes neurais artificiais: introdução e princípios de neurocomputação}. Blumenau: Eko, 1995.
+{{Tafner}, M.~A.; {Xerez}, M. de; {Filho}, E.~R. \emph{Redes neurais
+  artificiais: introdução e princípios de neurocomputação}. Blumenau: Eko,
+  1995.
 ISBN 8571140502.}
 
 \bibitem[{Tai}, {Socher} e {Manning} 2015]{tai2015}
 \abntrefinfo{{Tai}, {Socher} e {Manning}}{{Tai}; {Socher}; {Manning}}{2015}
-{{Tai}, K.~S.; {Socher}, R.; {Manning}, C. Improved semantic representations from tree-structured long short-term memory networks. In:  \emph{Proceedings of the 53rd Annual Meeting of the Association for Computational Linguistics and the 7th International Joint Conference on Natural Language Processing (Volume 1: Long Papers)}. Beijing, China: Association for Computational Linguistics, 2015. p. 1556--1566.}
+{{Tai}, K.~S.; {Socher}, R.; {Manning}, C. Improved semantic representations
+  from tree-structured long short-term memory networks. In:  \emph{Proceedings
+  of the 53rd Annual Meeting of the Association for Computational Linguistics
+  and the 7th International Joint Conference on Natural Language Processing
+  (Volume 1: Long Papers)}. Beijing, China: Association for Computational
+  Linguistics, 2015. p. 1556--1566.}
 
 \bibitem[Tan, Steinbach e Kumar 2006]{tan2006}
 \abntrefinfo{Tan, Steinbach e Kumar}{TAN; STEINBACH; KUMAR}{2006}
-{TAN, P.-N.; STEINBACH, M.; KUMAR, V. \emph{Introdução a DATAMINING Mineração de Dados}. 2. ed. Rio de Janeiro: Person Education, Inc., 2006.
+{TAN, P.-N.; STEINBACH, M.; KUMAR, V. \emph{Introdução a DATAMINING
+  Mineração de Dados}. 2. ed. Rio de Janeiro: Person Education, Inc., 2006.
 ISBN 978-85-7393-761-9.}
 
 \bibitem[Taori et al. 2023]{taori2023}
 \abntrefinfo{Taori et al.}{TAORI et al.}{2023}
-{TAORI, R. et al. \emph{{Stanford Alpaca}: An Instruction-following {LLaMA} model}. 2023. \url{https://github.com/tatsu-lab/stanford_alpaca}.}
+{TAORI, R. et al. \emph{{Stanford Alpaca}: An Instruction-following {LLaMA}
+  model}. 2023. \url{https://github.com/tatsu-lab/stanford_alpaca}.}
 
 \bibitem[Touvron et al. 2023]{touvron2023}
 \abntrefinfo{Touvron et al.}{TOUVRON et al.}{2023}
-{TOUVRON, H. et al. \emph{LLaMA: Open and Efficient Foundation Language Models}. 2023.
+{TOUVRON, H. et al. \emph{LLaMA: Open and Efficient Foundation Language
+  Models}. 2023.
 Dispon{\'\i}vel em: \url{https://arxiv.org/abs/2302.13971}.}
 
 \bibitem[{Vaswani} et al. 2017]{vaswani2017}
@@ -466,7 +619,8 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/1706.03762}.}
 
 \bibitem[{Vieira} e {Lima} 2001]{vieira2001}
 \abntrefinfo{{Vieira} e {Lima}}{{Vieira}; {Lima}}{2001}
-{{Vieira}, R.; {Lima}, V. L.~S. de. Lingüística computacional: princípios e aplicações.
+{{Vieira}, R.; {Lima}, V. L.~S. de. Lingüística computacional: princípios e
+  aplicações.
 \emph{Jaia, SBC}, Fortaleza, Brasil, 2001.}
 
 \bibitem[{Willmott} 1981]{willmott1981}
@@ -476,7 +630,9 @@ Dispon{\'\i}vel em: \url{https://arxiv.org/abs/1706.03762}.}
 
 \bibitem[Zhang et al. 2020]{zhang2020bertscore}
 \abntrefinfo{Zhang et al.}{ZHANG et al.}{2020}
-{ZHANG, T. et al. {BERTScore}: Evaluating text generation with {BERT}. In:  \emph{Proceedings of the 8th International Conference on Learning Representations (ICLR)}. [S.l.: s.n.], 2020.}
+{ZHANG, T. et al. {BERTScore}: Evaluating text generation with {BERT}. In:
+  \emph{Proceedings of the 8th International Conference on Learning
+  Representations (ICLR)}. [S.l.: s.n.], 2020.}
 
 \bibitem[Zhao et al. 2023]{zhao2023}
 \abntrefinfo{Zhao et al.}{ZHAO et al.}{2023}

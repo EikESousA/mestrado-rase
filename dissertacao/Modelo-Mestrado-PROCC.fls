@@ -3,7 +3,7 @@ INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/eike/mestrado/mestrado-rase/dissertacao/Modelo-Mestrado-PROCC.tex
+INPUT Modelo-Mestrado-PROCC.tex
 OUTPUT Modelo-Mestrado-PROCC.log
 INPUT ./dcomp-abntex2.cls
 INPUT dcomp-abntex2.cls
@@ -611,11 +611,6 @@ INPUT ./Imagens/4.2-experimentos.png
 INPUT ./Imagens/4.2-experimentos.png
 INPUT ./Imagens/4.2-experimentos.png
 INPUT ./Imagens/4.2-experimentos.png
-INPUT ./Imagens/4.1-pipeline.png
-INPUT ./Imagens/4.1-pipeline.png
-INPUT ./Imagens/4.1-pipeline.png
-INPUT ./Imagens/4.1-pipeline.png
-INPUT ./Imagens/4.1-pipeline.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-ot1.tfm
@@ -643,6 +638,12 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxsyc.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntxexa.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/ntx-Regular-tlf-t1.tfm
+INPUT ./Imagens/4.1-pipeline.png
+INPUT ./Imagens/4.1-pipeline.png
+INPUT ./Imagens/4.1-pipeline.png
+INPUT ./Imagens/4.1-pipeline.png
+INPUT ./Imagens/4.1-pipeline.png
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/txfonts/t1xtt.tfm
 INPUT ./Conteudo/05_Resultados.tex
