@@ -2,15 +2,15 @@
 \babel@toc {brazil}{}\relax 
 \contentsline {table}{\numberline {01}{\ignorespaces Exemplos de normas brasileiras relevantes à verificação automática em BIM.}}{21}{table.2.1}%
 \contentsline {table}{\numberline {02}{\ignorespaces Modelos LLM \textit {open-source} avaliados, com origem e \textit {tag} servida via Ollama (definidos em \texttt {config/models.py}).}}{61}{table.3.2}%
-\contentsline {table}{\numberline {03}{\ignorespaces Médias por métrica nos cinco experimentos, agregadas sobre os seis modelos.}}{70}{table.4.3}%
-\contentsline {table}{\numberline {04}{\ignorespaces Resultados por modelo em EN1 (similaridade e classificação).}}{71}{table.4.4}%
-\contentsline {table}{\numberline {05}{\ignorespaces Resultados por modelo em EN2 (similaridade e classificação macro por operador).}}{72}{table.4.5}%
-\contentsline {table}{\numberline {06}{\ignorespaces Resultados por modelo em EN1N2 (similaridade).}}{73}{table.4.6}%
-\contentsline {table}{\numberline {07}{\ignorespaces Resultados por modelo em EN3 (similaridade e classificação macro por campo).}}{74}{table.4.7}%
-\contentsline {table}{\numberline {08}{\ignorespaces Resultados por modelo em EN1N2N3 (similaridade sobre o JSON estruturado).}}{74}{table.4.8}%
-\contentsline {table}{\numberline {09}{\ignorespaces Média global por modelo (nove métricas de similaridade $\times $ cinco experimentos).}}{75}{table.4.9}%
-\contentsline {table}{\numberline {10}{\ignorespaces Tempo total de geração por modelo em N1.}}{77}{table.4.10}%
-\contentsline {table}{\numberline {11}{\ignorespaces Tempo total de geração por modelo em N2.}}{77}{table.4.11}%
-\contentsline {table}{\numberline {12}{\ignorespaces Tempo total de geração por modelo em N1N2.}}{77}{table.4.12}%
-\contentsline {table}{\numberline {13}{\ignorespaces Tempo total de geração por modelo em N3 (EN3 isolado).}}{78}{table.4.13}%
-\contentsline {table}{\numberline {14}{\ignorespaces Tempo total de geração por modelo em N1N2N3 (\textit {pipeline} completo).}}{78}{table.4.14}%
+\contentsline {table}{\numberline {03}{\ignorespaces Resultados por modelo em EN1 (similaridade e classificação).}}{70}{table.4.3}%
+\contentsline {table}{\numberline {04}{\ignorespaces Resultados por modelo em EN2 (similaridade e classificação macro por operador).}}{72}{table.4.4}%
+\contentsline {table}{\numberline {05}{\ignorespaces Resultados por modelo em EN1N2 (similaridade).}}{73}{table.4.5}%
+\contentsline {table}{\numberline {06}{\ignorespaces Resultados por modelo em EN3 (similaridade e classificação macro por campo).}}{74}{table.4.6}%
+\contentsline {table}{\numberline {07}{\ignorespaces Resultados por modelo em EN1N2N3 (similaridade sobre o JSON estruturado).}}{75}{table.4.7}%
+\contentsline {table}{\numberline {08}{\ignorespaces Médias por métrica nos cinco experimentos, agregadas sobre os seis modelos.}}{77}{table.4.8}%
+\contentsline {table}{\numberline {09}{\ignorespaces Média global por modelo (nove métricas de similaridade $\times $ cinco experimentos).}}{77}{table.4.9}%
+\contentsline {table}{\numberline {10}{\ignorespaces Tempo total de geração por modelo em N1.}}{79}{table.4.10}%
+\contentsline {table}{\numberline {11}{\ignorespaces Tempo total de geração por modelo em N2.}}{80}{table.4.11}%
+\contentsline {table}{\numberline {12}{\ignorespaces Tempo total de geração por modelo em N1N2.}}{80}{table.4.12}%
+\contentsline {table}{\numberline {13}{\ignorespaces Tempo total de geração por modelo em N3 (EN3 isolado).}}{80}{table.4.13}%
+\contentsline {table}{\numberline {14}{\ignorespaces Tempo total de geração por modelo em N1N2N3 (\textit {pipeline} completo).}}{81}{table.4.14}%

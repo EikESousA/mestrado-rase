@@ -181,6 +181,7 @@ O Código~\ref{lst:dataset} apresenta uma entrada real do \textit{dataset}, extr
 O mesmo arquivo serve como entrada para os geradores e como \textit{target} de referência para os validadores, simplificando a reprodutibilidade dos experimentos.
 
 \section{Métricas de Validação}
+\label{sec:metricas_validacao}
 
 A avaliação combinou treze métricas em cinco famílias: similaridade lexical, similaridade semântica, distância semântica, métricas voltadas para geração e métricas de classificação. As nove primeiras (similaridade) são calculadas par a par entre saída prevista e referência do \textit{dataset}, sempre em escala normalizada $[0,1]$: quanto maior, mais próxima a saída está da referência. As quatro métricas de classificação derivam da matriz de confusão entre saída e referência.
 

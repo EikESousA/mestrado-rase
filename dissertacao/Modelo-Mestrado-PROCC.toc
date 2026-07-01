@@ -46,32 +46,33 @@
 \contentsline {subsection}{\numberline {3.6.5}Métricas de Classificação}{66}{subsection.3.6.5}%
 \contentsline {section}{\numberline {3.7}Ambiente Computacional}{68}{section.3.7}%
 \contentsline {chapter}{\chapternumberline {4}Resultados}{69}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Visão Geral dos Experimentos}{69}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Resultados por Experimento}{70}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}EN1: Segmentação N1}{70}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}EN2: Identificação dos Operadores RASE}{71}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.2.3}EN1N2: Pipeline Encadeado}{72}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.2.4}EN3: Estruturação Semântica em JSON com N2 de referência}{73}{subsection.4.2.4}%
-\contentsline {subsection}{\numberline {4.2.5}EN1N2N3: Pipeline Encadeado Completo}{74}{subsection.4.2.5}%
-\contentsline {section}{\numberline {4.3}Resultados por Modelo}{75}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Análise por Métrica}{76}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Tempo de Execução}{77}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Discussão Integrada}{78}{section.4.6}%
-\contentsline {chapter}{\chapternumberline {5}Conclusão}{80}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Síntese dos Resultados}{80}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Contribuições}{81}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Limitações}{81}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Trabalhos Futuros}{82}{section.5.4}%
+\contentsline {section}{\numberline {4.1}Resultados por Experimento}{69}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}EN1: Segmentação N1}{69}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}EN2: Identificação dos Operadores RASE}{71}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}EN1N2: Pipeline Encadeado N1$\rightarrow $N2}{73}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}EN3: Estruturação Semântica em JSON com N2 de referência}{74}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}EN1N2N3: Pipeline Encadeado Completo N1$\rightarrow $N2$\rightarrow $N3}{75}{subsection.4.1.5}%
+\contentsline {section}{\numberline {4.2}Análise dos Resultados}{76}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Visão Geral}{76}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Análise por Modelo}{77}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Análise por Métrica}{78}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4.3}Tempo de Execução}{79}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Discussão Integrada}{80}{section.4.4}%
+\contentsline {chapter}{\chapternumberline {5}Conclusão}{82}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Síntese dos Resultados}{82}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Contribuições}{83}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Limitações}{83}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Trabalhos Futuros}{84}{section.5.4}%
 \vspace {\cftbeforepartskip }
-\contentsline {chapter}{Refer\^encias}{84}{chapter*.14}%
+\contentsline {chapter}{Refer\^encias}{85}{chapter*.14}%
 \vspace {\cftbeforepartskip }
 \renewcommand *{\cftappendixname }{AP\^ENDICE \space }
-\contentsline {part}{Ap\^endices}{91}{section*.16}%
-\contentsline {appendix}{\chapternumberline {A}Prompts utilizados na Engenharia de Prompt}{92}{appendix.A}%
-\contentsline {section}{\numberline {A.1}N1 --- \textit {Prompt Direct}}{92}{section.A.1}%
-\contentsline {section}{\numberline {A.2}N2 --- \textit {Chain-of-Thought}}{93}{section.A.2}%
-\contentsline {section}{\numberline {A.3}N3 --- \textit {Few-Shot}}{94}{section.A.3}%
-\contentsline {subsection}{\numberline {A.3.1}Aplicabilidade}{94}{subsection.A.3.1}%
-\contentsline {subsection}{\numberline {A.3.2}Requisito}{97}{subsection.A.3.2}%
-\contentsline {subsection}{\numberline {A.3.3}Seleção}{99}{subsection.A.3.3}%
-\contentsline {subsection}{\numberline {A.3.4}Exceção}{100}{subsection.A.3.4}%
+\contentsline {part}{Ap\^endices}{92}{section*.16}%
+\contentsline {appendix}{\chapternumberline {A}Prompts utilizados na Engenharia de Prompt}{93}{appendix.A}%
+\contentsline {section}{\numberline {A.1}N1 --- \textit {Prompt Direct}}{93}{section.A.1}%
+\contentsline {section}{\numberline {A.2}N2 --- \textit {Chain-of-Thought}}{94}{section.A.2}%
+\contentsline {section}{\numberline {A.3}N3 --- \textit {Few-Shot}}{95}{section.A.3}%
+\contentsline {subsection}{\numberline {A.3.1}Aplicabilidade}{95}{subsection.A.3.1}%
+\contentsline {subsection}{\numberline {A.3.2}Requisito}{98}{subsection.A.3.2}%
+\contentsline {subsection}{\numberline {A.3.3}Seleção}{100}{subsection.A.3.3}%
+\contentsline {subsection}{\numberline {A.3.4}Exceção}{101}{subsection.A.3.4}%

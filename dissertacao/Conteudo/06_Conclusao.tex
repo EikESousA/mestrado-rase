@@ -1,6 +1,6 @@
 \chapter{Conclusão}
 
-Esta dissertação investigou a aplicação de seis LLMs \textit{open-source} (Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen) na conversão automática de normas técnicas brasileiras da AEC para o formato RASE, usando \textbf{apenas Engenharia de Prompt}. A tarefa foi decomposta em três níveis sucessivos de normalização (N1, N2 e N3) e avaliada em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3), sobre um \textit{dataset} de 79 normas anotadas. A avaliação combinou treze métricas: nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação, derivadas da matriz de confusão.
+Esta dissertação investigou a aplicação de seis LLMs \textit{open-source} (Llama, Dolphin, Gemma, Mistral, Alpaca e Qwen) na conversão automática de normas técnicas brasileiras da AEC para o formato RASE. A tarefa foi decomposta em três níveis sucessivos de normalização (N1, N2 e N3) e avaliada em cinco experimentos (EN1, EN2, EN1N2, EN3 e EN1N2N3), sobre um \textit{dataset} de 79 normas anotadas. A avaliação combinou treze métricas: nove de similaridade textual (lexicais, semânticas, de distância e voltadas para geração) e quatro de classificação, derivadas da matriz de confusão.
 
 \section{Síntese dos Resultados}
 
@@ -46,5 +46,3 @@ Algumas direções de pesquisa futura consideradas promissoras:
     \item \textbf{Critérios alternativos de classificação em N3}: trocar a correspondência exata por correspondência normalizada (\textit{lowercase}, remoção de \textit{stopwords}, comparação por sinônimos) e revisitar Acurácia, Precisão, Revocação e F1 em N3.
     \item \textbf{Otimização do \textit{pipeline}}: estudar estratégias de mitigação da propagação de erros em EN1N2 e em EN1N2N3: reescrita iterativa, \textit{self-consistency} ou roteamento de operadores difíceis para o modelo mais adequado (\textit{ensemble} Dolphin/Llama por nível).
 \end{itemize}
-
-No conjunto, a pesquisa mostra que LLMs \textit{open-source}, somados a uma decomposição cuidadosa da tarefa e a \textit{prompts} especializados, são alternativa viável e acessível para automatizar a conversão de normas técnicas da AEC em representações computáveis, abrindo caminho para a verificação automática de conformidade em projetos baseados em BIM.
