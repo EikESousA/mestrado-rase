@@ -1,13 +1,11 @@
 \chapter{Resultados}
 
-Este capítulo apresenta os resultados da aplicação dos seis LLMs \textit{open-source} sobre as 79 normas brasileiras do \textit{dataset}, nos cinco experimentos definidos no capítulo anterior: EN1 (segmentação N1 isolada), EN2 (identificação RASE com N1 de referência), EN1N2 (\textit{pipeline} encadeado N1$\rightarrow$N2), EN3 (estruturação JSON em isolamento, com N2 de referência) e EN1N2N3 (\textit{pipeline} encadeado completo N1$\rightarrow$N2$\rightarrow$N3). Todos os números vêm diretamente dos arquivos \textit{metrics/validate\_*.json}, gerados pela rotina de validação descrita na Seção~\ref{sec:metricas_validacao}. O capítulo está organizado em quatro partes. A Seção~\ref{sec:res_por_experimento} analisa cada experimento isoladamente: para cada um, a tabela de resultados por modelo é apresentada no início, seguida da análise por subconjunto de métricas (similaridade lexical, similaridade semântica, distância semântica, métricas voltadas para geração e, quando aplicável, classificação) e de uma análise geral do experimento. A Seção~\ref{sec:analise_resultados} consolida os cinco experimentos em uma visão geral por métrica e por modelo. A Seção~\ref{sec:tempo} reporta os tempos de execução e a Seção~\ref{sec:discussao} traz a discussão integrada.
+Este capítulo apresenta os resultados da aplicação dos seis LLMs \textit{open-source} sobre as 79 normas brasileiras do \textit{dataset}, nos cinco experimentos definidos no capítulo anterior: EN1 (segmentação N1 isolada), EN2 (identificação RASE com N1 de referência), EN1N2 (\textit{pipeline} encadeado N1$\rightarrow$N2), EN3 (estruturação JSON em isolamento, com N2 de referência) e EN1N2N3 (\textit{pipeline} encadeado completo N1$\rightarrow$N2$\rightarrow$N3). Todos os números vêm diretamente dos arquivos \textit{metrics/validate\_*.json}, gerados pela rotina de validação descrita na Seção~\ref{sec:metricas_validacao}. O capítulo está organizado da seguinte forma. As cinco primeiras seções analisam cada experimento isoladamente, a saber, EN1 (Seção~\ref{sec:res_en1}), EN2 (Seção~\ref{sec:res_en2}), EN1N2 (Seção~\ref{sec:res_en1n2}), EN3 (Seção~\ref{sec:res_en3}) e EN1N2N3 (Seção~\ref{sec:res_en1n2n3}). Para cada um, a tabela de resultados por modelo é apresentada no início, seguida da análise por subconjunto de métricas (similaridade lexical, similaridade semântica, distância semântica, métricas voltadas para geração e, quando aplicável, classificação) e de uma análise geral do experimento. A Seção~\ref{sec:analise_resultados} consolida os cinco experimentos em uma visão geral por métrica e por modelo. A Seção~\ref{sec:tempo} reporta os tempos de execução e a Seção~\ref{sec:discussao} traz a discussão integrada.
 
 \textbf{Convenção de leitura das tabelas.} Em todas as tabelas numéricas deste capítulo, o realce é feito \textbf{por coluna}: o melhor valor de cada coluna aparece em \melhor{verde} e o pior em \pior{vermelho}. Nas tabelas de qualidade (similaridade e classificação), os valores em \textbf{negrito} são aqueles dentro do limiar de similaridade adotado na validação, isto é, \(\geq 0{,}7\) (Seção~\ref{sec:metricas_classificacao}). Já nas tabelas de tempo de execução, em que \emph{menor é melhor}, o \melhor{verde} marca o modelo mais rápido e o \pior{vermelho} o mais lento, e o negrito não se aplica.
 
-\section{Resultados por Experimento}
-\label{sec:res_por_experimento}
-
-\subsection{EN1: Segmentação N1}
+\section{EN1: Segmentação N1}
+\label{sec:res_en1}
 
 No EN1, comparam-se as regras N1 geradas pelos LLMs, a partir do texto bruto da norma, contra o N1 de referência do \textit{dataset}. A Tabela~\ref{tab:resultados_en1} apresenta os resultados por modelo.
 
@@ -63,7 +61,8 @@ A Tabela~\ref{tab:resultados_en1} organiza-se em dois blocos. No bloco superior,
 
 \textbf{Análise geral do EN1.} As métricas semânticas e o BERTScore situaram-se acima das lexicais para todos os modelos (na média do experimento, Multilingual 0{,}850 contra TF-IDF 0{,}636 e FuzzyWuzzy 0{,}475), o que indica que a segmentação preserva o sentido ainda quando há reformulação lexical. Como o N1 admite paráfrase legítima, as métricas semânticas (SBERT, BERTimbau e Multilingual) e o BERTScore são as mais informativas para este experimento, ao passo que as lexicais e o ROUGE-L penalizam variação de superfície que não corresponde a erro; as métricas de classificação complementam a leitura ao medir omissões e inserções na segmentação. O Dolphin registrou os maiores valores nas nove métricas de similaridade e em três das quatro de classificação, sendo o modelo com melhor desempenho no EN1.
 
-\subsection{EN2: Identificação dos Operadores RASE}
+\section{EN2: Identificação dos Operadores RASE}
+\label{sec:res_en2}
 
 No EN2, avalia-se a identificação e a estruturação dos operadores RASE a partir do N1 de referência, comparando a saída ao N2 de referência operador por operador (R, A, S e E). A Tabela~\ref{tab:resultados_en2} apresenta os resultados por modelo.
 
@@ -119,7 +118,8 @@ A Tabela~\ref{tab:resultados_en2} segue o mesmo padrão da Tabela~\ref{tab:resul
 
 \textbf{Análise geral do EN2.} Em relação ao EN1, todas as famílias registraram valores menores (na média do experimento, SBERT 0{,}490 e Multilingual 0{,}595, contra 0{,}801 e 0{,}850 no EN1) e a F1-score macro caiu para 0{,}197. A redução foi mais acentuada nas métricas de classificação, que dependem da atribuição correta do operador: os valores de F1-score próximos de zero em Seleção e Exceção indicam que esses dois operadores concentram a dificuldade. Neste experimento, as métricas de classificação são as mais informativas, por medirem diretamente o acerto na rotulação RASE, enquanto as métricas de similaridade capturam apenas a proximidade textual da saída. O Llama registrou os maiores valores em sete das nove métricas de similaridade e a maior acurácia de classificação; o Dolphin registrou a maior F1-score macro (0{,}286). Considerando o conjunto das métricas, o Llama foi o modelo com melhor desempenho no EN2.
 
-\subsection{EN1N2: Pipeline Encadeado N1\texorpdfstring{$\rightarrow$}{-}N2}
+\section{EN1N2: Pipeline Encadeado N1\texorpdfstring{$\rightarrow$}{-}N2}
+\label{sec:res_en1n2}
 
 O EN1N2 encadeia as duas primeiras etapas: o N1 gerado pelo modelo alimenta o N2 do mesmo modelo, e a saída final é comparada ao N2 de referência. Como não há rotulação de operador de referência alinhada à saída encadeada, o experimento reporta apenas as nove métricas de similaridade. A Tabela~\ref{tab:resultados_en1n2} apresenta os resultados por modelo.
 
@@ -163,7 +163,8 @@ A Tabela~\ref{tab:resultados_en1n2} segue o padrão das anteriores, restrita ao 
 
 \textbf{Análise geral do EN1N2.} Em relação ao EN2 isolado, as métricas semânticas registraram valores maiores na média do experimento (Multilingual 0{,}679 contra 0{,}595; BERTimbau 0{,}631 contra 0{,}542; SBERT 0{,}594 contra 0{,}490), enquanto as lexicais permaneceram próximas. Uma leitura possível é que o N1 gerado pelo próprio modelo tende a produzir frases próximas das originais, o que aproxima a saída do texto de referência no nível semântico, mesmo quando a atribuição de operadores contém erros, que este experimento, restrito à similaridade, não mede. Assim, as métricas semânticas e o BERTScore indicam preservação de sentido ao longo da cadeia, mas não substituem as métricas de classificação do EN2 para avaliar a rotulação RASE. O Dolphin registrou os maiores valores em cinco métricas (TF-IDF, WMD\_ft, WMD\_nilc, BERTScore e ROUGE-L) e o Llama em quatro (FuzzyWuzzy, SBERT, BERTimbau e, empatado, Multilingual); pelos dados, Dolphin e Llama foram os modelos com melhor desempenho no EN1N2.
 
-\subsection{EN3: Estruturação Semântica em JSON com N2 de referência}
+\section{EN3: Estruturação Semântica em JSON com N2 de referência}
+\label{sec:res_en3}
 
 No EN3, avalia-se o nível N3 em isolamento: a entrada é o N2 de referência por operador e a saída é comparada, campo a campo (\texttt{type}, \texttt{object}, \texttt{property}, \texttt{comparation}, \texttt{target} e \texttt{unit}), à representação JSON de referência, sobre a serialização canônica do JSON gerado. A Tabela~\ref{tab:resultados_n3} apresenta os resultados por modelo.
 
@@ -212,7 +213,8 @@ A Tabela~\ref{tab:resultados_n3} segue o padrão das tabelas anteriores, com o b
 
 \textbf{Análise geral do EN3.} As métricas de similaridade situaram-se nos maiores patamares da bateria, associadas ao vocabulário curto e restrito dos campos JSON. As métricas de classificação, por exigirem correspondência exata campo a campo, registraram precisão macro abaixo de 4\% para todos os modelos, o que indica divergência de vocabulário em relação à referência (por exemplo, \texttt{target = ``público''} em vez de \texttt{target = ``uso público''}), ainda que o sentido seja preservado. Neste experimento há tensão entre os dois grupos de métricas: as de similaridade medem a preservação de sentido, adequada quando se admite variação léxica, e as de classificação medem a aderência exata ao esquema, mais rígida do que a tarefa comporta. O Llama registrou os maiores valores nas nove métricas de similaridade, sendo o modelo com melhor desempenho no EN3; Mistral, Dolphin e Qwen ficaram próximos nas métricas semânticas.
 
-\subsection{EN1N2N3: Pipeline Encadeado Completo N1\texorpdfstring{$\rightarrow$}{-}N2\texorpdfstring{$\rightarrow$}{-}N3}
+\section{EN1N2N3: Pipeline Encadeado Completo N1\texorpdfstring{$\rightarrow$}{-}N2\texorpdfstring{$\rightarrow$}{-}N3}
+\label{sec:res_en1n2n3}
 
 O EN1N2N3 encadeia as três etapas: o N1 gerado alimenta o N2 do mesmo modelo, que alimenta o N3 do mesmo modelo, tendo como única entrada o texto bruto da norma. A saída final (JSON estruturado por operador) é comparada à referência campo a campo, reportando as nove métricas de similaridade. A Tabela~\ref{tab:resultados_en1n2n3} apresenta os resultados por modelo.
 
